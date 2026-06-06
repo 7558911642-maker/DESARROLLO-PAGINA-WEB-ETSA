@@ -6378,3 +6378,18 @@ section {
     font-size: 28px;
   }
 }
+
+/* Iconos con círculo o caja */
+.detalle-dato i,
+.actividad-item i,
+.recomendacion-card i {
+  background-color: var(--naranja);
+  color: #ffffff;
+}
+
+/* Iconos pequeños sin círculo */
+.detalle-card__tag i,
+.navegacion-detalle i,
+.medios-pago__items i {
+  color: var(--naranja);
+}

@@ -241,11 +241,146 @@
   margin-bottom: 10px;
 }
 
+/* ==================================================
+RESPONSIVE COMPLETO PROMOCIONES
+================================================== */
 
+/* Laptop pequeña */
+@media (max-width: 1200px){
 
-/* NUEVAS TARJETAS RESPONSIVAS */
 .promociones-container{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:28px;
+grid-template-columns:repeat(2,1fr);
+gap:24px;
+}
+
+.promocion-imagen{
+height:380px;
+}
+}
+
+/* Tablet */
+@media (max-width: 768px){
+
+.promociones-hero{
+min-height:220px;
+padding:50px 6%;
+}
+
+.promociones-hero__subtitulo{
+font-size:22px;
+}
+
+.promociones-hero__titulo{
+font-size:58px;
+}
+
+.promociones-seccion{
+padding:50px 20px 60px;
+}
+
+.promociones-container {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.promociones-container::-webkit-scrollbar{
+display:none;
+}
+
+.promocion-card{
+flex:0 0 75%;
+scroll-snap-align:center;
+}
+
+.promocion-imagen{
+height:320px;
+}
+
+.btn-mas-info{
+width:100%;
+min-width:auto;
+}
+}
+
+/* 425px */
+@media (max-width:425px){
+
+.promocion-card{
+flex:0 0 88%;
+}
+
+.promociones-hero__titulo{
+font-size:48px;
+}
+
+.promocion-imagen{
+height:280px;
+}
+
+.tag-promo{
+font-size:12px;
+padding:10px 16px;
+}
+}
+
+/* 375px */
+@media (max-width:375px){
+
+.promocion-card{
+flex:0 0 92%;
+}
+
+.promociones-hero{
+padding:40px 5%;
+}
+
+.promociones-hero__subtitulo{
+font-size:18px;
+}
+
+.promociones-hero__titulo{
+font-size:40px;
+}
+
+.promocion-imagen{
+height:250px;
+}
+
+.btn-mas-info{
+font-size:15px;
+padding:12px;
+}
+}
+
+/* 320px */
+@media (max-width:320px){
+
+.promocion-card{
+flex:0 0 96%;
+}
+
+.promociones-seccion{
+padding:40px 12px 50px;
+}
+
+.promocion-imagen{
+height:220px;
+}
+
+.btn-mas-info{
+font-size:14px;
+}
+
+.modal-body{
+padding:20px;
+}
+
+.modal-header h3{
+font-size:16px;
+}
 }

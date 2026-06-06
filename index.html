@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -6,8 +6,7 @@
   <title>ETSA Sol Amazonense</title>
 
  <!-- Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+  <link rel="stylesheet" href="bootstrap-5.3.8-dist/css/bootstrap.min.css">
   <!-- Iconos -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.12.1/font/bootstrap-icons.min.css">
   <!-- Estilos personalizados -->
@@ -19,7 +18,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
     rel="stylesheet">
   <!-- Favicon -->
-  <link rel="icon" href="img/lofo.png" type="image/png">
+  <link rel="icon" href="img/marca/lofo.png" type="image/png">
 
 </head>
 
@@ -31,14 +30,14 @@
 
       <!-- LOGO -->
       <a class="navbar-brand header__logo m-0" href="index.html" aria-label="Ir al inicio">
-        <img src="img/logo.png" alt="Logo ETSA Sol Amazonense">
+        <img src="img/marca/logo.png" alt="Logo ETSA Sol Amazonense">
       </a>
 
       <!-- MENÚ DESKTOP -->
       <nav class="header__nav d-none d-lg-block ms-auto" aria-label="Menú principal">
         <ul class="navbar-nav flex-row align-items-center gap-4">
           <li class="nav-item">
-            <a class="nav-link activo" href="index.html">Inicio</a>
+            <a class="nav-link activo" href="index.html" aria-current="page">Inicio</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="servicios.html">Servicios</a>
@@ -46,6 +45,7 @@
           <li class="nav-item">
             <a class="nav-link" href="rutas.html">Rutas</a>
           </li>
+          <li class="nav-item"><a class="nav-link" href="encomiendas.html">Envíos</a></li>
           <li class="nav-item">
             <a class="nav-link" href="promociones.html">Promociones</a>
           </li>
@@ -84,7 +84,7 @@
     <div class="offcanvas-body">
       <nav class="panel-lateral__nav" aria-label="Menú lateral">
         <ul class="navbar-nav flex-column gap-3">
-          <li class="nav-item"><a class="nav-link activo" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link activo" href="index.html" aria-current="page">Inicio</a></li>
           <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
           <li class="nav-item"><a class="nav-link" href="servicios.html">Nuestros servicios</a></li>
           <li class="nav-item"><a class="nav-link" href="rutas.html">Rutas</a></li>
@@ -151,7 +151,7 @@
       </div>
 
       <figure class="hero-img m-0">
-        <img src="img/chachapoyas.png" alt="Paisaje turístico de Chachapoyas, Amazonas">
+        <img src="img/rutas/chachapoyas.png" alt="Paisaje turístico de Chachapoyas, Amazonas">
       </figure>
     </section>
 
@@ -199,7 +199,7 @@
           <!-- PROMOCIÓN 1 -->
           <div class="col-12 col-md-6 col-lg-4">
             <article class="promo-index-card h-100">
-              <img src="img/chachapoyas.png" alt="Promoción de pasaje de retorno a Chachapoyas">
+              <img src="img/rutas/chachapoyas.png" alt="Promoción de pasaje de retorno a Chachapoyas">
 
               <div class="promo-index-card__overlay"></div>
 
@@ -227,7 +227,7 @@
           <!-- PROMOCIÓN 2 -->
           <div class="col-12 col-md-6 col-lg-4">
             <article class="promo-index-card h-100">
-              <img src="img/encomienda.png" alt="Promoción de encomiendas ETSA">
+              <img src="img/servicios/encomienda.png" alt="Promoción de encomiendas ETSA">
 
               <div class="promo-index-card__overlay"></div>
 
@@ -255,7 +255,7 @@
           <!-- PROMOCIÓN 3 -->
           <div class="col-12 col-md-6 col-lg-4">
             <article class="promo-index-card h-100">
-              <img src="img/kuelap.png" alt="Promoción familiar para viajar por Amazonas">
+              <img src="img/rutas/kuelap.png" alt="Promoción familiar para viajar por Amazonas">
 
               <div class="promo-index-card__overlay"></div>
 
@@ -351,7 +351,7 @@
           <!-- RUTA 1 -->
           <div class="col-12 col-sm-6 col-lg-3">
             <article class="ruta-index-card h-100">
-              <img src="img/chachapoyas.png" alt="Ciudad de Chachapoyas">
+              <img src="img/rutas/chachapoyas.png" alt="Ciudad de Chachapoyas">
               <div class="ruta-index-card__overlay"></div>
 
               <div class="ruta-index-card__contenido">
@@ -371,7 +371,7 @@
           <!-- RUTA 2 -->
           <div class="col-12 col-sm-6 col-lg-3">
             <article class="ruta-index-card h-100">
-              <img src="img/bagua.png" alt="Ciudad de Bagua Grande">
+              <img src="img/rutas/bagua.png" alt="Ciudad de Bagua Grande">
               <div class="ruta-index-card__overlay"></div>
 
               <div class="ruta-index-card__contenido">
@@ -391,7 +391,7 @@
           <!-- RUTA 3 -->
           <div class="col-12 col-sm-6 col-lg-3">
             <article class="ruta-index-card h-100">
-              <img src="img/Predro-Ruiz.png" alt="Ciudad de Pedro Ruiz">
+              <img src="img/rutas/Pedro-Ruiz.png" alt="Ciudad de Pedro Ruiz">
               <div class="ruta-index-card__overlay"></div>
 
               <div class="ruta-index-card__contenido">
@@ -411,7 +411,7 @@
           <!-- RUTA 4 -->
           <div class="col-12 col-sm-6 col-lg-3">
             <article class="ruta-index-card h-100">
-              <img src="img/pomacochas.png" alt="Ciudad de Pomacochas">
+              <img src="img/rutas/Pomacochas.png" alt="Ciudad de Pomacochas">
               <div class="ruta-index-card__overlay"></div>
 
               <div class="ruta-index-card__contenido">
@@ -440,7 +440,7 @@
     </section>
 
     <!-- RESUMEN CONTACTO -->
-    <section class="contacto-hero">
+    <section class="contacto-hero contacto-hero--index" aria-labelledby="titulo-contacto-index">
       <div class="contacto-hero__overlay"></div>
 
       <div class="container contacto-hero__container">
@@ -453,10 +453,9 @@
                 Atención y reservas
               </p>
 
-              <h1 class="contacto-hero__title">
-                ¿Listo para <br>
-                viajar?
-              </h1>
+              <h2 id="titulo-contacto-index" class="contacto-hero__title">
+                ¿Listo para viajar?
+              </h2>
 
               <p class="contacto-banner__descripcion">
                 Consulta rutas, horarios, precios y disponibilidad de pasajes
@@ -487,8 +486,8 @@
                     <div class="contacto-box__texto">
                       <p>Horario de atención</p>
                       <h3>
-                        Lunes a Sabado <br>
-                        4:00 a.m. - 7:00 p.m.
+                        Lunes a Sábado <br>
+                        4:00 a.m. - 7:00 p.m. <br>
                         Domingo 4:00 a.m. - 5:00 p.m.
                       </h3>
                     </div>
@@ -536,6 +535,135 @@
         </div>
       </div>
     </section>
+
+
+    <!-- RESUMEN NOSOTROS - INDEX -->
+    <section class="index-nosotros nosotros-section py-5" aria-labelledby="titulo-index-nosotros">
+      <div class="container nosotros-card">
+
+        <div class="row align-items-center g-5">
+
+          <!-- COLUMNA IZQUIERDA: CONTENIDO -->
+          <div class="col-12 col-lg-6">
+
+            <div class="index-nosotros__contenido">
+
+              <p class="index-nosotros__subtitulo section-label text-uppercase fw-bold mb-3">
+                Nosotros
+              </p>
+
+              <h1 id="titulo-index-nosotros" class="index-nosotros__titulo nosotros-title fw-bold mb-4">
+                ETSA Sol Amazonense,<br>
+                conectando Amazonas
+              </h1>
+
+              <p class="index-nosotros__descripcion nosotros-description mb-4">
+                Somos una empresa de transporte regional comprometida con la seguridad,
+                la puntualidad y la confianza de nuestros pasajeros, conectando los
+                principales destinos del Amazonas.
+              </p>
+
+              <!-- VALORES RESUMIDOS -->
+              <div class="row g-3 mb-4 valores-grid">
+
+                <div class="col-12 col-sm-4">
+                  <article class="index-nosotros__valor valor-card text-center h-100">
+                    <div class="index-nosotros__valor-icono valor-icon mx-auto mb-3">
+                      <i class="bi bi-shield-check" aria-hidden="true"></i>
+                    </div>
+
+                    <h2 class="h6 fw-bold mb-2">Seguridad</h2>
+                    <span class="index-nosotros__linea"></span>
+                  </article>
+                </div>
+
+                <div class="col-12 col-sm-4">
+                  <article class="index-nosotros__valor valor-card text-center h-100">
+                    <div class="index-nosotros__valor-icono valor-icon mx-auto mb-3">
+                      <i class="bi bi-clock" aria-hidden="true"></i>
+                    </div>
+
+                    <h2 class="h6 fw-bold mb-2">Puntualidad</h2>
+                    <span class="index-nosotros__linea"></span>
+                  </article>
+                </div>
+
+                <div class="col-12 col-sm-4">
+                  <article class="index-nosotros__valor valor-card text-center h-100">
+                    <div class="index-nosotros__valor-icono valor-icon mx-auto mb-3">
+                      <i class="bi bi-person-heart" aria-hidden="true"></i>
+                    </div>
+
+                    <h2 class="h6 fw-bold mb-2">Confianza</h2>
+                    <span class="index-nosotros__linea"></span>
+                  </article>
+                </div>
+
+              </div>
+
+              <!-- MISIÓN Y VISIÓN RESUMIDAS -->
+              <div class="index-nosotros__mv mision-vision-card mb-4">
+                <article class="index-nosotros__mv-item mision-item">
+                  <i class="bi bi-bullseye" aria-hidden="true"></i>
+
+                  <div>
+                    <h2 class="h5 fw-bold mb-1">Misión</h2>
+                    <p class="mb-0">
+                      Brindar un transporte seguro, puntual y responsable.
+                    </p>
+                  </div>
+                </article>
+
+                <span class="separador" aria-hidden="true"></span>
+
+                <article class="index-nosotros__mv-item mision-item">
+                  <i class="bi bi-eye" aria-hidden="true"></i>
+
+                  <div>
+                    <h2 class="h5 fw-bold mb-1">Visión</h2>
+                    <p class="mb-0">
+                      Ser líderes en transporte regional, conectando comunidades.
+                    </p>
+                  </div>
+                </article>
+              </div>
+
+              <!-- BOTÓN -->
+              <a href="nosotros.html" class="btn index-nosotros__boton btn-nosotros">
+                CONOCE MÁS SOBRE NOSOTROS
+                <i class="bi bi-arrow-right ms-2" aria-hidden="true"></i>
+              </a>
+
+            </div>
+
+          </div>
+
+          <!-- COLUMNA DERECHA: IMAGEN -->
+          <div class="col-12 col-lg-6">
+
+            <figure class="index-nosotros__imagen nosotros-image-box position-relative mb-0">
+              <img
+                src="img/nosotros/equipo.png"
+                class="img-fluid nosotros-image"
+                alt="Equipo de trabajo de ETSA Sol Amazonense frente a unidades de transporte">
+
+              <figcaption class="index-nosotros__mensaje image-badge">
+                <i class="bi bi-geo-alt" aria-hidden="true"></i>
+                <span>
+                  Conectamos personas, impulsamos <strong>Amazonas.</strong>
+                </span>
+              </figcaption>
+            </figure>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+
   </main>
 
 
@@ -572,7 +700,7 @@
 
         <!-- COLUMNA 1: MARCA -->
         <div class="col-12 col-lg-4">
-          <img src="img/logo.png" alt="Logo de ETSA Sol Amazonense" class="footer-logo img-fluid mb-4">
+          <img src="img/marca/logo.png" alt="Logo de ETSA Sol Amazonense" class="footer-logo img-fluid mb-4">
 
           <div class="d-flex gap-3 mb-4" aria-label="Redes sociales">
             <a href="https://www.facebook.com/p/ETSA-SA-Rutas-Cafeteras-61557411032591/"
@@ -664,7 +792,7 @@
             </li>
 
             <li class="nav-item">
-              <a class="nav-link p-0 text-white-50" href="libro-reclamaciones.html">Libro de reclamaciones</a>
+              <a class="nav-link p-0 text-white-50" href="libro_reclamos.html">Libro de reclamaciones</a>
             </li>
           </ul>
         </section>
@@ -718,9 +846,7 @@
   </a>
 
   <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
-    crossorigin="anonymous"></script>
+  <script src="bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -6,23 +6,16 @@
   <title>Rutas | ETSA Sol Amazonense</title>
 
   <!-- Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+  <link rel="stylesheet" href="bootstrap-5.3.8-dist/css/bootstrap.min.css">
 
   <!-- Iconos -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.12.1/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/bootstrap-icons-local.css">
 
   <!-- Estilos personalizados -->
   <link rel="stylesheet" href="css/styles.css">
 
-  <!-- Tipografía -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
-    rel="stylesheet">
-
   <!-- Favicon -->
-  <link rel="icon" href="img/lofo.png" type="image/png">
+  <link rel="icon" href="img/marca/lofo.png" type="image/png">
 </head>
 
 <body>
@@ -33,7 +26,7 @@
 
       <!-- LOGO -->
       <a class="navbar-brand header__logo m-0" href="index.html" aria-label="Ir al inicio">
-        <img src="img/logo.png" alt="Logo ETSA Sol Amazonense">
+        <img src="img/marca/logo.png" alt="Logo ETSA Sol Amazonense">
       </a>
 
       <!-- MENÚ DESKTOP -->
@@ -46,8 +39,9 @@
             <a class="nav-link" href="servicios.html">Servicios</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link activo" href="rutas.html">Rutas</a>
+            <a class="nav-link activo" href="rutas.html" aria-current="page">Rutas</a>
           </li>
+          <li class="nav-item"><a class="nav-link" href="encomiendas.html">Envíos</a></li>
           <li class="nav-item">
             <a class="nav-link" href="promociones.html">Promociones</a>
           </li>
@@ -89,7 +83,7 @@
           <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
           <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
           <li class="nav-item"><a class="nav-link" href="servicios.html">Nuestros servicios</a></li>
-          <li class="nav-item"><a class="nav-link activo" href="rutas.html">Rutas</a></li>
+          <li class="nav-item"><a class="nav-link activo" href="rutas.html" aria-current="page">Rutas</a></li>
           <li class="nav-item"><a class="nav-link" href="encomiendas.html">Envíos</a></li>
           <li class="nav-item"><a class="nav-link" href="promociones.html">Promociones</a></li>
           <li class="nav-item"><a class="nav-link" href="testimonios.html">Testimonios</a></li>
@@ -143,7 +137,7 @@
           <!-- CHACHAPOYAS -->
           <div class="col-12 col-md-6 col-lg-4" id="ruta-chachapoyas">
             <article class="tarjeta-ruta tarjeta-ruta-bootstrap h-100">
-              <img src="img/chachapoyas.png" alt="Ciudad de Chachapoyas">
+              <img src="img/rutas/chachapoyas.png" alt="Ciudad de Chachapoyas">
 
               <div class="tarjeta-ruta__contenido">
                 <span class="ruta-etiqueta">
@@ -168,7 +162,7 @@
           <!-- BAGUA GRANDE -->
           <div class="col-12 col-md-6 col-lg-4" id="ruta-bagua-grande">
             <article class="tarjeta-ruta tarjeta-ruta-bootstrap h-100">
-              <img src="img/bagua.png" alt="Ciudad de Bagua Grande">
+              <img src="img/rutas/bagua.png" alt="Ciudad de Bagua Grande">
 
               <div class="tarjeta-ruta__contenido">
                 <span class="ruta-etiqueta">
@@ -193,7 +187,7 @@
           <!-- PEDRO RUIZ -->
           <div class="col-12 col-md-6 col-lg-4" id="ruta-pedro-ruiz">
             <article class="tarjeta-ruta tarjeta-ruta-bootstrap h-100">
-              <img src="img/Pedro-Ruiz.png" alt="Ciudad de Pedro Ruiz">
+              <img src="img/rutas/Pedro-Ruiz.png" alt="Ciudad de Pedro Ruiz">
 
               <div class="tarjeta-ruta__contenido">
                 <span class="ruta-etiqueta">
@@ -218,7 +212,7 @@
           <!-- LUYA -->
           <div class="col-12 col-md-6 col-lg-4" id="ruta-luya">
             <article class="tarjeta-ruta tarjeta-ruta-bootstrap h-100">
-              <img src="img/luya.png" alt="Ciudad de Luya">
+              <img src="img/rutas/Luya.png" alt="Ciudad de Luya">
 
               <div class="tarjeta-ruta__contenido">
                 <span class="ruta-etiqueta">
@@ -243,7 +237,7 @@
           <!-- POMACOCHAS -->
           <div class="col-12 col-md-6 col-lg-4" id="ruta-pomacochas">
             <article class="tarjeta-ruta tarjeta-ruta-bootstrap h-100">
-              <img src="img/pomacochas.png" alt="Laguna de Pomacochas">
+              <img src="img/rutas/Pomacochas.png" alt="Laguna de Pomacochas">
 
               <div class="tarjeta-ruta__contenido">
                 <span class="ruta-etiqueta">
@@ -300,7 +294,7 @@
 
         <!-- COLUMNA 1: MARCA -->
         <div class="col-12 col-lg-4">
-          <img src="img/logo.png" alt="Logo de ETSA Sol Amazonense" class="footer-logo img-fluid mb-4">
+          <img src="img/marca/logo.png" alt="Logo de ETSA Sol Amazonense" class="footer-logo img-fluid mb-4">
 
           <div class="d-flex gap-3 mb-4" aria-label="Redes sociales">
             <a href="https://www.facebook.com/p/ETSA-SA-Rutas-Cafeteras-61557411032591/"
@@ -399,11 +393,10 @@
             </li>
 
             <li class="nav-item">
-              <a class="nav-link p-0 text-white-50" href="trabaja-con-nosotros.html">Trabaja con nosotros</a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link p-0 text-white-50" href="libro-reclamaciones.html">Libro de reclamaciones</a>
+              <a class="nav-link p-0 text-white-50" href="libro_reclamos.html">Libro de reclamaciones</a>
             </li>
           </ul>
         </section>
@@ -457,9 +450,7 @@
   </a>
 
   <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
-    crossorigin="anonymous"></script>
+  <script src="bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>

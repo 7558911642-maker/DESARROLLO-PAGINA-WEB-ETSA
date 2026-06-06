@@ -1,441 +1,392 @@
-/* ============================= */
-/* MAIN CONTACTO HERO */
-/* ============================= */
+/* ==================================================
+   HERO CONTACTO
+================================================== */
 
 .contacto-hero {
   position: relative;
-  height: 100vh;
-  min-height: 620px;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-
-  /* Cambia esta ruta por tu imagen real */
-  background-image: url("../../../img/rutas/chachapoyas.png");
-  background-size: cover;
-  background-position: center right;
-  background-repeat: no-repeat;
-}
-
-.contacto-hero__overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-
-  background:
-    linear-gradient(
-      90deg,
-      rgba(2, 20, 42, 0.98) 0%,
-      rgba(2, 20, 42, 0.94) 28%,
-      rgba(2, 20, 42, 0.72) 48%,
-      rgba(2, 20, 42, 0.30) 75%,
-      rgba(2, 20, 42, 0.15) 100%
-    ),
-    linear-gradient(
-      180deg,
-      rgba(2, 20, 42, 0.20) 0%,
-      rgba(2, 20, 42, 0.70) 100%
-    );
-}
-
-.contacto-hero__container {
-  position: relative;
-  z-index: 2;
-}
-
-.contacto-hero__content {
-  padding: 20px 0 15px;
-  color: #ffffff;
-}
-
-.contacto-hero__eyebrow {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-  margin-bottom: 16px;
-
-  color: #ff7a1a;
-  font-size: 1.1rem;
-  font-weight: 800;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-}
-
-.contacto-hero__eyebrow i {
-  font-size: 2.3rem;
-}
-
-.contacto-hero__title {
-  margin-bottom: 14px;
-
-  color: #ffffff;
-  font-size: clamp(3rem, 4.5vw, 4.6rem);
-  font-weight: 900;
-  line-height: 0.92;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-
-  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
-}
-
-.contacto-banner__descripcion {
-  max-width: 720px;
-  margin-bottom: 16px;
-
-  color: rgba(255, 255, 255, 0.92);
-  font-size: 0.98rem;
-  line-height: 1.45;
-}
-
-/* CONTENEDOR DE LAS TARJETAS */
-.contacto-banner__info {
-  max-width: 820px;
-  margin-bottom: 16px;
-}
-
-/* Todas las columnas iguales */
-.contacto-banner__info > div {
-  display: flex;
-}
-
-/* TARJETAS ALINEADAS */
-.contacto-box {
-  width: 100%;
-  height: 96px;
-  padding: 14px 26px;
-
-  display: grid;
-  grid-template-columns: 52px 1fr;
-  align-items: center;
-  column-gap: 18px;
-
-  border: 1px solid rgba(255, 255, 255, 0.28);
-  border-radius: 12px;
-
-  background: rgba(9, 35, 65, 0.62);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-
-  overflow: hidden;
-}
-
-/* ICONO MÁS PEQUEÑO */
-.contacto-box__icono {
-  width: 48px;
-  height: 48px;
-  min-width: 48px;
+  min-height: 500px;
+  height: 65vh;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  border: 2px solid #ff7a1a;
-  border-radius: 50%;
+  /* AQUÍ ESTÁ EL CAMBIO: Ruta corregida (../img) y opacidad bajada al 30% para que el texto blanco se lea bien */
+  background: 
+    linear-gradient(
+      rgba(4, 20, 40, 0.30), 
+      rgba(4, 20, 40, 0.30)
+    ), 
+    url(img/banners/info-banner.png);
 
-  color: #ff7a1a;
-  font-size: 1.2rem;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  overflow: hidden;
+}
+.contacto-hero__contenido{
+  text-align: center;
+  padding: 0 20px;
 }
 
-/* TEXTO */
-.contacto-box__texto {
-  min-width: 0;
-  max-width: 100%;
-}
-
-.contacto-box__texto p {
-  margin: 0 0 3px;
-
-  color: rgba(255, 255, 255, 0.88);
-  font-size: 0.84rem;
-  font-weight: 400;
-  line-height: 1.25;
-}
-
-.contacto-box__texto h3 {
+.contacto-hero__contenido h1{
+  color: #fff;
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
   margin: 0;
 
-  color: #ffffff;
-  font-size: 0.88rem;
-  font-weight: 800;
-  line-height: 1.25;
-
-  overflow-wrap: normal;
-  word-break: normal;
+  text-shadow: 0 8px 25px rgba(0,0,0,.35);
 }
 
-/* CORREO SIN PEGARSE AL BORDE */
-.contacto-correo {
-  display: inline-block;
-  max-width: 100%;
-  font-size: 0.82rem;
-  white-space: nowrap;
-  letter-spacing: -0.4px;
+/* ==================================================
+   BREADCRUMB
+================================================== */
+
+.breadcrumb-etsa{
+  background: #fff;
+  border-bottom: 1px solid #e5e7eb;
 }
 
-.contacto-hero__btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
+.breadcrumb{
+  margin: 0;
+}
 
-  padding: 12px 30px;
-  border-radius: 50px;
-  border: none;
-
-  background: linear-gradient(135deg, #ff8a2a, #ff6a00);
-  color: #ffffff;
-
-  font-size: 0.9rem;
-  font-weight: 800;
-  letter-spacing: 1px;
-  text-transform: uppercase;
+.breadcrumb a{
+  color: #f97316;
   text-decoration: none;
-
-  box-shadow: 0 10px 25px rgba(255, 106, 0, 0.35);
-  transition: all 0.3s ease;
+  font-weight: 700;
 }
 
-.contacto-hero__btn i {
-  font-size: 1.5rem;
+.breadcrumb-item.active{
+  color: #64748b;
+  font-weight: 600;
 }
 
-.contacto-hero__btn:hover {
-  background: linear-gradient(135deg, #ff8a2a, #ff6200);
-  color: #ffffff;
-  transform: translateY(-3px);
-  box-shadow: 0 22px 45px rgba(255, 106, 0, 0.45);
+/* ==================================================
+   CANALES DE CONTACTO
+================================================== */
+
+.canales-contacto{
+  padding: 80px 0;
+  background: #f8fafc;
 }
 
-/* CONTACTO - FORMULARIO */
-.contacto-formulario-seccion {
-  width: min(1050px, 90%);
-  margin: 0 auto;
-  padding: 65px 0 80px;
+.canal-card{
+  background: #fff;
+  border-radius: 24px;
+  padding: 35px 20px;
+
+  height: 100%;
+
+  border: 1px solid #e5e7eb;
+
+  transition: .35s ease;
+
+  box-shadow:
+    0 10px 25px rgba(15,23,42,.05);
 }
 
-.contacto-intro {
+.canal-card:hover{
+  transform: translateY(-8px);
+
+  box-shadow:
+    0 20px 45px rgba(15,23,42,.12);
+}
+
+.canal-card i{
+  color: #f97316;
+  margin-bottom: 15px;
+}
+
+.canal-card h3{
+  color: #0f172a;
+  font-size: 1.15rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.canal-card p{
+  color: #64748b;
+  margin: 0;
+  font-size: .95rem;
+}
+
+/* ==================================================
+   FORMULARIO
+================================================== */
+
+.contacto-formulario-seccion{
+  width: min(1100px, 92%);
+  margin: auto;
+  padding: 90px 0;
+}
+
+.contacto-intro{
   display: grid;
-  grid-template-columns: 1fr 1.45fr;
-  gap: 50px;
-
-  margin-bottom: 45px;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 50px;
 }
 
-.contacto-intro__texto {
-  padding-right: 48px;
-  border-right: 2px solid var(--naranja);
+.contacto-intro__texto{
+  border-left: 5px solid #f97316;
+  padding-left: 25px;
 }
 
-.contacto-intro__texto p {
-  color: #111827;
-  font-size: 17px;
-  line-height: 1.6;
+.contacto-intro__texto p{
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #334155;
 }
 
-.contacto-intro__form h2 {
-  color: var(--naranja);
-  font-size: 17px;
+.contacto-intro__form h2{
+  color: #f97316;
   font-weight: 900;
-  margin-bottom: 6px;
+  margin-bottom: 10px;
 }
 
-.contacto-intro__form p {
-  color: #111827;
-  font-size: 14px;
+.contacto-intro__form p{
+  color: #64748b;
 }
 
-/* BOTONES SOY PASAJERO / SOY EMPRESA */
-.contacto-tabs {
+.contacto-tabs{
   display: flex;
-  align-items: center;
   justify-content: center;
-  gap: 12px;
-
-  margin-bottom: 45px;
+  margin-bottom: 40px;
 }
 
-.contacto-tab {
+.contacto-tab{
+  background: #0f172a;
+  color: #fff;
   border: none;
-  cursor: pointer;
 
-  padding: 12px 32px;
-  border-radius: 30px;
+  padding: 14px 28px;
 
-  background-color: #3f3f3f;
-  color: #ffffff;
+  border-radius: 999px;
 
-  font-size: 13px;
-  font-weight: 900;
-  text-transform: uppercase;
+  font-weight: 800;
 
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-
-  transition: 0.3s ease;
+  transition: .3s ease;
 }
 
-.contacto-tab--activo,
-.contacto-tab:hover {
-  background-color: var(--naranja);
+.contacto-tab--activo{
+  background: #f97316;
 }
 
-/* FORMULARIO */
-.form-contacto {
-  width: min(720px, 100%);
-  margin: 0 auto;
+/* ==================================================
+   FORM
+================================================== */
 
+.form-contacto{
+  background: #fff;
+
+  padding: 40px;
+
+  border-radius: 28px;
+
+  box-shadow:
+    0 15px 40px rgba(15,23,42,.08);
+}
+
+.form-contacto__fila{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 15px;
+}
+
+.form-contacto{
   display: flex;
   flex-direction: column;
   gap: 18px;
 }
 
-.form-contacto__fila {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 14px;
-}
-
 .form-contacto input,
 .form-contacto select,
-.form-contacto textarea {
+.form-contacto textarea{
   width: 100%;
 
-  border: 1px solid #d1d5db;
-  border-radius: 22px;
+  border: 1px solid #dbe2ea;
+  border-radius: 16px;
 
-  padding: 13px 18px;
+  padding: 15px 18px;
 
-  color: #111827;
-  background-color: #ffffff;
+  font-size: .95rem;
 
-  font-size: 14px;
-  outline: none;
-
-  transition: 0.3s ease;
+  transition: .3s ease;
 }
 
 .form-contacto input:focus,
 .form-contacto select:focus,
-.form-contacto textarea:focus {
-  border-color: var(--naranja);
-  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.18);
+.form-contacto textarea:focus{
+  outline: none;
+
+  border-color: #f97316;
+
+  box-shadow:
+    0 0 0 4px rgba(249,115,22,.15);
 }
 
-.form-contacto textarea {
-  min-height: 135px;
+.form-contacto textarea{
+  min-height: 170px;
   resize: vertical;
-  border-radius: 18px;
 }
 
-.form-contacto__accion {
+.form-contacto__accion{
   display: flex;
   justify-content: flex-end;
-  margin-top: 4px;
 }
 
-.form-contacto button[type="submit"] {
+.form-contacto button{
+  background: linear-gradient(
+    135deg,
+    #ff8a2a,
+    #f97316
+  );
+
+  color: #fff;
   border: none;
-  cursor: pointer;
 
-  min-width: 180px;
-  padding: 13px 34px;
-  border-radius: 30px;
+  padding: 14px 35px;
 
-  background-color: var(--naranja);
-  color: #ffffff;
+  border-radius: 999px;
 
-  font-size: 13px;
-  font-weight: 900;
+  font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 1px;
 
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 9px;
-
-  transition: 0.3s ease;
+  transition: .3s ease;
 }
 
-.form-contacto button[type="submit"]:hover {
-  background-color: var(--naranja-oscuro);
-  transform: translateY(-2px);
+.form-contacto button:hover{
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 15px 35px rgba(249,115,22,.35);
 }
 
-/* ATENCIÓN AL CLIENTE */
-.atencion-cliente {
-  width: min(1050px, 90%);
-  margin: 0 auto;
-  padding: 20px 0 85px;
+/* ==================================================
+   ATENCION CLIENTE
+================================================== */
+
+.atencion-cliente{
+  width: min(1100px,92%);
+  margin: auto;
+  padding: 30px 0 100px;
 }
 
-.atencion-cliente h2 {
-  color: #020617;
-  font-size: 30px;
+.atencion-cliente h2{
+  text-align: center;
+  font-size: 2rem;
   font-weight: 900;
-  letter-spacing: 1px;
-
-  display: flex;
-  align-items: center;
-  gap: 18px;
-
-  margin-bottom: 42px;
+  color: #0f172a;
+  margin-bottom: 50px;
 }
 
-.atencion-cliente h2 span {
-  width: 8px;
-  height: 42px;
-  background-color: var(--naranja);
-  display: inline-block;
+.atencion-cliente h2 span{
+  display: none;
 }
 
-.atencion-cliente__grid {
+.atencion-cliente__grid{
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 42px;
+  grid-template-columns: repeat(3,1fr);
+  gap: 25px;
 }
 
-.atencion-item {
-  display: flex;
-  align-items: center;
-  gap: 20px;
+.atencion-item{
+  background: #fff;
+
+  border-radius: 24px;
+
+  padding: 30px;
+
+  text-align: center;
+
+  box-shadow:
+    0 10px 25px rgba(15,23,42,.05);
+
+  transition: .3s ease;
 }
 
-.atencion-item__icono {
-  width: 62px;
-  height: 62px;
+.atencion-item:hover{
+  transform: translateY(-6px);
+}
 
-  border: 2px solid var(--naranja);
+.atencion-item__icono{
+  width: 70px;
+  height: 70px;
+
+  margin: auto auto 20px;
+
   border-radius: 50%;
 
-  color: var(--naranja);
-  font-size: 25px;
+  background: rgba(249,115,22,.1);
+
+  color: #f97316;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  flex-shrink: 0;
+  font-size: 1.7rem;
 }
 
-.atencion-item p {
-  color: #111827;
-  font-size: 13px;
-  margin-bottom: 2px;
+.atencion-item p{
+  color: #64748b;
 }
 
-.atencion-item strong {
+.atencion-item strong{
   display: block;
-  color: #020617;
-  font-size: 22px;
-  font-weight: 900;
-  line-height: 1.1;
+  font-size: 1.2rem;
+  color: #0f172a;
 }
 
-.atencion-item small {
-  display: block;
-  color: #111827;
-  font-size: 13px;
-  margin-top: 4px;
+.atencion-item small{
+  color: #64748b;
 }
 
+/* ==================================================
+   RESPONSIVE
+================================================== */
+
+@media (max-width: 992px){
+
+  .contacto-intro{
+    grid-template-columns: 1fr;
+  }
+
+  .atencion-cliente__grid{
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px){
+
+  .contacto-hero{
+    min-height: 420px;
+  }
+
+  .form-contacto{
+    padding: 25px;
+  }
+
+  .form-contacto__fila{
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 576px){
+
+  .canales-contacto{
+    padding: 60px 0;
+  }
+
+  .canal-card{
+    padding: 25px 15px;
+  }
+
+  .contacto-formulario-seccion{
+    padding: 70px 0;
+  }
+}

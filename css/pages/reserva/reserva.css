@@ -1,1 +1,399 @@
-/* Estilos especificos de reserva.html. */
+/* ==================================================
+   RESERVA TU PASAJE - ETSA
+================================================== */
+
+main {
+    margin-top: 85px;
+}
+
+/* HERO */
+
+main section:first-child {
+    position: relative;
+    padding: 110px 0 !important;
+
+    background:
+        linear-gradient(
+            rgba(5, 18, 35, 0.78),
+            rgba(5, 18, 35, 0.78)
+        ),
+        url("../img/rutas/chachapoyas.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    overflow: hidden;
+}
+
+main section:first-child::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(255,153,0,.22),
+            transparent 45%
+        );
+}
+
+main section:first-child .container {
+    position: relative;
+    z-index: 2;
+}
+
+main section:first-child p.text-warning {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 10px 18px;
+
+    border-radius: 999px;
+
+    background: rgba(255,255,255,.12);
+
+    color: #fff !important;
+    font-size: .85rem;
+    letter-spacing: 1px;
+}
+
+main section:first-child h1 {
+    color: #fff;
+    font-weight: 900;
+
+    font-size: clamp(2.3rem, 5vw, 4.5rem);
+}
+
+main section:first-child .lead {
+    color: rgba(255,255,255,.85) !important;
+    max-width: 700px;
+}
+
+/* CONTENIDO */
+
+main section:nth-child(2) {
+    background: #f8fafc;
+    padding: 80px 0 !important;
+}
+
+/* TARJETA IZQUIERDA */
+
+main article.bg-white {
+    border: none !important;
+
+    border-radius: 24px !important;
+
+    padding: 35px !important;
+
+    background: #fff;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.06) !important;
+}
+
+main article.bg-white h2 {
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 25px;
+}
+
+main article.bg-white li {
+    align-items: flex-start;
+    font-size: 1rem;
+    color: #475569;
+}
+
+main article.bg-white i {
+    color: #ff7b00 !important;
+}
+
+/* FORMULARIO */
+
+form.bg-white {
+    border: none !important;
+
+    border-radius: 28px !important;
+
+    background: #fff;
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.08) !important;
+}
+
+.form-control {
+    height: 56px;
+
+    border-radius: 14px;
+
+    border: 1px solid #dbe2ea;
+
+    padding-left: 16px;
+
+    box-shadow: none !important;
+
+    transition: .25s;
+}
+
+textarea.form-control {
+    min-height: 130px;
+    padding-top: 14px;
+}
+
+.form-control:focus {
+    border-color: #ff7b00;
+
+    box-shadow:
+        0 0 0 4px rgba(255,123,0,.12) !important;
+}
+
+/* BOTON */
+
+form button.btn-warning {
+    width: 100%;
+
+    height: 58px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    background: linear-gradient(
+        135deg,
+        #ff9100,
+        #ff6b00
+    );
+
+    color: white;
+
+    font-weight: 800;
+
+    letter-spacing: .5px;
+
+    transition: .3s;
+}
+
+form button.btn-warning:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 25px rgba(255,123,0,.35);
+}
+
+/* EFECTO PREMIUM */
+
+form.bg-white::before {
+    content: "";
+
+    display: block;
+
+    width: 80px;
+    height: 5px;
+
+    border-radius: 999px;
+
+    background: linear-gradient(
+        90deg,
+        #ff9100,
+        #ff6b00
+    );
+
+    margin-bottom: 25px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+
+    main section:first-child {
+        padding: 90px 0 !important;
+    }
+
+    main section:first-child h1 {
+        font-size: 2.4rem;
+    }
+
+    form.bg-white,
+    main article.bg-white {
+        padding: 25px !important;
+    }
+}
+
+@media (max-width: 425px) {
+
+    main section:first-child {
+        padding: 75px 0 !important;
+    }
+
+    main section:first-child h1 {
+        font-size: 2rem;
+    }
+
+    .form-control {
+        height: 52px;
+    }
+
+    textarea.form-control {
+        min-height: 120px;
+    }
+}
+
+@media (max-width: 320px) {
+
+    main section:first-child h1 {
+        font-size: 1.8rem;
+    }
+
+    form.bg-white,
+    main article.bg-white {
+        padding: 20px !important;
+    }
+}
+
+/* ===================================
+   EFECTOS PREMIUM ETSA
+=================================== */
+
+main section:first-child {
+    min-height: 500px;
+
+    display: flex;
+    align-items: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(3, 15, 32, .88),
+            rgba(7, 30, 58, .78)
+        ),
+        url("../img/banners/watermarked_img_2461339827978530461.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+main section:first-child h1 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    text-shadow:
+        0 4px 25px rgba(0,0,0,.35);
+}
+
+main section:first-child .lead {
+    font-size: 1.2rem;
+    max-width: 750px;
+}
+
+/* CARD INFORMATIVA */
+
+main article.bg-white {
+    position: relative;
+    overflow: hidden;
+}
+
+main article.bg-white::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 6px;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #ff9900,
+            #ff6a00
+        );
+}
+
+/* FORMULARIO */
+
+form.bg-white {
+
+    position: relative;
+
+    backdrop-filter: blur(15px);
+
+    border: 1px solid rgba(255,255,255,.6);
+}
+
+form.bg-white::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    right: 0;
+
+    width: 140px;
+    height: 140px;
+
+    background: rgba(255,153,0,.08);
+
+    border-radius: 50%;
+
+    transform: translate(50%,-50%);
+}
+
+/* INPUTS */
+
+.form-control {
+
+    background: #f8fafc;
+
+    font-weight: 500;
+}
+
+.form-control:hover {
+
+    border-color: #ff9900;
+}
+
+/* BOTON */
+
+form button.btn-warning {
+
+    font-size: 1rem;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+/* EFECTO FLOTANTE */
+
+form.bg-white:hover,
+main article.bg-white:hover {
+
+    transform: translateY(-6px);
+
+    transition: .35s ease;
+}
+
+/* RESPONSIVE */
+
+@media (max-width:768px){
+
+    main section:first-child {
+
+        min-height: 420px;
+
+        background-attachment: scroll;
+    }
+
+    main section:first-child h1 {
+
+        font-size: 2.5rem;
+    }
+}

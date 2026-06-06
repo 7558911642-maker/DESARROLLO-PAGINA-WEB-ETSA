@@ -42,6 +42,7 @@ img{
 /* 3. BASE GENERAL DEL SITIO */
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 90px;
 }
 
 body {
@@ -49,6 +50,7 @@ body {
   background-color: #f8fafc;
   color: var(--azul-profundo);
   line-height: 1.6;
+  padding-top: 90px;
 }
 
 main {
@@ -94,14 +96,34 @@ ul {
   justify-content: space-between;
   gap: 24px;
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+}
+
+.site-header {
+  z-index: 1050;
+}
+
+.site-header.fixed-top {
+  z-index: 1050;
+}
+
+.site-header.navbar {
+  min-height: 90px;
+}
+
+.site-header .container-fluid {
+  min-height: 90px;
+}
+
+.site-header .header__logo img,
+.site-header .logo {
+  max-height: 90px;
+  width: auto;
 }
 
 .header__logo img,
 .logo img {
-  width: 200px;
+  max-height: 90px;
+  width: auto;
   height: auto;
 }
 
@@ -1767,7 +1789,7 @@ figure {
 
 
 /* RESPONSIVE */
-@media (max-width: 991px) {
+@media (max-width: 991.98px) {
   .header {
     gap: 12px;
   }
@@ -1802,7 +1824,7 @@ figure {
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 767.98px) {
   .index-promociones__header,
   .index-rutas__header {
     flex-direction: column;
@@ -1822,7 +1844,7 @@ figure {
   }
 }
 
-@media (max-width: 575px) {
+@media (max-width: 575.98px) {
   .header {
     padding: 0 12px;
   }
@@ -4144,20 +4166,30 @@ figure {
    RESPONSIVE.CSS — ETSA SOL AMAZONENSE
    Sistema de diseño adaptable para todos los dispositivos
 
-   Breakpoints oficiales (según docente):
-     · Smartphone   : 0px   – 480px
-     · Tablet       : 481px – 768px
-     · PC Pequeña   : 769px – 1024px
-     · Laptop       : 1025px – 1200px
-     · Desktop / TV : 1201px en adelante
+   Breakpoints oficiales Bootstrap 5.3:
+     · XS  Extra pequeño      : < 576px
+     · SM  Pequeño            : >= 576px
+     · MD  Mediano            : >= 768px
+     · LG  Grande             : >= 992px
+     · XL  Extra grande       : >= 1200px
+     · XXL Extra extra grande : >= 1400px
+
+   CSS de punto de quiebre amigable:
+     XS: Extra pequeño
+     SM: Pequeño
+     MD: Mediano
+     LG: Grande
+     XL: Extra grande
+     XXL: Extra extra grande
 
    Orden de las secciones:
      00. BASE GLOBAL — evitar desbordamientos en todos los tamaños
-     01. SMARTPHONE  (max-width: 480px)
-     02. TABLET      (481px – 768px)
-     03. PC PEQUEÑA  (769px – 1024px)
-     04. LAPTOP      (1025px – 1200px)
-     05. DESKTOP/TV  (1201px+)   */
+     01. CELULAR BASE (< 576px)
+     02. SM PEQUEÑO   (>= 576px)
+     03. MD TABLET    (>= 768px)
+     04. LG LAPTOP    (>= 992px)
+     05. XL+ GRANDE   (>= 1200px)
+     06. XXL EXTRA EXTRA GRANDE (>= 1400px)   */
 
 /* 00. BASE GLOBAL
    Reglas que aplican a TODOS los tamaños y evitan scroll horizontal */
@@ -4189,8 +4221,7 @@ section {
   width: 100%;
 }
 
-/* 01. SMARTPHONE — 0px a 480px */
-@media screen and (max-width: 480px) {
+/* 01. CELULAR — Base mobile-first: menor a 576px */
 
   /*  TIPOGRAFÍA GLOBAL
      Garantiza legibilidad en pantallas pequeñas */
@@ -4810,12 +4841,12 @@ section {
     font-size: 26px;
   }
 
-} /* fin @media SMARTPHONE */
+/* fin estilos base celular */
 
 
-/* 02. TABLET — 481px a 768px */
+/* 02. SM — Pequeño: desde 576px */
 
-@media screen and (min-width: 481px) and (max-width: 768px) {
+@media screen and (min-width: 576px) {
 
   /* HEADER */
   .header {
@@ -5102,12 +5133,12 @@ section {
     justify-content: center;
   }
 
-} /* fin @media TABLET */
+} /* fin @media SM */
 
 
-/* 03. PC PEQUEÑA — 769px a 1024px */
+/* 03. MD — Tablet: desde 768px */
 
-@media screen and (min-width: 769px) and (max-width: 1024px) {
+@media screen and (min-width: 768px) {
 
   /*  HEADER — Navegación visible */
   .header {
@@ -5270,12 +5301,12 @@ section {
     padding-left: 0;
   }
 
-} /* fin @media PC PEQUEÑA */
+} /* fin @media MD */
 
 
-/*  04. LAPTOP — 1025px a 1200px */
+/* 04. LG — Laptop: desde 992px */
 
-@media screen and (min-width: 1025px) and (max-width: 1200px) {
+@media screen and (min-width: 992px) {
 
   /* HEADER */
   .header {
@@ -5374,12 +5405,12 @@ section {
     width: 90%;
   }
 
-} /* fin @media LAPTOP */
+} /* fin @media LG */
 
 
-/*  05. DESKTOP Y TV — 1201px en adelante */
+/* 05. XL y XXL — Pantalla grande: desde 1200px */
 
-@media screen and (min-width: 1201px) {
+@media screen and (min-width: 1200px) {
 
   /*  HEADER */
   .header {
@@ -5485,66 +5516,97 @@ section {
     padding: 45px 40px;
   }
 
-} /* fin @media DESKTOP Y TV */
+} /* fin @media XL y XXL */
 
-
-/* 06. VISIBILIDAD HEADER — Reglas exactas por breakpoint  
-   · Celular  (0 – 480px)   : logo + hamburguesa. SIN reserva, SIN nav
-   · Tablet   (481 – 768px) : logo + hamburguesa + botón RESERVA. SIN nav
-   · PC+      (769px +)     : logo + nav + botón RESERVA + hamburguesa (todo)
-    ELULAR: solo logo y hamburguesa  */
-
-@media screen and (max-width: 480px) {
-  .btn-menu {
-    display: flex !important;
-    visibility: visible !important;
-    opacity: 1 !important;
+/* 06. XXL — Extra extra grande: desde 1400px */
+@media screen and (min-width: 1400px) {
+  .header {
+    padding: 0 50px;
   }
 
-  .btn-reserva {
-    display: none !important;   /* Oculta el botón RESERVA en celular */
+  .header__logo img,
+  .logo img {
+    width: 180px;
   }
 
-  .header__nav {
-    display: none !important;   /* Oculta el nav horizontal */
+  .hero,
+  .hero-viaje,
+  .nosotros-hero,
+  .servicios-hero,
+  .rutas-hero,
+  .encomiendas-hero,
+  .promociones-hero,
+  .faq-hero,
+  .testimonios-hero,
+  .contacto-hero {
+    padding: 80px 6%;
+  }
+
+  .hero h1,
+  .seguridad {
+    font-size: 56px;
+  }
+
+  .hero-viaje__contenido h1,
+  .nosotros-hero__contenido h1,
+  .servicios-hero__contenido h1,
+  .rutas-hero__contenido h1,
+  .promociones-hero__titulo,
+  .faq-hero__titulo,
+  .testimonios-hero__contenido h1,
+  .contacto-hero h1 {
+    font-size: 130px;
+  }
+
+  .index-promociones__grid {
+    gap: 32px;
+  }
+
+  .index-rutas__grid {
+    gap: 18px;
+  }
+
+  .valores__grid {
+    gap: 30px;
+  }
+
+  .footer-contenedor {
+    width: min(1500px, 86%);
   }
 }
 
-/*  TABLET: logo + hamburguesa + botón RESERVA  */
-@media screen and (min-width: 481px) and (max-width: 768px) {
-  .btn-menu {
-    display: flex !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-  }
 
+/* 06. VISIBILIDAD HEADER — Mobile-first Bootstrap
+   · Base celular (< 576px) : logo + hamburguesa. SIN reserva, SIN nav
+   · SM  (>= 576px)        : logo + hamburguesa + botón RESERVA. SIN nav
+   · MD  (>= 768px)        : logo + nav + botón RESERVA
+   · LG+ (>= 992px)        : logo + nav + botón RESERVA, SIN hamburguesa */
+
+.btn-menu {
+  display: flex;
+}
+
+.btn-reserva {
+  display: none;
+}
+
+.header__nav {
+  display: none;
+}
+
+@media screen and (min-width: 576px) {
   .btn-reserva {
-    display: flex !important;   /* Aparece el botón RESERVA */
-    visibility: visible !important;
-    opacity: 1 !important;
-  }
-
-  .header__nav {
-    display: none !important;   /* El nav horizontal sigue oculto */
+    display: flex;
   }
 }
 
-/*  TABLET HORIZONTAL: reserva + hamburguesa, sin menu horizontal  */
-@media screen and (min-width: 769px) and (max-width: 991.98px) {
+@media screen and (min-width: 992px) {
   .btn-menu {
-    display: flex !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-  }
-
-  .btn-reserva {
-    display: flex !important;
-    visibility: visible !important;
-    opacity: 1 !important;
+    display: none;
   }
 
   .header__nav {
-    display: none !important;
+    display: flex;
   }
 }
 
@@ -5553,10 +5615,10 @@ section {
    FIX HEADER EN PC — Evita que el nav y el botón reserva rompan en 2 líneas
 
    white-space: nowrap impide que "Nuestros servicios" y "RESERVA TU PASAJE"
-   se partan. Se reduce font-size progresivamente entre 769px y 1200px. */
+   se partan. Se reduce font-size progresivamente desde LG. */
 
-/* PC PEQUEÑA (769px – 1024px): reducción más agresiva */
-@media screen and (min-width: 769px) and (max-width: 1024px) {
+/* LG (>= 992px): reducción más agresiva */
+@media screen and (min-width: 992px) {
   .header {
     gap: 10px;
     padding: 0 14px;
@@ -5586,8 +5648,8 @@ section {
   }
 }
 
-/* LAPTOP (1101px – 1200px): ajuste suave */
-@media screen and (min-width: 1101px) and (max-width: 1200px) {
+/* XL (>= 1200px): ajuste suave */
+@media screen and (min-width: 1200px) {
   .header__nav a,
   .nav a {
     font-size: 15px !important;
@@ -5601,14 +5663,17 @@ section {
   }
 }
 
-/* DESKTOP (1201px+): tamaños originales, solo nowrap para seguridad */
-@media screen and (min-width: 1201px) {
+/* XXL (1400px+): tamaños originales, solo nowrap para seguridad */
+@media screen and (min-width: 1400px) {
   .header__nav a,
   .nav a {
+    font-size: 18px !important;
     white-space: nowrap;
   }
 
   .btn-reserva {
+    font-size: 14px !important;
+    padding: 10px 10px !important;
     white-space: nowrap;
   }
 }
@@ -6434,6 +6499,8 @@ section {
   opacity: 0.25;
 }
 
+
+
 @media (max-height: 820px) and (min-width: 992px) {
   .nosotros-section .nosotros-card {
     padding: 44px 70px;
@@ -6527,4 +6594,5 @@ section {
     margin-top: 18px;
   }
 }
+
 

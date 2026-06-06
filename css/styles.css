@@ -5993,7 +5993,7 @@ section {
   margin: 0;
 }
 
-/*  CARDS  */
+/*  CARDS */
 
 .detalle-card {
   border-radius: 22px !important;
@@ -6010,36 +6010,13 @@ section {
 
 .detalle-card img {
   width: 100%;
-  height: 235px;
+  height: 260px;
   object-fit: cover;
-  background-color: #e5e7eb;
-}
-
-/* Si las imágenes de las cards no existen, se ocultan para que no salga texto roto */
-.detalle-card img[src*="laguna-burlan"],
-.detalle-card img[src*="bosque-berlin"],
-.detalle-card img[src*="utcubamba"],
-.detalle-card img[src*="gocta"],
-.detalle-card img[src*="sonche"],
-.detalle-card img[src*="quiocta"],
-.detalle-card img[src*="karajia"],
-.detalle-card img[src*="lamud"],
-.detalle-card img[src*="yumbilla"],
-.detalle-card img[src*="cuispes"],
-.detalle-card img[src*="cataratas-boongara"],
-.detalle-card img[src*="laggo-pomacochas"],
-.detalle-card img[src*="paseo-bote"],
-.detalle-card img[src*="gastronomia-amazonas"] {
-  display: none;
-}
-
-/* Fondo visual para cards si no hay imagen */
-.detalle-card {
-  background-image: linear-gradient(rgba(15, 23, 42, 0.10), rgba(15, 23, 42, 0.10));
+  display: block;
 }
 
 .detalle-card .card-body {
-  padding: 26px;
+  padding: 30px;
   background-color: #ffffff;
 }
 
@@ -6053,7 +6030,7 @@ section {
   border-radius: 40px;
   font-size: 13px;
   font-weight: 900;
-  margin-bottom: 16px;
+  margin-bottom: 18px;
 }
 
 .detalle-card__tag i {

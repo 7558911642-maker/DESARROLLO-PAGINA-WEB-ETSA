@@ -6556,43 +6556,5 @@ section {
   .nosotros-section .nosotros-title {
     font-size: 2.1rem;
   }
-
-  .nosotros-section .nosotros-description {
-    font-size: 0.95rem;
-    line-height: 1.7;
-  }
-
-  .nosotros-section .valor-card {
-    height: 135px;
-  }
-
-  .nosotros-section .mision-vision-card {
-    grid-template-columns: 1fr;
-    gap: 18px;
-  }
-
-  .nosotros-section .separador {
-    width: 100%;
-    height: 1px;
-  }
-
-  .nosotros-section .btn-nosotros {
-    width: 100%;
-    min-width: auto;
-    gap: 12px;
-  }
-
-  .nosotros-section .nosotros-image {
-    height: 360px;
-    border-radius: 22px;
-  }
-
-  .nosotros-section .image-badge {
-    position: static;
-    width: 100%;
-    max-width: none;
-    margin-top: 18px;
-  }
 }
-
 

@@ -483,3 +483,251 @@
   }
 }
 
+/* RESUMEN PROMOCIONES - tarjetas con borde elegante */
+body.pagina-index .promociones-index .promo-index-card {
+  border: 1px solid rgba(249, 115, 22, 0.42);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* RESUMEN ENCOMIENDAS - beneficios sin texto recortado */
+body.pagina-index .index-encomiendas {
+  overflow: visible;
+  padding-top: 0;
+  padding-bottom: 5px;
+}
+
+body.pagina-index .index-encomiendas__overlay {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(2, 6, 23, 0.76) 0%,
+      rgba(2, 6, 23, 0.58) 44%,
+      rgba(2, 6, 23, 0.24) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(2, 6, 23, 0.12) 0%,
+      rgba(2, 6, 23, 0.42) 100%
+    );
+}
+
+body.pagina-index .index-encomiendas__contenido {
+  margin-bottom: 24px;
+}
+
+body.pagina-index .index-encomiendas__beneficios {
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 1.5rem;
+  overflow: visible;
+  margin-bottom: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+body.pagina-index .index-encomiendas__beneficio {
+  min-height: 174px;
+  position: relative;
+  padding: 30px 24px 34px;
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow: 0 18px 38px rgba(2, 6, 23, 0.16);
+  overflow: hidden;
+  align-items: flex-start;
+  gap: 18px;
+}
+
+body.pagina-index .index-encomiendas__beneficio::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 22px;
+  width: 44px;
+  height: 3px;
+  border-radius: 999px;
+  background: var(--naranja);
+  transform: translateX(-50%);
+}
+
+body.pagina-index .index-encomiendas__beneficio i {
+  width: 54px;
+  height: 54px;
+  min-width: 54px;
+  border-radius: 50%;
+  background: #fff3eb;
+  color: var(--naranja);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.9rem;
+}
+
+body.pagina-index .index-encomiendas__beneficio h3 {
+  margin-bottom: 10px;
+  color: #071632;
+  font-size: 1rem;
+  line-height: 1.16;
+}
+
+body.pagina-index .index-encomiendas__beneficio p {
+  max-width: 12rem;
+  color: #475569;
+  font-size: 0.82rem;
+  line-height: 1.48;
+}
+
+@media (max-width: 991.98px) {
+  body.pagina-index .index-encomiendas {
+    padding-top: 0;
+    padding-bottom: 5px;
+  }
+
+  body.pagina-index .index-encomiendas__overlay {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(2, 6, 23, 0.72) 0%,
+        rgba(2, 6, 23, 0.54) 48%,
+        rgba(2, 6, 23, 0.76) 100%
+      );
+  }
+
+  body.pagina-index .index-encomiendas__beneficio {
+    min-height: 168px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  body.pagina-index .index-encomiendas__beneficio {
+    min-height: auto;
+    padding: 24px 20px 34px;
+  }
+
+  body.pagina-index .index-encomiendas__beneficio p {
+    max-width: none;
+  }
+}
+
+/* RESUMEN RUTAS - mismo patron visual que promociones */
+body.pagina-index .rutas-index.index-rutas {
+  padding: 70px 0 85px;
+  background-color: #ffffff;
+}
+
+body.pagina-index .rutas-index .rutas-index__fila {
+  margin-top: 0;
+}
+
+body.pagina-index .rutas-index .rutas-index-card {
+  min-height: 470px;
+  border: 1px solid rgba(249, 115, 22, 0.42);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+body.pagina-index .rutas-index .rutas-index-card img {
+  min-height: 470px;
+}
+
+body.pagina-index .rutas-index .index-rutas__accion {
+  display: flex;
+  justify-content: center;
+  margin-top: clamp(1.35rem, 3vw, 2rem);
+}
+
+body.pagina-index .rutas-index .btn-ver-rutas {
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 13px 24px;
+  border-radius: 40px;
+  background-color: var(--naranja);
+  color: var(--blanco);
+  font-size: 0.82rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  box-shadow: 0 12px 24px rgba(249, 115, 22, 0.22);
+}
+
+body.pagina-index .rutas-index .btn-ver-rutas:hover {
+  background-color: var(--naranja-oscuro);
+  color: var(--blanco);
+  transform: translateY(-2px);
+}
+
+@media (min-width: 992px) {
+  body.pagina-index .rutas-index > .container {
+    max-width: 100%;
+    padding-right: clamp(1.5rem, 3vw, 3rem);
+    padding-left: clamp(1.5rem, 3vw, 3rem);
+  }
+
+  body.pagina-index .rutas-index .rutas-index__carrusel {
+    display: none !important;
+  }
+
+  body.pagina-index .rutas-index .rutas-index__fila.row {
+    display: flex !important;
+    width: 100%;
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  body.pagina-index .rutas-index .rutas-index__columna {
+    padding-right: 0.75rem;
+    padding-left: 0.75rem;
+  }
+}
+
+body.pagina-index .rutas-index .rutas-index-card .promo-index-card__boton {
+  white-space: nowrap;
+}
+
+body.pagina-index .rutas-index .ruta-slide-card__boton {
+  white-space: nowrap;
+}
+
+@media (max-width: 991.98px) {
+  body.pagina-index .rutas-index.index-rutas {
+    padding: 62px 0;
+  }
+
+  body.pagina-index .rutas-index .rutas-index__fila.row {
+    display: none !important;
+  }
+
+  body.pagina-index .rutas-index .rutas-index__carrusel {
+    display: block !important;
+    width: 100%;
+    max-width: 46rem;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 767.98px) {
+  body.pagina-index .rutas-index.index-rutas {
+    padding: clamp(2.35rem, 8vw, 3rem) 0 clamp(2.6rem, 9vw, 3.4rem);
+  }
+
+  body.pagina-index .rutas-index .index-rutas__accion {
+    width: 100%;
+    margin-top: 1.45rem;
+    padding-right: 0.35rem;
+    padding-left: 0.35rem;
+  }
+
+  body.pagina-index .rutas-index .btn-ver-rutas {
+    width: min(100%, 22.5rem);
+    min-height: 3.55rem;
+    padding: 0.85rem 1.15rem;
+    border-radius: 999px;
+    display: inline-flex !important;
+    gap: 0.7rem;
+    font-size: clamp(0.72rem, 3.2vw, 0.88rem);
+    letter-spacing: 0.05rem;
+    white-space: nowrap;
+  }
+}
+

@@ -1,0 +1,40 @@
+/* 8. BOTONES GENERALES */
+.botones {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+
+.btn-primary,
+.btn-dark {
+  display: inline-block;
+  padding: 13px 24px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 900;
+  text-transform: uppercase;
+  transition: 0.3s ease;
+}
+
+.btn-primary {
+  background-color: var(--naranja);
+  color: var(--blanco);
+}
+
+.btn-primary:hover {
+  background-color: var(--naranja-oscuro);
+  transform: translateY(-2px);
+}
+
+.btn-dark {
+  background-color: var(--azul-profundo);
+  color: var(--blanco);
+}
+
+.btn-dark:hover {
+  background-color: #1f2937;
+  transform: translateY(-2px);
+}
+

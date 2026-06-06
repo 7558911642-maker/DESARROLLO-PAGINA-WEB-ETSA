@@ -1,0 +1,21 @@
+/* 2. VARIABLES GLOBALES */
+:root {
+  --naranja: #f97316;
+  --naranja-oscuro: #ea580c;
+  --azul-oscuro: #0f172a;
+  --azul-profundo: #111827;
+  --gris-texto: #6b7280;
+  --gris-claro: #f3f4f6;
+  --gris-borde: #e5e7eb;
+  --blanco: #ffffff;
+  --negro: #111111;
+  --footer-oscuro: #3f3f3f;
+
+  --sombra-suave: 0 8px 24px rgba(0, 0, 0, 0.10);
+  --sombra-media: 0 14px 34px rgba(0, 0, 0, 0.16);
+
+  --radio-suave: 18px;
+  --radio-medio: 24px;
+  --ancho-contenedor: min(1200px, 90%);
+}
+

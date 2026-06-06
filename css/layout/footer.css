@@ -1,0 +1,144 @@
+/* 11. FOOTER GENERAL  */
+.footer-principal {
+  width: 100%;
+  background-color: var(--blanco);
+}
+
+/* CONTENEDOR PRINCIPAL DEL FOOTER */
+.footer-contenedor {
+  width: min(1350px, 88%);
+  margin: 0 auto;
+  padding: 45px 40px;
+
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1.25fr 1.35fr;
+  gap: 48px;
+
+  align-items: start;
+}
+
+/* COLUMNAS */
+.footer-columna {
+  border-left: 1px solid #bebfc1;
+  padding-left: 34px;
+}
+
+.footer-marca {
+  border-left: none;
+  padding-left: 0;
+}
+
+/* TÍTULOS */
+.footer-columna h2 {
+  color: var(--azul-profundo);
+  font-size: 19px;
+  font-weight: 900;
+  margin-bottom: 22px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #d1d5db;
+  letter-spacing: 0.5px;
+}
+
+/* LOGO */
+.footer-logo-texto {
+  color: var(--azul-profundo);
+  font-size: 22px;
+  font-weight: 900;
+  margin-bottom: 20px;
+}
+
+.footer-logo {
+  width: 240px;
+  height: auto;
+  margin: 20px 0 26px;
+}
+
+/* REDES SOCIALES */
+.footer-redes {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  padding: 22px 0;
+  margin-bottom: 28px;
+
+  border-top: 1px solid var(--gris-borde);
+  border-bottom: 1px solid var(--gris-borde);
+}
+
+.footer-redes a {
+  width: 44px;
+  height: 44px;
+
+  border: 2px solid var(--naranja);
+  border-radius: 50%;
+
+  color: var(--naranja);
+  font-size: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: 0.3s ease;
+}
+
+.footer-redes a:hover {
+  background-color: var(--naranja);
+  color: var(--blanco);
+  transform: translateY(-4px);
+}
+
+/* CONTACTO */
+.footer-contacto {
+  font-style: normal;
+}
+
+.footer-contacto p {
+  color: var(--azul-profundo);
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+
+.footer-contacto strong {
+  font-weight: 900;
+}
+
+/* LISTAS */
+.footer-columna ul {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.footer-columna li {
+  margin-bottom: 0;
+}
+
+.footer-columna a {
+  color: var(--gris-texto);
+  font-size: 16px;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.footer-columna a:hover {
+  color: var(--naranja);
+  padding-left: 8px;
+}
+
+/* COPYRIGHT */
+.footer-copy {
+  background-color: var(--footer-oscuro);
+  color: var(--blanco);
+  text-align: center;
+  padding: 20px 7%;
+}
+
+.footer-copy p {
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+}
+

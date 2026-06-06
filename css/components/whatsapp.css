@@ -1,0 +1,129 @@
+/* 12. WHATSAPP FLOTANTE */
+.whatsapp-flotante {
+  width: 58px;
+  height: 58px;
+  background-color: #25d366;
+  color: var(--blanco);
+  border-radius: 50%;
+  position: fixed;
+  right: 28px;
+  bottom: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--sombra-media);
+  z-index: 999;
+  transition: 0.3s ease;
+}
+
+.whatsapp-flotante i {
+  font-size: 32px;
+}
+
+.whatsapp-flotante:hover {
+  transform: scale(1.08);
+  background-color: #1ebe5d;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

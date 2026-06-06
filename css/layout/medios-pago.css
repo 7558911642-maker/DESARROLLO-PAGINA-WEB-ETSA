@@ -1,0 +1,176 @@
+/* 10. MEDIOS DE PAGO */
+.medios-pago {
+  width: 100%;
+  background-color: var(--footer-oscuro);
+  color: var(--blanco);
+  padding: 10px 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+  flex-wrap: wrap;
+}
+
+.medios-pago p {
+  font-weight: 900;
+}
+
+.medios-pago__items {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.medios-pago__items span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+}
+
+.medios-pago__items i {
+  font-size: 26px;
+}
+
+.breadcrumb-rutas {
+  padding: 18px 7%;
+  background: #ffffff;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.breadcrumb-rutas > .container,
+.breadcrumb-rutas > .container-fluid {
+  max-width: 1180px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.breadcrumb-rutas ol {
+  width: fit-content;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  padding: 9px 14px;
+  overflow-x: auto;
+  border: 1px solid rgba(15, 23, 42, 0.10);
+  border-radius: 999px;
+  background: rgba(248, 250, 252, 0.94);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+  list-style: none;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (min-width: 1025px) {
+  .breadcrumb-rutas {
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+
+  .breadcrumb-rutas ol {
+    padding: 13px 22px;
+    gap: 14px;
+    border-radius: 16px;
+    box-shadow: 0 16px 34px rgba(15, 23, 42, 0.09);
+  }
+
+  .breadcrumb-rutas li {
+    gap: 14px;
+    font-size: 15px;
+  }
+
+  .breadcrumb-rutas a {
+    gap: 9px;
+  }
+
+  .breadcrumb-rutas i {
+    font-size: 18px;
+  }
+}
+
+.breadcrumb-rutas ol::-webkit-scrollbar {
+  display: none;
+}
+
+.breadcrumb-rutas li {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #64748b;
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.breadcrumb-rutas li + li::before {
+  content: "/";
+  color: rgba(15, 23, 42, 0.36);
+  font-weight: 900;
+}
+
+.breadcrumb-rutas a {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--azul-oscuro);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.breadcrumb-rutas a:hover {
+  color: var(--naranja);
+}
+
+.breadcrumb-rutas i {
+  color: var(--naranja);
+  font-size: 15px;
+}
+
+.breadcrumb-rutas [aria-current="page"] {
+  color: var(--naranja);
+}
+
+.medios-pago--rutas {
+  padding: 6px 0;
+}
+
+.medios-pago--rutas .row {
+  --bs-gutter-x: 1rem;
+  --bs-gutter-y: 0.25rem;
+}
+
+.medios-pago--rutas p {
+  font-size: 13px;
+  line-height: 1;
+}
+
+.medios-pago--rutas .medios-pago__items {
+  gap: 18px;
+  flex-wrap: nowrap;
+}
+
+.medios-pago--rutas .medios-pago__items span {
+  gap: 6px;
+  font-size: 12px;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.medios-pago--rutas .medios-pago__items i {
+  font-size: 18px;
+}
+
+.footer-link-reclamos {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.footer-link-reclamos i {
+  color: var(--naranja);
+  font-size: 1rem;
+}
+

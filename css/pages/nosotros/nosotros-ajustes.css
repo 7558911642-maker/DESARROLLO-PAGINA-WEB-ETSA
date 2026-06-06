@@ -1,0 +1,271 @@
+/* ==================================================
+   AJUSTE FINAL - SECCION NOSOTROS COMO MAQUETA
+================================================== */
+
+.nosotros-section {
+  min-height: 100vh;
+  padding: 28px 0;
+  display: flex;
+  align-items: center;
+  background: #f5f7fb;
+}
+
+.nosotros-section .nosotros-card {
+  position: relative;
+  max-width: 1680px;
+  margin: 0 auto;
+  padding: 10px 10px;
+  border-radius: 24px;
+  background: #ffffff;
+  box-shadow: 0 18px 45px rgba(7, 22, 50, 0.10);
+  overflow: hidden;
+}
+
+.nosotros-section .nosotros-card > .row {
+  align-items: center;
+  --bs-gutter-x: 5rem;
+}
+
+.nosotros-section .section-label {
+  margin-bottom: 14px;
+  color: #ff6a00;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+}
+
+.nosotros-section .nosotros-title {
+  max-width: 700px;
+  margin-bottom: 20px;
+  color: #071632;
+  font-size: clamp(2.6rem, 3.8vw, 4.2rem);
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+.nosotros-section .nosotros-description {
+  max-width: 720px;
+  margin-bottom: 28px;
+  color: #4b5565;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.nosotros-section .valores-grid {
+  margin-bottom: 26px;
+}
+
+.nosotros-section .valor-card {
+  height: 150px;
+  padding: 22px 16px;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 10px 28px rgba(7, 22, 50, 0.11);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.nosotros-section .valor-icon {
+  margin-bottom: 14px;
+  color: #ff6a00;
+  font-size: 2.8rem;
+}
+
+.nosotros-section .valor-card h2,
+.nosotros-section .valor-card h3 {
+  margin: 0;
+  color: #071632;
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.nosotros-section .valor-card span {
+  width: 34px;
+  height: 3px;
+  margin-top: 12px;
+  background: #ff6a00;
+  border-radius: 20px;
+}
+
+.nosotros-section .mision-vision-card {
+  margin-bottom: 30px;
+}
+
+.nosotros-section .mision-item {
+  min-height: 190px;
+  padding: 24px 18px;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 10px 28px rgba(7, 22, 50, 0.11);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+}
+
+.nosotros-section .mision-item i {
+  color: #ff6a00;
+  font-size: 2.8rem;
+}
+
+.nosotros-section .mision-item h2,
+.nosotros-section .mision-item h3 {
+  margin: 0;
+  color: #071632;
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.nosotros-section .mision-item p {
+  max-width: 230px;
+  margin: 6px auto 0;
+  color: #4b5565;
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+.nosotros-section .separador {
+  display: none;
+}
+
+.nosotros-section .btn-nosotros {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  min-width: 360px;
+  padding: 16px 30px;
+  border-radius: 8px;
+  border: none;
+  background: #ff6a00;
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 0 12px 25px rgba(255, 106, 0, 0.28);
+}
+
+.nosotros-section .btn-nosotros:hover {
+  background: #e85f00;
+  color: #ffffff;
+}
+
+.nosotros-section .nosotros-image-box {
+  position: relative;
+  z-index: 2;
+  border-radius: 32px;
+}
+
+.nosotros-section .nosotros-image {
+  width: 100%;
+  height: 640px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 32px;
+  box-shadow: 0 18px 45px rgba(7, 22, 50, 0.14);
+}
+
+.nosotros-section .image-badge {
+  position: absolute;
+  left: -18px;
+  bottom: -18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 26px;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 12px 28px rgba(7, 22, 50, 0.14);
+}
+
+.nosotros-section .image-badge i {
+  color: #ff6a00;
+  font-size: 2rem;
+}
+
+.nosotros-section .image-badge p,
+.nosotros-section .image-badge span {
+  margin: 0;
+  color: #071632;
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.nosotros-section .image-badge strong {
+  color: #ff6a00;
+}
+
+.nosotros-section .nosotros-card::after {
+  content: "";
+  position: absolute;
+  top: 28px;
+  right: 34px;
+  width: 150px;
+  height: 150px;
+  background-image: radial-gradient(#ff6a00 2px, transparent 2px);
+  background-size: 18px 18px;
+  opacity: 0.25;
+}
+
+@media (max-height: 820px) and (min-width: 992px) {
+  .nosotros-section .nosotros-card {
+    padding: 44px 70px;
+  }
+
+  .nosotros-section .nosotros-title {
+    font-size: clamp(2.3rem, 3.4vw, 3.8rem);
+  }
+
+  .nosotros-section .nosotros-image {
+    height: 590px;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .nosotros-section {
+    min-height: auto;
+    padding: 40px 0;
+  }
+
+  .nosotros-section .nosotros-card {
+    padding: 46px 34px;
+  }
+
+  .nosotros-section .nosotros-card > .row {
+    --bs-gutter-x: 2rem;
+  }
+
+  .nosotros-section .nosotros-title {
+    font-size: clamp(2.25rem, 7vw, 3.4rem);
+  }
+
+  .nosotros-section .nosotros-image {
+    height: 440px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .nosotros-section {
+    padding: 32px 0;
+  }
+
+  .nosotros-section .nosotros-card {
+    padding: 34px 22px;
+    border-radius: 18px;
+  }
+
+  .nosotros-section .section-label {
+    font-size: 0.75rem;
+    letter-spacing: 4px;
+  }
+
+  .nosotros-section .nosotros-title {
+    font-size: 2.1rem;
+  }
+}
+

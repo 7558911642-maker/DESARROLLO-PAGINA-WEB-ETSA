@@ -1,0 +1,136 @@
+/* ESTILOS SECCIÓN PREGUNTAS FRECUENTES (FAQ) - ETSA SOL AMAZONENSE */
+.faq-hero {
+  width: 100%;
+  min-height: 330px;
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  padding: 70px 7%;
+  overflow: hidden;
+
+  background:url("../../../img/banners/preguntas-frecuentes-banner.png");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  border-bottom: 5px solid var(--naranja);
+}
+
+.faq-hero__contenido {
+  position: relative;
+  z-index: 2;
+  color: var(--blanco);
+}
+
+.faq-hero__subtitulo {
+  color: var(--blanco);
+  font-size: 32px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  margin-bottom: 4px;
+}
+
+.faq-hero__titulo {
+  color: var(--blanco);
+  font-size: clamp(64px, 9vw, 120px);
+  line-height: 0.95;
+  font-weight: 900;
+  text-transform: lowercase;
+  letter-spacing: 3px;
+}
+
+.faq-hero h1 {
+  font-size: 70px;
+  margin-bottom: 15px;
+}
+
+.faq-hero p {
+  font-size: 50px;
+  max-width: 650px;
+  margin: 0 auto;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+/* Contenedor del Acordeón */
+.faq-seccion {
+  background-color: var(--gris-claro);
+  padding: 60px 20px;
+}
+
+.faq-contenedor {
+  max-width: 850px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Tarjeta Individual del Elemento Details */
+.faq-item {
+  background-color: var(--blanco);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.faq-item:hover {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* Cabecera de la Pregunta (Summary) */
+.faq-pregunta {
+  padding: 22px 25px;
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--azul-oscuro);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none; /* Elimina la flecha por defecto en navegadores modernos */
+}
+
+/* Ocultar la flecha nativa en Safari / Navegadores antiguos */
+.faq-pregunta::-webkit-details-marker {
+  display: none;
+}
+
+/* Icono de Flecha de Bootstrap */
+.faq-pregunta i {
+  color: var(--naranja);
+  font-size: 16px;
+  transition: transform 0.3s ease;
+}
+
+/* Caja de la Respuesta Desplegada */
+.faq-respuesta {
+  padding: 0 25px 22px 25px;
+  border-top: 1px solid #edf2f7;
+  background-color: #fafbfc;
+}
+
+.faq-respuesta p {
+  font-size: 14.5px;
+  color: var(--gris-texto);
+  line-height: 1.6;
+  margin-top: 15px;
+}
+
+/* ESTADOS DE INTERACCIÓN (CSS PURO CON EL ELEMENTO ABIERTO) */
+
+/* Resaltar la pregunta activa */
+.faq-item[open] .faq-pregunta {
+  color: var(--azul-medio);
+}
+
+/* Rotar suavemente el icono hacia arriba */
+.faq-item[open] .faq-pregunta i {
+  transform: rotate(180deg);
+  color: var(--naranja-oscuro);
+}
+

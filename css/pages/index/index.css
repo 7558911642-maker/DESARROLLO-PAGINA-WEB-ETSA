@@ -1,0 +1,1690 @@
+/* ==================================================
+   INICIO CSS DEL INDEX
+   Contiene héroe, promociones, encomiendas, rutas y contacto
+================================================== */
+
+/* INDEX - HERO PRINCIPAL */
+.hero {
+  width: 100%;
+  min-height: 0px;
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+
+  padding: 45px 3%;
+  background-color: var(--azul-oscuro);
+}
+
+/* Imagen como fondo */
+.hero-img {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.hero-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: none;
+}
+
+/* Capa suave para que la imagen siga clara */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+
+  background: linear-gradient(
+    90deg,
+    rgba(21, 27, 50, 0),
+    rgba(218, 224, 236, 0.04)
+  );
+}
+
+/* Cuadro transparente donde van las letras */
+.hero-text {
+  position: relative;
+  z-index: 3;
+
+  max-width: 650px;
+  padding: 10px 10px;
+
+  background-color: rgba(25, 28, 41, 0.76);
+  border: 1px solid rgba(255, 255, 255, 0);
+  border-radius: 10px;
+  box-shadow: var(--sombra-media);
+  backdrop-filter: blur(0px);
+
+  color: var(--blanco);
+}
+
+/* Texto superior */
+.badge {
+  display: inline-block;
+  margin-bottom: 18px;
+
+  color:  #ea580c;
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* Título principal */
+.seguridad {
+  color:  #f7f7f7;
+  font-size: 50px;
+  line-height: 1.08;
+  font-weight: 900;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+}
+
+.seguridad .accent {
+  color:  #ea580c;
+}
+
+/*parrafo*/
+.hero-descripcion {
+  color: #f8fafc;
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+
+.hero-descripcion span {
+  color: #ea580c;
+  font-weight: 900;
+}
+
+/* Botones dentro del cuadro */
+.hero .botones {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-top: 0;
+}
+
+.hero .btn-primary {
+  background-color:  #f46a20;
+  color:  #ffffff;;
+  border: 1px solid #e5e7eb;
+  padding: 14px 10px;
+  border-radius: 40px;
+
+  font-size: 13px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.hero .btn-primary:hover {
+  background-color: #ea580c;
+  transform: translateY(-2px);
+  
+}
+
+.hero .btn-dark {
+  background-color: #020617;
+  color: #ffffff;
+  border: 1px solid #e5e7eb;
+  padding: 14px 30px;
+  border-radius: 40px;
+
+  font-size: 13px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.hero .btn-dark:hover {
+  background-color: #111827;
+  transform: translateY(-2px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* INDEX - PROMOCIONES */
+.index-promociones {
+  width: 100%;
+  padding: 70px 7% 85px;
+  background-color: #ffffff;
+}
+
+/* ENCABEZADO DE LA SECCIÓN */
+.index-promociones__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 36px;
+}
+
+.index-promociones__titulo-box {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.linea-naranja {
+  width: 8px;
+  height: 72px;
+  background-color: var(--naranja);
+  display: inline-block;
+}
+
+.index-promociones__subtitulo {
+  color: var(--naranja);
+  font-size: 15px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.index-promociones__header h2 {
+  color: var(--negro);
+  font-size: clamp(38px, 4vw, 58px);
+  line-height: 1.1;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+/* FLECHAS DECORATIVAS */
+.index-promociones__flechas {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.index-promociones__flechas button {
+  width: 58px;
+  height: 58px;
+  border: 3px solid var(--negro);
+  border-radius: 50%;
+  background-color: transparent;
+  color: var(--negro);
+  font-size: 27px;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: 0.3s ease;
+}
+
+.index-promociones__flechas button:hover {
+  background-color: var(--naranja);
+  border-color: var(--naranja);
+  color: var(--blanco);
+}
+
+/* GRID DE TARJETAS */
+.index-promociones__grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+/* TARJETA DE PROMOCIÓN */
+.promo-index-card {
+  min-height: 470px;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--azul-oscuro);
+  box-shadow: var(--sombra-suave);
+  transition: 0.3s ease;
+}
+
+.promo-index-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--sombra-media);
+}
+
+/* IMAGEN */
+.promo-index-card img {
+  width: 100%;
+  height: 100%;
+  min-height: 470px;
+  object-fit: cover;
+  object-position: center;
+  transition: 0.5s ease;
+}
+
+.promo-index-card:hover img {
+  transform: scale(1.06);
+}
+
+/* CAPA OSCURA SOBRE LA IMAGEN */
+.promo-index-card__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.06) 0%,
+    rgba(0, 0, 0, 0.38) 45%,
+    rgba(0, 0, 0, 0.88) 100%
+  );
+}
+
+/* CONTENIDO ENCIMA DE LA IMAGEN */
+.promo-index-card__contenido {
+  position: absolute;
+  left: 34px;
+  right: 34px;
+  bottom: 34px;
+  z-index: 2;
+  color: var(--blanco);
+}
+
+.promo-index-card__tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  color: var(--naranja);
+  font-size: 13px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+
+  margin-bottom: 14px;
+}
+
+.promo-index-card__tag i {
+  font-size: 18px;
+}
+
+.promo-index-card__contenido h3 {
+  color: var(--blanco);
+  font-size: 34px;
+  line-height: 1.08;
+  font-weight: 900;
+  margin-bottom: 14px;
+}
+
+.promo-index-card__contenido p {
+  color: #f8fafc;
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+/* BOTÓN MÁS INFORMACIÓN */
+.promo-index-card__boton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  padding: 13px 28px;
+  border-radius: 40px;
+  background-color: var(--naranja);
+  color: var(--blanco);
+
+  font-size: 14px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+
+  transition: 0.3s ease;
+}
+
+.promo-index-card__boton:hover {
+  background-color: var(--naranja-oscuro);
+  gap: 14px;
+}
+
+/* BOTÓN FINAL: VER TODAS LAS PROMOCIONES */
+.index-promociones__accion {
+  display: flex;
+  justify-content: center;
+  margin-top: 42px;
+}
+
+.index-promociones__accion .btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* INDEX - BANNER ENCOMIENDAS */
+
+.index-encomiendas {
+  width: 100%;
+  min-height: 430px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 70px 7%;
+  overflow: hidden;
+  background:url("../../../img/servicios/encomienda.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-top: 5px solid var(--naranja);
+}
+
+.index-encomiendas__contenido {
+  max-width: 520px;
+  color: var(--blanco);
+}
+
+.index-encomiendas__subtitulo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--blanco);
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.index-encomiendas__subtitulo i {
+  color: var(--naranja);
+  font-size: 30px;
+}
+
+.index-encomiendas h2 {
+  color: var(--blanco);
+  font-size: clamp(52px, 6vw, 82px);
+  line-height: 1;
+  font-weight: 900;
+  text-transform: lowercase;
+  letter-spacing: 3px;
+
+  margin-bottom: 24px;
+}
+
+.index-encomiendas__descripcion {
+  color: #f8fafc;
+  font-size: 21px;
+  line-height: 1.5;
+
+  margin-bottom: 32px;
+}
+
+.index-encomiendas__boton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-width: 210px;
+  padding: 14px 32px;
+  border: 2px solid var(--naranja);
+  border-radius: 40px;
+  color: var(--blanco);
+  background-color: var(--naranja);
+  font-size: 15px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  transition: 0.3s ease;
+}
+
+.index-encomiendas__boton:hover {
+  background-color: var(--naranja-oscuro);
+  border-color: var(--naranja-oscuro);
+  transform: translateY(-2px);
+}
+
+/* INDEX - RUTAS */
+.index-rutas {
+  width: 100%;
+  padding: 20px 7% 20px;
+  background-color: #ffffff;
+}
+
+/* ENCABEZADO */
+.index-rutas__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 36px;
+}
+
+.index-rutas__titulo-box {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.index-rutas__subtitulo {
+  color: var(--naranja);
+  font-size: 15px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.index-rutas__header h2 {
+  color: var(--negro);
+  font-size: clamp(38px, 4vw, 58px);
+  line-height: 1.1;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+/* FLECHAS DECORATIVAS */
+
+.index-rutas__flechas {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.index-rutas__flechas button {
+  width: 58px;
+  height: 58px;
+  border: 3px solid var(--negro);
+  border-radius: 50%;
+  background-color: transparent;
+  color: var(--negro);
+  font-size: 27px;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: 0.3s ease;
+}
+
+.index-rutas__flechas button:hover {
+  background-color: var(--naranja);
+  border-color: var(--naranja);
+  color: var(--blanco);
+}
+
+/* GRID DE RUTAS */
+.index-rutas__grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+/* CARD DE RUTA */
+.ruta-index-card {
+  min-height: 30px;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--azul-oscuro);
+  box-shadow: var(--sombra-suave);
+  transition: 0.3s ease;
+}
+
+.ruta-index-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--sombra-media);
+}
+
+.ruta-index-card img {
+  width: 100%;
+  height: 100%;
+  min-height: 390px;
+  object-fit: cover;
+  object-position: center;
+  transition: 0.5s ease;
+}
+
+.ruta-index-card:hover img {
+  transform: scale(1.06);
+}
+
+/* CAPA OSCURA */
+.ruta-index-card__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.12) 0%,
+    rgba(0, 0, 0, 0.45) 45%,
+    rgba(0, 0, 0, 0.90) 100%
+  );
+}
+
+/* CONTENIDO */
+.ruta-index-card__contenido {
+  position: absolute;
+  left: 28px;
+  right: 28px;
+  bottom: 28px;
+  z-index: 2;
+  color: var(--blanco);
+}
+
+.ruta-index-card__contenido::before {
+  content: "";
+  position: absolute;
+  left: -28px;
+  top: 92px;
+  width: 7px;
+  height: 86px;
+  background-color: var(--naranja);
+}
+
+.ruta-index-card__contenido p {
+  color: var(--blanco);
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.ruta-index-card__contenido h3 {
+  color: var(--blanco);
+  font-size: 30px;
+  line-height: 1.05;
+  font-weight: 900;
+  margin-bottom: 24px;
+}
+
+.ruta-index-card__contenido span {
+  display: block;
+  color: #f8fafc;
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.ruta-index-card__contenido strong {
+  display: block;
+  color: var(--blanco);
+  font-size: 46px;
+  line-height: 1;
+  font-weight: 900;
+  margin-bottom: 26px;
+}
+
+/* BOTÓN CONOCE MÁS */
+.ruta-index-card__contenido a {
+  width: 100%;
+  max-width: 260px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  padding: 13px 24px;
+  border: 2px solid var(--blanco);
+  border-radius: 40px;
+
+  color: var(--blanco);
+  background-color: transparent;
+
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  transition: 0.3s ease;
+}
+
+.ruta-index-card__contenido a:hover {
+  background-color: var(--naranja);
+  border-color: var(--naranja);
+}
+
+/* BOTÓN FINAL */
+.index-rutas__accion {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.index-rutas__accion .btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* INDEX - CONTACTO TARJETAS */
+.index-contacto {
+  background-image:
+    linear-gradient(rgba(5, 15, 30, 0.78), rgba(5, 15, 30, 0.78)),
+    url("../../../img/rutas/chachapoyas.png");
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+}
+
+.index-contacto__descripcion {
+  max-width: 650px;
+}
+
+/* TARJETAS DE CONTACTO */
+.contacto-card {
+  min-height: 180px;
+  padding: 28px 22px;
+  border: 1px solid rgba(37, 99, 235, 0.35);
+  border-radius: 18px;
+  background: rgba(15, 23, 42, 0.85);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.18);
+  backdrop-filter: blur(8px);
+
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.contacto-card__icono {
+  width: 68px;
+  height: 68px;
+  min-width: 68px;
+  border: 3px solid #3b82f6;
+  border-radius: 50%;
+  color: #3b82f6;
+  background-color: rgba(59, 130, 246, 0.1);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contacto-card__icono i {
+  font-size: 24px;
+}
+
+.contacto-card p {
+  margin-bottom: 6px;
+  color: #dbeafe;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.contacto-card strong,
+.contacto-card a {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.35;
+  text-decoration: none;
+}
+
+.contacto-card a:hover {
+  color: #93c5fd;
+}
+
+/* BOTÓN CONTACTO */
+.index-contacto__boton {
+  background-color: #f97316;
+  color: #ffffff;
+  border: 2px solid #000000;
+  padding: 12px 30px;
+  border-radius: 999px;
+  font-weight: 800;
+  letter-spacing: 0.6px;
+  transition: all 0.3s ease;
+}
+
+.index-contacto__boton:hover {
+  background-color: #ea580c;
+  color: #ffffff;
+  border-color: #000000;
+  transform: translateY(-2px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* INDEX - CONTACTO / ATENCIÓN Y RESERVAS */
+
+.index-contacto {
+  width: 100%;
+  min-height: 650px;
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  padding: 85px 0;
+  overflow: hidden;
+
+  background-image: url("../../../img/rutas/chachapoyas.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  border-top: 5px solid var(--naranja);
+}
+
+.index-contacto__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+
+  background: linear-gradient(
+    90deg,
+    rgba(2, 15, 33, 0.96) 0%,
+    rgba(2, 15, 33, 0.88) 34%,
+    rgba(2, 15, 33, 0.50) 58%,
+    rgba(2, 15, 33, 0.10) 100%
+  );
+}
+
+.index-contacto__contenido {
+  position: relative;
+  z-index: 2;
+  color: var(--blanco);
+}
+
+.index-contacto__subtitulo {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+
+  color: var(--naranja);
+  font-size: 15px;
+  font-weight: 900;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+
+  margin-bottom: 28px;
+}
+
+.index-contacto__subtitulo i {
+  font-size: 38px;
+}
+
+.index-contacto h2 {
+  color: var(--blanco);
+  font-size: clamp(56px, 6vw, 92px);
+  line-height: 1.08;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+
+  margin-bottom: 28px;
+}
+
+.index-contacto__descripcion {
+  max-width: 520px;
+  color: #f8fafc;
+  font-size: 23px;
+  line-height: 1.55;
+  margin-bottom: 34px;
+}
+
+.index-contacto__cards {
+  max-width: 720px;
+  margin-bottom: 38px;
+}
+
+/* TARJETAS DE CONTACTO */
+.contacto-card {
+  min-height: 130px;
+
+  display: flex;
+  align-items: center;
+  gap: 24px;
+
+  padding: 24px 28px;
+
+  background-color: rgba(30, 64, 175, 0.85);
+  border: 1px solid rgba(96, 165, 250, 0.45);
+  border-radius: 12px;
+
+  color: var(--blanco);
+  backdrop-filter: blur(4px);
+}
+
+.contacto-card__icono {
+  width: 74px;
+  height: 74px;
+  min-width: 74px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 3px solid #60a5fa;
+  border-radius: 50%;
+
+  color: #60a5fa;
+  background-color: rgba(96, 165, 250, 0.12);
+}
+
+.contacto-card__icono i {
+  font-size: 24px;
+}
+
+.contacto-card p {
+  color: #dbeafe;
+  font-size: 14px;
+  line-height: 1.4;
+  margin-bottom: 6px;
+}
+
+.contacto-card strong {
+  display: block;
+  color: var(--blanco);
+  font-size: 16px;
+  line-height: 1.35;
+  font-weight: 700;
+}
+
+/* BOTÓN CONTACTO */
+.index-contacto__boton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+
+  padding: 18px 44px;
+  border-radius: 50px;
+
+  background-color: var(--naranja);
+  color: var(--blanco);
+
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  transition: 0.3s ease;
+}
+
+.index-contacto__boton:hover {
+  background-color: var(--naranja-oscuro);
+  color: var(--blanco);
+  gap: 22px;
+  transform: translateY(-2px);
+}
+
+.index-contacto__boton i {
+  font-size: 24px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* INDEX - RESPONSIVE CONTACTO */
+@media (max-width: 991.98px) {
+  .index-contacto {
+    min-height: auto;
+    padding: 70px 0;
+    background-position: center;
+  }
+
+  .index-contacto__overlay {
+    background: rgba(2, 15, 33, 0.78);
+  }
+
+  .index-contacto h2 {
+    font-size: 56px;
+  }
+
+  .index-contacto__descripcion {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .index-contacto {
+    padding: 55px 0;
+  }
+
+  .index-contacto__subtitulo {
+    font-size: 14px;
+    letter-spacing: 2px;
+    gap: 10px;
+  }
+
+  .index-contacto__subtitulo i {
+    font-size: 28px;
+  }
+
+  .index-contacto h2 {
+    font-size: 42px;
+    letter-spacing: 2px;
+  }
+
+  .index-contacto__descripcion {
+    font-size: 17px;
+  }
+
+  .contacto-card {
+    min-height: auto;
+    padding: 20px;
+    gap: 18px;
+  }
+
+  .contacto-card__icono {
+    width: 58px;
+    height: 58px;
+    min-width: 58px;
+  }
+
+  .contacto-card__icono i {
+    font-size: 26px;
+  }
+
+  .contacto-card p {
+    font-size: 15px;
+  }
+
+  .contacto-card strong {
+    font-size: 17px;
+  }
+
+  .index-contacto__boton {
+    width: 100%;
+    padding: 16px 28px;
+    font-size: 16px;
+  }
+}
+
+
+/* =
+   ADAPTACIÓN BOOTSTRAP - ETSA
+   Mantiene tu diseño visual, pero ahora la estructura usa
+   container, row y col de Bootstrap.
+   */
+
+/* Bootstrap agrega margin-bottom a algunos elementos; se controla para que tu diseño no cambie */
+p,
+ul,
+figure {
+  margin-bottom: 0;
+}
+
+/* HEADER CON BOOTSTRAP */
+.header.navbar {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.header .container-fluid {
+  min-height: 84px;
+  align-items: center;
+}
+
+.header .nav-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 0;
+}
+
+.header__nav .nav-link.activo,
+.header__nav .nav-link:hover {
+  color: var(--naranja);
+}
+
+.menu-bootstrap {
+  width: 320px;
+}
+
+.menu-bootstrap .offcanvas-title {
+  font-size: 24px;
+  font-weight: 900;
+  color: var(--azul-profundo);
+}
+
+.menu-bootstrap .nav-link {
+  color: var(--azul-profundo);
+  font-size: 18px;
+  font-weight: 700;
+  padding: 0;
+}
+
+.menu-bootstrap .nav-link:hover,
+.menu-bootstrap .nav-link.activo {
+  color: var(--naranja);
+}
+
+/* HERO: se mantiene el aspecto actual, pero el contenido vive dentro de container/row/col */
+.hero .container-fluid {
+  position: relative;
+  z-index: 3;
+}
+
+/* SECCIONES: el padding lateral ahora lo maneja Bootstrap container */
+.index-promociones,
+.index-rutas {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.index-encomiendas,
+.index-contacto {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* TARJETAS DENTRO DE COLUMNAS BOOTSTRAP */
+.promo-index-card,
+.ruta-index-card {
+  width: 100%;
+}
+
+.promo-index-card img,
+.ruta-index-card img {
+  height: 100%;
+}
+
+/* En Bootstrap, .btn-primary ya existe. Tu estilo personalizado debe dominar. */
+.btn-primary {
+  border: none;
+}
+
+/* MEDIOS DE PAGO CON GRID DE BOOTSTRAP */
+.medios-pago {
+  display: block;
+  padding: 10px 0;
+}
+
+.medios-pago__items {
+  justify-content: center;
+}
+
+/* FOOTER CON ROW/COL DE BOOTSTRAP */
+.footer-contenedor {
+  width: 100%;
+  margin: 0;
+  padding: 45px 0;
+  display: flex;
+  gap: 0;
+}
+
+.footer-contenedor.row {
+  --bs-gutter-x: 3rem;
+  --bs-gutter-y: 2rem;
+}
+
+.footer-columna {
+  min-height: 100%;
+}
+
+
+
+
+/* RESPONSIVE */
+@media (max-width: 991px) {
+  .header {
+    gap: 12px;
+  }
+
+  .header__logo img {
+    width: 170px;
+  }
+
+  .reserva {
+    border-left: none;
+    border-right: none;
+    margin-left: auto;
+    margin-right: 10px;
+  }
+
+  .hero {
+    padding: 42px 0;
+  }
+
+  .hero-text {
+    max-width: 100%;
+  }
+
+  .index-promociones__header,
+  .index-rutas__header {
+    align-items: flex-start;
+  }
+
+  .footer-columna {
+    border-left: none;
+    padding-left: 0;
+  }
+
+  .medios-pago--rutas {
+    padding: 5px 0;
+  }
+
+  .medios-pago--rutas .container {
+    max-width: 100%;
+  }
+
+  .medios-pago--rutas .row {
+    flex-wrap: nowrap;
+    gap: 12px;
+  }
+
+  .medios-pago--rutas .col-12 {
+    width: auto;
+    flex: 0 0 auto;
+  }
+
+  .medios-pago--rutas .medios-pago__items {
+    gap: 14px;
+  }
+
+  .footer-principal--rutas {
+    text-align: center;
+  }
+
+  .footer-principal--rutas .row {
+    justify-content: center;
+  }
+
+  .footer-principal--rutas .row > [class*="col-"] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-principal--rutas .nav {
+    align-items: center;
+  }
+
+  .footer-principal--rutas [aria-label="Redes sociales"] {
+    justify-content: center;
+  }
+
+  .footer-principal--rutas address {
+    max-width: 360px;
+  }
+}
+
+@media (max-width: 767px) {
+  .index-promociones__header,
+  .index-rutas__header {
+    flex-direction: column;
+  }
+
+  .linea-naranja {
+    height: 58px;
+  }
+
+  .promo-index-card,
+  .promo-index-card img {
+    min-height: 430px;
+  }
+
+  .ruta-index-card img {
+    min-height: 390px;
+  }
+}
+
+@media (max-width: 575px) {
+  .header {
+    padding: 0 12px;
+  }
+
+  .header .container-fluid {
+    min-height: 70px;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .header__logo img {
+    width: 145px;
+  }
+
+  .btn-menu,
+  .icono-menu {
+    font-size: 32px;
+  }
+
+  .hero {
+    padding: 32px 0;
+  }
+
+  .hero-text {
+    padding: 22px 18px;
+  }
+
+  .badge {
+    font-size: 13px;
+    letter-spacing: 1.3px;
+  }
+
+  .seguridad {
+    font-size: 36px;
+    letter-spacing: 2px;
+  }
+
+  .hero-descripcion {
+    font-size: 15px;
+  }
+
+  .hero .btn-primary,
+  .hero .btn-dark {
+    width: 100%;
+    text-align: center;
+  }
+
+  .index-promociones,
+  .index-rutas {
+    padding-top: 52px;
+    padding-bottom: 60px;
+  }
+
+  .index-encomiendas,
+  .index-contacto {
+    min-height: 380px;
+  }
+
+  .footer-logo {
+    width: 200px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* FIN CSS DEL INDEX */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

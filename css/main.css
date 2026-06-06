@@ -1,0 +1,35 @@
+/* CSS principal modular de ETSA Sol Amazonense. */
+/* Mantiene el orden original de css/styles.css para conservar el diseno actual. */
+@import url("./base/reset.css");
+@import url("./base/variables.css");
+@import url("./base/base.css");
+@import url("./layout/header.css");
+@import url("./components/buttons.css");
+@import url("./components/contacto-general.css");
+@import url("./layout/medios-pago.css");
+@import url("./layout/footer.css");
+@import url("./components/whatsapp.css");
+@import url("./pages/index/index.css");
+@import url("./pages/nosotros/nosotros.css");
+@import url("./pages/servicios/servicios.css");
+@import url("./pages/rutas/rutas.css");
+@import url("./pages/encomiendas/encomiendas.css");
+@import url("./pages/promociones/promociones.css");
+@import url("./pages/preguntas-frecuentes/preguntas-frecuentes.css");
+@import url("./pages/testimonios/testimonios.css");
+@import url("./pages/info-viaje/info-viaje.css");
+@import url("./pages/contacto/contacto.css");
+@import url("./responsive/site-responsive.css");
+@import url("./pages/index/index-resumenes.css");
+@import url("./pages/nosotros/nosotros-ajustes.css");
+@import url("./pages/detalles-rutas/detalles-rutas.css");
+@import url("./responsive/final-responsive.css");
+
+/* Espacios por pagina para nuevos estilos sin tocar modulos compartidos. */
+@import url("./pages/codigo-etica/codigo-etica.css");
+@import url("./pages/facturacion/facturacion.css");
+@import url("./pages/libro_reclamos/libro_reclamos.css");
+@import url("./pages/politicas-privacidad/politicas-privacidad.css");
+@import url("./pages/reserva/reserva.css");
+@import url("./pages/terminos-encomiendas/terminos-encomiendas.css");
+@import url("./pages/terminos-viaje/terminos-viaje.css");

@@ -1,0 +1,1593 @@
+/* 
+   RESPONSIVE.CSS — ETSA SOL AMAZONENSE
+   Sistema de diseño adaptable para todos los dispositivos
+
+   Breakpoints oficiales (según docente):
+     · Smartphone   : 0px   – 480px
+     · Tablet       : 481px – 768px
+     · PC Pequeña   : 769px – 1024px
+     · Laptop       : 1025px – 1200px
+     · Desktop / TV : 1201px en adelante
+
+   Orden de las secciones:
+     00. BASE GLOBAL — evitar desbordamientos en todos los tamaños
+     01. SMARTPHONE  (max-width: 480px)
+     02. TABLET      (481px – 768px)
+     03. PC PEQUEÑA  (769px – 1024px)
+     04. LAPTOP      (1025px – 1200px)
+     05. DESKTOP/TV  (1201px+)   */
+
+/* 00. BASE GLOBAL
+   Reglas que aplican a TODOS los tamaños y evitan scroll horizontal */
+/* Elimina el scroll horizontal en la raíz */
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Ningún elemento puede exceder el ancho de su contenedor */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+/* Las imágenes nunca se estiran ni desbordan */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;   /* Recorte elegante cuando hay altura fija */
+}
+
+/* Las secciones no generan overflow oculto inesperado en escritorio */
+section {
+  width: 100%;
+}
+
+/* 01. SMARTPHONE — 0px a 480px */
+@media screen and (max-width: 480px) {
+
+  /*  TIPOGRAFÍA GLOBAL
+     Garantiza legibilidad en pantallas pequeñas */
+  * {
+    word-wrap: break-word;      /* Corta palabras largas sin romper el layout */
+    overflow-wrap: break-word;
+  }
+
+  p {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  /*HEADER — Menú apilado verticalmente */
+  .header {
+    flex-direction: row;           /* Logo izquierda, hamburguesa derecha */
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 5%;
+    gap: 10px;
+  }
+
+  /* El nav no se muestra inline en móvil; el JS del panel lateral lo controla */
+  .header__nav {
+    display: none;
+  }
+
+  /* El logo se adapta al espacio disponible */
+  .header__logo img,
+  .logo img {
+    width: 140px;
+  }
+
+  /* Botón reserva: ancho completo para fácil toque */
+  .btn-reserva {
+    width: 100%;
+    text-align: center;
+    padding: 12px;
+    border-radius: 30px;
+    font-size: 13px;
+  }
+
+  /* Botón hamburguesa siempre visible */
+  .btn-menu {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    font-size: 32px;
+  }
+
+  /* HEROES — Todos los banners superiores */
+  .hero,
+  .hero-viaje,
+  .nosotros-hero,
+  .servicios-hero,
+  .rutas-hero,
+  .encomiendas-hero,
+  .promociones-hero,
+  .faq-hero,
+  .testimonios-hero,
+  .contacto-hero {
+    padding: 50px 5% 55px;
+    text-align: center;
+    background-position: center center;
+    background-size: cover;
+    min-height: auto;
+  }
+
+  /* Títulos H1 de los heroes */
+  .hero h1,
+  .seguridad,
+  .hero-viaje__contenido h1,
+  .nosotros-hero__contenido h1,
+  .servicios-hero__contenido h1,
+  .rutas-hero__contenido h1,
+  .promociones-hero__titulo,
+  .faq-hero__titulo,
+  .testimonios-hero__contenido h1,
+  .contacto-hero h1 {
+    font-size: 38px !important;
+    line-height: 1.1 !important;
+    letter-spacing: 2px;
+  }
+
+  /* Subtítulos/descripciones de los heroes */
+  .hero-viaje__contenido p,
+  .nosotros-hero__contenido p,
+  .servicios-hero__contenido p,
+  .rutas-hero__contenido p,
+  .promociones-hero__subtitulo,
+  .faq-hero__subtitulo,
+  .testimonios-hero__contenido p {
+    font-size: 16px;
+    letter-spacing: 1px;
+  }
+
+  /* Cuadro de texto del hero del index */
+  .hero-text {
+    max-width: 100%;
+    padding: 18px 16px;
+  }
+
+  /* Botones del hero centrados */
+  .hero .botones {
+    justify-content: center;
+  }
+
+  .hero .btn-primary,
+  .hero .btn-dark {
+    width: 100%;
+    text-align: center;
+    padding: 14px;
+  }
+
+  /* Encomiendas hero: título grande clampea bien solo */
+  .encomiendas-hero__overlay h1 {
+    font-size: clamp(40px, 12vw, 70px);
+  }
+
+  /*INDEX — PROMOCIONES CARDS */
+  .index-promociones {
+    padding: 50px 5% 60px;
+  }
+
+  /* Header de la sección: apila título y flechas */
+  .index-promociones__header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+  }
+
+  .index-promociones__header h2 {
+    font-size: 32px;
+  }
+
+  /* Grid: 1 columna en móvil */
+  .index-promociones__grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  /* Las tarjetas con imagen ocupan toda la anchura */
+  .promo-index-card {
+    min-height: 320px;
+  }
+
+  .promo-index-card img {
+    min-height: 320px;
+  }
+
+  .promo-index-card__contenido h3 {
+    font-size: 24px;
+  }
+
+
+  /* INDEX — RUTAS CARDS */
+  .index-rutas {
+    padding: 40px 5%;
+  }
+
+  .index-rutas__header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+  }
+
+  .index-rutas__header h2 {
+    font-size: 32px;
+  }
+
+  /* Grid: 1 columna */
+  .index-rutas__grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .ruta-index-card img {
+    min-height: 300px;
+  }
+
+  .ruta-index-card__contenido h3 {
+    font-size: 26px;
+  }
+
+  .ruta-index-card__contenido strong {
+    font-size: 36px;
+  }
+
+  /* Botón ver ruta: ancho completo */
+  .ruta-index-card__contenido a {
+    width: 100%;
+    max-width: 100%;
+  }
+
+
+  /* INDEX — BANNER ENCOMIENDAS */
+  .index-encomiendas {
+    padding: 55px 5%;
+    text-align: center;
+  }
+
+  .index-encomiendas__contenido {
+    max-width: 100%;
+  }
+
+  .index-encomiendas h2 {
+    font-size: clamp(40px, 11vw, 65px);
+  }
+
+  .index-encomiendas__descripcion {
+    font-size: 16px;
+  }
+
+  .index-encomiendas__boton {
+    width: 100%;
+    justify-content: center;
+  }
+
+
+  /* INDEX — BANNER CONTACTO */
+  .index-contacto {
+    padding: 55px 5%;
+    text-align: center;
+  }
+
+  .index-contacto h2 {
+    font-size: clamp(32px, 10vw, 52px);
+  }
+
+  .index-contacto__descripcion {
+    font-size: 16px;
+  }
+
+  .index-contacto__datos {
+    text-align: left;
+  }
+
+  .index-contacto__boton {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /*  NOSOTROS — Presentación, misión/visión, valores */
+  .nosotros-presentacion {
+    width: 90%;
+    margin: 60px auto 50px;
+  }
+
+  .nosotros-presentacion h2 {
+    font-size: 30px;
+  }
+
+  /* Misión y Visión: apila las dos columnas */
+  .mision-vision {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    width: 90%;
+  }
+
+  /* Oculta la línea divisoria central */
+  .mision-vision::before {
+    display: none;
+  }
+
+  .mision-vision__item {
+    padding: 0;
+  }
+
+  /* Valores: 2 columnas en móvil (caben bien) */
+  .valores__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .valor-card {
+    height: 180px;
+  }
+
+  .valor-card h3 {
+    font-size: 15px;
+    bottom: 16px;
+  }
+
+
+  /* SERVICIOS — Tarjetas de servicios */
+  .servicios-frase {
+    padding: 32px 5%;
+  }
+
+  .servicios {
+    padding: 20px 5%;
+    overflow: hidden;
+  }
+
+  /* Fuerza columna única */
+  .servicios__contenedor {
+    grid-template-columns: 1fr !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 20px !important;
+    width: 100% !important;
+  }
+
+  .servicio-card {
+    width: 92% !important;
+    max-width: 380px !important;
+    margin: 0 auto !important;
+    min-height: auto;
+  }
+
+
+  /* ENCOMIENDAS — ¿Por qué elegirnos? y bloques de servicio */
+  .porque-elegirnos {
+    padding: 50px 5% 60px;
+  }
+
+  /* Grid: 1 columna */
+  .porque-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .porque-card img {
+    height: 220px;
+  }
+
+  /* Bloques alternativos de servicios: apilados */
+  .servicio-bloque,
+  .servicio-bloque--invertido {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .servicio-imagen img {
+    height: 220px;
+  }
+
+
+  /* RUTAS — Galería de destinos  */
+  .rutas-seccion {
+    padding: 50px 5% 65px;
+  }
+
+  .rutas-header h2 {
+    font-size: 34px;
+  }
+
+  /* Grid: 1 columna */
+  .galeria-destinos {
+    grid-template-columns: 1fr !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 20px !important;
+  }
+
+  .tarjeta-ruta {
+    width: 92% !important;
+    max-width: 400px !important;
+    margin: 0 auto !important;
+    min-height: 280px;
+  }
+
+  .tarjeta-ruta img {
+    min-height: 280px;
+  }
+
+  .tarjeta-ruta__contenido h3 {
+    font-size: 26px;
+  }
+
+  /* Botón conoce más: ancho completo */
+  .tarjeta-ruta__contenido a {
+    width: 100%;
+  }
+
+  /* PROMOCIONES — Sección de tarjetas con imágenes */
+  .promociones-seccion {
+    padding: 50px 5% 65px;
+  }
+
+  /* Grid: 1 columna */
+  .promociones-container {
+    grid-template-columns: 1fr !important;
+    gap: 35px;
+  }
+
+  .promocion-card {
+    width: 92% !important;
+    max-width: 400px !important;
+    margin: 0 auto !important;
+    height: auto !important;
+    min-height: unset !important;
+  }
+
+  /* La imagen no se deforma: altura fija elegante */
+  .promocion-imagen {
+    height: 260px !important;
+  }
+
+  .promocion-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  /* Botón "Más información" */
+  .btn-mas-info {
+    width: 100%;
+    min-width: unset;
+    font-size: 15px;
+    padding: 13px 16px;
+  }
+
+  /* Modal: casi ancho completo */
+  .modal-ventana {
+    max-width: 95%;
+    border-radius: 12px;
+  }
+
+  /* INFO PARA TU VIAJE — Políticas, adicional, equipaje */
+
+  /* Políticas: 1 columna */
+  .politicas-viaje__grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .politica-card figure {
+    height: 240px;
+  }
+
+  /* Info adicional: 1 columna */
+  .info-adicional__grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .info-card figure {
+    height: 240px;
+  }
+
+  /* Equipaje: 1 columna */
+  .equipaje__grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .equipaje-card figure {
+    height: 220px;
+  }
+
+
+  /* TESTIMONIOS — Tarjetas y formulario */
+  .testimonios {
+    padding: 20px 5% 65px;
+  }
+
+  /* Grid: 1 columna */
+  .testimonios__grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .testimonio-card {
+    min-height: auto;
+    padding: 36px 24px 32px;
+  }
+
+  /* Formulario de testimonio */
+  .emitir-testimonio {
+    padding: 60px 5%;
+  }
+
+  .emitir-testimonio__contenido {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .testimonio-form {
+    padding: 26px 18px;
+  }
+
+  /* Fila de inputs → 1 columna */
+  .testimonio-form__fila {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  /* Botón enviar: ancho completo */
+  .testimonio-form button {
+    width: 100%;
+    align-self: stretch;
+  }
+
+  /* CONTACTO — Formulario y atención al cliente */
+  .contacto-formulario-seccion {
+    width: 90%;
+    padding: 50px 0 65px;
+  }
+
+  /* Intro: apila texto y descripción */
+  .contacto-intro {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  /* Borde naranja pasa de vertical a horizontal */
+  .contacto-intro__texto {
+    padding-right: 0;
+    border-right: none;
+    border-bottom: 2px solid var(--naranja);
+    padding-bottom: 22px;
+  }
+
+  /* Tabs: apilados */
+  .contacto-tabs {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .contacto-tab {
+    width: 100%;
+    justify-content: center;
+    padding: 13px;
+  }
+
+  /* Filas del formulario: 1 columna */
+  .form-contacto__fila {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  /* Botón enviar: ancho completo y centrado */
+  .form-contacto button[type="submit"] {
+    width: 100%;
+  }
+
+  .form-contacto__accion {
+    justify-content: center;
+  }
+
+  /* Atención al cliente: 1 columna */
+  .atencion-cliente__grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+
+  /* PREGUNTAS FRECUENTES */
+  .faq-seccion {
+    padding: 50px 5%;
+  }
+
+  .faq-pregunta {
+    font-size: 14px;
+    padding: 18px 18px;
+  }
+
+  /*  FOOTER  */
+  /* Apila las 4 columnas del footer */
+  .footer-contenedor {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 40px 5%;
+    width: 90%;
+  }
+
+  /* Quita el borde izquierdo de las columnas apiladas */
+  .footer-columna {
+    border-left: none;
+    padding-left: 0;
+    border-top: 1px solid #e5e7eb;
+    padding-top: 28px;
+  }
+
+  .footer-marca {
+    border-top: none;
+    padding-top: 0;
+  }
+
+  .footer-logo {
+    width: 180px;
+  }
+
+  .footer-copy {
+    padding: 18px 5%;
+    font-size: 13px;
+  }
+
+  /* Medios de pago: apila los ítems */
+  .medios-pago {
+    flex-direction: column;
+    gap: 18px;
+    padding: 20px 5%;
+    text-align: center;
+  }
+
+  .medios-pago__items {
+    justify-content: center;
+    gap: 20px;
+  }
+
+  /* WhatsApp flotante: un poco más pequeño */
+  .whatsapp-flotante {
+    width: 50px;
+    height: 50px;
+    right: 16px;
+    bottom: 16px;
+  }
+
+  .whatsapp-flotante i {
+    font-size: 26px;
+  }
+
+} /* fin @media SMARTPHONE */
+
+
+/* 02. TABLET — 481px a 768px */
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+
+  /* HEADER */
+  .header {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 5%;
+    gap: 12px;
+  }
+
+  .header__nav {
+    display: none; /* El menú lateral controla la navegación */
+  }
+
+  .header__logo img,
+  .logo img {
+    width: 160px;
+  }
+
+  .btn-menu {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  .btn-reserva {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+   
+  }
+
+
+  /* HEROES */
+  .hero,
+  .hero-viaje,
+  .nosotros-hero,
+  .servicios-hero,
+  .rutas-hero,
+  .encomiendas-hero,
+  .promociones-hero,
+  .faq-hero,
+  .testimonios-hero,
+  .contacto-hero {
+    padding: 60px 6%;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .hero h1,
+  .seguridad,
+  .hero-viaje__contenido h1,
+  .nosotros-hero__contenido h1,
+  .servicios-hero__contenido h1,
+  .rutas-hero__contenido h1,
+  .promociones-hero__titulo,
+  .faq-hero__titulo,
+  .testimonios-hero__contenido h1,
+  .contacto-hero h1 {
+    font-size: clamp(44px, 8vw, 68px) !important;
+    line-height: 1.05 !important;
+  }
+
+
+  /* INDEX — Grids de promociones y rutas */
+
+  /* Promociones index: 2 columnas */
+  .index-promociones__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+
+  .index-promociones__header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  /* Rutas index: 2 columnas */
+  .index-rutas__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .index-rutas__header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  /* Banner encomiendas y contacto */
+  .index-encomiendas,
+  .index-contacto {
+    padding: 60px 6%;
+    text-align: left;
+  }
+
+
+  /* NOSOTROS */
+  .mision-vision {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    width: 90%;
+  }
+
+  .mision-vision::before {
+    display: none;
+  }
+
+  /* Valores: 3 columnas en tablet */
+  .valores__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+
+
+  /*  SERVICIOS */
+  /* 2 columnas en tablet */
+  .servicios__contenedor {
+    grid-template-columns: repeat(2, 1fr) !important;
+    display: grid !important;
+    gap: 18px !important;
+    width: 100% !important;
+    align-items: stretch !important;
+  }
+
+  .servicio-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    min-height: auto;
+  }
+
+
+  /* ENCOMIENDAS — Por qué elegirnos */
+  .porque-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .porque-card {
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  /* Bloques de servicio: 1 columna */
+  .servicio-bloque,
+  .servicio-bloque--invertido {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+
+  /* RUTAS  */
+  .galeria-destinos {
+    grid-template-columns: repeat(2, 1fr) !important;
+    display: grid !important;
+    gap: 20px !important;
+  }
+
+  .tarjeta-ruta {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+  }
+
+
+  /* PROMOCIONES */
+  /* 1 columna centrada en tablet (las imágenes son altas) */
+  .promociones-container {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    justify-items: center;
+  }
+
+  .promocion-card {
+    width: 100% !important;
+    max-width: 480px !important;
+    height: auto !important;
+    min-height: unset !important;
+  }
+
+  .promocion-imagen {
+    height: 280px !important;
+  }
+
+  .btn-mas-info {
+    width: 80%;
+    text-align: center;
+  }
+
+
+  /*  INFO VIAJE */
+  /* Políticas e Info adicional: 2 columnas */
+  .politicas-viaje__grid,
+  .info-adicional__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .politica-card figure,
+  .info-card figure {
+    height: 240px;
+  }
+
+  /* Equipaje: 2 columnas */
+  .equipaje__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+
+  /* TESTIMONIOS */
+  /* 2 columnas en tablet */
+  .testimonios__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  /* Formulario de testimonio: 1 columna */
+  .emitir-testimonio__contenido {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .testimonio-form__fila {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+
+  /* CONTACTO */
+  .contacto-intro {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .contacto-intro__texto {
+    padding-right: 0;
+    border-right: none;
+    border-bottom: 2px solid var(--naranja);
+    padding-bottom: 22px;
+  }
+
+  .contacto-tabs {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .contacto-tab {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .form-contacto__fila {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Atención al cliente: 1 columna */
+  .atencion-cliente__grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+
+  /* FOOTER */
+  /* 2 columnas */
+  .footer-contenedor {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    padding: 40px 5%;
+    width: 92%;
+  }
+
+  .footer-columna:nth-child(odd) {
+    border-left: none;
+    padding-left: 0;
+  }
+
+  .medios-pago {
+    gap: 24px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+} /* fin @media TABLET */
+
+
+/* 03. PC PEQUEÑA — 769px a 1024px */
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+
+  /*  HEADER — Navegación visible */
+  .header {
+    padding: 0 4%;
+    gap: 16px;
+  }
+
+  .header__nav,
+  .header__nav ul {
+    display: flex;
+   
+  }
+
+  .header__nav a {
+    font-size: 15px;
+  }
+
+  .btn-menu {
+    display: none; /* El menú lateral no es necesario aquí */
+  }
+
+  /* HEROES */
+  .hero h1,
+  .seguridad {
+    font-size: clamp(42px, 5vw, 60px);
+  }
+
+  .hero-viaje__contenido h1,
+  .nosotros-hero__contenido h1,
+  .servicios-hero__contenido h1,
+  .rutas-hero__contenido h1,
+  .promociones-hero__titulo,
+  .faq-hero__titulo,
+  .testimonios-hero__contenido h1,
+  .contacto-hero h1 {
+    font-size: clamp(52px, 7vw, 80px);
+  }
+
+  /* INDEX — Grids
+     ------* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} */
+
+  /* Promociones index: 2 columnas */
+  .index-promociones__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+  }
+
+  /* Rutas index: 2 columnas */
+  .index-rutas__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+
+  /* NOSOTROS */
+  /* Valores: 3 columnas */
+  .valores__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+
+  /* SERVICIOS */
+  /* 3 columnas */
+  .servicios__contenedor {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+
+  /* ENCOMIENDAS — Por qué elegirnos */
+  .porque-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Bloques de servicio */
+  .servicio-bloque {
+    grid-template-columns: 1.1fr 1fr;
+    gap: 40px;
+  }
+
+  .servicio-bloque--invertido {
+    grid-template-columns: 1fr 1.1fr;
+    gap: 40px;
+  }
+
+  /* RUTAS */
+  /* 2 columnas */
+  .galeria-destinos {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  /* PROMOCIONES */
+  /* 2 columnas */
+  .promociones-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 26px;
+  }
+
+  .promocion-imagen {
+    height: 340px !important;
+  }
+
+  /* INFO VIAJE */
+  .politicas-viaje__grid,
+  .info-adicional__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 26px;
+  }
+
+  /* Equipaje: 4 columnas (caben bien aquí) */
+  .equipaje__grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  .equipaje-card figure {
+    height: 200px;
+  }
+
+  /*TESTIMONIOS  */
+  /* 3 columnas */
+  .testimonios__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  /* Formulario testimonio */
+  .emitir-testimonio__contenido {
+    grid-template-columns: 1fr 1.1fr;
+    gap: 40px;
+  }
+
+  /* CONTACTO */
+  .contacto-intro {
+    grid-template-columns: 1fr 1.45fr;
+  }
+
+  /* Atención al cliente: 2 columnas */
+  .atencion-cliente__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+
+  /* FOOTER */
+  /* 2 columnas */
+  .footer-contenedor {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 36px;
+    width: 90%;
+  }
+
+  .footer-columna:nth-child(odd) {
+    border-left: none;
+    padding-left: 0;
+  }
+
+} /* fin @media PC PEQUEÑA */
+
+
+/*  04. LAPTOP — 1025px a 1200px */
+
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
+
+  /* HEADER */
+  .header {
+    padding: 0 3%;
+  }
+
+  .header__nav a {
+    font-size: 16px;
+  }
+
+  .btn-menu {
+    display: none;
+  }
+
+
+  /* HEROES */
+  .hero-viaje__contenido h1,
+  .nosotros-hero__contenido h1,
+  .rutas-hero__contenido h1,
+  .promociones-hero__titulo,
+  .faq-hero__titulo,
+  .testimonios-hero__contenido h1 {
+    font-size: clamp(68px, 8vw, 100px);
+  }
+
+  /* INDEX */
+  /* Promociones index: 3 columnas */
+  .index-promociones__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  /* Rutas index: 4 columnas */
+  .index-rutas__grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+
+  /* NOSOTROS */
+  /* Valores: 4 columnas */
+  .valores__grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+  }
+
+  /* SERVICIOS */
+  /* 4 columnas */
+  .servicios__contenedor {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /*  RUTAS */
+  /* 3 columnas */
+  .galeria-destinos {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 26px;
+  }
+
+  /* PROMOCIONES */
+  /* 3 columnas */
+  .promociones-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .promocion-imagen {
+    height: 380px !important;
+  }
+
+
+  /*INFO VIAJE */
+  .politicas-viaje__grid,
+  .info-adicional__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+
+  /* Equipaje: 4 columnas */
+  .equipaje__grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+  }
+
+  /* TESTIMONIOS */
+  /* 4 columnas */
+  .testimonios__grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 26px;
+  }
+
+  /*  FOOTER */
+  /* 4 columnas */
+  .footer-contenedor {
+    grid-template-columns: 1.5fr 1fr 1.25fr 1.35fr;
+    gap: 36px;
+    width: 90%;
+  }
+
+} /* fin @media LAPTOP */
+
+
+/*  05. DESKTOP Y TV — 1201px en adelante */
+
+@media screen and (min-width: 1201px) {
+
+  /*  HEADER */
+  .header {
+    padding: 0 25px;
+  }
+
+  .btn-menu {
+    display: none; /* Nunca necesario en desktop */
+  }
+
+  /* HEROES — Tamaños máximos para pantallas grandes */
+  .hero-viaje__contenido h1,
+  .nosotros-hero__contenido h1,
+  .rutas-hero__contenido h1,
+  .promociones-hero__titulo,
+  .faq-hero__titulo,
+  .testimonios-hero__contenido h1 {
+    font-size: 120px;
+  }
+
+  .hero h1,
+  .seguridad {
+    font-size: 50px; /* Ya definido en la base, aquí reforzamos */
+  }
+
+
+  /* INDEX */
+  /* Promociones index: 3 columnas */
+  .index-promociones__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+
+  /* Rutas index: 4 columnas */
+  .index-rutas__grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+  }
+
+  /* NOSOTROS */
+  /* Valores: 5 columnas (diseño original del docente) */
+  .valores__grid {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 28px;
+  }
+
+
+  /* SERVICIOS */
+  /* 4 columnas */
+  .servicios__contenedor {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+
+  /*  RUTAS */
+  /* 3 columnas */
+  .galeria-destinos {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+
+
+  /*  PROMOCIONES */
+  /* 3 columnas */
+  .promociones-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+
+  .promocion-imagen {
+    height: 420px !important;
+  }
+
+
+  /*  INFO VIAJE */
+  .politicas-viaje__grid,
+  .info-adicional__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 34px;
+  }
+
+  /* Equipaje: 4 columnas */
+  .equipaje__grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
+  }
+
+
+  /* TESTIMONIOS */
+  /* 4 columnas */
+  .testimonios__grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+  }
+
+
+  /*  FOOTER */
+  /* 4 columnas con proporciones originales */
+  .footer-contenedor {
+    grid-template-columns: 1.5fr 1fr 1.25fr 1.35fr;
+    gap: 48px;
+    width: min(1350px, 88%);
+    padding: 45px 40px;
+  }
+
+} /* fin @media DESKTOP Y TV */
+
+
+/* 06. VISIBILIDAD HEADER — Reglas exactas por breakpoint  
+   · Celular  (0 – 480px)   : logo + hamburguesa. SIN reserva, SIN nav
+   · Tablet   (481 – 768px) : logo + hamburguesa + botón RESERVA. SIN nav
+   · PC+      (769px +)     : logo + nav + botón RESERVA + hamburguesa (todo)
+    ELULAR: solo logo y hamburguesa  */
+
+@media screen and (max-width: 480px) {
+  .btn-menu {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  .btn-reserva {
+    display: none !important;   /* Oculta el botón RESERVA en celular */
+  }
+
+  .header__nav {
+    display: none !important;   /* Oculta el nav horizontal */
+  }
+}
+
+/*  TABLET: logo + hamburguesa + botón RESERVA  */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .btn-menu {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  .btn-reserva {
+    display: flex !important;   /* Aparece el botón RESERVA */
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  .header__nav {
+    display: none !important;   /* El nav horizontal sigue oculto */
+  }
+}
+
+/*  TABLET HORIZONTAL: reserva + hamburguesa, sin menu horizontal  */
+@media screen and (min-width: 769px) and (max-width: 991.98px) {
+  .btn-menu {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  .btn-reserva {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  .header__nav {
+    display: none !important;
+  }
+}
+
+
+/* 
+   FIX HEADER EN PC — Evita que el nav y el botón reserva rompan en 2 líneas
+
+   white-space: nowrap impide que "Nuestros servicios" y "RESERVA TU PASAJE"
+   se partan. Se reduce font-size progresivamente entre 769px y 1200px. */
+
+/* PC PEQUEÑA (769px – 1024px): reducción más agresiva */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .header {
+    gap: 10px;
+    padding: 0 14px;
+  }
+
+  .header__logo img,
+  .logo img {
+    width: 150px;
+  }
+
+  .header__nav ul,
+  .nav ul {
+    gap: 8px !important;
+  }
+
+  .header__nav a,
+  .nav a {
+    font-size: 13px !important;
+    white-space: nowrap;
+  }
+
+  .btn-reserva {
+    font-size: 11px !important;
+    padding: 9px 12px !important;
+    letter-spacing: 0.4px !important;
+    white-space: nowrap;
+  }
+}
+
+/* LAPTOP (1101px – 1200px): ajuste suave */
+@media screen and (min-width: 1101px) and (max-width: 1200px) {
+  .header__nav a,
+  .nav a {
+    font-size: 15px !important;
+    white-space: nowrap;
+  }
+
+  .btn-reserva {
+    font-size: 13px !important;
+    white-space: nowrap;
+    padding: 10px 16px !important;
+  }
+}
+
+/* DESKTOP (1201px+): tamaños originales, solo nowrap para seguridad */
+@media screen and (min-width: 1201px) {
+  .header__nav a,
+  .nav a {
+    white-space: nowrap;
+  }
+
+  .btn-reserva {
+    white-space: nowrap;
+  }
+}
+
+/* ============================= */
+/* RESPONSIVE - CONTACTO HERO */
+/* ============================= */
+
+@media (max-width: 991.98px) {
+  .contacto-hero {
+    background-position: center;
+  }
+
+  .contacto-hero__overlay {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(2, 20, 42, 0.98) 0%,
+        rgba(2, 20, 42, 0.88) 55%,
+        rgba(2, 20, 42, 0.55) 100%
+      ),
+      linear-gradient(
+        180deg,
+        rgba(2, 20, 42, 0.30) 0%,
+        rgba(2, 20, 42, 0.85) 100%
+      );
+  }
+
+  .contacto-hero__content {
+    padding: 80px 0;
+  }
+
+  .contacto-hero__title {
+    font-size: clamp(3.4rem, 10vw, 5rem);
+  }
+
+  .contacto-banner__descripcion {
+    font-size: 1.05rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .contacto-hero {
+    min-height: auto;
+  }
+
+  .contacto-hero__content {
+    padding: 70px 0;
+  }
+
+  .contacto-hero__eyebrow {
+    font-size: 0.95rem;
+    letter-spacing: 3px;
+    gap: 12px;
+  }
+
+  .contacto-hero__eyebrow i {
+    font-size: 1.8rem;
+  }
+
+  .contacto-hero__title {
+    font-size: clamp(3rem, 14vw, 4.2rem);
+  }
+
+  .contacto-box {
+    padding: 18px 22px;
+    min-height: 110px;
+  }
+
+  .contacto-box__icono {
+    width: 60px;
+    height: 60px;
+    min-width: 60px;
+    font-size: 1.5rem;
+  }
+
+  .contacto-box__texto h3 {
+    font-size: 0.95rem;
+  }
+
+  .contacto-hero__btn {
+    width: 100%;
+    min-width: auto;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .contacto-box {
+    align-items: flex-start;
+  }
+
+  .contacto-banner__descripcion {
+    font-size: 0.95rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .contacto-hero {
+    height: 100vh;
+    min-height: 620px;
+  }
+
+  .contacto-hero__eyebrow {
+    margin-bottom: 12px;
+  }
+
+  .contacto-hero__title {
+    margin-bottom: 12px;
+  }
+
+  .contacto-banner__descripcion {
+    margin-bottom: 14px;
+  }
+
+  .contacto-banner__info {
+    margin-bottom: 14px;
+  }
+
+  .contacto-box {
+    height: 96px;
+    min-height: 96px;
+  }
+}
+

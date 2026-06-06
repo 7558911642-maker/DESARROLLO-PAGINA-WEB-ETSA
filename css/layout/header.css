@@ -1,0 +1,213 @@
+/* 4. ENCABEZADO GENERAL */
+                    
+.header {
+  width: 100%;
+  min-height: 84px;
+  padding: 0 25px;
+  background-color: var(--blanco);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.site-header {
+  z-index: 1050;
+}
+
+.site-header.fixed-top {
+  z-index: 1050;
+}
+
+.site-header.navbar {
+  min-height: 84px;
+}
+
+.site-header .container-fluid {
+  min-height: 84px;
+}
+
+.site-header .header__logo img,
+.site-header .logo {
+  max-height: 72px;
+  width: auto;
+}
+
+.header__logo img,
+.logo img {
+  width: 200px;
+  max-height: 72px;
+  width: auto;
+  height: auto;
+}
+
+
+.header__nav {
+  margin-left: auto; /* Mueve las letras a la derecha y mantiene el logo a la izquierda */
+}
+
+.header__nav ul,
+.nav ul {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.header__nav a,
+.nav a {
+  color: #020617;
+  font-size: 18px;
+  font-weight: 700;
+  transition: color 0.3s ease;
+}
+
+.header__nav a:hover,
+.nav a:hover {
+  color: var(--naranja);
+}
+
+/* 5. BOTÓN RESERVA */
+
+.reserva {
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  border-left: 1px solid #d1d5db;
+  border-right: 1px solid #d1d5db;
+  margin-left: auto;
+  margin-right: 20px;
+
+}
+
+/* BOTÓN RESERVA */
+.btn-reserva {
+  background-color: #f97316;
+  color: #ffffff;
+  padding: 10px 10px;
+  border-radius: 35px;
+  font-size: 14px;
+  font-weight: 900;
+  text-transform: uppercase; 
+  letter-spacing: 1px;  /* para colocar barra lateral*/
+  text-decoration: none;
+  /* transition: 0.3s ease; */
+}
+
+.btn-reserva:hover {
+  background-color: #ea580c;
+  transform: translateY(-2px);
+}
+
+/* 6. MENÚ HAMBURGUESA */
+
+/* CHECKBOX OCULTO */
+#menuToggle {
+  display: none;
+}
+
+/* BOTÓN DE TRES RAYITAS */
+.btn-menu {
+  border: none;
+  background-color: transparent;
+  color: var(--naranja);
+  font-size: 35px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1600;
+  transition: color 0.3s ease;
+}
+
+.btn-menu:hover {
+  color: var(--naranja-oscuro);
+}
+
+/* ICONOS DEL MENÚ */
+.icono-menu,
+.icono-cerrar {
+  font-size: 38px;
+}
+
+/* LA X SE OCULTA AL INICIO */
+.icono-cerrar {
+  display: none;
+}
+
+/* CUANDO EL MENÚ ESTÁ ABIERTO, SE OCULTAN LAS 3 RAYITAS */
+#menuToggle:checked ~ .header .icono-menu {
+  display: none;
+}
+
+/* CUANDO EL MENÚ ESTÁ ABIERTO, APARECE LA X */
+#menuToggle:checked ~ .header .icono-cerrar {
+  display: block;
+}
+
+/* 7. PANEL LATERAL  */
+.menu-fondo {
+  position: fixed;
+  inset: 73px 0 0 0;
+  background-color: rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1200;
+  transition: 0.3s ease;
+}
+
+/* MOSTRAR FONDO OSCURO */
+#menuToggle:checked ~ .menu-fondo {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* PANEL LATERAL */
+.panel-lateral {
+  width: 300px;
+  max-width: 88%;
+  height: calc(100vh - 73px);
+  background-color: var(--blanco);
+  position: fixed;
+  top: 73px;
+  right: -100%;
+  z-index: 1500;
+  padding: 22px 24px;
+  box-shadow: -10px 0 32px rgba(0, 0, 0, 0.18);
+  transition: right 0.35s ease;
+  overflow-y: auto;
+}
+
+/* ABRIR PANEL LATERAL */
+#menuToggle:checked ~ .panel-lateral {
+  right: 0;
+}
+
+/* MENÚ INTERNO */
+.panel-lateral__nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+
+  list-style: none;
+}
+
+/* ENLACES DEL PANEL */
+.panel-lateral__nav a {
+  color: #111111;
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.panel-lateral__nav a:hover,
+.panel-lateral__nav a.activo {
+  color: var(--naranja);
+  padding-left: 8px;
+}
+

@@ -1,0 +1,151 @@
+/* SERVICIOS - HERO ESTILO MOVIL BUS / ETSA */
+.servicios-hero {
+  width: 100%;
+  min-height: 260px;
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  padding: 55px 7% 95px;
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.68) 0%,
+      rgba(0, 0, 0, 0.42) 45%,
+      rgba(0, 0, 0, 0.08) 100%
+    ),
+    url("../../../img/banners/servicios-banner.png");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.servicios-hero__contenido {
+  position: relative;
+  z-index: 2;
+  color: #ffffff;
+}
+
+.servicios-hero__contenido p {
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  margin-bottom: 4px;
+}
+
+.servicios-hero__contenido h1 {
+  color: #ffffff;
+  font-size: clamp(52px, 7vw, 88px);
+  line-height: 1;
+  font-weight: 900;
+  letter-spacing: 3px;
+}
+
+/* FRASE NARANJA ANTES DE LAS TARJETAS */
+.servicios-frase {
+  width: 100%;
+  background-color: #f3f4f6;
+  padding: 48px 7% 34px;
+  text-align: center;
+}
+
+.servicios-frase p {
+  color: var(--naranja);
+  font-size: clamp(19px, 2vw, 26px);
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.servicios-frase i {
+  color: var(--naranja);
+  margin-right: 10px;
+  font-size: 28px;
+}
+
+/* SERVICIOS - SECCIÓN DE TARJETAS */
+.servicios {
+  width: 100%;
+  background-color: #f3f4f6;
+  padding: 20px;
+}
+
+.servicios__contenedor {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+
+  position: relative;
+  z-index: 5;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+/* TARJETAS DE SERVICIOS */
+.servicio-card {
+  min-height: 500px;
+
+  background-color: #ffffff;
+  border-radius: 18px;
+  padding: 10px;
+
+  text-align: center;
+
+  box-shadow: 0 18px 40px #161a2d;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  transition: 0.3s ease;
+}
+
+.servicio-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 24px 55px #020617;
+}
+
+.servicio-card h2 {
+  color: #374151;
+  font-size: 18px;
+  line-height: 1.4;
+  font-weight: 900;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+
+  margin-bottom: 10px;
+}
+
+.servicio-card__icono {
+  margin: 10px;
+}
+
+.servicio-card__icono i {
+  color: #ef8544;
+  font-size: 78px;
+  line-height: 1;
+}
+
+.servicio-card h3 {
+  color: #374151;
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.servicio-card__descripcion {
+  color: #4b5563;
+  font-size: 12px;
+  line-height: 1.75;
+  font-weight: 400;
+  margin: 0;
+}
+

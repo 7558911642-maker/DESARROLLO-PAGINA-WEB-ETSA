@@ -1,0 +1,130 @@
+/* 9. CONTACTO GENERAL */
+/* Sirve para contacto.html */
+.contacto {
+  width: 100%;
+  padding: 90px 7%;
+  background: url("../../img/rutas/chachapoyas.png");
+  background-size: cover;
+  background-position: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 42px;
+  align-items: start;
+  color: var(--blanco);
+}
+
+.contacto__info,
+.contacto__formulario {
+  background-color: rgba(255, 255, 255, 0.08);
+  padding: 3px;
+  border-radius: var(--radio-medio);
+  box-shadow: var(--sombra-media);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(8px);
+}
+
+.contacto__subtitulo {
+  color: var(--naranja);
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.contacto__titulo {
+  font-size: 42px;
+  font-weight: 900;
+  line-height: 1.1;
+  margin: 8px 0 14px;
+}
+
+.contacto__titulo--naranja {
+  color: var(--naranja);
+}
+
+.contacto__subrayado {
+  width: 40px;
+  height: 4px;
+  border: none;
+  background-color: var(--naranja);
+  margin-bottom: 28px;
+  border-radius: 20px;
+}
+
+.contacto__dato {
+  margin-bottom: 24px;
+}
+
+.contacto__dato h2,
+.contacto__dato h3 {
+  color: var(--naranja);
+  font-size: 17px;
+  margin-bottom: 8px;
+  font-weight: 900;
+}
+
+.contacto__dato p {
+  color: #e5e7eb;
+  font-size: 15px;
+}
+
+.contacto__formulario h2 {
+  font-size: 28px;
+  margin-bottom: 24px;
+  color: var(--blanco);
+}
+
+.contacto__formulario form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.contacto__formulario label {
+  color: #e5e7eb;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+}
+
+.contacto__formulario input,
+.contacto__formulario textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #cbd5e1;
+  border-radius: 14px;
+  font-size: 15px;
+  outline: none;
+  font-family: inherit;
+  transition: 0.3s ease;
+}
+
+.contacto__formulario input:focus,
+.contacto__formulario textarea:focus {
+  border-color: var(--naranja);
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.20);
+}
+
+.contacto__formulario textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.form__boton {
+  margin-top: 8px;
+  padding: 15px;
+  border: none;
+  border-radius: 30px;
+  background-color: var(--naranja);
+  color: var(--blanco);
+  font-weight: 900;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.form__boton:hover {
+  background-color: var(--naranja-oscuro);
+  transform: translateY(-2px);
+}
+

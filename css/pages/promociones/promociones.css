@@ -1,0 +1,243 @@
+/* PROMOCIONES - HERO ESTILO MOVIL BUS - ETSA */
+.promociones-hero {
+  width: 100%;
+  min-height: 310px;
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  padding: 70px 7%;
+  overflow: hidden;
+
+  background: url("../../../img/banners/Promociones-banner.png");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  border-bottom: 5px solid var(--naranja);
+}
+
+.promociones-hero__contenido {
+  position: relative;
+  z-index: 2;
+  color: #0c0c0c;
+}
+
+.promociones-hero__subtitulo {
+  color: var(--blanco);
+  font-size: 32px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  margin-bottom: 4px;
+}
+
+.promociones-hero__titulo {
+  color: var(--blanco);
+  font-size: clamp(68px, 9vw, 120px);
+  line-height: 0.95;
+  font-weight: 900;
+  letter-spacing: 3px;
+}
+
+/* PROMOCIONES - IMÁGENES ESTILO MOVIL BUS */
+.promociones-seccion {
+  width: 100%;
+  background-color: var(--gris-claro);
+  padding: 70px 7% 85px;
+}
+
+.promociones-container {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+/* TARJETA */
+.promocion-card {
+  background-color: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  overflow: visible;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* IMAGEN */
+.promocion-imagen {
+  width: 100%;
+  height: 420px;
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  background-color: #e5e7eb;
+}
+
+.promocion-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.promocion-card:hover .promocion-imagen img {
+  transform: scale(1.04);
+}
+
+/* ETIQUETA NARANJA */
+.tag-promo {
+  position: absolute;
+  top: 22px;
+  left: 22px;
+  z-index: 2;
+
+  background-color: var(--naranja);
+  color: var(--blanco);
+
+  padding: 12px 22px;
+  border-radius: 6px;
+
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* BOTÓN MÁS INFORMACIÓN */
+.btn-mas-info {
+  margin-top: 20px;
+
+  width: 65%;
+  min-width: 250px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px 10px;
+  border-radius: 40px;
+
+  background-color: var(--naranja);
+  color: var(--blanco);
+
+  font-size: 18px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  transition: 0.3s ease;
+}
+
+.btn-mas-info:hover {
+  background-color: var(--naranja-oscuro);
+  color: var(--blanco);
+  transform: translateY(-3px);
+}
+
+/* MODALES DE PROMOCIONES */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+
+  background-color: rgba(0, 0, 0, 0.65);
+
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+  z-index: 99999;
+}
+
+.modal-overlay:target {
+  display: flex;
+}
+
+.modal-ventana {
+  width: 100%;
+  max-width: 560px;
+
+  background-color: var(--blanco);
+  border-radius: 18px;
+  overflow: hidden;
+
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+  animation: entradaModal 0.25s ease;
+}
+
+@keyframes entradaModal {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.modal-header {
+  background-color: var(--azul-oscuro);
+  color: var(--blanco);
+
+  padding: 18px 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modal-header h3 {
+  font-size: 18px;
+  font-weight: 900;
+  margin: 0;
+}
+
+.modal-cerrar {
+  color: var(--blanco);
+  font-size: 30px;
+  font-weight: 900;
+  line-height: 1;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.modal-cerrar:hover {
+  color: var(--naranja);
+}
+
+.modal-body {
+  padding: 28px 30px;
+  max-height: 430px;
+  overflow-y: auto;
+}
+
+.modal-body p {
+  color: var(--azul-profundo);
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+
+.modal-body ul {
+  padding-left: 22px;
+}
+
+.modal-body li {
+  color: var(--gris-texto);
+  font-size: 15px;
+  line-height: 1.6;
+  list-style-type: disc;
+  margin-bottom: 10px;
+}
+

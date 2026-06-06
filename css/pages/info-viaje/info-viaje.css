@@ -1,0 +1,273 @@
+/* INFO PARA TU VIAJE - HERO ESTILO MOVIL BUS */
+.hero-viaje {
+  width: 100%;
+  min-height: 310px;
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  padding: 70px 7%;
+  overflow: hidden;
+
+  background: url("../../../img/banners/info-banner.png");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero-viaje__overlay {
+  display: none;
+}
+
+.hero-viaje__contenido {
+  position: relative;
+  z-index: 2;
+  color: var(--blanco);
+}
+
+.hero-viaje__contenido p {
+  color: var(--blanco);
+  font-size: 32px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  margin-bottom: 4px;
+}
+
+.hero-viaje__contenido h1 {
+  color: var(--blanco);
+  font-size: clamp(68px, 9vw, 120px);
+  line-height: 0.95;
+  font-weight: 900;
+  text-transform: lowercase;
+  letter-spacing: 3px;
+}
+
+/* MENSAJE CENTRAL */
+.mensaje-viaje {
+  width: 100%;
+  padding: 55px 7% 35px;
+  background-color: var(--blanco);
+  text-align: center;
+}
+
+.mensaje-viaje p {
+  color: var(--naranja);
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+}
+
+/* POLÍTICAS DE VIAJE */
+.politicas-viaje {
+  width: 100%;
+  padding: 35px 7% 70px;
+  background-color: var(--blanco);
+}
+
+.politicas-viaje h2,
+.equipaje h2 {
+  position: relative;
+  color: var(--negro);
+  font-size: clamp(34px, 4vw, 46px);
+  line-height: 1.1;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  margin-bottom: 45px;
+  padding-left: 28px;
+}
+
+.politicas-viaje h2::before,
+.equipaje h2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+
+  width: 8px;
+  height: 48px;
+  background-color: var(--naranja);
+}
+
+.politicas-viaje__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 34px;
+}
+
+.politica-card {
+  background-color: transparent;
+}
+
+.politica-card figure {
+  width: 100%;
+  height: 330px;
+  margin: 0 0 26px;
+  overflow: hidden;
+  background-color: #e5e7eb;
+}
+
+.politica-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: 0.4s ease;
+}
+
+.politica-card:hover img {
+  transform: scale(1.04);
+}
+
+.politica-card h3 {
+  color: var(--naranja);
+  font-size: 21px;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.politica-card p {
+  color: var(--negro);
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+/* INFORMACIÓN ADICIONAL */
+/* CAMBIOS, SILLA DE RUEDAS, PROHIBIDOS */
+.info-adicional {
+  width: 100%;
+  padding: 0 7% 90px;
+  background-color: var(--blanco);
+}
+
+.info-adicional__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 34px;
+}
+
+.info-card {
+  background-color: transparent;
+}
+
+.info-card figure {
+  width: 100%;
+  height: 330px;
+  margin: 0 0 26px;
+  overflow: hidden;
+  background-color: #e5e7eb;
+}
+
+.info-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: 0.4s ease;
+}
+
+.info-card:hover img {
+  transform: scale(1.04);
+}
+
+.info-card h3 {
+  color: var(--naranja);
+  font-size: 21px;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.info-card p {
+  color: var(--negro);
+  font-size: 16px;
+  line-height: 1.75;
+  margin-bottom: 16px;
+}
+
+/* EQUIPAJE PERMITIDO */
+.equipaje {
+  width: 100%;
+  padding: 80px 7% 100px;
+  background-color: #eeeeee;
+}
+
+.equipaje__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+  align-items: start;
+}
+
+.equipaje-card {
+  background-color: #eeeeee;
+  border-radius: 0 0 18px 18px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: none;
+  transition: 0.3s ease;
+}
+
+.equipaje-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--sombra-suave);
+}
+
+.equipaje-card figure {
+  width: 100%;
+  height: 260px;
+  margin: 0;
+  overflow: hidden;
+}
+
+.equipaje-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: 0.4s ease;
+}
+
+.equipaje-card:hover img {
+  transform: scale(1.04);
+}
+
+.equipaje-card__contenido {
+  padding: 28px 24px 34px;
+}
+
+.equipaje-card__contenido h3 {
+  color: var(--negro);
+  font-size: 24px;
+  font-weight: 900;
+  margin-bottom: 16px;
+}
+
+.equipaje-card__contenido p {
+  color: var(--negro);
+  font-size: 15.5px;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.equipaje-card__contenido ul {
+  text-align: left;
+  margin-top: 14px;
+  padding-left: 24px;
+}
+
+.equipaje-card__contenido li {
+  color: var(--negro);
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1.8;
+  list-style-type: disc;
+}
+
+.equipaje-card__contenido strong {
+  color: var(--naranja);
+}
+

@@ -88,7 +88,7 @@ ul {
                     
 .header {
   width: 100%;
-  min-height: 73px;
+  min-height: 84px;
   padding: 0 25px;
   background-color: var(--blanco);
   display: flex;
@@ -107,22 +107,22 @@ ul {
 }
 
 .site-header.navbar {
-  min-height: 90px;
+  min-height: 84px;
 }
 
 .site-header .container-fluid {
-  min-height: 90px;
+  min-height: 84px;
 }
 
 .site-header .header__logo img,
 .site-header .logo {
-  max-height: 90px;
+  max-height: 72px;
   width: auto;
 }
 
 .header__logo img,
 .logo img {
-  max-height: 90px;
+  max-height: 72px;
   width: auto;
   height: auto;
 }
@@ -670,7 +670,113 @@ ul {
 }
 
 
-/* 14. MAIN - INDEX  HERO PRINCIPAL CON TEXTO DENTRO DE LA IMAGEN */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==================================================
+   INICIO CSS DEL INDEX
+   Contiene héroe, promociones, encomiendas, rutas y contacto
+================================================== */
+
+/* INDEX - HERO PRINCIPAL */
 .hero {
   width: 100%;
   min-height: 0px;
@@ -818,7 +924,69 @@ ul {
 }
 
 
-/* MAIN - INDEX SECCIÓN PROMOCIONES CON IMÁGENES */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* INDEX - PROMOCIONES */
 .index-promociones {
   width: 100%;
   padding: 70px 7% 85px;
@@ -1028,7 +1196,75 @@ ul {
 }
 
 
-/* MAIN - INDEX  BANNER ENCOMIENDAS */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* INDEX - BANNER ENCOMIENDAS */
 
 .index-encomiendas {
   width: 100%;
@@ -1092,10 +1328,10 @@ ul {
   gap: 10px;
   min-width: 210px;
   padding: 14px 32px;
-  border: 2px solid #ffffff;
+  border: 2px solid var(--naranja);
   border-radius: 40px;
   color: var(--blanco);
-  background-color: transparent;
+  background-color: var(--naranja);
   font-size: 15px;
   font-weight: 900;
   letter-spacing: 1px;
@@ -1105,12 +1341,12 @@ ul {
 }
 
 .index-encomiendas__boton:hover {
-  background-color: var(--naranja);
-  border-color: var(--naranja);
+  background-color: var(--naranja-oscuro);
+  border-color: var(--naranja-oscuro);
   transform: translateY(-2px);
 }
 
-/* MAIN - INDEX  RESUMEN RUTAS CON IMÁGENES */
+/* INDEX - RUTAS */
 .index-rutas {
   width: 100%;
   padding: 20px 7% 20px;
@@ -1326,7 +1562,71 @@ ul {
 }
 
 
-/* SECCIÓN CONTACTO INDEX */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* INDEX - CONTACTO TARJETAS */
 .index-contacto {
   background-image:
     linear-gradient(rgba(5, 15, 30, 0.78), rgba(5, 15, 30, 0.78)),
@@ -1423,7 +1723,7 @@ ul {
 
 
 
-/* MAIN - INDEX: CONTACTO / ATENCIÓN Y RESERVAS */
+/* INDEX - CONTACTO / ATENCIÓN Y RESERVAS */
 
 .index-contacto {
   width: 100%;
@@ -1591,7 +1891,41 @@ ul {
   font-size: 24px;
 }
 
-/* RESPONSIVE CONTACTO */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* INDEX - RESPONSIVE CONTACTO */
 @media (max-width: 991.98px) {
   .index-contacto {
     min-height: auto;
@@ -1688,10 +2022,13 @@ figure {
 }
 
 .header .container-fluid {
-  min-height: 73px;
+  min-height: 84px;
+  align-items: center;
 }
 
 .header .nav-link {
+  display: inline-flex;
+  align-items: center;
   padding: 0;
 }
 
@@ -1997,6 +2334,46 @@ figure {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* FIN CSS DEL INDEX */
 
 
 
@@ -6376,47 +6753,45 @@ section {
 }
 
 .nosotros-section .mision-vision-card {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: center;
-  gap: 22px;
   margin-bottom: 30px;
-  padding: 20px 26px;
-  border-radius: 12px;
-  background: #ffffff;
-  box-shadow: 0 10px 28px rgba(7, 22, 50, 0.09);
 }
 
 .nosotros-section .mision-item {
+  min-height: 190px;
+  padding: 24px 18px;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 10px 28px rgba(7, 22, 50, 0.11);
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 16px;
+  justify-content: center;
+  gap: 0;
 }
 
 .nosotros-section .mision-item i {
   color: #ff6a00;
-  font-size: 2.1rem;
+  font-size: 2.8rem;
 }
 
 .nosotros-section .mision-item h2,
 .nosotros-section .mision-item h3 {
-  margin: 0 0 4px;
+  margin: 0;
   color: #071632;
-  font-size: 1.05rem;
-  font-weight: 900;
+  font-size: 1rem;
+  font-weight: 800;
 }
 
 .nosotros-section .mision-item p {
-  margin: 0;
+  max-width: 230px;
+  margin: 6px auto 0;
   color: #4b5565;
-  font-size: 0.84rem;
+  font-size: 0.82rem;
   line-height: 1.45;
 }
 
 .nosotros-section .separador {
-  width: 1px;
-  height: 58px;
-  background: #d6dbe4;
+  display: none;
 }
 
 .nosotros-section .btn-nosotros {
@@ -6555,6 +6930,2291 @@ section {
 
   .nosotros-section .nosotros-title {
     font-size: 2.1rem;
+  }
+}
+
+/* ==================================================
+   RESPONSIVE INDEX - Breakpoints Bootstrap 5
+   XS <576 | SM >=576 | MD >=768 | LG >=992 | XL >=1200 | XXL >=1400
+================================================== */
+
+.pagina-index .hero {
+  min-height: clamp(500px, 72vh, 680px);
+}
+
+.pagina-index .hero-text,
+.pagina-index .promo-index-card__contenido,
+.pagina-index .ruta-index-card__contenido,
+.pagina-index .contacto-box__texto {
+  overflow-wrap: anywhere;
+}
+
+.pagina-index .hero .btn-primary,
+.pagina-index .hero .btn-dark,
+.pagina-index .index-promociones__accion .btn-primary,
+.pagina-index .index-rutas__accion .btn-primary,
+.pagina-index .promo-index-card__boton,
+.pagina-index .index-encomiendas__boton,
+.pagina-index .index-nosotros__boton,
+.pagina-index .nosotros-section .btn-nosotros {
+  white-space: normal;
+}
+
+.pagina-index .nosotros-section {
+  min-height: auto;
+}
+
+.pagina-index .nosotros-section .nosotros-card {
+  padding: clamp(2rem, 4vw, 4.5rem);
+}
+
+/* XS - celulares menores a 576px */
+@media (max-width: 575.98px) {
+  .pagina-index .site-header .container-fluid {
+    min-height: 70px;
+  }
+
+  .pagina-index .hero {
+    min-height: auto;
+    padding: 34px 0;
+  }
+
+  .pagina-index .hero::before {
+    background: rgba(2, 6, 23, 0.34);
+  }
+
+  .pagina-index .hero-text {
+    max-width: 100%;
+    padding: 20px 16px;
+  }
+
+  .pagina-index .badge {
+    max-width: 100%;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    line-height: 1.35;
+    white-space: normal;
+  }
+
+  .pagina-index .seguridad {
+    font-size: clamp(2rem, 11vw, 2.65rem) !important;
+    line-height: 1.08 !important;
+    letter-spacing: 1px;
+  }
+
+  .pagina-index .hero-descripcion {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .pagina-index .hero .botones {
+    gap: 12px;
+  }
+
+  .pagina-index .hero .btn-primary,
+  .pagina-index .hero .btn-dark,
+  .pagina-index .index-promociones__accion .btn-primary,
+  .pagina-index .index-rutas__accion .btn-primary,
+  .pagina-index .index-encomiendas__boton,
+  .pagina-index .index-nosotros__boton,
+  .pagina-index .nosotros-section .btn-nosotros {
+    width: 100%;
+    min-width: 0;
+    justify-content: center;
+    padding: 13px 16px;
+    font-size: 0.78rem;
+    line-height: 1.25;
+  }
+
+  .pagina-index .index-promociones,
+  .pagina-index .index-rutas {
+    padding-top: 46px;
+    padding-bottom: 52px;
+  }
+
+  .pagina-index .index-promociones__header,
+  .pagina-index .index-rutas__header {
+    gap: 18px;
+    margin-bottom: 26px;
+  }
+
+  .pagina-index .index-promociones__titulo-box,
+  .pagina-index .index-rutas__titulo-box {
+    gap: 14px;
+    align-items: flex-start;
+  }
+
+  .pagina-index .linea-naranja {
+    width: 5px;
+    height: 58px;
+    flex: 0 0 5px;
+  }
+
+  .pagina-index .index-promociones__subtitulo,
+  .pagina-index .index-rutas__subtitulo {
+    font-size: 0.72rem;
+    letter-spacing: 1px;
+  }
+
+  .pagina-index .index-promociones__header h2,
+  .pagina-index .index-rutas__header h2 {
+    font-size: clamp(1.8rem, 9vw, 2.35rem);
+    letter-spacing: 0;
+  }
+
+  .pagina-index .promo-index-card,
+  .pagina-index .promo-index-card img {
+    min-height: 360px;
+  }
+
+  .pagina-index .promo-index-card__contenido {
+    left: 20px;
+    right: 20px;
+    bottom: 22px;
+  }
+
+  .pagina-index .promo-index-card__tag {
+    font-size: 0.7rem;
+    letter-spacing: 0.7px;
+  }
+
+  .pagina-index .promo-index-card__contenido h3 {
+    font-size: 1.5rem;
+  }
+
+  .pagina-index .promo-index-card__contenido p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .pagina-index .promo-index-card__boton {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 0.76rem;
+  }
+
+  .pagina-index .index-encomiendas {
+    min-height: auto;
+    padding: 54px 0;
+    background-position: center;
+  }
+
+  .pagina-index .index-encomiendas__subtitulo {
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: 1rem;
+    letter-spacing: 1px;
+  }
+
+  .pagina-index .index-encomiendas h2 {
+    font-size: clamp(2.55rem, 13vw, 3.6rem);
+    letter-spacing: 1px;
+  }
+
+  .pagina-index .index-encomiendas__descripcion {
+    font-size: 1rem;
+  }
+
+  .pagina-index .ruta-index-card img {
+    min-height: 330px;
+  }
+
+  .pagina-index .ruta-index-card__contenido {
+    left: 22px;
+    right: 22px;
+    bottom: 24px;
+  }
+
+  .pagina-index .ruta-index-card__contenido::before {
+    left: -22px;
+    top: 80px;
+    height: 70px;
+  }
+
+  .pagina-index .ruta-index-card__contenido p,
+  .pagina-index .ruta-index-card__contenido span {
+    font-size: 0.95rem;
+  }
+
+  .pagina-index .ruta-index-card__contenido h3 {
+    font-size: 1.55rem;
+  }
+
+  .pagina-index .ruta-index-card__contenido strong {
+    font-size: 2.35rem;
+  }
+
+  .pagina-index .ruta-index-card__contenido a {
+    width: 100%;
+    max-width: none;
+    padding: 12px 16px;
+  }
+
+  .pagina-index .contacto-hero--index {
+    padding: 42px 0;
+  }
+
+  .pagina-index .contacto-hero--index .contacto-box {
+    grid-template-columns: 38px minmax(0, 1fr);
+  }
+
+  .pagina-index .index-nosotros,
+  .pagina-index .nosotros-section {
+    padding: 30px 0;
+  }
+
+  .pagina-index .index-nosotros > .container,
+  .pagina-index .nosotros-section .nosotros-card {
+    width: calc(100% - 24px);
+    padding: 28px 18px;
+    border-radius: 16px;
+  }
+
+  .pagina-index .nosotros-section .section-label {
+    font-size: 0.72rem;
+    letter-spacing: 2px;
+  }
+
+  .pagina-index .index-nosotros__titulo,
+  .pagina-index .nosotros-section .nosotros-title {
+    font-size: clamp(1.9rem, 9vw, 2.35rem);
+  }
+
+  .pagina-index .nosotros-section .mision-vision-card {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 18px;
+  }
+
+  .pagina-index .nosotros-section .separador {
+    width: 100%;
+    height: 1px;
+  }
+
+  .pagina-index .nosotros-section .mision-item {
+    align-items: flex-start;
+  }
+
+  .pagina-index .nosotros-section .nosotros-image {
+    height: 320px;
+    border-radius: 18px;
+  }
+
+  .pagina-index .nosotros-section .image-badge {
+    position: static;
+    max-width: none;
+    margin-top: 14px;
+    padding: 14px;
+  }
+
+  .pagina-index .medios-pago__items {
+    gap: 10px 16px;
+  }
+
+  .pagina-index .whatsapp-flotante {
+    right: 16px;
+    bottom: 16px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .pagina-index .whatsapp-flotante i {
+    font-size: 1.6rem;
+  }
+}
+
+/* SM - celulares grandes y tablets pequenas */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .pagina-index .hero {
+    min-height: auto;
+    padding: 44px 0;
+  }
+
+  .pagina-index .hero-text {
+    padding: 24px 22px;
+  }
+
+  .pagina-index .seguridad {
+    font-size: clamp(2.35rem, 8vw, 3rem) !important;
+    letter-spacing: 2px;
+  }
+
+  .pagina-index .hero .btn-primary,
+  .pagina-index .hero .btn-dark {
+    flex: 1 1 240px;
+  }
+
+  .pagina-index .promo-index-card,
+  .pagina-index .promo-index-card img {
+    min-height: 390px;
+  }
+
+  .pagina-index .promo-index-card__contenido h3,
+  .pagina-index .ruta-index-card__contenido h3 {
+    font-size: 1.75rem;
+  }
+
+  .pagina-index .index-encomiendas {
+    padding: 62px 0;
+  }
+
+  .pagina-index .ruta-index-card img {
+    min-height: 350px;
+  }
+
+  .pagina-index .nosotros-section .mision-vision-card {
+    grid-template-columns: 1fr;
+  }
+
+  .pagina-index .nosotros-section .separador {
+    width: 100%;
+    height: 1px;
+  }
+
+  .pagina-index .nosotros-section .nosotros-image {
+    height: 380px;
+  }
+}
+
+/* MD - tablets */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .pagina-index .hero {
+    min-height: 560px;
+    padding: 54px 0;
+  }
+
+  .pagina-index .hero-text {
+    max-width: 640px;
+    padding: 28px 26px;
+  }
+
+  .pagina-index .seguridad {
+    font-size: clamp(2.8rem, 6vw, 3.6rem) !important;
+    letter-spacing: 3px;
+  }
+
+  .pagina-index .index-promociones,
+  .pagina-index .index-rutas {
+    padding-top: 62px;
+    padding-bottom: 70px;
+  }
+
+  .pagina-index .promo-index-card,
+  .pagina-index .promo-index-card img {
+    min-height: 420px;
+  }
+
+  .pagina-index .promo-index-card__contenido {
+    left: 26px;
+    right: 26px;
+    bottom: 28px;
+  }
+
+  .pagina-index .promo-index-card__contenido h3 {
+    font-size: 1.85rem;
+  }
+
+  .pagina-index .index-encomiendas {
+    padding: 70px 0;
+  }
+
+  .pagina-index .ruta-index-card img {
+    min-height: 360px;
+  }
+
+  .pagina-index .ruta-index-card__contenido {
+    left: 24px;
+    right: 24px;
+  }
+
+  .pagina-index .ruta-index-card__contenido h3 {
+    font-size: 1.7rem;
+  }
+
+  .pagina-index .ruta-index-card__contenido strong {
+    font-size: 2.6rem;
+  }
+
+  .pagina-index .nosotros-section .nosotros-card {
+    padding: 42px 32px;
+  }
+
+  .pagina-index .nosotros-section .mision-vision-card {
+    grid-template-columns: 1fr;
+  }
+
+  .pagina-index .nosotros-section .separador {
+    width: 100%;
+    height: 1px;
+  }
+
+  .pagina-index .nosotros-section .nosotros-image {
+    height: 430px;
+  }
+}
+
+/* LG - laptops */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .pagina-index .hero {
+    min-height: 590px;
+  }
+
+  .pagina-index .hero-text {
+    max-width: 570px;
+    padding: 24px;
+  }
+
+  .pagina-index .seguridad {
+    font-size: 2.65rem;
+    letter-spacing: 3px;
+  }
+
+  .pagina-index .hero-descripcion {
+    font-size: 1rem;
+  }
+
+  .pagina-index .promo-index-card__contenido {
+    left: 24px;
+    right: 24px;
+  }
+
+  .pagina-index .promo-index-card__contenido h3 {
+    font-size: 1.75rem;
+  }
+
+  .pagina-index .ruta-index-card__contenido {
+    left: 22px;
+    right: 22px;
+  }
+
+  .pagina-index .ruta-index-card__contenido::before {
+    left: -22px;
+  }
+
+  .pagina-index .ruta-index-card__contenido h3 {
+    font-size: 1.55rem;
+  }
+
+  .pagina-index .ruta-index-card__contenido strong {
+    font-size: 2.4rem;
+  }
+
+  .pagina-index .ruta-index-card__contenido a {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .pagina-index .nosotros-section .nosotros-card {
+    padding: 42px;
+  }
+
+  .pagina-index .nosotros-section .nosotros-image {
+    height: 520px;
+  }
+}
+
+/* XL - escritorio */
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+  .pagina-index .hero {
+    min-height: 620px;
+  }
+
+  .pagina-index .hero-text {
+    max-width: 620px;
+    padding: 28px;
+  }
+
+  .pagina-index .seguridad {
+    font-size: 3rem;
+  }
+
+  .pagina-index .promo-index-card,
+  .pagina-index .promo-index-card img {
+    min-height: 455px;
+  }
+
+  .pagina-index .ruta-index-card img {
+    min-height: 380px;
+  }
+
+  .pagina-index .nosotros-section .nosotros-image {
+    height: 580px;
+  }
+}
+
+/* XXL - escritorio amplio */
+@media (min-width: 1400px) {
+  .pagina-index .hero {
+    min-height: 660px;
+  }
+
+  .pagina-index .hero-text {
+    max-width: 650px;
+    padding: 30px;
+  }
+
+  .pagina-index .promo-index-card,
+  .pagina-index .promo-index-card img {
+    min-height: 480px;
+  }
+
+  .pagina-index .ruta-index-card img {
+    min-height: 410px;
+  }
+}
+
+/* HEADER - visibilidad por breakpoints Bootstrap */
+@media (max-width: 991.98px) {
+  .btn-menu {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .btn-menu {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+  }
+
+  .reserva,
+  .btn-reserva {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+}
+
+/* PROMOCIONES INDEX - responsive Bootstrap */
+.promociones-index__fila {
+  overflow-x: visible;
+}
+
+.promociones-index__columna {
+  scroll-snap-align: start;
+}
+
+.promo-card {
+  width: 100%;
+}
+
+.promociones-index .btn-ver-promociones {
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 13px 24px;
+  border-radius: 40px;
+  background-color: var(--naranja);
+  color: var(--blanco);
+  font-size: 0.82rem;
+  font-weight: 900;
+  letter-spacing: 0.8px;
+  line-height: 1.2;
+  text-transform: uppercase;
+  box-shadow: 0 12px 25px rgba(249, 115, 22, 0.24);
+  transition: 0.3s ease;
+}
+
+.promociones-index .btn-ver-promociones:hover {
+  background-color: var(--naranja-oscuro);
+  color: var(--blanco);
+  transform: translateY(-2px);
+}
+
+.index-promociones__acciones {
+  display: flex;
+  justify-content: center;
+  margin-top: clamp(1.35rem, 3vw, 2rem);
+}
+
+.promociones-index .promo-index-card__boton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: fit-content;
+  max-width: 100%;
+  white-space: nowrap;
+}
+
+/* Celular: menor a 768px */
+@media (max-width: 767.98px) {
+  .promociones-index__fila {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: calc(var(--bs-gutter-x) * 0.5);
+    -webkit-overflow-scrolling: touch;
+    margin-right: 0;
+    margin-left: 0;
+    padding-bottom: 12px;
+  }
+
+  .promociones-index__columna {
+    flex: 0 0 100%;
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+/* Tablet: desde 768px hasta 991.98px */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .promociones-index__fila {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: calc(var(--bs-gutter-x) * 0.5);
+    -webkit-overflow-scrolling: touch;
+    margin-right: 0;
+    margin-left: 0;
+    padding-bottom: 12px;
+  }
+
+  .promociones-index__columna {
+    flex: 0 0 70%;
+    width: 70%;
+    max-width: 70%;
+  }
+}
+
+/* Laptop y escritorio: desde 992px */
+@media (min-width: 992px) {
+  .promociones-index__fila {
+    flex-wrap: wrap;
+    overflow-x: visible;
+  }
+
+  .promociones-index__columna {
+    flex: 0 0 33.333333%;
+    width: 33.333333%;
+    max-width: 33.333333%;
+  }
+}
+
+/* RUTAS INDEX - responsive Bootstrap */
+.rutas-index__fila {
+  overflow-x: visible;
+}
+
+.rutas-index__columna {
+  scroll-snap-align: start;
+}
+
+.ruta-card {
+  width: 100%;
+}
+
+.rutas-index .ruta-index-card__contenido a {
+  white-space: nowrap;
+}
+
+/* Celular: menor a 768px */
+@media (max-width: 767.98px) {
+  .rutas-index__fila {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: 0;
+    -webkit-overflow-scrolling: touch;
+    --bs-gutter-x: 0;
+    margin-right: 0;
+    margin-left: 0;
+    padding-bottom: 12px;
+  }
+
+  .rutas-index__columna {
+    flex: 0 0 100%;
+    width: 100%;
+    max-width: 100%;
+    scroll-snap-align: start;
+  }
+
+  .rutas-index .ruta-index-card {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .rutas-index .ruta-index-card__contenido {
+    left: clamp(1rem, 5vw, 1.4rem);
+    right: clamp(1rem, 5vw, 1.4rem);
+    text-align: center;
+  }
+
+  .rutas-index .ruta-index-card__contenido::before {
+    display: none;
+  }
+
+  .rutas-index .ruta-index-card__contenido h3 {
+    font-size: clamp(1.75rem, 8vw, 2.15rem);
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+
+  .rutas-index .ruta-index-card__contenido a {
+    width: min(100%, 15rem);
+    margin-right: auto;
+    margin-left: auto;
+    white-space: nowrap;
+  }
+}
+
+/* Tablet: desde 768px hasta 991.98px */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .rutas-index__fila {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: calc(var(--bs-gutter-x) * 0.5);
+    -webkit-overflow-scrolling: touch;
+    margin-right: 0;
+    margin-left: 0;
+    padding-bottom: 12px;
+  }
+
+  .rutas-index__columna {
+    flex: 0 0 70%;
+    width: 70%;
+    max-width: 70%;
+  }
+}
+
+/* Laptop y escritorio: desde 992px */
+@media (min-width: 992px) {
+  .rutas-index__fila {
+    flex-wrap: wrap;
+    overflow-x: visible;
+  }
+
+  .rutas-index__columna {
+    flex: 0 0 25%;
+    width: 25%;
+    max-width: 25%;
+  }
+}
+
+/* RESUMEN ENCOMIENDAS INDEX - hero moderno */
+.pagina-index .index-encomiendas {
+  min-height: 620px;
+  padding: 92px 0 0;
+  margin-bottom: 72px;
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  background-image: url("../img/servicios/encomienda.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-top: 5px solid var(--naranja);
+}
+
+.pagina-index .index-encomiendas__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(2, 6, 23, 0.98) 0%,
+      rgba(2, 6, 23, 0.86) 44%,
+      rgba(2, 6, 23, 0.36) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(2, 6, 23, 0.18) 0%,
+      rgba(2, 6, 23, 0.74) 100%
+    );
+}
+
+.pagina-index .index-encomiendas .container {
+  position: relative;
+  z-index: 2;
+}
+
+.pagina-index .index-encomiendas__contenido {
+  max-width: 760px;
+  margin-bottom: 56px;
+  color: var(--blanco);
+}
+
+.pagina-index .index-encomiendas__subtitulo {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding: 9px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 40px;
+  background: rgba(255, 255, 255, 0.10);
+  color: #ffffff;
+  font-size: 0.86rem;
+  font-weight: 900;
+  letter-spacing: 1.2px;
+  line-height: 1.2;
+  text-transform: uppercase;
+  backdrop-filter: blur(8px);
+}
+
+.pagina-index .index-encomiendas__subtitulo i {
+  color: var(--naranja);
+  font-size: 1.35rem;
+}
+
+.pagina-index .index-encomiendas h2 {
+  max-width: 760px;
+  margin-bottom: 24px;
+  color: #ffffff;
+  font-size: clamp(2.8rem, 6vw, 5.4rem);
+  font-weight: 900;
+  line-height: 0.98;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.pagina-index .index-encomiendas h2 span {
+  display: block;
+  color: var(--naranja);
+}
+
+.pagina-index .index-encomiendas__descripcion {
+  max-width: 680px;
+  margin-bottom: 34px;
+  color: #eef2ff;
+  font-size: clamp(1rem, 1.6vw, 1.25rem);
+  line-height: 1.7;
+}
+
+.pagina-index .index-encomiendas__beneficios {
+  position: relative;
+  z-index: 2;
+  max-width: 100%;
+  margin: 0 0 -46px;
+  overflow: hidden;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 18px 45px rgba(2, 6, 23, 0.18);
+}
+
+.pagina-index .index-encomiendas__beneficio {
+  min-height: 128px;
+  padding: 26px 24px;
+  border-right: 1px solid #e5e7eb;
+  background: #ffffff;
+  color: #111827;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  box-shadow: none;
+  backdrop-filter: none;
+  transition: transform 0.28s ease, background-color 0.28s ease;
+}
+
+.pagina-index .index-encomiendas__beneficio i {
+  color: var(--naranja);
+  font-size: 2.2rem;
+  line-height: 1;
+}
+
+.pagina-index .index-encomiendas__beneficio h3 {
+  margin-bottom: 6px;
+  color: #111827;
+  font-size: 0.98rem;
+  font-weight: 900;
+}
+
+.pagina-index .index-encomiendas__beneficio p {
+  color: #6b7280;
+  font-size: 0.9rem;
+  line-height: 1.35;
+}
+
+.pagina-index .index-encomiendas__beneficio:hover {
+  transform: translateY(-5px);
+  background: #fff7ed;
+}
+
+.pagina-index .index-encomiendas__boton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: fit-content;
+  min-width: 178px;
+  padding: 15px 30px;
+  border: 2px solid var(--naranja);
+  border-radius: 40px;
+  background-color: var(--naranja);
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+  line-height: 1.2;
+  text-transform: uppercase;
+  box-shadow: 0 14px 28px rgba(249, 115, 22, 0.28);
+  transition: transform 0.28s ease, background-color 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
+}
+
+.pagina-index .index-encomiendas__boton i {
+  transition: transform 0.28s ease;
+}
+
+.pagina-index .index-encomiendas__boton:hover {
+  background-color: var(--naranja-oscuro);
+  border-color: var(--naranja-oscuro);
+  color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 18px 34px rgba(249, 115, 22, 0.34);
+}
+
+.pagina-index .index-encomiendas__boton:hover i {
+  transform: translateX(4px);
+}
+
+@media (max-width: 991.98px) {
+  .pagina-index .index-encomiendas {
+    min-height: auto;
+    padding: 72px 0 0;
+    background-position: center;
+  }
+
+  .pagina-index .index-encomiendas__overlay {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(2, 6, 23, 0.96) 0%,
+        rgba(2, 6, 23, 0.82) 48%,
+        rgba(2, 6, 23, 0.96) 100%
+      );
+  }
+
+  .pagina-index .index-encomiendas__contenido,
+  .pagina-index .index-encomiendas h2,
+  .pagina-index .index-encomiendas__descripcion,
+  .pagina-index .index-encomiendas__beneficios {
+    max-width: 100%;
+  }
+
+  .pagina-index .index-encomiendas__beneficio {
+    border-right: 0;
+    border-bottom: 1px solid #e5e7eb;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .pagina-index .index-encomiendas {
+    padding: 58px 0 0;
+  }
+
+  .pagina-index .index-encomiendas__subtitulo {
+    justify-content: center;
+    width: 100%;
+    padding: 10px 14px;
+    font-size: 0.74rem;
+    letter-spacing: 0.8px;
+  }
+
+  .pagina-index .index-encomiendas h2 {
+    font-size: clamp(2.2rem, 11vw, 3.35rem);
+  }
+
+  .pagina-index .index-encomiendas__descripcion {
+    font-size: 0.98rem;
+  }
+
+  .pagina-index .index-encomiendas__beneficio {
+    min-height: auto;
+    padding: 18px;
+    align-items: flex-start;
+  }
+
+  .pagina-index .index-encomiendas__boton {
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+/* HERO PRINCIPAL INDEX - panel responsive */
+.pagina-index .hero {
+  min-height: clamp(34rem, 72vh, 44rem);
+  padding: clamp(2.5rem, 6vw, 5rem) 0;
+  align-items: center;
+}
+
+.pagina-index .hero .container-fluid {
+  width: 100%;
+}
+
+.pagina-index .hero .row {
+  min-height: inherit;
+  justify-content: flex-start !important;
+}
+
+.pagina-index .hero-text {
+  width: 100%;
+  max-width: min(95vw, 58rem);
+  padding: clamp(1.25rem, 2.6vw, 2rem);
+  border-radius: clamp(0.65rem, 1vw, 0.9rem);
+  overflow: visible;
+  overflow-wrap: normal;
+  word-break: normal;
+  container-type: inline-size;
+}
+
+.pagina-index .hero .badge {
+  max-width: 100%;
+  margin-bottom: clamp(0.75rem, 1.8vw, 1.15rem);
+  font-size: clamp(0.78rem, 1.4vw, 1.25rem);
+  line-height: 1.25;
+  white-space: normal;
+}
+
+.pagina-index .seguridad {
+  margin-bottom: clamp(1rem, 2.2vw, 1.5rem);
+  max-width: 100%;
+  font-size: clamp(1.45rem, 4.8vw, 3.4rem) !important;
+  font-size: clamp(1.45rem, 10.2cqw, 4.6rem) !important;
+  line-height: 1.06;
+  letter-spacing: clamp(0.01rem, 0.22cqw, 0.12rem);
+  white-space: nowrap;
+  overflow-wrap: normal !important;
+  word-break: keep-all !important;
+  hyphens: none !important;
+}
+
+.pagina-index .hero-title-line {
+  display: block;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow-wrap: normal !important;
+  word-break: keep-all !important;
+  hyphens: none !important;
+}
+
+.pagina-index .seguridad .accent {
+  color: #ea580c;
+}
+
+.pagina-index .hero-descripcion {
+  margin-bottom: clamp(1.35rem, 2.6vw, 2rem);
+  font-size: clamp(0.98rem, 1.35vw, 1.16rem);
+  line-height: 1.65;
+}
+
+.pagina-index .hero .botones {
+  gap: clamp(0.75rem, 1.6vw, 1.1rem);
+}
+
+.pagina-index .hero .btn-primary,
+.pagina-index .hero .btn-dark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  min-width: min(100%, 12rem);
+  padding: clamp(0.78rem, 1.4vw, 0.95rem) clamp(1rem, 2vw, 1.65rem);
+  font-size: clamp(0.76rem, 1vw, 0.86rem);
+  line-height: 1.2;
+  white-space: normal;
+}
+
+@media (min-width: 992px) {
+  .pagina-index .hero-text {
+    margin-left: 0;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .pagina-index .hero {
+    min-height: clamp(32rem, 68vh, 40rem);
+    padding: clamp(2.25rem, 5vw, 4rem) 0;
+  }
+
+  .pagina-index .hero-text {
+    max-width: min(94vw, 44rem);
+  }
+
+  .pagina-index .seguridad {
+    font-size: clamp(1.6rem, 5vw, 3rem) !important;
+    font-size: clamp(1.6rem, 9.2cqw, 4rem) !important;
+    letter-spacing: clamp(0.01rem, 0.16cqw, 0.08rem);
+  }
+}
+
+@media (max-width: 767.98px) {
+  .pagina-index .hero {
+    min-height: clamp(34rem, 82svh, 44rem);
+    padding: clamp(2rem, 8vw, 3.25rem) 0;
+  }
+
+  .pagina-index .hero .row {
+    justify-content: flex-start !important;
+  }
+
+  .pagina-index .hero-text {
+    width: 100%;
+    max-width: min(95vw, 34rem);
+    margin: 0;
+    padding: clamp(1.1rem, 5vw, 1.45rem);
+    text-align: center;
+  }
+
+  .pagina-index .seguridad {
+    font-size: clamp(1.35rem, 7vw, 2.4rem) !important;
+    font-size: clamp(1.35rem, 9.7cqw, 2.8rem) !important;
+    line-height: 1.08 !important;
+    letter-spacing: clamp(0.005rem, 0.12cqw, 0.04rem);
+  }
+
+  .pagina-index .hero-descripcion {
+    font-size: clamp(0.92rem, 3.7vw, 1rem);
+  }
+
+  .pagina-index .hero .botones {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .pagina-index .hero .btn-primary,
+  .pagina-index .hero .btn-dark {
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+/* HEADER INDEX - logo mobile */
+@media (max-width: 575.98px) {
+  .pagina-index .site-header {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .pagina-index .site-header .container-fluid {
+    padding-left: 0.5rem !important;
+    padding-right: 0.75rem !important;
+  }
+
+  .pagina-index .site-header .navbar-brand {
+    margin-left: 0 !important;
+  }
+
+  .pagina-index .site-header .header__logo img {
+    width: clamp(9rem, 58vw, 13rem);
+    max-height: 4.25rem;
+    object-fit: contain;
+  }
+}
+
+/* NOSOTROS INDEX - mision y vision como cajitas */
+.pagina-index .nosotros-section .mision-vision-card {
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.pagina-index .nosotros-section .mision-item {
+  align-items: center !important;
+  text-align: center;
+}
+
+.pagina-index .nosotros-section .mision-item .index-nosotros__linea {
+  margin-top: 12px;
+}
+
+.pagina-index .nosotros-section .separador {
+  display: none !important;
+}
+
+.pagina-index .index-nosotros__titulo-linea {
+  display: block;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow-wrap: normal;
+  word-break: keep-all;
+  hyphens: none;
+}
+
+/* NOSOTROS INDEX - filas compactas en mobile */
+@media (max-width: 575.98px) {
+  .pagina-index .index-nosotros__titulo,
+  .pagina-index .nosotros-section .nosotros-title {
+    font-size: clamp(1.35rem, 6vw, 1.75rem);
+    line-height: 1.12;
+  }
+
+  .pagina-index .index-nosotros__titulo-linea {
+    white-space: normal;
+    overflow-wrap: normal;
+    word-break: normal;
+    text-wrap: balance;
+  }
+
+  .pagina-index .nosotros-section .valores-grid,
+  .pagina-index .nosotros-section .mision-vision-card {
+    flex-wrap: nowrap;
+    --bs-gutter-x: 0.25rem;
+    --bs-gutter-y: 0.5rem;
+  }
+
+  .pagina-index .nosotros-section .valores-grid > .col-4 {
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+  }
+
+  .pagina-index .nosotros-section .mision-vision-card > .col-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+
+  .pagina-index .nosotros-section .valor-card,
+  .pagina-index .nosotros-section .mision-item {
+    min-height: 7.2rem;
+    padding: 0.75rem 0.18rem;
+    border-radius: 10px;
+  }
+
+  .pagina-index .nosotros-section .valor-icon,
+  .pagina-index .nosotros-section .mision-item i {
+    margin-bottom: 0.55rem;
+    font-size: clamp(1.65rem, 7vw, 2.1rem);
+  }
+
+  .pagina-index .nosotros-section .valor-card h2,
+  .pagina-index .nosotros-section .mision-item h2 {
+    font-size: clamp(0.56rem, 2.45vw, 0.76rem);
+    line-height: 1.15;
+    white-space: nowrap;
+    overflow-wrap: normal;
+    word-break: keep-all;
+    hyphens: none;
+  }
+
+  .pagina-index .nosotros-section .mision-item p {
+    max-width: 100%;
+    font-size: clamp(0.58rem, 2.5vw, 0.72rem);
+    line-height: 1.3;
+  }
+
+  .pagina-index .nosotros-section .valor-card span,
+  .pagina-index .nosotros-section .mision-item .index-nosotros__linea {
+    width: 1.45rem;
+    height: 2px;
+    margin-top: 0.5rem;
+  }
+}
+
+/* INDEX - centrado general solo en mobile */
+@media (max-width: 767.98px) {
+  .pagina-index main,
+  .pagina-index main section,
+  .pagina-index .medios-pago,
+  .pagina-index .footer-principal {
+    text-align: center !important;
+  }
+
+  .pagina-index main .row,
+  .pagina-index .medios-pago .row,
+  .pagina-index .footer-principal .row {
+    justify-content: center !important;
+    align-items: center;
+  }
+
+  .pagina-index .hero-text,
+  .pagina-index .index-encomiendas__contenido,
+  .pagina-index .contacto-hero__content,
+  .pagina-index .index-nosotros__contenido {
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center !important;
+  }
+
+  .pagina-index .index-promociones__header,
+  .pagina-index .index-rutas__header,
+  .pagina-index .index-promociones__titulo-box,
+  .pagina-index .index-rutas__titulo-box {
+    width: 100%;
+    align-items: center !important;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .pagina-index .index-promociones__acciones {
+    width: 100%;
+    display: flex;
+    justify-content: center !important;
+  }
+
+  .pagina-index .promo-index-card__contenido,
+  .pagina-index .ruta-index-card__contenido {
+    text-align: center;
+  }
+
+  .pagina-index .hero .botones,
+  .pagina-index .index-promociones__accion,
+  .pagina-index .index-rutas__accion,
+  .pagina-index .medios-pago__items {
+    justify-content: center !important;
+  }
+
+  .pagina-index .contacto-hero--index .contacto-box {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .pagina-index .contacto-box__texto,
+  .pagina-index .contacto-box__texto h3,
+  .pagina-index .contacto-box__texto p {
+    text-align: center;
+  }
+
+  .pagina-index .index-encomiendas__beneficio {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .pagina-index .footer-logo {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .pagina-index .footer-principal .nav {
+    align-items: center;
+  }
+
+  .pagina-index .footer-principal .d-flex {
+    justify-content: center !important;
+  }
+}
+
+/* INDEX - fuerza centrado mobile sin afectar header */
+@media (max-width: 767.98px) {
+  .pagina-index main .row:not(.promociones-index__fila):not(.rutas-index__fila) > [class*="col-"] {
+    margin-right: auto !important;
+    margin-left: auto !important;
+  }
+
+  .pagina-index .hero .row,
+  .pagina-index .index-encomiendas .row,
+  .pagina-index .contacto-hero__container .row,
+  .pagina-index .nosotros-section .row {
+    justify-content: center !important;
+  }
+
+  .pagina-index .hero-text,
+  .pagina-index .index-encomiendas__contenido,
+  .pagina-index .contacto-hero__content,
+  .pagina-index .index-nosotros__contenido,
+  .pagina-index .nosotros-section .nosotros-card {
+    margin-right: auto !important;
+    margin-left: auto !important;
+  }
+
+  .pagina-index .linea-naranja {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .pagina-index .index-nosotros__linea {
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .pagina-index .rutas-index__fila {
+    justify-content: flex-start !important;
+  }
+
+  .pagina-index .rutas-index__columna {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+  }
+}
+
+/* RUTAS INDEX - tarjetas completas en mobile */
+@media (max-width: 767.98px) {
+  .pagina-index .rutas-index__fila {
+    --bs-gutter-x: 0;
+    flex-wrap: nowrap !important;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: 0;
+    padding-bottom: 1rem;
+  }
+
+  .pagina-index .rutas-index__columna {
+    flex: 0 0 100% !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    display: flex;
+    justify-content: center;
+    scroll-snap-align: start;
+  }
+
+  .pagina-index .rutas-index .ruta-index-card {
+    width: min(100%, 22rem);
+    max-width: 22rem;
+    min-height: 31rem;
+    margin: 0 auto;
+  }
+
+  .pagina-index .rutas-index .ruta-index-card img {
+    min-height: 31rem;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .pagina-index .rutas-index .ruta-index-card__contenido {
+    left: clamp(1.15rem, 6vw, 1.7rem);
+    right: clamp(1.15rem, 6vw, 1.7rem);
+    bottom: clamp(1.5rem, 7vw, 2rem);
+    text-align: center;
+  }
+
+  .pagina-index .rutas-index .ruta-index-card__contenido::before {
+    display: none;
+  }
+
+  .pagina-index .rutas-index .ruta-index-card__contenido p,
+  .pagina-index .rutas-index .ruta-index-card__contenido span {
+    font-size: clamp(0.98rem, 4.8vw, 1.18rem);
+    line-height: 1.25;
+  }
+
+  .pagina-index .rutas-index .ruta-index-card__contenido h3 {
+    margin-bottom: 1.25rem;
+    font-size: clamp(2rem, 9vw, 2.55rem);
+    line-height: 1.05;
+    white-space: normal;
+    overflow-wrap: normal;
+    word-break: keep-all;
+  }
+
+  .pagina-index .rutas-index .ruta-index-card__contenido strong {
+    margin-bottom: 1.45rem;
+    font-size: clamp(2.7rem, 13vw, 3.5rem);
+    line-height: 1;
+  }
+
+  .pagina-index .rutas-index .ruta-index-card__contenido a {
+    width: min(100%, 17rem);
+    max-width: 17rem;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0.85rem 1.15rem;
+    white-space: nowrap;
+  }
+}
+
+/* RUTAS INDEX - una tarjeta completa por pantalla en mobile */
+@media (max-width: 767.98px) {
+  .pagina-index .rutas-index {
+    overflow: hidden;
+  }
+
+  .pagina-index .rutas-index .container {
+    max-width: 100%;
+    padding-right: clamp(1rem, 5vw, 1.5rem);
+    padding-left: clamp(1rem, 5vw, 1.5rem);
+    overflow: hidden;
+  }
+
+  .pagina-index .rutas-index__fila.row {
+    display: grid !important;
+    grid-auto-flow: column;
+    grid-auto-columns: 100%;
+    grid-template-columns: none;
+    gap: 0;
+    width: 100%;
+    justify-content: start !important;
+    justify-items: stretch;
+    align-items: stretch !important;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 0;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .pagina-index .rutas-index__fila.row > .rutas-index__columna {
+    display: block !important;
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    scroll-snap-align: start;
+  }
+
+  .pagina-index .rutas-index__fila.row > .rutas-index__columna + .rutas-index__columna {
+    margin-left: 0;
+  }
+
+  .pagina-index .rutas-index .ruta-index-card {
+    width: 100%;
+    max-width: 100%;
+    min-height: clamp(28rem, 122vw, 33rem);
+    border-radius: 0;
+  }
+
+  .pagina-index .rutas-index .ruta-index-card img {
+    width: 100%;
+    min-height: clamp(28rem, 122vw, 33rem);
+  }
+
+  .pagina-index .rutas-index .ruta-index-card__contenido {
+    left: clamp(1.25rem, 7vw, 2rem);
+    right: clamp(1.25rem, 7vw, 2rem);
+    bottom: clamp(1.8rem, 8vw, 2.3rem);
+    width: auto;
+    max-width: none;
+  }
+
+  .pagina-index .rutas-index .ruta-index-card__contenido h3 {
+    max-width: 100%;
+    font-size: clamp(2rem, 9.5vw, 2.65rem);
+  }
+
+  .pagina-index .rutas-index .ruta-index-card__contenido a {
+    width: min(100%, 18rem);
+    max-width: 18rem;
+  }
+}
+
+/* PROMOCIONES Y RUTAS INDEX - carrusel con puntos en mobile/tablet */
+.pagina-index .index-responsive-carousel {
+  display: none;
+}
+
+@media (max-width: 991.98px) {
+  .pagina-index .promociones-index__fila,
+  .pagina-index .rutas-index__fila {
+    display: none !important;
+  }
+
+  .pagina-index .index-responsive-carousel {
+    display: block;
+    width: 100%;
+    max-width: 46rem;
+    margin: 0 auto;
+  }
+
+  .pagina-index .index-responsive-carousel .carousel-inner {
+    overflow: hidden;
+  }
+
+  .pagina-index .index-slide-card {
+    width: 100%;
+  }
+
+  .pagina-index .index-slide-card__media {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background-color: #0f172a;
+  }
+
+  .pagina-index .index-slide-card__media img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .pagina-index .index-slide-card__tag {
+    position: absolute;
+    top: clamp(0.9rem, 3vw, 1.4rem);
+    left: clamp(0.9rem, 3vw, 1.4rem);
+    max-width: calc(100% - 2rem);
+    padding: clamp(0.6rem, 2vw, 0.8rem) clamp(1rem, 4vw, 1.65rem);
+    border-radius: 6px;
+    background-color: var(--naranja);
+    color: #ffffff;
+    font-size: clamp(0.78rem, 2.6vw, 1rem);
+    font-weight: 900;
+    letter-spacing: 1px;
+    line-height: 1.15;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  .pagina-index .promo-slide-card .index-slide-card__media::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.02) 0%,
+      rgba(0, 0, 0, 0.10) 42%,
+      rgba(0, 0, 0, 0.56) 100%
+    );
+  }
+
+  .pagina-index .promo-slide-card .index-slide-card__tag {
+    z-index: 2;
+  }
+
+  .pagina-index .promo-slide-card__boton {
+    position: absolute;
+    left: clamp(1rem, 5vw, 2rem);
+    right: clamp(1rem, 5vw, 2rem);
+    bottom: clamp(1rem, 4vw, 1.6rem);
+    z-index: 2;
+    min-height: clamp(3.5rem, 8vw, 4.25rem);
+    border: 0;
+    border-radius: 999px;
+    background-color: var(--naranja);
+    color: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7rem;
+    font-size: clamp(0.95rem, 3vw, 1.2rem);
+    font-weight: 900;
+    letter-spacing: 1px;
+    line-height: 1.15;
+    text-transform: uppercase;
+    white-space: nowrap;
+    box-shadow: 0 14px 28px rgba(249, 115, 22, 0.26);
+    transition: transform 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .pagina-index .promo-slide-card__boton:hover {
+    color: #ffffff;
+    background-color: var(--naranja-oscuro);
+    transform: translateY(-2px);
+    box-shadow: 0 18px 34px rgba(249, 115, 22, 0.32);
+  }
+
+  .pagina-index .ruta-slide-card__media::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.12) 0%,
+      rgba(0, 0, 0, 0.35) 42%,
+      rgba(0, 0, 0, 0.78) 100%
+    );
+  }
+
+  .pagina-index .ruta-slide-card__contenido {
+    position: absolute;
+    left: clamp(1rem, 5vw, 2rem);
+    right: clamp(1rem, 5vw, 2rem);
+    bottom: clamp(1.1rem, 4vw, 1.8rem);
+    z-index: 2;
+    color: #ffffff;
+    text-align: center;
+  }
+
+  .pagina-index .ruta-slide-card__contenido p,
+  .pagina-index .ruta-slide-card__contenido span {
+    margin-bottom: 0.35rem;
+    color: #ffffff;
+    font-size: clamp(0.9rem, 3vw, 1.1rem);
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .pagina-index .ruta-slide-card__contenido span {
+    display: block;
+    font-weight: 500;
+  }
+
+  .pagina-index .ruta-slide-card__contenido h3 {
+    margin-bottom: clamp(0.7rem, 2vw, 1rem);
+    color: #ffffff;
+    font-size: clamp(1.85rem, 6vw, 2.85rem);
+    font-weight: 900;
+    line-height: 1.02;
+    text-wrap: balance;
+  }
+
+  .pagina-index .ruta-slide-card__contenido strong {
+    display: block;
+    color: #ffffff;
+    font-size: clamp(2.3rem, 8vw, 3.4rem);
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: clamp(1.2rem, 4vw, 1.8rem);
+  }
+
+  .pagina-index .ruta-slide-card__boton {
+    width: min(100%, 18rem);
+    min-height: clamp(3.5rem, 8vw, 4.25rem);
+    margin-right: auto;
+    margin-left: auto;
+    border: 0;
+    border-radius: 999px;
+    background-color: var(--naranja);
+    color: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7rem;
+    font-size: clamp(0.9rem, 3vw, 1.05rem);
+    font-weight: 900;
+    letter-spacing: 1px;
+    line-height: 1.15;
+    text-transform: uppercase;
+    white-space: nowrap;
+    box-shadow: 0 14px 28px rgba(249, 115, 22, 0.26);
+    transition: transform 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .pagina-index .ruta-slide-card__boton:hover {
+    color: #ffffff;
+    background-color: var(--naranja-oscuro);
+    transform: translateY(-2px);
+    box-shadow: 0 18px 34px rgba(249, 115, 22, 0.32);
+  }
+
+  .pagina-index .index-slide-card__boton {
+    width: 100%;
+    min-height: clamp(3.6rem, 9vw, 4.5rem);
+    margin-top: clamp(1rem, 3vw, 1.35rem);
+    border: 0;
+    border-radius: 999px;
+    background-color: var(--naranja);
+    color: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7rem;
+    font-size: clamp(0.95rem, 3vw, 1.2rem);
+    font-weight: 900;
+    letter-spacing: 1px;
+    line-height: 1.15;
+    text-transform: uppercase;
+    box-shadow: 0 14px 28px rgba(249, 115, 22, 0.22);
+    transition: transform 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .pagina-index .index-slide-card__boton:hover {
+    color: #ffffff;
+    background-color: var(--naranja-oscuro);
+    transform: translateY(-2px);
+    box-shadow: 0 18px 34px rgba(249, 115, 22, 0.28);
+  }
+
+  .pagina-index .index-carousel-dots.carousel-indicators {
+    position: static;
+    width: 100%;
+    margin: clamp(0.95rem, 3vw, 1.35rem) 0 0;
+    gap: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .pagina-index .index-carousel-dots.carousel-indicators [data-bs-target] {
+    width: 0.82rem;
+    height: 0.82rem;
+    margin: 0;
+    border: 0;
+    border-radius: 50%;
+    background-color: #d4d4d4;
+    opacity: 1;
+    transition: background-color 0.25s ease, transform 0.25s ease;
+  }
+
+  .pagina-index .index-carousel-dots.carousel-indicators .active {
+    background-color: var(--naranja);
+    transform: scale(1.12);
+  }
+}
+
+@media (max-width: 575.98px) {
+  .pagina-index .index-responsive-carousel {
+    max-width: 100%;
+  }
+
+  .pagina-index .index-slide-card__media {
+    aspect-ratio: 1 / 0.82;
+  }
+
+  .pagina-index .ruta-slide-card__media {
+    aspect-ratio: 1 / 1.36;
+  }
+}
+
+/* RUTAS INDEX - dejar solo el carrusel con puntos */
+.pagina-index .rutas-index__carrusel {
+  display: block;
+  width: 100%;
+  max-width: 46rem;
+  margin: 0 auto;
+}
+
+.pagina-index .rutas-index__carrusel .carousel-inner {
+  overflow: hidden;
+}
+
+.pagina-index .rutas-index__carrusel .index-slide-card__media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background-color: #0f172a;
+}
+
+.pagina-index .rutas-index__carrusel .index-slide-card__media img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+.pagina-index .rutas-index__carrusel .ruta-slide-card__media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.12) 0%,
+    rgba(0, 0, 0, 0.35) 42%,
+    rgba(0, 0, 0, 0.78) 100%
+  );
+}
+
+.pagina-index .rutas-index__carrusel .ruta-slide-card__contenido {
+  position: absolute;
+  left: clamp(1rem, 5vw, 2rem);
+  right: clamp(1rem, 5vw, 2rem);
+  bottom: clamp(1.1rem, 4vw, 1.8rem);
+  z-index: 2;
+  color: #ffffff;
+  text-align: center;
+}
+
+.pagina-index .rutas-index__carrusel .ruta-slide-card__contenido p,
+.pagina-index .rutas-index__carrusel .ruta-slide-card__contenido span {
+  margin-bottom: 0.35rem;
+  color: #ffffff;
+  font-size: clamp(0.9rem, 3vw, 1.1rem);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.pagina-index .rutas-index__carrusel .ruta-slide-card__contenido span {
+  display: block;
+  font-weight: 500;
+}
+
+.pagina-index .rutas-index__carrusel .ruta-slide-card__contenido h3 {
+  margin-bottom: clamp(0.7rem, 2vw, 1rem);
+  color: #ffffff;
+  font-size: clamp(1.85rem, 6vw, 2.85rem);
+  font-weight: 900;
+  line-height: 1.02;
+  text-wrap: balance;
+}
+
+.pagina-index .rutas-index__carrusel .ruta-slide-card__contenido strong {
+  display: block;
+  margin-bottom: clamp(1.2rem, 4vw, 1.8rem);
+  color: #ffffff;
+  font-size: clamp(2.3rem, 8vw, 3.4rem);
+  font-weight: 900;
+  line-height: 1;
+}
+
+.pagina-index .rutas-index__carrusel .ruta-slide-card__boton {
+  width: min(100%, 18rem);
+  min-height: clamp(3.5rem, 8vw, 4.25rem);
+  margin-right: auto;
+  margin-left: auto;
+  border: 0;
+  border-radius: 999px;
+  background-color: var(--naranja);
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  font-size: clamp(0.9rem, 3vw, 1.05rem);
+  font-weight: 900;
+  letter-spacing: 1px;
+  line-height: 1.15;
+  text-transform: uppercase;
+  white-space: nowrap;
+  box-shadow: 0 14px 28px rgba(249, 115, 22, 0.26);
+}
+
+@media (max-width: 575.98px) {
+  .pagina-index .rutas-index__carrusel .ruta-slide-card__media {
+    aspect-ratio: 1 / 1.36;
+  }
+}
+
+/* Header fijo mobile */
+@media (max-width: 991.98px) {
+  body.pagina-index {
+    padding-top: 0;
+  }
+
+  .pagina-index main {
+    padding-top: 76px;
+  }
+
+  .pagina-index .site-header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    min-height: 76px;
+    padding: 0;
+    z-index: 1100;
+  }
+
+  .pagina-index .site-header .container-fluid {
+    min-height: 76px;
+    padding-right: clamp(0.9rem, 4vw, 1.35rem) !important;
+    padding-left: clamp(0.9rem, 4vw, 1.35rem) !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+  }
+
+  .pagina-index .site-header .reserva {
+    display: none !important;
+  }
+
+  .pagina-index .site-header .header__logo img {
+    width: clamp(9rem, 42vw, 12.25rem);
+    max-height: 4rem;
+    object-fit: contain;
+  }
+
+  .pagina-index .site-header .btn-menu {
+    width: 3rem;
+    height: 3rem;
+    margin-left: auto;
+    padding: 0;
+    border-radius: 999px;
+    color: var(--naranja);
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .pagina-index .site-header .icono-menu {
+    font-size: 2.2rem;
+    line-height: 1;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .pagina-index main {
+    padding-top: 70px;
+  }
+
+  .pagina-index .site-header,
+  .pagina-index .site-header .container-fluid {
+    min-height: 70px;
+  }
+
+  .pagina-index .site-header .header__logo img {
+    width: clamp(8.75rem, 52vw, 11.5rem);
+    max-height: 3.85rem;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .pagina-index .promociones-index__carrusel {
+    max-width: 35rem;
+  }
+
+  .pagina-index .promociones-index__carrusel .carousel-inner {
+    border-radius: 18px;
+    overflow: hidden;
+  }
+
+  .pagina-index .promo-slide-card__media {
+    aspect-ratio: 1 / 1.02;
+    border-radius: 18px;
+    box-shadow: 0 18px 36px rgba(15, 23, 42, 0.18);
+  }
+
+  .pagina-index .promo-slide-card .index-slide-card__media::after {
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.12) 0%,
+      rgba(0, 0, 0, 0.28) 42%,
+      rgba(0, 0, 0, 0.82) 100%
+    );
+  }
+
+  .pagina-index .promo-slide-card__contenido {
+    position: absolute;
+    inset: clamp(1rem, 3vw, 1.5rem);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: #ffffff;
+    text-align: left;
+  }
+
+  .pagina-index .promo-slide-card .index-slide-card__tag {
+    position: static;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    max-width: 100%;
+    margin: 0;
+    padding: 0.65rem 1.1rem;
+    border-radius: 999px;
+    background-color: var(--naranja);
+    color: #ffffff;
+    font-size: clamp(0.72rem, 2.3vw, 0.9rem);
+    font-weight: 900;
+    letter-spacing: 0.06rem;
+    line-height: 1.15;
+    text-transform: uppercase;
+    box-shadow: 0 10px 22px rgba(249, 115, 22, 0.28);
+  }
+
+  .pagina-index .promo-slide-card__contenido h3 {
+    max-width: 100%;
+    margin: auto 0 0.45rem;
+    color: #ffffff;
+    font-size: clamp(1.5rem, 5vw, 2.25rem);
+    font-weight: 900;
+    line-height: 1.05;
+    text-wrap: balance;
+  }
+
+  .pagina-index .promo-slide-card__contenido p {
+    max-width: 100%;
+    margin: 0 0 1rem;
+    color: #f8fafc;
+    font-size: clamp(0.9rem, 2.6vw, 1.05rem);
+    font-weight: 600;
+    line-height: 1.35;
+  }
+
+  .pagina-index .promo-slide-card__boton {
+    position: static;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    width: 100%;
+    min-height: 3.6rem;
+    margin: 0;
+    padding: 0.85rem 1.15rem;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+}
+
+/* Promociones mobile */
+@media (max-width: 767.98px) {
+  .pagina-index .index-promociones {
+    padding: clamp(2.35rem, 8vw, 3rem) 0 clamp(2.6rem, 9vw, 3.4rem);
+  }
+
+  .pagina-index .index-promociones .container {
+    max-width: 100%;
+    padding-right: clamp(1.25rem, 6vw, 1.7rem);
+    padding-left: clamp(1.25rem, 6vw, 1.7rem);
+  }
+
+  .pagina-index .index-promociones__header {
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    margin-bottom: 1.55rem;
+    text-align: left !important;
+  }
+
+  .pagina-index .index-promociones__titulo-box {
+    width: auto;
+    max-width: 100%;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    gap: 0.85rem;
+    text-align: left;
+  }
+
+  .pagina-index .index-promociones__titulo-box > div {
+    text-align: left;
+  }
+
+  .pagina-index .index-promociones .linea-naranja {
+    width: 0.28rem;
+    height: clamp(5.15rem, 22vw, 6.1rem);
+    flex: 0 0 0.28rem;
+    margin: 0;
+    border-radius: 999px;
+  }
+
+  .pagina-index .index-promociones__subtitulo {
+    margin: 0 0 0.45rem;
+    font-size: clamp(0.64rem, 2.7vw, 0.78rem);
+    letter-spacing: 0.08rem;
+    line-height: 1.2;
+  }
+
+  .pagina-index .index-promociones__header h2 {
+    max-width: 14.5rem;
+    margin: 0;
+    color: #111111;
+    font-size: clamp(2.05rem, 10.2vw, 2.8rem);
+    letter-spacing: 0;
+    line-height: 1.02;
+  }
+
+  .pagina-index .promociones-index__carrusel {
+    max-width: 22.5rem;
+  }
+
+  .pagina-index .promo-slide-card__media {
+    aspect-ratio: 1 / 1.06;
+    border-radius: 18px;
+  }
+
+  .pagina-index .promo-slide-card__contenido {
+    inset: 1.05rem;
+  }
+
+  .pagina-index .promo-slide-card .index-slide-card__tag {
+    padding: 0.58rem 0.9rem;
+    font-size: clamp(0.65rem, 2.8vw, 0.78rem);
+  }
+
+  .pagina-index .promo-slide-card__contenido h3 {
+    margin-bottom: 0.4rem;
+    font-size: clamp(1.35rem, 6.2vw, 1.9rem);
+  }
+
+  .pagina-index .promo-slide-card__contenido p {
+    margin-bottom: 0.9rem;
+    font-size: clamp(0.82rem, 3.4vw, 0.95rem);
+  }
+
+  .pagina-index .promo-slide-card__boton {
+    min-height: 3.35rem;
+    padding: 0.78rem 1rem;
+    font-size: clamp(0.74rem, 3.2vw, 0.92rem);
+    letter-spacing: 0.05rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .pagina-index .promociones-index__carrusel .index-carousel-dots.carousel-indicators {
+    display: none;
+  }
+}
+
+/* Indicadores mobile */
+@media (max-width: 767.98px) {
+  .pagina-index .promociones-index__carrusel .index-carousel-dots.carousel-indicators {
+    display: flex;
+    gap: 0.55rem;
+    margin: 1.05rem 0 0;
+  }
+
+  .pagina-index .promociones-index__carrusel .index-carousel-dots.carousel-indicators [data-bs-target] {
+    width: 0.72rem;
+    height: 0.72rem;
+    background-color: #d4d4d4;
+  }
+
+  .pagina-index .promociones-index__carrusel .index-carousel-dots.carousel-indicators .active {
+    background-color: var(--naranja);
+  }
+}
+
+/* Botón final mobile */
+@media (max-width: 767.98px) {
+  .pagina-index .index-promociones__acciones {
+    width: 100%;
+    margin-top: 1.45rem;
+    padding-right: 0.35rem;
+    padding-left: 0.35rem;
+  }
+
+  .pagina-index .promociones-index .btn-ver-promociones {
+    width: min(100%, 22.5rem);
+    min-height: 3.55rem;
+    padding: 0.85rem 1.15rem;
+    border-radius: 999px;
+    display: inline-flex !important;
+    gap: 0.7rem;
+    font-size: clamp(0.72rem, 3.2vw, 0.88rem);
+    letter-spacing: 0.05rem;
+    white-space: nowrap;
+  }
+}
+
+/* Hero botones tablet y desktop */
+@media (min-width: 768px) {
+  .pagina-index .hero .botones {
+    flex-direction: row !important;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-start !important;
+    width: auto;
+    max-width: 100%;
+  }
+
+  .pagina-index .hero .btn-primary,
+  .pagina-index .hero .btn-dark {
+    width: auto !important;
+    min-width: 12rem;
+    max-width: none;
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+}
+
+/* Encomiendas: beneficios sin solapamiento */
+.pagina-index .index-encomiendas {
+  padding-bottom: 72px;
+}
+
+.pagina-index .index-encomiendas__beneficios {
+  margin-bottom: 0;
+}
+
+/* Rutas desktop en una fila */
+@media (min-width: 992px) {
+  .pagina-index .rutas-index__carrusel {
+    display: none !important;
+  }
+
+  .pagina-index .rutas-index__fila {
+    display: flex !important;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    justify-content: center;
+  }
+
+  .pagina-index .rutas-index__columna {
+    flex: 0 0 25%;
+    width: 25%;
+    max-width: 25%;
   }
 }
 

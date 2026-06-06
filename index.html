@@ -22,7 +22,7 @@
 
 </head>
 
-<body>
+<body class="pagina-index">
 
   <!-- HEADER CON BOOTSTRAP  -->
   <header class="site-header header navbar navbar-expand-lg bg-white shadow-sm fixed-top">
@@ -45,7 +45,6 @@
           <li class="nav-item">
             <a class="nav-link" href="rutas.html">Rutas</a>
           </li>
-          <li class="nav-item"><a class="nav-link" href="encomiendas.html">Envíos</a></li>
           <li class="nav-item">
             <a class="nav-link" href="promociones.html">Promociones</a>
           </li>
@@ -56,7 +55,7 @@
       </nav>
 
       <!-- BOTÓN RESERVA -->
-      <div class="reserva d-none d-sm-flex">
+      <div class="reserva d-none d-lg-flex">
         <a href="reserva.html" class="btn-reserva">
           <i class="bi bi-ticket-perforated-fill me-2" aria-hidden="true"></i>
           RESERVA TU PASAJE
@@ -88,7 +87,6 @@
           <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
           <li class="nav-item"><a class="nav-link" href="servicios.html">Nuestros servicios</a></li>
           <li class="nav-item"><a class="nav-link" href="rutas.html">Rutas</a></li>
-          <li class="nav-item"><a class="nav-link" href="encomiendas.html">Envíos</a></li>
           <li class="nav-item"><a class="nav-link" href="promociones.html">Promociones</a></li>
           <li class="nav-item"><a class="nav-link" href="testimonios.html">Testimonios</a></li>
           <li class="nav-item"><a class="nav-link" href="preguntas-frecuentes.html">Preguntas frecuentes</a></li>
@@ -97,7 +95,7 @@
         </ul>
       </nav>
 
-      <a href="reserva.html" class="btn-reserva d-inline-flex mt-4 d-sm-none">
+      <a href="reserva.html" class="btn-reserva d-inline-flex mt-4 d-lg-none">
         <i class="bi bi-ticket-perforated-fill me-2" aria-hidden="true"></i>
         RESERVA TU PASAJE
       </a>
@@ -111,20 +109,20 @@
 
     <!-- HERO PRINCIPAL -->
     <section class="hero" aria-labelledby="titulo-principal">
-      <div class="container-fluid px-4 px-lg-5 position-relative z-3">
-        <div class="row align-items-center">
-          <div class="col-12 col-lg-7 col-xl-5">
+      <div class="container-fluid px-3 px-sm-4 px-lg-5 position-relative z-3">
+        <div class="row align-items-center justify-content-center justify-content-lg-start">
+          <div class="col-12 col-md-11 col-lg-8 col-xl-7 col-xxl-6">
 
-            <article class="hero-text">
+            <article class="hero-text text-center text-lg-start">
               <p class="badge">
                 <i class="bi bi-shield-check me-2" aria-hidden="true"></i>
                 EMPRESA DE TRANSPORTES
               </p>
 
               <h1 id="titulo-principal" class="seguridad">
-                VIAJA CON<br>
-                <span class="accent">SEGURIDAD PREMIUM</span><br>
-                GARANTIZADA
+                <span class="hero-title-line">VIAJA CON</span>
+                <span class="hero-title-line accent">SEGURIDAD</span>
+                <span class="hero-title-line">GARANTIZADA</span>
               </h1>
 
               <p class="hero-descripcion">
@@ -133,10 +131,10 @@
                 <span>comodidad, puntualidad y confianza</span> en cada viaje.
               </p>
 
-              <div class="botones justify-content-start" role="group" aria-label="Acciones principales del sitio">
+              <div class="botones justify-content-center justify-content-lg-start" role="group" aria-label="Acciones principales del sitio">
                 <a href="rutas.html" class="btn-primary">
                   <i class="bi bi-geo-alt-fill me-2" aria-hidden="true"></i>
-                  VER RUTAS DISPONIBLES
+                  VER RUTAS
                 </a>
 
                 <a href="contacto.html" class="btn-dark">
@@ -158,10 +156,10 @@
     
 
     <!-- RESUMEN PROMOCIONES -->
-    <section class="index-promociones" aria-labelledby="titulo-index-promociones">
+    <section class="promociones-index index-promociones" aria-labelledby="titulo-index-promociones">
       <div class="container">
 
-        <div class="index-promociones__header">
+        <div class="index-promociones__header flex-column flex-md-row align-items-start align-items-md-center">
           <div class="index-promociones__titulo-box">
             <span class="linea-naranja"></span>
 
@@ -171,34 +169,77 @@
             </div>
           </div>
 
-          <div class="index-promociones__acciones">
+        </div>
 
-            <!-- BOTÓN SOLO EN LAPTOP Y ESCRITORIO -->
-            <a href="promociones.html" class="btn-ver-promociones d-none d-md-inline-flex">
-              <i class="bi bi-stars" aria-hidden="true"></i>
-              VER MÁS PROMOCIONES
-              <i class="bi bi-arrow-right" aria-hidden="true"></i>
-            </a>
+        <div id="promocionesIndexCarrusel" class="carousel slide index-responsive-carousel promociones-index__carrusel d-lg-none" data-bs-ride="carousel" data-bs-touch="true" data-bs-interval="4500">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <article class="index-slide-card promo-slide-card">
+                <div class="index-slide-card__media promo-slide-card__media">
+                  <img src="img/rutas/kuelap.png" alt="Promoción familiar para viajar por Amazonas">
+                  <div class="promo-slide-card__contenido">
+                    <span class="index-slide-card__tag">Tarifa familiar</span>
+                    <h3>Fines de semana en familia</h3>
+                    <p>Organiza una escapada por Amazonas con una promoción grupal.</p>
 
-            <!-- FLECHAS SOLO EN MÓVIL -->
-            <div class="index-promociones__flechas d-flex d-md-none" role="group" aria-label="Controles de promociones">
-              <button type="button" aria-label="Promoción anterior">
-                <i class="bi bi-arrow-left" aria-hidden="true"></i>
-              </button>
-
-              <button type="button" aria-label="Promoción siguiente">
-                <i class="bi bi-arrow-right" aria-hidden="true"></i>
-              </button>
+                    <a href="promociones.html#modal-promo3" class="promo-slide-card__boton">
+                      Más información
+                      <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                    </a>
+                  </div>
+                </div>
+              </article>
             </div>
 
+            <div class="carousel-item">
+              <article class="index-slide-card promo-slide-card">
+                <div class="index-slide-card__media promo-slide-card__media">
+                  <img src="img/servicios/encomienda.png" alt="Promoción de encomiendas ETSA">
+                  <div class="promo-slide-card__contenido">
+                    <span class="index-slide-card__tag">Promo encomiendas</span>
+                    <h3>Envíos frecuentes con tarifa especial</h3>
+                    <p>Mueve tus paquetes con confianza entre nuestras rutas principales.</p>
+
+                    <a href="promociones.html#modal-promo2" class="promo-slide-card__boton">
+                      Más información
+                      <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                    </a>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <div class="carousel-item">
+              <article class="index-slide-card promo-slide-card">
+                <div class="index-slide-card__media promo-slide-card__media">
+                  <img src="img/rutas/chachapoyas.png" alt="Promoción de pasaje de retorno a Chachapoyas">
+                  <div class="promo-slide-card__contenido">
+                    <span class="index-slide-card__tag">Descuento ida y vuelta</span>
+                    <h3>Ahorra en tu pasaje de retorno</h3>
+                    <p>Viaja por Amazonas con una tarifa especial para tu retorno.</p>
+
+                    <a href="promociones.html#modal-promo1" class="promo-slide-card__boton">
+                      Más información
+                      <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                    </a>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <div class="carousel-indicators index-carousel-dots">
+            <button type="button" data-bs-target="#promocionesIndexCarrusel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Promoción 1"></button>
+            <button type="button" data-bs-target="#promocionesIndexCarrusel" data-bs-slide-to="1" aria-label="Promoción 2"></button>
+            <button type="button" data-bs-target="#promocionesIndexCarrusel" data-bs-slide-to="2" aria-label="Promoción 3"></button>
           </div>
         </div>
 
-        <div class="row g-4">
+        <div class="row g-4 promociones-index__fila">
 
           <!-- PROMOCIÓN 1 -->
-          <div class="col-12 col-md-6 col-lg-4">
-            <article class="promo-index-card h-100">
+          <div class="col-12 col-lg-4 promociones-index__columna">
+            <article class="promo-card promo-index-card h-100">
               <img src="img/rutas/chachapoyas.png" alt="Promoción de pasaje de retorno a Chachapoyas">
 
               <div class="promo-index-card__overlay"></div>
@@ -225,8 +266,8 @@
           </div>
 
           <!-- PROMOCIÓN 2 -->
-          <div class="col-12 col-md-6 col-lg-4">
-            <article class="promo-index-card h-100">
+          <div class="col-12 col-lg-4 promociones-index__columna">
+            <article class="promo-card promo-index-card h-100">
               <img src="img/servicios/encomienda.png" alt="Promoción de encomiendas ETSA">
 
               <div class="promo-index-card__overlay"></div>
@@ -253,8 +294,8 @@
           </div>
 
           <!-- PROMOCIÓN 3 -->
-          <div class="col-12 col-md-6 col-lg-4">
-            <article class="promo-index-card h-100">
+          <div class="col-12 col-lg-4 promociones-index__columna">
+            <article class="promo-card promo-index-card h-100">
               <img src="img/rutas/kuelap.png" alt="Promoción familiar para viajar por Amazonas">
 
               <div class="promo-index-card__overlay"></div>
@@ -282,30 +323,35 @@
 
         </div>
 
-        <!-- BOTÓN FINAL -->
-        <div class="index-promociones__accion">
-          <a href="promociones.html" class="btn-primary">
+        <div class="index-promociones__acciones">
+          <a href="promociones.html" class="btn-ver-promociones d-inline-flex">
             <i class="bi bi-stars" aria-hidden="true"></i>
-            VER TODAS LAS PROMOCIONES
+            VER MÁS PROMOCIONES
+            <i class="bi bi-arrow-right" aria-hidden="true"></i>
           </a>
         </div>
+
       </div>
     </section>
 
 
     <!-- RESUMEN ENCOMIENDAS -->
     <section class="index-encomiendas" aria-labelledby="titulo-index-encomiendas">
-      <div class="container">
-        <div class="row">
-          <div class="col-12 col-lg-6">
+      <div class="index-encomiendas__overlay" aria-hidden="true"></div>
 
-            <div class="index-encomiendas__contenido">
+      <div class="container">
+        <div class="row justify-content-center justify-content-lg-start">
+          <div class="col-12 col-lg-8 col-xl-7">
+
+            <div class="index-encomiendas__contenido text-center text-lg-start">
               <p class="index-encomiendas__subtitulo">
                 <i class="bi bi-box-seam-fill" aria-hidden="true"></i>
-                Envía sobres, paquetes y
+                Envía con confianza
               </p>
 
-              <h2 id="titulo-index-encomiendas">encomiendas</h2>
+              <h2 id="titulo-index-encomiendas">
+                Encomiendas <span>seguras, siempre.</span>
+              </h2>
 
               <p class="index-encomiendas__descripcion">
                 En ETSA transportamos tus paquetes con seguridad, responsabilidad
@@ -320,15 +366,57 @@
 
           </div>
         </div>
+
+        <div class="row g-0 index-encomiendas__beneficios" aria-label="Beneficios de encomiendas">
+          <div class="col-12 col-sm-6 col-lg-3">
+            <article class="index-encomiendas__beneficio">
+              <i class="bi bi-shield-check" aria-hidden="true"></i>
+              <div>
+                <h3>Seguridad garantizada</h3>
+                <p>Cuidamos tu paquete en cada etapa del envío.</p>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-3">
+            <article class="index-encomiendas__beneficio">
+              <i class="bi bi-geo-alt" aria-hidden="true"></i>
+              <div>
+                <h3>Cobertura nacional</h3>
+                <p>Llegamos a las principales ciudades y rutas.</p>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-3">
+            <article class="index-encomiendas__beneficio">
+              <i class="bi bi-clock-history" aria-hidden="true"></i>
+              <div>
+                <h3>Entregas puntuales</h3>
+                <p>Cumplimos con los tiempos comprometidos.</p>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-3">
+            <article class="index-encomiendas__beneficio">
+              <i class="bi bi-headset" aria-hidden="true"></i>
+              <div>
+                <h3>Atención personalizada</h3>
+                <p>Estamos para ayudarte antes, durante y después.</p>
+              </div>
+            </article>
+          </div>
+        </div>
       </div>
     </section>
 
 
     <!-- RESUMEN RUTAS -->
-    <section class="index-rutas" aria-labelledby="titulo-index-rutas">
+    <section class="rutas-index index-rutas" aria-labelledby="titulo-index-rutas">
       <div class="container">
 
-        <div class="index-rutas__header">
+        <div class="index-rutas__header flex-column flex-md-row align-items-start align-items-md-center">
           <div class="index-rutas__titulo-box">
             <span class="linea-naranja"></span>
             <div>
@@ -336,21 +424,98 @@
               <h2 id="titulo-index-rutas">Descubre más destinos</h2>
             </div>
           </div>
+        </div>
 
-          <div class="index-rutas__flechas d-none d-md-flex" role="group" aria-label="Controles visuales">
-            <button type="button" aria-label="Ruta anterior">
-              <i class="bi bi-arrow-left"></i>
-            </button>
-            <button type="button" aria-label="Ruta siguiente">
-              <i class="bi bi-arrow-right"></i>
-            </button>
+        <div id="rutasIndexCarrusel" class="carousel slide index-responsive-carousel rutas-index__carrusel" data-bs-ride="carousel" data-bs-touch="true" data-bs-interval="4500">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <article class="index-slide-card ruta-slide-card">
+                <div class="index-slide-card__media ruta-slide-card__media">
+                  <img src="img/rutas/chachapoyas.png" alt="Ciudad de Chachapoyas">
+                  <div class="ruta-slide-card__contenido">
+                    <p>Viaja seguro a</p>
+                    <h3>Chachapoyas</h3>
+                    <span>Pasajes desde:</span>
+                    <strong>S/ 25</strong>
+
+                    <a href="rutas.html" class="ruta-slide-card__boton">
+                      CONOCE MÁS
+                      <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                    </a>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <div class="carousel-item">
+              <article class="index-slide-card ruta-slide-card">
+                <div class="index-slide-card__media ruta-slide-card__media">
+                  <img src="img/rutas/bagua.png" alt="Ciudad de Bagua Grande">
+                  <div class="ruta-slide-card__contenido">
+                    <p>Viaja seguro a</p>
+                    <h3>Bagua Grande</h3>
+                    <span>Pasajes desde:</span>
+                    <strong>S/ 20</strong>
+
+                    <a href="rutas.html" class="ruta-slide-card__boton">
+                      CONOCE MÁS
+                      <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                    </a>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <div class="carousel-item">
+              <article class="index-slide-card ruta-slide-card">
+                <div class="index-slide-card__media ruta-slide-card__media">
+                  <img src="img/rutas/Pedro-Ruiz.png" alt="Ciudad de Pedro Ruiz">
+                  <div class="ruta-slide-card__contenido">
+                    <p>Viaja seguro a</p>
+                    <h3>Pedro Ruiz</h3>
+                    <span>Pasajes desde:</span>
+                    <strong>S/ 18</strong>
+
+                    <a href="rutas.html" class="ruta-slide-card__boton">
+                      CONOCE MÁS
+                      <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                    </a>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <div class="carousel-item">
+              <article class="index-slide-card ruta-slide-card">
+                <div class="index-slide-card__media ruta-slide-card__media">
+                  <img src="img/rutas/Pomacochas.png" alt="Ciudad de Pomacochas">
+                  <div class="ruta-slide-card__contenido">
+                    <p>Viaja seguro a</p>
+                    <h3>Pomacochas</h3>
+                    <span>Pasajes desde:</span>
+                    <strong>S/ 22</strong>
+
+                    <a href="rutas.html" class="ruta-slide-card__boton">
+                      CONOCE MÁS
+                      <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                    </a>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <div class="carousel-indicators index-carousel-dots">
+            <button type="button" data-bs-target="#rutasIndexCarrusel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Ruta 1"></button>
+            <button type="button" data-bs-target="#rutasIndexCarrusel" data-bs-slide-to="1" aria-label="Ruta 2"></button>
+            <button type="button" data-bs-target="#rutasIndexCarrusel" data-bs-slide-to="2" aria-label="Ruta 3"></button>
+            <button type="button" data-bs-target="#rutasIndexCarrusel" data-bs-slide-to="3" aria-label="Ruta 4"></button>
           </div>
         </div>
 
-        <div class="row g-2 g-lg-3">
-          <!-- RUTA 1 -->
-          <div class="col-12 col-sm-6 col-lg-3">
-            <article class="ruta-index-card h-100">
+        <div class="row g-3 rutas-index__fila">
+          <div class="col-12 col-lg-3 rutas-index__columna">
+            <article class="ruta-card ruta-index-card h-100">
               <img src="img/rutas/chachapoyas.png" alt="Ciudad de Chachapoyas">
               <div class="ruta-index-card__overlay"></div>
 
@@ -368,9 +533,8 @@
             </article>
           </div>
 
-          <!-- RUTA 2 -->
-          <div class="col-12 col-sm-6 col-lg-3">
-            <article class="ruta-index-card h-100">
+          <div class="col-12 col-lg-3 rutas-index__columna">
+            <article class="ruta-card ruta-index-card h-100">
               <img src="img/rutas/bagua.png" alt="Ciudad de Bagua Grande">
               <div class="ruta-index-card__overlay"></div>
 
@@ -388,9 +552,8 @@
             </article>
           </div>
 
-          <!-- RUTA 3 -->
-          <div class="col-12 col-sm-6 col-lg-3">
-            <article class="ruta-index-card h-100">
+          <div class="col-12 col-lg-3 rutas-index__columna">
+            <article class="ruta-card ruta-index-card h-100">
               <img src="img/rutas/Pedro-Ruiz.png" alt="Ciudad de Pedro Ruiz">
               <div class="ruta-index-card__overlay"></div>
 
@@ -408,9 +571,8 @@
             </article>
           </div>
 
-          <!-- RUTA 4 -->
-          <div class="col-12 col-sm-6 col-lg-3">
-            <article class="ruta-index-card h-100">
+          <div class="col-12 col-lg-3 rutas-index__columna">
+            <article class="ruta-card ruta-index-card h-100">
               <img src="img/rutas/Pomacochas.png" alt="Ciudad de Pomacochas">
               <div class="ruta-index-card__overlay"></div>
 
@@ -432,7 +594,7 @@
         <div class="index-rutas__accion">
           <a href="rutas.html" class="btn-primary">
             <i class="bi bi-geo-alt-fill" aria-hidden="true"></i>
-            VER TODOS LOS DESTINOS
+            VER MÁS DESTINOS
           </a>
         </div>
 
@@ -444,8 +606,8 @@
       <div class="contacto-hero__overlay"></div>
 
       <div class="container contacto-hero__container">
-        <div class="row">
-          <div class="col-12 col-lg-7 col-xl-8">
+        <div class="row justify-content-center justify-content-lg-start">
+          <div class="col-12 col-lg-8 col-xl-7">
 
             <div class="contacto-hero__content">
               <p class="contacto-hero__eyebrow">
@@ -541,7 +703,7 @@
     <section class="index-nosotros nosotros-section py-5" aria-labelledby="titulo-index-nosotros">
       <div class="container nosotros-card">
 
-        <div class="row align-items-center g-5">
+        <div class="row align-items-center g-4 g-lg-5">
 
           <!-- COLUMNA IZQUIERDA: CONTENIDO -->
           <div class="col-12 col-lg-6">
@@ -553,8 +715,7 @@
               </p>
 
               <h1 id="titulo-index-nosotros" class="index-nosotros__titulo nosotros-title fw-bold mb-4">
-                ETSA Sol Amazonense,<br>
-                conectando Amazonas
+                <span class="index-nosotros__titulo-linea">ETSA Sol Amazonense</span>
               </h1>
 
               <p class="index-nosotros__descripcion nosotros-description mb-4">
@@ -566,7 +727,7 @@
               <!-- VALORES RESUMIDOS -->
               <div class="row g-3 mb-4 valores-grid">
 
-                <div class="col-12 col-sm-4">
+                <div class="col-4">
                   <article class="index-nosotros__valor valor-card text-center h-100">
                     <div class="index-nosotros__valor-icono valor-icon mx-auto mb-3">
                       <i class="bi bi-shield-check" aria-hidden="true"></i>
@@ -577,7 +738,7 @@
                   </article>
                 </div>
 
-                <div class="col-12 col-sm-4">
+                <div class="col-4">
                   <article class="index-nosotros__valor valor-card text-center h-100">
                     <div class="index-nosotros__valor-icono valor-icon mx-auto mb-3">
                       <i class="bi bi-clock" aria-hidden="true"></i>
@@ -588,7 +749,7 @@
                   </article>
                 </div>
 
-                <div class="col-12 col-sm-4">
+                <div class="col-4">
                   <article class="index-nosotros__valor valor-card text-center h-100">
                     <div class="index-nosotros__valor-icono valor-icon mx-auto mb-3">
                       <i class="bi bi-person-heart" aria-hidden="true"></i>
@@ -602,35 +763,39 @@
               </div>
 
               <!-- MISIÓN Y VISIÓN RESUMIDAS -->
-              <div class="index-nosotros__mv mision-vision-card mb-4">
-                <article class="index-nosotros__mv-item mision-item">
-                  <i class="bi bi-bullseye" aria-hidden="true"></i>
+              <div class="row g-3 index-nosotros__mv mision-vision-card mb-4">
+                <div class="col-6">
+                  <article class="index-nosotros__mv-item mision-item text-center h-100">
+                    <div class="index-nosotros__valor-icono valor-icon mx-auto mb-3">
+                      <i class="bi bi-bullseye" aria-hidden="true"></i>
+                    </div>
 
-                  <div>
-                    <h2 class="h5 fw-bold mb-1">Misión</h2>
+                    <h2 class="h6 fw-bold mb-2">Misión</h2>
                     <p class="mb-0">
                       Brindar un transporte seguro, puntual y responsable.
                     </p>
-                  </div>
-                </article>
+                    <span class="index-nosotros__linea"></span>
+                  </article>
+                </div>
 
-                <span class="separador" aria-hidden="true"></span>
+                <div class="col-6">
+                  <article class="index-nosotros__mv-item mision-item text-center h-100">
+                    <div class="index-nosotros__valor-icono valor-icon mx-auto mb-3">
+                      <i class="bi bi-eye" aria-hidden="true"></i>
+                    </div>
 
-                <article class="index-nosotros__mv-item mision-item">
-                  <i class="bi bi-eye" aria-hidden="true"></i>
-
-                  <div>
-                    <h2 class="h5 fw-bold mb-1">Visión</h2>
+                    <h2 class="h6 fw-bold mb-2">Visión</h2>
                     <p class="mb-0">
                       Ser líderes en transporte regional, conectando comunidades.
                     </p>
-                  </div>
-                </article>
+                    <span class="index-nosotros__linea"></span>
+                  </article>
+                </div>
               </div>
 
               <!-- BOTÓN -->
               <a href="nosotros.html" class="btn index-nosotros__boton btn-nosotros">
-                CONOCE MÁS SOBRE NOSOTROS
+                CONOCER MÁS
                 <i class="bi bi-arrow-right ms-2" aria-hidden="true"></i>
               </a>
 

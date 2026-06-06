@@ -476,6 +476,147 @@ ul {
   font-size: 26px;
 }
 
+.breadcrumb-rutas {
+  padding: 18px 7%;
+  background: #ffffff;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.breadcrumb-rutas > .container,
+.breadcrumb-rutas > .container-fluid {
+  max-width: 1180px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.breadcrumb-rutas ol {
+  width: fit-content;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  padding: 9px 14px;
+  overflow-x: auto;
+  border: 1px solid rgba(15, 23, 42, 0.10);
+  border-radius: 999px;
+  background: rgba(248, 250, 252, 0.94);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+  list-style: none;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (min-width: 1025px) {
+  .breadcrumb-rutas {
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+
+  .breadcrumb-rutas ol {
+    padding: 13px 22px;
+    gap: 14px;
+    border-radius: 16px;
+    box-shadow: 0 16px 34px rgba(15, 23, 42, 0.09);
+  }
+
+  .breadcrumb-rutas li {
+    gap: 14px;
+    font-size: 15px;
+  }
+
+  .breadcrumb-rutas a {
+    gap: 9px;
+  }
+
+  .breadcrumb-rutas i {
+    font-size: 18px;
+  }
+}
+
+.breadcrumb-rutas ol::-webkit-scrollbar {
+  display: none;
+}
+
+.breadcrumb-rutas li {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #64748b;
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.breadcrumb-rutas li + li::before {
+  content: "/";
+  color: rgba(15, 23, 42, 0.36);
+  font-weight: 900;
+}
+
+.breadcrumb-rutas a {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--azul-oscuro);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.breadcrumb-rutas a:hover {
+  color: var(--naranja);
+}
+
+.breadcrumb-rutas i {
+  color: var(--naranja);
+  font-size: 15px;
+}
+
+.breadcrumb-rutas [aria-current="page"] {
+  color: var(--naranja);
+}
+
+.medios-pago--rutas {
+  padding: 6px 0;
+}
+
+.medios-pago--rutas .row {
+  --bs-gutter-x: 1rem;
+  --bs-gutter-y: 0.25rem;
+}
+
+.medios-pago--rutas p {
+  font-size: 13px;
+  line-height: 1;
+}
+
+.medios-pago--rutas .medios-pago__items {
+  gap: 18px;
+  flex-wrap: nowrap;
+}
+
+.medios-pago--rutas .medios-pago__items span {
+  gap: 6px;
+  font-size: 12px;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.medios-pago--rutas .medios-pago__items i {
+  font-size: 18px;
+}
+
+.footer-link-reclamos {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.footer-link-reclamos i {
+  color: var(--naranja);
+  font-size: 1rem;
+}
+
 /* 11. FOOTER GENERAL  */
 .footer-principal {
   width: 100%;
@@ -1799,6 +1940,54 @@ figure {
   .footer-columna {
     border-left: none;
     padding-left: 0;
+  }
+
+  .medios-pago--rutas {
+    padding: 5px 0;
+  }
+
+  .medios-pago--rutas .container {
+    max-width: 100%;
+  }
+
+  .medios-pago--rutas .row {
+    flex-wrap: nowrap;
+    gap: 12px;
+  }
+
+  .medios-pago--rutas .col-12 {
+    width: auto;
+    flex: 0 0 auto;
+  }
+
+  .medios-pago--rutas .medios-pago__items {
+    gap: 14px;
+  }
+
+  .footer-principal--rutas {
+    text-align: center;
+  }
+
+  .footer-principal--rutas .row {
+    justify-content: center;
+  }
+
+  .footer-principal--rutas .row > [class*="col-"] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-principal--rutas .nav {
+    align-items: center;
+  }
+
+  .footer-principal--rutas [aria-label="Redes sociales"] {
+    justify-content: center;
+  }
+
+  .footer-principal--rutas address {
+    max-width: 360px;
   }
 }
 
@@ -7336,9 +7525,13 @@ section {
 .detalle-imagen-principal {
   position: relative;
   margin: 0;
+  width: 100%;
+  min-height: 520px;
+  margin-left: auto;
   overflow: hidden;
   border-radius: 8px;
-  box-shadow: 0 22px 50px rgba(15, 23, 42, 0.18);
+  background: linear-gradient(135deg, rgba(249, 115, 22, 0.10), rgba(15, 23, 42, 0.04));
+  box-shadow: 0 24px 58px rgba(15, 23, 42, 0.18);
 }
 
 .detalle-imagen-principal::after {
@@ -7352,9 +7545,28 @@ section {
 
 .detalle-imagen-principal img {
   width: 100%;
-  height: 520px;
+  height: 100%;
+  min-height: 520px;
   object-fit: cover;
   object-position: center;
+  transform: scale(1.035);
+  transition: transform 0.35s ease;
+}
+
+.detalle-imagen-principal:hover img {
+  transform: scale(1.06);
+}
+
+@media (min-width: 992px) {
+  .detalle-imagen-principal {
+    width: min(54vw, 760px);
+    min-height: 640px;
+    margin-right: clamp(-72px, -4vw, -28px);
+  }
+
+  .detalle-imagen-principal img {
+    min-height: 640px;
+  }
 }
 
 .atractivos-ruta {
@@ -7592,6 +7804,41 @@ section {
   .recomendaciones-detalle h2 {
     font-size: 2.8rem;
   }
+
+  .atractivos-ruta .row {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 16px;
+    scroll-padding-left: 0;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .atractivos-ruta .row > [class*="col-"] {
+    flex: 0 0 min(46vw, 420px);
+    max-width: min(46vw, 420px);
+    scroll-snap-align: start;
+  }
+
+  .atractivos-ruta .row::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  .atractivos-ruta .row::-webkit-scrollbar-track {
+    border-radius: 999px;
+    background: rgba(15, 23, 42, 0.08);
+  }
+
+  .atractivos-ruta .row::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+    background: rgba(249, 115, 22, 0.75);
+  }
+
+  .atractivos-ruta .detalle-card {
+    height: 100%;
+  }
 }
 
 @media (max-width: 991.98px) {
@@ -7622,8 +7869,14 @@ section {
     max-width: 100%;
   }
 
+  .detalle-imagen-principal {
+    width: 100%;
+    min-height: 420px;
+  }
+
   .detalle-imagen-principal img {
     height: 420px;
+    min-height: 420px;
   }
 
   .actividades-destino__texto {
@@ -7714,7 +7967,15 @@ section {
     font-size: 2.25rem;
   }
 
-  .detalle-imagen-principal img,
+  .detalle-imagen-principal {
+    min-height: 300px;
+  }
+
+  .detalle-imagen-principal img {
+    height: 300px;
+    min-height: 300px;
+  }
+
   .detalle-card .card-img-top {
     height: 300px;
   }
@@ -7906,8 +8167,13 @@ section {
     --bs-gutter-y: 2rem;
   }
 
+  .detalle-imagen-principal {
+    min-height: 360px;
+  }
+
   .detalle-imagen-principal img {
     height: 360px;
+    min-height: 360px;
   }
 
   .actividades-destino .col-lg-7 > .row,
@@ -8000,8 +8266,13 @@ section {
     padding-bottom: 48px;
   }
 
+  .detalle-imagen-principal {
+    min-height: 280px;
+  }
+
   .detalle-imagen-principal img {
     height: 280px;
+    min-height: 280px;
   }
 
   .actividades-destino .col-lg-7 > .row > [class*="col-"],
@@ -8028,6 +8299,296 @@ section {
   .tarjeta-ruta,
   .tarjeta-ruta img {
     min-height: 310px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .breadcrumb-rutas {
+    padding: 14px 6%;
+  }
+
+  .breadcrumb-rutas ol {
+    padding: 8px 12px;
+  }
+
+  .breadcrumb-rutas li {
+    font-size: 12px;
+  }
+
+  .medios-pago--rutas {
+    padding: 5px 0 !important;
+    text-align: center;
+  }
+
+  .medios-pago--rutas .container {
+    max-width: 100%;
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .medios-pago--rutas .row {
+    flex-wrap: nowrap;
+    gap: 10px;
+    --bs-gutter-x: 0;
+    --bs-gutter-y: 0;
+  }
+
+  .medios-pago--rutas .col-12 {
+    width: auto;
+    flex: 0 0 auto;
+  }
+
+  .medios-pago--rutas p {
+    font-size: 12px;
+    line-height: 1;
+  }
+
+  .medios-pago--rutas .medios-pago__items {
+    gap: 12px;
+    flex-wrap: nowrap;
+  }
+
+  .medios-pago--rutas .medios-pago__items span {
+    gap: 0;
+    font-size: 0;
+  }
+
+  .medios-pago--rutas .medios-pago__items i {
+    font-size: 18px;
+  }
+
+  .footer-principal--rutas {
+    text-align: center;
+  }
+
+  .footer-principal--rutas .row {
+    justify-content: center;
+  }
+
+  .footer-principal--rutas .row > [class*="col-"] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-principal--rutas .nav {
+    align-items: center;
+  }
+
+  .footer-principal--rutas [aria-label="Redes sociales"] {
+    justify-content: center;
+  }
+
+  .footer-principal--rutas address {
+    max-width: 360px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .navegacion-detalle .btn {
+    width: min(100%, 280px);
+    min-width: 0;
+    padding: 11px 22px !important;
+    font-size: 12px;
+    letter-spacing: 0.7px;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .rutas-seccion > .container-fluid,
+  .detalle-destino-info > .container,
+  .atractivos-ruta > .container,
+  .actividades-destino > .container,
+  .recomendaciones-detalle > .container,
+  .navegacion-detalle > .container {
+    width: min(100%, 720px);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .detalle-destino-info .row,
+  .actividades-destino > .container > .row,
+  .navegacion-detalle .d-flex {
+    justify-content: center !important;
+  }
+
+  .detalle-dato,
+  .actividad-item,
+  .recomendacion-card {
+    width: min(100%, 560px);
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .breadcrumb-rutas {
+    padding: 12px 22px;
+  }
+
+  .breadcrumb-rutas ol {
+    width: 100%;
+  }
+
+  .navegacion-detalle {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+
+  .navegacion-detalle .btn {
+    width: min(100%, 250px);
+    padding: 10px 18px !important;
+    font-size: 11.5px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .rutas-seccion > .container-fluid,
+  .detalle-destino-info > .container,
+  .atractivos-ruta > .container,
+  .actividades-destino > .container,
+  .recomendaciones-detalle > .container,
+  .navegacion-detalle > .container {
+    width: min(100%, 440px);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .detalle-destino-info .row,
+  .atractivos-ruta .row,
+  .actividades-destino > .container > .row,
+  .recomendaciones-detalle .row {
+    justify-content: center;
+  }
+
+  .detalle-destino-info .row > [class*="col-"],
+  .actividades-destino > .container > .row > [class*="col-"] {
+    max-width: 100%;
+  }
+
+  .rutas-hero,
+  .detalle-destino-hero {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .rutas-hero__contenido,
+  .detalle-destino-hero__contenido {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  .detalle-destino-hero::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .breadcrumb-rutas ol {
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .rutas-seccion {
+    text-align: center;
+  }
+
+  .rutas-header {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  .rutas-header p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .rutas-seccion .galeria-destinos-bootstrap {
+    text-align: center;
+  }
+
+  .tarjeta-ruta__contenido {
+    left: 50%;
+    right: auto;
+    width: min(100% - 40px, 300px);
+    transform: translateX(-50%);
+    text-align: center;
+  }
+
+  .ruta-etiqueta {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .detalle-destino-info,
+  .atractivos-ruta,
+  .actividades-destino,
+  .recomendaciones-detalle {
+    text-align: center;
+  }
+
+  .detalle-destino-texto {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .detalle-titulo-con-linea,
+  .seccion-detalle-titulo {
+    justify-content: center;
+  }
+
+  .detalle-subtitulo,
+  .detalle-destino-texto > p:not(.detalle-subtitulo),
+  .actividades-destino__texto p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .detalle-dato {
+    width: min(100%, 390px);
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .detalle-dato.d-flex {
+    flex-direction: column;
+    align-items: center !important;
+  }
+
+  .detalle-card .card-body,
+  .actividad-item,
+  .recomendacion-card {
+    width: min(100%, 390px);
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  .detalle-card__tag,
+  .actividad-item i,
+  .recomendacion-card i {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .actividades-destino__texto {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  .actividades-destino .row,
+  .recomendaciones-detalle .row {
+    text-align: center;
+  }
+
+  .navegacion-detalle .d-flex {
+    justify-content: center !important;
+    align-items: center !important;
   }
 }
 

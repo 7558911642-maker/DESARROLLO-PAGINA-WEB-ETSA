@@ -40,6 +40,7 @@
 .bi-eye::before { content: "\25C9"; }
 .bi-life-preserver::before { content: "\25CE"; }
 .bi-list::before { content: "\2630"; }
+.bi-journal-text::before { content: "\1F4D6"; }
 .bi-pencil-square::before { content: "\270E"; }
 .bi-people-fill::before { content: "\25C9"; }
 .bi-person-circle::before,

@@ -1,1 +1,394 @@
 /* Estilos especificos de terminos-viaje.html. */
+
+html.pagina-terminos-viaje-html {
+  overflow-x: clip;
+}
+
+body.pagina-terminos-viaje {
+  --terminos-header-height: 6.75rem;
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+  overflow-x: clip;
+}
+
+body.pagina-terminos-viaje main {
+  display: contents;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  overflow: visible !important;
+}
+
+body.pagina-terminos-viaje .site-header {
+  position: fixed !important;
+  top: 0 !important;
+  right: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  min-height: var(--terminos-header-height);
+  padding: 0 !important;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.1);
+  box-shadow: 0 0.25rem 1rem rgba(15, 23, 42, 0.07) !important;
+  z-index: 1100 !important;
+}
+
+body.pagina-terminos-viaje .site-header .container-fluid {
+  min-height: var(--terminos-header-height);
+  width: 100%;
+  padding-right: clamp(2rem, 5.2vw, 6.7rem) !important;
+  padding-left: clamp(2rem, 5.2vw, 6.7rem) !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(1.35rem, 2vw, 2.5rem);
+}
+
+body.pagina-terminos-viaje .site-header .header__logo {
+  flex: 0 0 auto;
+}
+
+body.pagina-terminos-viaje .site-header .header__logo img {
+  width: clamp(13.6rem, 17vw, 19.35rem);
+  max-height: 5.4rem;
+  object-fit: contain;
+}
+
+body.pagina-terminos-viaje .site-header .header__nav {
+  flex: 1 1 auto;
+  margin-left: clamp(1.6rem, 3vw, 4rem) !important;
+}
+
+body.pagina-terminos-viaje .site-header .navbar-nav {
+  justify-content: center;
+  column-gap: clamp(1.55rem, 2.6vw, 3.5rem) !important;
+}
+
+body.pagina-terminos-viaje .site-header .nav-link {
+  padding: 0;
+  color: #020617;
+  font-size: clamp(1rem, 1.15vw, 1.18rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+body.pagina-terminos-viaje .site-header .nav-link.activo,
+body.pagina-terminos-viaje .site-header .nav-link:hover {
+  color: var(--naranja);
+}
+
+body.pagina-terminos-viaje .site-header .reserva {
+  flex: 0 0 auto;
+  margin: 0 0 0 clamp(1rem, 1.8vw, 2.4rem);
+  padding: 0 clamp(0.9rem, 1.4vw, 1.35rem);
+  border-left: 1px solid #d1d5db;
+  border-right: 1px solid #d1d5db;
+}
+
+body.pagina-terminos-viaje .site-header .btn-reserva {
+  min-height: 3.5rem;
+  padding: 0.8rem 1.35rem;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  background: var(--naranja);
+  color: #ffffff;
+  font-size: clamp(0.82rem, 0.95vw, 0.98rem);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+
+body.pagina-terminos-viaje .site-header .btn-reserva:hover {
+  background: var(--naranja-oscuro);
+  color: #ffffff;
+}
+
+body.pagina-terminos-viaje .menu-bootstrap .nav-link.activo {
+  color: var(--naranja);
+}
+
+body.pagina-terminos-viaje .terminos-viaje-hero {
+  position: relative;
+  min-height: clamp(36rem, 49vw, 52.4rem);
+  margin: 0 !important;
+  padding-top: calc(var(--terminos-header-height) + clamp(4.4rem, 6.5vw, 7.8rem)) !important;
+  padding-bottom: clamp(5.2rem, 7vw, 7.4rem) !important;
+  border: 0 !important;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background:
+    linear-gradient(90deg, rgba(15, 23, 42, 0.88) 0%, rgba(15, 23, 42, 0.68) 52%, rgba(15, 23, 42, 0.18) 100%),
+    url("../../../img/banners/terminos_condiciones_viaje_banner.png") center / cover no-repeat !important;
+  background-attachment: scroll !important;
+}
+
+body.pagina-terminos-viaje .terminos-viaje-hero::before {
+  content: none;
+  display: none;
+}
+
+body.pagina-terminos-viaje .terminos-viaje-hero .container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding-right: clamp(1.5rem, 6vw, 8.8rem) !important;
+  padding-left: clamp(1.5rem, 7.5vw, 8.8rem) !important;
+}
+
+body.pagina-terminos-viaje .terminos-viaje-hero p.text-warning {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: clamp(3.2rem, 3.7vw, 4rem);
+  margin: 0 0 clamp(1.2rem, 1.6vw, 1.65rem) !important;
+  padding: 0.8rem 1.8rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.16);
+  color: #ffffff !important;
+  font-size: clamp(0.9rem, 1.08vw, 1.15rem);
+  font-weight: 900 !important;
+  line-height: 1;
+  letter-spacing: 0.08em;
+}
+
+body.pagina-terminos-viaje .terminos-viaje-hero h1 {
+  max-width: clamp(36rem, 67vw, 82rem);
+  margin: 0 0 clamp(1.45rem, 1.9vw, 2.1rem) !important;
+  color: #ffffff;
+  font-size: clamp(4rem, 5.9vw, 7.15rem);
+  font-weight: 900;
+  line-height: 0.98;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  text-shadow:
+    0 0.2rem 0.35rem rgba(0, 0, 0, 0.13),
+    0 0.7rem 1.45rem rgba(0, 0, 0, 0.22);
+}
+
+body.pagina-terminos-viaje .terminos-viaje-hero .lead {
+  max-width: clamp(30rem, 45vw, 54rem);
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-size: clamp(1.25rem, 1.7vw, 2.05rem);
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+body.pagina-terminos-viaje .breadcrumb-terminos-viaje {
+  position: -webkit-sticky !important;
+  position: sticky !important;
+  top: var(--terminos-header-height) !important;
+  z-index: 1095;
+  width: 100% !important;
+  padding: 2rem 7% 1.9rem;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+  background: #ffffff;
+  box-shadow: 0 0.7rem 1.4rem rgba(15, 23, 42, 0.04);
+}
+
+body.pagina-terminos-viaje .breadcrumb-terminos-viaje > .container {
+  width: 100%;
+  max-width: none;
+  display: flex;
+  justify-content: flex-start;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+body.pagina-terminos-viaje .breadcrumb-terminos-viaje ol {
+  width: fit-content;
+  max-width: 100%;
+  margin: 0;
+  padding: 0.88rem 1.5rem;
+  border: 1px solid rgba(15, 23, 42, 0.09);
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  overflow-x: auto;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 1rem 2.25rem rgba(15, 23, 42, 0.08);
+  list-style: none;
+  white-space: nowrap;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+body.pagina-terminos-viaje .breadcrumb-terminos-viaje ol::-webkit-scrollbar {
+  display: none;
+}
+
+body.pagina-terminos-viaje .breadcrumb-terminos-viaje li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: #64748b;
+  font-size: 0.95rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+body.pagina-terminos-viaje .breadcrumb-terminos-viaje li + li::before {
+  content: "/";
+  color: rgba(15, 23, 42, 0.28);
+  font-weight: 900;
+}
+
+body.pagina-terminos-viaje .breadcrumb-terminos-viaje a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--azul-oscuro);
+  text-decoration: none;
+  transition: color 0.22s ease, transform 0.22s ease;
+}
+
+body.pagina-terminos-viaje .breadcrumb-terminos-viaje a:hover,
+body.pagina-terminos-viaje .breadcrumb-terminos-viaje a:focus-visible {
+  color: var(--naranja);
+  transform: translateY(-1px);
+}
+
+body.pagina-terminos-viaje .breadcrumb-terminos-viaje i {
+  color: var(--naranja);
+  font-size: 1.05rem;
+  line-height: 1;
+}
+
+body.pagina-terminos-viaje .breadcrumb-terminos-viaje [aria-current="page"] {
+  color: var(--naranja);
+}
+
+body.pagina-terminos-viaje .breadcrumb-terminos-viaje + section {
+  background: #f8fafc;
+  padding: 80px 0 !important;
+}
+
+@media (max-width: 1199.98px) {
+  body.pagina-terminos-viaje {
+    --terminos-header-height: 5.8rem;
+  }
+
+  body.pagina-terminos-viaje .site-header .container-fluid {
+    padding-right: clamp(1.5rem, 3.5vw, 3rem) !important;
+    padding-left: clamp(1.5rem, 3.5vw, 3rem) !important;
+    gap: 1.4rem;
+  }
+
+  body.pagina-terminos-viaje .site-header .header__logo img {
+    width: clamp(11.5rem, 18vw, 14.5rem);
+    max-height: 4.8rem;
+  }
+
+  body.pagina-terminos-viaje .site-header .header__nav {
+    margin-left: auto !important;
+  }
+
+  body.pagina-terminos-viaje .site-header .navbar-nav {
+    column-gap: 1.35rem !important;
+  }
+
+  body.pagina-terminos-viaje .site-header .nav-link {
+    font-size: 0.92rem;
+  }
+
+  body.pagina-terminos-viaje .site-header .reserva {
+    margin-left: 1rem;
+    padding: 0 0.85rem;
+  }
+
+  body.pagina-terminos-viaje .site-header .btn-reserva {
+    min-height: 3.25rem;
+    padding: 0.75rem 1rem;
+    font-size: 0.78rem;
+  }
+
+  body.pagina-terminos-viaje .terminos-viaje-hero {
+    padding-top: calc(var(--terminos-header-height) + 5.2rem) !important;
+  }
+}
+
+@media (max-width: 991.98px) {
+  body.pagina-terminos-viaje {
+    --terminos-header-height: 4.75rem;
+  }
+
+  body.pagina-terminos-viaje .site-header .container-fluid {
+    padding-right: clamp(0.9rem, 4vw, 1.35rem) !important;
+    padding-left: clamp(0.9rem, 4vw, 1.35rem) !important;
+    justify-content: space-between;
+  }
+
+  body.pagina-terminos-viaje .site-header .header__logo img {
+    width: clamp(9rem, 42vw, 12.25rem);
+    max-height: 4rem;
+  }
+
+  body.pagina-terminos-viaje .site-header .reserva {
+    display: none !important;
+  }
+
+  body.pagina-terminos-viaje .site-header .btn-menu {
+    width: 3rem;
+    height: 3rem;
+    margin-left: auto;
+    padding: 0;
+    border-radius: 999px;
+    color: var(--naranja);
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+
+  body.pagina-terminos-viaje .site-header .icono-menu {
+    font-size: 2.2rem;
+    line-height: 1;
+  }
+
+  body.pagina-terminos-viaje .terminos-viaje-hero {
+    min-height: 28rem;
+    padding-top: calc(var(--terminos-header-height) + 4.5rem) !important;
+    padding-bottom: 3.5rem !important;
+  }
+
+  body.pagina-terminos-viaje .breadcrumb-terminos-viaje {
+    padding: 1.4rem 5%;
+  }
+}
+
+@media (max-width: 575.98px) {
+  body.pagina-terminos-viaje {
+    --terminos-header-height: 4.35rem;
+  }
+
+  body.pagina-terminos-viaje .site-header .header__logo img {
+    width: clamp(8.4rem, 46vw, 10.4rem);
+    max-height: 3.55rem;
+  }
+
+  body.pagina-terminos-viaje .terminos-viaje-hero {
+    min-height: 25rem;
+    padding-top: calc(var(--terminos-header-height) + 3.6rem) !important;
+    padding-bottom: 3rem !important;
+  }
+
+  body.pagina-terminos-viaje .terminos-viaje-hero h1 {
+    font-size: clamp(2.25rem, 13vw, 3.4rem);
+  }
+
+  body.pagina-terminos-viaje .breadcrumb-terminos-viaje {
+    padding: 1.15rem 1rem;
+  }
+
+  body.pagina-terminos-viaje .breadcrumb-terminos-viaje ol {
+    padding: 0.82rem 1rem;
+  }
+
+  body.pagina-terminos-viaje .breadcrumb-terminos-viaje li {
+    font-size: 0.86rem;
+  }
+}

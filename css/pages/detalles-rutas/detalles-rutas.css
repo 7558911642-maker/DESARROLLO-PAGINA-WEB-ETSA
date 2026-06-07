@@ -99,7 +99,7 @@
   width: 100%;
   max-width: 1180px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   padding-right: 0;
   padding-left: 0;
 }
@@ -785,7 +785,7 @@ main#contenido-principal .actividad-item p {
   }
 
   .breadcrumb-rutas--detalle > .container {
-    justify-content: center;
+    justify-content: flex-start;
   }
 
   .breadcrumb-rutas--detalle ol {
@@ -917,7 +917,7 @@ main#contenido-principal .actividad-item p {
 
   .breadcrumb-rutas--detalle ol {
     width: 100%;
-    justify-content: center;
+    justify-content: flex-start;
     padding: 11px 13px;
   }
 

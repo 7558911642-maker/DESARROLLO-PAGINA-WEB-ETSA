@@ -111,170 +111,187 @@
       <section class="contacto-hero" aria-labelledby="titulo-contacto">
         <div class="contacto-hero__contenido">
           <h1 id="titulo-contacto">Contáctanos</h1>
+          <p class="contacto-hero__subtitulo">
+            Ayudarte es nuestra prioridad. Comunícate con ETSA Sol Amazonense para consultar rutas, horarios, pasajes, encomiendas o reservas.
+          </p>
         </div>
       </section>
 
                 <!-- BREADCRUMB -->
       <nav aria-label="Ruta de navegación" class="breadcrumb-etsa">
-        <ol class="breadcrumb px-4 py-2">
-          <li class="breadcrumb-item">
-            <a href="index.html"><i class="bi bi-house-fill"></i> Inicio</a>
-          </li>
-          <li class="breadcrumb-item active">Contacto</li>
-        </ol>
+        <div class="breadcrumb-container">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+              <a href="index.html"><i class="bi bi-house-fill"></i> Inicio</a>
+            </li>
+            <li class="breadcrumb-item active">Contacto</li>
+          </ol>
+        </div>
       </nav>
 
 
-      <!-- CANALES DE CONTACTO -->
-<section class="canales-contacto" aria-labelledby="titulo-canales">
-  <div class="container">
-    <div class="row g-4 justify-content-center">
+      <!-- ATENCIÓN AL CLIENTE -->
+      <section class="atencion-cliente" aria-labelledby="titulo-atencion">
+        <div class="atencion-cliente__header text-center">
+          <div class="atencion-cliente__ubicacion">
+            <i class="bi bi-geo-alt-fill"></i>
+            <span>Chachapoyas</span>
+          </div>
+          <h2 id="titulo-atencion">Sede principal</h2>
+          <p class="atencion-cliente__subtitulo">Atención al cliente</p>
+          <p class="atencion-cliente__descripcion">Contacta a nuestro equipo de servicio al cliente para consultas sobre reservas, envíos, horarios o cualquier duda relacionada con tus viajes.</p>
+        </div>
 
-      <div class="col-6 col-md-3">
-        <a href="https://wa.me/51904178833" class="canal-card text-center d-block text-decoration-none" target="_blank">
-          <i class="bi bi-whatsapp fs-1 text-success"></i>
-          <h3>WhatsApp</h3>
-          <p>Atención rápida para consultas.</p>
-        </a>
-      </div>
+        <div class="atencion-carousel">
+          <div class="atencion-carousel__track">
+            <a class="atencion-item" href="tel:+51987654321">
+              <div class="atencion-item__icono">
+                <i class="bi bi-telephone-fill" aria-hidden="true"></i>
+              </div>
+              <div>
+                <p>Central telefónica</p>
+                <strong>987 654 321</strong>
+              </div>
+            </a>
 
-      <div class="col-6 col-md-3">
-        <a href="tel:+51987654321" class="canal-card text-center d-block text-decoration-none">
-          <i class="bi bi-telephone-fill fs-1"></i>
-          <h3>Teléfono</h3>
-          <p>Consulta horarios y reservas.</p>
-        </a>
-      </div>
+            <a class="atencion-item" href="https://wa.me/51904178833" target="_blank" rel="noopener noreferrer">
+              <div class="atencion-item__icono">
+                <i class="bi bi-whatsapp" aria-hidden="true"></i>
+              </div>
+              <div>
+                <p>WhatsApp</p>
+                <strong>Mensaje instantáneo</strong>
+              </div>
+            </a>
 
-      <div class="col-6 col-md-3">
-        <a href="mailto:informes@etsa.pe" class="canal-card text-center d-block text-decoration-none">
-          <i class="bi bi-envelope-fill fs-1"></i>
-          <h3>Correo</h3>
-          <p>Envía tus preguntas o solicitudes.</p>
-        </a>
-      </div>
+            <a class="atencion-item" href="mailto:informes@etsa.pe">
+              <div class="atencion-item__icono">
+                <i class="bi bi-envelope-fill" aria-hidden="true"></i>
+              </div>
+              <div>
+                <p>Correo electrónico</p>
+                <strong>informes@etsa.pe</strong>
+              </div>
+            </a>
 
-      <div class="col-6 col-md-3">
-        <div class="canal-card text-center">
-          <i class="bi bi-geo-alt-fill fs-1"></i>
-          <h3>Dirección</h3>
-          <p>Ubicación y referencia de la empresa.</p>
+            <div class="atencion-item">
+              <div class="atencion-item__icono">
+                <i class="bi bi-geo-alt-fill" aria-hidden="true"></i>
+              </div>
+              <div>
+                <p>Dirección</p>
+                <strong>Jirón Dos de Mayo, cuadra 15</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="atencion-carousel__dots" role="tablist" aria-label="Indicadores de contacto">
+            <button class="atencion-dot atencion-dot--activo" role="tab" aria-selected="true" aria-label="Teléfono"></button>
+            <button class="atencion-dot" role="tab" aria-selected="false" aria-label="WhatsApp"></button>
+            <button class="atencion-dot" role="tab" aria-selected="false" aria-label="Correo"></button>
+            <button class="atencion-dot" role="tab" aria-selected="false" aria-label="Ubicación"></button>
+          </div>
+        </div>
+      </section>
+
+      <!-- NUESTRAS SUCURSALES -->
+<section class="sucursales-seccion" aria-labelledby="titulo-sucursales">
+  <div class="sucursales-container">
+    <div class="sucursales-ubicacion">
+      <i class="bi bi-geo-alt-fill"></i>
+      <span>Nuestras sucursales</span>
+    </div>
+    <h2 id="titulo-sucursales" class="sucursales-titulo">Ubícanos en el Perú</h2>
+    
+    <div class="sucursales-carousel">
+      <div class="sucursales-carousel__track">
+        <!-- LUYA -->
+        <div class="sucursal-card">
+          <h3 class="sucursal-card__titulo">Luya</h3>
+          <div class="sucursal-card__contactos">
+            <a href="tel:+51987654322" class="sucursal-contacto">
+              <i class="bi bi-telephone-fill"></i>
+              <span>987 654 322</span>
+            </a>
+            <a href="https://wa.me/51987654322" class="sucursal-contacto" target="_blank" rel="noopener noreferrer">
+              <i class="bi bi-whatsapp"></i>
+              <span>WhatsApp</span>
+            </a>
+            <a href="mailto:informes@etsa.pe" class="sucursal-contacto">
+              <i class="bi bi-envelope-fill"></i>
+              <span>Correo</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- PEDRO RUIZ -->
+        <div class="sucursal-card">
+          <h3 class="sucursal-card__titulo">Pedro Ruiz</h3>
+          <div class="sucursal-card__contactos">
+            <a href="tel:+51987654323" class="sucursal-contacto">
+              <i class="bi bi-telephone-fill"></i>
+              <span>987 654 323</span>
+            </a>
+            <a href="https://wa.me/51987654323" class="sucursal-contacto" target="_blank" rel="noopener noreferrer">
+              <i class="bi bi-whatsapp"></i>
+              <span>WhatsApp</span>
+            </a>
+            <a href="mailto:informes@etsa.pe" class="sucursal-contacto">
+              <i class="bi bi-envelope-fill"></i>
+              <span>Correo</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- BAGUA GRANDE -->
+        <div class="sucursal-card">
+          <h3 class="sucursal-card__titulo">Bagua Grande</h3>
+          <div class="sucursal-card__contactos">
+            <a href="tel:+51987654324" class="sucursal-contacto">
+              <i class="bi bi-telephone-fill"></i>
+              <span>987 654 324</span>
+            </a>
+            <a href="https://wa.me/51987654324" class="sucursal-contacto" target="_blank" rel="noopener noreferrer">
+              <i class="bi bi-whatsapp"></i>
+              <span>WhatsApp</span>
+            </a>
+            <a href="mailto:informes@etsa.pe" class="sucursal-contacto">
+              <i class="bi bi-envelope-fill"></i>
+              <span>Correo</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- POMACOCHAS -->
+        <div class="sucursal-card">
+          <h3 class="sucursal-card__titulo">Pomacochas</h3>
+          <div class="sucursal-card__contactos">
+            <a href="tel:+51987654325" class="sucursal-contacto">
+              <i class="bi bi-telephone-fill"></i>
+              <span>987 654 325</span>
+            </a>
+            <a href="https://wa.me/51987654325" class="sucursal-contacto" target="_blank" rel="noopener noreferrer">
+              <i class="bi bi-whatsapp"></i>
+              <span>WhatsApp</span>
+            </a>
+            <a href="mailto:informes@etsa.pe" class="sucursal-contacto">
+              <i class="bi bi-envelope-fill"></i>
+              <span>Correo</span>
+            </a>
+          </div>
         </div>
       </div>
 
+      <!-- INDICADORES DE NAVEGACIÓN -->
+      <div class="sucursales-carousel__dots" role="group" aria-label="Indicadores de sucursales">
+        <button class="sucursales-dot sucursales-dot--activo" aria-label="Sucursal 1: Luya" data-slide="0"></button>
+        <button class="sucursales-dot" aria-label="Sucursal 2: Pedro Ruiz" data-slide="1"></button>
+        <button class="sucursales-dot" aria-label="Sucursal 3: Bagua Grande" data-slide="2"></button>
+        <button class="sucursales-dot" aria-label="Sucursal 4: Pomacochas" data-slide="3"></button>
+      </div>
     </div>
   </div>
 </section>
-
-      <!-- FORMULARIO DE CONTACTO -->
-      <section class="contacto-formulario-seccion" aria-labelledby="titulo-formulario">
-
-        <div class="contacto-intro">
-          <div class="contacto-intro__texto">
-            <p>
-              Ayudarte es nuestra prioridad. Comunícate con ETSA Sol Amazonense para
-              consultar rutas, horarios, pasajes, encomiendas o reservas.
-            </p>
-          </div>
-          <div class="contacto-intro__form">
-            <h2 id="titulo-formulario">Por favor completa el formulario:</h2>
-            <p>Los campos con (*) son obligatorios para poder enviar tu consulta.</p>
-          </div>
-
-        </div>
-
-        <div class="contacto-tabs" role="group" aria-label="Tipo de usuario">
-          <button type="button" class="contacto-tab contacto-tab--activo">
-            <i class="bi bi-person-fill" aria-hidden="true"></i>
-            Soy pasajero
-          </button>
-        </div>
-
-        <form class="form-contacto" action="mailto:informes@etsa.pe" method="post" enctype="text/plain">
-
-          <div class="form-contacto__fila">
-            <label for="nombre" class="sr-only">Nombres y apellidos</label>
-            <input type="text" id="nombre" name="nombre" placeholder="Nombres y apellidos*" required>
-
-            <label for="celular" class="sr-only">Celular</label>
-            <input type="tel" id="celular" name="celular" placeholder="Celular*" required>
-          </div>
-
-          <div class="form-contacto__fila">
-            <label for="correo" class="sr-only">Correo electrónico</label>
-            <input type="email" id="correo" name="correo" placeholder="Correo*" required>
-
-            <label for="asunto" class="sr-only">Asunto</label>
-            <input type="text" id="asunto" name="asunto" placeholder="Asunto*" required>
-          </div>
-
-          <label for="area" class="sr-only">Enviar a</label>
-          <select id="area" name="area" required>
-            <option value="">Enviar a*</option>
-            <option value="reservas">Reservas de pasajes</option>
-            <option value="encomiendas">Encomiendas</option>
-            <option value="atencion">Atención al cliente</option>
-            <option value="reclamos">Consultas y reclamos</option>
-          </select>
-
-          <label for="mensaje" class="sr-only">Mensaje</label>
-          <textarea id="mensaje" name="mensaje" placeholder="Mensaje*" required></textarea>
-
-          <div class="form-contacto__accion">
-            <button type="submit">
-              Enviar
-              <i class="bi bi-send-fill" aria-hidden="true"></i>
-            </button>
-          </div>
-        </form>
-
-      </section>
-
-      <!-- ATENCIÓN AL CLIENTE -->
-      <section class="atencion-cliente" aria-labelledby="titulo-atencion">
-
-        <h2 id="titulo-atencion">
-          <span></span>
-          Atención al cliente
-        </h2>
-
-        <div class="atencion-cliente__grid">
-
-          <div class="atencion-item">
-            <div class="atencion-item__icono">
-              <i class="bi bi-telephone-fill" aria-hidden="true"></i>
-            </div>
-
-            <div>
-              <p>Central telefónica</p>
-              <strong>987 654 321</strong>
-            </div>
-          </div>
-
-          <div class="atencion-item">
-            <div class="atencion-item__icono">
-              <i class="bi bi-geo-alt-fill" aria-hidden="true"></i>
-            </div>
-
-            <div>
-              <p>Oficina principal</p>
-              <strong>Av. Principal 740</strong>
-              <small>Amazonas, Perú</small>
-            </div>
-          </div>
-
-          <div class="atencion-item">
-            <div class="atencion-item__icono">
-              <i class="bi bi-envelope-fill" aria-hidden="true"></i>
-            </div>
-
-            <div>
-              <p>Correo electrónico</p>
-              <strong>informes@etsa.pe</strong>
-            </div>
-          </div>
-        </div>
-      </section>
 
     </main>
 
@@ -459,6 +476,125 @@
 
   <!-- Bootstrap JS -->
   <script src="bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Script del carrusel de sucursales -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const carousel = document.querySelector('.sucursales-carousel__track');
+      const dotsContainer = document.querySelector('.sucursales-carousel__dots');
+      const dots = document.querySelectorAll('.sucursales-dot');
+
+      if (!carousel) return;
+
+      function updateDotsVisibility() {
+        if (!dotsContainer) return;
+        // Si el contenido no sobrepasa el contenedor, ocultar dots
+        const hasOverflow = carousel.scrollWidth > carousel.clientWidth + 1;
+        dotsContainer.style.display = hasOverflow ? 'flex' : 'none';
+      }
+
+      function updateActiveDot() {
+        if (!dots || dots.length === 0) return;
+        const card = carousel.querySelector('.sucursal-card');
+        if (!card) return;
+        const cardWidth = card.offsetWidth + 24; // gap
+        const scrollPosition = carousel.scrollLeft;
+        const currentIndex = Math.round(scrollPosition / cardWidth);
+
+        dots.forEach((dot, index) => {
+          dot.classList.toggle('sucursales-dot--activo', index === currentIndex);
+        });
+      }
+
+      // Inicializar visibilidad y estado
+      updateDotsVisibility();
+      updateActiveDot();
+
+      // Escuchar scroll para actualizar indicador activo
+      carousel.addEventListener('scroll', function() {
+        updateActiveDot();
+      }, { passive: true });
+
+      // Hacer que los dots sean clicables
+      if (dots && dots.length > 0) {
+        dots.forEach((dot, index) => {
+          dot.addEventListener('click', function() {
+            const card = carousel.querySelector('.sucursal-card');
+            if (!card) return;
+            const cardWidth = card.offsetWidth + 24;
+            carousel.scrollLeft = index * cardWidth;
+            updateActiveDot();
+          });
+        });
+      }
+
+      // Recalcular en resize
+      window.addEventListener('resize', function() {
+        updateDotsVisibility();
+        updateActiveDot();
+      });
+
+      // Observador para cambios de layout dinámicos
+      const ro = new ResizeObserver(() => {
+        updateDotsVisibility();
+        updateActiveDot();
+      });
+      ro.observe(carousel);
+    });
+  </script>
+
+  <!-- Script del carrusel de atención al cliente -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const carousel = document.querySelector('.atencion-carousel__track');
+      const dots = document.querySelectorAll('.atencion-dot');
+
+      if (!carousel || dots.length === 0) return;
+
+      function updateActiveDot() {
+        const item = carousel.querySelector('.atencion-item');
+        if (!item) return;
+        const itemWidth = item.offsetWidth + 24; // gap
+        const scrollPosition = carousel.scrollLeft;
+        const currentIndex = Math.round(scrollPosition / itemWidth);
+
+        dots.forEach((dot, index) => {
+          dot.classList.toggle('atencion-dot--activo', index === currentIndex);
+          dot.setAttribute('aria-selected', index === currentIndex);
+        });
+      }
+
+      // Inicializar estado
+      updateActiveDot();
+
+      // Escuchar scroll para actualizar indicador activo
+      carousel.addEventListener('scroll', function() {
+        updateActiveDot();
+      }, { passive: true });
+
+      // Hacer que los dots sean clicables
+      dots.forEach((dot, index) => {
+        dot.addEventListener('click', function() {
+          const item = carousel.querySelector('.atencion-item');
+          if (!item) return;
+          const itemWidth = item.offsetWidth + 24;
+          carousel.scrollLeft = index * itemWidth;
+          updateActiveDot();
+        });
+      });
+
+      // Recalcular en resize
+      window.addEventListener('resize', function() {
+        updateActiveDot();
+      });
+
+      // Observador para cambios de layout dinámicos
+      const ro = new ResizeObserver(() => {
+        updateActiveDot();
+      });
+      ro.observe(carousel);
+    });
+  </script>
 
 </body>
 </html>

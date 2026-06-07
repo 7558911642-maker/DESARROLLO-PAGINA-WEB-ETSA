@@ -22,7 +22,7 @@
 
 </head>
 
-<body>
+<body class="pagina-info-viaje">
 
   <!-- HEADER CON BOOTSTRAP  -->
   <header class="site-header header navbar navbar-expand-lg bg-white shadow-sm fixed-top">
@@ -56,7 +56,7 @@
       </nav>
 
       <!-- BOTÓN RESERVA -->
-      <div class="reserva d-none d-sm-flex">
+      <div class="reserva d-none d-lg-flex">
         <a href="reserva.html" class="btn-reserva">
           <i class="bi bi-ticket-perforated-fill me-2" aria-hidden="true"></i>
           RESERVA TU PASAJE
@@ -97,7 +97,7 @@
         </ul>
       </nav>
 
-      <a href="reserva.html" class="btn-reserva d-inline-flex mt-4 d-sm-none">
+      <a href="reserva.html" class="btn-reserva d-inline-flex mt-4 d-lg-none">
         <i class="bi bi-ticket-perforated-fill me-2" aria-hidden="true"></i>
         RESERVA TU PASAJE
       </a>
@@ -112,15 +112,35 @@
      <!-- contenido de la pagina -->
   <main>
       <!-- HERO INFO PARA TU VIAJE -->
-      <section class="hero-viaje" aria-labelledby="titulo-info-viaje">
+      <section class="hero hero-viaje" aria-labelledby="titulo-info-viaje">
+        <div class="container-fluid px-3 px-sm-4 px-lg-5 position-relative z-3">
+          <div class="row align-items-center justify-content-center justify-content-lg-start">
+            <div class="col-12 col-md-11 col-lg-8 col-xl-7 col-xxl-6">
 
-        <div class="hero-viaje__overlay"></div>
+              <article class="hero-text hero-viaje__contenido text-center text-lg-start">
+                <p class="badge">
+                  <i class="bi bi-info-circle-fill me-2" aria-hidden="true"></i>
+                  Info para tu viaje
+                </p>
 
-        <div class="hero-viaje__contenido">
-          <p>Info para</p>
-          <h1 id="titulo-info-viaje">tu viaje</h1>
+                <h1 id="titulo-info-viaje" class="seguridad">
+                  <span class="hero-title-line">Todo listo</span>
+                  <span class="hero-title-line accent">para tu viaje</span>
+                </h1>
+
+                <p class="hero-descripcion">
+                  Encuentra recomendaciones claras para viajar con
+                  <span>comodidad, seguridad y confianza</span>.
+                </p>
+              </article>
+
+            </div>
+          </div>
         </div>
 
+        <figure class="hero-img m-0">
+          <img src="img/banners/info-viaje-banner.png" alt="Banner de informacion para tu viaje ETSA">
+        </figure>
       </section>
 
       <!-- MENSAJE CENTRAL -->
@@ -133,20 +153,22 @@
 
         <h2 id="titulo-politicas">Políticas de viaje</h2>
 
-        <div class="politicas-viaje__grid">
+        <div class="politicas-viaje__grid info-viaje-slider" data-info-slider aria-label="Tarjetas de politicas de viaje">
 
           <article class="politica-card">
             <figure>
               <img src="img/info-viaje/ninio.png" alt="Menor de edad viajando con equipaje">
             </figure>
 
-            <h3>Menores de edad</h3>
+            <div class="politica-card__contenido">
+              <h3>Menores de edad</h3>
 
-            <p>
-              Todo menor de edad que desea viajar solo o acompañado deberá presentar
-              la documentación correspondiente. Se recomienda portar documento de identidad
-              y autorización de viaje cuando sea necesario.
-            </p>
+              <p>
+                Todo menor de edad que desea viajar solo o acompañado deberá presentar
+                la documentación correspondiente. Se recomienda portar documento de identidad
+                y autorización de viaje cuando sea necesario.
+              </p>
+            </div>
           </article>
 
           <article class="politica-card">
@@ -154,13 +176,15 @@
               <img src="img/info-viaje/mayor_edad.png" alt="Pasajeros mayores de edad durante un viaje">
             </figure>
 
-            <h3>Mayores de edad</h3>
+            <div class="politica-card__contenido">
+              <h3>Mayores de edad</h3>
 
-            <p>
-              Los pasajeros mayores de edad deben presentar su boleto de viaje y documento
-              de identidad vigente al momento del embarque. Los datos del pasaje deben coincidir
-              con la identificación del pasajero.
-            </p>
+              <p>
+                Los pasajeros mayores de edad deben presentar su boleto de viaje y documento
+                de identidad vigente al momento del embarque. Los datos del pasaje deben coincidir
+                con la identificación del pasajero.
+              </p>
+            </div>
           </article>
 
           <article class="politica-card">
@@ -168,13 +192,15 @@
               <img src="img/info-viaje/extranjeros.png" alt="Pasajero extranjero con mapa y equipaje">
             </figure>
 
-            <h3>Extranjeros</h3>
+            <div class="politica-card__contenido">
+              <h3>Extranjeros</h3>
 
-            <p>
-              Los pasajeros extranjeros deberán presentar su boleto de viaje y documento
-              migratorio válido, como pasaporte, carné de extranjería u otro documento
-              autorizado para su identificación.
-            </p>
+              <p>
+                Los pasajeros extranjeros deberán presentar su boleto de viaje y documento
+                migratorio válido, como pasaporte, carné de extranjería u otro documento
+                autorizado para su identificación.
+              </p>
+            </div>
           </article>
 
         </div>
@@ -188,25 +214,27 @@
           Información adicional para el viaje
         </h2>
 
-        <div class="info-adicional__grid">
+        <div class="info-adicional__grid info-viaje-slider" data-info-slider aria-label="Tarjetas de informacion adicional para el viaje">
 
           <article class="info-card">
             <figure>
               <img src="img/info-viaje/cambios_pasaje.png" alt="Cambio de pasajes">
             </figure>
 
-            <h3>Cambios de pasajes</h3>
+            <div class="info-card__contenido">
+              <h3>Cambios de pasajes</h3>
 
-            <p>
-              Conoce las reglas para solicitar el cambio de pasaje. Toda postergación
-              o modificación del boleto debe realizarse dentro del horario de atención,
-              presentando el documento de identidad y el comprobante correspondiente.
-            </p>
+              <p>
+                Conoce las reglas para solicitar el cambio de pasaje. Toda postergación
+                o modificación del boleto debe realizarse dentro del horario de atención,
+                presentando el documento de identidad y el comprobante correspondiente.
+              </p>
 
-            <p>
-              En caso de trámites realizados por terceros, se deberá presentar una autorización
-              firmada y copia del documento de identidad del titular del pasaje.
-            </p>
+              <p>
+                En caso de trámites realizados por terceros, se deberá presentar una autorización
+                firmada y copia del documento de identidad del titular del pasaje.
+              </p>
+            </div>
           </article>
 
           <article class="info-card">
@@ -214,20 +242,22 @@
               <img src="img/info-viaje/discapacidad.png" alt="Pasajero en silla de ruedas">
             </figure>
 
-            <h3>Sillas de ruedas</h3>
+            <div class="info-card__contenido">
+              <h3>Sillas de ruedas</h3>
 
-            <p>
-              Los pasajeros que utilizan silla de ruedas son atendidos con prioridad.
-              Para garantizar una atención adecuada, se recomienda informar esta condición
-              al momento de adquirir el pasaje.
-            </p>
+              <p>
+                Los pasajeros que utilizan silla de ruedas son atendidos con prioridad.
+                Para garantizar una atención adecuada, se recomienda informar esta condición
+                al momento de adquirir el pasaje.
+              </p>
 
-            <h3>Sillas de ruedas</h3>
+              <h4 class="info-card__subtitulo">Transporte sin costo</h4>
 
-            <p>
-              ETSA transporta una silla por cliente sin cobro adicional, siempre que
-              se informe previamente al personal de atención.
-            </p>
+              <p>
+                ETSA transporta una silla por cliente sin cobro adicional, siempre que
+                se informe previamente al personal de atención.
+              </p>
+            </div>
           </article>
 
           <article class="info-card">
@@ -235,18 +265,20 @@
               <img src="img/info-viaje/articulos_prohibidos.png" alt="Señal de artículos prohibidos">
             </figure>
 
-            <h3>Artículos prohibidos</h3>
+            <div class="info-card__contenido">
+              <h3>Artículos prohibidos</h3>
 
-            <p>
-              No se permite transportar frutas, sustancias peligrosas, materiales inflamables,
-              explosivos, corrosivos o elementos que puedan poner en riesgo la seguridad
-              de los pasajeros.
-            </p>
+              <p>
+                No se permite transportar frutas, sustancias peligrosas, materiales inflamables,
+                explosivos, corrosivos o elementos que puedan poner en riesgo la seguridad
+                de los pasajeros.
+              </p>
 
-            <p>
-              La empresa no asume responsabilidad por mercadería que no cuente con la
-              documentación correspondiente o cuyo ingreso no esté permitido.
-            </p>
+              <p>
+                La empresa no asume responsabilidad por mercadería que no cuente con la
+                documentación correspondiente o cuyo ingreso no esté permitido.
+              </p>
+            </div>
           </article>
         </div>
       </section>
@@ -255,7 +287,7 @@
 
         <h2 id="titulo-equipaje">Equipaje permitido</h2>
 
-        <div class="equipaje__grid">
+        <div class="equipaje__grid info-viaje-slider" data-info-slider aria-label="Tarjetas de equipaje permitido">
 
           <article class="equipaje-card">
             <figure>
@@ -518,6 +550,7 @@
 
   <!-- Bootstrap JS -->
   <script src="bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/info-viaje-slider.js"></script>
 
 </body>
 </html>

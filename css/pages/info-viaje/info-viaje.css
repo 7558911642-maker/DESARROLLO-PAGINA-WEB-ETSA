@@ -1,20 +1,55 @@
-/* INFO PARA TU VIAJE - HERO ESTILO MOVIL BUS */
+/* INFO PARA TU VIAJE */
+body.pagina-info-viaje,
+body.pagina-info-viaje main {
+  max-width: 100%;
+  margin-top: 0 !important;
+  overflow-x: hidden;
+}
+
+body.pagina-info-viaje .mensaje-viaje p,
+body.pagina-info-viaje .politica-card__contenido,
+body.pagina-info-viaje .info-card__contenido,
+body.pagina-info-viaje .equipaje-card__contenido {
+  min-width: 0;
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+body.pagina-info-viaje .politica-card,
+body.pagina-info-viaje .info-card,
+body.pagina-info-viaje .equipaje-card,
+body.pagina-info-viaje .politica-card__contenido p,
+body.pagina-info-viaje .info-card__contenido p,
+body.pagina-info-viaje .equipaje-card__contenido p,
+body.pagina-info-viaje .equipaje-card__contenido li {
+  width: 100%;
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
 .hero-viaje {
   width: 100%;
-  min-height: 310px;
+  min-height: 0;
   position: relative;
-
   display: flex;
   align-items: center;
-
-  padding: 70px 7%;
+  padding: 45px 3%;
   overflow: hidden;
+  background-color: var(--azul-oscuro);
+  border-bottom: 5px solid var(--naranja);
+}
 
-  background: url("../../../img/banners/info-banner.png");
-
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+.hero-viaje::before {
+  background: linear-gradient(
+    90deg,
+    rgba(15, 23, 42, 0.72) 0%,
+    rgba(15, 23, 42, 0.42) 42%,
+    rgba(15, 23, 42, 0.04) 100%
+  );
 }
 
 .hero-viaje__overlay {
@@ -23,25 +58,95 @@
 
 .hero-viaje__contenido {
   position: relative;
-  z-index: 2;
-  color: var(--blanco);
+  z-index: 3;
+  color: #0f172a;
 }
 
-.hero-viaje__contenido p {
-  color: var(--blanco);
-  font-size: 32px;
-  font-weight: 400;
-  letter-spacing: 2px;
-  margin-bottom: 4px;
+.hero-viaje .hero-img img {
+  object-position: center;
 }
 
-.hero-viaje__contenido h1 {
-  color: var(--blanco);
-  font-size: clamp(68px, 9vw, 120px);
-  line-height: 0.95;
+.hero-viaje .hero-text {
+  width: min(100%, 48rem);
+  max-width: min(94vw, 48rem);
+  min-width: 0;
+  padding: clamp(1.35rem, 2.6vw, 2.25rem);
+  background:
+    linear-gradient(
+      135deg,
+      rgba(248, 250, 252, 0.86),
+      rgba(209, 213, 219, 0.72)
+    );
+  border: 1px solid rgba(255, 255, 255, 0.74);
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.22);
+  backdrop-filter: blur(10px);
+}
+
+.hero-viaje .badge {
+  max-width: 100%;
+  color: #ea580c;
+  font-size: clamp(0.9rem, 1.3vw, 1.15rem);
+  letter-spacing: 0.08em;
+  text-transform: none;
+  white-space: normal;
+}
+
+.hero-viaje .hero-title-line {
+  display: block;
+}
+
+.hero-viaje .seguridad {
+  max-width: 100%;
+  color: #111827;
+  font-size: clamp(42px, 5vw, 64px);
+  line-height: 1.05;
+  letter-spacing: 0;
+  text-transform: none;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+.hero-viaje .seguridad .accent {
+  color: #ea580c;
+}
+
+.hero-viaje .hero-descripcion {
+  width: 100%;
+  max-width: 590px;
+  color: #1f2937;
+  font-size: clamp(1rem, 1.35vw, 1.18rem);
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.hero-viaje .hero-descripcion span {
+  color: #c2410c;
   font-weight: 900;
-  text-transform: lowercase;
-  letter-spacing: 3px;
+}
+
+body.pagina-info-viaje main > .hero-viaje {
+  min-height: clamp(500px, 72vh, 680px);
+  padding: clamp(2.5rem, 6vw, 5rem) 0 !important;
+  background: var(--azul-oscuro) !important;
+  background-attachment: scroll !important;
+}
+
+body.pagina-info-viaje main > .hero-viaje::before {
+  background: linear-gradient(
+    90deg,
+    rgba(15, 23, 42, 0.72) 0%,
+    rgba(15, 23, 42, 0.42) 42%,
+    rgba(15, 23, 42, 0.04) 100%
+  ) !important;
+}
+
+body.pagina-info-viaje main > .hero-viaje .seguridad {
+  text-transform: none;
+  text-shadow: none;
+}
+
+body.pagina-info-viaje main > .hero-viaje .hero-title-line {
+  display: block;
 }
 
 /* MENSAJE CENTRAL */
@@ -56,14 +161,32 @@
   color: var(--naranja);
   font-size: 22px;
   font-weight: 500;
+  line-height: 1.45;
   letter-spacing: 1.5px;
 }
 
-/* POLÍTICAS DE VIAJE */
+body.pagina-info-viaje main > .mensaje-viaje {
+  padding: 55px 7% 35px !important;
+  background-color: var(--blanco) !important;
+}
+
+/* SECCIONES */
 .politicas-viaje {
   width: 100%;
   padding: 35px 7% 70px;
   background-color: var(--blanco);
+}
+
+.info-adicional {
+  width: 100%;
+  padding: 0 7% 90px;
+  background-color: var(--blanco);
+}
+
+.equipaje {
+  width: 100%;
+  padding: 80px 7% 100px;
+  background-color: #f3f4f6;
 }
 
 .politicas-viaje h2,
@@ -84,179 +207,208 @@
   position: absolute;
   left: 0;
   top: 8px;
-
   width: 8px;
   height: 48px;
   background-color: var(--naranja);
 }
 
-.politicas-viaje__grid {
+/* GRIDS RESPONSIVE */
+.politicas-viaje .politicas-viaje__grid,
+.info-adicional .info-adicional__grid,
+.equipaje .equipaje__grid {
+  width: 100%;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 34px;
+  align-items: stretch;
+  grid-auto-rows: 1fr;
+  gap: clamp(20px, 2.2vw, 34px);
 }
 
-.politica-card {
-  background-color: transparent;
+.politicas-viaje .politicas-viaje__grid,
+.info-adicional .info-adicional__grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 290px), 1fr));
 }
 
-.politica-card figure {
-  width: 100%;
-  height: 330px;
-  margin: 0 0 26px;
-  overflow: hidden;
-  background-color: #e5e7eb;
+.equipaje .equipaje__grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 235px), 1fr));
 }
 
-.politica-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  display: block;
-  transition: 0.4s ease;
+.info-viaje-slider {
+  --info-slider-gap: clamp(20px, 2.2vw, 34px);
 }
 
-.politica-card:hover img {
-  transform: scale(1.04);
+@media (max-width: 991.98px) {
+  body.pagina-info-viaje .info-viaje-slider {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% - var(--info-slider-gap)) / 2);
+    grid-auto-rows: 1fr;
+    grid-template-columns: none !important;
+    align-items: stretch;
+    gap: var(--info-slider-gap);
+    margin: -4px -2px 0;
+    padding: 4px 2px 18px;
+    overflow-x: auto;
+    overflow-y: visible;
+    overscroll-behavior-x: contain;
+    scroll-padding-inline: 2px;
+    scroll-snap-type: x mandatory;
+    scrollbar-color: rgba(249, 115, 22, 0.75) rgba(15, 23, 42, 0.1);
+    scrollbar-width: thin;
+    touch-action: pan-y;
+    cursor: grab;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  body.pagina-info-viaje .info-viaje-slider::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  body.pagina-info-viaje .info-viaje-slider::-webkit-scrollbar-track {
+    background: rgba(15, 23, 42, 0.08);
+    border-radius: 999px;
+  }
+
+  body.pagina-info-viaje .info-viaje-slider::-webkit-scrollbar-thumb {
+    background: rgba(249, 115, 22, 0.75);
+    border-radius: 999px;
+  }
+
+  body.pagina-info-viaje .info-viaje-slider.is-dragging {
+    cursor: grabbing;
+    scroll-snap-type: none;
+    user-select: none;
+  }
+
+  body.pagina-info-viaje .info-viaje-slider.is-dragging > * {
+    pointer-events: none;
+  }
+
+  body.pagina-info-viaje .info-viaje-slider > * {
+    width: 100%;
+    min-width: 0;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
 }
 
-.politica-card h3 {
-  color: var(--naranja);
-  font-size: 21px;
-  font-weight: 500;
-  margin-bottom: 16px;
+@media (max-width: 767.98px) {
+  body.pagina-info-viaje .info-viaje-slider {
+    --info-slider-gap: 20px;
+    grid-auto-columns: 100%;
+  }
 }
 
-.politica-card p {
-  color: var(--negro);
-  font-size: 16px;
-  line-height: 1.75;
+@media (min-width: 992px) {
+  body.pagina-info-viaje .info-viaje-slider {
+    overflow: visible;
+  }
 }
 
-/* INFORMACIÓN ADICIONAL */
-/* CAMBIOS, SILLA DE RUEDAS, PROHIBIDOS */
-.info-adicional {
-  width: 100%;
-  padding: 0 7% 90px;
-  background-color: var(--blanco);
-}
-
-.info-adicional__grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 34px;
-}
-
-.info-card {
-  background-color: transparent;
-}
-
-.info-card figure {
-  width: 100%;
-  height: 330px;
-  margin: 0 0 26px;
-  overflow: hidden;
-  background-color: #e5e7eb;
-}
-
-.info-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  display: block;
-  transition: 0.4s ease;
-}
-
-.info-card:hover img {
-  transform: scale(1.04);
-}
-
-.info-card h3 {
-  color: var(--naranja);
-  font-size: 21px;
-  font-weight: 500;
-  margin-bottom: 16px;
-}
-
-.info-card p {
-  color: var(--negro);
-  font-size: 16px;
-  line-height: 1.75;
-  margin-bottom: 16px;
-}
-
-/* EQUIPAJE PERMITIDO */
-.equipaje {
-  width: 100%;
-  padding: 80px 7% 100px;
-  background-color: #eeeeee;
-}
-
-.equipaje__grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 28px;
-  align-items: start;
-}
-
+/* TARJETAS */
+.politica-card,
+.info-card,
 .equipaje-card {
-  background-color: #eeeeee;
-  border-radius: 0 0 18px 18px;
+  min-width: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
-  text-align: center;
-  box-shadow: none;
-  transition: 0.3s ease;
+  background-color: var(--blanco);
+  border: 1px solid var(--gris-borde);
+  border-radius: 8px;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
+.politica-card:hover,
+.info-card:hover,
 .equipaje-card:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--sombra-suave);
+  transform: translateY(-5px);
+  border-color: rgba(249, 115, 22, 0.35);
+  box-shadow: 0 18px 38px rgba(15, 23, 42, 0.13);
 }
 
-.equipaje-card figure {
+.politicas-viaje .politica-card figure,
+.info-adicional .info-card figure,
+.equipaje .equipaje-card figure {
   width: 100%;
-  height: 260px;
+  height: auto;
+  aspect-ratio: 16 / 11;
+  flex: 0 0 auto;
   margin: 0;
   overflow: hidden;
+  background-color: var(--gris-borde);
 }
 
+.politica-card img,
+.info-card img,
 .equipaje-card img {
   width: 100%;
   height: 100%;
+  display: block;
   object-fit: cover;
   object-position: center;
-  display: block;
-  transition: 0.4s ease;
+  transition: transform 0.4s ease;
 }
 
+.politica-card:hover img,
+.info-card:hover img,
 .equipaje-card:hover img {
   transform: scale(1.04);
 }
 
+.politica-card__contenido,
+.info-card__contenido,
 .equipaje-card__contenido {
-  padding: 28px 24px 34px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: clamp(20px, 2vw, 28px);
+}
+
+.politica-card__contenido h3,
+.info-card__contenido h3 {
+  color: var(--naranja);
+  font-size: clamp(21px, 2vw, 26px);
+  line-height: 1.2;
+  font-weight: 700;
+  margin-bottom: 16px;
 }
 
 .equipaje-card__contenido h3 {
   color: var(--negro);
-  font-size: 24px;
+  font-size: clamp(20px, 1.8vw, 24px);
+  line-height: 1.2;
   font-weight: 900;
   margin-bottom: 16px;
 }
 
+.info-card__subtitulo {
+  color: var(--negro);
+  font-size: 17px;
+  line-height: 1.3;
+  font-weight: 800;
+  margin: 4px 0 12px;
+}
+
+.politica-card__contenido p,
+.info-card__contenido p,
 .equipaje-card__contenido p {
   color: var(--negro);
-  font-size: 15.5px;
-  line-height: 1.7;
-  margin-bottom: 16px;
+  font-size: clamp(15px, 1.1vw, 16px);
+  line-height: 1.72;
+  margin-bottom: 14px;
+}
+
+.politica-card__contenido p:last-child,
+.info-card__contenido p:last-child,
+.equipaje-card__contenido p:last-child {
+  margin-bottom: 0;
 }
 
 .equipaje-card__contenido ul {
-  text-align: left;
-  margin-top: 14px;
-  padding-left: 24px;
+  margin: 4px 0 0;
+  padding-left: 22px;
 }
 
 .equipaje-card__contenido li {
@@ -271,3 +423,150 @@
   color: var(--naranja);
 }
 
+@media (hover: none) {
+  .politica-card:hover,
+  .info-card:hover,
+  .equipaje-card:hover {
+    transform: none;
+  }
+}
+
+@media (max-width: 992px) {
+  .politicas-viaje,
+  .info-adicional,
+  .equipaje {
+    padding-left: 6%;
+    padding-right: 6%;
+  }
+
+  .politicas-viaje h2,
+  .equipaje h2 {
+    margin-bottom: 36px;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-viaje {
+    min-height: 245px;
+    padding: 58px 5%;
+  }
+
+  body.pagina-info-viaje main > .hero-viaje {
+    padding-right: 1rem !important;
+    padding-left: 1rem !important;
+  }
+
+  .hero-viaje .container-fluid,
+  .hero-viaje .row,
+  .hero-viaje [class*="col-"] {
+    max-width: 100%;
+    margin-right: 0;
+    margin-left: 0;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+
+  .hero-viaje .hero-text {
+    width: 100% !important;
+    max-width: 22rem !important;
+    margin-right: auto;
+    margin-left: 0;
+    padding: 1.45rem 1rem;
+  }
+
+  .hero-viaje .badge {
+    font-size: 16px;
+    letter-spacing: 0.8px;
+  }
+
+  body.pagina-info-viaje .hero-viaje .seguridad {
+    max-width: 100%;
+    font-size: clamp(32px, 9.2vw, 42px) !important;
+    letter-spacing: 0;
+    white-space: normal;
+  }
+
+  .hero-viaje .hero-descripcion {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .mensaje-viaje {
+    padding: 36px 5% 24px;
+  }
+
+  body.pagina-info-viaje .mensaje-viaje p {
+    width: min(100%, 340px);
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 18px;
+    letter-spacing: 0.4px;
+  }
+
+  .politicas-viaje {
+    padding: 24px 5% 54px;
+  }
+
+  .info-adicional {
+    padding: 0 5% 62px;
+  }
+
+  .equipaje {
+    padding: 58px 5% 72px;
+  }
+
+  .politicas-viaje h2,
+  .equipaje h2 {
+    font-size: clamp(29px, 9vw, 36px);
+    margin-bottom: 28px;
+    padding-left: 20px;
+    letter-spacing: 0.6px;
+  }
+
+  .politicas-viaje h2::before,
+  .equipaje h2::before {
+    top: 6px;
+    width: 6px;
+    height: 36px;
+  }
+
+  .politicas-viaje .politicas-viaje__grid,
+  .info-adicional .info-adicional__grid,
+  .equipaje .equipaje__grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .politicas-viaje .politica-card figure,
+  .info-adicional .info-card figure,
+  .equipaje .equipaje-card figure {
+    aspect-ratio: 4 / 3;
+  }
+
+  .politica-card__contenido,
+  .info-card__contenido,
+  .equipaje-card__contenido {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 380px) {
+  .politica-card__contenido,
+  .info-card__contenido,
+  .equipaje-card__contenido {
+    padding: 18px;
+  }
+
+  .politica-card__contenido h3,
+  .info-card__contenido h3,
+  .equipaje-card__contenido h3 {
+    font-size: 20px;
+  }
+
+  .politica-card__contenido p,
+  .info-card__contenido p,
+  .equipaje-card__contenido p,
+  .equipaje-card__contenido li {
+    font-size: 14.5px;
+  }
+}

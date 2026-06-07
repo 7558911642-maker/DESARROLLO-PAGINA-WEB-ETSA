@@ -1446,6 +1446,33 @@ figure {
 
 
 
+/* HERO INDEX - botones solo entre 576px y 766px */
+@media (min-width: 576px) and (max-width: 766px) {
+  body.pagina-index .hero .botones {
+    width: 100%;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 14px !important;
+  }
+
+  body.pagina-index .hero .btn-primary,
+  body.pagina-index .hero .btn-dark {
+    width: auto !important;
+    min-width: 132px !important;
+    max-width: 176px !important;
+    min-height: 40px !important;
+    flex: 0 0 auto !important;
+    padding: 12px 22px !important;
+    border-radius: 999px !important;
+    font-size: 0.72rem !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+  }
+}
+
 /* FIN CSS DEL INDEX */
 
 

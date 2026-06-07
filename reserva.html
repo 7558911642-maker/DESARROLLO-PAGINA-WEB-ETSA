@@ -117,7 +117,7 @@
             </article>
           </div>
           <div class="col-12 col-lg-7">
-            <form class="bg-white shadow-sm rounded-3 p-4 p-lg-5" action="mailto:informes@etsa.pe" method="post" enctype="text/plain">
+            <form class="bg-white shadow-sm rounded-3 p-4 p-lg-5" id="formulario-reserva" action="mailto:informes@etsa.pe" method="post" enctype="text/plain">
               <div class="row g-3">
                 <div class="col-12 col-md-6"><input class="form-control" type="text" name="nombre" placeholder="Nombres y apellidos" required></div>
                 <div class="col-12 col-md-6"><input class="form-control" type="tel" name="telefono" placeholder="Celular" required></div>
@@ -272,6 +272,29 @@
             </form>
           </div>
         </div>
+
+        <section class="facturacion-reserva mt-4" id="facturacion-electronica" aria-labelledby="titulo-facturacion">
+          <div class="facturacion-reserva__contenido">
+            <div class="facturacion-reserva__texto">
+              <p class="facturacion-reserva__etiqueta">Informaci&oacute;n</p>
+              <h2 id="titulo-facturacion">Facturaci&oacute;n electr&oacute;nica</h2>
+              <p>Consulta los datos necesarios para solicitar comprobantes electr&oacute;nicos por tus servicios de transporte.</p>
+            </div>
+
+            <div class="facturacion-reserva__panel">
+              <h3>Antes de solicitar</h3>
+              <ul>
+                <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span>Ten a la mano tu n&uacute;mero de documento o RUC.</span></li>
+                <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span>Verifica que los datos del pasajero o empresa est&eacute;n correctos.</span></li>
+                <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span>Comun&iacute;cate con atenci&oacute;n al cliente para registrar o corregir tus datos.</span></li>
+              </ul>
+              <a href="#formulario-reserva" class="facturacion-reserva__accion">
+                Solicitar por formulario
+                <i class="bi bi-arrow-up-circle-fill" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </section>
       </div>
     </section>
   </main>  <section class="medios-pago" aria-label="Medios de pago aceptados">
@@ -316,7 +339,7 @@
         <section class="col-12 col-sm-6 col-lg-3" aria-labelledby="footer-informacion">
           <h2 class="h5 fw-bold mb-3" id="footer-informacion">Información</h2>
           <ul class="nav flex-column gap-2">
-            <li class="nav-item"><a class="nav-link p-0 text-white-50" href="contacto.html#facturacion-electronica">Facturación electrónica</a></li>
+            <li class="nav-item"><a class="nav-link p-0 text-white-50" href="#facturacion-electronica">Facturación electrónica</a></li>
             <li class="nav-item"><a class="nav-link p-0 text-white-50" href="terminos-viaje.html">Términos y condiciones de viaje</a></li>
             <li class="nav-item"><a class="nav-link p-0 text-white-50" href="terminos-encomiendas.html">Términos de encomiendas</a></li>
             <li class="nav-item"><a class="nav-link p-0 text-white-50" href="politicas-privacidad.html">Políticas de privacidad</a></li>

@@ -695,6 +695,120 @@ body.pagina-reserva .reserva-select option {
   font-weight: 600;
 }
 
+body.pagina-reserva .facturacion-reserva {
+  scroll-margin-top: calc(var(--reserva-header-height) + 7rem);
+}
+
+body.pagina-reserva .facturacion-reserva__contenido {
+  min-width: 0;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: clamp(1.75rem, 4vw, 2.75rem);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 28px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(20rem, 26rem);
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: center;
+  background: #ffffff;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+}
+
+body.pagina-reserva .facturacion-reserva__etiqueta {
+  margin: 0 0 0.65rem;
+  color: var(--naranja);
+  font-size: 0.82rem;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+body.pagina-reserva .facturacion-reserva__texto h2 {
+  margin: 0 0 1rem;
+  color: #0f172a;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 900;
+  line-height: 1.08;
+  overflow-wrap: anywhere;
+}
+
+body.pagina-reserva .facturacion-reserva__texto p:last-child {
+  max-width: 39rem;
+  margin: 0;
+  color: #475569;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.7;
+}
+
+body.pagina-reserva .facturacion-reserva__panel {
+  min-width: 0;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 1.65rem;
+  border-radius: 22px;
+  background: #0f172a;
+  color: #ffffff;
+}
+
+body.pagina-reserva .facturacion-reserva__panel h3 {
+  margin: 0 0 1.1rem;
+  font-size: 1.12rem;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+body.pagina-reserva .facturacion-reserva__panel ul {
+  margin: 0 0 1.4rem;
+  padding: 0;
+  display: grid;
+  gap: 0.9rem;
+  list-style: none;
+}
+
+body.pagina-reserva .facturacion-reserva__panel li {
+  min-width: 0;
+  display: flex;
+  gap: 0.75rem;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.93rem;
+  font-weight: 600;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+body.pagina-reserva .facturacion-reserva__panel li i {
+  color: var(--naranja);
+  flex: 0 0 auto;
+  line-height: 1.4;
+}
+
+body.pagina-reserva .facturacion-reserva__accion {
+  min-height: 3rem;
+  padding: 0.8rem 1.15rem;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: var(--naranja);
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 900;
+  line-height: 1;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+body.pagina-reserva .facturacion-reserva__accion:hover {
+  background: var(--naranja-oscuro);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(249, 115, 22, 0.28);
+}
+
 body.pagina-reserva form.bg-white > .row {
   position: relative;
   z-index: 1;
@@ -1049,6 +1163,10 @@ body.pagina-reserva .asientos-imagen figcaption {
   body.pagina-reserva .breadcrumb-reserva {
     padding: 1.4rem 5%;
   }
+
+  body.pagina-reserva .facturacion-reserva__contenido {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 767.98px) {
@@ -1104,6 +1222,24 @@ body.pagina-reserva .asientos-imagen figcaption {
 
   body.pagina-reserva .breadcrumb-reserva li {
     font-size: 0.86rem;
+  }
+
+  body.pagina-reserva .facturacion-reserva__contenido {
+    display: block;
+    width: 100%;
+    max-width: calc(100vw - 2rem);
+    margin-right: auto;
+    margin-left: auto;
+    padding: 1.5rem;
+  }
+
+  body.pagina-reserva .facturacion-reserva__texto h2 {
+    font-size: clamp(1.55rem, 8vw, 2rem);
+  }
+
+  body.pagina-reserva .facturacion-reserva__panel {
+    margin-top: 1.25rem;
+    padding: 1.35rem;
   }
 
   body.pagina-reserva .asientos-mini-mapa {

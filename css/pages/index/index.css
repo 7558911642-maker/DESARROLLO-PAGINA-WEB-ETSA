@@ -150,6 +150,26 @@
   transform: translateY(-2px);
 }
 
+/* CONTACTO: base para el banner en el index */
+.contacto-hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.contacto-hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.contacto-hero__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center right;
+  display: block;
+}
+
 
 /* INDEX - PROMOCIONES */
 .index-promociones {
@@ -1041,6 +1061,15 @@ figure {
 }
 
 /* HEADER CON BOOTSTRAP */
+.pagina-index .index-fixed-header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1100;
+}
+
 .header.navbar {
   padding-top: 0;
   padding-bottom: 0;
@@ -1329,123 +1358,6 @@ figure {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* HERO INDEX - botones solo entre 576px y 766px */
 @media (min-width: 576px) and (max-width: 766px) {
   body.pagina-index .hero .botones {
@@ -1474,41 +1386,6 @@ figure {
 }
 
 /* FIN CSS DEL INDEX */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

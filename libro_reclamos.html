@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="pagina-libro-reclamos-html">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -100,8 +100,6 @@
       </div>
     </nav>
 
-    <div class="breadcrumb-libro-reclamos-placeholder" aria-hidden="true"></div>
-
     <section class="py-5">
       <div class="container">
         <div class="row g-4">
@@ -131,7 +129,9 @@
       </div>
     </section>
     
-  </main>  <section class="medios-pago" aria-label="Medios de pago aceptados">
+  </main>
+
+  <section class="medios-pago" aria-label="Medios de pago aceptados">
     <div class="container">
       <div class="row align-items-center justify-content-center g-3">
         <div class="col-12 col-lg-auto text-center"><p class="mb-0">Paga tus pasajes con:</p></div>
@@ -202,49 +202,5 @@
     <i class="bi bi-whatsapp"></i>
   </a>
   <script src="bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    (() => {
-      const header = document.querySelector(".pagina-libro-reclamos .site-header");
-      const breadcrumb = document.querySelector(".breadcrumb-libro-reclamos");
-      const placeholder = document.querySelector(".breadcrumb-libro-reclamos-placeholder");
-
-      if (!header || !breadcrumb || !placeholder) return;
-
-      let triggerTop = 0;
-      let ticking = false;
-
-      const setVars = () => {
-        breadcrumb.classList.remove("is-fixed");
-        placeholder.style.height = "0px";
-
-        const headerHeight = header.offsetHeight;
-        document.documentElement.style.setProperty("--libro-header-height", `${headerHeight}px`);
-        triggerTop = breadcrumb.getBoundingClientRect().top + window.scrollY - headerHeight;
-      };
-
-      const update = () => {
-        const shouldFix = window.scrollY >= triggerTop;
-        breadcrumb.classList.toggle("is-fixed", shouldFix);
-        placeholder.style.height = shouldFix ? `${breadcrumb.offsetHeight}px` : "0px";
-        ticking = false;
-      };
-
-      const requestUpdate = () => {
-        if (ticking) return;
-        ticking = true;
-        window.requestAnimationFrame(update);
-      };
-
-      window.addEventListener("load", () => {
-        setVars();
-        update();
-      });
-      window.addEventListener("resize", () => {
-        setVars();
-        update();
-      });
-      window.addEventListener("scroll", requestUpdate, { passive: true });
-    })();
-  </script>
 </body>
 </html>

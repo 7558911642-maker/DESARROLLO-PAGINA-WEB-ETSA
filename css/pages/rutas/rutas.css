@@ -59,7 +59,7 @@
   width: 100%;
   max-width: 1180px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   padding-right: 0;
   padding-left: 0;
 }
@@ -446,7 +446,7 @@
 
   .breadcrumb-rutas--rutas ol {
     width: 100%;
-    justify-content: center;
+    justify-content: flex-start;
     padding: 11px 13px;
   }
 

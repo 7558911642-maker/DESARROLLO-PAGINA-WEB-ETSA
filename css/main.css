@@ -26,8 +26,6 @@
 @import url("./responsive/final-responsive.css");
 
 /* Espacios por pagina para nuevos estilos sin tocar modulos compartidos. */
-@import url("./pages/codigo-etica/codigo-etica.css");
-@import url("./pages/facturacion/facturacion.css");
 @import url("./pages/libro_reclamos/libro_reclamos.css");
 @import url("./pages/politicas-privacidad/politicas-privacidad.css");
 @import url("./pages/reserva/reserva.css");

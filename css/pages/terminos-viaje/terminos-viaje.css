@@ -268,6 +268,83 @@ body.pagina-terminos-viaje .breadcrumb-terminos-viaje + section {
   padding: 80px 0 !important;
 }
 
+body.pagina-terminos-viaje .codigo-etica-integrado {
+  scroll-margin-top: calc(var(--terminos-header-height) + 7rem);
+  padding: clamp(1.5rem, 3vw, 2.4rem);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 24px;
+  background: #ffffff;
+  box-shadow: 0 18px 48px rgba(15, 23, 42, 0.07);
+}
+
+body.pagina-terminos-viaje .codigo-etica-integrado__cabecera {
+  max-width: 52rem;
+  margin-bottom: 1.4rem;
+}
+
+body.pagina-terminos-viaje .codigo-etica-integrado__cabecera p {
+  margin: 0 0 0.45rem;
+  color: var(--naranja);
+  font-size: 0.82rem;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+body.pagina-terminos-viaje .codigo-etica-integrado__cabecera h2 {
+  margin: 0 0 0.65rem;
+  color: #0f172a;
+  font-size: clamp(1.55rem, 2.2vw, 2rem);
+  font-weight: 900;
+  line-height: 1.12;
+}
+
+body.pagina-terminos-viaje .codigo-etica-integrado__cabecera span {
+  display: block;
+  color: #64748b;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.55;
+}
+
+body.pagina-terminos-viaje .codigo-etica-integrado__item {
+  height: 100%;
+  padding: 1.25rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 18px;
+  background: #f8fafc;
+}
+
+body.pagina-terminos-viaje .codigo-etica-integrado__item i {
+  width: 2.4rem;
+  height: 2.4rem;
+  margin-bottom: 0.9rem;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(249, 115, 22, 0.12);
+  color: var(--naranja);
+  font-size: 1.2rem;
+}
+
+body.pagina-terminos-viaje .codigo-etica-integrado__item h3 {
+  margin: 0 0 0.45rem;
+  color: #0f172a;
+  font-size: 1rem;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+body.pagina-terminos-viaje .codigo-etica-integrado__item p {
+  margin: 0;
+  color: #64748b;
+  font-size: 0.92rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
 @media (max-width: 1199.98px) {
   body.pagina-terminos-viaje {
     --terminos-header-height: 5.8rem;

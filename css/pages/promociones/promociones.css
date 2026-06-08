@@ -122,7 +122,7 @@
 }
 
 .promocion-card {
-  flex: 0 0 min(420px, 86vw);
+  flex: 0 0 auto;
   scroll-snap-align: start;
   min-width: 0;
   height: 100%;
@@ -414,19 +414,21 @@
 }
 
 @media (min-width: 992px) {
-  .promociones-container {
-    flex-wrap: wrap;
+
+  .promociones-container{
+    display: flex !important;
+    flex-wrap: nowrap !important;
     overflow-x: visible !important;
-    overflow-y: visible !important;
-    scroll-snap-type: none;
-    padding-bottom: 0 !important;
+    gap: 20px !important;
   }
 
-  .promocion-card {
-    flex: 0 0 calc((100% - (clamp(18px, 2.6vw, 30px) * 2)) / 3);
-    width: calc((100% - (clamp(18px, 2.6vw, 30px) * 2)) / 3);
-    max-width: calc((100% - (clamp(18px, 2.6vw, 30px) * 2)) / 3);
+  .promocion-card{
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+    width: auto !important;
+    max-width: none !important;
   }
+
 }
 
 @media (max-width: 575.98px) {

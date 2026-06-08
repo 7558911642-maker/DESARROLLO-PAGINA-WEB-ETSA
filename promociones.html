@@ -23,7 +23,7 @@
 
 </head>
 
-<body>
+<body class="pagina-promociones">
 
   <!-- HEADER CON BOOTSTRAP  -->
   <header class="site-header header navbar navbar-expand-lg bg-white shadow-sm fixed-top">
@@ -142,107 +142,77 @@
         </div>
       </nav>
 
-      <!-- PROMOCIONES SOLO CON IMÁGENES -->
+      <!-- PROMOCIONES DESTACADAS -->
       <section class="promociones-seccion" aria-labelledby="titulo-lista-promociones">
 
-        <h2 id="titulo-lista-promociones" class="sr-only">
-          Lista de promociones de ETSA Sol Amazonense
-        </h2>
+        <div class="promociones-seccion__encabezado">
+          <p class="promociones-seccion__etiqueta">
+            <i class="bi bi-stars" aria-hidden="true"></i>
+            Beneficios vigentes
+          </p>
+          <h2 id="titulo-lista-promociones">Promociones para enviar con ETSA</h2>
+          <p>
+            Aprovecha tarifas especiales para tus paquetes, encomiendas y carga comercial dentro de nuestras rutas.
+          </p>
+        </div>
 
         <div class="promociones-slider" aria-label="Promociones disponibles">
-          <a class="promociones-slider__control promociones-slider__control--prev" href="#promo-1" aria-label="Ir a la primera promocion">
-            <i class="bi bi-chevron-left" aria-hidden="true"></i>
-          </a>
+          <div class="promociones-container">
 
-          <div class="promociones-container" tabindex="0">
-
-          <!-- PROMOCIÓN 1 -->
-          <article class="promocion-card" id="promo-1">
-
-            <h3 class="sr-only">Descuento ida y vuelta</h3>
+          <!-- PROMOCION 1 -->
+          <article class="promocion-card promocion-card--encomienda" id="promo-1">
 
             <figure class="promocion-imagen">
-              <img src="img/rutas/chachapoyas.png" alt="Promoción de descuento ida y vuelta a Chachapoyas">
-              <figcaption class="tag-promo">DESCUENTO IDA Y VUELTA</figcaption>
+              <img src="img/servicios/encomienda.png" alt="Trabajadora preparando una encomienda en el area de envíos">
+              <figcaption class="tag-promo">Encomiendas</figcaption>
             </figure>
 
-            <a href="#modal-promo1" class="btn-mas-info">
-              MÁS INFORMACIÓN
-            </a>
+            <div class="promocion-card__contenido">
+              <h3>Promo Encomienda Express</h3>
+              <p>Descuento especial para sobres y paquetes pequeños enviados desde nuestras agencias.</p>
+
+              <ul class="promocion-card__beneficios">
+                <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Atención rápida en mostrador</li>
+                <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Ideal para documentos y paquetes</li>
+                <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Seguimiento por canal de atención</li>
+              </ul>
+
+              <div class="promocion-card__acciones">
+                <a href="#modal-promo1" class="btn-mas-info">Ver condiciones</a>
+                <a href="contacto.html" class="promocion-card__link">Consultar envío</a>
+              </div>
+            </div>
 
           </article>
 
-          <!-- PROMOCIÓN 2 -->
-          <article class="promocion-card" id="promo-2">
-
-            <h3 class="sr-only">Promoción de encomiendas</h3>
+          <!-- PROMOCION 2 -->
+          <article class="promocion-card promocion-card--carga" id="promo-2">
 
             <figure class="promocion-imagen">
-              <img src="img/servicios/encomienda.png" alt="Promoción de encomiendas ETSA">
-              <figcaption class="tag-promo">PROMO ENCOMIENDAS</figcaption>
+              <img src="img/servicios/carga.png" alt="Personal logístico cargando cajas para transporte de mercadería">
+              <figcaption class="tag-promo">Carga comercial</figcaption>
             </figure>
 
-            <a href="#modal-promo2" class="btn-mas-info">
-              MÁS INFORMACIÓN
-            </a>
+            <div class="promocion-card__contenido">
+              <h3>Tarifa Ahorro para Carga</h3>
+              <p>Precio preferencial para negocios que envían cajas, mercadería o carga recurrente.</p>
+
+              <ul class="promocion-card__beneficios">
+                <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Para volúmenes medianos y grandes</li>
+                <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Apoyo en recepción de paquetes</li>
+                <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Disponible en rutas seleccionadas</li>
+              </ul>
+
+              <div class="promocion-card__acciones">
+                <a href="#modal-promo2" class="btn-mas-info">Ver condiciones</a>
+                <a href="contacto.html" class="promocion-card__link">Cotizar carga</a>
+              </div>
+            </div>
 
           </article>
-
-          <!-- PROMOCIÓN 3 -->
-          <article class="promocion-card" id="promo-3">
-
-            <h3 class="sr-only">Tarifa familiar</h3>
-
-            <figure class="promocion-imagen">
-              <img src="img/rutas/kuelap.png" alt="Promoción familiar para viajar a destinos turísticos de Amazonas">
-              <figcaption class="tag-promo">TARIFA FAMILIAR</figcaption>
-            </figure>
-
-            <a href="#modal-promo3" class="btn-mas-info">
-              MÁS INFORMACIÓN
-            </a>
-
-          </article>
-
-           <!-- PROMOCIÓN 4 -->
-        <article class="promocion-card" id="promo-4">
-
-          <h3 class="sr-only">Promoción Mundial de Fútbol</h3>
-
-          <figure class="promocion-imagen">
-            <img src="img/promociones/watermarked_img_16051582334898136880.jpg"
-              alt="Promoción Mundial de Fútbol">
-            <figcaption class="tag-promo">MUNDIAL DE FÚTBOL</figcaption>
-          </figure>
-
-          <a href="#modal-promo4" class="btn-mas-info">
-            MÁS INFORMACIÓN
-          </a>
-
-        </article>
-
-        <!-- PROMOCIÓN 5 -->
-        <article class="promocion-card" id="promo-5">
-
-          <h3 class="sr-only">Promoción Raymi Llaqta</h3>
-
-          <figure class="promocion-imagen">
-            <img src="img/promociones/Promo5.jpg"
-              alt="Promoción Raymi Llaqta">
-            <figcaption class="tag-promo">RAYMI LLAQTA</figcaption>
-          </figure>
-
-          <a href="#modal-promo5" class="btn-mas-info">
-            MÁS INFORMACIÓN
-          </a>
-
-        </article>
 
           </div>
 
-          <a class="promociones-slider__control promociones-slider__control--next" href="#promo-5" aria-label="Ir a la ultima promocion">
-            <i class="bi bi-chevron-right" aria-hidden="true"></i>
-          </a>
         </div>
 
       </section>
@@ -252,19 +222,19 @@
         <div class="modal-ventana">
 
           <div class="modal-header">
-            <h3>Términos y condiciones</h3>
+            <h3>Promo Encomienda Express</h3>
             <a href="promociones.html" class="modal-cerrar" aria-label="Cerrar ventana">&times;</a>
           </div>
 
           <div class="modal-body">
-            <p><strong>Promoción: Ahorra en tu Pasaje de Retorno</strong></p>
+            <p><strong>Beneficio para envíos pequeños y documentos.</strong></p>
 
             <ul>
-              <li>El descuento aplica comprando pasajes de ida y vuelta en una sola transacción.</li>
-              <li>Válido para rutas seleccionadas dentro de Amazonas: Chachapoyas, Bagua Grande y Pedro Ruiz.</li>
-              <li>Promoción dirigida a estudiantes universitarios presentando carné vigente.</li>
-              <li>Sujeto a disponibilidad de asientos en la unidad asignada.</li>
-              <li>No se aceptan cambios ni devoluciones una vez emitido el boleto promocional.</li>
+              <li>Aplica para sobres, documentos y paquetes pequeños entregados en agencia.</li>
+              <li>El descuento se calcula sobre la tarifa base del envío.</li>
+              <li>No aplica para productos restringidos, frágiles sin embalaje o carga peligrosa.</li>
+              <li>Sujeto a disponibilidad de espacio en la unidad y rutas habilitadas.</li>
+              <li>Consulta la vigencia y condiciones finales antes de registrar tu encomienda.</li>
             </ul>
           </div>
 
@@ -276,98 +246,24 @@
         <div class="modal-ventana">
 
           <div class="modal-header">
-            <h3>Términos y condiciones</h3>
+            <h3>Tarifa Ahorro para Carga</h3>
             <a href="promociones.html" class="modal-cerrar" aria-label="Cerrar ventana">&times;</a>
           </div>
 
           <div class="modal-body">
-            <p><strong>Promoción: Envío Frecuente Amazonas</strong></p>
+            <p><strong>Beneficio para mercadería, cajas y envíos recurrentes.</strong></p>
 
             <ul>
-              <li>El beneficio aplica para clientes que realizan envíos frecuentes con el mismo DNI o RUC.</li>
-              <li>Válido para sobres, paquetes estándar y mercadería permitida por ley.</li>
-              <li>No aplica para transporte de valores, productos restringidos o carga peligrosa.</li>
-              <li>El descuento se calcula sobre el valor base del envío.</li>
-              <li>No acumulable con otros convenios o tarifas corporativas.</li>
+              <li>Aplica para cajas, bultos y mercadería permitida por ley.</li>
+              <li>Requiere declaración del contenido y embalaje adecuado.</li>
+              <li>Puede solicitarse cotización especial para envíos frecuentes.</li>
+              <li>No aplica para transporte de valores, animales, perecibles sin autorización o carga peligrosa.</li>
+              <li>Sujeto a peso, volumen, ruta y disponibilidad de espacio.</li>
             </ul>
           </div>
 
         </div>
       </div>
-
-      <!-- MODAL PROMOCIÓN 3 -->
-      <div id="modal-promo3" class="modal-overlay">
-        <div class="modal-ventana">
-
-          <div class="modal-header">
-            <h3>Términos y condiciones</h3>
-            <a href="promociones.html" class="modal-cerrar" aria-label="Cerrar ventana">&times;</a>
-          </div>
-
-          <div class="modal-body">
-            <p><strong>Promoción: Fines de Semana en Familia</strong></p>
-
-            <ul>
-              <li>Requiere compra mínima de cuatro pasajes en el mismo horario y destino.</li>
-              <li>Válido para salidas de sábados y domingos hacia destinos turísticos seleccionados.</li>
-              <li>Aplica para rutas como Luya, Pomacochas y otros destinos regionales.</li>
-              <li>Las reservas deben gestionarse con anticipación de forma presencial o telefónica.</li>
-              <li>La tarifa está sujeta a disponibilidad de asientos.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-              <!-- MODAL PROMOCIÓN 4 -->
-        <div id="modal-promo4" class="modal-overlay">
-          <div class="modal-ventana">
-
-            <div class="modal-header">
-              <h3>Términos y condiciones</h3>
-              <a href="promociones.html" class="modal-cerrar">&times;</a>
-            </div>
-
-            <div class="modal-body">
-              <p>
-                <strong>Promoción Mundial de Fútbol</strong>
-              </p>
-
-              <ul>
-                <li>20% de descuento en rutas seleccionadas.</li>
-                <li>Válido durante la temporada mundialista.</li>
-                <li>Sujeto a disponibilidad.</li>
-                <li>No acumulable con otras promociones.</li>
-              </ul>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- MODAL PROMOCIÓN 5 -->
-        <div id="modal-promo5" class="modal-overlay">
-          <div class="modal-ventana">
-
-            <div class="modal-header">
-              <h3>Términos y condiciones</h3>
-              <a href="promociones.html" class="modal-cerrar">&times;</a>
-            </div>
-
-            <div class="modal-body">
-              <p>
-                <strong>Promoción Raymi Llaqta</strong>
-              </p>
-
-              <ul>
-                <li>Descuentos especiales durante las festividades.</li>
-                <li>Aplica para rutas hacia Chachapoyas.</li>
-                <li>Promoción limitada.</li>
-                <li>Sujeto a disponibilidad.</li>
-              </ul>
-            </div>
-
-          </div>
-        </div>
-
 
     </main>
 

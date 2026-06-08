@@ -226,8 +226,10 @@ body > .site-header.fixed-top ~ main {
 /* Menu movil Bootstrap Offcanvas */
 @media (max-width: 991.98px) {
   .header.navbar {
-    position: sticky;
+    position: fixed;
     top: 0;
+    right: 0;
+    left: 0;
     z-index: 1150;
   }
 

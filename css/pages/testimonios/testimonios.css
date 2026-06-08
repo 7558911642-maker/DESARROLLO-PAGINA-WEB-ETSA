@@ -2,6 +2,10 @@
    TESTIMONIOS
 ================================================== */
 
+.pagina-testimonios > .site-header.fixed-top ~ main {
+  padding-top: 0;
+}
+
 .testimonios-hero {
   position: relative;
   width: 100%;

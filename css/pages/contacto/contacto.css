@@ -2,6 +2,10 @@
    PAGINA CONTACTO
 ================================================== */
 
+.pagina-contacto > .site-header.fixed-top ~ main {
+  padding-top: 0;
+}
+
 .pagina-contacto .contacto-hero {
   position: relative;
   width: 100%;

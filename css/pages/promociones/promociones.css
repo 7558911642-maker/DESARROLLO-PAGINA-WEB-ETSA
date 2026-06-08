@@ -12,9 +12,7 @@
   align-items: center;
   padding: clamp(112px, 13vw, 160px) clamp(28px, 8vw, 120px) clamp(62px, 8vw, 96px);
   overflow: hidden;
-  background:
-    linear-gradient(90deg, rgba(6, 22, 45, 0.86) 0%, rgba(6, 22, 45, 0.54) 48%, rgba(6, 22, 45, 0.14) 100%),
-    url("../../../img/banners/watermarked_img_2461339827978530461.jpg") center / cover no-repeat;
+  background: url("../../../img/promociones/watermarked_img_16051582334898136880.jpg") center 58% / cover no-repeat !important;
   border-bottom: 5px solid var(--naranja);
 }
 

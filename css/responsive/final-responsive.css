@@ -547,12 +547,37 @@
   }
 }
 
-/* PROMOCIONES INDEX - responsive Bootstrap */
+/* PROMOCIONES INDEX - carrusel deslizable */
 .promociones-index__fila {
-  overflow-x: visible;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-padding-left: calc(var(--bs-gutter-x) * 0.5);
+  -webkit-overflow-scrolling: touch;
+  margin-right: 0;
+  margin-left: 0;
+  padding-bottom: 18px;
+}
+
+.promociones-index__fila::-webkit-scrollbar {
+  height: 10px;
+}
+
+.promociones-index__fila::-webkit-scrollbar-track {
+  border-radius: 999px;
+  background-color: #e5e7eb;
+}
+
+.promociones-index__fila::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background-color: var(--naranja);
 }
 
 .promociones-index__columna {
+  flex: 0 0 86%;
+  width: 86%;
+  max-width: 86%;
   scroll-snap-align: start;
 }
 
@@ -602,14 +627,6 @@
 /* Celular: menor a 768px */
 @media (max-width: 767.98px) {
   .promociones-index__fila {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    overflow-y: hidden;
-    scroll-snap-type: x mandatory;
-    scroll-padding-left: calc(var(--bs-gutter-x) * 0.5);
-    -webkit-overflow-scrolling: touch;
-    margin-right: 0;
-    margin-left: 0;
     padding-bottom: 12px;
   }
 
@@ -622,18 +639,6 @@
 
 /* Tablet: desde 768px hasta 991.98px */
 @media (min-width: 768px) and (max-width: 991.98px) {
-  .promociones-index__fila {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    overflow-y: hidden;
-    scroll-snap-type: x mandatory;
-    scroll-padding-left: calc(var(--bs-gutter-x) * 0.5);
-    -webkit-overflow-scrolling: touch;
-    margin-right: 0;
-    margin-left: 0;
-    padding-bottom: 12px;
-  }
-
   .promociones-index__columna {
     flex: 0 0 70%;
     width: 70%;
@@ -643,15 +648,58 @@
 
 /* Laptop y escritorio: desde 992px */
 @media (min-width: 992px) {
-  .promociones-index__fila {
-    flex-wrap: wrap;
-    overflow-x: visible;
-  }
-
   .promociones-index__columna {
     flex: 0 0 33.333333%;
     width: 33.333333%;
     max-width: 33.333333%;
+  }
+}
+
+/* PAGINA PROMOCIONES - tarjetas deslizables */
+.pagina-promociones .promociones-slider {
+  width: min(1180px, 100%);
+}
+
+.pagina-promociones .promociones-container {
+  display: flex !important;
+  grid-template-columns: none !important;
+  gap: clamp(18px, 2.6vw, 30px) !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  scroll-snap-type: x mandatory;
+  scroll-padding-left: 2px;
+  -webkit-overflow-scrolling: touch;
+  padding: 0 2px 20px !important;
+}
+
+.pagina-promociones .promociones-container::-webkit-scrollbar {
+  height: 10px;
+}
+
+.pagina-promociones .promociones-container::-webkit-scrollbar-track {
+  border-radius: 999px;
+  background-color: #e5e7eb;
+}
+
+.pagina-promociones .promociones-container::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background-color: var(--naranja);
+}
+
+.pagina-promociones .promocion-card {
+  flex: 0 0 min(420px, 86vw);
+  scroll-snap-align: start;
+}
+
+@media (min-width: 768px) {
+  .pagina-promociones .promocion-card {
+    flex-basis: min(430px, 58vw);
+  }
+}
+
+@media (min-width: 1200px) {
+  .pagina-promociones .promocion-card {
+    flex-basis: calc((100% - 60px) / 3);
   }
 }
 
@@ -2877,6 +2925,42 @@
     font-size: clamp(0.72rem, 3.2vw, 0.88rem);
     letter-spacing: 0.05rem;
     white-space: nowrap;
+  }
+}
+
+/* Promociones: mostrar siempre la fila deslizable de tarjetas */
+.pagina-index .promociones-index .index-responsive-carousel {
+  display: none !important;
+}
+
+.pagina-index .promociones-index .promociones-index__fila.row {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.pagina-index .promociones-index .promociones-index__columna {
+  flex: 0 0 86%;
+  width: 86%;
+  max-width: 86%;
+}
+
+@media (min-width: 768px) {
+  .pagina-index .promociones-index .promociones-index__columna {
+    flex-basis: 54%;
+    width: 54%;
+    max-width: 54%;
+  }
+}
+
+@media (min-width: 992px) {
+  .pagina-index .promociones-index .promociones-index__columna {
+    flex-basis: 33.333333%;
+    width: 33.333333%;
+    max-width: 33.333333%;
   }
 }
 

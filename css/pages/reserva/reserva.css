@@ -583,15 +583,17 @@ body.pagina-reserva .breadcrumb-reserva {
   position: sticky !important;
   top: var(--reserva-header-height) !important;
   z-index: 1095;
-  width: 100% !important;
-  padding: 2rem 7% 1.9rem;
-  border-bottom: 1px solid rgba(15, 23, 42, 0.06);
-  background: #ffffff;
-  box-shadow: 0 0.7rem 1.4rem rgba(15, 23, 42, 0.04);
+  width: fit-content !important;
+  max-width: calc(100% - 14%);
+  margin-left: 7%;
+  padding: 2rem 0 1.9rem;
+  border-bottom: 0;
+  background: transparent;
+  box-shadow: none;
 }
 
 body.pagina-reserva .breadcrumb-reserva > .container {
-  width: 100%;
+  width: auto;
   max-width: none;
   display: flex;
   justify-content: flex-start;
@@ -1244,7 +1246,9 @@ body.pagina-reserva .asientos-imagen figcaption {
   }
 
   body.pagina-reserva .breadcrumb-reserva {
-    padding: 1.4rem 5%;
+    max-width: calc(100% - 10%);
+    margin-left: 5%;
+    padding: 1.4rem 0;
   }
 
   body.pagina-reserva .facturacion-reserva__contenido {
@@ -1305,7 +1309,9 @@ body.pagina-reserva .asientos-imagen figcaption {
   }
 
   body.pagina-reserva .breadcrumb-reserva {
-    padding: 1.15rem 1rem;
+    max-width: calc(100% - 2rem);
+    margin-left: 1rem;
+    padding: 1.15rem 0;
   }
 
   body.pagina-reserva .breadcrumb-reserva ol {

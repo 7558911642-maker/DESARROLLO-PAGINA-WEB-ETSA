@@ -88,6 +88,8 @@
 }
 
 .pagina-contacto .contacto-hero__btn {
+  max-width: 100%;
+  min-width: 0;
   min-height: 50px;
   display: inline-flex;
   align-items: center;
@@ -98,8 +100,11 @@
   font-size: .92rem;
   font-weight: 900;
   letter-spacing: .04em;
+  line-height: 1.2;
+  text-align: center;
   text-transform: uppercase;
   text-decoration: none;
+  white-space: normal;
   transition: transform .22s ease, background-color .22s ease, color .22s ease, border-color .22s ease;
 }
 
@@ -194,11 +199,28 @@
 .pagina-contacto .contacto-section--clara {
   background:
     linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+  padding-bottom: clamp(18px, 2.5vw, 32px);
 }
 
 .pagina-contacto .contacto-section--gris {
   background:
     linear-gradient(180deg, #ffffff 0%, #f3f4f6 100%);
+  padding-top: clamp(18px, 2.5vw, 32px);
+}
+
+.pagina-contacto .contacto-section--gris .contacto-section__contenedor {
+  width: min(1400px, 100%);
+  border: 1px solid rgba(148, 163, 184, .18);
+  border-radius: 28px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, .98) 0%, rgba(248, 250, 252, .98) 100%);
+  box-shadow: 0 24px 62px rgba(15, 23, 42, .10);
+  padding: clamp(30px, 5vw, 56px);
+}
+
+.pagina-contacto .contacto-section--gris .contacto-section__etiqueta,
+.pagina-contacto .contacto-section--gris .contacto-section__etiqueta i {
+  color: var(--naranja) !important;
 }
 
 .pagina-contacto .contacto-section__contenedor {
@@ -306,13 +328,20 @@
   width: 64px;
   height: 64px;
   margin-bottom: 22px;
+  border: 0 !important;
   border-radius: 18px;
   background-color: rgba(249, 115, 22, .12);
-  color: var(--naranja);
+  color: var(--naranja) !important;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   font-size: 1.85rem;
+}
+
+.pagina-contacto .contacto-card {
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
 }
 
 .pagina-contacto .contacto-card p,
@@ -323,6 +352,10 @@
   font-weight: 800;
   writing-mode: horizontal-tb !important;
   word-break: normal;
+}
+
+.pagina-contacto .contacto-card p {
+  color: var(--naranja);
 }
 
 .pagina-contacto .contacto-card strong,
@@ -516,9 +549,10 @@
   }
 
   .pagina-contacto .contacto-hero__contenido h1 {
-    font-size: clamp(3rem, 11vw, 5.6rem) !important;
-    white-space: nowrap;
-    word-break: keep-all;
+    max-width: 100%;
+    font-size: clamp(2.65rem, 9.8vw, 5.2rem) !important;
+    white-space: normal;
+    word-break: normal;
     overflow-wrap: normal;
   }
 
@@ -612,7 +646,8 @@
   }
 
   .pagina-contacto .contacto-hero__contenido h1 {
-    font-size: clamp(2.55rem, 12vw, 3.75rem) !important;
+    font-size: clamp(2.1rem, 10.5vw, 3.45rem) !important;
+    line-height: 1;
   }
 
   .pagina-contacto .contacto-hero__subtitulo {

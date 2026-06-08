@@ -695,6 +695,89 @@ body.pagina-reserva .reserva-select option {
   font-weight: 600;
 }
 
+body.pagina-reserva .reserva-info-viaje {
+  min-width: 0;
+  margin-top: 0.35rem;
+  padding: clamp(1rem, 2vw, 1.25rem);
+  border: 1px solid rgba(249, 115, 22, 0.26);
+  border-radius: 20px;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 1rem;
+  align-items: center;
+  background:
+    linear-gradient(135deg, rgba(255, 247, 237, 0.98), #ffffff);
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.06);
+}
+
+body.pagina-reserva .reserva-info-viaje__icono {
+  width: 3.15rem;
+  height: 3.15rem;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(249, 115, 22, 0.12);
+  color: var(--naranja);
+  font-size: 1.35rem;
+}
+
+body.pagina-reserva .reserva-info-viaje__texto {
+  min-width: 0;
+}
+
+body.pagina-reserva .reserva-info-viaje__texto p {
+  margin: 0 0 0.25rem;
+  color: var(--naranja);
+  font-size: 0.72rem;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+body.pagina-reserva .reserva-info-viaje__texto h3 {
+  margin: 0 0 0.25rem;
+  color: #0f172a;
+  font-size: clamp(1rem, 1.4vw, 1.18rem);
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+body.pagina-reserva .reserva-info-viaje__texto span {
+  display: block;
+  color: #475569;
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+body.pagina-reserva .reserva-info-viaje__accion {
+  min-height: 2.9rem;
+  padding: 0.78rem 1rem;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: #0f172a;
+  color: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 900;
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: 0.25s ease;
+}
+
+body.pagina-reserva .reserva-info-viaje__accion:hover,
+body.pagina-reserva .reserva-info-viaje__accion:focus-visible {
+  background: var(--naranja);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(249, 115, 22, 0.24);
+}
+
 body.pagina-reserva .facturacion-reserva {
   scroll-margin-top: calc(var(--reserva-header-height) + 7rem);
 }
@@ -1170,6 +1253,15 @@ body.pagina-reserva .asientos-imagen figcaption {
 }
 
 @media (max-width: 767.98px) {
+  body.pagina-reserva .reserva-info-viaje {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  body.pagina-reserva .reserva-info-viaje__accion {
+    grid-column: 1 / -1;
+    width: 100%;
+  }
+
   body.pagina-reserva .asientos-reserva__encabezado {
     display: grid;
   }

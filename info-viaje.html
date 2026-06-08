@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="pagina-info-viaje-html">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -143,6 +143,23 @@
         </figure>
       </section>
 
+      <nav class="breadcrumb-info-viaje" aria-label="Ruta de navegaci&oacute;n">
+        <div class="container">
+          <ol>
+            <li>
+              <a href="index.html">
+                <i class="bi bi-house-fill" aria-hidden="true"></i>
+                Inicio
+              </a>
+            </li>
+            <li>
+              <a href="reserva.html">Reserva</a>
+            </li>
+            <li aria-current="page">Info para tu viaje</li>
+          </ol>
+        </div>
+      </nav>
+
       <!-- MENSAJE CENTRAL -->
       <section class="mensaje-viaje" aria-label="Mensaje informativo para el viaje">
         <p>Recuerda tener todo lo que necesitas para un viaje cómodo y seguro</p>
@@ -153,7 +170,7 @@
 
         <h2 id="titulo-politicas">Políticas de viaje</h2>
 
-        <div class="politicas-viaje__grid info-viaje-slider" data-info-slider aria-label="Tarjetas de politicas de viaje">
+        <div class="politicas-viaje__grid info-viaje-slider" role="region" tabindex="0" aria-label="Tarjetas de politicas de viaje">
 
           <article class="politica-card">
             <figure>
@@ -214,7 +231,7 @@
           Información adicional para el viaje
         </h2>
 
-        <div class="info-adicional__grid info-viaje-slider" data-info-slider aria-label="Tarjetas de informacion adicional para el viaje">
+        <div class="info-adicional__grid info-viaje-slider" role="region" tabindex="0" aria-label="Tarjetas de informacion adicional para el viaje">
 
           <article class="info-card">
             <figure>
@@ -287,7 +304,7 @@
 
         <h2 id="titulo-equipaje">Equipaje permitido</h2>
 
-        <div class="equipaje__grid info-viaje-slider" data-info-slider aria-label="Tarjetas de equipaje permitido">
+        <div class="equipaje__grid info-viaje-slider" role="region" tabindex="0" aria-label="Tarjetas de equipaje permitido">
 
           <article class="equipaje-card">
             <figure>
@@ -550,7 +567,6 @@
 
   <!-- Bootstrap JS -->
   <script src="bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
-  <script src="js/info-viaje-slider.js"></script>
 
 </body>
 </html>

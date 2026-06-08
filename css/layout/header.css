@@ -20,7 +20,15 @@
 }
 
 .site-header.fixed-top {
-  z-index: 1050;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1100;
+}
+
+body > .site-header.fixed-top ~ main {
+  padding-top: 84px;
 }
 
 .site-header.navbar {
@@ -55,6 +63,10 @@
   display: flex;
   align-items: center;
   gap: 20px;
+}
+
+.header__nav .nav-item:has(> .nav-link[href="encomiendas.html"]) {
+  display: none;
 }
 
 .header__nav a,

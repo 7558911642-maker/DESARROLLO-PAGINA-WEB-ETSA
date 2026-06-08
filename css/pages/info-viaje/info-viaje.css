@@ -1,9 +1,20 @@
 /* INFO PARA TU VIAJE */
-body.pagina-info-viaje,
-body.pagina-info-viaje main {
+html.pagina-info-viaje-html {
+  overflow-x: clip;
+}
+
+body.pagina-info-viaje {
+  --info-viaje-header-height: 84px;
   max-width: 100%;
   margin-top: 0 !important;
   overflow-x: hidden;
+  overflow-x: clip;
+}
+
+body.pagina-info-viaje main {
+  max-width: 100%;
+  margin-top: 0 !important;
+  overflow: visible !important;
 }
 
 body.pagina-info-viaje .mensaje-viaje p,
@@ -149,6 +160,92 @@ body.pagina-info-viaje main > .hero-viaje .hero-title-line {
   display: block;
 }
 
+/* BREADCRUMB */
+.breadcrumb-info-viaje {
+  position: -webkit-sticky;
+  position: sticky;
+  top: var(--info-viaje-header-height);
+  z-index: 1095;
+  width: 100%;
+  padding: 26px 7% 24px;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+  background: #ffffff;
+  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.04);
+}
+
+.breadcrumb-info-viaje > .container {
+  width: 100%;
+  max-width: 1180px;
+  display: flex;
+  justify-content: flex-start;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.breadcrumb-info-viaje ol {
+  width: fit-content;
+  max-width: 100%;
+  margin: 0;
+  padding: 14px 24px;
+  border: 1px solid rgba(15, 23, 42, 0.09);
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  overflow-x: auto;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.08);
+  list-style: none;
+  white-space: nowrap;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.breadcrumb-info-viaje ol::-webkit-scrollbar {
+  display: none;
+}
+
+.breadcrumb-info-viaje li {
+  display: inline-flex;
+  align-items: center;
+  gap: 13px;
+  color: #64748b;
+  font-size: 15px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.breadcrumb-info-viaje li + li::before {
+  content: "/";
+  color: rgba(15, 23, 42, 0.28);
+  font-weight: 900;
+}
+
+.breadcrumb-info-viaje a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--azul-oscuro);
+  text-decoration: none;
+  transition: color 0.22s ease, transform 0.22s ease;
+}
+
+.breadcrumb-info-viaje a:hover,
+.breadcrumb-info-viaje a:focus-visible {
+  color: var(--naranja);
+  transform: translateY(-1px);
+}
+
+.breadcrumb-info-viaje i,
+.breadcrumb-info-viaje [aria-current="page"] {
+  color: var(--naranja);
+}
+
+.breadcrumb-info-viaje i {
+  font-size: 17px;
+  line-height: 1;
+}
+
 /* MENSAJE CENTRAL */
 .mensaje-viaje {
   width: 100%;
@@ -236,9 +333,9 @@ body.pagina-info-viaje main > .mensaje-viaje {
   --info-slider-gap: clamp(20px, 2.2vw, 34px);
 }
 
-.info-viaje-carousel {
-  --info-slider-gap: clamp(20px, 2.2vw, 34px);
-  display: none;
+.info-viaje-slider:focus-visible {
+  outline: 3px solid rgba(249, 115, 22, 0.45);
+  outline-offset: 8px;
 }
 
 @media (max-width: 1199.98px) {
@@ -257,27 +354,24 @@ body.pagina-info-viaje main > .mensaje-viaje {
     overscroll-behavior-x: contain;
     scroll-padding-inline: 2px;
     scroll-snap-type: x mandatory;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
+    scrollbar-color: rgba(249, 115, 22, 0.65) rgba(15, 23, 42, 0.08);
+    scrollbar-width: thin;
     touch-action: pan-x pan-y;
-    cursor: grab;
     -webkit-overflow-scrolling: touch;
   }
 
   body.pagina-info-viaje .info-viaje-slider::-webkit-scrollbar {
-    width: 0;
-    height: 0;
-    display: none;
+    height: 8px;
   }
 
-  body.pagina-info-viaje .info-viaje-slider.is-dragging {
-    cursor: grabbing;
-    scroll-snap-type: none;
-    user-select: none;
+  body.pagina-info-viaje .info-viaje-slider::-webkit-scrollbar-track {
+    background-color: rgba(15, 23, 42, 0.08);
+    border-radius: 999px;
   }
 
-  body.pagina-info-viaje .info-viaje-slider.is-dragging > * {
-    pointer-events: none;
+  body.pagina-info-viaje .info-viaje-slider::-webkit-scrollbar-thumb {
+    background-color: rgba(249, 115, 22, 0.65);
+    border-radius: 999px;
   }
 
   body.pagina-info-viaje .info-viaje-slider > * {
@@ -286,84 +380,12 @@ body.pagina-info-viaje main > .mensaje-viaje {
     scroll-snap-align: start;
     scroll-snap-stop: always;
   }
-
-  body.pagina-info-viaje.info-viaje-carousel-ready .info-viaje-slider {
-    display: none;
-  }
-
-  body.pagina-info-viaje .info-viaje-carousel {
-    display: block;
-    width: 100%;
-    max-width: 46rem;
-    margin: 0 auto;
-  }
-
-  body.pagina-info-viaje .info-viaje-carousel .carousel-inner {
-    overflow: hidden;
-    padding: 4px 2px;
-  }
-
-  body.pagina-info-viaje .info-viaje-carousel .carousel-item > article,
-  body.pagina-info-viaje .info-viaje-carousel__grid > article {
-    height: 100%;
-  }
-
-  body.pagina-info-viaje .info-viaje-carousel__grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: var(--info-slider-gap);
-    align-items: stretch;
-  }
-
-  body.pagina-info-viaje .info-viaje-carousel .index-carousel-dots.carousel-indicators {
-    position: static;
-    width: 100%;
-    margin: clamp(0.95rem, 3vw, 1.35rem) 0 0;
-    gap: 0.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  body.pagina-info-viaje .info-viaje-carousel .index-carousel-dots.carousel-indicators [data-bs-target] {
-    width: 0.82rem;
-    height: 0.82rem;
-    margin: 0;
-    border: 0;
-    border-radius: 50%;
-    background-color: #d4d4d4;
-    opacity: 1;
-    transition: background-color 0.25s ease, transform 0.25s ease;
-  }
-
-  body.pagina-info-viaje .info-viaje-carousel .index-carousel-dots.carousel-indicators .active {
-    background-color: var(--naranja);
-    transform: scale(1.12);
-  }
 }
 
 @media (max-width: 767.98px) {
   body.pagina-info-viaje .info-viaje-slider {
     --info-slider-gap: 20px;
     grid-auto-columns: 100%;
-  }
-
-  body.pagina-info-viaje .info-viaje-carousel {
-    --info-slider-gap: 20px;
-    max-width: 100%;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1199.98px) {
-  body.pagina-info-viaje .info-viaje-carousel .index-carousel-dots.carousel-indicators {
-    gap: 0.55rem;
-    margin: 1.05rem 0 0;
-  }
-
-  body.pagina-info-viaje .info-viaje-carousel .index-carousel-dots.carousel-indicators [data-bs-target] {
-    width: 0.62rem;
-    height: 0.62rem;
-    border-radius: 999px;
   }
 }
 
@@ -373,9 +395,12 @@ body.pagina-info-viaje main > .mensaje-viaje {
   }
 
   body.pagina-info-viaje .politicas-viaje .politicas-viaje__grid,
-  body.pagina-info-viaje .info-adicional .info-adicional__grid,
-  body.pagina-info-viaje .equipaje .equipaje__grid {
+  body.pagina-info-viaje .info-adicional .info-adicional__grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  body.pagina-info-viaje .equipaje .equipaje__grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
 
@@ -564,6 +589,21 @@ body.pagina-info-viaje main > .mensaje-viaje {
   .hero-viaje .hero-descripcion {
     font-size: 15px;
     line-height: 1.6;
+  }
+
+  .breadcrumb-info-viaje {
+    padding: 18px 5% 16px;
+  }
+
+  .breadcrumb-info-viaje ol {
+    max-width: 100%;
+    padding: 12px 16px;
+    border-radius: 16px;
+  }
+
+  .breadcrumb-info-viaje li {
+    gap: 10px;
+    font-size: 14px;
   }
 
   .mensaje-viaje {

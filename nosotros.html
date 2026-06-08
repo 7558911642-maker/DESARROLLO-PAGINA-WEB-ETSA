@@ -3,28 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ETSA Sol Amazonense</title>
+  <title>Nosotros | ETSA Sol Amazonense</title>
 
- <!-- Bootstrap -->
+  <!-- Bootstrap -->
   <link rel="stylesheet" href="bootstrap-5.3.8-dist/css/bootstrap.min.css">
   <!-- Iconos -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.12.1/font/bootstrap-icons.min.css">
   <!-- Estilos personalizados -->
   <link rel="stylesheet" href="css/main.css">
 
-  <!-- Tipografía -->
+  <!-- Tipografia -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <!-- Favicon -->
   <link rel="icon" href="img/marca/lofo.png" type="image/png">
-
 </head>
 
-<body>
-
-  <!-- HEADER CON BOOTSTRAP  -->
+<body class="pagina-nosotros">
+  <!-- HEADER CON BOOTSTRAP -->
   <header class="site-header header navbar navbar-expand-lg bg-white shadow-sm fixed-top">
     <div class="container-fluid px-4 px-lg-5">
 
@@ -33,11 +30,14 @@
         <img src="img/marca/logo.png" alt="Logo ETSA Sol Amazonense">
       </a>
 
-      <!-- MENÚ DESKTOP -->
-      <nav class="header__nav d-none d-lg-block ms-auto" aria-label="Menú principal">
+      <!-- MENU DESKTOP -->
+      <nav class="header__nav d-none d-lg-block ms-auto" aria-label="Menu principal">
         <ul class="navbar-nav flex-row align-items-center gap-4">
           <li class="nav-item">
             <a class="nav-link" href="index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link activo" href="nosotros.html" aria-current="page">Nosotros</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="servicios.html">Servicios</a>
@@ -45,7 +45,9 @@
           <li class="nav-item">
             <a class="nav-link" href="rutas.html">Rutas</a>
           </li>
-          <li class="nav-item"><a class="nav-link" href="encomiendas.html">Envíos</a></li>
+          <li class="nav-item">
+            <a class="nav-link" href="encomiendas.html">Env&iacute;os</a>
+          </li>
           <li class="nav-item">
             <a class="nav-link" href="promociones.html">Promociones</a>
           </li>
@@ -55,7 +57,7 @@
         </ul>
       </nav>
 
-      <!-- BOTÓN RESERVA -->
+      <!-- BOTON RESERVA -->
       <div class="reserva d-none d-sm-flex">
         <a href="reserva.html" class="btn-reserva">
           <i class="bi bi-ticket-perforated-fill me-2" aria-hidden="true"></i>
@@ -63,12 +65,11 @@
         </a>
       </div>
 
-      <!-- BOTÓN OFFCANVAS BOOTSTRAP -->
+      <!-- BOTON OFFCANVAS BOOTSTRAP -->
       <button class="btn-menu d-flex d-lg-none border-0" type="button" data-bs-toggle="offcanvas"
-        data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-label="Abrir menú">
+        data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-label="Abrir menu">
         <i class="bi bi-list icono-menu" aria-hidden="true"></i>
       </button>
-
     </div>
   </header>
 
@@ -82,13 +83,13 @@
     </div>
 
     <div class="offcanvas-body">
-      <nav class="panel-lateral__nav" aria-label="Menú lateral">
+      <nav class="panel-lateral__nav" aria-label="Menu lateral">
         <ul class="navbar-nav flex-column gap-3">
           <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
           <li class="nav-item"><a class="nav-link activo" href="nosotros.html" aria-current="page">Nosotros</a></li>
           <li class="nav-item"><a class="nav-link" href="servicios.html">Nuestros servicios</a></li>
           <li class="nav-item"><a class="nav-link" href="rutas.html">Rutas</a></li>
-          <li class="nav-item"><a class="nav-link" href="encomiendas.html">Envíos</a></li>
+          <li class="nav-item"><a class="nav-link" href="encomiendas.html">Env&iacute;os</a></li>
           <li class="nav-item"><a class="nav-link" href="promociones.html">Promociones</a></li>
           <li class="nav-item"><a class="nav-link" href="testimonios.html">Testimonios</a></li>
           <li class="nav-item"><a class="nav-link" href="preguntas-frecuentes.html">Preguntas frecuentes</a></li>
@@ -104,112 +105,190 @@
     </div>
   </aside>
 
-
-
   <!-- CONTENIDO PRINCIPAL -->
   <main>
     <!-- HERO NOSOTROS -->
     <section class="nosotros-hero" aria-labelledby="titulo-nosotros">
       <div class="nosotros-hero__contenido">
-        <p>Sobre</p>
-        <h1 id="titulo-nosotros">nosotros</h1>
+        <p class="nosotros-hero__etiqueta">Empresa regional</p>
+        <h1 id="titulo-nosotros">Nosotros</h1>
+        <p class="nosotros-hero__descripcion">
+          Conectamos destinos de Amazonas con un servicio cercano, responsable y pensado para viajar con confianza.
+        </p>
       </div>
     </section>
 
-    <!-- PRESENTACIÓN EMPRESARIAL -->
+    <!-- PRESENTACION EMPRESARIAL -->
     <section class="nosotros-presentacion" aria-labelledby="titulo-presentacion">
+      <div class="nosotros-presentacion__contenido">
+        <div class="nosotros-presentacion__texto">
+          <p class="section-kicker">
+            <i class="bi bi-compass" aria-hidden="true"></i>
+            Nuestra identidad
+          </p>
 
-      <h2 id="titulo-presentacion">
-        ETSA Sol Amazonense,<br>
-        conectando Amazonas
-      </h2>
+          <h2 id="titulo-presentacion">
+            ETSA Sol Amazonense conecta personas, familias y oportunidades.
+          </h2>
 
-      <p>
-        Somos una empresa de transporte regional comprometida con la seguridad,
-        puntualidad y confianza de nuestros pasajeros. Conectamos comunidades,
-        familias, estudiantes, trabajadores y turistas en las principales rutas
-        de la región Amazonas.
-      </p>
+          <p>
+            Somos una empresa de transporte regional comprometida con la seguridad,
+            la puntualidad y la confianza de nuestros pasajeros. Acompa&ntilde;amos a
+            comunidades, estudiantes, trabajadores, comerciantes y turistas en las
+            principales rutas de la regi&oacute;n Amazonas.
+          </p>
 
+          <div class="nosotros-datos" id="nosotrosDatosSlider" aria-label="Fortalezas de ETSA">
+            <div class="nosotros-dato">
+              <strong>24/7</strong>
+              <span>Compromiso con cada servicio</span>
+            </div>
+
+            <div class="nosotros-dato">
+              <strong>5+</strong>
+              <span>Destinos regionales frecuentes</span>
+            </div>
+
+            <div class="nosotros-dato">
+              <strong>100%</strong>
+              <span>Vocaci&oacute;n de atenci&oacute;n</span>
+            </div>
+          </div>
+
+          <div class="nosotros-slider-dots" data-slider-dots="nosotrosDatosSlider" aria-label="Navegacion de fortalezas">
+            <button class="nosotros-slider-dot nosotros-slider-dot--activo" type="button" aria-label="Ver fortaleza 1" aria-current="true"></button>
+            <button class="nosotros-slider-dot" type="button" aria-label="Ver fortaleza 2"></button>
+            <button class="nosotros-slider-dot" type="button" aria-label="Ver fortaleza 3"></button>
+          </div>
+        </div>
+
+        <figure class="nosotros-presentacion__media">
+          <img src="img/nosotros/equipo.png" alt="Equipo de trabajo de ETSA Sol Amazonense">
+
+          <figcaption class="nosotros-badge">
+            <i class="bi bi-shield-check" aria-hidden="true"></i>
+            <p>Servicio regional con enfoque en seguridad, trato amable y responsabilidad.</p>
+          </figcaption>
+        </figure>
+      </div>
     </section>
 
-    <!-- MISIÓN Y VISIÓN -->
-    <section class="mision-vision" aria-label="Misión y visión de ETSA">
+    <!-- MISION Y VISION -->
+    <section class="mision-vision" aria-label="Mision y vision de ETSA">
+      <div class="mision-vision__contenido" id="misionVisionSlider">
+        <article class="mision-vision__item">
+          <div class="mision-vision__icono">
+            <i class="bi bi-bus-front" aria-hidden="true"></i>
+          </div>
 
-      <article class="mision-vision__item">
-        <div class="mision-vision__icono">
-          <i class="bi bi-bus-front" aria-hidden="true"></i>
-        </div>
+          <h2>Misi&oacute;n</h2>
 
-        <h2>Misión</h2>
+          <p>
+            Brindar un servicio de transporte seguro, puntual y responsable,
+            orientado a la satisfacci&oacute;n de nuestros pasajeros y al desarrollo
+            de la regi&oacute;n Amazonas.
+          </p>
+        </article>
 
-        <p>
-          Brindar un servicio de transporte seguro, puntual y responsable,
-          orientado a la satisfacción de nuestros pasajeros y al desarrollo
-          de la región Amazonas.
-        </p>
-      </article>
+        <article class="mision-vision__item">
+          <div class="mision-vision__icono">
+            <i class="bi bi-signpost-2" aria-hidden="true"></i>
+          </div>
 
-      <article class="mision-vision__item">
-        <div class="mision-vision__icono">
-          <i class="bi bi-signpost-2" aria-hidden="true"></i>
-        </div>
+          <h2>Visi&oacute;n</h2>
 
-        <h2>Visión</h2>
+          <p>
+            Ser una empresa l&iacute;der en transporte regional, reconocida por su
+            compromiso con la seguridad, la innovaci&oacute;n, la atenci&oacute;n al cliente
+            y la conexi&oacute;n de los principales destinos amaz&oacute;nicos.
+          </p>
+        </article>
+      </div>
 
-        <p>
-          Ser una empresa líder en transporte regional, reconocida por su
-          compromiso con la seguridad, la innovación, la atención al cliente
-          y la conexión de los principales destinos amazónicos.
-        </p>
-      </article>
-
+      <div class="nosotros-slider-dots" data-slider-dots="misionVisionSlider" aria-label="Navegacion de mision y vision">
+        <button class="nosotros-slider-dot nosotros-slider-dot--activo" type="button" aria-label="Ver mision" aria-current="true"></button>
+        <button class="nosotros-slider-dot" type="button" aria-label="Ver vision"></button>
+      </div>
     </section>
 
     <!-- VALORES INSTITUCIONALES -->
     <section class="valores" aria-labelledby="titulo-valores">
+      <header class="valores__header">
+        <div>
+          <p class="section-kicker">
+            <i class="bi bi-stars" aria-hidden="true"></i>
+            Lo que nos gu&iacute;a
+          </p>
+          <h2 id="titulo-valores">Valores institucionales</h2>
+        </div>
 
-      <h2 id="titulo-valores">Valores institucionales</h2>
+        <p>
+          Cada valor orienta nuestras decisiones diarias y la forma en que
+          atendemos a quienes conf&iacute;an en ETSA Sol Amazonense.
+        </p>
+      </header>
 
-      <div class="valores__grid">
-
+      <div class="valores__grid" id="valoresSlider">
         <article class="valor-card">
-          <img src="img/servicios/vehiculo.png" alt="Atención de ETSA al usuario">
+          <img src="img/servicios/vehiculo.png" alt="Veh&iacute;culo de ETSA para transporte de pasajeros">
           <div class="valor-card__overlay"></div>
-          <h3>Excelencia<br>en el servicio</h3>
+          <div class="valor-card__contenido">
+            <span class="valor-card__icono"><i class="bi bi-award-fill" aria-hidden="true"></i></span>
+            <h3>Excelencia en el servicio</h3>
+            <p>Atenci&oacute;n cuidadosa antes, durante y despu&eacute;s de cada viaje.</p>
+          </div>
         </article>
 
         <article class="valor-card">
           <img src="img/nosotros/equipo.png" alt="Equipo de trabajo de ETSA">
           <div class="valor-card__overlay"></div>
-          <h3>Trabajo<br>en equipo</h3>
+          <div class="valor-card__contenido">
+            <span class="valor-card__icono"><i class="bi bi-people-fill" aria-hidden="true"></i></span>
+            <h3>Trabajo en equipo</h3>
+            <p>Coordinaci&oacute;n y compromiso para sostener una operaci&oacute;n confiable.</p>
+          </div>
         </article>
 
         <article class="valor-card">
-          <img src="img/nosotros/Integridad.png" alt="Integridad de ETSA">
+          <img src="img/nosotros/Integridad.png" alt="Integridad y responsabilidad de ETSA">
           <div class="valor-card__overlay"></div>
-          <h3>Integridad</h3>
+          <div class="valor-card__contenido">
+            <span class="valor-card__icono"><i class="bi bi-patch-check-fill" aria-hidden="true"></i></span>
+            <h3>Integridad</h3>
+            <p>Actuamos con honestidad, respeto y responsabilidad en cada servicio.</p>
+          </div>
         </article>
 
         <article class="valor-card">
           <img src="img/servicios/encomienda.png" alt="Servicio seguro de encomiendas ETSA">
           <div class="valor-card__overlay"></div>
-          <h3>Seguridad<br>integral</h3>
+          <div class="valor-card__contenido">
+            <span class="valor-card__icono"><i class="bi bi-shield-lock-fill" aria-hidden="true"></i></span>
+            <h3>Seguridad integral</h3>
+            <p>Cuidamos a los pasajeros, sus pertenencias y cada encomienda.</p>
+          </div>
         </article>
 
         <article class="valor-card">
-          <img src="img/nosotros/innovacion.png" alt="Innovación de ETSA">
+          <img src="img/nosotros/innovacion.png" alt="Innovaci&oacute;n de ETSA Sol Amazonense">
           <div class="valor-card__overlay"></div>
-          <h3>Innovación</h3>
+          <div class="valor-card__contenido">
+            <span class="valor-card__icono"><i class="bi bi-lightbulb-fill" aria-hidden="true"></i></span>
+            <h3>Innovaci&oacute;n</h3>
+            <p>Mejoramos procesos para ofrecer una experiencia m&aacute;s simple y eficiente.</p>
+          </div>
         </article>
+      </div>
+
+      <div class="nosotros-slider-dots" data-slider-dots="valoresSlider" aria-label="Navegacion de valores">
+        <button class="nosotros-slider-dot nosotros-slider-dot--activo" type="button" aria-label="Ver valor 1" aria-current="true"></button>
+        <button class="nosotros-slider-dot" type="button" aria-label="Ver valor 2"></button>
+        <button class="nosotros-slider-dot" type="button" aria-label="Ver valor 3"></button>
+        <button class="nosotros-slider-dot" type="button" aria-label="Ver valor 4"></button>
+        <button class="nosotros-slider-dot" type="button" aria-label="Ver valor 5"></button>
       </div>
     </section>
   </main>
-
-
-
-
-
 
   <!-- BARRA DE MEDIOS DE PAGO -->
   <section class="medios-pago" aria-label="Medios de pago aceptados">
@@ -231,10 +310,8 @@
     </div>
   </section>
 
-
-  <!-- FOOTER CON BOOTSTRAP  -->
+  <!-- FOOTER CON BOOTSTRAP -->
   <footer class="footer-principal bg-dark text-white pt-5">
-
     <div class="container">
       <div class="row gy-5">
 
@@ -262,75 +339,65 @@
 
           <address class="mb-0 text-white-50">
             <p class="mb-2">
-              <strong class="text-white">Dirección:</strong>
-              Av. Principal 740, Amazonas, Perú
+              <strong class="text-white">Direcci&oacute;n:</strong>
+              Av. Principal 740, Amazonas, Per&uacute;
             </p>
 
             <p class="mb-2">
-              <strong class="text-white">Central telefónica:</strong>
+              <strong class="text-white">Central telef&oacute;nica:</strong>
               <a href="tel:+51987654321" class="text-white-50 text-decoration-none">987 654 321</a>
             </p>
 
             <p class="mb-0">
-              <strong class="text-white">Correo electrónico:</strong>
+              <strong class="text-white">Correo electr&oacute;nico:</strong>
               <a href="mailto:informes@etsa.pe" class="text-white-50 text-decoration-none">informes@etsa.pe</a>
             </p>
           </address>
         </div>
 
-        <!-- COLUMNA 2: NAVEGACIÓN PRINCIPAL -->
+        <!-- COLUMNA 2: NAVEGACION PRINCIPAL -->
         <section class="col-12 col-sm-6 col-lg-2" aria-labelledby="footer-navegacion">
-          <h2 class="h5 fw-bold mb-3" id="footer-navegacion">Navegación</h2>
+          <h2 class="h5 fw-bold mb-3" id="footer-navegacion">Navegaci&oacute;n</h2>
 
           <ul class="nav flex-column gap-2">
             <li class="nav-item">
               <a class="nav-link p-0 text-white-50" href="index.html">Inicio</a>
             </li>
-
-
             <li class="nav-item">
               <a class="nav-link p-0 text-white-50" href="servicios.html">Servicios</a>
             </li>
-
             <li class="nav-item">
               <a class="nav-link p-0 text-white-50" href="rutas.html">Rutas</a>
             </li>
-
             <li class="nav-item">
               <a class="nav-link p-0 text-white-50" href="promociones.html">Promociones</a>
             </li>
-
             <li class="nav-item">
               <a class="nav-link p-0 text-white-50" href="contacto.html">Contacto</a>
             </li>
           </ul>
         </section>
 
-        <!-- COLUMNA 3: INFORMACIÓN -->
+        <!-- COLUMNA 3: INFORMACION -->
         <section class="col-12 col-sm-6 col-lg-3" aria-labelledby="footer-informacion">
-          <h2 class="h5 fw-bold mb-3" id="footer-informacion">Información</h2>
+          <h2 class="h5 fw-bold mb-3" id="footer-informacion">Informaci&oacute;n</h2>
 
           <ul class="nav flex-column gap-2">
             <li class="nav-item">
               <a class="nav-link p-0 text-white-50" href="nosotros.html">Nosotros</a>
             </li>
-
             <li class="nav-item">
               <a class="nav-link p-0 text-white-50" href="preguntas-frecuentes.html">Preguntas frecuentes</a>
             </li>
-
             <li class="nav-item">
-              <a class="nav-link p-0 text-white-50" href="info-viaje.html">Info Para tu viaje</a>
+              <a class="nav-link p-0 text-white-50" href="info-viaje.html">Info para tu viaje</a>
             </li>
-
             <li class="nav-item">
               <a class="nav-link p-0 text-white-50" href="testimonios.html">Testimonios</a>
             </li>
-
             <li class="nav-item">
               <a class="nav-link p-0 text-white-50" href="encomiendas.html">Encomiendas</a>
             </li>
-
             <li class="nav-item">
               <a class="nav-link p-0 text-white-50" href="libro_reclamos.html">Libro de reclamaciones</a>
             </li>
@@ -345,19 +412,15 @@
             <li class="nav-item">
               <a class="nav-link p-0 text-white-50" href="rutas.html">Pasaje a Chachapoyas</a>
             </li>
-
             <li class="nav-item">
               <a class="nav-link p-0 text-white-50" href="rutas.html">Pasaje a Bagua Grande</a>
             </li>
-
             <li class="nav-item">
               <a class="nav-link p-0 text-white-50" href="rutas.html">Pasaje a Pedro Ruiz</a>
             </li>
-
             <li class="nav-item">
               <a class="nav-link p-0 text-white-50" href="rutas.html">Pasaje a Luya</a>
             </li>
-
             <li class="nav-item">
               <a class="nav-link p-0 text-white-50" href="rutas.html">Pasaje a Pomacochas</a>
             </li>
@@ -371,14 +434,13 @@
     <div class="border-top border-secondary mt-5 py-3">
       <div class="container text-center">
         <p class="mb-0 text-white-50">
-          © ETSA Sol Amazonense - 2026. Todos los derechos reservados.
+          &copy; ETSA Sol Amazonense - 2026. Todos los derechos reservados.
         </p>
       </div>
     </div>
-
   </footer>
 
-  <!-- BOTÓN WHATSAPP FLOTANTE -->
+  <!-- BOTON WHATSAPP FLOTANTE -->
   <a href="https://wa.me/51904178833"
     class="whatsapp-flotante d-inline-flex align-items-center justify-content-center"
     aria-label="Contactar por WhatsApp">
@@ -387,9 +449,68 @@
 
   <!-- Bootstrap JS -->
   <script src="bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    (() => {
+      const dotGroups = document.querySelectorAll("[data-slider-dots]");
 
+      dotGroups.forEach((group) => {
+        const slider = document.getElementById(group.dataset.sliderDots);
+        const dots = Array.from(group.querySelectorAll(".nosotros-slider-dot"));
+
+        if (!slider || !dots.length) return;
+
+        const getItems = () => Array.from(slider.children).filter((item) => !item.hidden);
+        let ticking = false;
+
+        const setActiveDot = (index) => {
+          dots.forEach((dot, dotIndex) => {
+            const active = dotIndex === index;
+            dot.classList.toggle("nosotros-slider-dot--activo", active);
+            dot.toggleAttribute("aria-current", active);
+          });
+        };
+
+        const getCurrentIndex = () => {
+          const items = getItems();
+          const sliderCenter = slider.scrollLeft + slider.clientWidth / 2;
+
+          return items.reduce((closestIndex, item, index) => {
+            const itemCenter = item.offsetLeft + item.clientWidth / 2;
+            const closestItem = items[closestIndex];
+            const closestCenter = closestItem.offsetLeft + closestItem.clientWidth / 2;
+
+            return Math.abs(itemCenter - sliderCenter) < Math.abs(closestCenter - sliderCenter)
+              ? index
+              : closestIndex;
+          }, 0);
+        };
+
+        dots.forEach((dot, index) => {
+          dot.addEventListener("click", () => {
+            const item = getItems()[index];
+            if (!item) return;
+
+            item.scrollIntoView({
+              behavior: "smooth",
+              block: "nearest",
+              inline: "start"
+            });
+            setActiveDot(index);
+          });
+        });
+
+        slider.addEventListener("scroll", () => {
+          if (ticking) return;
+
+          window.requestAnimationFrame(() => {
+            setActiveDot(getCurrentIndex());
+            ticking = false;
+          });
+
+          ticking = true;
+        }, { passive: true });
+      });
+    })();
+  </script>
 </body>
 </html>
-
-
-

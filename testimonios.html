@@ -3,28 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ETSA Sol Amazonense</title>
+  <title>Testimonios | ETSA Sol Amazonense</title>
 
- <!-- Bootstrap -->
+  <!-- Bootstrap -->
   <link rel="stylesheet" href="bootstrap-5.3.8-dist/css/bootstrap.min.css">
   <!-- Iconos -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.12.1/font/bootstrap-icons.min.css">
   <!-- Estilos personalizados -->
   <link rel="stylesheet" href="css/main.css">
 
-  <!-- Tipografía -->
+  <!-- Tipografia -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <!-- Favicon -->
   <link rel="icon" href="img/marca/lofo.png" type="image/png">
-
 </head>
 
 <body>
-
-  <!-- HEADER CON BOOTSTRAP  -->
+  <!-- HEADER CON BOOTSTRAP -->
   <header class="site-header header navbar navbar-expand-lg bg-white shadow-sm fixed-top">
     <div class="container-fluid px-4 px-lg-5">
 
@@ -33,8 +30,8 @@
         <img src="img/marca/logo.png" alt="Logo ETSA Sol Amazonense">
       </a>
 
-      <!-- MENÚ DESKTOP -->
-      <nav class="header__nav d-none d-lg-block ms-auto" aria-label="Menú principal">
+      <!-- MENU DESKTOP -->
+      <nav class="header__nav d-none d-lg-block ms-auto" aria-label="Menu principal">
         <ul class="navbar-nav flex-row align-items-center gap-4">
           <li class="nav-item">
             <a class="nav-link" href="index.html">Inicio</a>
@@ -45,9 +42,14 @@
           <li class="nav-item">
             <a class="nav-link" href="rutas.html">Rutas</a>
           </li>
-          <li class="nav-item"><a class="nav-link" href="encomiendas.html">Envíos</a></li>
+          <li class="nav-item">
+            <a class="nav-link" href="encomiendas.html">Env&iacute;os</a>
+          </li>
           <li class="nav-item">
             <a class="nav-link" href="promociones.html">Promociones</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link activo" href="testimonios.html" aria-current="page">Testimonios</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="contacto.html">Contacto</a>
@@ -55,7 +57,7 @@
         </ul>
       </nav>
 
-      <!-- BOTÓN RESERVA -->
+      <!-- BOTON RESERVA -->
       <div class="reserva d-none d-sm-flex">
         <a href="reserva.html" class="btn-reserva">
           <i class="bi bi-ticket-perforated-fill me-2" aria-hidden="true"></i>
@@ -63,12 +65,11 @@
         </a>
       </div>
 
-      <!-- BOTÓN OFFCANVAS BOOTSTRAP -->
+      <!-- BOTON OFFCANVAS BOOTSTRAP -->
       <button class="btn-menu d-flex d-lg-none border-0" type="button" data-bs-toggle="offcanvas"
-        data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-label="Abrir menú">
+        data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-label="Abrir menu">
         <i class="bi bi-list icono-menu" aria-hidden="true"></i>
       </button>
-
     </div>
   </header>
 
@@ -82,13 +83,13 @@
     </div>
 
     <div class="offcanvas-body">
-      <nav class="panel-lateral__nav" aria-label="Menú lateral">
+      <nav class="panel-lateral__nav" aria-label="Menu lateral">
         <ul class="navbar-nav flex-column gap-3">
           <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
           <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
           <li class="nav-item"><a class="nav-link" href="servicios.html">Nuestros servicios</a></li>
           <li class="nav-item"><a class="nav-link" href="rutas.html">Rutas</a></li>
-          <li class="nav-item"><a class="nav-link" href="encomiendas.html">Envíos</a></li>
+          <li class="nav-item"><a class="nav-link" href="encomiendas.html">Env&iacute;os</a></li>
           <li class="nav-item"><a class="nav-link" href="promociones.html">Promociones</a></li>
           <li class="nav-item"><a class="nav-link activo" href="testimonios.html" aria-current="page">Testimonios</a></li>
           <li class="nav-item"><a class="nav-link" href="preguntas-frecuentes.html">Preguntas frecuentes</a></li>
@@ -104,29 +105,21 @@
     </div>
   </aside>
 
-
-
-
-
-<!-- CONTENIDO PRINCIPAL -->
+  <!-- CONTENIDO PRINCIPAL -->
   <main>
 
     <!-- HERO TESTIMONIOS -->
     <section class="testimonios-hero" aria-labelledby="titulo-testimonios">
       <div class="testimonios-hero__contenido">
-        <p>Nuestros</p>
-
-        <h1 id="titulo-testimonios">
-          Testimonios
-        </h1>
+        <h1 id="titulo-testimonios">Testimonios</h1>
       </div>
     </section>
 
-    <!-- FRASE CENTRAL NARANJA -->
+    <!-- FRASE DE CONFIANZA -->
     <section class="testimonios-frase" aria-label="Mensaje de confianza">
       <p>
         <i class="bi bi-shield-check" aria-hidden="true"></i>
-        Viaja seguro, envía con confianza y recibe una atención responsable en cada servicio.
+        Cada viaje y cada encomienda reflejan nuestro compromiso con la seguridad, la puntualidad y la atenci&oacute;n responsable.
       </p>
     </section>
 
@@ -134,27 +127,21 @@
     <section class="testimonios" aria-labelledby="titulo-clientes">
 
       <header class="testimonios__encabezado">
-        <span></span>
-
-        <h2 id="titulo-clientes">
-          Lo que dicen nuestros clientes
-        </h2>
+        <span aria-hidden="true"></span>
+        <h2 id="titulo-clientes">Lo que dicen nuestros clientes</h2>
       </header>
 
-      <section class="testimonios__grid" aria-label="Opiniones de clientes">
+      <div class="testimonios__grid" id="testimoniosSlider" aria-label="Opiniones de clientes">
 
-        <!-- TESTIMONIO 1 -->
-        <article class="testimonio-card">
-
+        <article class="testimonio-card" id="testimonio-1">
           <div class="testimonio-card__icono">
-            <i class="bi bi-person-circle" aria-hidden="true"></i>
+            <i class="bi bi-person-check-fill" aria-hidden="true"></i>
           </div>
 
-          <h3>CLIENTE FRECUENTE</h3>
-
+          <h3>Cliente frecuente</h3>
           <h4>Viaje seguro</h4>
 
-          <div class="testimonio-card__estrellas" role="img" aria-label="Calificación: 5 de 5 estrellas">
+          <div class="testimonio-card__estrellas" role="img" aria-label="Calificacion: 5 de 5 estrellas">
             <i class="bi bi-star-fill" aria-hidden="true"></i>
             <i class="bi bi-star-fill" aria-hidden="true"></i>
             <i class="bi bi-star-fill" aria-hidden="true"></i>
@@ -163,24 +150,19 @@
           </div>
 
           <p class="testimonio-card__texto">
-            “Viajo con ETSA cada semana. Siempre son puntuales, responsables y atentos.
-            Me siento seguro durante todo el trayecto.”
+            &ldquo;Viajo con ETSA cada semana. Son puntuales, responsables y atentos. Me siento seguro durante todo el trayecto.&rdquo;
           </p>
-
         </article>
 
-        <!-- TESTIMONIO 2 -->
-        <article class="testimonio-card">
-
+        <article class="testimonio-card" id="testimonio-2">
           <div class="testimonio-card__icono">
             <i class="bi bi-person-heart" aria-hidden="true"></i>
           </div>
 
-          <h3>PASAJERA SATISFECHA</h3>
+          <h3>Pasajera satisfecha</h3>
+          <h4>Atenci&oacute;n amable</h4>
 
-          <h4>Atención amable</h4>
-
-          <div class="testimonio-card__estrellas" role="img" aria-label="Calificación: 5 de 5 estrellas">
+          <div class="testimonio-card__estrellas" role="img" aria-label="Calificacion: 5 de 5 estrellas">
             <i class="bi bi-star-fill" aria-hidden="true"></i>
             <i class="bi bi-star-fill" aria-hidden="true"></i>
             <i class="bi bi-star-fill" aria-hidden="true"></i>
@@ -189,24 +171,19 @@
           </div>
 
           <p class="testimonio-card__texto">
-            “El viaje fue cómodo, el conductor fue amable y llegamos a la hora indicada.
-            Recomiendo el servicio por su responsabilidad.”
+            &ldquo;El viaje fue c&oacute;modo, el conductor fue amable y llegamos a la hora indicada. Recomiendo el servicio por su responsabilidad.&rdquo;
           </p>
-
         </article>
 
-        <!-- TESTIMONIO 3 -->
-        <article class="testimonio-card">
-
+        <article class="testimonio-card" id="testimonio-3">
           <div class="testimonio-card__icono">
             <i class="bi bi-box-seam-fill" aria-hidden="true"></i>
           </div>
 
-          <h3>USUARIO DE ENCOMIENDAS</h3>
+          <h3>Usuario de encomiendas</h3>
+          <h4>Env&iacute;o responsable</h4>
 
-          <h4>Envío responsable</h4>
-
-          <div class="testimonio-card__estrellas" role="img" aria-label="Calificación: 5 de 5 estrellas">
+          <div class="testimonio-card__estrellas" role="img" aria-label="Calificacion: 5 de 5 estrellas">
             <i class="bi bi-star-fill" aria-hidden="true"></i>
             <i class="bi bi-star-fill" aria-hidden="true"></i>
             <i class="bi bi-star-fill" aria-hidden="true"></i>
@@ -215,24 +192,19 @@
           </div>
 
           <p class="testimonio-card__texto">
-            “Envié una encomienda y llegó en buen estado. La atención fue rápida,
-            clara y muy responsable.”
+            &ldquo;Envi&eacute; una encomienda y lleg&oacute; en buen estado. La atenci&oacute;n fue r&aacute;pida, clara y muy responsable.&rdquo;
           </p>
-
         </article>
 
-        <!-- TESTIMONIO 4 -->
-        <article class="testimonio-card">
-
+        <article class="testimonio-card" id="testimonio-4">
           <div class="testimonio-card__icono">
             <i class="bi bi-universal-access-circle" aria-hidden="true"></i>
           </div>
 
-          <h3>ADULTO MAYOR ATENDIDO</h3>
+          <h3>Adulto mayor atendido</h3>
+          <h4>Atenci&oacute;n preferencial</h4>
 
-          <h4>Atención preferencial</h4>
-
-          <div class="testimonio-card__estrellas" role="img" aria-label="Calificación: 5 de 5 estrellas">
+          <div class="testimonio-card__estrellas" role="img" aria-label="Calificacion: 5 de 5 estrellas">
             <i class="bi bi-star-fill" aria-hidden="true"></i>
             <i class="bi bi-star-fill" aria-hidden="true"></i>
             <i class="bi bi-star-fill" aria-hidden="true"></i>
@@ -241,66 +213,62 @@
           </div>
 
           <p class="testimonio-card__texto">
-            “El personal fue muy respetuoso y atento. Me ayudaron durante el embarque
-            y el viaje fue tranquilo.”
+            &ldquo;El personal fue muy respetuoso y atento. Me ayudaron durante el embarque y el viaje fue tranquilo.&rdquo;
           </p>
-
         </article>
 
-      </section>
+      </div>
 
+      <div class="testimonios__dots" aria-label="Navegacion de testimonios">
+        <button class="testimonios__dot testimonios__dot--activo" type="button" aria-label="Ver testimonio 1" aria-current="true"></button>
+        <button class="testimonios__dot" type="button" aria-label="Ver testimonio 2"></button>
+        <button class="testimonios__dot" type="button" aria-label="Ver testimonio 3"></button>
+        <button class="testimonios__dot" type="button" aria-label="Ver testimonio 4"></button>
+      </div>
     </section>
 
     <!-- FORMULARIO PARA EMITIR TESTIMONIO -->
     <section class="emitir-testimonio" aria-labelledby="titulo-emitir-testimonio">
-
       <div class="emitir-testimonio__contenido">
 
         <div class="emitir-testimonio__texto">
-
           <p class="emitir-testimonio__subtitulo">
             <i class="bi bi-pencil-square" aria-hidden="true"></i>
             Comparte tu experiencia
           </p>
 
-          <h2 id="titulo-emitir-testimonio">
-            Deja tu testimonio
-          </h2>
+          <h2 id="titulo-emitir-testimonio">Deja tu testimonio</h2>
 
           <p>
-            Tu opinión nos ayuda a mejorar nuestro servicio de transporte,
-            atención al cliente y envío de encomiendas.
+            Tu opini&oacute;n nos ayuda a mejorar el transporte de pasajeros, la atenci&oacute;n al cliente y el servicio de encomiendas.
           </p>
-
         </div>
 
         <form class="testimonio-form" action="mailto:informes@etsa.pe" method="post" enctype="text/plain">
-
           <div class="testimonio-form__fila">
-
             <label for="nombre" class="sr-only">Nombre completo</label>
-            <input 
-              type="text" 
+            <input
+              type="text"
               id="nombre"
-              name="nombre" 
-              placeholder="Nombre completo*" 
+              name="nombre"
+              placeholder="Nombre completo*"
+              autocomplete="name"
               required
             >
 
             <label for="tipo" class="sr-only">Tipo de usuario</label>
-            <input 
-              type="text" 
+            <input
+              type="text"
               id="tipo"
-              name="tipo" 
-              placeholder="Ejemplo: Pasajero frecuente*" 
+              name="tipo"
+              placeholder="Ejemplo: pasajero frecuente*"
               required
             >
-
           </div>
 
-          <label for="calificacion" class="sr-only">Calificación del servicio</label>
+          <label for="calificacion" class="sr-only">Calificacion del servicio</label>
           <select id="calificacion" name="calificacion" required>
-            <option value="">Calificación del servicio*</option>
+            <option value="">Calificaci&oacute;n del servicio*</option>
             <option value="5">Excelente</option>
             <option value="4">Muy bueno</option>
             <option value="3">Bueno</option>
@@ -309,10 +277,10 @@
           </select>
 
           <label for="mensaje" class="sr-only">Mensaje del testimonio</label>
-          <textarea 
+          <textarea
             id="mensaje"
-            name="mensaje" 
-            placeholder="Escribe tu testimonio*" 
+            name="mensaje"
+            placeholder="Escribe tu testimonio*"
             required
           ></textarea>
 
@@ -324,11 +292,6 @@
       </div>
     </section>
   </main>
-
-
-
-
-
 
   <!-- BARRA DE MEDIOS DE PAGO -->
   <section class="medios-pago" aria-label="Medios de pago aceptados">
@@ -350,10 +313,8 @@
     </div>
   </section>
 
-
-  <!-- FOOTER CON BOOTSTRAP  -->
+  <!-- FOOTER CON BOOTSTRAP -->
   <footer class="footer-principal bg-dark text-white pt-5">
-
     <div class="container">
       <div class="row gy-5">
 
@@ -381,75 +342,65 @@
 
           <address class="mb-0 text-white-50">
             <p class="mb-2">
-              <strong class="text-white">Dirección:</strong>
-              Av. Principal 740, Amazonas, Perú
+              <strong class="text-white">Direcci&oacute;n:</strong>
+              Av. Principal 740, Amazonas, Per&uacute;
             </p>
 
             <p class="mb-2">
-              <strong class="text-white">Central telefónica:</strong>
+              <strong class="text-white">Central telef&oacute;nica:</strong>
               <a href="tel:+51987654321" class="text-white-50 text-decoration-none">987 654 321</a>
             </p>
 
             <p class="mb-0">
-              <strong class="text-white">Correo electrónico:</strong>
+              <strong class="text-white">Correo electr&oacute;nico:</strong>
               <a href="mailto:informes@etsa.pe" class="text-white-50 text-decoration-none">informes@etsa.pe</a>
             </p>
           </address>
         </div>
 
-        <!-- COLUMNA 2: NAVEGACIÓN PRINCIPAL -->
+        <!-- COLUMNA 2: NAVEGACION PRINCIPAL -->
         <section class="col-12 col-sm-6 col-lg-2" aria-labelledby="footer-navegacion">
-          <h2 class="h5 fw-bold mb-3" id="footer-navegacion">Navegación</h2>
+          <h2 class="h5 fw-bold mb-3" id="footer-navegacion">Navegaci&oacute;n</h2>
 
           <ul class="nav flex-column gap-2">
             <li class="nav-item">
               <a class="nav-link p-0 text-white-50" href="index.html">Inicio</a>
             </li>
-
-
             <li class="nav-item">
               <a class="nav-link p-0 text-white-50" href="servicios.html">Servicios</a>
             </li>
-
             <li class="nav-item">
               <a class="nav-link p-0 text-white-50" href="rutas.html">Rutas</a>
             </li>
-
             <li class="nav-item">
               <a class="nav-link p-0 text-white-50" href="promociones.html">Promociones</a>
             </li>
-
             <li class="nav-item">
               <a class="nav-link p-0 text-white-50" href="contacto.html">Contacto</a>
             </li>
           </ul>
         </section>
 
-        <!-- COLUMNA 3: INFORMACIÓN -->
+        <!-- COLUMNA 3: INFORMACION -->
         <section class="col-12 col-sm-6 col-lg-3" aria-labelledby="footer-informacion">
-          <h2 class="h5 fw-bold mb-3" id="footer-informacion">Información</h2>
+          <h2 class="h5 fw-bold mb-3" id="footer-informacion">Informaci&oacute;n</h2>
 
           <ul class="nav flex-column gap-2">
             <li class="nav-item">
               <a class="nav-link p-0 text-white-50" href="nosotros.html">Nosotros</a>
             </li>
-
             <li class="nav-item">
               <a class="nav-link p-0 text-white-50" href="preguntas-frecuentes.html">Preguntas frecuentes</a>
             </li>
-
             <li class="nav-item">
-              <a class="nav-link p-0 text-white-50" href="info-viaje.html">Info Para tu viaje</a>
+              <a class="nav-link p-0 text-white-50" href="info-viaje.html">Info para tu viaje</a>
             </li>
-
             <li class="nav-item">
               <a class="nav-link p-0 text-white-50" href="testimonios.html">Testimonios</a>
             </li>
-
             <li class="nav-item">
               <a class="nav-link p-0 text-white-50" href="encomiendas.html">Encomiendas</a>
             </li>
-
             <li class="nav-item">
               <a class="nav-link p-0 text-white-50" href="libro_reclamos.html">Libro de reclamaciones</a>
             </li>
@@ -464,19 +415,15 @@
             <li class="nav-item">
               <a class="nav-link p-0 text-white-50" href="rutas.html">Pasaje a Chachapoyas</a>
             </li>
-
             <li class="nav-item">
               <a class="nav-link p-0 text-white-50" href="rutas.html">Pasaje a Bagua Grande</a>
             </li>
-
             <li class="nav-item">
               <a class="nav-link p-0 text-white-50" href="rutas.html">Pasaje a Pedro Ruiz</a>
             </li>
-
             <li class="nav-item">
               <a class="nav-link p-0 text-white-50" href="rutas.html">Pasaje a Luya</a>
             </li>
-
             <li class="nav-item">
               <a class="nav-link p-0 text-white-50" href="rutas.html">Pasaje a Pomacochas</a>
             </li>
@@ -490,14 +437,13 @@
     <div class="border-top border-secondary mt-5 py-3">
       <div class="container text-center">
         <p class="mb-0 text-white-50">
-          © ETSA Sol Amazonense - 2026. Todos los derechos reservados.
+          &copy; ETSA Sol Amazonense - 2026. Todos los derechos reservados.
         </p>
       </div>
     </div>
-
   </footer>
 
-  <!-- BOTÓN WHATSAPP FLOTANTE -->
+  <!-- BOTON WHATSAPP FLOTANTE -->
   <a href="https://wa.me/51904178833"
     class="whatsapp-flotante d-inline-flex align-items-center justify-content-center"
     aria-label="Contactar por WhatsApp">
@@ -506,23 +452,58 @@
 
   <!-- Bootstrap JS -->
   <script src="bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    (() => {
+      const slider = document.getElementById("testimoniosSlider");
+      const dots = document.querySelectorAll(".testimonios__dot");
 
+      if (!slider || !dots.length) return;
+
+      const cards = Array.from(slider.querySelectorAll(".testimonio-card"));
+      let ticking = false;
+
+      const setActiveDot = (index) => {
+        dots.forEach((dot, dotIndex) => {
+          const active = dotIndex === index;
+          dot.classList.toggle("testimonios__dot--activo", active);
+          dot.toggleAttribute("aria-current", active);
+        });
+      };
+
+      const getCurrentIndex = () => {
+        const sliderCenter = slider.scrollLeft + slider.clientWidth / 2;
+        return cards.reduce((closestIndex, card, index) => {
+          const cardCenter = card.offsetLeft + card.clientWidth / 2;
+          const closestCard = cards[closestIndex];
+          const closestCenter = closestCard.offsetLeft + closestCard.clientWidth / 2;
+          return Math.abs(cardCenter - sliderCenter) < Math.abs(closestCenter - sliderCenter)
+            ? index
+            : closestIndex;
+        }, 0);
+      };
+
+      dots.forEach((dot, index) => {
+        dot.addEventListener("click", () => {
+          cards[index].scrollIntoView({
+            behavior: "smooth",
+            block: "nearest",
+            inline: "start"
+          });
+          setActiveDot(index);
+        });
+      });
+
+      slider.addEventListener("scroll", () => {
+        if (ticking) return;
+
+        window.requestAnimationFrame(() => {
+          setActiveDot(getCurrentIndex());
+          ticking = false;
+        });
+
+        ticking = true;
+      }, { passive: true });
+    })();
+  </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

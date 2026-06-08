@@ -3005,3 +3005,122 @@
   max-width: 46rem;
   margin: 0 auto;
 }
+
+/* Rutas index: solo nombre y boton dentro de cada tarjeta */
+.pagina-index .rutas-index .rutas-index-card .promo-index-card__contenido,
+.pagina-index .rutas-index .ruta-slide-card__contenido {
+  box-sizing: border-box;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.pagina-index .rutas-index .rutas-index-card .promo-index-card__contenido {
+  left: clamp(1rem, 2vw, 1.6rem);
+  right: clamp(1rem, 2vw, 1.6rem);
+  bottom: clamp(1.1rem, 2vw, 1.7rem);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.05rem;
+}
+
+.pagina-index .rutas-index .rutas-index-card .promo-index-card__contenido h3,
+.pagina-index .rutas-index .ruta-slide-card__contenido h3 {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 !important;
+  color: #ffffff;
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip;
+  overflow-wrap: normal;
+  word-break: keep-all;
+  text-wrap: nowrap;
+}
+
+.pagina-index .rutas-index .rutas-index-card .promo-index-card__contenido h3 {
+  font-size: 1.45rem !important;
+}
+
+.pagina-index .rutas-index .rutas-index-card .promo-index-card__boton,
+.pagina-index .rutas-index .ruta-slide-card__boton {
+  width: min(100%, 17rem);
+  max-width: 100%;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.pagina-index .rutas-index .ruta-slide-card__contenido {
+  position: absolute !important;
+  top: auto !important;
+  right: clamp(1rem, 4vw, 1.4rem) !important;
+  bottom: clamp(1rem, 4vw, 1.35rem) !important;
+  left: clamp(1rem, 4vw, 1.4rem) !important;
+  z-index: 2;
+  display: flex !important;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: 0.85rem;
+  color: #ffffff;
+  text-align: left !important;
+}
+
+.pagina-index .rutas-index .ruta-slide-card__contenido h3 {
+  font-size: 1.45rem !important;
+}
+
+.pagina-index .rutas-index .ruta-slide-card__boton {
+  min-height: 3.15rem !important;
+  padding: 0.78rem 1rem;
+}
+
+@media (max-width: 767.98px) {
+  .pagina-index #rutasIndexCarrusel {
+    display: block !important;
+  }
+
+  .pagina-index #rutasIndexCarruselTablet,
+  .pagina-index .rutas-index__fila {
+    display: none !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .pagina-index #rutasIndexCarrusel,
+  .pagina-index .rutas-index__fila {
+    display: none !important;
+  }
+
+  .pagina-index #rutasIndexCarruselTablet {
+    display: block !important;
+  }
+
+  .pagina-index .rutas-index .ruta-slide-card__contenido h3 {
+    font-size: 1.55rem !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .pagina-index #rutasIndexCarrusel,
+  .pagina-index #rutasIndexCarruselTablet {
+    display: none !important;
+  }
+
+  .pagina-index .rutas-index__fila {
+    display: flex !important;
+  }
+
+  .pagina-index .rutas-index .rutas-index-card .promo-index-card__contenido h3 {
+    font-size: 1.45rem !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .pagina-index .rutas-index .rutas-index-card .promo-index-card__contenido h3 {
+    font-size: 1.65rem !important;
+  }
+}

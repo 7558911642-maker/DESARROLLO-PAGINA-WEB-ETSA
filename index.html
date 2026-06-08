@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -70,35 +70,40 @@
 
     </div>
   </header>
-
   <!-- PANEL LATERAL BOOTSTRAP -->
-  <aside class="offcanvas offcanvas-end menu-bootstrap" tabindex="-1" id="menuPrincipal"
+  <aside class="offcanvas offcanvas-end menu-bootstrap menu-mobile-etsa" tabindex="-1" id="menuPrincipal"
     aria-labelledby="menuPrincipalLabel">
-
     <div class="offcanvas-header">
-      <h2 class="offcanvas-title" id="menuPrincipalLabel">ETSA </h2>
-      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
+      <a class="menu-mobile__brand" href="index.html" aria-label="Ir al inicio"><span class="menu-mobile__dismiss" data-bs-dismiss="offcanvas"><img src="img/marca/logo.png" alt="Logo ETSA Sol Amazonense"></span></a>
+      <h2 class="visually-hidden" id="menuPrincipalLabel">Menu principal ETSA</h2>
+      <button type="button" class="btn-close menu-mobile__cerrar" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
     </div>
 
     <div class="offcanvas-body">
-      <nav class="panel-lateral__nav" aria-label="Menú lateral">
-        <ul class="navbar-nav flex-column gap-3">
-          <li class="nav-item"><a class="nav-link activo" href="index.html" aria-current="page">Inicio</a></li>
-          <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
-          <li class="nav-item"><a class="nav-link" href="servicios.html">Nuestros servicios</a></li>
-          <li class="nav-item"><a class="nav-link" href="rutas.html">Rutas</a></li>
-          <li class="nav-item"><a class="nav-link" href="promociones.html">Promociones</a></li>
-          <li class="nav-item"><a class="nav-link" href="testimonios.html">Testimonios</a></li>
-          <li class="nav-item"><a class="nav-link" href="preguntas-frecuentes.html">Preguntas frecuentes</a></li>
-          <li class="nav-item"><a class="nav-link" href="info-viaje.html">Info para tu viaje</a></li>
-          <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+      <nav class="panel-lateral__nav" aria-label="Menu lateral">
+        <ul class="navbar-nav flex-column">
+          <li class="nav-item"><a class="nav-link menu-mobile__link activo" href="index.html" aria-current="page"><span class="menu-mobile__dismiss" data-bs-dismiss="offcanvas"><i class="bi bi-house-door" aria-hidden="true"></i><span>Inicio</span></span></a></li>
+          <li class="nav-item"><a class="nav-link menu-mobile__link" href="nosotros.html"><span class="menu-mobile__dismiss" data-bs-dismiss="offcanvas"><i class="bi bi-people" aria-hidden="true"></i><span>Nosotros</span></span></a></li>
+          <li class="nav-item"><a class="nav-link menu-mobile__link" href="servicios.html"><span class="menu-mobile__dismiss" data-bs-dismiss="offcanvas"><i class="bi bi-bus-front" aria-hidden="true"></i><span>Nuestros servicios</span></span></a></li>
+          <li class="nav-item"><a class="nav-link menu-mobile__link" href="rutas.html"><span class="menu-mobile__dismiss" data-bs-dismiss="offcanvas"><i class="bi bi-geo-alt" aria-hidden="true"></i><span>Rutas</span></span></a></li>
+          <li class="nav-item"><a class="nav-link menu-mobile__link" href="promociones.html"><span class="menu-mobile__dismiss" data-bs-dismiss="offcanvas"><i class="bi bi-tag" aria-hidden="true"></i><span>Promociones</span></span></a></li>
+          <li class="nav-item"><a class="nav-link menu-mobile__link" href="testimonios.html"><span class="menu-mobile__dismiss" data-bs-dismiss="offcanvas"><i class="bi bi-chat-square-star" aria-hidden="true"></i><span>Testimonios</span></span></a></li>
+          <li class="nav-item"><a class="nav-link menu-mobile__link" href="preguntas-frecuentes.html"><span class="menu-mobile__dismiss" data-bs-dismiss="offcanvas"><i class="bi bi-question-circle" aria-hidden="true"></i><span>Preguntas frecuentes</span></span></a></li>
+          <li class="nav-item"><a class="nav-link menu-mobile__link" href="info-viaje.html"><span class="menu-mobile__dismiss" data-bs-dismiss="offcanvas"><i class="bi bi-suitcase" aria-hidden="true"></i><span>Info para tu viaje</span></span></a></li>
+          <li class="nav-item"><a class="nav-link menu-mobile__link" href="contacto.html"><span class="menu-mobile__dismiss" data-bs-dismiss="offcanvas"><i class="bi bi-envelope" aria-hidden="true"></i><span>Contacto</span></span></a></li>
         </ul>
       </nav>
 
-      <a href="reserva.html" class="btn-reserva d-inline-flex mt-4 d-lg-none">
-        <i class="bi bi-ticket-perforated-fill me-2" aria-hidden="true"></i>
-        RESERVA TU PASAJE
-      </a>
+      <div class="menu-mobile__ayuda">
+        <div class="menu-mobile__ayuda-texto">
+          <i class="bi bi-headset" aria-hidden="true"></i>
+          <div>
+            <strong>&iquest;Necesitas ayuda?</strong>
+            <span>Estamos para ayudarte</span>
+          </div>
+        </div>
+        <a href="reserva.html" class="btn-reserva menu-mobile__reserva"><span class="menu-mobile__dismiss" data-bs-dismiss="offcanvas"><i class="bi bi-ticket-perforated" aria-hidden="true"></i><span>RESERVA TU PASAJE</span><i class="bi bi-arrow-right" aria-hidden="true"></i></span></a>
+      </div>
     </div>
   </aside>
 

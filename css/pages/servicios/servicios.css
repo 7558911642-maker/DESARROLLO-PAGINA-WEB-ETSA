@@ -1,151 +1,576 @@
-/* SERVICIOS - HERO ESTILO MOVIL BUS / ETSA */
-.servicios-hero {
-  width: 100%;
-  min-height: 260px;
-  position: relative;
-
-  display: flex;
-  align-items: center;
-
-  padding: 55px 7% 95px;
+/* SERVICIOS */
+.pagina-servicios {
   overflow: hidden;
-
   background:
-    linear-gradient(
-      90deg,
-      rgba(0, 0, 0, 0.68) 0%,
-      rgba(0, 0, 0, 0.42) 45%,
-      rgba(0, 0, 0, 0.08) 100%
-    ),
-    url("../../../img/banners/servicios-banner.png");
-
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+    radial-gradient(circle at 16% 18%, rgba(249, 115, 22, 0.08), transparent 28%),
+    linear-gradient(180deg, #ffffff 0%, #f8fafc 52%, #ffffff 100%);
+  color: #050b1f;
 }
 
-.servicios-hero__contenido {
+body > .site-header.fixed-top ~ main.pagina-servicios {
+  padding-top: 0;
+}
+
+.pagina-servicios .container {
+  max-width: 1140px;
+}
+
+.servicios-hero {
+  position: relative;
+  min-height: clamp(330px, 42vw, 520px);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.92) 35%, rgba(255, 255, 255, 0.18) 66%),
+    url("../../../img/banners/servicios-banner.png") right center / min(66vw, 900px) auto no-repeat,
+    #ffffff;
+}
+
+.servicios-hero::before {
+  content: "";
+  position: absolute;
+  left: -8%;
+  right: 37%;
+  bottom: -88px;
+  height: 190px;
+  border-radius: 0 100% 0 0;
+  background: linear-gradient(135deg, #ff6b00 0%, #ff6b00 72%, #050b1f 72%, #050b1f 100%);
+  transform: skewY(-8deg);
+  transform-origin: left bottom;
+  z-index: 0;
+}
+
+.servicios-hero::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 -1px;
+  height: 56px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0), #ffffff 76%);
+  z-index: 1;
+}
+
+.servicios-hero__inner {
   position: relative;
   z-index: 2;
-  color: #ffffff;
 }
 
-.servicios-hero__contenido p {
-  color: #ffffff;
-  font-size: 22px;
-  font-weight: 400;
-  letter-spacing: 1.5px;
-  margin-bottom: 4px;
+.servicios-hero__texto {
+  max-width: 560px;
+  padding: clamp(86px, 10vw, 124px) 0 clamp(74px, 8vw, 104px);
 }
 
-.servicios-hero__contenido h1 {
-  color: #ffffff;
-  font-size: clamp(52px, 7vw, 88px);
-  line-height: 1;
+.servicios-hero__texto span,
+.servicios-titulo span {
+  display: inline-block;
+  color: #ff5f00;
+  font-size: clamp(0.78rem, 1.2vw, 0.9rem);
   font-weight: 900;
-  letter-spacing: 3px;
+  letter-spacing: 0.2em;
+  line-height: 1.2;
+  text-transform: uppercase;
 }
 
-/* FRASE NARANJA ANTES DE LAS TARJETAS */
-.servicios-frase {
-  width: 100%;
-  background-color: #f3f4f6;
-  padding: 48px 7% 34px;
-  text-align: center;
+.servicios-hero__texto h1 {
+  margin: 8px 0 0;
+  color: #050b1f;
+  font-size: clamp(3.3rem, 8vw, 6.25rem);
+  font-weight: 900;
+  letter-spacing: 0;
+  line-height: 0.92;
+  text-transform: uppercase;
 }
 
-.servicios-frase p {
-  color: var(--naranja);
-  font-size: clamp(19px, 2vw, 26px);
-  font-weight: 500;
-  letter-spacing: 1.5px;
-  line-height: 1.5;
-  margin: 0;
-}
-
-.servicios-frase i {
-  color: var(--naranja);
-  margin-right: 10px;
-  font-size: 28px;
-}
-
-/* SERVICIOS - SECCIÓN DE TARJETAS */
-.servicios {
-  width: 100%;
-  background-color: #f3f4f6;
-  padding: 20px;
-}
-
-.servicios__contenedor {
-  width: 100%;
-  max-width: 1500px;
-  margin: 0 auto;
-
+.servicios-principales {
   position: relative;
-  z-index: 5;
-
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 15px;
+  z-index: 2;
+  padding: clamp(34px, 5vw, 54px) 0 0;
+  background-color: #ffffff;
 }
 
-/* TARJETAS DE SERVICIOS */
+.servicios-titulo {
+  margin-bottom: clamp(24px, 3vw, 34px);
+}
+
+.servicios-titulo h2 {
+  max-width: 760px;
+  margin: 8px auto 0;
+  color: #050b1f;
+  font-size: clamp(1.85rem, 3.6vw, 2.55rem);
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 1.12;
+}
+
+.servicios-titulo::after {
+  content: "";
+  display: block;
+  width: 44px;
+  height: 3px;
+  margin: 16px auto 0;
+  border-radius: 99px;
+  background-color: #ff5f00;
+}
+
+.servicios-grid {
+  align-items: stretch;
+}
+
 .servicio-card {
-  min-height: 500px;
-
+  min-height: 320px;
+  padding: clamp(24px, 3vw, 34px);
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  border-radius: 8px;
   background-color: #ffffff;
-  border-radius: 18px;
-  padding: 10px;
-
-  text-align: center;
-
-  box-shadow: 0 18px 40px #161a2d;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  transition: 0.3s ease;
+  box-shadow: 0 20px 48px rgba(15, 23, 42, 0.08);
+  transition: transform 0.24s ease, box-shadow 0.24s ease, border-color 0.24s ease;
 }
 
 .servicio-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 24px 55px #020617;
-}
-
-.servicio-card h2 {
-  color: #374151;
-  font-size: 18px;
-  line-height: 1.4;
-  font-weight: 900;
-  letter-spacing: 5px;
-  text-transform: uppercase;
-
-  margin-bottom: 10px;
+  transform: translateY(-6px);
+  border-color: rgba(255, 95, 0, 0.24);
+  box-shadow: 0 28px 70px rgba(15, 23, 42, 0.13);
 }
 
 .servicio-card__icono {
-  margin: 10px;
+  width: 82px;
+  height: 82px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  border-radius: 50%;
+  background-color: #fff0e8;
+  color: #ff5f00;
 }
 
 .servicio-card__icono i {
-  color: #ef8544;
-  font-size: 78px;
+  font-size: 2.25rem;
   line-height: 1;
 }
 
 .servicio-card h3 {
-  color: #374151;
-  font-size: 20px;
-  font-weight: 500;
-  margin-bottom: 16px;
+  margin: 0 0 14px;
+  color: #050b1f;
+  font-size: clamp(1.2rem, 1.8vw, 1.42rem);
+  font-weight: 800;
+  line-height: 1.2;
 }
 
-.servicio-card__descripcion {
-  color: #4b5563;
-  font-size: 12px;
-  line-height: 1.75;
-  font-weight: 400;
+.servicio-card p {
+  margin: 0 0 26px;
+  color: #172033;
+  font-size: 0.94rem;
+  line-height: 1.7;
+}
+
+.servicio-card ul {
+  display: grid;
+  gap: 14px;
   margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
+.servicio-card li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: #172033;
+  font-size: 0.9rem;
+  line-height: 1.35;
+}
+
+.servicio-card li i {
+  flex: 0 0 auto;
+  color: #ff5f00;
+  font-size: 1rem;
+  line-height: 1.35;
+}
+
+.servicios-confianza {
+  display: grid;
+  grid-template-columns: auto minmax(260px, 1.2fr) repeat(3, minmax(130px, 0.7fr));
+  align-items: center;
+  gap: clamp(18px, 2.6vw, 34px);
+  margin: clamp(26px, 4vw, 42px) 0 0;
+  padding: clamp(20px, 3vw, 30px) clamp(20px, 3vw, 36px);
+  border-radius: 8px;
+  background: #050b1f;
+  color: #ffffff;
+  box-shadow: 0 18px 48px rgba(5, 11, 31, 0.24);
+}
+
+.servicios-confianza__icono {
+  width: 104px;
+  height: 104px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #ff5f00;
+  border-radius: 50%;
+  color: #ff5f00;
+  font-size: 3rem;
+}
+
+.servicios-confianza h2 {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(1.55rem, 3vw, 2.2rem);
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 1.22;
+}
+
+.servicios-confianza__dato {
+  min-height: 86px;
+  display: grid;
+  place-items: center;
+  gap: 8px;
+  padding-left: clamp(14px, 2vw, 24px);
+  border-left: 1px solid rgba(255, 255, 255, 0.24);
+  text-align: center;
+}
+
+.servicios-confianza__dato i {
+  color: #ffffff;
+  font-size: 1.75rem;
+  line-height: 1;
+}
+
+.servicios-confianza__dato span {
+  color: #ffffff;
+  font-size: 0.95rem;
+  line-height: 1.35;
+}
+
+.servicios-pasos {
+  padding: clamp(24px, 4vw, 42px) 0 clamp(34px, 5vw, 60px);
+  background:
+    radial-gradient(circle at 50% 30%, rgba(249, 115, 22, 0.08), transparent 32%),
+    #ffffff;
+}
+
+.servicios-pasos__linea {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(24px, 6vw, 90px);
+  margin-top: 22px;
+}
+
+.servicios-pasos__linea::before {
+  content: "";
+  position: absolute;
+  top: 64px;
+  left: 18%;
+  right: 18%;
+  border-top: 2px dashed rgba(255, 95, 0, 0.45);
+}
+
+.paso-card {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.paso-card > span {
+  display: block;
+  color: rgba(15, 23, 42, 0.1);
+  font-size: clamp(2.1rem, 4vw, 3rem);
+  font-weight: 900;
+  line-height: 1;
+  margin-bottom: -8px;
+}
+
+.paso-card__icono {
+  width: 74px;
+  height: 74px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff7a18, #ff5f00);
+  color: #ffffff;
+  box-shadow: 0 14px 28px rgba(255, 95, 0, 0.28);
+}
+
+.paso-card__icono i {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.paso-card h3 {
+  margin: 20px 0 8px;
+  color: #050b1f;
+  font-size: 1.05rem;
+  font-weight: 800;
+}
+
+.paso-card p {
+  max-width: 230px;
+  margin: 0 auto;
+  color: #172033;
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.servicios-beneficios {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: clamp(28px, 4vw, 42px);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: 0 16px 38px rgba(15, 23, 42, 0.08);
+}
+
+.servicios-beneficios div {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 86px;
+  padding: 18px clamp(16px, 2vw, 28px);
+}
+
+.servicios-beneficios div + div {
+  border-left: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.servicios-beneficios i {
+  color: #ff5f00;
+  font-size: 2.4rem;
+  line-height: 1;
+}
+
+.servicios-beneficios strong {
+  color: #050b1f;
+  font-size: 0.95rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.servicios-cta {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) minmax(260px, 0.9fr);
+  align-items: center;
+  gap: clamp(18px, 4vw, 44px);
+  margin-top: 18px;
+  padding: clamp(20px, 3vw, 30px);
+  overflow: hidden;
+  border: 1px solid rgba(255, 95, 0, 0.48);
+  border-radius: 8px;
+  background-color: #ffffff;
+}
+
+.servicios-cta::after {
+  content: "";
+  position: absolute;
+  right: 28px;
+  bottom: -18px;
+  width: 170px;
+  height: 70px;
+  background: url("../../../img/marca/logo.png") center / contain no-repeat;
+  opacity: 0.06;
+}
+
+.servicios-cta__icono {
+  width: 76px;
+  height: 76px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff7a18, #ff5f00);
+  color: #ffffff;
+  font-size: 2rem;
+}
+
+.servicios-cta h2 {
+  margin: 0 0 8px;
+  color: #050b1f;
+  font-size: clamp(1.35rem, 2.4vw, 1.85rem);
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 1.05;
+}
+
+.servicios-cta p {
+  margin: 0;
+  color: #172033;
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.servicios-cta__contacto {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  min-height: 70px;
+  padding-left: clamp(18px, 3vw, 34px);
+  border-left: 1px solid rgba(15, 23, 42, 0.12);
+}
+
+.servicios-cta__contacto i {
+  width: 52px;
+  height: 52px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  border-radius: 50%;
+  color: #050b1f;
+  font-size: 1.6rem;
+}
+
+.servicios-cta__contacto span {
+  color: #172033;
+  font-size: 0.95rem;
+  line-height: 1.35;
+}
+
+@media (max-width: 991.98px) {
+  .pagina-servicios .servicios-hero {
+    min-height: 440px;
+    background:
+      linear-gradient(90deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.86) 52%, rgba(255, 255, 255, 0.18) 100%),
+      url("../../../img/banners/servicios-banner.png") right center / cover no-repeat,
+      #ffffff !important;
+    padding: 0 !important;
+  }
+
+  .servicios-confianza {
+    grid-template-columns: auto 1fr;
+  }
+
+  .servicios-confianza__dato {
+    border-left: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+    padding: 18px 0 0;
+  }
+
+  .servicios-beneficios {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .servicios-beneficios div:nth-child(odd) {
+    border-left: 0;
+  }
+
+  .servicios-beneficios div:nth-child(n + 3) {
+    border-top: 1px solid rgba(15, 23, 42, 0.08);
+  }
+
+  .servicios-cta {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .servicios-cta__contacto {
+    grid-column: 1 / -1;
+    border-left: 0;
+    border-top: 1px solid rgba(15, 23, 42, 0.12);
+    padding: 18px 0 0;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .pagina-servicios .servicios-hero {
+    min-height: 360px;
+    background:
+      linear-gradient(90deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.9) 64%, rgba(255, 255, 255, 0.35) 100%),
+      url("../../../img/banners/servicios-banner.png") 68% center / cover no-repeat,
+      #ffffff !important;
+    padding: 0 !important;
+  }
+
+  .servicios-hero::before {
+    right: 18%;
+    bottom: -108px;
+    height: 170px;
+  }
+
+  .servicios-hero__texto {
+    padding: 118px 0 88px;
+  }
+
+  .servicios-hero__texto h1 {
+    font-size: clamp(3rem, 14vw, 4.6rem);
+  }
+
+  .servicios-confianza,
+  .servicios-pasos__linea,
+  .servicios-beneficios,
+  .servicios-cta {
+    grid-template-columns: 1fr;
+  }
+
+  .servicios-confianza {
+    text-align: center;
+    justify-items: center;
+  }
+
+  .servicios-pasos__linea {
+    gap: 28px;
+  }
+
+  .servicios-pasos__linea::before {
+    display: none;
+  }
+
+  .servicios-beneficios div,
+  .servicios-beneficios div + div,
+  .servicios-beneficios div:nth-child(n + 3) {
+    border-left: 0;
+    border-top: 1px solid rgba(15, 23, 42, 0.08);
+  }
+
+  .servicios-beneficios div:first-child {
+    border-top: 0;
+  }
+
+  .servicios-cta {
+    text-align: center;
+    justify-items: center;
+  }
+
+  .servicios-cta__contacto {
+    justify-content: center;
+    text-align: left;
+  }
+
+  .pagina-servicios .servicio-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .servicios-principales {
+    padding-top: 42px;
+  }
+
+  .servicio-card {
+    min-height: auto;
+  }
+
+  .servicios-confianza__icono {
+    width: 88px;
+    height: 88px;
+    font-size: 2.45rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .servicio-card {
+    transition: none;
+  }
+
+  .servicio-card:hover {
+    transform: none;
+  }
+}

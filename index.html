@@ -162,7 +162,7 @@
 
     <!-- RESUMEN PROMOCIONES -->
     <section class="promociones-index index-promociones" aria-labelledby="titulo-index-promociones">
-      <div class="container">
+      <div class="container-fluid promociones-index__container">
 
         <div class="index-promociones__header flex-column flex-md-row align-items-start align-items-md-center">
           <div class="index-promociones__titulo-box">
@@ -173,6 +173,11 @@
               <h2 id="titulo-index-promociones">Promociones especiales</h2>
             </div>
           </div>
+
+          <a href="promociones.html" class="index-promociones__ver-mas">
+            Ver más
+            <i class="bi bi-arrow-right" aria-hidden="true"></i>
+          </a>
 
         </div>
 
@@ -205,7 +210,7 @@
                     <h3>Envíos frecuentes con tarifa especial</h3>
                     <p>Mueve tus paquetes con confianza entre nuestras rutas principales.</p>
 
-                    <a href="promociones.html#modal-promo2" class="promo-slide-card__boton">
+                    <a href="promociones.html#modal-promo1" class="promo-slide-card__boton">
                       Más información
                       <i class="bi bi-arrow-right" aria-hidden="true"></i>
                     </a>
@@ -223,7 +228,42 @@
                     <h3>Ahorra en tu pasaje de retorno</h3>
                     <p>Viaja por Amazonas con una tarifa especial para tu retorno.</p>
 
-                    <a href="promociones.html#modal-promo1" class="promo-slide-card__boton">
+                    <a href="promociones.html#modal-promo3" class="promo-slide-card__boton">
+                      Más información
+                      <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                    </a>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="carousel-item">
+              <article class="index-slide-card promo-slide-card">
+                <div class="index-slide-card__media promo-slide-card__media">
+                  <img src="img/promociones/watermarked_img_16051582334898136880.jpg" alt="Promoción ETSA por el Mundial de Fútbol 2026">
+                  <div class="promo-slide-card__contenido">
+                    <span class="index-slide-card__tag">Mundial de fútbol</span>
+                    <h3>Promo Pasajero Mundialista</h3>
+                    <p>Viaja con ETSA y disfruta una tarifa especial para vivir la emoción del fútbol con tu grupo.</p>
+
+                    <a href="promociones.html#modal-promo3" class="promo-slide-card__boton">
+                      Más información
+                      <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                    </a>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <div class="carousel-item">
+              <article class="index-slide-card promo-slide-card">
+                <div class="index-slide-card__media promo-slide-card__media">
+                  <img src="img/promociones/Promo5.jpg" alt="Promoción ETSA para viajar al Raymi Llaqta de Chachapoyas">
+                  <div class="promo-slide-card__contenido">
+                    <span class="index-slide-card__tag">Raymi Llaqta</span>
+                    <h3>Vive la Fiesta de Chachapoyas</h3>
+                    <p>Promoción especial para disfrutar cultura, danzas y tradición amazonense en Chachapoyas.</p>
+
+                    <a href="promociones.html#modal-promo4" class="promo-slide-card__boton">
                       Más información
                       <i class="bi bi-arrow-right" aria-hidden="true"></i>
                     </a>
@@ -237,6 +277,8 @@
             <button type="button" data-bs-target="#promocionesIndexCarrusel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Promoción 1"></button>
             <button type="button" data-bs-target="#promocionesIndexCarrusel" data-bs-slide-to="1" aria-label="Promoción 2"></button>
             <button type="button" data-bs-target="#promocionesIndexCarrusel" data-bs-slide-to="2" aria-label="Promoción 3"></button>
+            <button type="button" data-bs-target="#promocionesIndexCarrusel" data-bs-slide-to="3" aria-label="Promoción 4"></button>
+            <button type="button" data-bs-target="#promocionesIndexCarrusel" data-bs-slide-to="4" aria-label="Promoción 5"></button>
           </div>
         </div>
 
@@ -376,10 +418,10 @@
           </div>
         </div>
 
-        <div class="row g-4 promociones-index__fila">
+        <div class="row g-4 promociones-index__fila" id="promocionesIndexFila">
 
           <!-- PROMOCIÓN 1 -->
-          <div class="col-12 col-lg-4 promociones-index__columna">
+          <div class="col-12 col-lg-4 promociones-index__columna" id="promo-index-card-1">
             <article class="promo-card promo-index-card h-100">
               <img src="img/rutas/chachapoyas.png" alt="Promoción de pasaje de retorno a Chachapoyas">
 
@@ -398,7 +440,7 @@
                   para tu retorno.
                 </p>
 
-                <a href="promociones.html#modal-promo1" class="promo-index-card__boton">
+                <a href="promociones.html#modal-promo3" class="promo-index-card__boton">
                   Más información
                   <i class="bi bi-arrow-right" aria-hidden="true"></i>
                 </a>
@@ -407,7 +449,7 @@
           </div>
 
           <!-- PROMOCIÓN 2 -->
-          <div class="col-12 col-lg-4 promociones-index__columna">
+          <div class="col-12 col-lg-4 promociones-index__columna" id="promo-index-card-2">
             <article class="promo-card promo-index-card h-100">
               <img src="img/servicios/encomienda.png" alt="Promoción de encomiendas ETSA">
 
@@ -426,7 +468,7 @@
                   preferenciales.
                 </p>
 
-                <a href="promociones.html#modal-promo2" class="promo-index-card__boton">
+                <a href="promociones.html#modal-promo1" class="promo-index-card__boton">
                   Más información
                   <i class="bi bi-arrow-right" aria-hidden="true"></i>
                 </a>
@@ -435,7 +477,7 @@
           </div>
 
           <!-- PROMOCIÓN 3 -->
-          <div class="col-12 col-lg-4 promociones-index__columna">
+          <div class="col-12 col-lg-4 promociones-index__columna" id="promo-index-card-3">
             <article class="promo-card promo-index-card h-100">
               <img src="img/rutas/kuelap.png" alt="Promoción familiar para viajar por Amazonas">
 
@@ -463,7 +505,7 @@
           </div>
 
           <!-- PROMOCION 4 -->
-          <div class="col-12 col-lg-4 promociones-index__columna">
+          <div class="col-12 col-lg-4 promociones-index__columna" id="promo-index-card-4">
             <article class="promo-card promo-index-card h-100">
               <img src="img/promociones/watermarked_img_16051582334898136880.jpg" alt="Promoción ETSA por el Mundial de Fútbol 2026">
 
@@ -491,7 +533,7 @@
           </div>
 
           <!-- PROMOCION 5 -->
-          <div class="col-12 col-lg-4 promociones-index__columna">
+          <div class="col-12 col-lg-4 promociones-index__columna" id="promo-index-card-5">
             <article class="promo-card promo-index-card h-100">
               <img src="img/promociones/Promo5.jpg" alt="Promoción ETSA para viajar al Raymi Llaqta de Chachapoyas">
 

@@ -12,9 +12,18 @@
   align-items: center;
   padding: clamp(112px, 13vw, 160px) clamp(28px, 8vw, 120px) clamp(62px, 8vw, 96px);
   overflow: hidden;
-  background:
-    linear-gradient(90deg, rgba(6, 22, 45, 0.86) 0%, rgba(6, 22, 45, 0.54) 48%, rgba(6, 22, 45, 0.14) 100%),
-    url("../../../img/banners/watermarked_img_2461339827978530461.jpg") center / cover no-repeat;
+
+  background-image:
+    linear-gradient(
+      rgba(6, 22, 45, 0.42),
+      rgba(6, 22, 45, 0.52)
+    ),
+    url("../../../img/promociones/Promo5.jpg");
+
+  background-size: cover;
+  background-position: center 58%;
+  background-repeat: no-repeat;
+
   border-bottom: 5px solid var(--naranja);
 }
 
@@ -304,7 +313,8 @@
   backdrop-filter: blur(4px);
 }
 
-.modal-overlay.modal-abierto {
+.modal-overlay.modal-abierto,
+.modal-overlay:target {
   display: flex;
 }
 

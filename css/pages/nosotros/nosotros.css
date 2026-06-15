@@ -2,6 +2,10 @@
    PAGINA NOSOTROS
 ================================================== */
 
+body.pagina-nosotros > .site-header.fixed-top ~ main {
+  padding-top: 0;
+}
+
 .pagina-nosotros .nosotros-hero {
   position: relative;
   width: 100%;

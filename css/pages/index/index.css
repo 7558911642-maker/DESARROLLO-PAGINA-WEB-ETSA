@@ -4,6 +4,10 @@
 ================================================== */
 
 /* INDEX - HERO PRINCIPAL */
+body.pagina-index > .site-header.fixed-top ~ main {
+  padding-top: 0;
+}
+
 .hero {
   width: 100%;
   min-height: 0px;
@@ -1386,7 +1390,6 @@ figure {
 }
 
 /* FIN CSS DEL INDEX */
-
 
 
 

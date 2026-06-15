@@ -1,4 +1,8 @@
 /* ENCOMIENDAS */
+body > .site-header.fixed-top ~ main.pagina-encomiendas {
+  padding-top: 0;
+}
+
 .encomiendas-hero {
   position: relative;
   isolation: isolate;

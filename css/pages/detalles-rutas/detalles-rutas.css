@@ -3,6 +3,10 @@
    Estilos compartidos para las paginas dentro de detalles-rutas
    ========================================================= */
 
+body.pagina-detalle-ruta > .site-header.fixed-top ~ main.pagina-detalle-ruta__main {
+  padding-top: 0;
+}
+
 .detalle-destino-hero {
   position: relative;
   min-height: 360px;

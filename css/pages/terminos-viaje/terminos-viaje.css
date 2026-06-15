@@ -6,7 +6,7 @@ html.pagina-terminos-viaje-html {
 
 body.pagina-terminos-viaje {
   --terminos-header-height: 6.75rem;
-  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
   overflow-x: clip;
 }
 

@@ -2,13 +2,13 @@
    RESERVA TU PASAJE - ETSA
 ================================================== */
 
-main {
+body.pagina-reserva main {
     margin-top: 85px;
 }
 
 /* HERO */
 
-main section:first-child {
+body.pagina-reserva main section:first-child {
     position: relative;
     padding: 110px 0 !important;
 
@@ -17,7 +17,7 @@ main section:first-child {
             rgba(5, 18, 35, 0.78),
             rgba(5, 18, 35, 0.78)
         ),
-        url("../img/rutas/chachapoyas.png");
+        url("../../../img/banners/watermarked_img_2461339827978530461.jpg");
 
     background-size: cover;
     background-position: center;
@@ -26,7 +26,7 @@ main section:first-child {
     overflow: hidden;
 }
 
-main section:first-child::before {
+body.pagina-reserva main section:first-child::before {
     content: "";
 
     position: absolute;
@@ -40,12 +40,12 @@ main section:first-child::before {
         );
 }
 
-main section:first-child .container {
+body.pagina-reserva main section:first-child .container {
     position: relative;
     z-index: 2;
 }
 
-main section:first-child p.text-warning {
+body.pagina-reserva main section:first-child p.text-warning {
     display: inline-flex;
     align-items: center;
     gap: 8px;
@@ -61,28 +61,28 @@ main section:first-child p.text-warning {
     letter-spacing: 1px;
 }
 
-main section:first-child h1 {
+body.pagina-reserva main section:first-child h1 {
     color: #fff;
     font-weight: 900;
 
     font-size: clamp(2.3rem, 5vw, 4.5rem);
 }
 
-main section:first-child .lead {
+body.pagina-reserva main section:first-child .lead {
     color: rgba(255,255,255,.85) !important;
     max-width: 700px;
 }
 
 /* CONTENIDO */
 
-main section:nth-child(2) {
+body.pagina-reserva main section:nth-child(2) {
     background: #f8fafc;
     padding: 80px 0 !important;
 }
 
 /* TARJETA IZQUIERDA */
 
-main article.bg-white {
+body.pagina-reserva main article.bg-white {
     border: none !important;
 
     border-radius: 24px !important;
@@ -95,25 +95,25 @@ main article.bg-white {
         0 15px 40px rgba(0,0,0,.06) !important;
 }
 
-main article.bg-white h2 {
+body.pagina-reserva main article.bg-white h2 {
     font-weight: 800;
     color: #0f172a;
     margin-bottom: 25px;
 }
 
-main article.bg-white li {
+body.pagina-reserva main article.bg-white li {
     align-items: flex-start;
     font-size: 1rem;
     color: #475569;
 }
 
-main article.bg-white i {
+body.pagina-reserva main article.bg-white i {
     color: #ff7b00 !important;
 }
 
 /* FORMULARIO */
 
-form.bg-white {
+body.pagina-reserva form.bg-white {
     border: none !important;
 
     border-radius: 28px !important;
@@ -124,7 +124,7 @@ form.bg-white {
         0 20px 50px rgba(0,0,0,.08) !important;
 }
 
-.form-control {
+body.pagina-reserva .form-control {
     height: 56px;
 
     border-radius: 14px;
@@ -138,12 +138,12 @@ form.bg-white {
     transition: .25s;
 }
 
-textarea.form-control {
+body.pagina-reserva textarea.form-control {
     min-height: 130px;
     padding-top: 14px;
 }
 
-.form-control:focus {
+body.pagina-reserva .form-control:focus {
     border-color: #ff7b00;
 
     box-shadow:
@@ -152,7 +152,7 @@ textarea.form-control {
 
 /* BOTON */
 
-form button.btn-warning {
+body.pagina-reserva form button.btn-warning {
     width: 100%;
 
     height: 58px;
@@ -176,7 +176,7 @@ form button.btn-warning {
     transition: .3s;
 }
 
-form button.btn-warning:hover {
+body.pagina-reserva form button.btn-warning:hover {
     transform: translateY(-3px);
 
     box-shadow:
@@ -185,7 +185,7 @@ form button.btn-warning:hover {
 
 /* EFECTO PREMIUM */
 
-form.bg-white::before {
+body.pagina-reserva form.bg-white::before {
     content: "";
 
     display: block;
@@ -208,47 +208,47 @@ form.bg-white::before {
 
 @media (max-width: 768px) {
 
-    main section:first-child {
+    body.pagina-reserva main section:first-child {
         padding: 90px 0 !important;
     }
 
-    main section:first-child h1 {
+    body.pagina-reserva main section:first-child h1 {
         font-size: 2.4rem;
     }
 
-    form.bg-white,
-    main article.bg-white {
+    body.pagina-reserva form.bg-white,
+    body.pagina-reserva main article.bg-white {
         padding: 25px !important;
     }
 }
 
 @media (max-width: 425px) {
 
-    main section:first-child {
+    body.pagina-reserva main section:first-child {
         padding: 75px 0 !important;
     }
 
-    main section:first-child h1 {
+    body.pagina-reserva main section:first-child h1 {
         font-size: 2rem;
     }
 
-    .form-control {
+    body.pagina-reserva .form-control {
         height: 52px;
     }
 
-    textarea.form-control {
+    body.pagina-reserva textarea.form-control {
         min-height: 120px;
     }
 }
 
 @media (max-width: 320px) {
 
-    main section:first-child h1 {
+    body.pagina-reserva main section:first-child h1 {
         font-size: 1.8rem;
     }
 
-    form.bg-white,
-    main article.bg-white {
+    body.pagina-reserva form.bg-white,
+    body.pagina-reserva main article.bg-white {
         padding: 20px !important;
     }
 }
@@ -257,7 +257,7 @@ form.bg-white::before {
    EFECTOS PREMIUM ETSA
 =================================== */
 
-main section:first-child {
+body.pagina-reserva main section:first-child {
     min-height: 500px;
 
     display: flex;
@@ -269,14 +269,14 @@ main section:first-child {
             rgba(3, 15, 32, .88),
             rgba(7, 30, 58, .78)
         ),
-        url("../img/banners/watermarked_img_2461339827978530461.jpg");
+        url("../../../img/banners/watermarked_img_2461339827978530461.jpg");
 
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
 }
 
-main section:first-child h1 {
+body.pagina-reserva main section:first-child h1 {
     text-transform: uppercase;
     letter-spacing: 2px;
 
@@ -284,19 +284,19 @@ main section:first-child h1 {
         0 4px 25px rgba(0,0,0,.35);
 }
 
-main section:first-child .lead {
+body.pagina-reserva main section:first-child .lead {
     font-size: 1.2rem;
     max-width: 750px;
 }
 
 /* CARD INFORMATIVA */
 
-main article.bg-white {
+body.pagina-reserva main article.bg-white {
     position: relative;
     overflow: hidden;
 }
 
-main article.bg-white::after {
+body.pagina-reserva main article.bg-white::after {
 
     content: "";
 
@@ -318,7 +318,7 @@ main article.bg-white::after {
 
 /* FORMULARIO */
 
-form.bg-white {
+body.pagina-reserva form.bg-white {
 
     position: relative;
 
@@ -327,7 +327,7 @@ form.bg-white {
     border: 1px solid rgba(255,255,255,.6);
 }
 
-form.bg-white::after {
+body.pagina-reserva form.bg-white::after {
 
     content: "";
 
@@ -348,21 +348,21 @@ form.bg-white::after {
 
 /* INPUTS */
 
-.form-control {
+body.pagina-reserva .form-control {
 
     background: #f8fafc;
 
     font-weight: 500;
 }
 
-.form-control:hover {
+body.pagina-reserva .form-control:hover {
 
     border-color: #ff9900;
 }
 
 /* BOTON */
 
-form button.btn-warning {
+body.pagina-reserva form button.btn-warning {
 
     font-size: 1rem;
 
@@ -373,8 +373,8 @@ form button.btn-warning {
 
 /* EFECTO FLOTANTE */
 
-form.bg-white:hover,
-main article.bg-white:hover {
+body.pagina-reserva form.bg-white:hover,
+body.pagina-reserva main article.bg-white:hover {
 
     transform: translateY(-6px);
 
@@ -385,14 +385,14 @@ main article.bg-white:hover {
 
 @media (max-width:768px){
 
-    main section:first-child {
+    body.pagina-reserva main section:first-child {
 
         min-height: 420px;
 
         background-attachment: scroll;
     }
 
-    main section:first-child h1 {
+    body.pagina-reserva main section:first-child h1 {
 
         font-size: 2.5rem;
     }
@@ -406,7 +406,7 @@ html.pagina-reserva-html {
 
 body.pagina-reserva {
   --reserva-header-height: 6.75rem;
-  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
   overflow-x: clip;
 }
 

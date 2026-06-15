@@ -1,4 +1,8 @@
 /* RUTAS - HERO ESTILO MOVIL BUS */
+body.pagina-rutas > .site-header.fixed-top ~ main.pagina-rutas__main {
+  padding-top: 0;
+}
+
 .rutas-hero {
   width: 100%;
   min-height: 260px;
@@ -458,4 +462,3 @@
     font-size: 14px;
   }
 }
-

@@ -1,4 +1,8 @@
 /* TERMINOS DE ENCOMIENDAS */
+body > .site-header.fixed-top ~ main.terminos-encomiendas-page {
+  padding-top: 0;
+}
+
 .terminos-encomiendas-page {
   background: #ffffff;
 }

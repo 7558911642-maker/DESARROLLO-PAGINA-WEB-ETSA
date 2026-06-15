@@ -1,4 +1,8 @@
 /* ESTILOS SECCIÓN PREGUNTAS FRECUENTES (FAQ) - ETSA SOL AMAZONENSE */
+body.pagina-preguntas-frecuentes > .site-header.fixed-top ~ main.pagina-preguntas-frecuentes__main {
+  padding-top: 0;
+}
+
 .faq-hero {
   width: 100%;
   min-height: 330px;
@@ -133,4 +137,3 @@
   transform: rotate(180deg);
   color: var(--naranja-oscuro);
 }
-

@@ -6,7 +6,7 @@ html.pagina-libro-reclamos-html {
 
 body.pagina-libro-reclamos {
   --libro-header-height: 6.75rem;
-  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
   overflow-x: clip;
 }
 

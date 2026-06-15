@@ -1004,7 +1004,7 @@
 
 /* Fondo para cada página si usas estas clases en el hero */
 .detalle-hero--bagua {
-  background-image: url("../../img/rutas/bagua-grande.png");
+  background-image: url("../../img/rutas/bagua.png");
 }
 
 .detalle-hero--chachapoyas {
@@ -3318,7 +3318,7 @@
       rgba(0, 0, 0, 0.22) 48%,
       rgba(0, 0, 0, 0.1) 100%
     ),
-    url("../../img/promociones/Promo5.jpg") center 58% / cover no-repeat !important;
+    url("../../img/banners/Promociones-banner.png") center 58% / cover no-repeat !important;
 }
 
 .pagina-index .index-promociones__ver-mas {

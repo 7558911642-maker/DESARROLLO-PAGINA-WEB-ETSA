@@ -1352,16 +1352,6 @@ figure {
 }
 
 
-
-
-
-
-
-
-
-
-
-
 /* HERO INDEX - botones solo entre 576px y 766px */
 @media (min-width: 576px) and (max-width: 766px) {
   body.pagina-index .hero .botones {

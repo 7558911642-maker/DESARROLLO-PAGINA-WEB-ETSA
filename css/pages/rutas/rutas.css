@@ -5,7 +5,8 @@ body.pagina-rutas > .site-header.fixed-top ~ main.pagina-rutas__main {
 
 .rutas-hero {
   width: 100%;
-  min-height: 260px;
+  min-height: calc(100vh - var(--site-header-height, 84px));
+  min-height: calc(100svh - var(--site-header-height, 84px));
   position: relative;
 
   display: flex;
@@ -46,7 +47,6 @@ body.pagina-rutas > .site-header.fixed-top ~ main.pagina-rutas__main {
   font-size: clamp(48px, 9vw, 110px);
   line-height: 0.95;
   font-weight: 900;
-  text-transform: lowercase;
   letter-spacing: 3px;
   overflow-wrap: normal;
   word-break: normal;
@@ -345,7 +345,8 @@ body.pagina-rutas > .site-header.fixed-top ~ main.pagina-rutas__main {
 
 @media (max-width: 767.98px) {
   .rutas-hero {
-    min-height: 230px;
+    min-height: calc(100vh - var(--site-header-height, 84px));
+    min-height: calc(100svh - var(--site-header-height, 84px));
     justify-content: center;
     text-align: center;
     padding: 54px 22px;

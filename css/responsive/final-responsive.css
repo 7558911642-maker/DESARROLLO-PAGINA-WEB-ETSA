@@ -1354,7 +1354,8 @@
 /* DETALLES DE RUTAS - RESPONSIVE ACTUAL */
 .detalle-destino-hero {
   position: relative;
-  min-height: 360px;
+  min-height: calc(100vh - var(--site-header-height, 84px));
+  min-height: calc(100svh - var(--site-header-height, 84px));
   display: flex;
   align-items: flex-end;
   padding: 78px 7%;
@@ -1402,8 +1403,11 @@
   background-image: url("../../img/rutas/Luya.png");
 }
 
-.detalle-destino-hero--pedro-ruiz {
-  background-image: url("../../img/rutas/Pedro-Ruiz.png");
+.detalle-destino-hero.detalle-destino-hero--pedro-ruiz {
+  min-height: calc(100vh - var(--site-header-height, 84px));
+  min-height: calc(100svh - var(--site-header-height, 84px));
+  padding: clamp(108px, 12vw, 152px) clamp(28px, 8vw, 120px) clamp(64px, 8vw, 96px);
+  background-image: url("../../img/banners/Pedro_Ruiz.png");
 }
 
 .detalle-destino-hero--pomacochas {
@@ -3353,4 +3357,25 @@
     width: 100%;
     margin-top: 0.85rem;
   }
+}
+
+@media (max-width: 991px) {
+  .detalle-destino-hero.detalle-destino-hero--pedro-ruiz {
+    min-height: calc(100vh - var(--site-header-height, 84px));
+    min-height: calc(100svh - var(--site-header-height, 84px));
+    padding: 104px clamp(32px, 7vw, 64px) 72px;
+  }
+}
+
+@media (max-width: 640px) {
+  .detalle-destino-hero.detalle-destino-hero--pedro-ruiz {
+    min-height: calc(100vh - var(--site-header-height, 84px));
+    min-height: calc(100svh - var(--site-header-height, 84px));
+    padding: 96px 28px 62px;
+  }
+}
+
+.rutas-hero {
+  min-height: calc(100vh - var(--site-header-height, 84px));
+  min-height: calc(100svh - var(--site-header-height, 84px));
 }

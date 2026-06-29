@@ -115,7 +115,7 @@
 .promociones-container {
   width: 100%;
   display: flex !important;
-  gap: clamp(18px, 2.6vw, 30px) !important;
+  gap: clamp(20px, 2.6vw, 32px) !important;
   overflow-x: auto !important;
   overflow-y: hidden !important;
   scroll-snap-type: x mandatory;
@@ -132,23 +132,24 @@
 
 .promocion-card {
   flex: 0 0 auto;
+  flex-basis: min(86vw, 380px);
   scroll-snap-align: start;
   min-width: 0;
   height: 100%;
   overflow: hidden;
   border: 1px solid rgba(148, 163, 184, 0.22);
-  border-radius: 18px;
+  border-radius: 16px;
   background: #ffffff;
   display: grid;
   grid-template-rows: auto 1fr;
-  box-shadow: 0 24px 58px rgba(15, 23, 42, 0.12);
+  box-shadow: 0 18px 42px rgba(15, 23, 42, 0.1);
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
 .promocion-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-4px);
   border-color: rgba(249, 115, 22, 0.34);
-  box-shadow: 0 30px 70px rgba(15, 23, 42, 0.16);
+  box-shadow: 0 24px 52px rgba(15, 23, 42, 0.14);
 }
 
 .promocion-imagen {
@@ -201,7 +202,7 @@
 
 .promocion-card__contenido {
   min-width: 0;
-  padding: clamp(24px, 3.5vw, 34px);
+  padding: clamp(24px, 3vw, 32px);
   display: flex;
   flex-direction: column;
 }
@@ -224,8 +225,8 @@
 
 .promocion-card__beneficios {
   display: grid;
-  gap: 12px;
-  margin: 22px 0 0;
+  gap: 10px;
+  margin: 24px 0 0;
   padding: 0;
   list-style: none;
 }
@@ -299,6 +300,14 @@
   border-color: var(--naranja);
   color: var(--naranja);
   transform: translateY(-2px);
+}
+
+/* Accesibilidad basica */
+.btn-mas-info:focus-visible,
+.promocion-card__link:focus-visible,
+.modal-cerrar:focus-visible {
+  outline: 3px solid rgba(249, 115, 22, 0.45);
+  outline-offset: 3px;
 }
 
 .modal-overlay {
@@ -448,7 +457,7 @@
   }
 
   .promociones-seccion {
-    padding: 46px 16px 64px;
+    padding: 44px 12px 64px;
   }
 
   .promociones-seccion__encabezado {
@@ -460,11 +469,16 @@
   }
 
   .promocion-card {
+    flex-basis: 88vw;
     border-radius: 16px;
   }
 
   .promocion-card__contenido {
-    padding: 22px 18px 24px;
+    padding: 22px 18px 26px;
+  }
+
+  .promocion-card__beneficios {
+    gap: 9px;
   }
 
   .promocion-card__acciones {

@@ -157,10 +157,11 @@
         </header>
 
         <!-- GALERÍA CON BOOTSTRAP -->
-        <div class="row g-4 galeria-destinos-bootstrap">
+        <div class="rutas-slider-viewport">
+          <div class="row row-cols-1 row-cols-lg-5 g-3 g-xl-4 galeria-destinos-bootstrap">
 
           <!-- CHACHAPOYAS -->
-          <div class="col-12 col-md-6 col-lg-4" id="ruta-chachapoyas">
+          <div class="col" id="ruta-chachapoyas">
             <article class="tarjeta-ruta tarjeta-ruta-bootstrap h-100">
               <img src="img/rutas/chachapoyas.png" alt="Ciudad de Chachapoyas">
 
@@ -180,7 +181,7 @@
           </div>
 
           <!-- BAGUA GRANDE -->
-          <div class="col-12 col-md-6 col-lg-4" id="ruta-bagua-grande">
+          <div class="col" id="ruta-bagua-grande">
             <article class="tarjeta-ruta tarjeta-ruta-bootstrap h-100">
               <img src="img/rutas/bagua.png" alt="Ciudad de Bagua Grande">
 
@@ -200,7 +201,7 @@
           </div>
 
           <!-- PEDRO RUIZ -->
-          <div class="col-12 col-md-6 col-lg-4" id="ruta-pedro-ruiz">
+          <div class="col" id="ruta-pedro-ruiz">
             <article class="tarjeta-ruta tarjeta-ruta-bootstrap h-100">
               <img src="img/banners/Pedro_Ruiz.png" alt="Ciudad de Pedro Ruiz">
 
@@ -220,7 +221,7 @@
           </div>
 
           <!-- LUYA -->
-          <div class="col-12 col-md-6 col-lg-4" id="ruta-luya">
+          <div class="col" id="ruta-luya">
             <article class="tarjeta-ruta tarjeta-ruta-bootstrap h-100">
               <img src="img/rutas/Luya.png" alt="Ciudad de Luya">
 
@@ -240,7 +241,7 @@
           </div>
 
           <!-- POMACOCHAS -->
-          <div class="col-12 col-md-6 col-lg-4" id="ruta-pomacochas">
+          <div class="col" id="ruta-pomacochas">
             <article class="tarjeta-ruta tarjeta-ruta-bootstrap h-100">
               <img src="img/rutas/Pomacochas.png" alt="Laguna de Pomacochas">
 
@@ -259,6 +260,15 @@
             </article>
           </div>
 
+          </div>
+        </div>
+
+        <div class="rutas-slider-dots" aria-label="Selector de destinos">
+          <button class="rutas-slider-dot is-active" type="button" data-ruta-slide="0" aria-label="Ver destino Chachapoyas" aria-current="true"></button>
+          <button class="rutas-slider-dot" type="button" data-ruta-slide="1" aria-label="Ver destino Bagua Grande"></button>
+          <button class="rutas-slider-dot" type="button" data-ruta-slide="2" aria-label="Ver destino Pedro Ruiz"></button>
+          <button class="rutas-slider-dot" type="button" data-ruta-slide="3" aria-label="Ver destino Luya"></button>
+          <button class="rutas-slider-dot" type="button" data-ruta-slide="4" aria-label="Ver destino Pomacochas"></button>
         </div>
       </div>
 
@@ -455,5 +465,83 @@
     integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
     crossorigin="anonymous"></script>
 
+  <script>
+    (() => {
+      const slider = document.querySelector(".galeria-destinos-bootstrap");
+      const slides = Array.from(slider?.children || []);
+      const dots = Array.from(document.querySelectorAll(".rutas-slider-dot"));
+      const carouselQuery = window.matchMedia("(max-width: 991.98px)");
+
+      if (!slider || !slides.length || !dots.length) {
+        return;
+      }
+
+      let activeSlide = 0;
+      let pointerStartX = 0;
+      let pointerStartY = 0;
+
+      const setActiveDot = (activeIndex) => {
+        dots.forEach((dot, index) => {
+          const isActive = index === activeIndex;
+          dot.classList.toggle("is-active", isActive);
+          if (isActive) {
+            dot.setAttribute("aria-current", "true");
+          } else {
+            dot.removeAttribute("aria-current");
+          }
+        });
+      };
+
+      const setActiveSlide = (index) => {
+        activeSlide = (index + slides.length) % slides.length;
+        slider.style.setProperty("--ruta-slide", activeSlide);
+
+        slides.forEach((slide, slideIndex) => {
+          slide.classList.toggle("is-active", slideIndex === activeSlide);
+        });
+
+        setActiveDot(activeSlide);
+      };
+
+      const handleSwipe = (endX, endY) => {
+        if (!carouselQuery.matches) {
+          return;
+        }
+
+        const distanceX = endX - pointerStartX;
+        const distanceY = endY - pointerStartY;
+
+        if (Math.abs(distanceX) < 45 || Math.abs(distanceX) < Math.abs(distanceY)) {
+          return;
+        }
+
+        setActiveSlide(activeSlide + (distanceX < 0 ? 1 : -1));
+      };
+
+      slider.addEventListener("touchstart", (event) => {
+        const touch = event.touches[0];
+        pointerStartX = touch.clientX;
+        pointerStartY = touch.clientY;
+      }, { passive: true });
+
+      slider.addEventListener("touchend", (event) => {
+        const touch = event.changedTouches[0];
+        handleSwipe(touch.clientX, touch.clientY);
+      });
+
+      dots.forEach((dot, index) => {
+        dot.addEventListener("click", () => {
+          setActiveSlide(index);
+        });
+      });
+
+      window.addEventListener("resize", () => {
+        setActiveSlide(activeSlide);
+      });
+
+      setActiveSlide(activeSlide);
+    })();
+  </script>
+
 </body>
-</html>s
+</html>

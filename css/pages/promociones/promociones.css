@@ -130,6 +130,28 @@
   display: none;
 }
 
+/* Indicadores del carrusel */
+.promociones-indicadores {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 24px 0 0;
+}
+
+.promocion-indicador {
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  background-color: #cbd5e1;
+  transition: width 0.2s ease, background-color 0.2s ease;
+}
+
+.promocion-indicador.activo {
+  width: 30px;
+  background-color: var(--naranja);
+}
+
 .promocion-card {
   flex: 0 0 auto;
   flex-basis: min(86vw, 380px);
@@ -462,6 +484,20 @@
 
   .promociones-seccion__encabezado {
     margin-bottom: 26px;
+  }
+
+  .promociones-indicadores {
+    gap: 8px;
+    margin-top: 18px;
+  }
+
+  .promocion-indicador {
+    width: 8px;
+    height: 8px;
+  }
+
+  .promocion-indicador.activo {
+    width: 26px;
   }
 
   .promocion-imagen {

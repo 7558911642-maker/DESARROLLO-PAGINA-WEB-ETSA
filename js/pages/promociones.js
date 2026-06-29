@@ -20,6 +20,8 @@ document.addEventListener("DOMContentLoaded", function () {
   ];
 
   const tarjetas = document.querySelectorAll(".promocion-card");
+  const contenedor = document.querySelector(".promociones-container");
+  const indicadores = document.querySelectorAll(".promocion-indicador");
 
   tarjetas.forEach(function (tarjeta, indice) {
     const promocion = promociones[indice];
@@ -34,4 +36,31 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
   });
+
+  function mostrarIndicadorActivo(indiceActivo) {
+    indicadores.forEach(function (indicador, indice) {
+      indicador.classList.remove("activo");
+
+      if (indice === indiceActivo) {
+        indicador.classList.add("activo");
+      }
+    });
+  }
+
+  function actualizarIndicador() {
+    let activo = 0;
+
+    tarjetas.forEach(function (tarjeta, indice) {
+      if (contenedor.scrollLeft >= tarjeta.offsetLeft - 80) {
+        activo = indice;
+      }
+    });
+
+    mostrarIndicadorActivo(activo);
+  }
+
+  if (contenedor && indicadores.length > 0) {
+    contenedor.addEventListener("scroll", actualizarIndicador);
+    actualizarIndicador();
+  }
 });

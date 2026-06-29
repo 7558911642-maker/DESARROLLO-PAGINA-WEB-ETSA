@@ -650,6 +650,10 @@
           activeSlide = (index + slides.length) % slides.length;
           track.style.setProperty("--detalle-slide", activeSlide);
 
+          slides.forEach((slide, slideIndex) => {
+            slide.classList.toggle("is-active", slideIndex === activeSlide);
+          });
+
           dotButtons.forEach((dot, dotIndex) => {
             const isActive = dotIndex === activeSlide;
             dot.classList.toggle("is-active", isActive);

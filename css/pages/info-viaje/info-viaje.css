@@ -1,4 +1,9 @@
-/* INFO PARA TU VIAJE */
+/* ==================================================
+   INFO PARA TU VIAJE
+   Estilos exclusivos para la pagina info-viaje.html
+   ================================================== */
+
+/* Configuracion base de la pagina */
 html.pagina-info-viaje-html {
   overflow-x: clip;
 }
@@ -42,6 +47,7 @@ body.pagina-info-viaje .equipaje-card__contenido li {
   word-break: normal;
 }
 
+/* Hero principal */
 .hero-viaje {
   width: 100%;
   min-height: 0;
@@ -160,7 +166,7 @@ body.pagina-info-viaje main > .hero-viaje .hero-title-line {
   display: block;
 }
 
-/* BREADCRUMB */
+/* Breadcrumb */
 .breadcrumb-info-viaje {
   position: -webkit-sticky;
   position: sticky;
@@ -246,7 +252,7 @@ body.pagina-info-viaje main > .hero-viaje .hero-title-line {
   line-height: 1;
 }
 
-/* MENSAJE CENTRAL */
+/* Mensaje central */
 .mensaje-viaje {
   width: 100%;
   padding: 55px 7% 35px;
@@ -267,7 +273,7 @@ body.pagina-info-viaje main > .mensaje-viaje {
   background-color: var(--blanco) !important;
 }
 
-/* SECCIONES */
+/* Secciones informativas */
 .politicas-viaje {
   width: 100%;
   padding: 35px 7% 70px;
@@ -309,7 +315,7 @@ body.pagina-info-viaje main > .mensaje-viaje {
   background-color: var(--naranja);
 }
 
-/* GRIDS RESPONSIVE */
+/* Grids responsive */
 .politicas-viaje .politicas-viaje__grid,
 .info-adicional .info-adicional__grid,
 .equipaje .equipaje__grid {
@@ -329,6 +335,7 @@ body.pagina-info-viaje main > .mensaje-viaje {
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 235px), 1fr));
 }
 
+/* Slider responsive */
 .info-viaje-slider {
   --info-slider-gap: clamp(20px, 2.2vw, 34px);
 }
@@ -382,6 +389,7 @@ body.pagina-info-viaje main > .mensaje-viaje {
   }
 }
 
+/* Ajuste del slider en pantallas pequenas */
 @media (max-width: 767.98px) {
   body.pagina-info-viaje .info-viaje-slider {
     --info-slider-gap: 20px;
@@ -389,6 +397,7 @@ body.pagina-info-viaje main > .mensaje-viaje {
   }
 }
 
+/* Composicion de escritorio para grids informativos */
 @media (min-width: 1200px) {
   body.pagina-info-viaje .info-viaje-slider {
     overflow: visible;
@@ -404,7 +413,7 @@ body.pagina-info-viaje main > .mensaje-viaje {
   }
 }
 
-/* TARJETAS */
+/* Tarjetas */
 .politica-card,
 .info-card,
 .equipaje-card {
@@ -420,6 +429,7 @@ body.pagina-info-viaje main > .mensaje-viaje {
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
+/* Estados hover */
 .politica-card:hover,
 .info-card:hover,
 .equipaje-card:hover {
@@ -523,6 +533,7 @@ body.pagina-info-viaje main > .mensaje-viaje {
   color: var(--naranja);
 }
 
+/* Estados hover en dispositivos tactiles */
 @media (hover: none) {
   .politica-card:hover,
   .info-card:hover,
@@ -531,6 +542,7 @@ body.pagina-info-viaje main > .mensaje-viaje {
   }
 }
 
+/* Media queries */
 @media (max-width: 992px) {
   .politicas-viaje,
   .info-adicional,

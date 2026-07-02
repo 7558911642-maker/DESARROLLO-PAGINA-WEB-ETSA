@@ -26,7 +26,7 @@
 
 <body class="pagina-promociones">
 
-  <!-- HEADER CON BOOTSTRAP  -->
+  <!-- Inicio del header principal -->
   <header class="site-header header navbar navbar-expand-lg bg-white shadow-sm fixed-top">
     <div class="container-fluid px-4 px-lg-5">
 
@@ -73,6 +73,8 @@
 
     </div>
   </header>
+  <!-- Fin del header principal -->
+
   <!-- PANEL LATERAL BOOTSTRAP -->
   <aside class="offcanvas offcanvas-end menu-bootstrap menu-mobile-etsa" tabindex="-1" id="menuPrincipal"
     aria-labelledby="menuPrincipalLabel">
@@ -114,7 +116,7 @@
 
     <main>
 
-      <!-- HERO PROMOCIONES ESTILO MOVIL BUS -->
+      <!-- Inicio de la seccion hero de promociones -->
       <section class="promociones-hero" aria-labelledby="titulo-promociones">
 
         <div class="promociones-hero__contenido">
@@ -126,9 +128,10 @@
         </div>
 
       </section>
+      <!-- Fin de la seccion hero de promociones -->
 
 
-            <!-- BREADCRUMB -->
+      <!-- Inicio del breadcrumb de promociones -->
       <nav class="breadcrumb-rutas" aria-label="Ruta de navegación">
         <div class="container-fluid px-0">
           <ol>
@@ -142,8 +145,9 @@
           </ol>
         </div>
       </nav>
+      <!-- Fin del breadcrumb de promociones -->
 
-      <!-- PROMOCIONES DESTACADAS -->
+      <!-- Inicio de la lista de promociones -->
       <section class="promociones-seccion" aria-labelledby="titulo-lista-promociones">
 
         <div class="promociones-seccion__encabezado">
@@ -161,10 +165,10 @@
         </div>
 
         <div class="promociones-slider" aria-label="Promociones disponibles">
-          <div class="promociones-container" id="promocionesLista">
+          <div class="promociones-container" id="promocionesLista" data-componente="lista-promociones" data-total-promociones="4">
 
-          <!-- PROMOCION 1 -->
-          <article class="promocion-card promocion-card--encomienda" id="promo-1">
+          <!-- Inicio de promocion: Encomienda Express -->
+          <article class="promocion-card promocion-card--encomienda" id="promo-1" aria-labelledby="promo-1-titulo" data-categoria="encomiendas" data-nombre="Promo Encomienda Express" data-tipo="encomiendas" data-modal="#modal-promo1">
 
             <figure class="promocion-imagen">
               <img src="img/servicios/encomienda.png" alt="Trabajadora preparando una encomienda en el area de envíos">
@@ -172,7 +176,7 @@
             </figure>
 
             <div class="promocion-card__contenido">
-              <h3>Promo Encomienda Express</h3>
+              <h3 id="promo-1-titulo">Promo Encomienda Express</h3>
               <p>Descuento especial para sobres y paquetes pequeños enviados desde nuestras agencias.</p>
 
               <ul class="promocion-card__beneficios">
@@ -182,15 +186,16 @@
               </ul>
 
               <div class="promocion-card__acciones">
-                <a href="#modal-promo1" class="btn-mas-info">Ver condiciones</a>
-                <a href="contacto.html" class="promocion-card__link">Consultar envío</a>
+                <a href="#modal-promo1" class="btn-mas-info" aria-label="Ver condiciones de Promo Encomienda Express" data-accion="abrir-condiciones">Ver condiciones</a>
+                <a href="contacto.html" class="promocion-card__link" aria-label="Consultar envio para Promo Encomienda Express" data-accion="consultar-envio">Consultar envío</a>
               </div>
             </div>
 
           </article>
+          <!-- Fin de promocion: Encomienda Express -->
 
-          <!-- PROMOCION 2 -->
-          <article class="promocion-card promocion-card--carga" id="promo-2">
+          <!-- Inicio de promocion: Tarifa Ahorro para Carga -->
+          <article class="promocion-card promocion-card--carga" id="promo-2" aria-labelledby="promo-2-titulo" data-categoria="carga" data-nombre="Tarifa Ahorro para Carga" data-tipo="carga-comercial" data-modal="#modal-promo2">
 
             <figure class="promocion-imagen">
               <img src="img/servicios/carga.png" alt="Personal logístico cargando cajas para transporte de mercadería">
@@ -198,7 +203,7 @@
             </figure>
 
             <div class="promocion-card__contenido">
-              <h3>Tarifa Ahorro para Carga</h3>
+              <h3 id="promo-2-titulo">Tarifa Ahorro para Carga</h3>
               <p>Precio preferencial para negocios que envían cajas, mercadería o carga recurrente.</p>
 
               <ul class="promocion-card__beneficios">
@@ -208,15 +213,16 @@
               </ul>
 
               <div class="promocion-card__acciones">
-                <a href="#modal-promo2" class="btn-mas-info">Ver condiciones</a>
-                <a href="contacto.html" class="promocion-card__link">Cotizar carga</a>
+                <a href="#modal-promo2" class="btn-mas-info" aria-label="Ver condiciones de Tarifa Ahorro para Carga" data-accion="abrir-condiciones">Ver condiciones</a>
+                <a href="contacto.html" class="promocion-card__link" aria-label="Cotizar carga con Tarifa Ahorro para Carga" data-accion="cotizar-carga">Cotizar carga</a>
               </div>
             </div>
 
           </article>
+          <!-- Fin de promocion: Tarifa Ahorro para Carga -->
 
-          <!-- PROMOCION 3 -->
-          <article class="promocion-card promocion-card--mundial" id="promo-3">
+          <!-- Inicio de promocion: Pasajero Mundialista -->
+          <article class="promocion-card promocion-card--mundial" id="promo-3" aria-labelledby="promo-3-titulo" data-categoria="viajes" data-nombre="Promo Pasajero Mundialista" data-tipo="viajes" data-destino="rutas-seleccionadas" data-modal="#modal-promo3">
 
             <figure class="promocion-imagen">
               <img src="img/promociones/watermarked_img_16051582334898136880.jpg" alt="Promoci&oacute;n ETSA por el Mundial de F&uacute;tbol 2026">
@@ -224,7 +230,7 @@
             </figure>
 
             <div class="promocion-card__contenido">
-              <h3>Promo Pasajero Mundialista</h3>
+              <h3 id="promo-3-titulo">Promo Pasajero Mundialista</h3>
               <p>Viaja con ETSA y disfruta una tarifa especial para vivir la emoci&oacute;n del f&uacute;tbol con tu grupo.</p>
 
               <ul class="promocion-card__beneficios">
@@ -234,15 +240,16 @@
               </ul>
 
               <div class="promocion-card__acciones">
-                <a href="#modal-promo3" class="btn-mas-info">Ver condiciones</a>
-                <a href="reserva.html" class="promocion-card__link">Reservar viaje</a>
+                <a href="#modal-promo3" class="btn-mas-info" aria-label="Ver condiciones de Promo Pasajero Mundialista" data-accion="abrir-condiciones">Ver condiciones</a>
+                <a href="reserva.html" class="promocion-card__link" aria-label="Reservar viaje con Promo Pasajero Mundialista" data-accion="reservar-viaje">Reservar viaje</a>
               </div>
             </div>
 
           </article>
+          <!-- Fin de promocion: Pasajero Mundialista -->
 
-          <!-- PROMOCION 4 -->
-          <article class="promocion-card promocion-card--raymi" id="promo-4">
+          <!-- Inicio de promocion: Fiesta de Chachapoyas -->
+          <article class="promocion-card promocion-card--raymi" id="promo-4" aria-labelledby="promo-4-titulo" data-categoria="viajes" data-nombre="Vive la Fiesta de Chachapoyas" data-tipo="viajes" data-destino="chachapoyas" data-modal="#modal-promo4">
 
             <figure class="promocion-imagen">
               <img src="img/promociones/Promo5.jpg" alt="Promoci&oacute;n ETSA para viajar al Raymi Llaqta de Chachapoyas">
@@ -250,7 +257,7 @@
             </figure>
 
             <div class="promocion-card__contenido">
-              <h3>Vive la Fiesta de Chachapoyas</h3>
+              <h3 id="promo-4-titulo">Vive la Fiesta de Chachapoyas</h3>
               <p>Promoci&oacute;n especial para viajar al Raymi Llaqta y disfrutar la cultura, danzas y tradici&oacute;n amazonense.</p>
 
               <ul class="promocion-card__beneficios">
@@ -260,12 +267,13 @@
               </ul>
 
               <div class="promocion-card__acciones">
-                <a href="#modal-promo4" class="btn-mas-info">Ver condiciones</a>
-                <a href="reserva.html" class="promocion-card__link">Reservar asiento</a>
+                <a href="#modal-promo4" class="btn-mas-info" aria-label="Ver condiciones de Vive la Fiesta de Chachapoyas" data-accion="abrir-condiciones">Ver condiciones</a>
+                <a href="reserva.html" class="promocion-card__link" aria-label="Reservar asiento para Vive la Fiesta de Chachapoyas" data-accion="reservar-asiento">Reservar asiento</a>
               </div>
             </div>
 
           </article>
+          <!-- Fin de promocion: Fiesta de Chachapoyas -->
 
           </div>
 
@@ -279,13 +287,16 @@
         </div>
 
       </section>
+      <!-- Fin de la lista de promociones -->
 
-      <!-- MODAL PROMOCIÓN 1 -->
-      <div id="modal-promo1" class="modal-overlay">
+      <!-- Inicio del bloque de modales de promociones -->
+
+      <!-- Modal de promocion: Encomienda Express -->
+      <div id="modal-promo1" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-promo1-titulo">
         <div class="modal-ventana">
 
           <div class="modal-header">
-            <h3>Promo Encomienda Express</h3>
+            <h3 id="modal-promo1-titulo">Promo Encomienda Express</h3>
             <a href="#promocionesLista" class="modal-cerrar" aria-label="Cerrar ventana">&times;</a>
           </div>
 
@@ -304,12 +315,12 @@
         </div>
       </div>
 
-      <!-- MODAL PROMOCIÓN 2 -->
-      <div id="modal-promo2" class="modal-overlay">
+      <!-- Modal de promocion: Tarifa Ahorro para Carga -->
+      <div id="modal-promo2" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-promo2-titulo">
         <div class="modal-ventana">
 
           <div class="modal-header">
-            <h3>Tarifa Ahorro para Carga</h3>
+            <h3 id="modal-promo2-titulo">Tarifa Ahorro para Carga</h3>
             <a href="#promocionesLista" class="modal-cerrar" aria-label="Cerrar ventana">&times;</a>
           </div>
 
@@ -328,12 +339,12 @@
         </div>
       </div>
 
-      <!-- MODAL PROMOCION 3 -->
-      <div id="modal-promo3" class="modal-overlay">
+      <!-- Modal de promocion: Pasajero Mundialista -->
+      <div id="modal-promo3" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-promo3-titulo">
         <div class="modal-ventana">
 
           <div class="modal-header">
-            <h3>Promo Pasajero Mundialista</h3>
+            <h3 id="modal-promo3-titulo">Promo Pasajero Mundialista</h3>
             <a href="#promocionesLista" class="modal-cerrar" aria-label="Cerrar ventana">&times;</a>
           </div>
 
@@ -352,12 +363,12 @@
         </div>
       </div>
 
-      <!-- MODAL PROMOCION 4 -->
-      <div id="modal-promo4" class="modal-overlay">
+      <!-- Modal de promocion: Fiesta de Chachapoyas -->
+      <div id="modal-promo4" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-promo4-titulo">
         <div class="modal-ventana">
 
           <div class="modal-header">
-            <h3>Vive la Fiesta de Chachapoyas</h3>
+            <h3 id="modal-promo4-titulo">Vive la Fiesta de Chachapoyas</h3>
             <a href="#promocionesLista" class="modal-cerrar" aria-label="Cerrar ventana">&times;</a>
           </div>
 
@@ -375,6 +386,13 @@
 
         </div>
       </div>
+      <!-- Fin del bloque de modales de promociones -->
+
+      <noscript>
+        <div class="alert alert-warning mx-3 mx-md-5 my-4" role="status">
+          Algunas funciones interactivas de promociones pueden requerir JavaScript para funcionar correctamente.
+        </div>
+      </noscript>
 
     </main>
 
@@ -400,7 +418,7 @@
   </section>
 
 
-  <!-- FOOTER CON BOOTSTRAP  -->
+  <!-- Inicio del footer principal -->
   <footer class="footer-principal bg-dark text-white pt-5">
 
     <div class="container">
@@ -545,6 +563,7 @@
     </div>
 
   </footer>
+  <!-- Fin del footer principal -->
 
   <!-- BOTÓN WHATSAPP FLOTANTE -->
   <a href="https://wa.me/51904178833"

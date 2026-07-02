@@ -108,9 +108,247 @@
       </div>
     </nav>
 
-    <section class="py-5">
+    <section class="reserva-solicitud py-5">
       <div class="container">
-        <div class="row g-4 align-items-start">
+        <form class="reserva-formulario" id="formulario-reserva" action="mailto:informes@etsa.pe" method="post" enctype="text/plain">
+          <div class="reserva-formulario__intro">
+            <span class="reserva-formulario__icono" aria-hidden="true">
+              <i class="bi bi-bus-front-fill"></i>
+            </span>
+            <div>
+              <h2>Reserva de Pasajes</h2>
+              <p>Completa tus datos y selecciona tu asiento</p>
+            </div>
+          </div>
+
+          <div class="reserva-maqueta-grid">
+            <div class="reserva-maqueta-grid__izquierda">
+              <section class="reserva-card reserva-card--pasajero" aria-labelledby="titulo-datos-pasajero">
+                <div class="reserva-card__header">
+                  <span class="reserva-card__numero">1</span>
+                  <span class="reserva-card__icono" aria-hidden="true"><i class="bi bi-person"></i></span>
+                  <h3 id="titulo-datos-pasajero">Datos del pasajero</h3>
+                </div>
+
+                <div class="reserva-fields">
+                  <div class="reserva-field">
+                    <label class="form-label" for="reserva-nombre">Nombres y apellidos</label>
+                    <input class="form-control" id="reserva-nombre" type="text" name="nombre" value="Rolando" autocomplete="name" required>
+                  </div>
+
+                  <div class="reserva-field">
+                    <label class="form-label" for="reserva-dni">DNI</label>
+                    <input class="form-control" id="reserva-dni" type="text" name="dni" value="922470651" inputmode="numeric" maxlength="9" autocomplete="off" required>
+                  </div>
+                </div>
+              </section>
+
+              <section class="reserva-card reserva-card--viaje" aria-labelledby="titulo-datos-viaje">
+                <div class="reserva-card__header">
+                  <span class="reserva-card__numero">2</span>
+                  <span class="reserva-card__icono" aria-hidden="true"><i class="bi bi-person"></i></span>
+                  <h3 id="titulo-datos-viaje">Datos del viaje</h3>
+                </div>
+
+                <div class="reserva-fields">
+                  <div class="reserva-field">
+                    <label class="form-label" for="reserva-origen">Origen</label>
+                    <div class="reserva-field__control">
+                      <i class="bi bi-geo-alt-fill" aria-hidden="true"></i>
+                      <select class="form-control reserva-select" id="reserva-origen" name="origen" required>
+                        <option value="" disabled>Origen</option>
+                        <option value="Chachapoyas">Chachapoyas</option>
+                        <option value="Bagua Grande" selected>Bagua Grande</option>
+                        <option value="Pedro Ruiz">Pedro Ruiz</option>
+                        <option value="Luya">Luya</option>
+                        <option value="Pomacochas">Pomacochas</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="reserva-field">
+                    <label class="form-label" for="reserva-destino">Destino</label>
+                    <div class="reserva-field__control">
+                      <i class="bi bi-geo-alt-fill" aria-hidden="true"></i>
+                      <select class="form-control reserva-select" id="reserva-destino" name="destino" required>
+                        <option value="" disabled>Destino</option>
+                        <option value="Chiclayo" selected>Chiclayo</option>
+                        <option value="Chachapoyas">Chachapoyas</option>
+                        <option value="Bagua Grande">Bagua Grande</option>
+                        <option value="Pedro Ruiz">Pedro Ruiz</option>
+                        <option value="Luya">Luya</option>
+                        <option value="Pomacochas">Pomacochas</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="reserva-field">
+                    <label class="form-label" for="reserva-fecha">Fecha de viaje</label>
+                    <div class="reserva-field__control reserva-field__control--fecha">
+                      <i class="bi bi-calendar-event" aria-hidden="true"></i>
+                      <input class="form-control" id="reserva-fecha" type="text" name="fecha" value="18/07/2026" inputmode="numeric" required>
+                    </div>
+                  </div>
+                </div>
+
+                <aside class="reserva-info-viaje" aria-label="Informacion importante antes de viajar">
+                  <div class="reserva-info-viaje__icono" aria-hidden="true">
+                    <i class="bi bi-info-circle-fill"></i>
+                  </div>
+                  <div class="reserva-info-viaje__texto">
+                    <h4>Informaci&oacute;n importante</h4>
+                    <ul>
+                      <li><i class="bi bi-check-lg" aria-hidden="true"></i><span>Lleva tu DNI o documento oficial.</span></li>
+                      <li><i class="bi bi-check-lg" aria-hidden="true"></i><span>Equipaje permitido: 1 maleta (20 kg) y 1 bolso de mano.</span></li>
+                      <li><i class="bi bi-check-lg" aria-hidden="true"></i><span>Llega al terminal 30 minutos antes de la salida.</span></li>
+                    </ul>
+                  </div>
+                  <a href="info-viaje.html" class="reserva-info-viaje__accion">
+                    Ver pol&iacute;ticas de viaje
+                    <i class="bi bi-chevron-right" aria-hidden="true"></i>
+                  </a>
+                </aside>
+              </section>
+
+              <section class="reserva-card reserva-card--observaciones" aria-labelledby="titulo-observaciones">
+                <div class="reserva-card__header">
+                  <span class="reserva-card__numero">4</span>
+                  <h3 id="titulo-observaciones">Observaciones <span>(opcional)</span></h3>
+                </div>
+
+                <label class="visually-hidden" for="mensaje-adicional">Mensaje adicional</label>
+                <textarea class="form-control" id="mensaje-adicional" name="mensaje" rows="4" maxlength="200" placeholder="Ejemplo: Viajo con adulto mayor, equipaje especial, etc."></textarea>
+                <p class="reserva-ayuda-campo" id="contador-mensaje" aria-live="polite">0/200 caracteres</p>
+              </section>
+            </div>
+
+            <div class="reserva-maqueta-grid__derecha">
+              <section class="reserva-card reserva-card--asientos" aria-labelledby="titulo-asientos-reserva">
+                <div class="reserva-card__header">
+                  <span class="reserva-card__numero">4</span>
+                  <span class="reserva-card__icono" aria-hidden="true"><i class="bi bi-grid-3x3-gap"></i></span>
+                  <h3 id="titulo-asientos-reserva">Selecci&oacute;n de asiento</h3>
+                </div>
+                <p class="reserva-asientos-ayuda">Haz clic en un asiento disponible</p>
+
+                <div class="reserva-asientos-leyenda" aria-label="Leyenda de asientos">
+                  <span><i class="reserva-estado reserva-estado--libre" aria-hidden="true"></i>Libre</span>
+                  <span><i class="reserva-estado reserva-estado--ocupado" aria-hidden="true"></i>Ocupado</span>
+                  <span><i class="reserva-estado reserva-estado--seleccionado" aria-hidden="true"></i>Seleccionado</span>
+                </div>
+
+                <div class="reserva-bus-map" role="radiogroup" aria-label="Asientos disponibles">
+                  <img class="reserva-bus-map__imagen" src="img/divicion-de-asientos.png" alt="Distribuci&oacute;n de asientos de la van ETSA">
+
+                  <input class="reserva-seat-input" type="radio" id="reserva-asiento-1" name="asiento" value="1" required>
+                  <label class="reserva-seat reserva-seat--1" for="reserva-asiento-1">1</label>
+
+                  <input class="reserva-seat-input" type="radio" id="reserva-asiento-2" name="asiento" value="2" disabled>
+                  <label class="reserva-seat reserva-seat--2" for="reserva-asiento-2" aria-label="Asiento 2 ocupado">2</label>
+
+                  <input class="reserva-seat-input" type="radio" id="reserva-asiento-3" name="asiento" value="3">
+                  <label class="reserva-seat reserva-seat--3" for="reserva-asiento-3">3</label>
+
+                  <input class="reserva-seat-input" type="radio" id="reserva-asiento-4" name="asiento" value="4" disabled>
+                  <label class="reserva-seat reserva-seat--4" for="reserva-asiento-4" aria-label="Asiento 4 ocupado">4</label>
+
+                  <input class="reserva-seat-input" type="radio" id="reserva-asiento-5" name="asiento" value="5">
+                  <label class="reserva-seat reserva-seat--5" for="reserva-asiento-5">5</label>
+
+                  <input class="reserva-seat-input" type="radio" id="reserva-asiento-6" name="asiento" value="6" disabled>
+                  <label class="reserva-seat reserva-seat--6" for="reserva-asiento-6" aria-label="Asiento 6 ocupado">6</label>
+
+                  <input class="reserva-seat-input" type="radio" id="reserva-asiento-7" name="asiento" value="7">
+                  <label class="reserva-seat reserva-seat--7" for="reserva-asiento-7">7</label>
+
+                  <input class="reserva-seat-input" type="radio" id="reserva-asiento-8" name="asiento" value="8" disabled>
+                  <label class="reserva-seat reserva-seat--8" for="reserva-asiento-8" aria-label="Asiento 8 ocupado">8</label>
+
+                  <input class="reserva-seat-input" type="radio" id="reserva-asiento-9" name="asiento" value="9">
+                  <label class="reserva-seat reserva-seat--9" for="reserva-asiento-9">9</label>
+
+                  <input class="reserva-seat-input" type="radio" id="reserva-asiento-10" name="asiento" value="10" disabled>
+                  <label class="reserva-seat reserva-seat--10" for="reserva-asiento-10" aria-label="Asiento 10 ocupado">10</label>
+
+                  <input class="reserva-seat-input" type="radio" id="reserva-asiento-11" name="asiento" value="11">
+                  <label class="reserva-seat reserva-seat--11" for="reserva-asiento-11">11</label>
+
+                  <input class="reserva-seat-input" type="radio" id="reserva-asiento-12" name="asiento" value="12">
+                  <label class="reserva-seat reserva-seat--12" for="reserva-asiento-12">12</label>
+
+                  <input class="reserva-seat-input" type="radio" id="reserva-asiento-13" name="asiento" value="13" disabled>
+                  <label class="reserva-seat reserva-seat--13" for="reserva-asiento-13" aria-label="Asiento 13 ocupado">13</label>
+
+                  <input class="reserva-seat-input" type="radio" id="reserva-asiento-14" name="asiento" value="14">
+                  <label class="reserva-seat reserva-seat--14" for="reserva-asiento-14">14</label>
+
+                  <input class="reserva-seat-input" type="radio" id="reserva-asiento-15" name="asiento" value="15">
+                  <label class="reserva-seat reserva-seat--15" for="reserva-asiento-15">15</label>
+                </div>
+                <p class="reserva-bus-map__caption">Plano del bus y disponibilidad de asientos.</p>
+
+                <div class="reserva-asiento-panel">
+                  <i class="bi bi-person-workspace" aria-hidden="true"></i>
+                  <div>
+                    <span>Asiento seleccionado</span>
+                    <strong id="asiento-seleccionado" aria-live="polite">Asiento seleccionado: ninguno</strong>
+                  </div>
+                </div>
+              </section>
+
+              <section class="reserva-card reserva-card--resumen" aria-labelledby="titulo-resumen-reserva">
+                <div class="reserva-card__header">
+                  <span class="reserva-card__numero">5</span>
+                  <h3 id="titulo-resumen-reserva">Resumen de tu reserva</h3>
+                </div>
+
+                <dl class="reserva-resumen">
+                  <div>
+                    <dt><i class="bi bi-geo-alt-fill" aria-hidden="true"></i>Origen</dt>
+                    <dd id="resumen-origen">Bagua Grande</dd>
+                  </div>
+                  <div>
+                    <dt><i class="bi bi-signpost-split-fill" aria-hidden="true"></i>Destino</dt>
+                    <dd id="resumen-destino">Chiclayo</dd>
+                  </div>
+                  <div>
+                    <dt><i class="bi bi-calendar-event-fill" aria-hidden="true"></i>Fecha de viaje</dt>
+                    <dd id="resumen-fecha">18/07/2026</dd>
+                  </div>
+                  <div>
+                    <dt><i class="bi bi-person-workspace" aria-hidden="true"></i>Asiento</dt>
+                    <dd id="resumen-asiento">12</dd>
+                  </div>
+                  <div class="reserva-resumen__precio">
+                    <dt>Precio por pasajero</dt>
+                    <dd>S/ 85.00</dd>
+                  </div>
+                </dl>
+              </section>
+            </div>
+
+            <section class="reserva-total-card" aria-labelledby="titulo-total-reserva">
+              <div class="reserva-total-card__cabecera">
+                <div>
+                  <h3 id="titulo-total-reserva">Total a pagar</h3>
+                  <p>Incluye impuestos y tasas</p>
+                </div>
+                <strong>S/ 85.00</strong>
+              </div>
+              <button class="btn btn-warning fw-bold px-4" id="btn-reservar" type="submit">
+                <i class="bi bi-ticket-perforated-fill" aria-hidden="true"></i>
+                Solicitar reserva
+              </button>
+              <p class="reserva-mensaje" id="mensaje-reserva" aria-live="polite"></p>
+              <p class="reserva-total-card__seguridad">
+                <i class="bi bi-lock-fill" aria-hidden="true"></i>
+                Tus datos est&aacute;n protegidos y ser&aacute;n utilizados &uacute;nicamente para tu reserva.
+              </p>
+            </section>
+          </div>
+        </form>
+
+        <div class="row g-4 align-items-start d-none" aria-hidden="true">
           <div class="col-12 col-lg-5">
             <article class="bg-white shadow-sm rounded-3 p-4 h-100">
               <h2 class="h4 fw-bold mb-3">Antes de reservar</h2>
@@ -126,7 +364,7 @@
             </article>
           </div>
           <div class="col-12 col-lg-7">
-            <form class="bg-white shadow-sm rounded-3 p-4 p-lg-5" id="formulario-reserva" action="mailto:informes@etsa.pe" method="post" enctype="text/plain">
+            <form class="bg-white shadow-sm rounded-3 p-4 p-lg-5" id="formulario-reserva-anterior" action="mailto:informes@etsa.pe" method="post" enctype="text/plain">
               <div class="row g-3">
                 <div class="col-12 col-md-6"><input class="form-control" type="text" name="nombre" placeholder="Nombres y apellidos" required></div>
                 <div class="col-12 col-md-6"><input class="form-control" type="tel" name="telefono" placeholder="Celular" required></div>
@@ -169,11 +407,11 @@
                   </aside>
                 </div>
                 <div class="col-12">
-                  <section class="asientos-reserva" aria-labelledby="titulo-asientos-reserva">
+                  <section class="asientos-reserva" aria-labelledby="titulo-asientos-reserva-anterior">
                     <div class="asientos-reserva__encabezado">
                       <div>
                         <p class="asientos-reserva__etiqueta">Distribuci&oacute;n de la van</p>
-                        <h3 id="titulo-asientos-reserva">Selecciona tu asiento</h3>
+                        <h3 id="titulo-asientos-reserva-anterior">Selecciona tu asiento</h3>
                       </div>
                       <div class="asientos-reserva__resumen" aria-label="Resumen de disponibilidad">
                         <span>11 libres</span>
@@ -394,5 +632,6 @@
     <i class="bi bi-whatsapp"></i>
   </a>
   <script src="bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/pages/reserva.js"></script>
 </body>
 </html>

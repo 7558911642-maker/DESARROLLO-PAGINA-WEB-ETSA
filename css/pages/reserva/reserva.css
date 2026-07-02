@@ -1369,3 +1369,1004 @@ body.pagina-reserva .asientos-imagen figcaption {
     font-size: 0.5rem;
   }
 }
+
+/* ==================================================
+   MAQUETA DE RESERVA - DISENO FINAL
+================================================== */
+
+body.pagina-reserva {
+  --reserva-orange: #ff5f00;
+  --reserva-orange-soft: #fff7ed;
+  --reserva-ink: #111827;
+  --reserva-muted: #536174;
+  --reserva-line: #dfe6ef;
+}
+
+body.pagina-reserva .reserva-solicitud {
+  background: linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%) !important;
+  padding-top: clamp(2.25rem, 4vw, 3.5rem) !important;
+  padding-bottom: clamp(3rem, 5vw, 5rem) !important;
+}
+
+body.pagina-reserva .reserva-solicitud > .container {
+  max-width: 1270px;
+}
+
+body.pagina-reserva .reserva-formulario {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: clamp(1.75rem, 3vw, 2.6rem);
+  border: 1px solid var(--reserva-line);
+  border-radius: 22px;
+  box-sizing: border-box;
+  background: #ffffff;
+  box-shadow: 0 1.4rem 4rem rgba(15, 23, 42, 0.08);
+}
+
+body.pagina-reserva .reserva-formulario__intro {
+  display: flex;
+  align-items: center;
+  gap: 1.45rem;
+  margin-bottom: clamp(1.7rem, 3vw, 2.45rem);
+}
+
+body.pagina-reserva .reserva-formulario__intro > div {
+  min-width: 0;
+}
+
+body.pagina-reserva .reserva-formulario__icono {
+  width: 3.6rem;
+  height: 3.6rem;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  background: var(--reserva-orange);
+  color: #ffffff;
+  font-size: 2.35rem;
+  line-height: 1;
+}
+
+body.pagina-reserva .reserva-formulario__intro h2 {
+  margin: 0;
+  color: var(--reserva-ink);
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  font-weight: 900;
+  line-height: 1.04;
+  letter-spacing: 0;
+  text-transform: none;
+  overflow-wrap: anywhere;
+}
+
+body.pagina-reserva .reserva-formulario__intro p {
+  margin: 0.45rem 0 0;
+  color: var(--reserva-muted);
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+body.pagina-reserva .reserva-maqueta-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(22rem, 0.92fr);
+  gap: clamp(1.25rem, 2.8vw, 1.75rem);
+  align-items: start;
+  max-width: 100%;
+}
+
+body.pagina-reserva .reserva-maqueta-grid__izquierda,
+body.pagina-reserva .reserva-maqueta-grid__derecha {
+  min-width: 0;
+  display: grid;
+  gap: clamp(1rem, 2.2vw, 1.35rem);
+}
+
+body.pagina-reserva .reserva-card,
+body.pagina-reserva .reserva-total-card {
+  min-width: 0;
+  max-width: 100%;
+  border: 1px solid var(--reserva-line);
+  border-radius: 16px;
+  box-sizing: border-box;
+  background: #ffffff;
+  box-shadow: 0 0.35rem 1.15rem rgba(15, 23, 42, 0.04);
+}
+
+body.pagina-reserva .reserva-card {
+  padding: clamp(1.15rem, 2.35vw, 1.75rem);
+}
+
+body.pagina-reserva .reserva-card__header {
+  display: flex;
+  align-items: center;
+  gap: 0.72rem;
+  margin-bottom: 1.45rem;
+}
+
+body.pagina-reserva .reserva-card__numero {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  background: var(--reserva-orange);
+  color: #ffffff;
+  font-size: 0.92rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+body.pagina-reserva .reserva-card__icono {
+  color: var(--reserva-orange);
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+body.pagina-reserva .reserva-card__header h3 {
+  margin: 0;
+  color: var(--reserva-ink);
+  font-size: clamp(1.06rem, 1.6vw, 1.22rem);
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+body.pagina-reserva .reserva-card__header h3 span {
+  color: var(--reserva-muted);
+  font-weight: 500;
+}
+
+body.pagina-reserva .reserva-fields {
+  display: grid;
+  gap: 1.3rem;
+}
+
+body.pagina-reserva .reserva-field .form-label {
+  margin: 0 0 0.55rem;
+  color: var(--reserva-ink);
+  font-size: 0.92rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+body.pagina-reserva .reserva-formulario .form-control {
+  width: 100%;
+  height: 3.65rem;
+  border: 1px solid #cfd8e3;
+  border-radius: 10px;
+  background: #ffffff;
+  color: var(--reserva-ink);
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.2;
+  box-shadow: none !important;
+}
+
+body.pagina-reserva .reserva-formulario .form-control:focus {
+  border-color: var(--reserva-orange);
+  box-shadow: 0 0 0 4px rgba(255, 95, 0, 0.13) !important;
+}
+
+body.pagina-reserva .reserva-formulario .form-control::placeholder {
+  color: #66758a;
+  font-weight: 500;
+}
+
+body.pagina-reserva .reserva-field__control {
+  position: relative;
+}
+
+body.pagina-reserva .reserva-field__control > i {
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  z-index: 2;
+  color: var(--reserva-orange);
+  font-size: 1.15rem;
+  line-height: 1;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+body.pagina-reserva .reserva-field__control--fecha > i {
+  color: var(--reserva-ink);
+}
+
+body.pagina-reserva .reserva-field__control .form-control {
+  padding-left: 3.15rem;
+}
+
+body.pagina-reserva .reserva-formulario .reserva-select {
+  padding-right: 3rem;
+  appearance: none;
+  background-color: #ffffff;
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--reserva-ink) 50%),
+    linear-gradient(135deg, var(--reserva-ink) 50%, transparent 50%);
+  background-position:
+    calc(100% - 1.25rem) 50%,
+    calc(100% - 0.94rem) 50%;
+  background-size: 0.36rem 0.36rem;
+  background-repeat: no-repeat;
+}
+
+body.pagina-reserva .reserva-formulario .reserva-info-viaje {
+  margin-top: 2rem;
+  padding: clamp(1.1rem, 2.4vw, 1.45rem);
+  border: 1px solid rgba(255, 95, 0, 0.38);
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.8rem 0.85rem;
+  align-items: start;
+  background: linear-gradient(135deg, #fff7ed 0%, #fffefd 100%);
+  box-shadow: none;
+}
+
+body.pagina-reserva .reserva-formulario .reserva-info-viaje__icono {
+  width: 2.15rem;
+  height: 2.15rem;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--reserva-orange);
+  color: #ffffff;
+  font-size: 1rem;
+}
+
+body.pagina-reserva .reserva-formulario .reserva-info-viaje__texto h4 {
+  margin: 0 0 1rem;
+  color: var(--reserva-orange);
+  font-size: 1.06rem;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+body.pagina-reserva .reserva-formulario .reserva-info-viaje__texto ul {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.72rem;
+  list-style: none;
+}
+
+body.pagina-reserva .reserva-formulario .reserva-info-viaje__texto li {
+  display: flex;
+  gap: 0.58rem;
+  color: var(--reserva-ink);
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+body.pagina-reserva .reserva-formulario .reserva-info-viaje__texto li i {
+  flex: 0 0 auto;
+  color: #16833a;
+  font-size: 1rem;
+  line-height: 1.35;
+}
+
+body.pagina-reserva .reserva-formulario .reserva-info-viaje__accion {
+  grid-column: 1 / -1;
+  width: fit-content;
+  min-height: 2.7rem;
+  padding: 0.75rem 0.95rem;
+  border: 1px solid rgba(255, 95, 0, 0.55);
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  background: #ffffff;
+  color: var(--reserva-orange);
+  font-size: 0.9rem;
+  font-weight: 900;
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: 0.2s ease;
+}
+
+body.pagina-reserva .reserva-formulario .reserva-info-viaje__accion:hover,
+body.pagina-reserva .reserva-formulario .reserva-info-viaje__accion:focus-visible {
+  background: var(--reserva-orange);
+  color: #ffffff;
+}
+
+body.pagina-reserva .reserva-card--observaciones textarea.form-control {
+  min-height: 5.25rem;
+  height: auto;
+  padding: 0.92rem 1rem;
+  resize: vertical;
+}
+
+body.pagina-reserva .reserva-ayuda-campo {
+  margin: 0.55rem 0 0;
+  color: var(--reserva-muted);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+body.pagina-reserva .reserva-card--asientos .reserva-card__header {
+  margin-bottom: 0.75rem;
+}
+
+body.pagina-reserva .reserva-asientos-ayuda {
+  margin: 0 0 1rem;
+  color: var(--reserva-ink);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+body.pagina-reserva .reserva-asientos-leyenda {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.35rem;
+  margin-bottom: 1.2rem;
+  color: var(--reserva-ink);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+body.pagina-reserva .reserva-asientos-leyenda span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.48rem;
+}
+
+body.pagina-reserva .reserva-estado {
+  width: 1.05rem;
+  height: 1.05rem;
+  border-radius: 999px;
+  display: inline-block;
+  flex: 0 0 auto;
+  box-shadow: inset 0 -0.12rem 0 rgba(15, 23, 42, 0.14);
+}
+
+body.pagina-reserva .reserva-estado--libre {
+  background: #52b85a;
+}
+
+body.pagina-reserva .reserva-estado--ocupado {
+  background: #c5cbd2;
+}
+
+body.pagina-reserva .reserva-estado--seleccionado {
+  background: var(--reserva-orange);
+}
+
+body.pagina-reserva .reserva-bus-map {
+  position: relative;
+  width: min(100%, 21.6rem);
+  aspect-ratio: 0.56;
+  margin: 0 auto 1.25rem;
+  overflow: hidden;
+  border-radius: 13px;
+  background: #ffffff;
+}
+
+body.pagina-reserva .reserva-bus-map__imagen {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: 48% 50%;
+  transform: scale(1.05);
+  transform-origin: center;
+}
+
+body.pagina-reserva .reserva-seat-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+body.pagina-reserva .reserva-seat {
+  position: absolute;
+  width: clamp(3.25rem, 18%, 4.25rem);
+  min-height: clamp(3.2rem, 9%, 4.1rem);
+  border: 2px solid rgba(14, 72, 22, 0.18);
+  border-radius: 9px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #77c978, #4da954);
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 1.02rem;
+  font-weight: 900;
+  line-height: 1;
+  transform: translate(-50%, -50%);
+  box-shadow:
+    0 0.38rem 0.75rem rgba(15, 23, 42, 0.22),
+    inset 0 -0.18rem 0 rgba(0, 0, 0, 0.18);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+}
+
+body.pagina-reserva .reserva-seat:hover {
+  transform: translate(-50%, calc(-50% - 2px));
+}
+
+body.pagina-reserva .reserva-seat-input:focus-visible + .reserva-seat {
+  outline: 3px solid rgba(255, 95, 0, 0.34);
+  outline-offset: 3px;
+}
+
+body.pagina-reserva .reserva-seat-input:disabled + .reserva-seat {
+  border-color: rgba(107, 114, 128, 0.28);
+  background: linear-gradient(135deg, #d3d7dc, #9aa2ab);
+  cursor: not-allowed;
+}
+
+body.pagina-reserva .reserva-seat-input:checked + .reserva-seat {
+  border-color: rgba(196, 73, 0, 0.3);
+  background: linear-gradient(135deg, #ff8b00, var(--reserva-orange));
+  box-shadow:
+    0 0.55rem 1rem rgba(255, 95, 0, 0.28),
+    inset 0 -0.16rem 0 rgba(0, 0, 0, 0.16);
+}
+
+body.pagina-reserva .reserva-seat--1 { left: 35%; top: 18.6%; }
+body.pagina-reserva .reserva-seat--2 { left: 68.5%; top: 18.6%; }
+body.pagina-reserva .reserva-seat--3 { left: 35%; top: 27.5%; }
+body.pagina-reserva .reserva-seat--4 { left: 68.5%; top: 27.5%; }
+body.pagina-reserva .reserva-seat--5 { left: 35%; top: 36.3%; }
+body.pagina-reserva .reserva-seat--6 { left: 68.5%; top: 36.3%; }
+body.pagina-reserva .reserva-seat--7 { left: 35%; top: 45.2%; }
+body.pagina-reserva .reserva-seat--8 { left: 68.5%; top: 45.2%; }
+body.pagina-reserva .reserva-seat--9 { left: 35%; top: 54%; }
+body.pagina-reserva .reserva-seat--10 { left: 68.5%; top: 54%; }
+body.pagina-reserva .reserva-seat--11 { left: 35%; top: 62.8%; }
+body.pagina-reserva .reserva-seat--12 { left: 68.5%; top: 62.8%; }
+body.pagina-reserva .reserva-seat--13 { left: 35%; top: 72%; }
+body.pagina-reserva .reserva-seat--14 { left: 68.5%; top: 72%; }
+body.pagina-reserva .reserva-seat--15 { left: 35%; top: 81%; }
+body.pagina-reserva .reserva-seat--16 { left: 68.5%; top: 81%; }
+
+body.pagina-reserva .reserva-asiento-panel {
+  padding: 1rem 1.2rem;
+  border: 1px solid rgba(255, 95, 0, 0.38);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: linear-gradient(135deg, #fff7ed 0%, #fffefd 100%);
+}
+
+body.pagina-reserva .reserva-asiento-panel > i {
+  color: var(--reserva-ink);
+  font-size: 2.1rem;
+  line-height: 1;
+}
+
+body.pagina-reserva .reserva-asiento-panel span {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: var(--reserva-ink);
+  font-size: 0.92rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+body.pagina-reserva .reserva-asiento-panel strong {
+  min-width: 4.2rem;
+  min-height: 3rem;
+  padding: 0.35rem 0.8rem;
+  border: 1px solid rgba(255, 95, 0, 0.45);
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  color: var(--reserva-orange);
+  font-size: 2rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+body.pagina-reserva .reserva-card--resumen .reserva-card__header {
+  margin-bottom: 1rem;
+}
+
+body.pagina-reserva .reserva-resumen {
+  margin: 0;
+  padding: 1.1rem 1.35rem;
+  border: 1px solid var(--reserva-line);
+  border-radius: 10px;
+  display: grid;
+  gap: 0.9rem;
+}
+
+body.pagina-reserva .reserva-resumen > div {
+  display: grid;
+  grid-template-columns: minmax(9rem, 1fr) auto;
+  gap: 1rem;
+  align-items: center;
+}
+
+body.pagina-reserva .reserva-resumen dt,
+body.pagina-reserva .reserva-resumen dd {
+  margin: 0;
+}
+
+body.pagina-reserva .reserva-resumen dt {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.82rem;
+  color: var(--reserva-ink);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+body.pagina-reserva .reserva-resumen dt i {
+  color: var(--reserva-orange);
+}
+
+body.pagina-reserva .reserva-resumen dd {
+  color: var(--reserva-ink);
+  font-size: 0.95rem;
+  font-weight: 800;
+  text-align: right;
+}
+
+body.pagina-reserva .reserva-resumen__precio {
+  margin-top: 0.6rem;
+  padding: 1.05rem 1rem;
+  border: 1px solid rgba(255, 95, 0, 0.34);
+  border-radius: 10px;
+  background: linear-gradient(135deg, #fff7ed 0%, #fffefd 100%);
+}
+
+body.pagina-reserva .reserva-resumen__precio dt {
+  font-size: 1.1rem;
+  font-weight: 900;
+}
+
+body.pagina-reserva .reserva-resumen__precio dd {
+  color: var(--reserva-orange);
+  font-size: 1.45rem;
+  font-weight: 900;
+}
+
+body.pagina-reserva .reserva-total-card {
+  grid-column: 1 / -1;
+  padding: clamp(1.25rem, 2.6vw, 1.75rem);
+}
+
+body.pagina-reserva .reserva-total-card__cabecera {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+body.pagina-reserva .reserva-total-card__cabecera h3 {
+  margin: 0;
+  color: var(--reserva-ink);
+  font-size: 1.35rem;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+body.pagina-reserva .reserva-total-card__cabecera p {
+  margin: 0.5rem 0 0;
+  color: var(--reserva-muted);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+body.pagina-reserva .reserva-total-card__cabecera strong {
+  color: var(--reserva-orange);
+  font-size: clamp(2rem, 4vw, 2.55rem);
+  font-weight: 900;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+body.pagina-reserva .reserva-total-card .btn-warning {
+  width: 100%;
+  min-height: 4rem;
+  border: 0;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  background: linear-gradient(135deg, #ff7d00 0%, #ff4f00 100%);
+  color: #ffffff;
+  font-size: 1.05rem;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+body.pagina-reserva .reserva-total-card .btn-warning i {
+  font-size: 1.4rem;
+}
+
+body.pagina-reserva .reserva-total-card .btn-warning:hover,
+body.pagina-reserva .reserva-total-card .btn-warning:focus-visible {
+  background: linear-gradient(135deg, #ff8d12 0%, #ff4f00 100%);
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 1rem 1.8rem rgba(255, 95, 0, 0.22);
+}
+
+body.pagina-reserva .reserva-mensaje {
+  min-height: 1.25rem;
+  margin: 0.8rem 0 0;
+  font-size: 0.9rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+body.pagina-reserva .reserva-total-card__seguridad {
+  margin: 0.9rem 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  color: var(--reserva-muted);
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.35;
+  text-align: center;
+}
+
+body.pagina-reserva .reserva-total-card__seguridad i {
+  color: #6b7280;
+}
+
+body.pagina-reserva .reserva-ok {
+  color: #16833a;
+}
+
+body.pagina-reserva .reserva-error-dom {
+  color: #b91c1c;
+}
+
+@media (max-width: 1199.98px) {
+  body.pagina-reserva .reserva-maqueta-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(21rem, 0.9fr);
+  }
+
+  body.pagina-reserva .reserva-bus-map {
+    width: min(100%, 20rem);
+  }
+}
+
+@media (max-width: 991.98px) {
+  body.pagina-reserva .reserva-formulario {
+    max-width: 45rem;
+  }
+
+  body.pagina-reserva .reserva-maqueta-grid {
+    grid-template-columns: 1fr;
+  }
+
+  body.pagina-reserva .reserva-maqueta-grid__derecha {
+    order: 2;
+  }
+
+  body.pagina-reserva .reserva-total-card {
+    order: 3;
+  }
+}
+
+@media (max-width: 575.98px) {
+  html.pagina-reserva-html,
+  body.pagina-reserva {
+    overflow-x: hidden;
+  }
+
+  body.pagina-reserva .reserva-solicitud > .container {
+    width: 100%;
+    max-width: 100%;
+    padding-right: 0.85rem;
+    padding-left: 0.85rem;
+    overflow-x: hidden;
+  }
+
+  body.pagina-reserva .reserva-formulario {
+    min-width: 0;
+    padding: 1rem;
+    border-radius: 18px;
+    overflow: hidden;
+  }
+
+  body.pagina-reserva .reserva-formulario__intro {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: start;
+    gap: 0.65rem;
+  }
+
+  body.pagina-reserva .reserva-formulario__icono {
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.9rem;
+  }
+
+  body.pagina-reserva .reserva-formulario__intro h2 {
+    font-size: clamp(1.35rem, 7vw, 1.65rem);
+  }
+
+  body.pagina-reserva .reserva-card,
+  body.pagina-reserva .reserva-total-card {
+    padding: 1rem;
+    border-radius: 14px;
+  }
+
+  body.pagina-reserva .reserva-card__header {
+    margin-bottom: 1rem;
+  }
+
+  body.pagina-reserva .reserva-formulario .form-control {
+    height: 3.25rem;
+    font-size: 0.92rem;
+  }
+
+  body.pagina-reserva .reserva-formulario .reserva-info-viaje {
+    grid-template-columns: 1fr;
+    margin-top: 1.35rem;
+  }
+
+  body.pagina-reserva .reserva-formulario .reserva-info-viaje__accion {
+    width: 100%;
+    white-space: normal;
+  }
+
+  body.pagina-reserva .reserva-asientos-leyenda {
+    justify-content: flex-start;
+    gap: 0.75rem 1rem;
+  }
+
+  body.pagina-reserva .reserva-bus-map {
+    width: min(100%, 18rem);
+  }
+
+  body.pagina-reserva .reserva-seat {
+    width: clamp(2.55rem, 17.2%, 3.3rem);
+    min-height: clamp(2.55rem, 8.4%, 3.15rem);
+    border-radius: 8px;
+    font-size: 0.9rem;
+  }
+
+  body.pagina-reserva .reserva-resumen {
+    padding: 1rem;
+  }
+
+  body.pagina-reserva .reserva-resumen > div {
+    grid-template-columns: 1fr;
+    gap: 0.3rem;
+  }
+
+  body.pagina-reserva .reserva-resumen dd {
+    text-align: left;
+  }
+
+  body.pagina-reserva .reserva-resumen__precio {
+    grid-template-columns: 1fr auto !important;
+  }
+
+  body.pagina-reserva .reserva-resumen__precio dd {
+    text-align: right;
+  }
+
+  body.pagina-reserva .reserva-total-card__cabecera {
+    align-items: flex-start;
+  }
+
+  body.pagina-reserva .reserva-total-card .btn-warning {
+    min-height: 3.55rem;
+    font-size: 0.94rem;
+  }
+}
+
+body.pagina-reserva main .reserva-formulario .reserva-card,
+body.pagina-reserva main .reserva-formulario .reserva-total-card {
+  position: relative !important;
+  min-height: 0 !important;
+  display: block !important;
+  overflow: visible !important;
+  background: #ffffff !important;
+  background-image: none !important;
+  background-attachment: initial !important;
+  background-position: initial !important;
+  background-size: initial !important;
+}
+
+body.pagina-reserva main .reserva-formulario .reserva-card {
+  padding: clamp(1.15rem, 2.35vw, 1.75rem) !important;
+}
+
+body.pagina-reserva main .reserva-formulario .reserva-total-card {
+  padding: clamp(1.25rem, 2.6vw, 1.75rem) !important;
+}
+
+body.pagina-reserva main .reserva-formulario .reserva-card::before,
+body.pagina-reserva main .reserva-formulario .reserva-card::after,
+body.pagina-reserva main .reserva-formulario .reserva-total-card::before,
+body.pagina-reserva main .reserva-formulario .reserva-total-card::after {
+  content: none !important;
+  display: none !important;
+}
+
+@media (max-width: 575.98px) {
+  body.pagina-reserva main .reserva-formulario .reserva-card,
+  body.pagina-reserva main .reserva-formulario .reserva-total-card {
+    padding: 1rem !important;
+  }
+}
+
+/* Ajuste puntual: tarjeta de seleccion de asiento segun maqueta. */
+body.pagina-reserva main .reserva-formulario .reserva-card--asientos {
+  padding: clamp(1.15rem, 2vw, 1.45rem) !important;
+  border-radius: 16px;
+  overflow: hidden !important;
+}
+
+body.pagina-reserva .reserva-card--asientos .reserva-card__header {
+  align-items: center;
+  gap: 0.62rem;
+  margin-bottom: 0.18rem;
+}
+
+body.pagina-reserva .reserva-card--asientos .reserva-card__numero {
+  width: 1.92rem;
+  height: 1.92rem;
+  font-size: 0.86rem;
+}
+
+body.pagina-reserva .reserva-card--asientos .reserva-card__icono {
+  color: var(--reserva-orange);
+  font-size: 1.08rem;
+}
+
+body.pagina-reserva .reserva-card--asientos .reserva-card__header h3 {
+  font-size: clamp(1.05rem, 1.45vw, 1.2rem);
+  font-weight: 900;
+}
+
+body.pagina-reserva .reserva-card--asientos .reserva-asientos-ayuda {
+  margin: 0 0 0.55rem 3.7rem;
+  color: var(--reserva-muted);
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+body.pagina-reserva .reserva-card--asientos .reserva-asientos-leyenda {
+  justify-content: center;
+  gap: 0.85rem 1.15rem;
+  margin: 0 0 0.7rem;
+  color: var(--reserva-ink);
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+body.pagina-reserva .reserva-card--asientos .reserva-estado {
+  width: 0.8rem;
+  height: 0.8rem;
+}
+
+body.pagina-reserva .reserva-card--asientos .reserva-bus-map {
+  width: min(100%, 23rem);
+  aspect-ratio: 1200 / 1312;
+  margin: 0 auto 0.55rem;
+  overflow: visible;
+  border-radius: 0;
+  background: transparent;
+}
+
+body.pagina-reserva .reserva-card--asientos .reserva-bus-map__imagen {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  transform: none;
+}
+
+body.pagina-reserva .reserva-card--asientos .reserva-seat {
+  width: clamp(1.42rem, 8.2%, 2.2rem);
+  min-height: 0;
+  aspect-ratio: 1 / 1;
+  border: 2px solid rgba(255, 255, 255, 0.84);
+  border-radius: 8px;
+  background: linear-gradient(135deg, #6fc777, #39a84b);
+  color: #ffffff;
+  font-size: clamp(0.72rem, 1.45vw, 0.95rem);
+  font-weight: 900;
+  box-shadow:
+    0 0.28rem 0.55rem rgba(15, 23, 42, 0.24),
+    inset 0 -0.12rem 0 rgba(0, 0, 0, 0.18);
+}
+
+body.pagina-reserva .reserva-card--asientos .reserva-seat-input:disabled + .reserva-seat {
+  border-color: rgba(255, 255, 255, 0.8);
+  background: linear-gradient(135deg, #d0d5dc, #9da5af);
+  color: #ffffff;
+}
+
+body.pagina-reserva .reserva-card--asientos .reserva-seat-input:checked + .reserva-seat {
+  border-color: rgba(255, 255, 255, 0.92);
+  background: linear-gradient(135deg, #ff8b00, var(--reserva-orange));
+  color: #ffffff;
+}
+
+body.pagina-reserva .reserva-card--asientos .reserva-seat--1 { left: 45.9%; top: 20.8%; }
+body.pagina-reserva .reserva-card--asientos .reserva-seat--2 { left: 60.2%; top: 20.8%; }
+body.pagina-reserva .reserva-card--asientos .reserva-seat--3 { left: 27.1%; top: 36.8%; }
+body.pagina-reserva .reserva-card--asientos .reserva-seat--4 { left: 40.8%; top: 36.8%; }
+body.pagina-reserva .reserva-card--asientos .reserva-seat--5 { left: 53.8%; top: 36.8%; }
+body.pagina-reserva .reserva-card--asientos .reserva-seat--6 { left: 22%; top: 54.2%; }
+body.pagina-reserva .reserva-card--asientos .reserva-seat--7 { left: 33.3%; top: 54.2%; }
+body.pagina-reserva .reserva-card--asientos .reserva-seat--8 { left: 61.1%; top: 54.2%; }
+body.pagina-reserva .reserva-card--asientos .reserva-seat--9 { left: 21.9%; top: 69%; }
+body.pagina-reserva .reserva-card--asientos .reserva-seat--10 { left: 33.1%; top: 69%; }
+body.pagina-reserva .reserva-card--asientos .reserva-seat--11 { left: 61.1%; top: 69%; }
+body.pagina-reserva .reserva-card--asientos .reserva-seat--12 { left: 22.2%; top: 85.7%; }
+body.pagina-reserva .reserva-card--asientos .reserva-seat--13 { left: 34.9%; top: 85.7%; }
+body.pagina-reserva .reserva-card--asientos .reserva-seat--14 { left: 48.6%; top: 85.7%; }
+body.pagina-reserva .reserva-card--asientos .reserva-seat--15 { left: 62.3%; top: 85.7%; }
+
+body.pagina-reserva .reserva-card--asientos .reserva-bus-map__caption {
+  margin: 0.45rem 0 0.95rem;
+  color: #6b7b91;
+  font-size: 0.78rem;
+  font-weight: 800;
+  line-height: 1.25;
+  text-align: center;
+}
+
+body.pagina-reserva .reserva-card--asientos .reserva-asiento-panel {
+  padding: 0.95rem 1rem;
+  border: 1px solid rgba(255, 95, 0, 0.38);
+  border-radius: 10px;
+  background: linear-gradient(135deg, #fff7ed 0%, #fffefd 100%);
+}
+
+body.pagina-reserva .reserva-card--asientos .reserva-asiento-panel > i {
+  color: var(--reserva-ink);
+  font-size: 1.65rem;
+}
+
+body.pagina-reserva .reserva-card--asientos .reserva-asiento-panel span {
+  margin: 0 0 0.28rem;
+  color: var(--reserva-ink);
+  font-size: 0.82rem;
+  font-weight: 900;
+}
+
+body.pagina-reserva .reserva-card--asientos .reserva-asiento-panel strong {
+  min-width: 0;
+  min-height: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  display: block;
+  background: transparent;
+  color: var(--reserva-orange);
+  font-size: clamp(1.15rem, 2.2vw, 1.45rem);
+  font-weight: 900;
+  line-height: 1.15;
+}
+
+@media (max-width: 575.98px) {
+  body.pagina-reserva .reserva-card--asientos .reserva-asientos-ayuda {
+    margin-left: 0;
+  }
+
+  body.pagina-reserva .reserva-card--asientos .reserva-bus-map {
+    width: min(100%, 18.5rem);
+  }
+}

@@ -35,6 +35,122 @@
   --site-header-height: 6.75rem;
 }
 
+.etsa-banner-carousel-ready {
+  position: relative;
+  overflow: hidden;
+  background-color: #0f172a;
+}
+
+.etsa-banner-carousel-ready > .etsa-banner-carousel {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.etsa-banner-carousel__track {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.etsa-banner-carousel__slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: opacity 650ms ease-in-out;
+  will-change: opacity;
+}
+
+.etsa-banner-carousel__slide.is-active {
+  opacity: 1;
+}
+
+.etsa-banner-carousel-ready > .etsa-banner-carousel__shade {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    rgba(15, 23, 42, 0.82) 0%,
+    rgba(15, 23, 42, 0.50) 48%,
+    rgba(15, 23, 42, 0.18) 100%
+  );
+}
+
+.etsa-banner-carousel-ready > :not(.etsa-banner-carousel):not(.etsa-banner-carousel__shade):not(.etsa-banner-carousel__dots) {
+  position: relative;
+  z-index: 2;
+}
+
+body.pagina-index > main > .hero.etsa-banner-carousel-ready > .hero-img {
+  display: none;
+}
+
+body.pagina-index > main > .hero.etsa-banner-carousel-ready > .container-fluid {
+  z-index: 3;
+}
+
+.etsa-banner-carousel-ready > .etsa-banner-carousel__dots {
+  position: absolute;
+  left: 50%;
+  bottom: clamp(22px, 4.8vh, 44px);
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transform: translateX(-50%);
+}
+
+.etsa-banner-carousel__dot {
+  width: 11px;
+  height: 11px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background-color: rgba(203, 213, 225, 0.78);
+  box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.16);
+  cursor: pointer;
+  transition: width 0.25s ease, background-color 0.25s ease, transform 0.25s ease;
+}
+
+.etsa-banner-carousel__dot.is-active {
+  width: 30px;
+  background-color: #64748b;
+}
+
+.etsa-banner-carousel__dot:focus-visible {
+  outline: 3px solid rgba(255, 255, 255, 0.55);
+  outline-offset: 4px;
+}
+
+.servicios-hero.etsa-banner-carousel-ready > .etsa-banner-carousel__shade,
+.hero-viaje.etsa-banner-carousel-ready > .etsa-banner-carousel__shade {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.92) 0%,
+    rgba(255, 255, 255, 0.70) 40%,
+    rgba(15, 23, 42, 0.22) 100%
+  );
+}
+
+.detalle-destino-hero.etsa-banner-carousel-ready::after {
+  z-index: 2;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .etsa-banner-carousel__slide,
+  .etsa-banner-carousel__dot {
+    transition: none;
+  }
+}
+
 body.pagina-contacto,
 body.pagina-encomiendas,
 body.pagina-nosotros,

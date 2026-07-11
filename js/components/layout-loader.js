@@ -10,12 +10,17 @@
     index: "index",
     servicios: "servicios",
     rutas: "rutas",
+    encomiendas: "encomiendas",
     promociones: "promociones",
+    reserva: "reserva",
     contacto: "contacto",
     nosotros: "nosotros",
     testimonios: "testimonios",
     "preguntas-frecuentes": "preguntas-frecuentes",
-    "info-viaje": "info-viaje"
+    "info-viaje": "info-viaje",
+    libro_reclamos: "libro_reclamos",
+    "terminos-viaje": "terminos-viaje",
+    "terminos-encomiendas": "terminos-encomiendas"
   };
 
   const RESERVA_DESKTOP_PAGES = new Set(["index", "info-viaje", "libro_reclamos"]);

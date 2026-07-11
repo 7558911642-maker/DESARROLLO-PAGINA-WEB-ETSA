@@ -40,8 +40,9 @@
   position: relative;
   z-index: 1;
   width: min(100% - 32px, 1180px);
-  padding-top: clamp(24px, 3vw, 34px);
+  padding-top: clamp(18px, 2.4vw, 26px);
   padding-right: 0;
+  padding-bottom: 0;
   padding-left: 0;
 }
 
@@ -51,7 +52,7 @@
   display: grid;
   grid-template-columns: minmax(245px, 1.42fr) minmax(92px, 0.72fr) minmax(178px, 1.12fr) minmax(148px, 0.9fr) minmax(154px, 0.96fr);
   gap: clamp(24px, 3.4vw, 46px);
-  align-items: stretch;
+  align-items: start;
   margin-right: 0;
   margin-left: 0;
 }
@@ -70,8 +71,7 @@
 }
 
 .footer-marca__tarjeta {
-  height: 100%;
-  padding: 18px;
+  padding: 16px;
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 16px;
   background:
@@ -144,7 +144,6 @@
 }
 
 .footer-columna {
-  min-height: 100%;
   border-left: 0;
   padding-left: 0;
 }
@@ -211,22 +210,22 @@
   font-size: 1rem;
 }
 
-.footer-copy {
+.footer-principal .footer-copy {
   position: relative;
   z-index: 1;
-  margin-top: clamp(22px, 2.8vw, 30px) !important;
-  padding: 13px 84px 13px;
+  margin-top: clamp(10px, 1.5vw, 16px) !important;
+  padding: 11px 84px;
   border-color: rgba(255, 255, 255, 0.12) !important;
   background: rgba(0, 0, 0, 0.16);
   color: rgba(255, 255, 255, 0.68);
   text-align: center;
 }
 
-.footer-copy .container {
+.footer-principal .footer-copy .container {
   max-width: 1180px;
 }
 
-.footer-copy p {
+.footer-principal .footer-copy p {
   font-size: 12px;
   font-weight: 750;
   line-height: 1.35;
@@ -252,40 +251,66 @@
 @media (max-width: 991.98px) {
   .footer-principal .footer-contenedor {
     width: min(100% - 40px, 920px);
+    padding-bottom: 0;
   }
 
   .footer-grid {
     grid-template-columns: minmax(260px, 1.1fr) repeat(2, minmax(180px, 1fr));
-    gap: 28px;
+    gap: 22px;
   }
 
   .footer-marca {
-    grid-row: span 2;
+    grid-row: auto;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .footer-grid {
+    grid-template-columns: minmax(245px, 1.18fr) minmax(170px, 0.9fr) minmax(210px, 1fr);
+    grid-template-rows: auto auto;
+    column-gap: clamp(22px, 3vw, 32px);
+    row-gap: 18px;
+    align-items: start;
+  }
+
+  .footer-marca {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+  }
+
+  .footer-columna[aria-labelledby="footer-empresa"] {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .footer-columna[aria-labelledby="footer-atencion"] {
+    grid-column: 3;
+    grid-row: 1;
+  }
+
+  .footer-columna[aria-labelledby="footer-legal"] {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .footer-columna[aria-labelledby="footer-rutas"] {
+    grid-column: 3;
+    grid-row: 2;
   }
 }
 
 @media (max-width: 767.98px) {
-  .footer-principal .medios-pago {
-    flex-direction: column;
-    gap: 0;
-    padding: 18px 16px 0;
-  }
-
-  .footer-principal .medios-pago > .container {
-    width: min(100% - 32px, 520px);
-    padding: 13px;
-  }
-
   .footer-principal .footer-contenedor {
     width: min(100% - 32px, 520px);
-    padding-top: 24px;
+    padding-top: 20px;
     padding-right: 0;
+    padding-bottom: 0;
     padding-left: 0;
   }
 
   .footer-grid {
     grid-template-columns: 1fr;
-    gap: 26px;
+    gap: 20px;
     text-align: center;
   }
 
@@ -296,8 +321,9 @@
   .footer-marca__tarjeta {
     max-width: 360px;
     margin-right: auto;
+    margin-bottom: 0;
     margin-left: auto;
-    padding: 18px 16px;
+    padding: 16px;
   }
 
   .footer-logo {
@@ -344,7 +370,8 @@
     transform: none;
   }
 
-  .footer-copy {
-    padding: 13px 24px 72px;
+  .footer-principal .footer-copy {
+    margin-top: 12px !important;
+    padding: 11px 24px;
   }
 }

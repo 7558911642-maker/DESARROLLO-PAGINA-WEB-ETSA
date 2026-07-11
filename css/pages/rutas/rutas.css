@@ -15,18 +15,54 @@ body.pagina-rutas > .site-header.fixed-top ~ main.pagina-rutas__main {
   padding: 60px 7%;
   overflow: hidden;
 
-  background:
-    linear-gradient(
-      90deg,
-      rgba(0, 0, 0, 0.70) 0%,
-      rgba(0, 0, 0, 0.38) 45%,
-      rgba(0, 0, 0, 0.10) 100%
-    ),
-    url("../../../img/rutas/chachapoyas.png");
-
+  background: #0f172a url("../../../img/rutas/chachapoyas.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.rutas-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.70) 0%,
+    rgba(0, 0, 0, 0.38) 45%,
+    rgba(0, 0, 0, 0.10) 100%
+  );
+}
+
+.rutas-hero__carousel {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  background-color: #0f172a;
+}
+
+.rutas-hero__track {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  transform: translateX(calc(var(--hero-slide, 0) * -100%));
+  transition: transform 720ms ease-in-out;
+  will-change: transform;
+}
+
+.rutas-hero__slide {
+  flex: 0 0 100%;
+  min-width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.rutas-hero__slide.is-active {
+  z-index: 1;
 }
 
 .rutas-hero__contenido {
@@ -50,6 +86,40 @@ body.pagina-rutas > .site-header.fixed-top ~ main.pagina-rutas__main {
   letter-spacing: 3px;
   overflow-wrap: normal;
   word-break: normal;
+}
+
+.rutas-hero__dots {
+  position: absolute;
+  left: 50%;
+  bottom: clamp(24px, 5vh, 46px);
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transform: translateX(-50%);
+}
+
+.rutas-hero__dot {
+  width: 11px;
+  height: 11px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background-color: rgba(203, 213, 225, 0.78);
+  box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.16);
+  cursor: pointer;
+  transition: width 0.25s ease, background-color 0.25s ease, transform 0.25s ease;
+}
+
+.rutas-hero__dot.is-active {
+  width: 30px;
+  background-color: #64748b;
+}
+
+.rutas-hero__dot:focus-visible {
+  outline: 3px solid rgba(255, 255, 255, 0.55);
+  outline-offset: 4px;
 }
 
 /* RUTAS - SECCIÓN GENERAL */
@@ -972,5 +1042,12 @@ body.modal-ruta-open {
 
   .breadcrumb-rutas--rutas i {
     font-size: 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rutas-hero__track,
+  .rutas-hero__dot {
+    transition: none;
   }
 }

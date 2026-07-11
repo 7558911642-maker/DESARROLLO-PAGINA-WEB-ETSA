@@ -322,10 +322,20 @@
 .pagina-contacto .contacto-card:hover,
 .pagina-contacto .contacto-card:focus-visible,
 .pagina-contacto .sucursal-card:hover,
-.pagina-contacto .sucursal-card:focus-within {
+.pagina-contacto .sucursal-card:focus-within,
+.pagina-contacto .sucursal-card--mapa:focus-visible {
   transform: translateY(-6px);
   border-color: rgba(249, 115, 22, .30);
   box-shadow: 0 26px 58px rgba(15, 23, 42, .14);
+}
+
+.pagina-contacto .sucursal-card--mapa {
+  cursor: pointer;
+}
+
+.pagina-contacto .sucursal-card--mapa:focus-visible {
+  outline: 3px solid rgba(249, 115, 22, .28);
+  outline-offset: 4px;
 }
 
 .pagina-contacto .contacto-card__icono {

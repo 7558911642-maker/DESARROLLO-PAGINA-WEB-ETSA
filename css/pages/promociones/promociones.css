@@ -96,6 +96,9 @@
   line-height: 1.02;
   font-weight: 900;
   text-wrap: balance;
+  white-space: nowrap;
+  overflow-wrap: normal;
+  word-break: normal;
 }
 
 .promociones-seccion__texto > p:last-child {

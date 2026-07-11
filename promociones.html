@@ -156,10 +156,14 @@
               <i class="bi bi-stars" aria-hidden="true"></i>
               Beneficios vigentes
             </p>
-            <h2 id="titulo-lista-promociones">Promociones para viajar y enviar con ETSA</h2>
-            <p>
-              Aprovecha tarifas especiales para tus viajes, paquetes, encomiendas y carga comercial dentro de nuestras rutas.
-            </p>
+            <h2 id="titulo-lista-promociones" class="no-wrap">Promociones para viajar y enviar con ETSA</h2>
+          </div>
+
+          <div class="promociones-slider__dots" data-slider-dots="promocionesLista" aria-label="Navegación de promociones">
+            <button class="promociones-slider__dot promociones-slider__dot--activo" type="button" aria-label="Ver promoción 1" aria-current="true"></button>
+            <button class="promociones-slider__dot" type="button" aria-label="Ver promoción 2"></button>
+            <button class="promociones-slider__dot" type="button" aria-label="Ver promoción 3"></button>
+            <button class="promociones-slider__dot" type="button" aria-label="Ver promoción 4"></button>
           </div>
 
         </div>
@@ -172,6 +176,7 @@
 
             <figure class="promocion-imagen">
               <img src="img/servicios/encomienda.png" alt="Trabajadora preparando una encomienda en el area de envíos">
+<<<<<<< Updated upstream
               <figcaption class="tag-promo">Encomiendas</figcaption>
             </figure>
 
@@ -188,7 +193,16 @@
               <div class="promocion-card__acciones">
                 <a href="#modal-promo1" class="btn-mas-info" aria-label="Ver condiciones de Promo Encomienda Express" data-accion="abrir-condiciones">Ver condiciones</a>
                 <a href="contacto.html" class="promocion-card__link" aria-label="Consultar envio para Promo Encomienda Express" data-accion="consultar-envio">Consultar envío</a>
+=======
+              <div class="promocion-imagen__acciones promocion-card__acciones">
+                <a href="#modal-promo1" class="btn-mas-info">Ver condiciones</a>
+                <a href="contacto.html" class="promocion-card__link">Consultar envío</a>
+>>>>>>> Stashed changes
               </div>
+            </figure>
+
+            <div class="promocion-card__contenido">
+
             </div>
 
           </article>
@@ -199,6 +213,7 @@
 
             <figure class="promocion-imagen">
               <img src="img/servicios/carga.png" alt="Personal logístico cargando cajas para transporte de mercadería">
+<<<<<<< Updated upstream
               <figcaption class="tag-promo">Carga comercial</figcaption>
             </figure>
 
@@ -215,7 +230,16 @@
               <div class="promocion-card__acciones">
                 <a href="#modal-promo2" class="btn-mas-info" aria-label="Ver condiciones de Tarifa Ahorro para Carga" data-accion="abrir-condiciones">Ver condiciones</a>
                 <a href="contacto.html" class="promocion-card__link" aria-label="Cotizar carga con Tarifa Ahorro para Carga" data-accion="cotizar-carga">Cotizar carga</a>
+=======
+              <div class="promocion-imagen__acciones promocion-card__acciones">
+                <a href="#modal-promo2" class="btn-mas-info">Ver condiciones</a>
+                <a href="contacto.html" class="promocion-card__link">Cotizar carga</a>
+>>>>>>> Stashed changes
               </div>
+            </figure>
+
+            <div class="promocion-card__contenido">
+
             </div>
 
           </article>
@@ -226,6 +250,7 @@
 
             <figure class="promocion-imagen">
               <img src="img/promociones/watermarked_img_16051582334898136880.jpg" alt="Promoci&oacute;n ETSA por el Mundial de F&uacute;tbol 2026">
+<<<<<<< Updated upstream
               <figcaption class="tag-promo">Mundial de f&uacute;tbol</figcaption>
             </figure>
 
@@ -242,7 +267,16 @@
               <div class="promocion-card__acciones">
                 <a href="#modal-promo3" class="btn-mas-info" aria-label="Ver condiciones de Promo Pasajero Mundialista" data-accion="abrir-condiciones">Ver condiciones</a>
                 <a href="reserva.html" class="promocion-card__link" aria-label="Reservar viaje con Promo Pasajero Mundialista" data-accion="reservar-viaje">Reservar viaje</a>
+=======
+              <div class="promocion-imagen__acciones promocion-card__acciones">
+                <a href="#modal-promo3" class="btn-mas-info">Ver condiciones</a>
+                <a href="reserva.html" class="promocion-card__link">Reservar viaje</a>
+>>>>>>> Stashed changes
               </div>
+            </figure>
+
+            <div class="promocion-card__contenido">
+
             </div>
 
           </article>
@@ -253,6 +287,7 @@
 
             <figure class="promocion-imagen">
               <img src="img/promociones/Promo5.jpg" alt="Promoci&oacute;n ETSA para viajar al Raymi Llaqta de Chachapoyas">
+<<<<<<< Updated upstream
               <figcaption class="tag-promo">Raymi Llaqta</figcaption>
             </figure>
 
@@ -269,7 +304,16 @@
               <div class="promocion-card__acciones">
                 <a href="#modal-promo4" class="btn-mas-info" aria-label="Ver condiciones de Vive la Fiesta de Chachapoyas" data-accion="abrir-condiciones">Ver condiciones</a>
                 <a href="reserva.html" class="promocion-card__link" aria-label="Reservar asiento para Vive la Fiesta de Chachapoyas" data-accion="reservar-asiento">Reservar asiento</a>
+=======
+              <div class="promocion-imagen__acciones promocion-card__acciones">
+                <a href="#modal-promo4" class="btn-mas-info">Ver condiciones</a>
+                <a href="reserva.html" class="promocion-card__link">Reservar asiento</a>
+>>>>>>> Stashed changes
               </div>
+            </figure>
+
+            <div class="promocion-card__contenido">
+
             </div>
 
           </article>
@@ -575,6 +619,57 @@
   <!-- Bootstrap JS -->
   <script src="bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/pages/promociones.js"></script>
+
+  <script>
+    (function(){
+      const group = document.querySelector('[data-slider-dots="promocionesLista"]');
+      if (!group) return;
+
+      const slider = document.getElementById(group.dataset.sliderDots);
+      const dots = Array.from(group.querySelectorAll('.promociones-slider__dot'));
+      if (!slider || !dots.length) return;
+
+      const getItems = () => Array.from(slider.children).filter(item => !item.hidden);
+      let ticking = false;
+
+      const setActive = (index) => {
+        dots.forEach((dot, i) => {
+          const active = i === index;
+          dot.classList.toggle('promociones-slider__dot--activo', active);
+          dot.toggleAttribute('aria-current', active);
+        });
+      };
+
+      const getCurrentIndex = () => {
+        const items = getItems();
+        const sliderCenter = slider.scrollLeft + slider.clientWidth / 2;
+        return items.reduce((closestIndex, item, index) => {
+          const itemCenter = item.offsetLeft + item.clientWidth / 2;
+          const closestItem = items[closestIndex];
+          const closestCenter = closestItem.offsetLeft + closestItem.clientWidth / 2;
+          return Math.abs(itemCenter - sliderCenter) < Math.abs(closestCenter - sliderCenter) ? index : closestIndex;
+        }, 0);
+      };
+
+      dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+          const item = getItems()[index];
+          if (!item) return;
+          item.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+          setActive(index);
+        });
+      });
+
+      slider.addEventListener('scroll', () => {
+        if (ticking) return;
+        window.requestAnimationFrame(() => {
+          setActive(getCurrentIndex());
+          ticking = false;
+        });
+        ticking = true;
+      }, { passive: true });
+    })();
+  </script>
 
 </body>
 </html>

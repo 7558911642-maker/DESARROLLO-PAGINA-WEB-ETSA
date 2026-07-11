@@ -98,6 +98,117 @@
   text-wrap: balance;
 }
 
+/* Forzar que el título principal de la lista permanezca en una sola línea */
+.no-wrap {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Específico: reducir tamaño para que el título principal entre en una sola línea
+   sin recortarlo. Usa clamp para mantener buena escala en distintos anchos. */
+.promociones-seccion__encabezado h2.no-wrap {
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: visible;
+  text-overflow: clip;
+  font-size: clamp(1.6rem, 2.4vw, 3.2rem);
+  line-height: 1;
+}
+
+/* Ocultar la lista de beneficios en las tarjetas para mostrar sólo título y botones */
+.promocion-card__beneficios {
+  display: none !important;
+}
+
+/* Botones sobre la imagen (overlay) */
+.promocion-imagen .promocion-card__acciones {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 16px;
+  display: flex;
+  gap: 10px;
+  padding: 6px;
+  z-index: 3;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.promocion-imagen .btn-mas-info {
+  min-height: 42px;
+  padding: 10px 16px;
+  box-shadow: 0 10px 22px rgba(15, 23, 42, 0.18);
+}
+
+.promocion-imagen .promocion-card__link {
+  min-height: 42px;
+  padding: 10px 16px;
+  border: none;
+  background-color: rgba(255,255,255,0.92);
+  color: #0f172a;
+}
+
+/* Asegurar que los botones no ocupen 100% y se mantengan en línea */
+.promocion-imagen .promocion-card__acciones a {
+  display: inline-flex;
+  width: auto !important;
+  max-width: none !important;
+  white-space: nowrap;
+}
+
+/* En móviles colocamos los botones fuera del overlay para evitar superposiciones incómodas */
+@media (max-width: 576px) {
+  .promocion-imagen .promocion-card__acciones {
+    position: static;
+    transform: none;
+    margin-top: 12px;
+    justify-content: center;
+    padding: 0;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+  .promocion-card__contenido {
+    padding-top: 8px;
+  }
+}
+
+/* Indicadores (puntitos) para el slider en tablet/móvil */
+.promociones-slider__dots {
+  display: none;
+}
+
+@media (max-width: 991px) {
+  .promociones-slider__dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 18px auto 0;
+  }
+
+  .promociones-slider__dot {
+    width: 10px;
+    height: 10px;
+    border: 0;
+    border-radius: 999px;
+    background-color: #d1d5db;
+    cursor: pointer;
+    padding: 0;
+    transition: width .22s ease, background-color .22s ease;
+  }
+
+  .promociones-slider__dot:focus-visible {
+    outline: 3px solid rgba(249, 115, 22, .24);
+    outline-offset: 4px;
+  }
+
+  .promociones-slider__dot--activo {
+    width: 30px;
+    background-color: var(--naranja);
+  }
+}
+
 .promociones-seccion__texto > p:last-child {
   max-width: 720px;
   margin: 18px 0 0;

@@ -12,7 +12,6 @@
 
   const HERO_FALLBACK_IMAGE = "img/rutas/chachapoyas.png";
   const HERO_CAROUSEL_INTERVAL = 3000;
-
   const ROUTES = [
     {
       id: "ruta-chachapoyas",
@@ -389,7 +388,6 @@
       return;
     }
 
-    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const imageList = Array.from(new Set(
       HERO_CAROUSEL_IMAGES.filter((image) => typeof image === "string" && image.trim())
     ));
@@ -399,9 +397,6 @@
 
     let activeIndex = 0;
     let carouselTimer = null;
-    let pointerIsActive = false;
-    let pointerStartX = 0;
-    let pointerStartY = 0;
 
     const setSlideImage = (slide, image) => {
       slide.style.backgroundImage = `url("${image}")`;
@@ -427,17 +422,7 @@
       }
     };
 
-    const setActiveSlide = (index) => {
-      const slides = getSlides();
-      const dots = getDots();
-
-      if (!slides.length) {
-        return;
-      }
-
-      activeIndex = (index + slides.length) % slides.length;
-      track.style.setProperty("--hero-slide", activeIndex);
-
+    const updateActiveState = (slides, dots) => {
       slides.forEach((slide, slideIndex) => {
         slide.classList.toggle("is-active", slideIndex === activeIndex);
       });
@@ -451,6 +436,18 @@
           dot.removeAttribute("aria-current");
         }
       });
+    };
+
+    const setActiveSlide = (index) => {
+      const slides = getSlides();
+      const dots = getDots();
+
+      if (!slides.length) {
+        return;
+      }
+
+      activeIndex = (index + slides.length) % slides.length;
+      updateActiveState(slides, dots);
 
       const nextSlide = slides[(activeIndex + 1) % slides.length];
       if (nextSlide?.dataset.heroImage) {
@@ -462,7 +459,7 @@
       const slides = getSlides();
 
       stopCarousel();
-      if (prefersReducedMotion || slides.length < 2) {
+      if (slides.length < 2) {
         return;
       }
 
@@ -471,11 +468,8 @@
       }, HERO_CAROUSEL_INTERVAL);
     };
 
-    const restartCarousel = () => {
-      startCarousel();
-    };
-
     const renderCarousel = (images) => {
+      stopCarousel();
       track.innerHTML = "";
       dotsContainer.innerHTML = "";
 
@@ -483,7 +477,9 @@
         const slide = createElement("div", `rutas-hero__slide${index === 0 ? " is-active" : ""}`);
         setSlideImage(slide, image);
         track.appendChild(slide);
+      });
 
+      images.forEach((image, index) => {
         const dot = createElement("button", `rutas-hero__dot${index === 0 ? " is-active" : ""}`);
         dot.type = "button";
         dot.setAttribute("aria-label", `Ver imagen ${index + 1} del banner`);
@@ -492,7 +488,7 @@
         }
         dot.addEventListener("click", () => {
           setActiveSlide(index);
-          restartCarousel();
+          startCarousel();
         });
         dotsContainer.appendChild(dot);
       });
@@ -519,39 +515,6 @@
       }
 
       renderCarousel(availableImages);
-    });
-
-    hero.addEventListener("pointerdown", (event) => {
-      if (event.target.closest(".rutas-hero__dot")) {
-        return;
-      }
-
-      pointerStartX = event.clientX;
-      pointerStartY = event.clientY;
-      pointerIsActive = true;
-    });
-
-    hero.addEventListener("pointerup", (event) => {
-      if (!pointerIsActive) {
-        return;
-      }
-
-      const distanceX = event.clientX - pointerStartX;
-      const distanceY = event.clientY - pointerStartY;
-      pointerStartX = 0;
-      pointerStartY = 0;
-      pointerIsActive = false;
-
-      if (Math.abs(distanceX) >= 45 && Math.abs(distanceX) > Math.abs(distanceY)) {
-        setActiveSlide(activeIndex + (distanceX < 0 ? 1 : -1));
-        restartCarousel();
-      }
-    });
-
-    hero.addEventListener("pointercancel", () => {
-      pointerIsActive = false;
-      pointerStartX = 0;
-      pointerStartY = 0;
     });
 
     window.addEventListener("pagehide", stopCarousel, { once: true });

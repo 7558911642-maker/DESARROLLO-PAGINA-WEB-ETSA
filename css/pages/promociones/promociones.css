@@ -89,31 +89,17 @@
 }
 
 .promociones-seccion__encabezado h2 {
-  max-width: 820px;
+  max-width: 100%;
   margin: 0;
   color: #0f172a;
-  font-size: clamp(2.15rem, 5vw, 4.4rem);
-  line-height: 1.02;
+  font-size: clamp(1.3rem, 2.2vw, 3.2rem);
+  line-height: 1;
   font-weight: 900;
-  text-wrap: balance;
-}
-
-/* Forzar que el título principal de la lista permanezca en una sola línea */
-.no-wrap {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-
-/* Específico: reducir tamaño para que el título principal entre en una sola línea
-   sin recortarlo. Usa clamp para mantener buena escala en distintos anchos. */
-.promociones-seccion__encabezado h2.no-wrap {
-  max-width: 100%;
-  white-space: nowrap;
-  overflow: visible;
-  text-overflow: clip;
-  font-size: clamp(1.6rem, 2.4vw, 3.2rem);
-  line-height: 1;
+  word-break: normal;
+  hyphens: none;
 }
 
 /* Ocultar la lista de beneficios en las tarjetas para mostrar sólo título y botones */
@@ -251,11 +237,17 @@
 
 /* Indicadores del carrusel */
 .promociones-indicadores {
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   gap: 10px;
   margin: 24px 0 0;
+}
+
+@media (max-width: 991px) {
+  .promociones-indicadores {
+    display: flex;
+  }
 }
 
 .promocion-indicador {

@@ -779,10 +779,12 @@ body.modal-ruta-open {
   transition: 0.3s ease;
 }
 
-.tarjeta-ruta__contenido a:hover {
+.pagina-rutas .tarjeta-ruta__contenido a.btn:hover,
+.pagina-rutas .tarjeta-ruta__contenido a.btn:focus-visible {
   background-color: var(--naranja);
   border-color: var(--naranja);
   color: #ffffff;
+  box-shadow: 0 12px 24px rgba(249, 115, 22, 0.28);
 }
 
 @media (min-width: 992px) {

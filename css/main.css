@@ -263,6 +263,84 @@ body.pagina-detalle-ruta .breadcrumb-rutas ol::-webkit-scrollbar {
   display: none;
 }
 
+body.menu-mobile-abierto .breadcrumb-etsa,
+body.menu-mobile-abierto .breadcrumb-encomiendas,
+body.menu-mobile-abierto .breadcrumb-rutas,
+body.menu-mobile-abierto .breadcrumb-info-viaje,
+body.menu-mobile-abierto .breadcrumb-libro-reclamos,
+body.menu-mobile-abierto .breadcrumb-reserva,
+body.menu-mobile-abierto .breadcrumb-terminos-encomiendas,
+body.menu-mobile-abierto .breadcrumb-terminos-viaje {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+body:has(.menu-mobile-etsa.show) .breadcrumb-etsa,
+body:has(.menu-mobile-etsa.show) .breadcrumb-encomiendas,
+body:has(.menu-mobile-etsa.show) .breadcrumb-rutas,
+body:has(.menu-mobile-etsa.show) .breadcrumb-info-viaje,
+body:has(.menu-mobile-etsa.show) .breadcrumb-libro-reclamos,
+body:has(.menu-mobile-etsa.show) .breadcrumb-reserva,
+body:has(.menu-mobile-etsa.show) .breadcrumb-terminos-encomiendas,
+body:has(.menu-mobile-etsa.show) .breadcrumb-terminos-viaje {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+body.pagina-contacto .breadcrumb-etsa.breadcrumb-pegado,
+body.pagina-encomiendas .breadcrumb-encomiendas.breadcrumb-pegado,
+body.pagina-nosotros .breadcrumb-rutas.breadcrumb-pegado,
+body.pagina-preguntas-frecuentes .breadcrumb-rutas.breadcrumb-pegado,
+body.pagina-promociones .breadcrumb-rutas.breadcrumb-pegado,
+body.pagina-rutas .breadcrumb-rutas.breadcrumb-pegado,
+body.pagina-servicios .breadcrumb-rutas.breadcrumb-pegado,
+body.pagina-terminos-encomiendas .breadcrumb-terminos-encomiendas.breadcrumb-pegado,
+body.pagina-terminos-viaje .breadcrumb-terminos-viaje.breadcrumb-pegado,
+body.pagina-testimonios .breadcrumb-rutas.breadcrumb-pegado,
+body.pagina-detalle-ruta .breadcrumb-rutas.breadcrumb-pegado {
+  top: var(--site-header-height, 84px) !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin-left: 0 !important;
+  padding: 0.55rem 7% !important;
+  background: rgba(255, 255, 255, 0.96) !important;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08) !important;
+  backdrop-filter: blur(10px);
+}
+
+body.pagina-contacto .breadcrumb-etsa.breadcrumb-pegado .breadcrumb-container,
+body.pagina-encomiendas .breadcrumb-encomiendas.breadcrumb-pegado > .container,
+body.pagina-nosotros .breadcrumb-rutas.breadcrumb-pegado > .container,
+body.pagina-preguntas-frecuentes .breadcrumb-rutas.breadcrumb-pegado > .container,
+body.pagina-promociones .breadcrumb-rutas.breadcrumb-pegado > .container,
+body.pagina-promociones .breadcrumb-rutas.breadcrumb-pegado > .container-fluid,
+body.pagina-rutas .breadcrumb-rutas.breadcrumb-pegado > .container,
+body.pagina-servicios .breadcrumb-rutas.breadcrumb-pegado > .container,
+body.pagina-terminos-encomiendas .breadcrumb-terminos-encomiendas.breadcrumb-pegado > .container,
+body.pagina-terminos-viaje .breadcrumb-terminos-viaje.breadcrumb-pegado > .container,
+body.pagina-testimonios .breadcrumb-rutas.breadcrumb-pegado > .container,
+body.pagina-detalle-ruta .breadcrumb-rutas.breadcrumb-pegado > .container {
+  width: 100% !important;
+}
+
+body.menu-mobile-abierto main {
+  pointer-events: none;
+}
+
+.offcanvas-backdrop {
+  z-index: 1980 !important;
+}
+
+.offcanvas-backdrop.show {
+  opacity: 1;
+}
+
+.menu-bootstrap.menu-mobile-etsa {
+  z-index: 1990 !important;
+}
+
 @media (max-width: 575.98px) {
   body.pagina-contacto .breadcrumb-etsa,
   body.pagina-encomiendas .breadcrumb-encomiendas,
@@ -331,6 +409,22 @@ body.pagina-detalle-ruta .breadcrumb-rutas ol::-webkit-scrollbar {
     flex: 0 0 auto;
     font-size: clamp(0.78rem, 3.4vw, 0.9rem);
     white-space: nowrap;
+  }
+
+  body.pagina-contacto .breadcrumb-etsa.breadcrumb-pegado,
+  body.pagina-encomiendas .breadcrumb-encomiendas.breadcrumb-pegado,
+  body.pagina-nosotros .breadcrumb-rutas.breadcrumb-pegado,
+  body.pagina-preguntas-frecuentes .breadcrumb-rutas.breadcrumb-pegado,
+  body.pagina-promociones .breadcrumb-rutas.breadcrumb-pegado,
+  body.pagina-rutas .breadcrumb-rutas.breadcrumb-pegado,
+  body.pagina-servicios .breadcrumb-rutas.breadcrumb-pegado,
+  body.pagina-terminos-encomiendas .breadcrumb-terminos-encomiendas.breadcrumb-pegado,
+  body.pagina-terminos-viaje .breadcrumb-terminos-viaje.breadcrumb-pegado,
+  body.pagina-testimonios .breadcrumb-rutas.breadcrumb-pegado,
+  body.pagina-detalle-ruta .breadcrumb-rutas.breadcrumb-pegado {
+    width: 100% !important;
+    margin-left: 0 !important;
+    padding: 0.5rem clamp(14px, 5vw, 22px) !important;
   }
 }
 

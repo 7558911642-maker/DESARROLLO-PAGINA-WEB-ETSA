@@ -1,5 +1,118 @@
 
 (() => {
+  const syncMobileMenuState = () => {
+    const menu = document.getElementById("menuPrincipal");
+    if (!menu || menu.dataset.etsaMenuStateReady === "true") {
+      return;
+    }
+
+    menu.dataset.etsaMenuStateReady = "true";
+
+    const openMenu = () => document.body.classList.add("menu-mobile-abierto");
+    const closeMenu = () => document.body.classList.remove("menu-mobile-abierto");
+
+    menu.addEventListener("show.bs.offcanvas", openMenu);
+    menu.addEventListener("shown.bs.offcanvas", openMenu);
+    menu.addEventListener("hide.bs.offcanvas", closeMenu);
+    menu.addEventListener("hidden.bs.offcanvas", closeMenu);
+
+    if (menu.classList.contains("show")) {
+      openMenu();
+    }
+  };
+
+  document.addEventListener("DOMContentLoaded", () => {
+    syncMobileMenuState();
+
+    if (window.EtsaLayoutReady?.then) {
+      window.EtsaLayoutReady.then(syncMobileMenuState).catch(() => {});
+    }
+
+    const observer = new MutationObserver(() => {
+      syncMobileMenuState();
+      if (document.getElementById("menuPrincipal")?.dataset.etsaMenuStateReady === "true") {
+        observer.disconnect();
+      }
+    });
+
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true,
+    });
+  });
+})();
+
+(() => {
+  const BREADCRUMB_SELECTOR = [
+    ".breadcrumb-etsa",
+    ".breadcrumb-encomiendas",
+    ".breadcrumb-rutas",
+    ".breadcrumb-info-viaje",
+    ".breadcrumb-libro-reclamos",
+    ".breadcrumb-reserva",
+    ".breadcrumb-terminos-encomiendas",
+    ".breadcrumb-terminos-viaje",
+  ].join(",");
+
+  let breadcrumb = null;
+  let ticking = false;
+
+  const getHeaderHeight = () => {
+    const header = document.querySelector("[data-layout-header], .site-header.fixed-top, .site-header");
+    if (header) {
+      const headerHeight = Math.round(header.getBoundingClientRect().height);
+      document.documentElement.style.setProperty("--site-header-height", `${headerHeight}px`);
+      document.body.style.setProperty("--breadcrumb-header-height", `${headerHeight}px`);
+      return headerHeight;
+    }
+
+    const cssHeight = window.getComputedStyle(document.documentElement).getPropertyValue("--site-header-height");
+    return Number.parseFloat(cssHeight) || 84;
+  };
+
+  const updateBreadcrumbState = () => {
+    ticking = false;
+
+    if (!breadcrumb || !document.body.contains(breadcrumb)) {
+      breadcrumb = document.querySelector(BREADCRUMB_SELECTOR);
+    }
+
+    if (!breadcrumb) {
+      return;
+    }
+
+    const headerHeight = getHeaderHeight();
+    const isStuck = window.scrollY > 2 && breadcrumb.getBoundingClientRect().top <= headerHeight + 2;
+    breadcrumb.classList.toggle("breadcrumb-pegado", isStuck);
+  };
+
+  const requestBreadcrumbUpdate = () => {
+    if (ticking) {
+      return;
+    }
+
+    ticking = true;
+    window.requestAnimationFrame(updateBreadcrumbState);
+  };
+
+  const initBreadcrumbStickyState = () => {
+    breadcrumb = document.querySelector(BREADCRUMB_SELECTOR);
+    requestBreadcrumbUpdate();
+  };
+
+  document.addEventListener("DOMContentLoaded", () => {
+    initBreadcrumbStickyState();
+
+    if (window.EtsaLayoutReady?.then) {
+      window.EtsaLayoutReady.then(initBreadcrumbStickyState).catch(() => {});
+    }
+
+    window.addEventListener("scroll", requestBreadcrumbUpdate, { passive: true });
+    window.addEventListener("resize", requestBreadcrumbUpdate);
+  });
+})();
+
+(() => {
   const BANNER_SELECTORS = [
     "body.pagina-index > main > .hero",
     ".contacto-hero:not(.contacto-hero--index)",

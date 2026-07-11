@@ -129,10 +129,13 @@
   bottom: 16px;
   display: flex;
   gap: 10px;
-  padding: 6px;
+  padding: 6px 12px;
   z-index: 3;
   flex-direction: row;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: calc(100% - 32px);
+  box-sizing: border-box;
 }
 
 .promocion-imagen .btn-mas-info {
@@ -153,8 +156,13 @@
 .promocion-imagen .promocion-card__acciones a {
   display: inline-flex;
   width: auto !important;
-  max-width: none !important;
+  max-width: 100% !important;
   white-space: nowrap;
+}
+
+/* Ocultar controles laterales del slider en promociones */
+.promociones-js-nav {
+  display: none !important;
 }
 
 /* En móviles colocamos los botones fuera del overlay para evitar superposiciones incómodas */
@@ -166,7 +174,7 @@
     justify-content: center;
     padding: 0;
     flex-direction: row;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
   }
   .promocion-card__contenido {
     padding-top: 8px;

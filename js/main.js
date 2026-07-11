@@ -17,15 +17,6 @@
     ".detalle-destino-hero",
   ];
 
-  const DEFAULT_BANNER_IMAGES = [
-    "img/rutas/chachapoyas.png",
-    "img/rutas/kuelap.png",
-    "img/banners/Pedro_Ruiz.png",
-    "img/rutas/Luya.png",
-    "img/rutas/Pomacochas.png",
-    "img/rutas/bagua.png",
-  ];
-
   const FIRST_IMAGE_BY_SELECTOR = [
     ["body.pagina-index > main > .hero", "img/rutas/chachapoyas.png"],
     [".contacto-hero", "img/banners/contacto-banner.png"],
@@ -61,11 +52,15 @@
     window.location.pathname.replace(/\\/g, "/").includes("/detalles-rutas/");
 
   const resolveAssetPath = (path) => {
-    if (/^(https?:|data:|\/)/.test(path)) {
-      return path;
+    if (!path) {
+      return "";
     }
 
-    return `${isNestedRoutePage() ? "../" : ""}${path}`;
+    if (/^(https?:|data:|\/|\.{1,2}\/)/.test(path)) {
+      return new URL(path, document.baseURI).href;
+    }
+
+    return new URL(`${isNestedRoutePage() ? "../" : ""}${path}`, document.baseURI).href;
   };
 
   const preloadImage = (src) =>
@@ -79,7 +74,11 @@
 
   const getImagesForBanner = (banner) => {
     const firstImage = FIRST_IMAGE_BY_SELECTOR.find(([selector]) => banner.matches(selector))?.[1];
-    return Array.from(new Set([firstImage, ...DEFAULT_BANNER_IMAGES].filter(Boolean))).map(resolveAssetPath);
+    const pageImages = Array.from(document.querySelectorAll("main img[src]"))
+      .map((image) => image.getAttribute("src"))
+      .filter(Boolean);
+
+    return Array.from(new Set([firstImage, ...pageImages].filter(Boolean).map(resolveAssetPath)));
   };
 
   const initBannerCarousel = (banner) => {

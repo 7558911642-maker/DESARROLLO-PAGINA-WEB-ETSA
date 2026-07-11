@@ -116,6 +116,7 @@
               <i class="bi bi-bus-front-fill"></i>
             </span>
             <div>
+              <span class="reserva-formulario__modo" id="reserva-modo-formulario">Nueva reserva</span>
               <h2>Reserva de Pasajes</h2>
               <p>Completa tus datos y selecciona tu asiento</p>
             </div>
@@ -133,12 +134,12 @@
                 <div class="reserva-fields">
                   <div class="reserva-field">
                     <label class="form-label" for="reserva-nombre">Nombres y apellidos</label>
-                    <input class="form-control" id="reserva-nombre" type="text" name="nombre" value="Rolando" autocomplete="name" required>
+                    <input class="form-control" id="reserva-nombre" type="text" name="nombre" autocomplete="name" required>
                   </div>
 
                   <div class="reserva-field">
                     <label class="form-label" for="reserva-dni">DNI</label>
-                    <input class="form-control" id="reserva-dni" type="text" name="dni" value="92247065" inputmode="numeric" autocomplete="off" required>
+                    <input class="form-control" id="reserva-dni" type="text" name="dni" inputmode="numeric" autocomplete="off" required>
                   </div>
                 </div>
               </section>
@@ -156,9 +157,9 @@
                     <div class="reserva-field__control">
                       <i class="bi bi-geo-alt-fill" aria-hidden="true"></i>
                       <select class="form-control reserva-select" id="reserva-origen" name="origen" required>
-                        <option value="" disabled>Origen</option>
+                        <option value="" selected disabled>Origen</option>
                         <option value="Chachapoyas">Chachapoyas</option>
-                        <option value="Bagua Grande" selected>Bagua Grande</option>
+                        <option value="Bagua Grande">Bagua Grande</option>
                         <option value="Pedro Ruiz">Pedro Ruiz</option>
                         <option value="Luya">Luya</option>
                         <option value="Pomacochas">Pomacochas</option>
@@ -171,8 +172,8 @@
                     <div class="reserva-field__control">
                       <i class="bi bi-geo-alt-fill" aria-hidden="true"></i>
                       <select class="form-control reserva-select" id="reserva-destino" name="destino" required>
-                        <option value="" disabled>Destino</option>
-                        <option value="Chiclayo" selected>Chiclayo</option>
+                        <option value="" selected disabled>Seleccione un destino</option>
+                        <option value="Chiclayo">Chiclayo</option>
                         <option value="Chachapoyas">Chachapoyas</option>
                         <option value="Bagua Grande">Bagua Grande</option>
                         <option value="Pedro Ruiz">Pedro Ruiz</option>
@@ -186,7 +187,7 @@
                     <label class="form-label" for="reserva-fecha">Fecha de viaje</label>
                     <div class="reserva-field__control reserva-field__control--fecha">
                       <i class="bi bi-calendar-event" aria-hidden="true"></i>
-                      <input class="form-control" id="reserva-fecha" type="text" name="fecha" value="18/07/2026" inputmode="numeric" required>
+                      <input class="form-control" id="reserva-fecha" type="date" name="fecha" lang="es-PE" required>
                     </div>
                   </div>
                 </div>
@@ -212,12 +213,12 @@
 
               <section class="reserva-card reserva-card--observaciones" aria-labelledby="titulo-observaciones">
                 <div class="reserva-card__header">
-                  <span class="reserva-card__numero">4</span>
+                  <span class="reserva-card__numero">3</span>
                   <h3 id="titulo-observaciones">Observaciones <span>(opcional)</span></h3>
                 </div>
 
                 <label class="visually-hidden" for="mensaje-adicional">Mensaje adicional</label>
-                <textarea class="form-control" id="mensaje-adicional" name="mensaje" rows="4" placeholder="Ejemplo: Viajo con adulto mayor, equipaje especial, etc."></textarea>
+                <textarea class="form-control" id="mensaje-adicional" name="mensaje" rows="4" maxlength="250" placeholder="Ejemplo: Viajo con adulto mayor, equipaje especial, etc."></textarea>
                 <p class="reserva-ayuda-campo" id="contador-mensaje" aria-live="polite">0/250 caracteres</p>
               </section>
             </div>
@@ -305,19 +306,19 @@
                 <dl class="reserva-resumen">
                   <div>
                     <dt><i class="bi bi-geo-alt-fill" aria-hidden="true"></i>Origen</dt>
-                    <dd id="resumen-origen">Bagua Grande</dd>
+                    <dd id="resumen-origen">Por seleccionar</dd>
                   </div>
                   <div>
                     <dt><i class="bi bi-signpost-split-fill" aria-hidden="true"></i>Destino</dt>
-                    <dd id="resumen-destino">Chiclayo</dd>
+                    <dd id="resumen-destino">Por seleccionar</dd>
                   </div>
                   <div>
                     <dt><i class="bi bi-calendar-event-fill" aria-hidden="true"></i>Fecha de viaje</dt>
-                    <dd id="resumen-fecha">18/07/2026</dd>
+                    <dd id="resumen-fecha">Por seleccionar</dd>
                   </div>
                   <div>
                     <dt><i class="bi bi-person-workspace" aria-hidden="true"></i>Asiento</dt>
-                    <dd id="resumen-asiento">12</dd>
+                    <dd id="resumen-asiento">Por seleccionar</dd>
                   </div>
                   <div class="reserva-resumen__precio">
                     <dt>Precio por pasajero</dt>
@@ -347,6 +348,74 @@
             </section>
           </div>
         </form>
+
+        <div class="modal fade reserva-comprobante-modal" id="reserva-confirmacion-modal" tabindex="-1" aria-labelledby="titulo-confirmacion-reserva" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content reserva-comprobante">
+              <div class="modal-header">
+                <div>
+                  <span class="reserva-comprobante__etiqueta">Reserva registrada</span>
+                  <h2 class="modal-title" id="titulo-confirmacion-reserva">Comprobante de reserva</h2>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+              </div>
+              <div class="modal-body">
+                <div class="reserva-comprobante__estado">
+                  <i class="bi bi-check-circle-fill" aria-hidden="true"></i>
+                  <p>Solicitud guardada correctamente. Conserva tu c&oacute;digo para coordinar la confirmaci&oacute;n con ETSA.</p>
+                </div>
+                <dl class="reserva-comprobante__datos">
+                  <div>
+                    <dt>C&oacute;digo</dt>
+                    <dd id="comprobante-codigo">-</dd>
+                  </div>
+                  <div>
+                    <dt>Pasajero</dt>
+                    <dd id="comprobante-nombre">-</dd>
+                  </div>
+                  <div>
+                    <dt>DNI</dt>
+                    <dd id="comprobante-dni">-</dd>
+                  </div>
+                  <div>
+                    <dt>Ruta</dt>
+                    <dd id="comprobante-ruta">-</dd>
+                  </div>
+                  <div>
+                    <dt>Fecha</dt>
+                    <dd id="comprobante-fecha">-</dd>
+                  </div>
+                  <div>
+                    <dt>Asiento</dt>
+                    <dd id="comprobante-asiento">-</dd>
+                  </div>
+                  <div>
+                    <dt>Precio</dt>
+                    <dd id="comprobante-precio">-</dd>
+                  </div>
+                  <div>
+                    <dt>Estado</dt>
+                    <dd id="comprobante-estado">-</dd>
+                  </div>
+                </dl>
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-outline-secondary" id="btn-imprimir-comprobante" type="button">
+                  <i class="bi bi-printer" aria-hidden="true"></i>
+                  Imprimir
+                </button>
+                <button class="btn btn-outline-secondary" id="btn-descargar-comprobante" type="button">
+                  <i class="bi bi-download" aria-hidden="true"></i>
+                  Descargar comprobante
+                </button>
+                <button class="btn btn-warning fw-bold" id="btn-reserva-confirmacion-nueva" type="button" data-bs-dismiss="modal">
+                  <i class="bi bi-plus-circle" aria-hidden="true"></i>
+                  Nueva reserva
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
 
         <div class="row g-4 align-items-start d-none" aria-hidden="true">
           <div class="col-12 col-lg-5">
@@ -632,6 +701,8 @@
     <i class="bi bi-whatsapp"></i>
   </a>
   <script src="bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/pages/validaciones-reservas.js"></script>
+  <script src="js/pages/reservas-json-manager.js"></script>
   <script src="js/pages/reserva.js"></script>
 </body>
 </html>

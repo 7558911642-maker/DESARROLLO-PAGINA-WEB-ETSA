@@ -275,6 +275,14 @@
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 14px;
+  align-items: start;
+}
+
+.testimonio-form__campo {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
 .testimonio-form input,
@@ -308,6 +316,51 @@
 .testimonio-form textarea:focus {
   border-color: var(--naranja);
   box-shadow: 0 0 0 4px rgba(249, 115, 22, .16);
+}
+
+.testimonio-form input.is-valid,
+.testimonio-form select.is-valid,
+.testimonio-form textarea.is-valid {
+  border-color: #16a34a;
+  background-color: #f8fff9;
+}
+
+.testimonio-form input.is-valid:focus,
+.testimonio-form select.is-valid:focus,
+.testimonio-form textarea.is-valid:focus {
+  border-color: #16a34a;
+  box-shadow: 0 0 0 4px rgba(22, 163, 74, .16);
+}
+
+.testimonio-form input.is-invalid,
+.testimonio-form select.is-invalid,
+.testimonio-form textarea.is-invalid {
+  border-color: #dc2626;
+  background-color: #fffafa;
+}
+
+.testimonio-form input.is-invalid:focus,
+.testimonio-form select.is-invalid:focus,
+.testimonio-form textarea.is-invalid:focus {
+  border-color: #dc2626;
+  box-shadow: 0 0 0 4px rgba(220, 38, 38, .14);
+}
+
+.testimonio-form__mensaje {
+  min-height: 1.15rem;
+  margin: 0;
+  color: #64748b;
+  font-size: .78rem;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.testimonio-form__mensaje--error {
+  color: #dc2626;
+}
+
+.testimonio-form__mensaje--success {
+  color: #15803d;
 }
 
 .testimonio-form button {

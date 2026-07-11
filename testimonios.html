@@ -263,45 +263,66 @@
           </p>
         </div>
 
-        <form class="testimonio-form" action="mailto:informes@etsa.pe" method="post" enctype="text/plain">
+        <form class="testimonio-form" id="formTestimonio" action="mailto:informes@etsa.pe" method="post" enctype="text/plain" novalidate>
           <div class="testimonio-form__fila">
-            <label for="nombre" class="sr-only">Nombre completo</label>
-            <input
-              type="text"
-              id="nombre"
-              name="nombre"
-              placeholder="Nombre completo*"
-              autocomplete="name"
-              required
-            >
+            <div class="testimonio-form__campo">
+              <label for="nombre" class="sr-only">Nombre completo</label>
+              <input
+                type="text"
+                id="nombre"
+                name="nombre"
+                placeholder="Nombre completo*"
+                autocomplete="name"
+                minlength="3"
+                maxlength="60"
+                aria-describedby="nombreMensaje"
+                required
+              >
+              <p class="testimonio-form__mensaje" id="nombreMensaje" aria-live="polite"></p>
+            </div>
 
-            <label for="tipo" class="sr-only">Tipo de usuario</label>
-            <input
-              type="text"
-              id="tipo"
-              name="tipo"
-              placeholder="Ejemplo: pasajero frecuente*"
-              required
-            >
+            <div class="testimonio-form__campo">
+              <label for="tipo" class="sr-only">Tipo de usuario</label>
+              <input
+                type="text"
+                id="tipo"
+                name="tipo"
+                placeholder="Ejemplo: pasajero frecuente*"
+                minlength="3"
+                maxlength="50"
+                aria-describedby="tipoMensaje"
+                required
+              >
+              <p class="testimonio-form__mensaje" id="tipoMensaje" aria-live="polite"></p>
+            </div>
           </div>
 
-          <label for="calificacion" class="sr-only">Calificacion del servicio</label>
-          <select id="calificacion" name="calificacion" required>
-            <option value="">Calificaci&oacute;n del servicio*</option>
-            <option value="5">Excelente</option>
-            <option value="4">Muy bueno</option>
-            <option value="3">Bueno</option>
-            <option value="2">Regular</option>
-            <option value="1">Malo</option>
-          </select>
+          <div class="testimonio-form__campo">
+            <label for="calificacion" class="sr-only">Calificacion del servicio</label>
+            <select id="calificacion" name="calificacion" aria-describedby="calificacionMensaje" required>
+              <option value="">Calificaci&oacute;n del servicio*</option>
+              <option value="5">Excelente</option>
+              <option value="4">Muy bueno</option>
+              <option value="3">Bueno</option>
+              <option value="2">Regular</option>
+              <option value="1">Malo</option>
+            </select>
+            <p class="testimonio-form__mensaje" id="calificacionMensaje" aria-live="polite"></p>
+          </div>
 
-          <label for="mensaje" class="sr-only">Mensaje del testimonio</label>
-          <textarea
-            id="mensaje"
-            name="mensaje"
-            placeholder="Escribe tu testimonio*"
-            required
-          ></textarea>
+          <div class="testimonio-form__campo">
+            <label for="mensaje" class="sr-only">Mensaje del testimonio</label>
+            <textarea
+              id="mensaje"
+              name="mensaje"
+              placeholder="Escribe tu testimonio*"
+              minlength="20"
+              maxlength="500"
+              aria-describedby="mensajeMensaje"
+              required
+            ></textarea>
+            <p class="testimonio-form__mensaje" id="mensajeMensaje" aria-live="polite"></p>
+          </div>
 
           <button type="submit">
             Enviar testimonio
@@ -471,6 +492,7 @@
 
   <!-- Bootstrap JS -->
   <script src="bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/pages/testimonios.js"></script>
   <script>
     (() => {
       const slider = document.getElementById("testimoniosSlider");

@@ -214,3 +214,196 @@
     document.querySelectorAll(BANNER_SELECTORS.join(",")).forEach(initBannerCarousel);
   });
 })();
+
+(() => {
+  const mobileQuery = window.matchMedia("(max-width: 767.98px)");
+
+  const initDetalleDatosSlider = (track) => {
+    if (track.dataset.detalleDatosSlider === "ready") {
+      return;
+    }
+
+    const slides = Array.from(track.children);
+    if (slides.length < 2) {
+      return;
+    }
+
+    let activeSlide = 0;
+
+    track.classList.add("detalle-datos-slider");
+    track.dataset.detalleDatosSlider = "ready";
+
+    const dots = document.createElement("div");
+    dots.className = "detalle-datos-slider-dots";
+    dots.setAttribute("aria-label", "Selector de tarjetas informativas");
+
+    slides.forEach((_, index) => {
+      const dot = document.createElement("button");
+      dot.className = "detalle-datos-slider-dot";
+      dot.type = "button";
+      dot.setAttribute("aria-label", `Ver dato ${index + 1}`);
+      dot.addEventListener("click", () => setActiveSlide(index));
+      dots.appendChild(dot);
+    });
+
+    track.insertAdjacentElement("afterend", dots);
+
+    const dotButtons = Array.from(dots.children);
+
+    function updateActiveState(index) {
+      activeSlide = (index + slides.length) % slides.length;
+
+      slides.forEach((slide, slideIndex) => {
+        slide.classList.toggle("is-active", slideIndex === activeSlide);
+      });
+
+      dotButtons.forEach((dot, dotIndex) => {
+        const isActive = dotIndex === activeSlide;
+        dot.classList.toggle("is-active", isActive);
+        if (isActive) {
+          dot.setAttribute("aria-current", "true");
+        } else {
+          dot.removeAttribute("aria-current");
+        }
+      });
+    }
+
+    function setActiveSlide(index) {
+      updateActiveState(index);
+
+      if (!mobileQuery.matches) {
+        return;
+      }
+
+      if (!track.clientWidth) {
+        return;
+      }
+
+      track.scrollTo({
+        left: activeSlide * track.clientWidth,
+        behavior: "smooth",
+      });
+    }
+
+    track.addEventListener("scroll", () => {
+      if (!mobileQuery.matches || !track.clientWidth) {
+        return;
+      }
+
+      const nextSlide = Math.max(0, Math.min(slides.length - 1, Math.round(track.scrollLeft / track.clientWidth)));
+      if (nextSlide !== activeSlide) {
+        updateActiveState(nextSlide);
+      }
+    }, { passive: true });
+
+    window.addEventListener("resize", () => {
+      if (!mobileQuery.matches || !track.clientWidth) {
+        return;
+      }
+
+      track.scrollLeft = activeSlide * track.clientWidth;
+    });
+
+    updateActiveState(0);
+  };
+
+  document.addEventListener("DOMContentLoaded", () => {
+    document
+      .querySelectorAll(".detalle-destino-texto > .row.g-3.mt-4")
+      .forEach(initDetalleDatosSlider);
+  });
+})();
+
+(() => {
+  const pairQuery = window.matchMedia("(max-width: 991.98px)");
+
+  const initActividadesParesSlider = (track) => {
+    if (track.dataset.actividadesParesSlider === "ready") {
+      return;
+    }
+
+    const slides = Array.from(track.children);
+    const pageCount = Math.ceil(slides.length / 2);
+    if (pageCount < 2) {
+      return;
+    }
+
+    let activePage = 0;
+    let startX = 0;
+    let startY = 0;
+
+    track.classList.add("actividades-pares-slider");
+    track.dataset.actividadesParesSlider = "ready";
+
+    const oldDots = track.nextElementSibling;
+    if (oldDots?.classList.contains("detalle-slider-dots")) {
+      oldDots.remove();
+    }
+
+    const dots = document.createElement("div");
+    dots.className = "actividades-pares-dots";
+    dots.setAttribute("aria-label", "Selector de actividades recomendadas");
+
+    Array.from({ length: pageCount }).forEach((_, index) => {
+      const dot = document.createElement("button");
+      dot.className = "actividades-pares-dot";
+      dot.type = "button";
+      dot.setAttribute("aria-label", `Ver actividades ${index * 2 + 1} y ${Math.min(index * 2 + 2, slides.length)}`);
+      dot.addEventListener("click", () => setActivePage(index));
+      dots.appendChild(dot);
+    });
+
+    track.insertAdjacentElement("afterend", dots);
+    const dotButtons = Array.from(dots.children);
+
+    function setActivePage(index) {
+      activePage = Math.max(0, Math.min(pageCount - 1, index));
+      track.style.setProperty("--actividad-pair-slide", activePage);
+
+      dotButtons.forEach((dot, dotIndex) => {
+        const isActive = dotIndex === activePage;
+        dot.classList.toggle("is-active", isActive);
+        if (isActive) {
+          dot.setAttribute("aria-current", "true");
+        } else {
+          dot.removeAttribute("aria-current");
+        }
+      });
+    }
+
+    const handleSwipe = (endX, endY) => {
+      if (!pairQuery.matches) {
+        return;
+      }
+
+      const distanceX = endX - startX;
+      const distanceY = endY - startY;
+
+      if (Math.abs(distanceX) < 45 || Math.abs(distanceX) < Math.abs(distanceY)) {
+        return;
+      }
+
+      setActivePage(activePage + (distanceX < 0 ? 1 : -1));
+    };
+
+    track.addEventListener("touchstart", (event) => {
+      const touch = event.touches[0];
+      startX = touch.clientX;
+      startY = touch.clientY;
+    }, { passive: true });
+
+    track.addEventListener("touchend", (event) => {
+      const touch = event.changedTouches[0];
+      handleSwipe(touch.clientX, touch.clientY);
+    });
+
+    window.addEventListener("resize", () => setActivePage(activePage));
+    setActivePage(0);
+  };
+
+  document.addEventListener("DOMContentLoaded", () => {
+    document
+      .querySelectorAll(".actividades-destino .col-12.col-lg-7 > .row")
+      .forEach(initActividadesParesSlider);
+  });
+})();

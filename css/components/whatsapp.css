@@ -25,105 +25,28 @@
   background-color: #1ebe5d;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+@media (min-width: 992px) {
+  .whatsapp-flotante {
+    width: 46px;
+    height: 46px;
+    right: 22px;
+    bottom: 18px;
+  }
+
+  .whatsapp-flotante i {
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .whatsapp-flotante {
+    width: 50px;
+    height: 50px;
+    right: 16px;
+    bottom: 16px;
+  }
+
+  .whatsapp-flotante i {
+    font-size: 26px;
+  }
+}

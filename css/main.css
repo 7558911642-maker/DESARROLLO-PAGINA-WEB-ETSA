@@ -333,3 +333,178 @@ body.pagina-detalle-ruta .breadcrumb-rutas ol::-webkit-scrollbar {
     white-space: nowrap;
   }
 }
+
+.detalle-datos-slider-dots {
+  display: none;
+}
+
+@media (max-width: 767.98px) {
+  body.pagina-detalle-ruta .detalle-destino-texto {
+    overflow: visible !important;
+  }
+
+  body.pagina-detalle-ruta .detalle-datos-slider {
+    --bs-gutter-x: 0;
+    --bs-gutter-y: 0;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    justify-content: flex-start !important;
+    align-items: stretch !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 24px 0 0 !important;
+    padding: 8px 0 12px !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  body.pagina-detalle-ruta .detalle-datos-slider::-webkit-scrollbar {
+    display: none;
+  }
+
+  body.pagina-detalle-ruta .detalle-datos-slider > .col-12 {
+    flex: 0 0 100% !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    display: block !important;
+    padding: 0 !important;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+
+  body.pagina-detalle-ruta .detalle-datos-slider .detalle-dato {
+    width: min(100%, 360px) !important;
+    min-height: 172px;
+    margin: 0 auto !important;
+    padding: 22px 20px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 12px !important;
+    text-align: center !important;
+  }
+
+  body.pagina-detalle-ruta .detalle-datos-slider .detalle-dato i {
+    margin: 0 auto !important;
+  }
+
+  body.pagina-detalle-ruta .detalle-datos-slider-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 9px;
+    margin-top: 8px;
+  }
+
+  body.pagina-detalle-ruta .detalle-datos-slider-dot {
+    width: 10px;
+    height: 10px;
+    padding: 0;
+    border: 0;
+    border-radius: 999px;
+    background-color: rgba(15, 23, 42, 0.22);
+    cursor: pointer;
+    transition: width 0.25s ease, background-color 0.25s ease;
+  }
+
+  body.pagina-detalle-ruta .detalle-datos-slider-dot.is-active {
+    width: 30px;
+    background-color: var(--naranja);
+  }
+
+  body.pagina-detalle-ruta .detalle-datos-slider-dot:focus-visible {
+    outline: 3px solid rgba(255, 106, 0, 0.28);
+    outline-offset: 4px;
+  }
+}
+
+.actividades-pares-dots {
+  display: none;
+}
+
+@media (max-width: 991.98px) {
+  body.pagina-detalle-ruta .actividades-destino .col-12.col-lg-7 {
+    overflow: hidden !important;
+  }
+
+  body.pagina-detalle-ruta .actividades-destino .col-12.col-lg-7 > .row.actividades-pares-slider {
+    --actividad-pair-slide: 0;
+    --bs-gutter-x: 18px;
+    --bs-gutter-y: 0;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    justify-content: flex-start !important;
+    align-items: stretch !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding: 8px 0 10px !important;
+    overflow: visible !important;
+    transform: translate3d(calc(var(--actividad-pair-slide) * -100%), 0, 0) !important;
+    transition: transform 0.42s cubic-bezier(0.22, 0.61, 0.36, 1);
+    touch-action: pan-y;
+    will-change: transform;
+  }
+
+  body.pagina-detalle-ruta .actividades-destino .col-12.col-lg-7 > .row.actividades-pares-slider > [class*="col-"] {
+    flex: 0 0 50% !important;
+    width: 50% !important;
+    max-width: 50% !important;
+    display: block !important;
+    padding-right: calc(var(--bs-gutter-x) * 0.5) !important;
+    padding-left: calc(var(--bs-gutter-x) * 0.5) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  body.pagina-detalle-ruta .actividades-destino .col-12.col-lg-7 > .row.actividades-pares-slider .actividad-item {
+    width: min(100%, 320px) !important;
+    min-height: 230px;
+    margin: 0 auto !important;
+    padding: 26px 18px !important;
+    display: flex !important;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  body.pagina-detalle-ruta .actividades-destino .col-12.col-lg-7 > .row.actividades-pares-slider + .detalle-slider-dots {
+    display: none !important;
+  }
+
+  body.pagina-detalle-ruta .actividades-pares-dots {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    gap: 9px;
+    margin-top: 16px;
+    position: relative;
+    z-index: 3;
+  }
+
+  body.pagina-detalle-ruta .actividades-pares-dot {
+    flex: 0 0 auto;
+    display: inline-block !important;
+    width: 10px;
+    height: 10px;
+    padding: 0;
+    border: 0;
+    border-radius: 999px;
+    background-color: rgba(15, 23, 42, 0.22);
+    cursor: pointer;
+    transition: width 0.25s ease, background-color 0.25s ease;
+  }
+
+  body.pagina-detalle-ruta .actividades-pares-dot.is-active {
+    width: 30px;
+    background-color: var(--naranja);
+  }
+
+  body.pagina-detalle-ruta .actividades-pares-dot:focus-visible {
+    outline: 3px solid rgba(255, 255, 255, 0.45);
+    outline-offset: 4px;
+  }
+}

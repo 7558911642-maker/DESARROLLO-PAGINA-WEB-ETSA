@@ -9,7 +9,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const { patrones, utilidades } = window.EtsaValidacionesFormularios;
   const calificacionesPermitidas = ["1", "2", "3", "4", "5"];
 
-  window.EtsaValidacionesFormularios.crear(formulario, {
+  let validador;
+
+  validador = window.EtsaValidacionesFormularios.crear(formulario, {
     campos: {
       nombre: {
         requerido: true,
@@ -67,6 +69,70 @@ document.addEventListener("DOMContentLoaded", function () {
           maximo: "El testimonio no debe superar 600 caracteres."
         }
       }
+    },
+    alEnviarValido: function (evento, datos) {
+      evento.preventDefault();
+
+      if (!window.EtsaApiFormularios) return;
+
+      window.EtsaApiFormularios.enviar(formulario, "/api/testimonios", datos, {
+        mensajeExito: "Testimonio enviado correctamente. Gracias por compartir tu experiencia.",
+        alExito: function () {
+          validador?.limpiar();
+        }
+      });
     }
   });
 });
+
+(function () {
+  const slider = document.getElementById("testimoniosSlider");
+  const dots = document.querySelectorAll(".testimonios__dot");
+
+  if (!slider || !dots.length) return;
+
+  const cards = Array.from(slider.querySelectorAll(".testimonio-card"));
+  let ticking = false;
+
+  const setActiveDot = function (index) {
+    dots.forEach(function (dot, dotIndex) {
+      const active = dotIndex === index;
+      dot.classList.toggle("testimonios__dot--activo", active);
+      dot.toggleAttribute("aria-current", active);
+    });
+  };
+
+  const getCurrentIndex = function () {
+    const sliderCenter = slider.scrollLeft + slider.clientWidth / 2;
+    return cards.reduce(function (closestIndex, card, index) {
+      const cardCenter = card.offsetLeft + card.clientWidth / 2;
+      const closestCard = cards[closestIndex];
+      const closestCenter = closestCard.offsetLeft + closestCard.clientWidth / 2;
+      return Math.abs(cardCenter - sliderCenter) < Math.abs(closestCenter - sliderCenter)
+        ? index
+        : closestIndex;
+    }, 0);
+  };
+
+  dots.forEach(function (dot, index) {
+    dot.addEventListener("click", function () {
+      cards[index].scrollIntoView({
+        behavior: "smooth",
+        block: "nearest",
+        inline: "start"
+      });
+      setActiveDot(index);
+    });
+  });
+
+  slider.addEventListener("scroll", function () {
+    if (ticking) return;
+
+    window.requestAnimationFrame(function () {
+      setActiveDot(getCurrentIndex());
+      ticking = false;
+    });
+
+    ticking = true;
+  }, { passive: true });
+})();

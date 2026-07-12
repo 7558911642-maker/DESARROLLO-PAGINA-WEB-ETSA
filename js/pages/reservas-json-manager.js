@@ -1,9 +1,6 @@
 "use strict";
 
 (function (global) {
-  const STORAGE_KEY = "etsa.reservas.registros";
-  const CONFIG_KEY = "etsa.reservas.configuracion";
-
   const CONFIG_DEFAULT = {
     version: "1.0.0",
     moneda: "PEN",
@@ -12,24 +9,18 @@
     asientosOcupados: ["2", "4", "6", "8", "10", "13"],
   };
 
-  const memoria = {
-    reservas: [],
-    configuracion: { ...CONFIG_DEFAULT },
-  };
-
   let configuracion = { ...CONFIG_DEFAULT };
-  let persistencia = "localStorage";
+  let reservasOcupadas = [];
+  let persistencia = "api-json";
 
-  async function inicializar(opciones) {
-    persistencia = puedeUsarLocalStorage() ? "localStorage" : "memoria";
-    const datosJson = await leerJsonInicial(opciones?.fuenteJson);
+  async function inicializar() {
+    persistencia = "api-json";
 
-    configuracion = normalizarConfiguracion(datosJson);
-    guardarConfiguracion(configuracion);
+    const datosConfig = await obtenerJson("/api/reservas/config");
+    const datosOcupados = await obtenerJson("/api/reservas/ocupadas");
 
-    if (!existeColeccion()) {
-      guardarColeccion(normalizarReservas(datosJson?.reservas || []));
-    }
+    configuracion = normalizarConfiguracion(datosConfig?.data);
+    reservasOcupadas = normalizarReservasOcupadas(datosOcupados?.data || []);
 
     return {
       persistencia,
@@ -37,51 +28,28 @@
     };
   }
 
-  async function leerJsonInicial(fuenteJson) {
-    if (!fuenteJson || typeof fetch !== "function") {
-      return null;
-    }
-
-    try {
-      const respuesta = await fetch(fuenteJson, { cache: "no-store" });
-
-      if (!respuesta.ok) {
-        return null;
-      }
-
-      return await respuesta.json();
-    } catch (error) {
-      console.info(
-        "No se pudo leer data/reservas.json. Se usara localStorage como almacenamiento del navegador.",
-        error
-      );
-      return null;
-    }
-  }
-
   function listar() {
-    return leerColeccion().sort(function (a, b) {
-      return new Date(b.actualizadoEn || b.creadoEn) - new Date(a.actualizadoEn || a.creadoEn);
-    });
+    return [...reservasOcupadas];
   }
 
-  function guardar(datos) {
-    const reservas = leerColeccion();
-    const ahora = new Date().toISOString();
+  async function guardar(datos) {
+    const respuesta = await fetch("/api/reservas", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json",
+      },
+      body: JSON.stringify(datos),
+    });
 
-    const reserva = {
-      ...normalizarReserva(datos),
-      id: crearId(),
-      codigo: crearCodigo(),
-      estado: configuracion.estadoInicial || CONFIG_DEFAULT.estadoInicial,
-      moneda: configuracion.moneda || CONFIG_DEFAULT.moneda,
-      precio: configuracion.precioBase || CONFIG_DEFAULT.precioBase,
-      creadoEn: ahora,
-      actualizadoEn: ahora,
-    };
+    const payload = await leerRespuestaJson(respuesta);
 
-    reservas.push(reserva);
-    guardarColeccion(reservas);
+    if (!respuesta.ok || payload.ok === false) {
+      throw new Error(obtenerMensajeApi(payload) || "No se pudo registrar la reserva.");
+    }
+
+    const reserva = normalizarReservaRespuesta(payload.data);
+    reservasOcupadas = [extraerReservaOcupada(reserva), ...reservasOcupadas];
 
     return reserva;
   }
@@ -94,13 +62,51 @@
     return { ...configuracion };
   }
 
-  function normalizarConfiguracion(datosJson) {
-    const defaults = datosJson?.defaults || {};
-    const asientos = datosJson?.asientos || {};
+  async function obtenerJson(endpoint) {
+    try {
+      const respuesta = await fetch(endpoint, {
+        headers: { "Accept": "application/json" },
+        cache: "no-store",
+      });
+
+      if (!respuesta.ok) {
+        return null;
+      }
+
+      return await respuesta.json();
+    } catch (error) {
+      console.info("No se pudo conectar con la API de reservas.", error);
+      return null;
+    }
+  }
+
+  async function leerRespuestaJson(respuesta) {
+    try {
+      return await respuesta.json();
+    } catch (error) {
+      return {};
+    }
+  }
+
+  function obtenerMensajeApi(payload) {
+    if (payload?.mensaje) {
+      return payload.mensaje;
+    }
+
+    if (payload?.errores && typeof payload.errores === "object") {
+      return Object.values(payload.errores).find(Boolean) || "";
+    }
+
+    return "";
+  }
+
+  function normalizarConfiguracion(datos) {
+    const defaults = datos?.defaults || {};
+    const asientos = datos?.asientos || {};
 
     return {
       ...CONFIG_DEFAULT,
-      version: datosJson?.version || CONFIG_DEFAULT.version,
+      version: datos?.version || CONFIG_DEFAULT.version,
       moneda: defaults.moneda || CONFIG_DEFAULT.moneda,
       precioBase: Number(defaults.precioBase || CONFIG_DEFAULT.precioBase),
       estadoInicial: defaults.estadoInicial || CONFIG_DEFAULT.estadoInicial,
@@ -110,101 +116,47 @@
     };
   }
 
-  function normalizarReservas(reservas) {
+  function normalizarReservasOcupadas(reservas) {
     if (!Array.isArray(reservas)) {
       return [];
     }
 
     return reservas.map(function (reserva) {
       return {
-        ...normalizarReserva(reserva),
-        id: reserva.id || crearId(),
-        codigo: reserva.codigo || crearCodigo(),
-        estado: reserva.estado || configuracion.estadoInicial,
-        moneda: reserva.moneda || configuracion.moneda,
-        precio: Number(reserva.precio || configuracion.precioBase),
-        creadoEn: reserva.creadoEn || new Date().toISOString(),
-        actualizadoEn: reserva.actualizadoEn || reserva.creadoEn || new Date().toISOString(),
+        origen: String(reserva.origen || "").trim(),
+        destino: String(reserva.destino || "").trim(),
+        fecha: convertirISOAFecha(reserva.fecha),
+        asiento: String(reserva.asiento || "").trim(),
       };
     });
   }
 
-  function normalizarReserva(datos) {
+  function normalizarReservaRespuesta(reserva) {
     return {
-      nombre: String(datos.nombre || "").trim(),
-      dni: String(datos.dni || "").trim(),
-      origen: String(datos.origen || "").trim(),
-      destino: String(datos.destino || "").trim(),
-      fecha: String(datos.fecha || "").trim(),
-      asiento: String(datos.asiento || "").trim(),
-      observaciones: String(datos.observaciones || "").trim(),
+      ...reserva,
+      fecha: convertirISOAFecha(reserva?.fecha),
+      asiento: String(reserva?.asiento || ""),
     };
   }
 
-  function existeColeccion() {
-    if (persistencia === "memoria") {
-      return memoria.reservas.length > 0;
-    }
-
-    return localStorage.getItem(STORAGE_KEY) !== null;
+  function extraerReservaOcupada(reserva) {
+    return {
+      origen: reserva.origen,
+      destino: reserva.destino,
+      fecha: reserva.fecha,
+      asiento: String(reserva.asiento),
+    };
   }
 
-  function leerColeccion() {
-    if (persistencia === "memoria") {
-      return [...memoria.reservas];
+  function convertirISOAFecha(valor) {
+    const texto = String(valor || "").trim();
+
+    if (/^\d{4}-\d{2}-\d{2}$/.test(texto)) {
+      const partes = texto.split("-");
+      return [partes[2], partes[1], partes[0]].join("/");
     }
 
-    try {
-      return JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
-    } catch (error) {
-      console.warn("No se pudo leer la coleccion de reservas.", error);
-      return [];
-    }
-  }
-
-  function guardarColeccion(reservas) {
-    if (persistencia === "memoria") {
-      memoria.reservas = [...reservas];
-      return;
-    }
-
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(reservas));
-  }
-
-  function guardarConfiguracion(datos) {
-    if (persistencia === "memoria") {
-      memoria.configuracion = { ...datos };
-      return;
-    }
-
-    localStorage.setItem(CONFIG_KEY, JSON.stringify(datos));
-  }
-
-  function puedeUsarLocalStorage() {
-    try {
-      const prueba = "__etsa_reservas_test__";
-      localStorage.setItem(prueba, prueba);
-      localStorage.removeItem(prueba);
-      return true;
-    } catch (error) {
-      return false;
-    }
-  }
-
-  function crearId() {
-    if (global.crypto?.randomUUID) {
-      return global.crypto.randomUUID();
-    }
-
-    return `reserva-${Date.now()}-${Math.random().toString(16).slice(2)}`;
-  }
-
-  function crearCodigo() {
-    const fecha = new Date();
-    const parteFecha = fecha.toISOString().slice(0, 10).replace(/-/g, "");
-    const aleatorio = Math.random().toString(36).slice(2, 6).toUpperCase();
-
-    return `RSV-${parteFecha}-${aleatorio}`;
+    return texto;
   }
 
   global.ReservasJsonManager = {

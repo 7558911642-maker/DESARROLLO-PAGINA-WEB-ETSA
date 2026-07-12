@@ -56,7 +56,7 @@
     const storage = window.ReservasJsonManager;
     const validator = window.ReservasValidaciones;
 
-    await storage.inicializar({ fuenteJson: "data/reservas.json" });
+    await storage.inicializar();
 
     const estado = {
       reservas: storage.listar(),
@@ -392,7 +392,7 @@
     ui.contador.classList.toggle("reserva-ayuda-campo--error", longitud > limite);
   }
 
-  function registrarOActualizarReserva(ui, estado, storage, validator) {
+  async function registrarOActualizarReserva(ui, estado, storage, validator) {
     normalizarCampoAlPerderFoco(ui, "nombre", validator);
     normalizarCampoAlPerderFoco(ui, "observaciones", validator);
     sincronizarDisponibilidadAsientos(ui, estado);
@@ -411,7 +411,15 @@
       return;
     }
 
-    const reserva = storage.guardar(datos);
+    let reserva;
+
+    try {
+      reserva = await storage.guardar(datos);
+    } catch (error) {
+      mostrarMensaje(ui, error.message || "No se pudo registrar la reserva en el servidor.", false);
+      return;
+    }
+
     estado.reservas = storage.listar();
     estado.ultimaReserva = reserva;
     sincronizarDisponibilidadAsientos(ui, estado);

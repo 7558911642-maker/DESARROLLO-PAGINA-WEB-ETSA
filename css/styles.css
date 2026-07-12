@@ -1,2 +1,2 @@
-/* Compatibilidad: el CSS ahora vive en modulos importados por main.css. */
+/* Compatibilidad: el CSS ahora vive en módulos importados por main.css. */
 @import url("./main.css");

@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Acceso empresa ETSA</title>
+  <link rel="stylesheet" href="/admin/admin.css">
+</head>
+<body class="admin-login">
+  <main class="admin-login__panel">
+    <p class="admin-eyebrow">ETSA Sol Amazonense</p>
+    <h1>Acceso empresa</h1>
+    <form id="admin-login-form" autocomplete="off">
+      <label>
+        Usuario
+        <input type="text" name="usuario" required autocomplete="username">
+      </label>
+      <label>
+        Contrasena
+        <input type="password" name="password" required autocomplete="current-password">
+      </label>
+      <button type="submit">Ingresar</button>
+      <p class="admin-message" data-admin-message role="status" aria-live="polite"></p>
+    </form>
+  </main>
+  <script src="/admin/admin.js"></script>
+</body>
+</html>

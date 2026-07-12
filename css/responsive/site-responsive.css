@@ -1,25 +1,25 @@
 /* 
-   RESPONSIVE.CSS — ETSA SOL AMAZONENSE
+   CSS RESPONSIVO — ETSA SOL AMAZONENSE
    Sistema de diseño adaptable para todos los dispositivos
 
-   Breakpoints oficiales (según docente):
-     · Smartphone   : 0px   – 480px
+   Puntos de quiebre oficiales (según docente):
+     · Celular   : 0px   – 480px
      · Tablet       : 481px – 768px
      · PC Pequeña   : 769px – 1024px
      · Laptop       : 1025px – 1200px
-     · Desktop / TV : 1201px en adelante
+     · Escritorio / TV : 1201px en adelante
 
    Orden de las secciones:
      00. BASE GLOBAL — evitar desbordamientos en todos los tamaños
-     01. SMARTPHONE  (max-width: 480px)
+     01. CELULAR  (max-width: 480px)
      02. TABLET      (481px – 768px)
      03. PC PEQUEÑA  (769px – 1024px)
      04. LAPTOP      (1025px – 1200px)
-     05. DESKTOP/TV  (1201px+)   */
+     05. ESCRITORIO/TV  (1201px+)   */
 
 /* 00. BASE GLOBAL
-   Reglas que aplican a TODOS los tamaños y evitan scroll horizontal */
-/* Elimina el scroll horizontal en la raíz */
+   Reglas que aplican a TODOS los tamaños y evitan desplazamiento horizontal */
+/* Elimina el desplazamiento horizontal en la raíz */
 html,
 body {
   width: 100%;
@@ -42,18 +42,18 @@ img {
   object-fit: cover;   /* Recorte elegante cuando hay altura fija */
 }
 
-/* Las secciones no generan overflow oculto inesperado en escritorio */
+/* Las secciones no generan desbordamiento oculto inesperado en escritorio */
 section {
   width: 100%;
 }
 
-/* 01. SMARTPHONE — 0px a 480px */
+/* 01. CELULAR — 0px a 480px */
 @media screen and (max-width: 480px) {
 
   /*  TIPOGRAFÍA GLOBAL
      Garantiza legibilidad en pantallas pequeñas */
   * {
-    word-wrap: break-word;      /* Corta palabras largas sin romper el layout */
+    word-wrap: break-word;      /* Corta palabras largas sin romper el diseño */
     overflow-wrap: break-word;
   }
 
@@ -62,7 +62,7 @@ section {
     line-height: 1.6;
   }
 
-  /*HEADER — Menú apilado verticalmente */
+  /*ENCABEZADO — Menú apilado verticalmente */
   .header {
     flex-direction: row;           /* Logo izquierda, hamburguesa derecha */
     flex-wrap: wrap;
@@ -72,7 +72,7 @@ section {
     gap: 10px;
   }
 
-  /* El nav no se muestra inline en móvil; el JS del panel lateral lo controla */
+  /* La navegación no se muestra en línea en móvil; JavaScript del panel lateral la controla */
   .header__nav {
     display: none;
   }
@@ -100,7 +100,7 @@ section {
     font-size: 32px;
   }
 
-  /* HEROES — Todos los banners superiores */
+  /* SECCIONES PRINCIPALES — Todos los banners superiores */
   .hero,
   .hero-viaje,
   .nosotros-hero,
@@ -118,7 +118,7 @@ section {
     min-height: auto;
   }
 
-  /* Títulos H1 de los heroes */
+  /* Títulos H1 de las secciones principales */
   .hero h1,
   .seguridad,
   .hero-viaje__contenido h1,
@@ -134,7 +134,7 @@ section {
     letter-spacing: 2px;
   }
 
-  /* Subtítulos/descripciones de los heroes */
+  /* Subtítulos/descripciones de las secciones principales */
   .hero-viaje__contenido p,
   .nosotros-hero__contenido p,
   .servicios-hero__contenido p,
@@ -146,13 +146,13 @@ section {
     letter-spacing: 1px;
   }
 
-  /* Cuadro de texto del hero del index */
+  /* Cuadro de texto de la sección principal del index */
   .hero-text {
     max-width: 100%;
     padding: 18px 16px;
   }
 
-  /* Botones del hero centrados */
+  /* Botones de la sección principal centrados */
   .hero .botones {
     justify-content: center;
   }
@@ -164,17 +164,17 @@ section {
     padding: 14px;
   }
 
-  /* Encomiendas hero: título grande clampea bien solo */
+  /* Sección principal de encomiendas: el título grande se ajusta correctamente */
   .encomiendas-hero__overlay h1 {
     font-size: clamp(40px, 12vw, 70px);
   }
 
-  /*INDEX — PROMOCIONES CARDS */
+  /*INDEX — PROMOCIONES TARJETAS */
   .index-promociones {
     padding: 50px 5% 60px;
   }
 
-  /* Header de la sección: apila título y flechas */
+  /* Encabezado de la sección: apila título y flechas */
   .index-promociones__header {
     flex-direction: column;
     align-items: flex-start;
@@ -185,7 +185,7 @@ section {
     font-size: 32px;
   }
 
-  /* Grid: 1 columna en móvil */
+  /* Cuadrícula: 1 columna en móvil */
   .index-promociones__grid {
     grid-template-columns: 1fr;
     gap: 20px;
@@ -205,7 +205,7 @@ section {
   }
 
 
-  /* INDEX — RUTAS CARDS */
+  /* INDEX — RUTAS TARJETAS */
   .index-rutas {
     padding: 40px 5%;
   }
@@ -220,7 +220,7 @@ section {
     font-size: 32px;
   }
 
-  /* Grid: 1 columna */
+  /* Cuadrícula: 1 columna */
   .index-rutas__grid {
     grid-template-columns: 1fr;
     gap: 16px;
@@ -367,7 +367,7 @@ section {
     padding: 50px 5% 60px;
   }
 
-  /* Grid: 1 columna */
+  /* Cuadrícula: 1 columna */
   .porque-grid {
     grid-template-columns: 1fr;
     gap: 28px;
@@ -398,7 +398,7 @@ section {
     font-size: 34px;
   }
 
-  /* Grid: 1 columna */
+  /* Cuadrícula: 1 columna */
   .galeria-destinos {
     grid-template-columns: 1fr !important;
     display: flex !important;
@@ -432,7 +432,7 @@ section {
     padding: 50px 5% 65px;
   }
 
-  /* Grid: 1 columna */
+  /* Cuadrícula: 1 columna */
   .promociones-container {
     grid-template-columns: 1fr !important;
     gap: 35px;
@@ -510,7 +510,7 @@ section {
     padding: 20px 5% 65px;
   }
 
-  /* Grid: 1 columna */
+  /* Cuadrícula: 1 columna */
   .testimonios__grid {
     grid-template-columns: 1fr;
     gap: 20px;
@@ -535,7 +535,7 @@ section {
     padding: 26px 18px;
   }
 
-  /* Fila de inputs → 1 columna */
+  /* Fila de campos → 1 columna */
   .testimonio-form__fila {
     grid-template-columns: 1fr;
     gap: 14px;
@@ -567,7 +567,7 @@ section {
     padding-bottom: 22px;
   }
 
-  /* Tabs: apilados */
+  /* Pestañas apiladas */
   .contacto-tabs {
     flex-direction: column;
     align-items: stretch;
@@ -612,8 +612,8 @@ section {
     padding: 18px 18px;
   }
 
-  /*  FOOTER  */
-  /* Apila las 4 columnas del footer */
+  /*  PIE DE PÁGINA  */
+  /* Apila las 4 columnas del pie de página */
   .footer-contenedor {
     grid-template-columns: 1fr;
     gap: 32px;
@@ -668,14 +668,14 @@ section {
     font-size: 26px;
   }
 
-} /* fin @media SMARTPHONE */
+} /* fin @media CELULAR */
 
 
 /* 02. TABLET — 481px a 768px */
 
 @media screen and (min-width: 481px) and (max-width: 768px) {
 
-  /* HEADER */
+  /* ENCABEZADO */
   .header {
     flex-wrap: wrap;
     justify-content: space-between;
@@ -707,7 +707,7 @@ section {
   }
 
 
-  /* HEROES */
+  /* SECCIONES PRINCIPALES */
   .hero,
   .hero-viaje,
   .nosotros-hero,
@@ -738,7 +738,7 @@ section {
   }
 
 
-  /* INDEX — Grids de promociones y rutas */
+  /* INDEX — Cuadrículas de promociones y rutas */
 
   /* Promociones index: 2 columnas */
   .index-promociones__grid {
@@ -940,7 +940,7 @@ section {
   }
 
 
-  /* FOOTER */
+  /* PIE DE PÁGINA */
   /* 2 columnas */
   .footer-contenedor {
     grid-template-columns: repeat(2, 1fr);
@@ -967,7 +967,7 @@ section {
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
 
-  /*  HEADER — Navegación visible */
+  /*  ENCABEZADO — Navegación visible */
   .header {
     padding: 0 4%;
     gap: 16px;
@@ -987,7 +987,7 @@ section {
     display: none; /* El menú lateral no es necesario aquí */
   }
 
-  /* HEROES */
+  /* SECCIONES PRINCIPALES */
   .hero h1,
   .seguridad {
     font-size: clamp(42px, 5vw, 60px);
@@ -1004,7 +1004,7 @@ section {
     font-size: clamp(52px, 7vw, 80px);
   }
 
-  /* INDEX — Grids
+  /* INDEX — Cuadrículas
      ------* {
   margin: 0;
   padding: 0;
@@ -1115,7 +1115,7 @@ section {
   }
 
 
-  /* FOOTER */
+  /* PIE DE PÁGINA */
   /* 2 columnas */
   .footer-contenedor {
     grid-template-columns: repeat(2, 1fr);
@@ -1135,7 +1135,7 @@ section {
 
 @media screen and (min-width: 1025px) and (max-width: 1200px) {
 
-  /* HEADER */
+  /* ENCABEZADO */
   .header {
     padding: 0 3%;
   }
@@ -1149,7 +1149,7 @@ section {
   }
 
 
-  /* HEROES */
+  /* SECCIONES PRINCIPALES */
   .hero-viaje__contenido h1,
   .nosotros-hero__contenido h1,
   .rutas-hero__contenido h1,
@@ -1224,7 +1224,7 @@ section {
     gap: 26px;
   }
 
-  /*  FOOTER */
+  /*  PIE DE PÁGINA */
   /* 4 columnas */
   .footer-contenedor {
     grid-template-columns: 1.5fr 1fr 1.25fr 1.35fr;
@@ -1235,20 +1235,20 @@ section {
 } /* fin @media LAPTOP */
 
 
-/*  05. DESKTOP Y TV — 1201px en adelante */
+/*  05. ESCRITORIO Y TV — 1201px en adelante */
 
 @media screen and (min-width: 1201px) {
 
-  /*  HEADER */
+  /*  ENCABEZADO */
   .header {
     padding: 0 25px;
   }
 
   .btn-menu {
-    display: none; /* Nunca necesario en desktop */
+    display: none; /* Nunca necesario en escritorio */
   }
 
-  /* HEROES — Tamaños máximos para pantallas grandes */
+  /* SECCIONES PRINCIPALES — Tamaños máximos para pantallas grandes */
   .hero-viaje__contenido h1,
   .nosotros-hero__contenido h1,
   .rutas-hero__contenido h1,
@@ -1334,7 +1334,7 @@ section {
   }
 
 
-  /*  FOOTER */
+  /*  PIE DE PÁGINA */
   /* 4 columnas con proporciones originales */
   .footer-contenedor {
     grid-template-columns: 1.5fr 1fr 1.25fr 1.35fr;
@@ -1343,13 +1343,13 @@ section {
     padding: 45px 40px;
   }
 
-} /* fin @media DESKTOP Y TV */
+} /* fin @media ESCRITORIO Y TV */
 
 
-/* 06. VISIBILIDAD HEADER — Reglas exactas por breakpoint  
-   · Celular  (0 – 480px)   : logo + hamburguesa. SIN reserva, SIN nav
-   · Tablet   (481 – 768px) : logo + hamburguesa + botón RESERVA. SIN nav
-   · PC+      (769px +)     : logo + nav + botón RESERVA + hamburguesa (todo)
+/* 06. VISIBILIDAD ENCABEZADO — Reglas exactas por punto de quiebre  
+   · Celular  (0 – 480px)   : logo + hamburguesa. SIN reserva, SIN navegación
+   · Tablet   (481 – 768px) : logo + hamburguesa + botón RESERVA. SIN navegación
+   · PC+      (769px +)     : logo + navegación + botón RESERVA + hamburguesa (todo)
     ELULAR: solo logo y hamburguesa  */
 
 @media screen and (max-width: 480px) {
@@ -1364,7 +1364,7 @@ section {
   }
 
   .header__nav {
-    display: none !important;   /* Oculta el nav horizontal */
+    display: none !important;   /* Oculta la navegación horizontal */
   }
 }
 
@@ -1383,11 +1383,11 @@ section {
   }
 
   .header__nav {
-    display: none !important;   /* El nav horizontal sigue oculto */
+    display: none !important;   /* La navegación horizontal sigue oculta */
   }
 }
 
-/*  TABLET HORIZONTAL: reserva + hamburguesa, sin menu horizontal  */
+/*  TABLET HORIZONTAL: reserva + hamburguesa, sin menú horizontal  */
 @media screen and (min-width: 769px) and (max-width: 991.98px) {
   .btn-menu {
     display: flex !important;
@@ -1408,9 +1408,9 @@ section {
 
 
 /* 
-   FIX HEADER EN PC — Evita que el nav y el botón reserva rompan en 2 líneas
+   AJUSTE DEL ENCABEZADO EN PC — Evita que el navegación y el botón reserva rompan en 2 líneas
 
-   white-space: nowrap impide que "Nuestros servicios" y "RESERVA TU PASAJE"
+   white-space: nowrap evita que "Nuestros servicios" y "RESERVA TU PASAJE"
    se partan. Se reduce font-size progresivamente entre 769px y 1200px. */
 
 /* PC PEQUEÑA (769px – 1024px): reducción más agresiva */
@@ -1459,7 +1459,7 @@ section {
   }
 }
 
-/* DESKTOP (1201px+): tamaños originales, solo nowrap para seguridad */
+/* ESCRITORIO (1201px+): tamaños originales, solo nowrap para seguridad */
 @media screen and (min-width: 1201px) {
   .header__nav a,
   .nav a {
@@ -1472,7 +1472,7 @@ section {
 }
 
 /* ============================= */
-/* RESPONSIVE - CONTACTO HERO */
+/* CONTACTO RESPONSIVO - SECCIÓN PRINCIPAL */
 /* ============================= */
 
 @media (max-width: 991.98px) {

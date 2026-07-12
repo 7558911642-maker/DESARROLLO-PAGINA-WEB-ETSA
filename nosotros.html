@@ -12,22 +12,22 @@
   <!-- Estilos personalizados -->
   <link rel="stylesheet" href="css/main.css">
 
-  <!-- Tipografia -->
+  <!-- Tipografía -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <!-- Favicon -->
+  <!-- Icono del sitio -->
   <link rel="icon" href="img/marca/lofo.png" type="image/png">
 </head>
 
 <body class="pagina-nosotros">
-  <!-- HEADER CON BOOTSTRAP -->
+  <!-- ENCABEZADO CON BOOTSTRAP -->
     <div data-layout="header"></div>
 
 
   <!-- CONTENIDO PRINCIPAL -->
   <main>
-    <!-- HERO NOSOTROS -->
+    <!-- SECCIÓN PRINCIPAL NOSOTROS -->
     <section class="nosotros-hero page-hero" aria-labelledby="titulo-nosotros">
       <div class="nosotros-hero__contenido">
         <p class="nosotros-hero__etiqueta">Empresa regional</p>
@@ -50,7 +50,7 @@
       </div>
     </nav>
 
-    <!-- PRESENTACION EMPRESARIAL -->
+    <!-- PRESENTACIÓN EMPRESARIAL -->
     <section class="nosotros-presentacion" aria-labelledby="titulo-presentacion">
       <div class="nosotros-presentacion__contenido">
         <div class="nosotros-presentacion__texto">
@@ -105,7 +105,7 @@
       </div>
     </section>
 
-    <!-- MISION Y VISION -->
+    <!-- MISIÓN Y VISIÓN -->
     <section class="mision-vision" aria-label="Mision y vision de ETSA">
       <div class="mision-vision__contenido" id="misionVisionSlider">
         <article class="mision-vision__item">
@@ -217,77 +217,15 @@
     </section>
   </main>
 
-  <!-- FOOTER COMPARTIDO -->
+  <!-- PIE DE PÁGINA COMPARTIDO -->
   <div data-layout="footer"></div>
 
 
-  <!-- Bootstrap JS -->
+  <!-- JavaScript de Bootstrap -->
   <script src="js/components/layout-loader.js"></script>
 
   <script src="bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/main.js"></script>
-  <script>
-    (() => {
-      const dotGroups = document.querySelectorAll("[data-slider-dots]");
-
-      dotGroups.forEach((group) => {
-        const slider = document.getElementById(group.dataset.sliderDots);
-        const dots = Array.from(group.querySelectorAll(".nosotros-slider-dot"));
-
-        if (!slider || !dots.length) return;
-
-        const getItems = () => Array.from(slider.children).filter((item) => !item.hidden);
-        let ticking = false;
-
-        const setActiveDot = (index) => {
-          dots.forEach((dot, dotIndex) => {
-            const active = dotIndex === index;
-            dot.classList.toggle("nosotros-slider-dot--activo", active);
-            dot.toggleAttribute("aria-current", active);
-          });
-        };
-
-        const getCurrentIndex = () => {
-          const items = getItems();
-          const sliderCenter = slider.scrollLeft + slider.clientWidth / 2;
-
-          return items.reduce((closestIndex, item, index) => {
-            const itemCenter = item.offsetLeft + item.clientWidth / 2;
-            const closestItem = items[closestIndex];
-            const closestCenter = closestItem.offsetLeft + closestItem.clientWidth / 2;
-
-            return Math.abs(itemCenter - sliderCenter) < Math.abs(closestCenter - sliderCenter)
-              ? index
-              : closestIndex;
-          }, 0);
-        };
-
-        dots.forEach((dot, index) => {
-          dot.addEventListener("click", () => {
-            const item = getItems()[index];
-            if (!item) return;
-
-            item.scrollIntoView({
-              behavior: "smooth",
-              block: "nearest",
-              inline: "start"
-            });
-            setActiveDot(index);
-          });
-        });
-
-        slider.addEventListener("scroll", () => {
-          if (ticking) return;
-
-          window.requestAnimationFrame(() => {
-            setActiveDot(getCurrentIndex());
-            ticking = false;
-          });
-
-          ticking = true;
-        }, { passive: true });
-      });
-    })();
-  </script>
+  <script src="js/pages/nosotros.js"></script>
 </body>
 </html>

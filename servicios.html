@@ -12,247 +12,28 @@
   <!-- Estilos personalizados -->
   <link rel="stylesheet" href="css/main.css">
 
-  <!-- Tipografia -->
+  <!-- Tipografía -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
     rel="stylesheet">
-  <!-- Favicon -->
+  <!-- Icono del sitio -->
   <link rel="icon" href="img/marca/lofo.png" type="image/png">
-
-  <style>
-    .pagina-servicios .servicio-card {
-      position: relative;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-    }
-
-    .pagina-servicios .servicio-card::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      right: 0;
-      left: 0;
-      height: 4px;
-      background: linear-gradient(90deg, #ff7a18, #ea580c);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.25s ease;
-    }
-
-    .pagina-servicios .servicio-card:hover,
-    .pagina-servicios .servicio-card.etsa-card--expanded {
-      transform: translateY(-6px);
-      border-color: rgba(234, 88, 12, 0.3);
-      box-shadow: 0 28px 64px rgba(15, 23, 42, 0.15);
-    }
-
-    .pagina-servicios .servicio-card:hover::before,
-    .pagina-servicios .servicio-card.etsa-card--expanded::before {
-      transform: scaleX(1);
-    }
-
-    .pagina-servicios .etsa-beneficios-toggle {
-      width: 100%;
-      margin: 0 0 0.85rem;
-      padding: 0.72rem 0.85rem;
-      border: 1px solid rgba(15, 23, 42, 0.1);
-      border-radius: 8px;
-      display: none;
-      align-items: center;
-      justify-content: space-between;
-      gap: 0.75rem;
-      background: #f8fafc;
-      color: #1e293b;
-      font: inherit;
-      font-size: 0.78rem;
-      font-weight: 800;
-      cursor: pointer;
-    }
-
-    .pagina-servicios .etsa-beneficios-toggle i {
-      color: #ea580c;
-      transition: transform 0.22s ease;
-    }
-
-    .pagina-servicios .etsa-beneficios-toggle[aria-expanded="true"] i {
-      transform: rotate(180deg);
-    }
-
-    .pagina-servicios .etsa-servicio-accion {
-      min-height: 2.9rem;
-      margin-top: auto;
-      padding: 0.78rem 1rem;
-      border-radius: 8px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 0.75rem;
-      background: #071127;
-      color: #ffffff;
-      font-size: 0.78rem;
-      font-weight: 900;
-      text-decoration: none;
-      transition: background-color 0.22s ease, transform 0.22s ease;
-    }
-
-    .pagina-servicios .etsa-servicio-accion:hover {
-      background: #ea580c;
-      color: #ffffff;
-      transform: translateY(-2px);
-    }
-
-    .pagina-servicios .etsa-servicio-accion:focus-visible,
-    .pagina-servicios .etsa-beneficios-toggle:focus-visible,
-    .pagina-servicios .servicios-cta__contacto:focus-visible {
-      outline: 3px solid rgba(234, 88, 12, 0.38);
-      outline-offset: 4px;
-    }
-
-    .pagina-servicios .servicios-pasos__linea {
-      position: relative;
-    }
-
-    .pagina-servicios .servicios-pasos__linea::after {
-      content: "";
-      position: absolute;
-      top: 40px;
-      right: 12%;
-      left: 12%;
-      z-index: 0;
-      height: 3px;
-      border-radius: 999px;
-      background: linear-gradient(90deg, #ff7a18, #ea580c);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 1s ease;
-      pointer-events: none;
-    }
-
-    .pagina-servicios .servicios-pasos__linea.etsa-pasos--visible::after {
-      transform: scaleX(1);
-    }
-
-    .pagina-servicios .paso-card {
-      position: relative;
-      z-index: 1;
-    }
-
-    .pagina-servicios .servicios-cta__contacto {
-      border-radius: 8px;
-      color: inherit;
-      text-decoration: none;
-      transition: background-color 0.22s ease, transform 0.22s ease;
-    }
-
-    .pagina-servicios .servicios-cta__contacto:hover {
-      background: #f3faf6;
-      color: inherit;
-      transform: translateY(-3px);
-    }
-
-    .pagina-servicios .servicios-cta__contacto:hover i {
-      border-color: #25d366;
-      background: #25d366;
-      color: #ffffff;
-    }
-
-    .pagina-servicios .etsa-reveal,
-    .pagina-servicios .etsa-servicio-reveal {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.62s ease, transform 0.62s ease;
-      transition-delay: var(--etsa-delay, 0ms);
-    }
-
-    .pagina-servicios .etsa-reveal.etsa-reveal--visible,
-    .pagina-servicios .etsa-servicio-reveal.etsa-reveal--visible {
-      opacity: 1;
-      transform: none;
-    }
-
-    @media (max-width: 991.98px) {
-      .pagina-servicios .servicios-pasos__linea::after {
-        right: 8%;
-        left: 8%;
-      }
-    }
-
-    @media (max-width: 767.98px) {
-      .pagina-servicios .servicio-card:hover,
-      .pagina-servicios .servicio-card.etsa-card--expanded {
-        transform: translateY(-3px);
-      }
-
-      .pagina-servicios .etsa-beneficios-toggle {
-        display: flex;
-      }
-
-      .pagina-servicios.etsa-servicios-js .servicio-card > ul {
-        max-height: 0;
-        margin-bottom: 0;
-        overflow: hidden;
-        opacity: 0;
-        transition: max-height 0.32s ease, opacity 0.24s ease, margin-bottom 0.24s ease;
-      }
-
-      .pagina-servicios.etsa-servicios-js .servicio-card.etsa-card--expanded > ul {
-        max-height: 18rem;
-        margin-bottom: 1rem;
-        opacity: 1;
-      }
-
-      .pagina-servicios .servicios-pasos__linea::after {
-        display: none;
-      }
-    }
-
-    @media (max-width: 575.98px) {
-      .pagina-servicios .etsa-servicio-accion {
-        width: 100%;
-      }
-
-      .pagina-servicios .etsa-reveal,
-      .pagina-servicios .etsa-servicio-reveal {
-        transform: translateY(16px);
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .pagina-servicios .servicio-card,
-      .pagina-servicios .servicio-card::before,
-      .pagina-servicios .etsa-beneficios-toggle i,
-      .pagina-servicios .etsa-servicio-accion,
-      .pagina-servicios .servicios-pasos__linea::after,
-      .pagina-servicios .servicios-cta__contacto,
-      .pagina-servicios .etsa-reveal,
-      .pagina-servicios .etsa-servicio-reveal {
-        transition: none !important;
-      }
-
-      .pagina-servicios .etsa-reveal,
-      .pagina-servicios .etsa-servicio-reveal {
-        opacity: 1;
-        transform: none;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="css/pages/servicios/servicios-interacciones.css">
 </head>
 
 
 
 <body class="pagina-servicios">
 
-  <!-- HEADER CON BOOTSTRAP -->
+  <!-- ENCABEZADO CON BOOTSTRAP -->
     <div data-layout="header"></div>
 
 
   <!-- CONTENIDO PRINCIPAL -->
   <main class="pagina-servicios">
 
-    <!-- HERO SERVICIOS -->
+    <!-- SECCIÓN PRINCIPAL SERVICIOS -->
     <section class="servicios-hero page-hero" aria-labelledby="titulo-servicios">
       <div class="container servicios-hero__inner">
         <div class="servicios-hero__texto">
@@ -435,137 +216,17 @@
 
   </main>
 
-  <!-- FOOTER COMPARTIDO -->
+  <!-- PIE DE PÁGINA COMPARTIDO -->
   <div data-layout="footer"></div>
 
 
   
-  <!-- Bootstrap JS -->
+  <!-- JavaScript de Bootstrap -->
   <script src="js/components/layout-loader.js"></script>
 
   <script src="bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/main.js"></script>
-
-  <script>
-    (() => {
-      "use strict";
-
-      document.addEventListener("DOMContentLoaded", () => {
-        document.body.classList.add("etsa-servicios-js");
-
-        const reducirMovimiento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-        const tarjetas = Array.from(document.querySelectorAll(".servicio-card"));
-        const columnas = Array.from(document.querySelectorAll(".servicios-grid > [class*='col-']"));
-        const secciones = document.querySelectorAll("main > section:not(.servicios-hero)");
-        const pasos = document.querySelector(".servicios-pasos__linea");
-
-        const acciones = [
-          { texto: "Reservar pasaje", enlace: "reserva.html" },
-          { texto: "Ver encomiendas", enlace: "encomiendas.html" },
-          { texto: "Información de viaje", enlace: "info-viaje.html" },
-          {
-            texto: "Hablar por WhatsApp",
-            enlace: "https://wa.me/51904178833?text=Hola%20ETSA%2C%20necesito%20ayuda%20con%20un%20servicio",
-            externo: true
-          }
-        ];
-
-        tarjetas.forEach((tarjeta, indice) => {
-          const lista = tarjeta.querySelector(":scope > ul");
-          const titulo = tarjeta.querySelector("h3")?.textContent.trim() || `Servicio ${indice + 1}`;
-          const accion = acciones[indice];
-
-          if (lista) {
-            lista.id = `beneficios-servicio-${indice + 1}`;
-
-            const boton = document.createElement("button");
-            boton.className = "etsa-beneficios-toggle";
-            boton.type = "button";
-            boton.setAttribute("aria-expanded", "false");
-            boton.setAttribute("aria-controls", lista.id);
-            boton.innerHTML = 'Ver beneficios <i class="bi bi-chevron-down" aria-hidden="true"></i>';
-            lista.before(boton);
-
-            boton.addEventListener("click", () => {
-              const expandida = tarjeta.classList.toggle("etsa-card--expanded");
-              boton.setAttribute("aria-expanded", String(expandida));
-              boton.firstChild.textContent = expandida ? "Ocultar beneficios " : "Ver beneficios ";
-            });
-          }
-
-          if (accion) {
-            const enlace = document.createElement("a");
-            enlace.className = "etsa-servicio-accion";
-            enlace.href = accion.enlace;
-            enlace.innerHTML = `${accion.texto} <i class="bi bi-arrow-right" aria-hidden="true"></i>`;
-            enlace.setAttribute("aria-label", `${accion.texto}: ${titulo}`);
-
-            if (accion.externo) {
-              enlace.target = "_blank";
-              enlace.rel = "noopener noreferrer";
-            }
-
-            tarjeta.appendChild(enlace);
-          }
-        });
-
-        document.querySelectorAll("main img").forEach((imagen) => {
-          imagen.loading = "lazy";
-          imagen.decoding = "async";
-        });
-
-        configurarAparicion(secciones, reducirMovimiento);
-        configurarAparicion(columnas, reducirMovimiento, true);
-
-        if (pasos) {
-          if (reducirMovimiento || !("IntersectionObserver" in window)) {
-            pasos.classList.add("etsa-pasos--visible");
-          } else {
-            const observadorPasos = new IntersectionObserver(
-              (entradas) => {
-                if (entradas.some((entrada) => entrada.isIntersecting)) {
-                  pasos.classList.add("etsa-pasos--visible");
-                  observadorPasos.disconnect();
-                }
-              },
-              { threshold: 0.35 }
-            );
-            observadorPasos.observe(pasos);
-          }
-        }
-
-        function configurarAparicion(elementos, sinMovimiento, escalonada = false) {
-          elementos.forEach((elemento, indice) => {
-            elemento.classList.add(escalonada ? "etsa-servicio-reveal" : "etsa-reveal");
-            if (escalonada) {
-              elemento.style.setProperty("--etsa-delay", `${indice * 75}ms`);
-            }
-          });
-
-          if (sinMovimiento || !("IntersectionObserver" in window)) {
-            elementos.forEach((elemento) => elemento.classList.add("etsa-reveal--visible"));
-            return;
-          }
-
-          const observador = new IntersectionObserver(
-            (entradas) => {
-              entradas.forEach((entrada) => {
-                if (!entrada.isIntersecting) {
-                  return;
-                }
-
-                entrada.target.classList.add("etsa-reveal--visible");
-                observador.unobserve(entrada.target);
-              });
-            },
-            { threshold: 0.14, rootMargin: "0px 0px -35px" }
-          );
-
-          elementos.forEach((elemento) => observador.observe(elemento));
-        }
-      });
-    })();
-  </script>
+  <script src="js/pages/servicios.js"></script>
 
 </body>
 </html>

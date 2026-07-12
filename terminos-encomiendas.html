@@ -12,12 +12,12 @@
   <!-- Estilos personalizados -->
   <link rel="stylesheet" href="css/main.css">
 
-  <!-- Tipografia -->
+  <!-- Tipografía -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
     rel="stylesheet">
-  <!-- Favicon -->
+  <!-- Icono del sitio -->
   <link rel="icon" href="img/marca/lofo.png" type="image/png">
 </head>
 
@@ -174,62 +174,10 @@
     </section>
   </main>
 
-  <!-- FOOTER COMPARTIDO -->
+  <!-- PIE DE PÁGINA COMPARTIDO -->
   <div data-layout="footer"></div>
 
-  <script>
-    document.querySelectorAll("[data-terminos-carousel]").forEach((carousel) => {
-      const carouselName = carousel.dataset.terminosCarousel;
-      const dots = document.querySelector(`[data-terminos-dots="${carouselName}"]`);
-      const items = Array.from(carousel.children);
-
-      if (!dots || items.length < 2) {
-        return;
-      }
-
-      items.forEach((item, index) => {
-        const dot = document.createElement("button");
-        dot.type = "button";
-        dot.className = "terminos-encomiendas-dot";
-        dot.setAttribute("aria-label", `Ver tarjeta ${index + 1}`);
-        dot.addEventListener("click", () => {
-          carousel.scrollTo({
-            left: item.offsetLeft,
-            behavior: "smooth"
-          });
-        });
-        dots.appendChild(dot);
-      });
-
-      const dotButtons = Array.from(dots.children);
-      let ticking = false;
-
-      const updateDots = () => {
-        const currentIndex = items.reduce((activeIndex, item, index) => {
-          const activeDistance = Math.abs(items[activeIndex].offsetLeft - carousel.scrollLeft);
-          const itemDistance = Math.abs(item.offsetLeft - carousel.scrollLeft);
-          return itemDistance < activeDistance ? index : activeIndex;
-        }, 0);
-
-        dotButtons.forEach((dot, index) => {
-          const isActive = index === currentIndex;
-          dot.classList.toggle("is-active", isActive);
-          dot.setAttribute("aria-current", isActive ? "true" : "false");
-        });
-        ticking = false;
-      };
-
-      carousel.addEventListener("scroll", () => {
-        if (!ticking) {
-          window.requestAnimationFrame(updateDots);
-          ticking = true;
-        }
-      }, { passive: true });
-
-      window.addEventListener("resize", updateDots);
-      updateDots();
-    });
-  </script>
+  <script src="js/pages/terminos-encomiendas.js"></script>
   <script src="js/components/layout-loader.js"></script>
 
   <script src="bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>

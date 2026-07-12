@@ -1,0 +1,9 @@
+{
+  "version": "1.0.0",
+  "metadata": {
+    "modulo": "preguntas",
+    "descripcion": "Consultas recibidas desde el formulario de preguntas frecuentes.",
+    "persistencia": "servidor-json"
+  },
+  "preguntas": []
+}

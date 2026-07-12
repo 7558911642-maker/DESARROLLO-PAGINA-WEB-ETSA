@@ -238,6 +238,92 @@
     return Object.fromEntries(new FormData(formulario).entries());
   }
 
+  async function enviarApi(formulario, endpoint, datos, opciones) {
+    const configuracion = opciones || {};
+    const boton = formulario.querySelector('[type="submit"]');
+    const estado = asegurarEstadoEnvio(formulario);
+
+    formulario.setAttribute("aria-busy", "true");
+    if (boton) {
+      boton.disabled = true;
+    }
+
+    try {
+      const respuesta = await fetch(endpoint, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify(datos)
+      });
+
+      const payload = await leerRespuestaJson(respuesta);
+
+      if (!respuesta.ok || payload.ok === false) {
+        throw new Error(obtenerMensajeApi(payload) || "No se pudo registrar la informacion.");
+      }
+
+      mostrarEstadoEnvio(estado, configuracion.mensajeExito || payload.mensaje || "Registro enviado correctamente.", true);
+
+      if (typeof configuracion.alExito === "function") {
+        configuracion.alExito(payload);
+      }
+
+      return payload;
+    } catch (error) {
+      mostrarEstadoEnvio(estado, error.message || "No se pudo conectar con el servidor.", false);
+      return null;
+    } finally {
+      formulario.removeAttribute("aria-busy");
+      if (boton) {
+        boton.disabled = false;
+      }
+    }
+  }
+
+  async function leerRespuestaJson(respuesta) {
+    try {
+      return await respuesta.json();
+    } catch (error) {
+      return {};
+    }
+  }
+
+  function obtenerMensajeApi(payload) {
+    if (payload?.mensaje) {
+      return payload.mensaje;
+    }
+
+    if (payload?.errores && typeof payload.errores === "object") {
+      const primerError = Object.values(payload.errores).find(Boolean);
+      if (primerError) {
+        return primerError;
+      }
+    }
+
+    return "";
+  }
+
+  function asegurarEstadoEnvio(formulario) {
+    let estado = formulario.querySelector("[data-form-api-status]");
+
+    if (!estado) {
+      estado = document.createElement("div");
+      estado.setAttribute("data-form-api-status", "");
+      estado.setAttribute("role", "status");
+      estado.setAttribute("aria-live", "polite");
+      formulario.appendChild(estado);
+    }
+
+    return estado;
+  }
+
+  function mostrarEstadoEnvio(estado, mensaje, ok) {
+    estado.textContent = mensaje;
+    estado.className = ok ? "valid-feedback d-block" : "invalid-feedback d-block";
+  }
+
   function normalizarEntradaTexto(valor, maximo) {
     const texto = String(valor || "")
       .replace(/\s{2,}/g, " ")
@@ -286,5 +372,9 @@
       soloDigitosPeruanos,
       validarSinHtml
     }
+  };
+
+  window.EtsaApiFormularios = {
+    enviar: enviarApi
   };
 })();

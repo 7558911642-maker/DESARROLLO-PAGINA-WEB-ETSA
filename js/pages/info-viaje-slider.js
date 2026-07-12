@@ -20,7 +20,7 @@
         try {
           slider.releasePointerCapture(event.pointerId);
         } catch {
-          /* Pointer capture may already be released by the browser. */
+          /* El navegador puede haber liberado la captura del puntero. */
         }
       }
     };

@@ -1,6 +1,6 @@
 /* =========================================================
    DETALLES DE RUTAS
-   Estilos compartidos para las paginas dentro de detalles-rutas
+   Estilos compartidos para las páginas dentro de detalles-rutas
    ========================================================= */
 
 body.pagina-detalle-ruta > .site-header.fixed-top ~ main.pagina-detalle-ruta__main {
@@ -1039,7 +1039,7 @@ main#contenido-principal .actividad-item p {
   }
 }
 
-/* Carriles responsive para tarjetas de detalle */
+/* Carriles responsivo para tarjetas de detalle */
 .atractivos-ruta .container > .row,
 .recomendaciones-detalle .container > .row,
 .actividades-destino .col-12.col-lg-7 > .row {

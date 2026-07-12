@@ -52,7 +52,7 @@
   color: #ea580c;
 }
 
-/* Tarjeta uniforme de destinos: movil, tablet y escritorio. */
+/* Tarjeta uniforme de destinos: móvil, tablet y escritorio. */
 body.pagina-index main .rutas-index :is(
   #rutasIndexCarrusel .ruta-slide-card__media,
   #rutasIndexCarruselTablet .ruta-slide-card__media,
@@ -367,7 +367,7 @@ body.pagina-index main .rutas-index :is(
   }
 }
 
-/* Hero principal del index */
+/* Sección principal del index */
 body.pagina-index {
   --index-hero-header-offset: 84px;
 }
@@ -378,11 +378,14 @@ body.pagina-index > [data-layout="header"] + main {
 }
 
 .pagina-index .hero.hero-banner {
+  --page-hero-min: 320px;
+  --page-hero-fluid: 50vh;
+  --page-hero-max: 460px;
   position: relative;
   isolation: isolate;
   width: 100%;
   max-width: none;
-  min-height: clamp(320px, 50vh, 460px);
+  min-height: clamp(var(--page-hero-min), var(--page-hero-fluid), var(--page-hero-max)) !important;
   margin: 0 0 2.25rem;
   padding: 2.25rem;
   display: flex;
@@ -392,12 +395,19 @@ body.pagina-index > [data-layout="header"] + main {
   background-color: #050a14;
   background-image:
     linear-gradient(90deg, rgba(2, 6, 23, 0.94) 0%, rgba(2, 6, 23, 0.82) 44%, rgba(2, 6, 23, 0.48) 72%, rgba(2, 6, 23, 0.28) 100%),
-    url("../../../img/banners/info-viaje-banner.png");
+    url("../../../img/banners/index_banner1.png");
   background-position: center, center;
   background-size: cover, cover;
   background-repeat: no-repeat;
   border-radius: 0;
   box-shadow: none;
+}
+
+body.pagina-index > main > .hero.hero-banner .etsa-banner-carousel__slide {
+  background-position: center center;
+  background-size: cover;
+  filter: none;
+  image-rendering: auto;
 }
 
 .pagina-index .hero.hero-banner,
@@ -533,7 +543,7 @@ body.pagina-index > [data-layout="header"] + main {
 
 @media (min-width: 768px) {
   .pagina-index .hero.hero-banner {
-    min-height: clamp(300px, 48vh, 440px);
+    min-height: clamp(300px, 48vh, 440px) !important;
     padding: 2.5rem 3rem;
   }
 
@@ -566,7 +576,7 @@ body.pagina-index > [data-layout="header"] + main {
 
 @media (min-width: 992px) {
   .pagina-index .hero.hero-banner {
-    min-height: clamp(320px, 48vh, 450px);
+    min-height: clamp(320px, 48vh, 450px) !important;
     padding: 2rem 2.5rem;
   }
 
@@ -577,7 +587,7 @@ body.pagina-index > [data-layout="header"] + main {
 
 @media (min-width: 1200px) {
   .pagina-index .hero.hero-banner {
-    min-height: clamp(320px, 48vh, 460px);
+    min-height: clamp(320px, 48vh, 460px) !important;
     padding: 2.8rem 3.2rem;
   }
 
@@ -588,7 +598,7 @@ body.pagina-index > [data-layout="header"] + main {
 
 @media (min-width: 1400px) {
   .pagina-index .hero.hero-banner {
-    min-height: clamp(320px, 46vh, 460px);
+    min-height: clamp(320px, 46vh, 460px) !important;
   }
 
   .pagina-index .hero-title {
@@ -602,7 +612,7 @@ body.pagina-index > [data-layout="header"] + main {
   }
 
   .pagina-index .hero.hero-banner {
-    min-height: clamp(240px, 48vh, 340px);
+    min-height: clamp(240px, 48vh, 340px) !important;
     padding: 1.35rem;
     align-items: flex-start;
     background-image:
@@ -683,7 +693,7 @@ body.pagina-index main .promociones-index .promociones-index__carrusel-tablet .p
   box-shadow: 0 0.55rem 1.15rem rgba(234, 88, 12, 0.22) !important;
 }
 
-/* Promociones del index: titulo en una linea y tarjetas sin textos sobre la imagen. */
+/* Promociones del index: título en una línea y tarjetas sin textos sobre la imagen. */
 body.pagina-index main .promociones-index .index-promociones__titulo-box {
   max-width: 100% !important;
 }

@@ -588,7 +588,7 @@
   }
 }
 
-/* LAPTOP Y DESKTOP: tarjetas ocupan todo el ancho */
+/* LAPTOP Y ESCRITORIO: tarjetas ocupan todo el ancho */
 @media screen and (min-width: 769px) {
   .promociones-seccion {
     padding-left: 0 !important;

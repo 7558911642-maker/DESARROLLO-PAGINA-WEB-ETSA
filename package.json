@@ -1,0 +1,14 @@
+{
+  "name": "etsa-sol-amazonense",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sitio web ETSA Sol Amazonense con API Express y persistencia en archivos JSON.",
+  "main": "server/app.js",
+  "scripts": {
+    "start": "node server/app.js",
+    "dev": "node server/app.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

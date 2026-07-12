@@ -130,34 +130,54 @@
     ".detalle-destino-hero",
   ];
 
-  const FIRST_IMAGE_BY_SELECTOR = [
-    ["body.pagina-index > main > .hero", "img/rutas/chachapoyas.png"],
-    [".contacto-hero", "img/banners/contacto-banner.png"],
-    [".encomiendas-hero", "img/banners/encomiendas-banner.png"],
-    [".hero-viaje", "img/banners/info-viaje-banner.png"],
-    [".libro-reclamos-hero", "img/banners/libro-recomendaciones-banner.png"],
-    [".nosotros-hero", "img/banners/nosotros-banner.png"],
-    [".faq-hero", "img/banners/preguntas-frecuentes-banner.png"],
-    [".promociones-hero", "img/banners/Promociones-banner.png"],
-    [".reserva-hero", "img/banners/watermarked_img_2461339827978530461.jpg"],
-    [".servicios-hero", "img/banners/servicios-banner.png"],
-    [".terminos-encomiendas-hero", "img/banners/encomiendas-banner.png"],
-    [".terminos-viaje-hero", "img/banners/terminos_condiciones_viaje_banner.png"],
-    [".testimonios-hero", "img/banners/testimonios-banner.png"],
-    [".detalle-destino-hero--chachapoyas", "img/rutas/chachapoyas.png"],
-    [".detalle-destino-hero--bagua", "img/rutas/bagua.png"],
-    [".detalle-destino-hero--pedro-ruiz", "img/banners/Pedro_Ruiz.png"],
-    [".detalle-destino-hero--luya", "img/rutas/Luya.png"],
-    [".detalle-destino-hero--pomacochas", "img/rutas/Pomacochas.png"],
-  ];
-
-  const DEFAULT_BANNER_IMAGES = [
-    "img/rutas/chachapoyas.png",
-    "img/rutas/kuelap.png",
-    "img/banners/Pedro_Ruiz.png",
-    "img/rutas/Luya.png",
-    "img/rutas/Pomacochas.png",
-    "img/rutas/bagua.png",
+  const BANNER_IMAGES_BY_SELECTOR = [
+    ["body.pagina-index > main > .hero", [
+      "img/banners/index_banner1.png",
+      "img/banners/index_banner2.png",
+      "img/banners/index_banner3.png",
+      "img/banners/index_banner4.png",
+    ]],
+    [".contacto-hero", ["img/banners/contacto-banner.png"]],
+    [".encomiendas-hero", ["img/banners/encomiendas-banner.png"]],
+    [".hero-viaje", ["img/banners/info-viaje-banner.png"]],
+    [".libro-reclamos-hero", ["img/banners/libro-recomendaciones-banner.png"]],
+    [".nosotros-hero", [
+      "img/banners/Nosotros_banner1.png",
+      "img/banners/Nosotros_banner2.png",
+      "img/banners/Nosotros_banner3.png",
+    ]],
+    [".faq-hero", [
+      "img/banners/preguntasFrecuentes_banner1.png",
+      "img/banners/preguntasFrecuentes_banner2.png",
+      "img/banners/preguntasFrecuentes_banner3.png",
+      "img/banners/preguntasFrecuentes_banner4.png",
+    ]],
+    [".promociones-hero", [
+      "img/banners/Promociones_banner1.png",
+      "img/banners/Promociones_banner2.png",
+      "img/banners/Promociones_banner3.png",
+      "img/banners/Promociones_banner4.png",
+    ]],
+    [".reserva-hero", ["img/banners/watermarked_img_2461339827978530461.jpg"]],
+    [".servicios-hero", ["img/banners/servicios-banner.png"]],
+    [".terminos-encomiendas-hero", ["img/banners/encomiendas-banner.png"]],
+    [".terminos-viaje-hero", [
+      "img/banners/Términos_de_viaje_baner1.png",
+      "img/banners/Términos_de_viaje_baner2.png",
+      "img/banners/Términos_de_viaje_baner3.png",
+      "img/banners/Términos_de_viaje_baner4.png",
+    ]],
+    [".testimonios-hero", [
+      "img/banners/testimonios_banner1.png",
+      "img/banners/testimonios_banner2.png",
+      "img/banners/testimonios_banner3.png",
+      "img/banners/testimonios_banner4.png",
+    ]],
+    [".detalle-destino-hero--chachapoyas", ["img/rutas/chachapoyas.png"]],
+    [".detalle-destino-hero--bagua", ["img/rutas/bagua.png"]],
+    [".detalle-destino-hero--pedro-ruiz", ["img/banners/Pedro_Ruiz.png"]],
+    [".detalle-destino-hero--luya", ["img/rutas/Luya.png"]],
+    [".detalle-destino-hero--pomacochas", ["img/rutas/Pomacochas.png"]],
   ];
 
   const BANNER_INTERVAL_MS = 3000;
@@ -195,35 +215,9 @@
     });
 
   const getImagesForBanner = (banner) => {
-    const firstImage = FIRST_IMAGE_BY_SELECTOR.find(([selector]) => banner.matches(selector))?.[1];
+    const imageList = BANNER_IMAGES_BY_SELECTOR.find(([selector]) => banner.matches(selector))?.[1] || [];
+    return Array.from(new Set(imageList.filter(Boolean).map(resolveAssetPath)));
 
-    // Excluir imagenes dentro de contenedores especificos que no son parte del banner
-    const excludeSelectors = [".valor-card", ".ruta-index-card", ".promo-index-card", ".servicio-card", ".detalle-destino-card"];
-
-    const pageImages = Array.from(document.querySelectorAll("main img[src]"))
-      .filter(img => {
-        // Verificar que la imagen no este dentro de ninguno de los contenedores excluidos
-        return !excludeSelectors.some(selector => img.closest(selector));
-      })
-      .map((image) => image.getAttribute("src"))
-      .filter(Boolean);
-
-    const bannerImages = Array.from(new Set(
-      [firstImage, ...pageImages].filter(Boolean).map(resolveAssetPath)
-    ));
-
-    if (banner.matches(".reserva-hero")) {
-      return bannerImages;
-    }
-
-    if (bannerImages.length > 1) {
-      return bannerImages;
-    }
-
-    return Array.from(new Set([
-      ...bannerImages,
-      ...DEFAULT_BANNER_IMAGES.map(resolveAssetPath),
-    ]));
   };
 
   const initBannerCarousel = (banner) => {
@@ -232,6 +226,10 @@
     }
 
     const imagePaths = getImagesForBanner(banner);
+    if (!imagePaths.length) {
+      return;
+    }
+
     const fallbackImage = imagePaths[0];
 
     let activeIndex = 0;

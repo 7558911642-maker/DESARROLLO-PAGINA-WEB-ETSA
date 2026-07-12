@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reclamos - Panel ETSA</title>
+  <link rel="stylesheet" href="/admin/admin.css">
+</head>
+<body data-admin-page="reclamos">
+  <header class="admin-header">
+    <div>
+      <p class="admin-eyebrow">Panel empresa</p>
+      <h1>Reclamos</h1>
+    </div>
+    <button type="button" data-admin-logout>Cerrar sesion</button>
+  </header>
+  <nav class="admin-nav" aria-label="Navegacion del panel">
+    <a href="/admin/reservas.html">Reservas</a>
+    <a href="/admin/reclamos.html" aria-current="page">Reclamos</a>
+    <a href="/admin/preguntas.html">Preguntas</a>
+    <a href="/admin/testimonios.html">Testimonios</a>
+  </nav>
+  <main class="admin-main">
+    <section class="admin-card">
+      <div class="admin-card__header">
+        <h2>Datos registrados</h2>
+        <span data-admin-count>0 registros</span>
+      </div>
+      <div class="admin-table-wrap">
+        <table>
+          <thead data-admin-head></thead>
+          <tbody data-admin-body></tbody>
+        </table>
+      </div>
+      <p class="admin-message" data-admin-message role="status" aria-live="polite"></p>
+    </section>
+  </main>
+  <script src="/admin/admin.js"></script>
+</body>
+</html>

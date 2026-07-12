@@ -283,7 +283,7 @@
   }
 }
 
-/* SM - celulares grandes y tablets pequenas */
+/* SM - celulares grandes y tablets pequeñas */
 @media (min-width: 576px) and (max-width: 767.98px) {
   .pagina-index .hero {
     min-height: auto;
@@ -523,7 +523,7 @@
   }
 }
 
-/* HEADER - visibilidad por breakpoints Bootstrap */
+/* ENCABEZADO - visibilidad por puntos de quiebre Bootstrap */
 @media (max-width: 991.98px) {
   .btn-menu {
     display: flex !important;
@@ -656,7 +656,7 @@
   }
 }
 
-/* PAGINA PROMOCIONES - tarjetas deslizables */
+/* PÁGINA PROMOCIONES - tarjetas deslizables */
 .pagina-promociones .promociones-slider {
   width: 100%;
 }
@@ -730,7 +730,7 @@
   }
 }
 
-/* RUTAS INDEX - responsive Bootstrap */
+/* RUTAS INDEX - responsivo Bootstrap */
 .rutas-index__fila {
   overflow-x: visible;
 }
@@ -833,7 +833,7 @@
   }
 }
 
-/* RESUMEN ENCOMIENDAS INDEX - hero moderno */
+/* RESUMEN ENCOMIENDAS INDEX - sección principal moderna */
 .pagina-index .index-encomiendas {
   min-height: 620px;
   padding: 92px 0 0;
@@ -1002,7 +1002,7 @@
   color: #ffffff;
 }
 
-/* Fondo para cada página si usas estas clases en el hero */
+/* Fondo para cada página si usas estas clases en la sección principal */
 .detalle-hero--bagua {
   background-image: url("../../img/rutas/bagua.png");
 }
@@ -1015,15 +1015,7 @@
   background-image: url("../../img/rutas/pedro-ruiz.png");
 }
 
-.detalle-hero--jaen {
-  background-image: url("../../img/rutas/jaen.png");
-}
-
-.detalle-hero--lima {
-  background-image: url("../../img/rutas/lima.png");
-}
-
-/* Responsive */
+/* Responsivo */
 @media (max-width: 991px) {
   .detalle-intro {
     grid-template-columns: 1fr;
@@ -1179,7 +1171,7 @@
   }
 }
 
-/* HERO PRINCIPAL INDEX - panel responsive */
+/* SECCIÓN PRINCIPAL INDEX - panel responsivo */
 .pagina-index .hero {
   min-height: clamp(34rem, 72vh, 44rem);
   padding: clamp(2.5rem, 6vw, 5rem) 0;
@@ -1351,7 +1343,7 @@
   }
 }
 
-/* DETALLES DE RUTAS - RESPONSIVE ACTUAL */
+/* DETALLES DE RUTAS - RESPONSIVO ACTUAL */
 .detalle-destino-hero {
   position: relative;
   display: flex;
@@ -1682,7 +1674,7 @@
   }
 }
 
-/* HEADER INDEX - logo mobile */
+/* ENCABEZADO INDEX - logo móvil */
 @media (max-width: 575.98px) {
   .pagina-index .site-header {
     padding-left: 0;
@@ -1705,7 +1697,7 @@
   }
 }
 
-/* NOSOTROS INDEX - mision y vision como cajitas */
+/* NOSOTROS INDEX - misión y visión como cajitas */
 .pagina-index .nosotros-section .mision-vision-card {
   padding: 0;
   background: transparent;
@@ -1734,7 +1726,7 @@
   hyphens: none;
 }
 
-/* NOSOTROS INDEX - filas compactas en mobile */
+/* NOSOTROS INDEX - filas compactas en móvil */
 @media (max-width: 575.98px) {
   .pagina-index .index-nosotros__titulo,
   .pagina-index .nosotros-section .nosotros-title {
@@ -1803,7 +1795,7 @@
   }
 }
 
-/* INDEX - centrado general solo en mobile */
+/* INDEX - centrado general solo en móvil */
 @media (max-width: 767.98px) {
   .pagina-index main,
   .pagina-index main section,
@@ -1888,7 +1880,7 @@
   }
 }
 
-/* INDEX - fuerza centrado mobile sin afectar header */
+/* INDEX - fuerza centrado móvil sin afectar encabezado */
 @media (max-width: 767.98px) {
   .pagina-index main .row:not(.promociones-index__fila):not(.rutas-index__fila) > [class*="col-"] {
     margin-right: auto !important;
@@ -1933,7 +1925,7 @@
   }
 }
 
-/* RUTAS INDEX - tarjetas completas en mobile */
+/* RUTAS INDEX - tarjetas completas en móvil */
 @media (max-width: 767.98px) {
   .pagina-index .rutas-index__fila {
     --bs-gutter-x: 0;
@@ -2009,7 +2001,7 @@
   }
 }
 
-/* RUTAS INDEX - una tarjeta completa por pantalla en mobile */
+/* RUTAS INDEX - una tarjeta completa por pantalla en móvil */
 @media (max-width: 767.98px) {
   .pagina-index .rutas-index {
     overflow: hidden;
@@ -2086,7 +2078,7 @@
   }
 }
 
-/* PROMOCIONES Y RUTAS INDEX - carrusel con puntos en mobile/tablet */
+/* PROMOCIONES Y RUTAS INDEX - carrusel con puntos en móvil/tablet */
 .pagina-index .index-responsive-carousel {
   display: none;
 }
@@ -2459,7 +2451,7 @@
   }
 }
 
-/* Header fijo mobile */
+/* Encabezado fijo móvil */
 @media (max-width: 991.98px) {
   body.pagina-index {
     padding-top: 0;
@@ -2816,7 +2808,7 @@
   }
 }
 
-/* Promociones mobile */
+/* Promociones móvil */
 @media (max-width: 767.98px) {
   .pagina-index .index-promociones {
     padding: clamp(2.35rem, 8vw, 3rem) 0 clamp(2.6rem, 9vw, 3.4rem);
@@ -2914,7 +2906,7 @@
   }
 }
 
-/* Indicadores mobile */
+/* Indicadores móvil */
 @media (max-width: 767.98px) {
   .pagina-index .promociones-index__carrusel .index-carousel-dots.carousel-indicators {
     display: flex;
@@ -2933,7 +2925,7 @@
   }
 }
 
-/* Botón final mobile */
+/* Botón final móvil */
 @media (max-width: 767.98px) {
   .pagina-index .index-promociones__acciones {
     width: 100%;
@@ -2955,7 +2947,7 @@
   }
 }
 
-/* Promociones: en mobile/tablet usar carrusel; en PC/laptop usar fila completa */
+/* Promociones: en móvil/tablet usar carrusel; en PC/laptop usar fila completa */
 .pagina-index .promociones-index .index-responsive-carousel {
   display: none !important;
 }
@@ -3093,7 +3085,7 @@
   }
 }
 
-/* Hero botones tablet y desktop */
+/* Botones de la sección principal en tablet y escritorio */
 @media (min-width: 768px) {
   .pagina-index .hero .botones {
     flex-direction: row !important;
@@ -3135,7 +3127,7 @@
   margin: 0 auto;
 }
 
-/* Rutas index: solo nombre y boton dentro de cada tarjeta */
+/* Rutas index: solo nombre y botón dentro de cada tarjeta */
 .pagina-index .rutas-index .rutas-index-card .promo-index-card__contenido,
 .pagina-index .rutas-index .ruta-slide-card__contenido {
   box-sizing: border-box;
@@ -3318,7 +3310,7 @@
       rgba(0, 0, 0, 0.22) 48%,
       rgba(0, 0, 0, 0.1) 100%
     ),
-    url("../../img/banners/Promociones-banner.png") center 58% / cover no-repeat !important;
+    url("../../img/banners/Promociones_banner1.png") center 58% / cover no-repeat !important;
 }
 
 .pagina-index .index-promociones__ver-mas {
@@ -3355,7 +3347,7 @@
   }
 }
 
-/* Index promociones: en laptop/escritorio las tarjetas muestran solo el boton. */
+/* Index promociones: en laptop/escritorio las tarjetas muestran solo el botón. */
 @media (min-width: 992px) {
   .pagina-index .promociones-index__fila .promo-index-card__contenido {
     right: clamp(14px, 1.35vw, 26px) !important;

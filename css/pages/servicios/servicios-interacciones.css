@@ -1,0 +1,217 @@
+.pagina-servicios .servicio-card {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.pagina-servicios .servicio-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #ff7a18, #ea580c);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+
+.pagina-servicios .servicio-card:hover,
+.pagina-servicios .servicio-card.etsa-card--expanded {
+  transform: translateY(-6px);
+  border-color: rgba(234, 88, 12, 0.3);
+  box-shadow: 0 28px 64px rgba(15, 23, 42, 0.15);
+}
+
+.pagina-servicios .servicio-card:hover::before,
+.pagina-servicios .servicio-card.etsa-card--expanded::before {
+  transform: scaleX(1);
+}
+
+.pagina-servicios .etsa-beneficios-toggle {
+  width: 100%;
+  margin: 0 0 0.85rem;
+  padding: 0.72rem 0.85rem;
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  border-radius: 8px;
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  background: #f8fafc;
+  color: #1e293b;
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.pagina-servicios .etsa-beneficios-toggle i {
+  color: #ea580c;
+  transition: transform 0.22s ease;
+}
+
+.pagina-servicios .etsa-beneficios-toggle[aria-expanded="true"] i {
+  transform: rotate(180deg);
+}
+
+.pagina-servicios .etsa-servicio-accion {
+  min-height: 2.9rem;
+  margin-top: auto;
+  padding: 0.78rem 1rem;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  background: #071127;
+  color: #ffffff;
+  font-size: 0.78rem;
+  font-weight: 900;
+  text-decoration: none;
+  transition: background-color 0.22s ease, transform 0.22s ease;
+}
+
+.pagina-servicios .etsa-servicio-accion:hover {
+  background: #ea580c;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.pagina-servicios .etsa-servicio-accion:focus-visible,
+.pagina-servicios .etsa-beneficios-toggle:focus-visible,
+.pagina-servicios .servicios-cta__contacto:focus-visible {
+  outline: 3px solid rgba(234, 88, 12, 0.38);
+  outline-offset: 4px;
+}
+
+.pagina-servicios .servicios-pasos__linea {
+  position: relative;
+}
+
+.pagina-servicios .servicios-pasos__linea::after {
+  content: "";
+  position: absolute;
+  top: 40px;
+  right: 12%;
+  left: 12%;
+  z-index: 0;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #ff7a18, #ea580c);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 1s ease;
+  pointer-events: none;
+}
+
+.pagina-servicios .servicios-pasos__linea.etsa-pasos--visible::after {
+  transform: scaleX(1);
+}
+
+.pagina-servicios .paso-card {
+  position: relative;
+  z-index: 1;
+}
+
+.pagina-servicios .servicios-cta__contacto {
+  border-radius: 8px;
+  color: inherit;
+  text-decoration: none;
+  transition: background-color 0.22s ease, transform 0.22s ease;
+}
+
+.pagina-servicios .servicios-cta__contacto:hover {
+  background: #f3faf6;
+  color: inherit;
+  transform: translateY(-3px);
+}
+
+.pagina-servicios .servicios-cta__contacto:hover i {
+  border-color: #25d366;
+  background: #25d366;
+  color: #ffffff;
+}
+
+.pagina-servicios .etsa-reveal,
+.pagina-servicios .etsa-servicio-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.62s ease, transform 0.62s ease;
+  transition-delay: var(--etsa-delay, 0ms);
+}
+
+.pagina-servicios .etsa-reveal.etsa-reveal--visible,
+.pagina-servicios .etsa-servicio-reveal.etsa-reveal--visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (max-width: 991.98px) {
+  .pagina-servicios .servicios-pasos__linea::after {
+    right: 8%;
+    left: 8%;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .pagina-servicios .servicio-card:hover,
+  .pagina-servicios .servicio-card.etsa-card--expanded {
+    transform: translateY(-3px);
+  }
+
+  .pagina-servicios .etsa-beneficios-toggle {
+    display: flex;
+  }
+
+  .pagina-servicios.etsa-servicios-js .servicio-card > ul {
+    max-height: 0;
+    margin-bottom: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.32s ease, opacity 0.24s ease, margin-bottom 0.24s ease;
+  }
+
+  .pagina-servicios.etsa-servicios-js .servicio-card.etsa-card--expanded > ul {
+    max-height: 18rem;
+    margin-bottom: 1rem;
+    opacity: 1;
+  }
+
+  .pagina-servicios .servicios-pasos__linea::after {
+    display: none;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .pagina-servicios .etsa-servicio-accion {
+    width: 100%;
+  }
+
+  .pagina-servicios .etsa-reveal,
+  .pagina-servicios .etsa-servicio-reveal {
+    transform: translateY(16px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pagina-servicios .servicio-card,
+  .pagina-servicios .servicio-card::before,
+  .pagina-servicios .etsa-beneficios-toggle i,
+  .pagina-servicios .etsa-servicio-accion,
+  .pagina-servicios .servicios-pasos__linea::after,
+  .pagina-servicios .servicios-cta__contacto,
+  .pagina-servicios .etsa-reveal,
+  .pagina-servicios .etsa-servicio-reveal {
+    transition: none !important;
+  }
+
+  .pagina-servicios .etsa-reveal,
+  .pagina-servicios .etsa-servicio-reveal {
+    opacity: 1;
+    transform: none;
+  }
+}

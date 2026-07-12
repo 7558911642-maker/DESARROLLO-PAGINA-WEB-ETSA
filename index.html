@@ -17,16 +17,17 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
     rel="stylesheet">
-  <!-- Favicon -->
+  <!-- Icono del sitio -->
   <link rel="icon" href="img/marca/lofo.png" type="image/png">
-  <!-- Ajustes especificos del index -->
+  <!-- Ajustes específicos del index -->
   <link rel="stylesheet" href="css/pages/index/index-ajustes.css">
+  <link rel="stylesheet" href="css/pages/index/index-promociones-laptop.css">
 
 </head>
 
 <body class="pagina-index">
 
-  <!-- HEADER CON BOOTSTRAP  -->
+  <!-- ENCABEZADO CON BOOTSTRAP  -->
     <div data-layout="header"></div>
 
 
@@ -35,7 +36,7 @@
   <!--  CONTENIDO PRINCIPAL  -->
   <main>
 
-    <!-- HERO PRINCIPAL -->
+    <!-- SECCIÓN PRINCIPAL -->
     <section class="hero hero-banner page-hero" aria-labelledby="titulo-principal">
       <div class="hero-content">
         <h1 id="titulo-principal" class="hero-title">Viaja seguro</h1>
@@ -53,59 +54,6 @@
 
     <!-- RESUMEN PROMOCIONES -->
     <section class="promociones-index index-promociones" aria-labelledby="titulo-index-promociones">
-      <style>
-        @media (min-width: 1024px) and (max-width: 1440px) {
-          body.pagina-index main .promociones-index #promocionesIndexFila .promo-index-card {
-            height: 360px !important;
-            min-height: 360px !important;
-          }
-
-          body.pagina-index main .promociones-index #promocionesIndexFila .promo-index-card > img {
-            height: 100% !important;
-            min-height: 360px !important;
-          }
-
-          body.pagina-index main .promociones-index #promocionesIndexFila .promo-index-card__contenido {
-            position: absolute !important;
-            inset: 0 !important;
-            z-index: 2 !important;
-            width: 100% !important;
-            height: 100% !important;
-            padding: 1.25rem !important;
-            display: flex !important;
-            flex-direction: column !important;
-            align-items: center !important;
-            justify-content: flex-end !important;
-            text-align: center !important;
-            pointer-events: none;
-          }
-
-          body.pagina-index main .promociones-index #promocionesIndexFila .promo-index-card__contenido > :not(.promo-index-card__boton) {
-            display: none !important;
-          }
-
-          body.pagina-index main .promociones-index #promocionesIndexFila .promo-index-card__boton {
-            position: static !important;
-            inset: auto !important;
-            width: min(100%, 11.4rem) !important;
-            min-width: 0 !important;
-            max-width: calc(100% - 1.5rem) !important;
-            min-height: 2.35rem !important;
-            margin: 0 auto !important;
-            padding: 0.64rem 0.95rem !important;
-            font-size: 0.84rem !important;
-            font-weight: 800 !important;
-            line-height: 1.1 !important;
-            letter-spacing: 0 !important;
-            white-space: nowrap !important;
-            box-shadow: 0 0.45rem 1rem rgba(249, 115, 22, 0.18) !important;
-            align-self: center !important;
-            flex: 0 0 auto !important;
-            pointer-events: auto;
-          }
-        }
-      </style>
-
       <div class="container-fluid promociones-index__container">
 
         <div class="index-promociones__header flex-column flex-md-row align-items-start align-items-md-center">
@@ -398,7 +346,7 @@
             </article>
           </div>
 
-          <!-- PROMOCION 4 -->
+          <!-- PROMOCIÓN 4 -->
           <div class="col-12 col-lg-4 promociones-index__columna" id="promo-index-card-4">
             <article class="promo-card promo-index-card h-100">
               <img src="img/detalles-rutas/gocta.png" alt="Paisaje turístico de Amazonas para promoción ETSA">
@@ -413,7 +361,7 @@
             </article>
           </div>
 
-          <!-- PROMOCION 5 -->
+          <!-- PROMOCIÓN 5 -->
           <div class="col-12 col-lg-4 promociones-index__columna" id="promo-index-card-5">
             <article class="promo-card promo-index-card h-100">
               <img src="img/detalles-rutas/lago-pomacochas.png" alt="Paisaje de Pomacochas para promoción ETSA">
@@ -1171,11 +1119,11 @@
     </section>
   </main>
 
-  <!-- FOOTER COMPARTIDO -->
+  <!-- PIE DE PÁGINA COMPARTIDO -->
   <div data-layout="footer"></div>
 
 
-  <!-- Bootstrap JS -->
+  <!-- JavaScript de Bootstrap -->
   <script src="js/components/layout-loader.js"></script>
 
   <script src="bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>

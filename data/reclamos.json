@@ -1,0 +1,9 @@
+{
+  "version": "1.0.0",
+  "metadata": {
+    "modulo": "reclamos",
+    "descripcion": "Registros recibidos desde el formulario de libro de reclamaciones.",
+    "persistencia": "servidor-json"
+  },
+  "reclamos": []
+}

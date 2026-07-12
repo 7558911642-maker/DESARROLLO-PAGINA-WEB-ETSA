@@ -126,7 +126,6 @@ body > .site-header.fixed-top ~ main {
   text-transform: uppercase; 
   letter-spacing: 1px;  /* para colocar barra lateral*/
   text-decoration: none;
-  /* transition: 0.3s ease; */
 }
 
 .btn-reserva:hover {
@@ -136,7 +135,7 @@ body > .site-header.fixed-top ~ main {
 
 /* 6. MENÚ HAMBURGUESA */
 
-/* CHECKBOX OCULTO */
+/* CASILLA OCULTA */
 #menuToggle {
   display: none;
 }
@@ -243,7 +242,7 @@ body > .site-header.fixed-top ~ main {
   padding-left: 8px;
 }
 
-/* Menu movil Bootstrap Offcanvas */
+/* Menú móvil del panel lateral de Bootstrap */
 @media (max-width: 991.98px) {
   .header.navbar {
     position: fixed;

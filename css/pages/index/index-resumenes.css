@@ -352,7 +352,7 @@
   font-size: 1.25rem;
 }
 
-/* Card wrapper que aparece a la izquierda sobre la imagen */
+/* Contenedor de la tarjeta que aparece a la izquierda sobre la imagen */
 .contacto-hero__card {
   position: absolute;
   left: 64px;
@@ -384,7 +384,7 @@
   margin-bottom: 18px;
 }
 
-/* Botón más marcado dentro de la card */
+/* Botón más marcado dentro de la tarjeta */
 .contacto-hero__card .contacto-hero__btn {
   margin-top: 18px;
   padding: 14px 28px;
@@ -596,7 +596,7 @@
   }
 }
 
-/* --- Overrides para corregir layout y evitar solapamientos --- */
+/* --- Ajustes para corregir el diseño y evitar solapamientos --- */
 @media (min-width: 992px) {
   .contacto-hero--index {
     min-height: 620px;
@@ -804,7 +804,7 @@ body.pagina-index .index-encomiendas__beneficio p {
   }
 }
 
-/* RESUMEN RUTAS - mismo patron visual que promociones */
+/* RESUMEN RUTAS - mismo patrón visual que promociones */
 body.pagina-index .rutas-index.index-rutas {
   padding: 70px 0 85px;
   background-color: #ffffff;
@@ -884,7 +884,7 @@ body.pagina-index .rutas-index .ruta-slide-card__boton {
   white-space: nowrap;
 }
 
-/* HEADER INDEX FIJO */
+/* ENCABEZADO INDEX FIJO */
 body.pagina-index .index-fixed-header {
   position: fixed !important;
   top: 0;
@@ -894,7 +894,7 @@ body.pagina-index .index-fixed-header {
   z-index: 1100;
 }
 
-/* TABLET INDEX - header con logo, reserva y menu */
+/* TABLET INDEX - encabezado con logo, reserva y menú */
 @media (min-width: 768px) and (max-width: 991.98px) {
   body.pagina-index .site-header .container-fluid {
     min-height: 76px;
@@ -988,7 +988,7 @@ body.pagina-index .index-fixed-header {
   }
 }
 
-/* TABLET INDEX - carrusel deslizable igual que mobile */
+/* TABLET INDEX - carrusel deslizable igual que móvil */
 @media (min-width: 768px) and (max-width: 991.98px) {
   body.pagina-index main .promociones-index .promociones-index__fila.row,
   body.pagina-index main .rutas-index .rutas-index__fila.row {
@@ -1015,7 +1015,7 @@ body.pagina-index .index-fixed-header {
   }
 }
 
-/* TABLET INDEX - mismo diseno visual que mobile */
+/* TABLET INDEX - mismo diseño visual que móvil */
 @media (min-width: 768px) and (max-width: 991.98px) {
   body.pagina-index main .index-promociones,
   body.pagina-index main .index-rutas {
@@ -1206,7 +1206,7 @@ body.pagina-index .index-fixed-header {
     box-shadow: 0 16px 34px rgba(15, 23, 42, 0.14);
   }
 
-/* --- Overrides finales para sección CONTACTO (corrige layout según maqueta) --- */
+/* --- Ajustes finales para la sección CONTACTO (corrigen el diseño según la maqueta) --- */
 .contacto-hero__bg img {
   object-position: 86% center; /* mostrar más la persona a la derecha */
 }
@@ -1650,7 +1650,7 @@ body.pagina-index .index-fixed-header {
   }
 }
 
-/* MOBILE INDEX - rutas con el mismo formato visual que promociones */
+/* MÓVIL INDEX - rutas con el mismo formato visual que promociones */
 @media (max-width: 767.98px) {
   body.pagina-index main .rutas-index.index-rutas {
     padding: clamp(2.35rem, 8vw, 3rem) 0 clamp(2.6rem, 9vw, 3.4rem) !important;
@@ -1856,7 +1856,7 @@ body.pagina-index .index-fixed-header {
   }
 }
 
-/* CONTACTO INDEX - ajuste visual final segun maqueta */
+/* CONTACTO INDEX - ajuste visual final según maqueta */
 body.pagina-index main .contacto-hero.contacto-hero--index {
   position: relative !important;
   min-height: clamp(33.75rem, 50vw, 36.6rem) !important;

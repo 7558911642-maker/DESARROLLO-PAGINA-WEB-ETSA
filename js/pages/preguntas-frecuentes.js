@@ -8,7 +8,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const { patrones, utilidades } = window.EtsaValidacionesFormularios;
 
-  window.EtsaValidacionesFormularios.crear(formulario, {
+  let validador;
+
+  validador = window.EtsaValidacionesFormularios.crear(formulario, {
     campos: {
       nombre: {
         requerido: true,
@@ -67,6 +69,18 @@ document.addEventListener("DOMContentLoaded", function () {
           maximo: "La pregunta no debe superar 700 caracteres."
         }
       }
+    },
+    alEnviarValido: function (evento, datos) {
+      evento.preventDefault();
+
+      if (!window.EtsaApiFormularios) return;
+
+      window.EtsaApiFormularios.enviar(formulario, "/api/preguntas", datos, {
+        mensajeExito: "Pregunta enviada correctamente. Nuestro equipo la revisara.",
+        alExito: function () {
+          validador?.limpiar();
+        }
+      });
     }
   });
 });

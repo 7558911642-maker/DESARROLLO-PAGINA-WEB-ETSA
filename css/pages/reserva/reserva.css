@@ -6,7 +6,7 @@ body.pagina-reserva main {
     margin-top: 85px;
 }
 
-/* HERO */
+/* SECCIÓN PRINCIPAL */
 
 body.pagina-reserva main section:first-child {
     position: relative;
@@ -150,7 +150,7 @@ body.pagina-reserva .form-control:focus {
         0 0 0 4px rgba(255,123,0,.12) !important;
 }
 
-/* BOTON */
+/* BOTÓN */
 
 body.pagina-reserva form button.btn-warning {
     width: 100%;
@@ -204,7 +204,7 @@ body.pagina-reserva form.bg-white::before {
     margin-bottom: 25px;
 }
 
-/* RESPONSIVE */
+/* RESPONSIVO */
 
 @media (max-width: 768px) {
 
@@ -289,7 +289,7 @@ body.pagina-reserva main section:first-child .lead {
     max-width: 750px;
 }
 
-/* CARD INFORMATIVA */
+/* TARJETA INFORMATIVA */
 
 body.pagina-reserva main article.bg-white {
     position: relative;
@@ -346,7 +346,7 @@ body.pagina-reserva form.bg-white::after {
     transform: translate(50%,-50%);
 }
 
-/* INPUTS */
+/* CAMPOS */
 
 body.pagina-reserva .form-control {
 
@@ -360,7 +360,7 @@ body.pagina-reserva .form-control:hover {
     border-color: #ff9900;
 }
 
-/* BOTON */
+/* BOTÓN */
 
 body.pagina-reserva form button.btn-warning {
 
@@ -381,7 +381,7 @@ body.pagina-reserva main article.bg-white:hover {
     transition: .35s ease;
 }
 
-/* RESPONSIVE */
+/* RESPONSIVO */
 
 @media (max-width:768px){
 
@@ -398,7 +398,7 @@ body.pagina-reserva main article.bg-white:hover {
     }
 }
 
-/* Ajustes especificos de reserva.html para igualar el encabezado de terminos-viaje.html. */
+/* Ajustes específicos de reserva.html para igualar el encabezado de términos-viaje.html. */
 
 html.pagina-reserva-html {
   overflow-x: clip;
@@ -1203,7 +1203,7 @@ body.pagina-reserva .asientos-imagen figcaption {
 }
 
 /* ==================================================
-   MAQUETA DE RESERVA - DISENO FINAL
+   MAQUETA DE RESERVA - DISEÑO FINAL
 ================================================== */
 
 body.pagina-reserva {
@@ -2040,7 +2040,7 @@ body.pagina-reserva main .reserva-formulario .reserva-total-card::after {
   }
 }
 
-/* Ajuste puntual: tarjeta de seleccion de asiento segun maqueta. */
+/* Ajuste puntual: tarjeta de selección de asiento según maqueta. */
 body.pagina-reserva main .reserva-formulario .reserva-card--asientos {
   padding: clamp(1.15rem, 2vw, 1.45rem) !important;
   border-radius: 16px;

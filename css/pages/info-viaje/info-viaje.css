@@ -1,9 +1,9 @@
 /* ==================================================
    INFO PARA TU VIAJE
-   Estilos exclusivos para la pagina info-viaje.html
+   Estilos exclusivos para la página info-viaje.html
    ================================================== */
 
-/* Configuracion base de la pagina */
+/* Configuración base de la página */
 html.pagina-info-viaje-html {
   overflow-x: clip;
 }
@@ -47,7 +47,7 @@ body.pagina-info-viaje .equipaje-card__contenido li {
   word-break: normal;
 }
 
-/* Hero principal */
+/* Sección principal */
 .hero-viaje {
   width: 100%;
   position: relative;
@@ -164,7 +164,7 @@ body.pagina-info-viaje main > .hero-viaje .hero-title-line {
   display: block;
 }
 
-/* Breadcrumb */
+/* Ruta de navegación */
 .breadcrumb-info-viaje {
   position: -webkit-sticky;
   position: sticky;
@@ -313,7 +313,7 @@ body.pagina-info-viaje main > .mensaje-viaje {
   background-color: var(--naranja);
 }
 
-/* Grids responsive */
+/* Cuadrículas responsivo */
 .politicas-viaje .politicas-viaje__grid,
 .info-adicional .info-adicional__grid,
 .equipaje .equipaje__grid {
@@ -333,7 +333,7 @@ body.pagina-info-viaje main > .mensaje-viaje {
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 235px), 1fr));
 }
 
-/* Slider responsive */
+/* Carrusel responsivo */
 .info-viaje-slider {
   --info-slider-gap: clamp(20px, 2.2vw, 34px);
 }
@@ -387,7 +387,7 @@ body.pagina-info-viaje main > .mensaje-viaje {
   }
 }
 
-/* Ajuste del slider en pantallas pequenas */
+/* Ajuste del carrusel en pantallas pequeñas */
 @media (max-width: 767.98px) {
   body.pagina-info-viaje .info-viaje-slider {
     --info-slider-gap: 20px;
@@ -395,7 +395,7 @@ body.pagina-info-viaje main > .mensaje-viaje {
   }
 }
 
-/* Composicion de escritorio para grids informativos */
+/* Composición de escritorio para cuadrículas informativos */
 @media (min-width: 1200px) {
   body.pagina-info-viaje .info-viaje-slider {
     overflow: visible;
@@ -427,7 +427,7 @@ body.pagina-info-viaje main > .mensaje-viaje {
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
-/* Estados hover */
+/* Estados al pasar el cursor */
 .politica-card:hover,
 .info-card:hover,
 .equipaje-card:hover {
@@ -531,7 +531,7 @@ body.pagina-info-viaje main > .mensaje-viaje {
   color: var(--naranja);
 }
 
-/* Estados hover en dispositivos tactiles */
+/* Estados táctiles */
 @media (hover: none) {
   .politica-card:hover,
   .info-card:hover,

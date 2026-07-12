@@ -1,0 +1,9 @@
+{
+  "version": "1.0.0",
+  "metadata": {
+    "modulo": "testimonios",
+    "descripcion": "Testimonios enviados por usuarios del sitio.",
+    "persistencia": "servidor-json"
+  },
+  "testimonios": []
+}

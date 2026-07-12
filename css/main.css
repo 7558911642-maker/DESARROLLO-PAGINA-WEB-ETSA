@@ -1,5 +1,5 @@
 /* CSS principal modular de ETSA Sol Amazonense. */
-/* Mantiene el orden original de css/styles.css para conservar el diseno actual. */
+/* Mantiene el orden original de css/styles.css para conservar el diseño actual. */
 @import url("./base/reset.css");
 @import url("./base/variables.css");
 @import url("./base/base.css");
@@ -25,7 +25,7 @@
 @import url("./pages/detalles-rutas/detalles-rutas.css");
 @import url("./responsive/final-responsive.css");
 
-/* Espacios por pagina para nuevos estilos sin tocar modulos compartidos. */
+/* Espacios por página para nuevos estilos sin tocar módulos compartidos. */
 @import url("./pages/libro_reclamos/libro_reclamos.css");
 @import url("./pages/reserva/reserva.css");
 @import url("./pages/terminos-encomiendas/terminos-encomiendas.css");
@@ -880,7 +880,7 @@ body.menu-mobile-abierto main {
   }
 }
 
-/* Alineacion uniforme de titulos y contenido principal de los Hero. */
+/* Alíneación uniforme de títulos y contenido principal de los Sección principal. */
 body.pagina-index .hero.hero-banner,
 body.pagina-contacto .contacto-hero,
 body.pagina-encomiendas .encomiendas-hero,
@@ -1068,7 +1068,7 @@ body.pagina-terminos-viaje .terminos-viaje-hero .lead {
   }
 }
 
-/* Los Hero internos muestran solo etiqueta superior y titulo principal. */
+/* Los Sección principal internos muestran solo etiqueta superior y título principal. */
 body:not(.pagina-index) .page-hero h1 ~ p,
 body:not(.pagina-index) .page-hero h1 ~ .lead,
 body:not(.pagina-index) .page-hero h1 ~ [class*="descripcion"],

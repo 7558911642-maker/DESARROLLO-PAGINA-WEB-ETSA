@@ -12,16 +12,16 @@
   <!-- Estilos personalizados -->
   <link rel="stylesheet" href="css/main.css">
 
-  <!-- Tipografia -->
+  <!-- Tipografía -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <!-- Favicon -->
+  <!-- Icono del sitio -->
   <link rel="icon" href="img/marca/lofo.png" type="image/png">
 </head>
 
 <body class="pagina-testimonios">
-  <!-- HEADER CON BOOTSTRAP -->
+  <!-- ENCABEZADO CON BOOTSTRAP -->
     <div data-layout="header"></div>
 
 
@@ -29,7 +29,7 @@
   <main>
 
     
-    <!-- HERO TESTIMONIOS -->
+    <!-- SECCIÓN PRINCIPAL TESTIMONIOS -->
     <section class="testimonios-hero page-hero" aria-labelledby="titulo-testimonios">
       <div class="testimonios-hero__contenido">
         <h1 id="titulo-testimonios">Testimonios</h1>
@@ -236,69 +236,16 @@
     </section>
   </main>
 
-  <!-- FOOTER COMPARTIDO -->
+  <!-- PIE DE PÁGINA COMPARTIDO -->
   <div data-layout="footer"></div>
 
 
-  <!-- Bootstrap JS -->
+  <!-- JavaScript de Bootstrap -->
   <script src="js/components/layout-loader.js"></script>
 
   <script src="bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/main.js"></script>
   <script src="js/utils/validaciones-formularios.js"></script>
   <script src="js/pages/testimonios.js"></script>
-  <script>
-    (() => {
-      const slider = document.getElementById("testimoniosSlider");
-      const dots = document.querySelectorAll(".testimonios__dot");
-
-      if (!slider || !dots.length) return;
-
-      const cards = Array.from(slider.querySelectorAll(".testimonio-card"));
-      let ticking = false;
-
-      const setActiveDot = (index) => {
-        dots.forEach((dot, dotIndex) => {
-          const active = dotIndex === index;
-          dot.classList.toggle("testimonios__dot--activo", active);
-          dot.toggleAttribute("aria-current", active);
-        });
-      };
-
-      const getCurrentIndex = () => {
-        const sliderCenter = slider.scrollLeft + slider.clientWidth / 2;
-        return cards.reduce((closestIndex, card, index) => {
-          const cardCenter = card.offsetLeft + card.clientWidth / 2;
-          const closestCard = cards[closestIndex];
-          const closestCenter = closestCard.offsetLeft + closestCard.clientWidth / 2;
-          return Math.abs(cardCenter - sliderCenter) < Math.abs(closestCenter - sliderCenter)
-            ? index
-            : closestIndex;
-        }, 0);
-      };
-
-      dots.forEach((dot, index) => {
-        dot.addEventListener("click", () => {
-          cards[index].scrollIntoView({
-            behavior: "smooth",
-            block: "nearest",
-            inline: "start"
-          });
-          setActiveDot(index);
-        });
-      });
-
-      slider.addEventListener("scroll", () => {
-        if (ticking) return;
-
-        window.requestAnimationFrame(() => {
-          setActiveDot(getCurrentIndex());
-          ticking = false;
-        });
-
-        ticking = true;
-      }, { passive: true });
-    })();
-  </script>
 </body>
 </html>

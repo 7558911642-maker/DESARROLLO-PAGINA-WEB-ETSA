@@ -3,7 +3,7 @@
    Contiene héroe, promociones, encomiendas, rutas y contacto
 ================================================== */
 
-/* INDEX - HERO PRINCIPAL */
+/* INDEX - SECCIÓN PRINCIPAL */
 body.pagina-index > .site-header.fixed-top ~ main {
   padding-top: 0;
 }
@@ -93,7 +93,7 @@ body.pagina-index > .site-header.fixed-top ~ main {
   color:  #ea580c;
 }
 
-/*parrafo*/
+/* Párrafo */
 .hero-descripcion {
   color: #f8fafc;
   font-size: 18px;
@@ -250,7 +250,7 @@ body.pagina-index > .site-header.fixed-top ~ main {
   color: var(--blanco);
 }
 
-/* GRID DE TARJETAS */
+/* CUADRÍCULA DE TARJETAS */
 .index-promociones__grid {
   width: 100%;
   display: grid;
@@ -536,7 +536,7 @@ body.pagina-index > .site-header.fixed-top ~ main {
   color: var(--blanco);
 }
 
-/* GRID DE RUTAS */
+/* CUADRÍCULA DE RUTAS */
 .index-rutas__grid {
   width: 100%;
   display: grid;
@@ -544,7 +544,7 @@ body.pagina-index > .site-header.fixed-top ~ main {
   gap: 8px;
 }
 
-/* CARD DE RUTA */
+/* TARJETA DE RUTA */
 .ruta-index-card {
   min-height: 30px;
   position: relative;
@@ -973,7 +973,7 @@ body.pagina-index > .site-header.fixed-top ~ main {
 
 
 
-/* INDEX - RESPONSIVE CONTACTO */
+/* INDEX - RESPONSIVO CONTACTO */
 @media (max-width: 991.98px) {
   .index-contacto {
     min-height: auto;
@@ -1085,7 +1085,7 @@ figure {
   color: var(--naranja);
 }
 
-/* HERO: se mantiene el aspecto actual, pero el contenido vive dentro de container/row/col */
+/* SECCIÓN PRINCIPAL: se mantiene el aspecto actual, pero el contenido vive dentro de container/row/col */
 .hero .container-fluid {
   position: relative;
   z-index: 3;
@@ -1120,7 +1120,7 @@ figure {
   border: none;
 }
 
-/* RESPONSIVE */
+/* RESPONSIVO */
 @media (max-width: 991px) {
   .header {
     gap: 12px;
@@ -1241,7 +1241,7 @@ figure {
 }
 
 
-/* HERO INDEX - botones solo entre 576px y 766px */
+/* SECCIÓN PRINCIPAL INDEX - botones solo entre 576px y 766px */
 @media (min-width: 576px) and (max-width: 766px) {
   body.pagina-index .hero .botones {
     width: 100%;

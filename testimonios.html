@@ -30,7 +30,7 @@
 
     
     <!-- HERO TESTIMONIOS -->
-    <section class="testimonios-hero" aria-labelledby="titulo-testimonios">
+    <section class="testimonios-hero page-hero" aria-labelledby="titulo-testimonios">
       <div class="testimonios-hero__contenido">
         <h1 id="titulo-testimonios">Testimonios</h1>
       </div>
@@ -179,45 +179,53 @@
           </p>
         </div>
 
-        <form class="testimonio-form" action="mailto:informes@etsa.pe" method="post" enctype="text/plain">
+        <form class="testimonio-form" action="mailto:informes@etsa.pe" method="post" enctype="text/plain" novalidate>
           <div class="testimonio-form__fila">
-            <label for="nombre" class="sr-only">Nombre completo</label>
-            <input
-              type="text"
-              id="nombre"
-              name="nombre"
-              placeholder="Nombre completo*"
-              autocomplete="name"
-              required
-            >
+            <div class="testimonio-form__campo">
+              <label for="nombre" class="sr-only">Nombre completo</label>
+              <input
+                type="text"
+                id="nombre"
+                name="nombre"
+                placeholder="Nombre completo*"
+                autocomplete="name"
+                required
+              >
+            </div>
 
-            <label for="tipo" class="sr-only">Tipo de usuario</label>
-            <input
-              type="text"
-              id="tipo"
-              name="tipo"
-              placeholder="Ejemplo: pasajero frecuente*"
-              required
-            >
+            <div class="testimonio-form__campo">
+              <label for="tipo" class="sr-only">Tipo de usuario</label>
+              <input
+                type="text"
+                id="tipo"
+                name="tipo"
+                placeholder="Ejemplo: pasajero frecuente*"
+                required
+              >
+            </div>
           </div>
 
-          <label for="calificacion" class="sr-only">Calificacion del servicio</label>
-          <select id="calificacion" name="calificacion" required>
-            <option value="">Calificaci&oacute;n del servicio*</option>
-            <option value="5">Excelente</option>
-            <option value="4">Muy bueno</option>
-            <option value="3">Bueno</option>
-            <option value="2">Regular</option>
-            <option value="1">Malo</option>
-          </select>
+          <div class="testimonio-form__campo">
+            <label for="calificacion" class="sr-only">Calificacion del servicio</label>
+            <select id="calificacion" name="calificacion" required>
+              <option value="">Calificaci&oacute;n del servicio*</option>
+              <option value="5">Excelente</option>
+              <option value="4">Muy bueno</option>
+              <option value="3">Bueno</option>
+              <option value="2">Regular</option>
+              <option value="1">Malo</option>
+            </select>
+          </div>
 
-          <label for="mensaje" class="sr-only">Mensaje del testimonio</label>
-          <textarea
-            id="mensaje"
-            name="mensaje"
-            placeholder="Escribe tu testimonio*"
-            required
-          ></textarea>
+          <div class="testimonio-form__campo">
+            <label for="mensaje" class="sr-only">Mensaje del testimonio</label>
+            <textarea
+              id="mensaje"
+              name="mensaje"
+              placeholder="Escribe tu testimonio*"
+              required
+            ></textarea>
+          </div>
 
           <button type="submit">
             Enviar testimonio
@@ -237,6 +245,8 @@
 
   <script src="bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/utils/validaciones-formularios.js"></script>
+  <script src="js/pages/testimonios.js"></script>
   <script>
     (() => {
       const slider = document.getElementById("testimoniosSlider");

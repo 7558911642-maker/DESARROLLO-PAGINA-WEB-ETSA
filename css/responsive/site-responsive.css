@@ -1565,8 +1565,8 @@ section {
 
 @media (min-width: 992px) {
   .contacto-hero {
-    height: 100vh;
-    min-height: 620px;
+    height: auto;
+    min-height: clamp(var(--page-hero-min, 320px), var(--page-hero-fluid, 50vh), var(--page-hero-max, 460px));
   }
 
   .contacto-hero__eyebrow {

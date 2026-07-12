@@ -8,6 +8,13 @@
     feedbackExito: "valid-feedback"
   };
 
+  const patrones = {
+    nombreSimple: "[\\p{L}\\s]+",
+    celularPeru: "9\\d{8}",
+    dni: "\\d{8}",
+    ruc: "\\d{11}"
+  };
+
   function crear(formulario, configuracion) {
     if (!formulario || !configuracion?.campos) return null;
 
@@ -231,7 +238,53 @@
     return Object.fromEntries(new FormData(formulario).entries());
   }
 
+  function normalizarEntradaTexto(valor, maximo) {
+    const texto = String(valor || "")
+      .replace(/\s{2,}/g, " ")
+      .replace(/^\s+/, "");
+
+    return limitarTexto(texto, maximo);
+  }
+
+  function limitarTexto(valor, maximo) {
+    const texto = String(valor || "");
+
+    if (!maximo) {
+      return texto;
+    }
+
+    return texto.slice(0, maximo);
+  }
+
+  function soloDigitos(valor, maximo) {
+    const digitos = String(valor || "").replace(/\D/g, "");
+
+    if (!maximo) {
+      return digitos;
+    }
+
+    return digitos.slice(0, maximo);
+  }
+
+  function soloDigitosPeruanos(valor) {
+    return soloDigitos(valor, 9);
+  }
+
+  function validarSinHtml(valor, mensaje) {
+    return /[<>]/.test(valor)
+      ? mensaje || "No use etiquetas HTML en este campo."
+      : "";
+  }
+
   window.EtsaValidacionesFormularios = {
-    crear
+    crear,
+    patrones,
+    utilidades: {
+      limitarTexto,
+      normalizarEntradaTexto,
+      soloDigitos,
+      soloDigitosPeruanos,
+      validarSinHtml
+    }
   };
 })();

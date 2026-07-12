@@ -9,8 +9,6 @@ body.pagina-detalle-ruta > .site-header.fixed-top ~ main.pagina-detalle-ruta__ma
 
 .detalle-destino-hero {
   position: relative;
-  min-height: calc(100vh - var(--site-header-height, 84px));
-  min-height: calc(100svh - var(--site-header-height, 84px));
   display: flex;
   align-items: flex-end;
   padding: 78px 7%;
@@ -56,8 +54,6 @@ body.pagina-detalle-ruta > .site-header.fixed-top ~ main.pagina-detalle-ruta__ma
 }
 
 .detalle-destino-hero.detalle-destino-hero--pedro-ruiz {
-  min-height: calc(100vh - var(--site-header-height, 84px));
-  min-height: calc(100svh - var(--site-header-height, 84px));
   padding: clamp(108px, 12vw, 152px) clamp(28px, 8vw, 120px) clamp(64px, 8vw, 96px);
   background-image: url("../../../img/banners/Pedro_Ruiz.png");
 }
@@ -769,14 +765,10 @@ main#contenido-principal .actividad-item p {
 
 @media (max-width: 767.98px) {
   .detalle-destino-hero.detalle-destino-hero--pedro-ruiz {
-    min-height: calc(100vh - var(--site-header-height, 84px));
-    min-height: calc(100svh - var(--site-header-height, 84px));
     padding: 104px clamp(32px, 7vw, 64px) 72px;
   }
 
   .detalle-destino-hero {
-    min-height: calc(100vh - var(--site-header-height, 84px));
-    min-height: calc(100svh - var(--site-header-height, 84px));
     justify-content: center;
     align-items: flex-end;
     padding: 70px 7% 62px;
@@ -1007,15 +999,11 @@ main#contenido-principal .actividad-item p {
   }
 
   .detalle-destino-hero {
-    min-height: calc(100vh - var(--site-header-height, 84px));
-    min-height: calc(100svh - var(--site-header-height, 84px));
     padding-top: 62px;
     padding-bottom: 54px;
   }
 
   .detalle-destino-hero.detalle-destino-hero--pedro-ruiz {
-    min-height: calc(100vh - var(--site-header-height, 84px));
-    min-height: calc(100svh - var(--site-header-height, 84px));
     padding: 96px 28px 62px;
   }
 

@@ -9,8 +9,6 @@
 .testimonios-hero {
   position: relative;
   width: 100%;
-  min-height: calc(100vh - var(--site-header-height, 84px));
-  min-height: calc(100svh - var(--site-header-height, 84px));
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -278,6 +276,10 @@
   gap: 14px;
 }
 
+.testimonio-form__campo {
+  min-width: 0;
+}
+
 .testimonio-form input,
 .testimonio-form select,
 .testimonio-form textarea {
@@ -309,6 +311,36 @@
 .testimonio-form textarea:focus {
   border-color: var(--naranja);
   box-shadow: 0 0 0 4px rgba(249, 115, 22, .16);
+}
+
+.testimonio-form input.is-invalid,
+.testimonio-form select.is-invalid,
+.testimonio-form textarea.is-invalid {
+  border-color: #dc2626;
+  box-shadow: 0 0 0 4px rgba(220, 38, 38, .12);
+}
+
+.testimonio-form input.is-valid,
+.testimonio-form select.is-valid,
+.testimonio-form textarea.is-valid {
+  border-color: #16a34a;
+  box-shadow: 0 0 0 4px rgba(22, 163, 74, .10);
+}
+
+.testimonio-form .invalid-feedback,
+.testimonio-form .valid-feedback {
+  margin-top: 6px;
+  font-size: .82rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.testimonio-form .invalid-feedback {
+  color: #dc2626;
+}
+
+.testimonio-form .valid-feedback {
+  color: #15803d;
 }
 
 .testimonio-form button {

@@ -17,8 +17,6 @@ body > .site-header.fixed-top ~ main.terminos-encomiendas-page {
 .terminos-encomiendas-hero {
   position: relative;
   isolation: isolate;
-  min-height: calc(100vh - var(--site-header-height, 84px));
-  min-height: calc(100svh - var(--site-header-height, 84px));
   display: flex;
   align-items: flex-end;
   padding: clamp(112px, 13vw, 154px) clamp(34px, 9vw, 168px) clamp(48px, 7vw, 86px);

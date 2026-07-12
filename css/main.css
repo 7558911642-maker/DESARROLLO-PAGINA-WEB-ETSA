@@ -134,9 +134,9 @@ body.pagina-index > main > .hero.etsa-banner-carousel-ready > .container-fluid {
 .hero-viaje.etsa-banner-carousel-ready > .etsa-banner-carousel__shade {
   background: linear-gradient(
     90deg,
-    rgba(255, 255, 255, 0.92) 0%,
-    rgba(255, 255, 255, 0.70) 40%,
-    rgba(15, 23, 42, 0.22) 100%
+    rgba(15, 23, 42, 0.50) 0%,
+    rgba(15, 23, 42, 0.26) 48%,
+    rgba(15, 23, 42, 0.10) 100%
   );
 }
 
@@ -144,6 +144,7 @@ body.pagina-index > main > .hero.etsa-banner-carousel-ready > .container-fluid {
   z-index: 2;
 }
 
+.page-hero,
 body.pagina-index > main > .hero.hero-banner,
 .contacto-hero:not(.contacto-hero--index),
 .encomiendas-hero,
@@ -158,16 +159,230 @@ body.pagina-index > main > .hero.hero-banner,
 .terminos-viaje-hero,
 .testimonios-hero,
 .detalle-destino-hero {
-  height: calc(100vh - var(--site-header-height, 84px)) !important;
-  height: calc(100svh - var(--site-header-height, 84px)) !important;
-  min-height: calc(100vh - var(--site-header-height, 84px)) !important;
-  min-height: calc(100svh - var(--site-header-height, 84px)) !important;
+  --page-hero-min: 560px;
+  --page-hero-fluid: calc(88vh - var(--site-header-height, 6.75rem));
+  --page-hero-max: 820px;
+  width: 100%;
+  height: auto !important;
+  min-height: clamp(var(--page-hero-min), var(--page-hero-fluid), var(--page-hero-max)) !important;
+  box-sizing: border-box;
+}
+
+.page-hero img {
+  object-fit: cover;
+  object-position: center;
+}
+
+.page-hero,
+body.pagina-index > main > .hero.hero-banner,
+.contacto-hero:not(.contacto-hero--index),
+.encomiendas-hero,
+.hero-viaje,
+.libro-reclamos-hero,
+.nosotros-hero,
+.faq-hero,
+.promociones-hero,
+.rutas-hero,
+.servicios-hero,
+.terminos-encomiendas-hero,
+.terminos-viaje-hero,
+.testimonios-hero,
+.detalle-destino-hero {
+  padding-top: clamp(88px, 8vw, 128px) !important;
+  padding-bottom: clamp(44px, 5vw, 76px) !important;
+}
+
+.page-hero h1,
+body.pagina-index > main > .hero.hero-banner h1,
+.contacto-hero:not(.contacto-hero--index) h1,
+.encomiendas-hero h1,
+.hero-viaje h1,
+.libro-reclamos-hero h1,
+.nosotros-hero h1,
+.faq-hero h1,
+.promociones-hero h1,
+.rutas-hero h1,
+.servicios-hero h1,
+.terminos-encomiendas-hero h1,
+.terminos-viaje-hero h1,
+.testimonios-hero h1,
+.detalle-destino-hero h1 {
+  text-wrap: balance;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+@media (min-width: 1440px) {
+  .page-hero,
+  body.pagina-index > main > .hero.hero-banner,
+  .contacto-hero:not(.contacto-hero--index),
+  .encomiendas-hero,
+  .hero-viaje,
+  .libro-reclamos-hero,
+  .nosotros-hero,
+  .faq-hero,
+  .promociones-hero,
+  .rutas-hero,
+  .servicios-hero,
+  .terminos-encomiendas-hero,
+  .terminos-viaje-hero,
+  .testimonios-hero,
+  .detalle-destino-hero {
+    --page-hero-min: 620px;
+    --page-hero-fluid: calc(86vh - var(--site-header-height, 6.75rem));
+    --page-hero-max: 900px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .page-hero,
+  body.pagina-index > main > .hero.hero-banner,
+  .contacto-hero:not(.contacto-hero--index),
+  .encomiendas-hero,
+  .hero-viaje,
+  .libro-reclamos-hero,
+  .nosotros-hero,
+  .faq-hero,
+  .promociones-hero,
+  .rutas-hero,
+  .servicios-hero,
+  .terminos-encomiendas-hero,
+  .terminos-viaje-hero,
+  .testimonios-hero,
+  .detalle-destino-hero {
+    --page-hero-min: 420px;
+    --page-hero-fluid: 62vh;
+    --page-hero-max: 620px;
+    padding-top: clamp(86px, 10vw, 118px) !important;
+    padding-bottom: clamp(54px, 7vw, 76px) !important;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .page-hero,
+  body.pagina-index > main > .hero.hero-banner,
+  .contacto-hero:not(.contacto-hero--index),
+  .encomiendas-hero,
+  .hero-viaje,
+  .libro-reclamos-hero,
+  .nosotros-hero,
+  .faq-hero,
+  .promociones-hero,
+  .rutas-hero,
+  .servicios-hero,
+  .terminos-encomiendas-hero,
+  .terminos-viaje-hero,
+  .testimonios-hero,
+  .detalle-destino-hero {
+    --page-hero-min: 300px;
+    --page-hero-fluid: 52vh;
+    --page-hero-max: 430px;
+    padding-top: clamp(72px, 18vw, 94px) !important;
+    padding-bottom: clamp(34px, 10vw, 54px) !important;
+  }
+
+  .page-hero h1,
+  body.pagina-index > main > .hero.hero-banner h1,
+  .contacto-hero:not(.contacto-hero--index) h1,
+  .encomiendas-hero h1,
+  .hero-viaje h1,
+  .libro-reclamos-hero h1,
+  .nosotros-hero h1,
+  .faq-hero h1,
+  .promociones-hero h1,
+  .rutas-hero h1,
+  .servicios-hero h1,
+  .terminos-encomiendas-hero h1,
+  .terminos-viaje-hero h1,
+  .testimonios-hero h1,
+  .detalle-destino-hero h1 {
+    max-width: 100%;
+    font-size: clamp(2.35rem, 12vw, 4.4rem) !important;
+    line-height: 0.98 !important;
+    white-space: normal !important;
+    overflow-wrap: normal !important;
+    word-break: normal !important;
+    hyphens: none !important;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .etsa-banner-carousel__slide,
   .etsa-banner-carousel__dot {
     transition: none;
+  }
+}
+
+body:not(.pagina-index) .page-hero h1,
+body:not(.pagina-index) .page-hero .hero-title-line {
+  overflow-wrap: normal !important;
+  word-break: normal !important;
+  hyphens: none !important;
+}
+
+@media (min-width: 768px) {
+  body:not(.pagina-index) .page-hero h1,
+  body:not(.pagina-index) .page-hero .hero-title-line {
+    max-width: min(100%, calc(100vw - 3rem));
+    white-space: nowrap !important;
+  }
+
+  body.pagina-libro-reclamos main > .libro-reclamos-hero h1 {
+    max-width: min(100%, calc(100vw - 3rem));
+    font-size: clamp(2.75rem, 5.2vw, 6.25rem) !important;
+  }
+
+  body.pagina-terminos-viaje .terminos-viaje-hero h1 {
+    max-width: min(100%, calc(100vw - 3rem));
+    font-size: clamp(2rem, 4.25vw, 5.55rem) !important;
+  }
+
+  .terminos-encomiendas-hero h1 {
+    max-width: min(100%, calc(100vw - 3rem));
+    font-size: clamp(2.35rem, 5.35vw, 5.85rem) !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  body.pagina-libro-reclamos main > .libro-reclamos-hero h1 {
+    font-size: clamp(2.4rem, 5vw, 3.35rem) !important;
+  }
+
+  body.pagina-terminos-viaje .terminos-viaje-hero h1 {
+    font-size: clamp(1.75rem, 4.05vw, 2.7rem) !important;
+  }
+
+  .terminos-encomiendas-hero h1 {
+    font-size: clamp(2rem, 4.9vw, 3.2rem) !important;
+  }
+}
+
+@media (max-width: 767.98px) {
+  body:not(.pagina-index) .page-hero h1,
+  body:not(.pagina-index) .page-hero .hero-title-line {
+    white-space: normal !important;
+    overflow-wrap: normal !important;
+    word-break: normal !important;
+    hyphens: none !important;
+  }
+
+  body.pagina-libro-reclamos main > .libro-reclamos-hero h1 {
+    max-width: 100% !important;
+    font-size: clamp(1.55rem, 7.6vw, 2.25rem) !important;
+    line-height: 1.04 !important;
+  }
+
+  body.pagina-terminos-viaje .terminos-viaje-hero h1 {
+    width: min(100%, 14.75rem) !important;
+    max-width: min(100%, 14.75rem) !important;
+    font-size: clamp(1.22rem, 5.8vw, 1.95rem) !important;
+    line-height: 1.1 !important;
+  }
+
+  .terminos-encomiendas-hero h1 {
+    max-width: 100% !important;
+    font-size: clamp(1.45rem, 7.2vw, 2.35rem) !important;
+    line-height: 1.06 !important;
   }
 }
 
@@ -186,6 +401,7 @@ body.pagina-terminos-viaje,
 body.pagina-testimonios,
 body.pagina-detalle-ruta {
   --breadcrumb-header-height: var(--site-header-height);
+  --breadcrumb-initial-gap: clamp(1.5rem, 2.4vw, 2.5rem);
   overflow-x: clip;
 }
 
@@ -232,8 +448,9 @@ body.pagina-detalle-ruta .breadcrumb-rutas {
   z-index: 1095 !important;
   width: fit-content !important;
   max-width: calc(100% - 14%);
+  margin-top: var(--breadcrumb-initial-gap) !important;
   margin-left: 7% !important;
-  padding: 2rem 0 1.9rem !important;
+  padding: 0 !important;
   border: 0 !important;
   background: transparent !important;
   box-shadow: none !important;
@@ -344,6 +561,7 @@ body.pagina-detalle-ruta .breadcrumb-rutas.breadcrumb-pegado {
   top: var(--site-header-height, 84px) !important;
   width: 100% !important;
   max-width: none !important;
+  margin-top: 0 !important;
   margin-left: 0 !important;
   padding: 0.55rem 7% !important;
   background: rgba(255, 255, 255, 0.96) !important;
@@ -403,7 +621,7 @@ body.menu-mobile-abierto main {
     width: calc(100% - clamp(28px, 10vw, 44px)) !important;
     max-width: none;
     margin-left: clamp(14px, 5vw, 22px) !important;
-    padding: 1.15rem 0 !important;
+    padding: 0 !important;
   }
 
   body.pagina-contacto .breadcrumb-etsa .breadcrumb-container,
@@ -660,4 +878,213 @@ body.menu-mobile-abierto main {
     outline: 3px solid rgba(255, 255, 255, 0.45);
     outline-offset: 4px;
   }
+}
+
+/* Alineacion uniforme de titulos y contenido principal de los Hero. */
+body.pagina-index .hero.hero-banner,
+body.pagina-contacto .contacto-hero,
+body.pagina-encomiendas .encomiendas-hero,
+body.pagina-info-viaje .hero-viaje,
+body.pagina-libro-reclamos .libro-reclamos-hero,
+body.pagina-nosotros .nosotros-hero,
+body.pagina-preguntas-frecuentes .faq-hero,
+body.pagina-promociones .promociones-hero,
+body.pagina-reserva .reserva-hero,
+body.pagina-rutas .rutas-hero,
+body.pagina-servicios .servicios-hero,
+body.pagina-terminos-encomiendas .terminos-encomiendas-hero,
+body.pagina-terminos-viaje .terminos-viaje-hero,
+body.pagina-testimonios .testimonios-hero,
+body.pagina-detalle-ruta .detalle-destino-hero {
+  justify-content: flex-start !important;
+  text-align: left !important;
+}
+
+body.pagina-index .hero.hero-banner {
+  --hero-title-min: 2.15rem;
+  --hero-title-fluid: 5.8vw;
+  --hero-title-max: 4rem;
+}
+
+body.pagina-contacto .contacto-hero,
+body.pagina-nosotros .nosotros-hero,
+body.pagina-testimonios .testimonios-hero {
+  --hero-title-min: 2.25rem;
+  --hero-title-fluid: 8vw;
+  --hero-title-max: 6.6rem;
+}
+
+body.pagina-encomiendas .encomiendas-hero {
+  --hero-title-min: 2.35rem;
+  --hero-title-fluid: 8.4vw;
+  --hero-title-max: 7.375rem;
+}
+
+body.pagina-info-viaje .hero-viaje {
+  --hero-title-min: 2.1rem;
+  --hero-title-fluid: 5vw;
+  --hero-title-max: 4rem;
+}
+
+body.pagina-libro-reclamos .libro-reclamos-hero {
+  --hero-title-min: 1.55rem;
+  --hero-title-fluid: 5.2vw;
+  --hero-title-max: 6.25rem;
+}
+
+body.pagina-preguntas-frecuentes .faq-hero {
+  --hero-title-min: 2.35rem;
+  --hero-title-fluid: 8.5vw;
+  --hero-title-max: 7.5rem;
+}
+
+body.pagina-promociones .promociones-hero {
+  --hero-title-min: 2.6rem;
+  --hero-title-fluid: 9vw;
+  --hero-title-max: 7.5rem;
+}
+
+body.pagina-reserva .reserva-hero {
+  --hero-title-min: 2.25rem;
+  --hero-title-fluid: 5.9vw;
+  --hero-title-max: 7.15rem;
+}
+
+body.pagina-rutas .rutas-hero,
+body.pagina-detalle-ruta .detalle-destino-hero {
+  --hero-title-min: 2.65rem;
+  --hero-title-fluid: 8.5vw;
+  --hero-title-max: 7.25rem;
+}
+
+body.pagina-servicios .servicios-hero {
+  --hero-title-min: 2.5rem;
+  --hero-title-fluid: 8vw;
+  --hero-title-max: 6.25rem;
+}
+
+body.pagina-terminos-encomiendas .terminos-encomiendas-hero {
+  --hero-title-min: 1.45rem;
+  --hero-title-fluid: 5.35vw;
+  --hero-title-max: 5.85rem;
+}
+
+body.pagina-terminos-viaje .terminos-viaje-hero {
+  --hero-title-min: 1.22rem;
+  --hero-title-fluid: 4.25vw;
+  --hero-title-max: 5.55rem;
+}
+
+body.pagina-index .hero-content,
+body.pagina-contacto .contacto-hero__contenido,
+body.pagina-encomiendas .encomiendas-hero__overlay,
+body.pagina-info-viaje .hero-viaje__contenido,
+body.pagina-info-viaje .hero-viaje .hero-text,
+body.pagina-libro-reclamos .libro-reclamos-hero .container,
+body.pagina-nosotros .nosotros-hero__contenido,
+body.pagina-preguntas-frecuentes .faq-hero__contenido,
+body.pagina-promociones .promociones-hero__contenido,
+body.pagina-reserva .reserva-hero .container,
+body.pagina-rutas .rutas-hero__contenido,
+body.pagina-servicios .servicios-hero__inner,
+body.pagina-servicios .servicios-hero__texto,
+body.pagina-terminos-encomiendas .terminos-encomiendas-hero__contenido,
+body.pagina-terminos-viaje .terminos-viaje-hero .container,
+body.pagina-testimonios .testimonios-hero__contenido,
+body.pagina-detalle-ruta .detalle-destino-hero__contenido {
+  min-width: 0;
+  max-width: 100%;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+  text-align: left !important;
+}
+
+body.pagina-index .hero-actions,
+body.pagina-contacto .contacto-hero__acciones {
+  justify-content: flex-start !important;
+  align-items: flex-start !important;
+  text-align: left !important;
+}
+
+body.pagina-index .hero.hero-banner h1,
+body.pagina-contacto .contacto-hero h1,
+body.pagina-encomiendas .encomiendas-hero h1,
+body.pagina-info-viaje .hero-viaje h1,
+body.pagina-info-viaje .hero-viaje .hero-title-line,
+body.pagina-libro-reclamos .libro-reclamos-hero h1,
+body.pagina-nosotros .nosotros-hero h1,
+body.pagina-preguntas-frecuentes .faq-hero h1,
+body.pagina-promociones .promociones-hero h1,
+body.pagina-reserva .reserva-hero h1,
+body.pagina-rutas .rutas-hero h1,
+body.pagina-servicios .servicios-hero h1,
+body.pagina-terminos-encomiendas .terminos-encomiendas-hero h1,
+body.pagina-terminos-viaje .terminos-viaje-hero h1,
+body.pagina-testimonios .testimonios-hero h1,
+body.pagina-detalle-ruta .detalle-destino-hero h1 {
+  max-width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+  font-size: clamp(var(--hero-title-min), var(--hero-title-fluid), var(--hero-title-max)) !important;
+  text-align: left !important;
+  white-space: normal !important;
+  overflow-wrap: normal !important;
+  word-break: normal !important;
+  hyphens: none !important;
+}
+
+body.pagina-contacto .contacto-hero__subtitulo,
+body.pagina-info-viaje .hero-viaje .hero-descripcion,
+body.pagina-libro-reclamos .libro-reclamos-hero .lead,
+body.pagina-nosotros .nosotros-hero__descripcion,
+body.pagina-preguntas-frecuentes .faq-hero p,
+body.pagina-reserva .reserva-hero .lead,
+body.pagina-terminos-viaje .terminos-viaje-hero .lead {
+  margin-left: 0 !important;
+  margin-right: auto !important;
+  text-align: left !important;
+}
+
+@media (max-width: 767.98px) {
+  body.pagina-index .hero.hero-banner,
+  body.pagina-contacto .contacto-hero,
+  body.pagina-encomiendas .encomiendas-hero,
+  body.pagina-info-viaje .hero-viaje,
+  body.pagina-libro-reclamos .libro-reclamos-hero,
+  body.pagina-nosotros .nosotros-hero,
+  body.pagina-preguntas-frecuentes .faq-hero,
+  body.pagina-promociones .promociones-hero,
+  body.pagina-reserva .reserva-hero,
+  body.pagina-rutas .rutas-hero,
+  body.pagina-servicios .servicios-hero,
+  body.pagina-terminos-encomiendas .terminos-encomiendas-hero,
+  body.pagina-terminos-viaje .terminos-viaje-hero,
+  body.pagina-testimonios .testimonios-hero,
+  body.pagina-detalle-ruta .detalle-destino-hero {
+    justify-content: flex-start !important;
+    text-align: left !important;
+  }
+}
+
+/* Los Hero internos muestran solo etiqueta superior y titulo principal. */
+body:not(.pagina-index) .page-hero h1 ~ p,
+body:not(.pagina-index) .page-hero h1 ~ .lead,
+body:not(.pagina-index) .page-hero h1 ~ [class*="descripcion"],
+body:not(.pagina-index) .page-hero h1 ~ [class*="subtitulo"],
+body:not(.pagina-index) .page-hero h1 ~ [class*="acciones"],
+body:not(.pagina-index) .page-hero h1 ~ [class*="actions"] {
+  display: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+body.pagina-contacto .contacto-hero h1,
+body.pagina-info-viaje .hero-viaje h1,
+body.pagina-libro-reclamos .libro-reclamos-hero h1,
+body.pagina-reserva .reserva-hero h1,
+body.pagina-terminos-encomiendas .terminos-encomiendas-hero h1,
+body.pagina-terminos-viaje .terminos-viaje-hero h1 {
+  margin-bottom: 0 !important;
 }

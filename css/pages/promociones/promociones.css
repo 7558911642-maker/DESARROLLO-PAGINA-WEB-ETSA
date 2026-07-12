@@ -6,8 +6,6 @@
 
 .promociones-hero {
   width: 100%;
-  min-height: calc(100vh - var(--site-header-height, 84px));
-  min-height: calc(100svh - var(--site-header-height, 84px));
   position: relative;
   display: flex;
   align-items: center;

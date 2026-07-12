@@ -166,6 +166,10 @@
     document.body.appendChild(modal.overlay);
 
     const originalDots = Array.from(dotsContainer.querySelectorAll(".rutas-slider-dot"));
+    const compactRoutesQuery = window.matchMedia("(max-width: 1024px)");
+    let scrollSyncFrame = null;
+
+    const isCompactRoutes = () => compactRoutesQuery.matches;
 
     const setSelectedRoute = (routeId) => {
       state.selectedId = routeId;
@@ -174,13 +178,13 @@
       });
     };
 
-    const setMobileSlide = (index) => {
+    const updateMobileSlideState = (index) => {
       const visible = state.visibleRoutes;
 
       if (!visible.length) {
         state.activeMobileIndex = 0;
         slider.style.setProperty("--ruta-slide", 0);
-        return;
+        return null;
       }
 
       state.activeMobileIndex = (index + visible.length) % visible.length;
@@ -199,6 +203,36 @@
           dot.removeAttribute("aria-current");
         }
       });
+
+      return state.activeMobileIndex;
+    };
+
+    const setMobileSlide = (index, options = {}) => {
+      const activeIndex = updateMobileSlideState(index);
+
+      if (activeIndex === null || !isCompactRoutes() || options.scroll === false) {
+        return;
+      }
+
+      state.visibleRoutes[activeIndex]?.column.scrollIntoView({
+        behavior: options.behavior || "smooth",
+        block: "nearest",
+        inline: "start",
+      });
+    };
+
+    const syncMobileSlideFromScroll = () => {
+      if (!isCompactRoutes() || !state.visibleRoutes.length) {
+        return;
+      }
+
+      const viewportLeft = viewport.getBoundingClientRect().left;
+      const closest = state.visibleRoutes.reduce((selected, route, index) => {
+        const distance = Math.abs(route.column.getBoundingClientRect().left - viewportLeft);
+        return distance < selected.distance ? { index, distance } : selected;
+      }, { index: 0, distance: Number.POSITIVE_INFINITY });
+
+      updateMobileSlideState(closest.index);
     };
 
     const renderDots = () => {
@@ -277,7 +311,10 @@
       }
 
       renderDots();
-      setMobileSlide(0);
+      if (isCompactRoutes()) {
+        viewport.scrollTo({ left: 0, behavior: "auto" });
+      }
+      setMobileSlide(0, { scroll: false });
       updateSummary();
     };
 
@@ -360,6 +397,21 @@
       }
     });
 
+    viewport.addEventListener("scroll", () => {
+      if (!isCompactRoutes()) {
+        return;
+      }
+
+      if (scrollSyncFrame) {
+        window.cancelAnimationFrame(scrollSyncFrame);
+      }
+
+      scrollSyncFrame = window.requestAnimationFrame(() => {
+        scrollSyncFrame = null;
+        syncMobileSlideFromScroll();
+      });
+    }, { passive: true });
+
     modal.closeButton.addEventListener("click", closeModal);
     modal.overlay.addEventListener("click", (event) => {
       if (event.target === modal.overlay) {
@@ -372,7 +424,12 @@
       }
     });
 
-    window.addEventListener("resize", () => setMobileSlide(state.activeMobileIndex));
+    window.addEventListener("resize", () => {
+      setMobileSlide(state.activeMobileIndex, {
+        behavior: "auto",
+        scroll: isCompactRoutes(),
+      });
+    });
 
     setSelectedRoute(state.selectedId);
     controls.clear.disabled = true;

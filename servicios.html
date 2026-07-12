@@ -21,17 +21,6 @@
   <link rel="icon" href="img/marca/lofo.png" type="image/png">
 
   <style>
-    /* Mejoras progresivas de servicios: conservan el contenido existente. */
-    .pagina-servicios .site-header {
-      transition: box-shadow 0.25s ease, background-color 0.25s ease;
-    }
-
-    .pagina-servicios .site-header.etsa-header-scrolled {
-      background-color: rgba(255, 255, 255, 0.96) !important;
-      box-shadow: 0 12px 34px rgba(15, 23, 42, 0.14) !important;
-      backdrop-filter: blur(12px);
-    }
-
     .pagina-servicios .servicio-card {
       position: relative;
       overflow: hidden;
@@ -232,7 +221,6 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
-      .pagina-servicios .site-header,
       .pagina-servicios .servicio-card,
       .pagina-servicios .servicio-card::before,
       .pagina-servicios .etsa-beneficios-toggle i,
@@ -265,7 +253,7 @@
   <main class="pagina-servicios">
 
     <!-- HERO SERVICIOS -->
-    <section class="servicios-hero" aria-labelledby="titulo-servicios">
+    <section class="servicios-hero page-hero" aria-labelledby="titulo-servicios">
       <div class="container servicios-hero__inner">
         <div class="servicios-hero__texto">
           <span>Nuestros</span>
@@ -466,7 +454,6 @@
         document.body.classList.add("etsa-servicios-js");
 
         const reducirMovimiento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-        const cabecera = document.querySelector(".site-header");
         const tarjetas = Array.from(document.querySelectorAll(".servicio-card"));
         const columnas = Array.from(document.querySelectorAll(".servicios-grid > [class*='col-']"));
         const secciones = document.querySelectorAll("main > section:not(.servicios-hero)");
@@ -546,13 +533,6 @@
             observadorPasos.observe(pasos);
           }
         }
-
-        const actualizarCabecera = () => {
-          cabecera?.classList.toggle("etsa-header-scrolled", window.scrollY > 24);
-        };
-
-        window.addEventListener("scroll", actualizarCabecera, { passive: true });
-        actualizarCabecera();
 
         function configurarAparicion(elementos, sinMovimiento, escalonada = false) {
           elementos.forEach((elemento, indice) => {

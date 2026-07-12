@@ -17,105 +17,9 @@ body.pagina-terminos-viaje main {
   overflow: visible !important;
 }
 
-body.pagina-terminos-viaje .site-header {
-  position: fixed !important;
-  top: 0 !important;
-  right: 0 !important;
-  left: 0 !important;
-  width: 100% !important;
-  min-height: var(--terminos-header-height);
-  padding: 0 !important;
-  border-bottom: 1px solid rgba(15, 23, 42, 0.1);
-  box-shadow: 0 0.25rem 1rem rgba(15, 23, 42, 0.07) !important;
-  z-index: 1100 !important;
-}
-
-body.pagina-terminos-viaje .site-header .container-fluid {
-  min-height: var(--terminos-header-height);
-  width: 100%;
-  padding-right: clamp(2rem, 5.2vw, 6.7rem) !important;
-  padding-left: clamp(2rem, 5.2vw, 6.7rem) !important;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: clamp(1.35rem, 2vw, 2.5rem);
-}
-
-body.pagina-terminos-viaje .site-header .header__logo {
-  flex: 0 0 auto;
-}
-
-body.pagina-terminos-viaje .site-header .header__logo img {
-  width: clamp(13.6rem, 17vw, 19.35rem);
-  max-height: 5.4rem;
-  object-fit: contain;
-}
-
-body.pagina-terminos-viaje .site-header .header__nav {
-  flex: 1 1 auto;
-  margin-left: clamp(1.6rem, 3vw, 4rem) !important;
-}
-
-body.pagina-terminos-viaje .site-header .navbar-nav {
-  justify-content: center;
-  column-gap: clamp(1.55rem, 2.6vw, 3.5rem) !important;
-}
-
-body.pagina-terminos-viaje .site-header .nav-link {
-  padding: 0;
-  color: #020617;
-  font-size: clamp(1rem, 1.15vw, 1.18rem);
-  font-weight: 800;
-  line-height: 1;
-  letter-spacing: 0;
-}
-
-body.pagina-terminos-viaje .site-header .nav-link.activo,
-body.pagina-terminos-viaje .site-header .nav-link:hover {
-  color: var(--naranja);
-}
-
-body.pagina-terminos-viaje .site-header .reserva {
-  flex: 0 0 auto;
-  margin: 0 0 0 clamp(1rem, 1.8vw, 2.4rem);
-  padding: 0 clamp(0.9rem, 1.4vw, 1.35rem);
-  border-left: 1px solid #d1d5db;
-  border-right: 1px solid #d1d5db;
-}
-
-body.pagina-terminos-viaje .site-header .btn-reserva {
-  min-height: 3.5rem;
-  padding: 0.8rem 1.35rem;
-  border-radius: 999px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.35rem;
-  background: var(--naranja);
-  color: #ffffff;
-  font-size: clamp(0.82rem, 0.95vw, 0.98rem);
-  font-weight: 900;
-  line-height: 1;
-  letter-spacing: 0.06em;
-  white-space: nowrap;
-}
-
-body.pagina-terminos-viaje .site-header .btn-reserva:hover {
-  background: var(--naranja-oscuro);
-  color: #ffffff;
-}
-
-body.pagina-terminos-viaje .menu-bootstrap .nav-link.activo {
-  color: var(--naranja);
-}
-
 body.pagina-terminos-viaje .terminos-viaje-hero {
   position: relative;
-  min-height: calc(100vh - var(--terminos-header-height, 108px));
-  min-height: calc(100svh - var(--terminos-header-height, 108px));
   margin: 0 !important;
-  padding-top: calc(var(--terminos-header-height) + clamp(4.4rem, 6.5vw, 7.8rem)) !important;
-  padding-bottom: clamp(5.2rem, 7vw, 7.4rem) !important;
   border: 0 !important;
   display: flex;
   align-items: center;
@@ -351,42 +255,8 @@ body.pagina-terminos-viaje .codigo-etica-integrado__item p {
     --terminos-header-height: 5.8rem;
   }
 
-  body.pagina-terminos-viaje .site-header .container-fluid {
-    padding-right: clamp(1.5rem, 3.5vw, 3rem) !important;
-    padding-left: clamp(1.5rem, 3.5vw, 3rem) !important;
-    gap: 1.4rem;
-  }
-
-  body.pagina-terminos-viaje .site-header .header__logo img {
-    width: clamp(11.5rem, 18vw, 14.5rem);
-    max-height: 4.8rem;
-  }
-
-  body.pagina-terminos-viaje .site-header .header__nav {
-    margin-left: auto !important;
-  }
-
-  body.pagina-terminos-viaje .site-header .navbar-nav {
-    column-gap: 1.35rem !important;
-  }
-
-  body.pagina-terminos-viaje .site-header .nav-link {
-    font-size: 0.92rem;
-  }
-
-  body.pagina-terminos-viaje .site-header .reserva {
-    margin-left: 1rem;
-    padding: 0 0.85rem;
-  }
-
-  body.pagina-terminos-viaje .site-header .btn-reserva {
-    min-height: 3.25rem;
-    padding: 0.75rem 1rem;
-    font-size: 0.78rem;
-  }
-
   body.pagina-terminos-viaje .terminos-viaje-hero {
-    padding-top: calc(var(--terminos-header-height) + 5.2rem) !important;
+    padding-top: clamp(78px, 10vw, 108px) !important;
   }
 }
 
@@ -395,41 +265,9 @@ body.pagina-terminos-viaje .codigo-etica-integrado__item p {
     --terminos-header-height: 4.75rem;
   }
 
-  body.pagina-terminos-viaje .site-header .container-fluid {
-    padding-right: clamp(0.9rem, 4vw, 1.35rem) !important;
-    padding-left: clamp(0.9rem, 4vw, 1.35rem) !important;
-    justify-content: space-between;
-  }
-
-  body.pagina-terminos-viaje .site-header .header__logo img {
-    width: clamp(9rem, 42vw, 12.25rem);
-    max-height: 4rem;
-  }
-
-  body.pagina-terminos-viaje .site-header .reserva {
-    display: none !important;
-  }
-
-  body.pagina-terminos-viaje .site-header .btn-menu {
-    width: 3rem;
-    height: 3rem;
-    margin-left: auto;
-    padding: 0;
-    border-radius: 999px;
-    color: var(--naranja);
-    display: inline-flex !important;
-    align-items: center;
-    justify-content: center;
-  }
-
-  body.pagina-terminos-viaje .site-header .icono-menu {
-    font-size: 2.2rem;
-    line-height: 1;
-  }
-
   body.pagina-terminos-viaje .terminos-viaje-hero {
-    padding-top: calc(var(--terminos-header-height) + 4.5rem) !important;
-    padding-bottom: 3.5rem !important;
+    padding-top: clamp(72px, 18vw, 94px) !important;
+    padding-bottom: clamp(34px, 10vw, 54px) !important;
   }
 
   body.pagina-terminos-viaje .breadcrumb-terminos-viaje {
@@ -442,14 +280,9 @@ body.pagina-terminos-viaje .codigo-etica-integrado__item p {
     --terminos-header-height: 4.35rem;
   }
 
-  body.pagina-terminos-viaje .site-header .header__logo img {
-    width: clamp(8.4rem, 46vw, 10.4rem);
-    max-height: 3.55rem;
-  }
-
   body.pagina-terminos-viaje .terminos-viaje-hero {
-    padding-top: calc(var(--terminos-header-height) + 3.6rem) !important;
-    padding-bottom: 3rem !important;
+    padding-top: clamp(72px, 18vw, 94px) !important;
+    padding-bottom: clamp(34px, 10vw, 54px) !important;
   }
 
   body.pagina-terminos-viaje .terminos-viaje-hero h1 {

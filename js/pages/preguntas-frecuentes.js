@@ -6,14 +6,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (!formulario || !window.EtsaValidacionesFormularios) return;
 
+  const { patrones, utilidades } = window.EtsaValidacionesFormularios;
+
   window.EtsaValidacionesFormularios.crear(formulario, {
     campos: {
       nombre: {
         requerido: true,
         minimo: 3,
         maximo: 80,
-        patron: "[\\p{L}\\s]+",
+        patron: patrones.nombreSimple,
         autocompletar: "name",
+        normalizar: function (valor) {
+          return utilidades.normalizarEntradaTexto(valor, 80);
+        },
         mensajes: {
           requerido: "Ingrese sus nombres y apellidos.",
           minimo: "El nombre debe tener al menos 3 caracteres.",
@@ -31,11 +36,11 @@ document.addEventListener("DOMContentLoaded", function () {
       },
       telefono: {
         requerido: false,
-        patron: "9\\d{8}",
+        patron: patrones.celularPeru,
         maximo: 9,
         modoEntrada: "numeric",
         autocompletar: "tel",
-        normalizar: soloDigitosPeruanos,
+        normalizar: utilidades.soloDigitosPeruanos,
         mensajes: {
           patron: "Ingrese un celular peruano valido de 9 digitos."
         }
@@ -50,6 +55,12 @@ document.addEventListener("DOMContentLoaded", function () {
         requerido: true,
         minimo: 15,
         maximo: 700,
+        normalizar: function (valor) {
+          return utilidades.normalizarEntradaTexto(valor, 700);
+        },
+        validar: function (valor) {
+          return utilidades.validarSinHtml(valor, "No use etiquetas HTML en la pregunta.");
+        },
         mensajes: {
           requerido: "Escriba su pregunta.",
           minimo: "La pregunta debe tener al menos 15 caracteres.",
@@ -59,7 +70,3 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
-
-function soloDigitosPeruanos(valor) {
-  return valor.replace(/\D/g, "").slice(0, 9);
-}

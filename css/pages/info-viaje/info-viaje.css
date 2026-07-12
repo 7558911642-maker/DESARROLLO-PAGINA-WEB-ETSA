@@ -50,8 +50,6 @@ body.pagina-info-viaje .equipaje-card__contenido li {
 /* Hero principal */
 .hero-viaje {
   width: 100%;
-  min-height: calc(100vh - var(--info-viaje-header-height, 84px));
-  min-height: calc(100svh - var(--info-viaje-header-height, 84px));
   position: relative;
   display: flex;
   align-items: center;
@@ -143,8 +141,7 @@ body.pagina-info-viaje .equipaje-card__contenido li {
 }
 
 body.pagina-info-viaje main > .hero-viaje {
-  min-height: clamp(500px, 72vh, 680px);
-  padding: clamp(2.5rem, 6vw, 5rem) 0 !important;
+  padding: clamp(88px, 8vw, 128px) 0 clamp(44px, 5vw, 76px) !important;
   background: var(--azul-oscuro) !important;
   background-attachment: scroll !important;
 }

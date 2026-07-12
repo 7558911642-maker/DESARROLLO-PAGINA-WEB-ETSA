@@ -6,14 +6,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (!formulario || !window.EtsaValidacionesFormularios) return;
 
+  const { patrones, utilidades } = window.EtsaValidacionesFormularios;
+
   window.EtsaValidacionesFormularios.crear(formulario, {
     campos: {
       nombre: {
         requerido: true,
         minimo: 3,
         maximo: 80,
-        patron: "[\\p{L}\\s]+",
+        patron: patrones.nombreSimple,
         autocompletar: "name",
+        normalizar: function (valor) {
+          return utilidades.normalizarEntradaTexto(valor, 80);
+        },
         mensajes: {
           requerido: "Ingrese sus nombres y apellidos.",
           minimo: "El nombre debe tener al menos 3 caracteres.",
@@ -31,11 +36,11 @@ document.addEventListener("DOMContentLoaded", function () {
       },
       telefono: {
         requerido: true,
-        patron: "9\\d{8}",
+        patron: patrones.celularPeru,
         maximo: 9,
         modoEntrada: "numeric",
         autocompletar: "tel",
-        normalizar: soloDigitosPeruanos,
+        normalizar: utilidades.soloDigitosPeruanos,
         mensajes: {
           requerido: "Ingrese su numero de celular.",
           patron: "Ingrese un celular peruano valido de 9 digitos."
@@ -45,6 +50,12 @@ document.addEventListener("DOMContentLoaded", function () {
         requerido: true,
         minimo: 5,
         maximo: 100,
+        normalizar: function (valor) {
+          return utilidades.normalizarEntradaTexto(valor, 100);
+        },
+        validar: function (valor) {
+          return utilidades.validarSinHtml(valor, "No use etiquetas HTML en el asunto.");
+        },
         mensajes: {
           requerido: "Ingrese el asunto del reclamo.",
           minimo: "El asunto debe tener al menos 5 caracteres."
@@ -54,6 +65,12 @@ document.addEventListener("DOMContentLoaded", function () {
         requerido: true,
         minimo: 20,
         maximo: 1000,
+        normalizar: function (valor) {
+          return utilidades.normalizarEntradaTexto(valor, 1000);
+        },
+        validar: function (valor) {
+          return utilidades.validarSinHtml(valor, "No use etiquetas HTML en el detalle.");
+        },
         mensajes: {
           requerido: "Describa el detalle del reclamo.",
           minimo: "El detalle debe tener al menos 20 caracteres.",
@@ -63,7 +80,3 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
-
-function soloDigitosPeruanos(valor) {
-  return valor.replace(/\D/g, "").slice(0, 9);
-}

@@ -10,8 +10,6 @@ body.pagina-index > .site-header.fixed-top ~ main {
 
 .hero {
   width: 100%;
-  min-height: calc(100vh - var(--site-header-height, 84px));
-  min-height: calc(100svh - var(--site-header-height, 84px));
   position: relative;
   overflow: hidden;
 
@@ -1063,37 +1061,6 @@ p,
 ul,
 figure {
   margin-bottom: 0;
-}
-
-/* HEADER CON BOOTSTRAP */
-.pagina-index .index-fixed-header {
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1100;
-}
-
-.header.navbar {
-  padding-top: 0;
-  padding-bottom: 0;
-}
-
-.header .container-fluid {
-  min-height: 84px;
-  align-items: center;
-}
-
-.header .nav-link {
-  display: inline-flex;
-  align-items: center;
-  padding: 0;
-}
-
-.header__nav .nav-link.activo,
-.header__nav .nav-link:hover {
-  color: var(--naranja);
 }
 
 .menu-bootstrap {

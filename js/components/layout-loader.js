@@ -23,7 +23,6 @@
     "terminos-encomiendas": "terminos-encomiendas"
   };
 
-  const RESERVA_DESKTOP_PAGES = new Set(["index", "info-viaje", "libro_reclamos"]);
   const scriptElement = document.currentScript || document.querySelector('script[src*="layout-loader.js"]');
   const rootPrefix = obtenerPrefijoRaiz(scriptElement?.getAttribute("src") || "");
   const pageKey = obtenerClavePagina();
@@ -93,14 +92,11 @@
     const reserva = document.querySelector("[data-layout-reserva]");
     const navActivo = ACTIVE_NAV_BY_PAGE[pageKey] || null;
 
-    header?.classList.toggle("index-fixed-header", pageKey === "index");
-    if (header && pageKey === "index") {
-      configurarScrollHeader(header);
-    }
+    header?.classList.remove("index-fixed-header", "etsa-header-scrolled");
 
     if (reserva) {
       reserva.classList.remove("d-sm-flex", "d-lg-flex");
-      reserva.classList.add(RESERVA_DESKTOP_PAGES.has(pageKey) ? "d-lg-flex" : "d-sm-flex");
+      reserva.classList.add("d-sm-flex");
     }
 
     document.querySelectorAll("[data-nav-id]").forEach(function (enlace) {
@@ -116,24 +112,4 @@
     });
   }
 
-  function configurarScrollHeader(header) {
-    if (header.dataset.layoutScrollReady === "true") return;
-
-    let esperandoAnimacion = false;
-
-    const actualizar = function () {
-      header.classList.toggle("etsa-header-scrolled", window.scrollY > 24);
-      esperandoAnimacion = false;
-    };
-
-    window.addEventListener("scroll", function () {
-      if (esperandoAnimacion) return;
-
-      esperandoAnimacion = true;
-      window.requestAnimationFrame(actualizar);
-    }, { passive: true });
-
-    header.dataset.layoutScrollReady = "true";
-    actualizar();
-  }
 })();

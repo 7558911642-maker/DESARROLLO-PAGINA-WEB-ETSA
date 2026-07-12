@@ -9,8 +9,6 @@ body.pagina-nosotros > .site-header.fixed-top ~ main {
 .pagina-nosotros .nosotros-hero {
   position: relative;
   width: 100%;
-  min-height: calc(100vh - var(--site-header-height, 84px));
-  min-height: calc(100svh - var(--site-header-height, 84px));
   display: flex;
   align-items: center;
   overflow: hidden;

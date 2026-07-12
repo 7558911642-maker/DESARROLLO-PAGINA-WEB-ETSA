@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   ];
 
+<<<<<<< Updated upstream
   const filtros = [
     { valor: "todas", texto: "Todas", icono: "bi-grid-fill" },
     { valor: "viajes", texto: "Viajes", icono: "bi-bus-front-fill" },
@@ -524,3 +525,56 @@ document.addEventListener("DOMContentLoaded", function () {
     document.head.appendChild(estilos);
   }
 });
+=======
+(() => {
+  const initPromocionesFiltro = () => {
+    const lista = document.getElementById("promocionesLista");
+    const filtros = Array.from(document.querySelectorAll("[data-promocion-filtro]"));
+    const tarjetas = Array.from(document.querySelectorAll("[data-promocion-categoria]"));
+    const avisoVacio = document.getElementById("promocionesVacio");
+
+    if (!lista || !filtros.length || !tarjetas.length) {
+      return;
+    }
+
+    const aplicarFiltro = (categoriaActiva) => {
+      let visibles = 0;
+
+      tarjetas.forEach((tarjeta) => {
+        const categoriaTarjeta = tarjeta.dataset.promocionCategoria;
+        const debeMostrar = categoriaActiva === "todos" || categoriaTarjeta === categoriaActiva;
+
+        tarjeta.hidden = !debeMostrar;
+        if (debeMostrar) {
+          visibles += 1;
+        }
+      });
+
+      filtros.forEach((filtro) => {
+        const estaActivo = filtro.dataset.promocionFiltro === categoriaActiva;
+        filtro.classList.toggle("is-active", estaActivo);
+        filtro.setAttribute("aria-pressed", String(estaActivo));
+      });
+
+      if (avisoVacio) {
+        avisoVacio.hidden = visibles > 0;
+      }
+
+      lista.scrollTo({
+        left: 0,
+        behavior: "smooth",
+      });
+    };
+
+    filtros.forEach((filtro) => {
+      filtro.addEventListener("click", () => {
+        aplicarFiltro(filtro.dataset.promocionFiltro || "todos");
+      });
+    });
+
+    aplicarFiltro("todos");
+  };
+
+  document.addEventListener("DOMContentLoaded", initPromocionesFiltro);
+})();
+>>>>>>> Stashed changes

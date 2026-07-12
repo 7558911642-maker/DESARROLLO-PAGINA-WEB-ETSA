@@ -161,11 +161,35 @@
 
         </div>
 
+        <div class="promociones-filtros" aria-label="Filtrar promociones">
+          <button type="button" class="promociones-filtro is-active" data-promocion-filtro="todos" aria-pressed="true">
+            <i class="bi bi-grid-3x3-gap-fill" aria-hidden="true"></i>
+            Todos
+          </button>
+          <button type="button" class="promociones-filtro" data-promocion-filtro="encomiendas" aria-pressed="false">
+            <i class="bi bi-box-seam-fill" aria-hidden="true"></i>
+            Encomiendas
+          </button>
+          <button type="button" class="promociones-filtro" data-promocion-filtro="carga" aria-pressed="false">
+            <i class="bi bi-boxes" aria-hidden="true"></i>
+            Carga
+          </button>
+          <button type="button" class="promociones-filtro" data-promocion-filtro="viajes" aria-pressed="false">
+            <i class="bi bi-bus-front-fill" aria-hidden="true"></i>
+            Viajes
+          </button>
+        </div>
+
         <div class="promociones-slider" aria-label="Promociones disponibles">
           <div class="promociones-container" id="promocionesLista" data-componente="lista-promociones" data-total-promociones="4">
 
+<<<<<<< Updated upstream
           <!-- Inicio de promocion: Encomienda Express -->
           <article class="promocion-card promocion-card--encomienda" id="promo-1" aria-labelledby="promo-1-titulo" data-categoria="encomiendas" data-nombre="Promo Encomienda Express" data-tipo="encomiendas" data-modal="#modal-promo1">
+=======
+          <!-- PROMOCION 1 -->
+          <article class="promocion-card promocion-card--encomienda" id="promo-1" data-promocion-categoria="encomiendas">
+>>>>>>> Stashed changes
 
             <figure class="promocion-imagen">
               <img src="img/promociones/encomiendas_promo.png" alt="Promoción Encomienda Express de ETSA">
@@ -177,6 +201,7 @@
 
             <div class="promocion-card__contenido">
 
+<<<<<<< Updated upstream
             </div>
 
           </article>
@@ -184,6 +209,10 @@
 
           <!-- Inicio de promocion: Tarifa Ahorro para Carga -->
           <article class="promocion-card promocion-card--carga" id="promo-2" aria-labelledby="promo-2-titulo" data-categoria="carga" data-nombre="Tarifa Ahorro para Carga" data-tipo="carga-comercial" data-modal="#modal-promo2">
+=======
+          <!-- PROMOCION 2 -->
+          <article class="promocion-card promocion-card--carga" id="promo-2" data-promocion-categoria="carga">
+>>>>>>> Stashed changes
 
             <figure class="promocion-imagen">
               <img src="img/promociones/tarjeta_2.png" alt="Tarifa Ahorro para Carga - promoción ETSA">
@@ -195,6 +224,7 @@
 
             <div class="promocion-card__contenido">
 
+<<<<<<< Updated upstream
             </div>
 
           </article>
@@ -202,6 +232,10 @@
 
           <!-- Inicio de promocion: Pasajero Mundialista -->
           <article class="promocion-card promocion-card--mundial" id="promo-3" aria-labelledby="promo-3-titulo" data-categoria="viajes" data-nombre="Promo Pasajero Mundialista" data-tipo="viajes" data-destino="rutas-seleccionadas" data-modal="#modal-promo3">
+=======
+          <!-- PROMOCION 3 -->
+          <article class="promocion-card promocion-card--mundial" id="promo-3" data-promocion-categoria="viajes">
+>>>>>>> Stashed changes
 
             <figure class="promocion-imagen">
               <img src="img/promociones/watermarked_img_16051582334898136880.jpg" alt="Promoci&oacute;n ETSA por el Mundial de F&uacute;tbol 2026">
@@ -213,6 +247,7 @@
 
             <div class="promocion-card__contenido">
 
+<<<<<<< Updated upstream
             </div>
 
           </article>
@@ -224,6 +259,15 @@
             <figure class="promocion-imagen">
               <img src="img/promociones/Promo5.jpg" alt="Promoci&oacute;n ETSA para viajar al Raymi Llaqta de Chachapoyas">
               <div class="promocion-imagen__acciones promocion-card__acciones">
+=======
+          <!-- PROMOCION 4 -->
+          <article class="promocion-card promocion-card--raymi" id="promo-4" data-promocion-categoria="viajes">
+
+            <figure class="promocion-imagen">
+              <img src="img/promociones/encomiendas_promo.png" alt="Promoci&oacute;n ETSA para viajar al Raymi Llaqta de Chachapoyas">
+              <figcaption class="tag-promo">Raymi Llaqta</figcaption>
+              <div class="promocion-imagen__acciones">
+>>>>>>> Stashed changes
                 <a href="#modal-promo4" class="btn-mas-info">Ver condiciones</a>
                 <a href="reserva.html" class="promocion-card__link">Reservar asiento</a>
               </div>
@@ -237,6 +281,10 @@
           <!-- Fin de promocion: Fiesta de Chachapoyas -->
 
           </div>
+
+          <p class="promociones-vacio" id="promocionesVacio" hidden>
+            No hay promociones disponibles para este filtro.
+          </p>
 
         </div>
 
@@ -535,6 +583,7 @@
 
   <!-- Bootstrap JS -->
   <script src="bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+<<<<<<< Updated upstream
   <script src="js/pages/promociones.js"></script>
 
   <script>
@@ -587,6 +636,10 @@
       }, { passive: true });
     })();
   </script>
+=======
+  <script src="js/main.js"></script>
+  <script src="js/pages/promociones.js"></script>
+>>>>>>> Stashed changes
 
 </body>
 </html>

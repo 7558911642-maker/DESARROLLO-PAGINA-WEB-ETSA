@@ -9,7 +9,8 @@
 .testimonios-hero {
   position: relative;
   width: 100%;
-  min-height: clamp(250px, 34vw, 430px);
+  min-height: calc(100vh - var(--site-header-height, 84px));
+  min-height: calc(100svh - var(--site-header-height, 84px));
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -484,7 +485,6 @@
 
 @media (max-width: 480px) {
   .testimonios-hero {
-    min-height: 280px;
     padding: 92px 24px 56px !important;
     text-align: left !important;
   }

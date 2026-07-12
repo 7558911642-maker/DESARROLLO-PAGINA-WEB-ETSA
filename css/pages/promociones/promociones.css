@@ -6,7 +6,8 @@
 
 .promociones-hero {
   width: 100%;
-  min-height: clamp(300px, 36vw, 500px);
+  min-height: calc(100vh - var(--site-header-height, 84px));
+  min-height: calc(100svh - var(--site-header-height, 84px));
   position: relative;
   display: flex;
   align-items: center;
@@ -464,7 +465,6 @@
 
 @media (max-width: 575.98px) {
   .promociones-hero {
-    min-height: 260px;
     padding: 98px 24px 58px;
   }
 

@@ -10,7 +10,8 @@ body.pagina-index > .site-header.fixed-top ~ main {
 
 .hero {
   width: 100%;
-  min-height: 0px;
+  min-height: calc(100vh - var(--site-header-height, 84px));
+  min-height: calc(100svh - var(--site-header-height, 84px));
   position: relative;
   overflow: hidden;
 

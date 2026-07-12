@@ -140,6 +140,7 @@
     [".faq-hero", "img/banners/preguntas-frecuentes-banner.png"],
     [".promociones-hero", "img/banners/Promociones-banner.png"],
     [".reserva-hero", "img/banners/watermarked_img_2461339827978530461.jpg"],
+    [".rutas-hero", "img/rutas/chachapoyas.png"],
     [".servicios-hero", "img/banners/servicios-banner.png"],
     [".terminos-encomiendas-hero", "img/banners/encomiendas-banner.png"],
     [".terminos-viaje-hero", "img/banners/terminos_condiciones_viaje_banner.png"],
@@ -149,6 +150,15 @@
     [".detalle-destino-hero--pedro-ruiz", "img/banners/Pedro_Ruiz.png"],
     [".detalle-destino-hero--luya", "img/rutas/Luya.png"],
     [".detalle-destino-hero--pomacochas", "img/rutas/Pomacochas.png"],
+  ];
+
+  const DEFAULT_BANNER_IMAGES = [
+    "img/rutas/chachapoyas.png",
+    "img/rutas/kuelap.png",
+    "img/banners/Pedro_Ruiz.png",
+    "img/rutas/Luya.png",
+    "img/rutas/Pomacochas.png",
+    "img/rutas/bagua.png",
   ];
 
   const BANNER_INTERVAL_MS = 3000;
@@ -187,11 +197,34 @@
 
   const getImagesForBanner = (banner) => {
     const firstImage = FIRST_IMAGE_BY_SELECTOR.find(([selector]) => banner.matches(selector))?.[1];
+
+    // Excluir imagenes dentro de contenedores especificos que no son parte del banner
+    const excludeSelectors = [".valor-card", ".ruta-index-card", ".promo-index-card", ".servicio-card", ".detalle-destino-card"];
+
     const pageImages = Array.from(document.querySelectorAll("main img[src]"))
+      .filter(img => {
+        // Verificar que la imagen no este dentro de ninguno de los contenedores excluidos
+        return !excludeSelectors.some(selector => img.closest(selector));
+      })
       .map((image) => image.getAttribute("src"))
       .filter(Boolean);
 
-    return Array.from(new Set([firstImage, ...pageImages].filter(Boolean).map(resolveAssetPath)));
+    const bannerImages = Array.from(new Set(
+      [firstImage, ...pageImages].filter(Boolean).map(resolveAssetPath)
+    ));
+
+    if (banner.matches(".reserva-hero")) {
+      return bannerImages;
+    }
+
+    if (bannerImages.length > 1) {
+      return bannerImages;
+    }
+
+    return Array.from(new Set([
+      ...bannerImages,
+      ...DEFAULT_BANNER_IMAGES.map(resolveAssetPath),
+    ]));
   };
 
   const initBannerCarousel = (banner) => {

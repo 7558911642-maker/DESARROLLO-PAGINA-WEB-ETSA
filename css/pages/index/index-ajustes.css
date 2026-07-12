@@ -426,12 +426,6 @@ body.pagina-index > [data-layout="header"] + main {
   pointer-events: none;
 }
 
-body.pagina-index main > .hero.hero-banner.etsa-banner-carousel-ready > .etsa-banner-carousel,
-body.pagina-index main > .hero.hero-banner.etsa-banner-carousel-ready > .etsa-banner-carousel__shade,
-body.pagina-index main > .hero.hero-banner.etsa-banner-carousel-ready > .etsa-banner-carousel__dots {
-  display: none !important;
-}
-
 .pagina-index .hero.hero-banner::after {
   content: "";
   position: absolute;
@@ -699,12 +693,85 @@ body.pagina-index main .promociones-index .promociones-index__carrusel-tablet .p
   box-shadow: 0 0.55rem 1.15rem rgba(234, 88, 12, 0.22) !important;
 }
 
+/* Promociones del index: titulo en una linea y tarjetas sin textos sobre la imagen. */
+body.pagina-index main .promociones-index .index-promociones__titulo-box {
+  max-width: 100% !important;
+}
+
+body.pagina-index main .promociones-index .index-promociones__titulo-box > div {
+  min-width: 0 !important;
+  max-width: 100% !important;
+}
+
+body.pagina-index main .promociones-index .index-promociones__header h2 {
+  max-width: none !important;
+  font-size: clamp(1.35rem, 5.2vw, 3.625rem) !important;
+  line-height: 1.04 !important;
+  letter-spacing: 0 !important;
+  white-space: nowrap !important;
+}
+
+body.pagina-index main .promociones-index :is(.promo-slide-card__contenido, .promo-index-card__contenido) {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 2 !important;
+  width: 100% !important;
+  height: 100% !important;
+  padding: clamp(1rem, 3vw, 1.4rem) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  text-align: center !important;
+  pointer-events: none;
+}
+
+body.pagina-index main .promociones-index :is(.promo-slide-card__contenido, .promo-index-card__contenido) > :not(:is(.promo-slide-card__boton, .promo-index-card__boton)) {
+  display: none !important;
+}
+
+body.pagina-index main .promociones-index :is(.promo-slide-card__boton, .promo-index-card__boton) {
+  pointer-events: auto;
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  body.pagina-index main .promociones-index .promociones-index__carrusel-tablet .promo-slide-card__contenido {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    padding: 1.15rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    text-align: center !important;
+    pointer-events: none;
+  }
+
+  body.pagina-index main .promociones-index .promociones-index__carrusel-tablet .promo-slide-card__contenido :is(.index-slide-card__tag, h3, p) {
+    display: none !important;
+  }
+
+  body.pagina-index main .promociones-index .promociones-index__carrusel-tablet .promo-slide-card__boton {
+    margin: 0 auto !important;
+    align-self: center !important;
+    pointer-events: auto;
+  }
+}
+
 @media (max-width: 575.98px) {
   body.pagina-index main .promociones-index :is(.promo-index-card__boton, .promo-slide-card__boton) {
     width: min(100%, 10.9rem) !important;
     min-height: 2.3rem !important;
     padding: 0.6rem 0.85rem !important;
     font-size: 0.8rem !important;
+  }
+}
+
+@media (max-width: 360px) {
+  body.pagina-index main .promociones-index .index-promociones__header h2 {
+    font-size: 1.22rem !important;
   }
 }
 

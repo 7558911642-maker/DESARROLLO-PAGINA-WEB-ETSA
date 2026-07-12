@@ -9,7 +9,8 @@ body.pagina-nosotros > .site-header.fixed-top ~ main {
 .pagina-nosotros .nosotros-hero {
   position: relative;
   width: 100%;
-  min-height: clamp(280px, 34vw, 440px);
+  min-height: calc(100vh - var(--site-header-height, 84px));
+  min-height: calc(100svh - var(--site-header-height, 84px));
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -382,7 +383,6 @@ body.pagina-nosotros > .site-header.fixed-top ~ main {
 
 @media (max-width: 991px) {
   .pagina-nosotros .nosotros-hero {
-    min-height: 330px;
     padding: 104px clamp(32px, 7vw, 64px) 70px !important;
     text-align: left !important;
   }
@@ -533,7 +533,6 @@ body.pagina-nosotros > .site-header.fixed-top ~ main {
 
 @media (max-width: 640px) {
   .pagina-nosotros .nosotros-hero {
-    min-height: 300px;
     padding: 94px 28px 60px !important;
   }
 

@@ -495,7 +495,8 @@ body.pagina-reserva .menu-bootstrap .nav-link.activo {
 
 body.pagina-reserva .reserva-hero {
   position: relative;
-  min-height: clamp(36rem, 49vw, 52.4rem);
+  min-height: calc(100vh - var(--reserva-header-height, 84px));
+  min-height: calc(100svh - var(--reserva-header-height, 84px));
   margin: 0 !important;
   padding-top: calc(var(--reserva-header-height) + clamp(4.4rem, 6.5vw, 7.8rem)) !important;
   padding-bottom: clamp(5.2rem, 7vw, 7.4rem) !important;
@@ -1665,7 +1666,6 @@ body.pagina-reserva .reserva-ok {
   }
 
   body.pagina-reserva .reserva-hero {
-    min-height: 28rem;
     padding-top: calc(var(--reserva-header-height) + 4.5rem) !important;
     padding-bottom: 3.5rem !important;
   }
@@ -1724,7 +1724,6 @@ body.pagina-reserva .reserva-ok {
   }
 
   body.pagina-reserva .reserva-hero {
-    min-height: 25rem;
     padding-top: calc(var(--reserva-header-height) + 3.6rem) !important;
     padding-bottom: 3rem !important;
   }

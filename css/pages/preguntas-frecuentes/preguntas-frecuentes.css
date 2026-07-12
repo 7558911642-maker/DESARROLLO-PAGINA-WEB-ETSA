@@ -5,7 +5,8 @@ body.pagina-preguntas-frecuentes > .site-header.fixed-top ~ main.pagina-pregunta
 
 .faq-hero {
   width: 100%;
-  min-height: 330px;
+  min-height: calc(100vh - var(--site-header-height, 84px));
+  min-height: calc(100svh - var(--site-header-height, 84px));
   position: relative;
 
   display: flex;

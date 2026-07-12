@@ -19,7 +19,8 @@ body > .site-header.fixed-top ~ main.pagina-servicios {
 
 .servicios-hero {
   position: relative;
-  min-height: clamp(330px, 42vw, 520px);
+  min-height: calc(100vh - var(--site-header-height, 84px));
+  min-height: calc(100svh - var(--site-header-height, 84px));
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -437,7 +438,6 @@ body > .site-header.fixed-top ~ main.pagina-servicios {
 
 @media (max-width: 991.98px) {
   .pagina-servicios .servicios-hero {
-    min-height: 440px;
     background:
       linear-gradient(90deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.86) 52%, rgba(255, 255, 255, 0.18) 100%),
       url("../../../img/banners/servicios-banner.png") right center / cover no-repeat,
@@ -481,7 +481,6 @@ body > .site-header.fixed-top ~ main.pagina-servicios {
 
 @media (max-width: 767.98px) {
   .pagina-servicios .servicios-hero {
-    min-height: 360px;
     background:
       linear-gradient(90deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.9) 64%, rgba(255, 255, 255, 0.35) 100%),
       url("../../../img/banners/servicios-banner.png") 68% center / cover no-repeat,

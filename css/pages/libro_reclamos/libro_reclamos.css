@@ -111,7 +111,8 @@ body.pagina-libro-reclamos .menu-bootstrap .nav-link.activo {
 
 body.pagina-libro-reclamos main > .libro-reclamos-hero {
   position: relative;
-  min-height: clamp(36rem, 49vw, 52.4rem);
+  min-height: calc(100vh - var(--libro-header-height, 108px));
+  min-height: calc(100svh - var(--libro-header-height, 108px));
   margin: 0 !important;
   padding-top: calc(6.75rem + clamp(4.4rem, 6.5vw, 7.8rem)) !important;
   padding-bottom: clamp(5.2rem, 7vw, 7.4rem) !important;
@@ -362,7 +363,6 @@ body.pagina-libro-reclamos .breadcrumb-libro-reclamos [aria-current="page"] {
   }
 
   body.pagina-libro-reclamos main > .libro-reclamos-hero {
-    min-height: 28rem;
     padding-top: calc(4.75rem + 4.5rem) !important;
     padding-bottom: 3.5rem !important;
   }

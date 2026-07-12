@@ -50,7 +50,8 @@ body.pagina-info-viaje .equipaje-card__contenido li {
 /* Hero principal */
 .hero-viaje {
   width: 100%;
-  min-height: 0;
+  min-height: calc(100vh - var(--info-viaje-header-height, 84px));
+  min-height: calc(100svh - var(--info-viaje-header-height, 84px));
   position: relative;
   display: flex;
   align-items: center;

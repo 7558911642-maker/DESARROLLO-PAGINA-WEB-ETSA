@@ -241,7 +241,7 @@ body.pagina-index main .rutas-index .etsa-precio-moneda {
 }
 
 body.pagina-index main .rutas-index .etsa-precio-monto {
-  color: #ff6813 !important;
+  color: #ffffff !important;
   font-size: clamp(1.85rem, 12cqw, 5.2rem) !important;
   font-style: normal !important;
 }
@@ -370,6 +370,416 @@ body.pagina-index main .rutas-index :is(
     bottom: 5.25rem;
     width: 42px;
     height: 42px;
+  }
+}
+
+/* Hero principal del index */
+body.pagina-index {
+  --index-hero-header-offset: 84px;
+}
+
+body.pagina-index > .site-header.fixed-top {
+  box-shadow: none !important;
+}
+
+body.pagina-index > .site-header.fixed-top ~ main,
+body.pagina-index > [data-layout="header"] + main {
+  padding-top: var(--index-hero-header-offset);
+}
+
+.pagina-index .hero.hero-banner {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  max-width: none;
+  min-height: calc(88svh - var(--index-hero-header-offset));
+  margin: 0 0 2.25rem;
+  padding: 2.25rem;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  color: #ffffff;
+  background-color: #050a14;
+  background-image:
+    linear-gradient(90deg, rgba(2, 6, 23, 0.94) 0%, rgba(2, 6, 23, 0.82) 44%, rgba(2, 6, 23, 0.48) 72%, rgba(2, 6, 23, 0.28) 100%),
+    url("../../../img/banners/info-viaje-banner.png");
+  background-position: center, center;
+  background-size: cover, cover;
+  background-repeat: no-repeat;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.pagina-index .hero.hero-banner,
+.pagina-index .hero.hero-banner *,
+.pagina-index .hero.hero-banner *::before,
+.pagina-index .hero.hero-banner *::after {
+  box-sizing: border-box;
+}
+
+.pagina-index .hero.hero-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(180deg, rgba(2, 6, 23, 0.12) 0%, rgba(2, 6, 23, 0.34) 100%);
+  pointer-events: none;
+}
+
+.pagina-index .hero.hero-banner::after {
+  content: "";
+  position: absolute;
+  left: 3rem;
+  bottom: 2.75rem;
+  z-index: 1;
+  width: min(18rem, 44%);
+  height: 3px;
+  background: linear-gradient(90deg, #f46a20, rgba(244, 106, 32, 0));
+  border-radius: 999px;
+  pointer-events: none;
+}
+
+.pagina-index .hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 35rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.pagina-index .hero-title {
+  margin: 0;
+  color: #ffffff;
+  font-size: 2.55rem;
+  line-height: 1;
+  font-weight: 900;
+  letter-spacing: 0;
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.34);
+}
+
+.pagina-index .hero-subtitle {
+  margin: 0.85rem 0 0;
+  color: #f8fafc;
+  font-size: 1.08rem;
+  line-height: 1.35;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-shadow: 0 3px 14px rgba(0, 0, 0, 0.34);
+}
+
+.pagina-index .hero-subtitle::after {
+  content: "";
+  display: block;
+  width: 2.25rem;
+  height: 3px;
+  margin-top: 0.85rem;
+  background: #f46a20;
+  border-radius: 999px;
+}
+
+.pagina-index .hero-actions {
+  width: 100%;
+  margin-top: 2.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.pagina-index .hero-btn {
+  min-height: 3.1rem;
+  width: 100%;
+  padding: 0.85rem 1.15rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 0.95rem;
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.pagina-index .hero-btn--primary {
+  background: #f46a20;
+  border: 1px solid #f46a20;
+  box-shadow: 0 12px 26px rgba(244, 106, 32, 0.32);
+}
+
+.pagina-index .hero-btn--secondary {
+  background: rgba(2, 6, 23, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.82);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+.pagina-index .hero-btn:hover,
+.pagina-index .hero-btn:focus-visible {
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.pagina-index .hero-btn--primary:hover,
+.pagina-index .hero-btn--primary:focus-visible {
+  background: #ea580c;
+  border-color: #ea580c;
+  box-shadow: 0 16px 30px rgba(234, 88, 12, 0.36);
+}
+
+.pagina-index .hero-btn--secondary:hover,
+.pagina-index .hero-btn--secondary:focus-visible {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: #ffffff;
+}
+
+.pagina-index .hero-btn:focus-visible {
+  outline: 3px solid rgba(255, 255, 255, 0.9);
+  outline-offset: 3px;
+}
+
+@media (min-width: 768px) {
+  .pagina-index .hero.hero-banner {
+    min-height: calc(88svh - var(--index-hero-header-offset));
+    padding: 2.5rem 3rem;
+  }
+
+  .pagina-index .hero-content {
+    max-width: 40rem;
+  }
+
+  .pagina-index .hero-title {
+    font-size: 3.35rem;
+  }
+
+  .pagina-index .hero-subtitle {
+    font-size: 1.35rem;
+  }
+
+  .pagina-index .hero-actions {
+    width: auto;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 1rem;
+  }
+
+  .pagina-index .hero-btn {
+    width: auto;
+    min-width: 10.75rem;
+    padding-right: 1.6rem;
+    padding-left: 1.6rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .pagina-index .hero.hero-banner {
+    min-height: calc(87svh - var(--index-hero-header-offset));
+    padding: 2rem 2.5rem;
+  }
+
+  .pagina-index .hero-title {
+    font-size: 3.25rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .pagina-index .hero.hero-banner {
+    min-height: calc(87svh - var(--index-hero-header-offset));
+    padding: 2.8rem 3.2rem;
+  }
+
+  .pagina-index .hero-title {
+    font-size: 3.65rem;
+  }
+}
+
+@media (min-width: 1400px) {
+  .pagina-index .hero.hero-banner {
+    min-height: calc(86svh - var(--index-hero-header-offset));
+  }
+
+  .pagina-index .hero-title {
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  body.pagina-index {
+    --index-hero-header-offset: 70px;
+  }
+
+  .pagina-index .hero.hero-banner {
+    min-height: calc(88svh - var(--index-hero-header-offset));
+    padding: 1.35rem;
+    align-items: flex-start;
+    background-image:
+      linear-gradient(180deg, rgba(2, 6, 23, 0.88) 0%, rgba(2, 6, 23, 0.74) 46%, rgba(2, 6, 23, 0.48) 100%),
+      url("../../../img/banners/info-viaje-banner.png");
+  }
+
+  .pagina-index .hero.hero-banner::after {
+    left: 1.35rem;
+    bottom: 1.35rem;
+    width: 8rem;
+  }
+
+  .pagina-index .hero-content {
+    min-height: 100%;
+  }
+
+  .pagina-index .hero-title {
+    font-size: 2.15rem;
+  }
+
+  .pagina-index .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .pagina-index .hero-actions {
+    width: min(100%, 20rem);
+    margin-top: 4.5rem;
+  }
+}
+
+/* Botones de promociones del index */
+body.pagina-index main .promociones-index :is(.promo-index-card__boton, .promo-slide-card__boton),
+body.pagina-index main .promociones-index .promociones-index__carrusel-tablet .promo-slide-card__boton {
+  position: static !important;
+  inset: auto !important;
+  width: min(100%, 11.4rem) !important;
+  min-width: 0 !important;
+  max-width: calc(100% - 1.5rem) !important;
+  min-height: 2.35rem !important;
+  margin-right: auto !important;
+  margin-left: auto !important;
+  padding: 0.64rem 0.95rem !important;
+  border-radius: 999px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.36rem !important;
+  background-color: var(--naranja) !important;
+  color: #ffffff !important;
+  font-size: 0.84rem !important;
+  font-weight: 800 !important;
+  line-height: 1.1 !important;
+  letter-spacing: 0 !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  text-transform: uppercase !important;
+  white-space: nowrap !important;
+  box-shadow: 0 0.45rem 1rem rgba(249, 115, 22, 0.18) !important;
+  align-self: center !important;
+  flex: 0 0 auto !important;
+}
+
+body.pagina-index main .promociones-index :is(.promo-index-card__boton, .promo-slide-card__boton) i,
+body.pagina-index main .promociones-index .promociones-index__carrusel-tablet .promo-slide-card__boton i {
+  font-size: 0.84rem !important;
+  line-height: 1 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+}
+
+body.pagina-index main .promociones-index :is(.promo-index-card__boton, .promo-slide-card__boton):hover,
+body.pagina-index main .promociones-index :is(.promo-index-card__boton, .promo-slide-card__boton):focus-visible,
+body.pagina-index main .promociones-index .promociones-index__carrusel-tablet .promo-slide-card__boton:hover,
+body.pagina-index main .promociones-index .promociones-index__carrusel-tablet .promo-slide-card__boton:focus-visible {
+  color: #ffffff !important;
+  background-color: var(--naranja-oscuro) !important;
+  box-shadow: 0 0.55rem 1.15rem rgba(234, 88, 12, 0.22) !important;
+}
+
+/* Promociones del index: titulo en una linea y tarjetas sin textos sobre la imagen. */
+body.pagina-index main .promociones-index .index-promociones__titulo-box {
+  max-width: 100% !important;
+}
+
+body.pagina-index main .promociones-index .index-promociones__titulo-box > div {
+  min-width: 0 !important;
+  max-width: 100% !important;
+}
+
+body.pagina-index main .promociones-index .index-promociones__header h2 {
+  max-width: none !important;
+  font-size: clamp(1.35rem, 5.2vw, 3.625rem) !important;
+  line-height: 1.04 !important;
+  letter-spacing: 0 !important;
+  white-space: nowrap !important;
+}
+
+body.pagina-index main .promociones-index :is(.promo-slide-card__contenido, .promo-index-card__contenido) {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 2 !important;
+  width: 100% !important;
+  height: 100% !important;
+  padding: clamp(1rem, 3vw, 1.4rem) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  text-align: center !important;
+  pointer-events: none;
+}
+
+body.pagina-index main .promociones-index :is(.promo-slide-card__contenido, .promo-index-card__contenido) > :not(:is(.promo-slide-card__boton, .promo-index-card__boton)) {
+  display: none !important;
+}
+
+body.pagina-index main .promociones-index :is(.promo-slide-card__boton, .promo-index-card__boton) {
+  pointer-events: auto;
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  body.pagina-index main .promociones-index .promociones-index__carrusel-tablet .promo-slide-card__contenido {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    padding: 1.15rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    text-align: center !important;
+    pointer-events: none;
+  }
+
+  body.pagina-index main .promociones-index .promociones-index__carrusel-tablet .promo-slide-card__contenido :is(.index-slide-card__tag, h3, p) {
+    display: none !important;
+  }
+
+  body.pagina-index main .promociones-index .promociones-index__carrusel-tablet .promo-slide-card__boton {
+    margin: 0 auto !important;
+    align-self: center !important;
+    pointer-events: auto;
+  }
+}
+
+@media (max-width: 575.98px) {
+  body.pagina-index main .promociones-index :is(.promo-index-card__boton, .promo-slide-card__boton) {
+    width: min(100%, 10.9rem) !important;
+    min-height: 2.3rem !important;
+    padding: 0.6rem 0.85rem !important;
+    font-size: 0.8rem !important;
+  }
+}
+
+@media (max-width: 360px) {
+  body.pagina-index main .promociones-index .index-promociones__header h2 {
+    font-size: 1.22rem !important;
+  }
+}
+
+@media (min-width: 1400px) {
+  body.pagina-index main .promociones-index :is(.promo-index-card__boton, .promo-slide-card__boton) {
+    width: min(100%, 11.75rem) !important;
+    min-height: 2.45rem !important;
+    font-size: 0.86rem !important;
   }
 }
 

@@ -10,7 +10,8 @@ body.pagina-index > .site-header.fixed-top ~ main {
 
 .hero {
   width: 100%;
-  min-height: 0px;
+  min-height: calc(100vh - var(--site-header-height, 84px));
+  min-height: calc(100svh - var(--site-header-height, 84px));
   position: relative;
   overflow: hidden;
 
@@ -1152,37 +1153,6 @@ figure {
   border: none;
 }
 
-/* MEDIOS DE PAGO CON GRID DE BOOTSTRAP */
-.medios-pago {
-  display: block;
-  padding: 10px 0;
-}
-
-.medios-pago__items {
-  justify-content: center;
-}
-
-/* FOOTER CON ROW/COL DE BOOTSTRAP */
-.footer-contenedor {
-  width: 100%;
-  margin: 0;
-  padding: 45px 0;
-  display: flex;
-  gap: 0;
-}
-
-.footer-contenedor.row {
-  --bs-gutter-x: 3rem;
-  --bs-gutter-y: 2rem;
-}
-
-.footer-columna {
-  min-height: 100%;
-}
-
-
-
-
 /* RESPONSIVE */
 @media (max-width: 991px) {
   .header {
@@ -1216,54 +1186,6 @@ figure {
   .footer-columna {
     border-left: none;
     padding-left: 0;
-  }
-
-  .medios-pago--rutas {
-    padding: 5px 0;
-  }
-
-  .medios-pago--rutas .container {
-    max-width: 100%;
-  }
-
-  .medios-pago--rutas .row {
-    flex-wrap: nowrap;
-    gap: 12px;
-  }
-
-  .medios-pago--rutas .col-12 {
-    width: auto;
-    flex: 0 0 auto;
-  }
-
-  .medios-pago--rutas .medios-pago__items {
-    gap: 14px;
-  }
-
-  .footer-principal--rutas {
-    text-align: center;
-  }
-
-  .footer-principal--rutas .row {
-    justify-content: center;
-  }
-
-  .footer-principal--rutas .row > [class*="col-"] {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .footer-principal--rutas .nav {
-    align-items: center;
-  }
-
-  .footer-principal--rutas [aria-label="Redes sociales"] {
-    justify-content: center;
-  }
-
-  .footer-principal--rutas address {
-    max-width: 360px;
   }
 }
 

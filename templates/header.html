@@ -1,0 +1,84 @@
+<header class="site-header header navbar navbar-expand-lg bg-white shadow-sm fixed-top" data-layout-header>
+  <div class="container-fluid px-4 px-lg-5">
+
+    <!-- LOGO -->
+    <a class="navbar-brand header__logo m-0" href="{{ROOT}}index.html" aria-label="Ir al inicio">
+      <img src="{{ROOT}}img/marca/logo.png" alt="Logo ETSA Sol Amazonense">
+    </a>
+
+    <!-- MENU DESKTOP -->
+    <nav class="header__nav d-none d-lg-block ms-auto" aria-label="Menu principal">
+      <ul class="navbar-nav flex-row align-items-center gap-4">
+        <li class="nav-item">
+          <a class="nav-link" href="{{ROOT}}index.html" data-nav-id="index">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ROOT}}servicios.html" data-nav-id="servicios">Servicios</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ROOT}}rutas.html" data-nav-id="rutas">Rutas</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ROOT}}promociones.html" data-nav-id="promociones">Promociones</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ROOT}}contacto.html" data-nav-id="contacto">Contacto</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- BOTON RESERVA -->
+    <div class="reserva d-none d-sm-flex" data-layout-reserva>
+      <a href="{{ROOT}}reserva.html" class="btn-reserva" data-nav-id="reserva">
+        <i class="bi bi-ticket-perforated-fill me-2" aria-hidden="true"></i>
+        RESERVA TU PASAJE
+      </a>
+    </div>
+
+    <!-- BOTON OFFCANVAS BOOTSTRAP -->
+    <button class="btn-menu d-flex d-lg-none border-0" type="button" data-bs-toggle="offcanvas"
+      data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-label="Abrir menu">
+      <i class="bi bi-list icono-menu" aria-hidden="true"></i>
+    </button>
+
+  </div>
+</header>
+
+<!-- PANEL LATERAL BOOTSTRAP -->
+<aside class="offcanvas offcanvas-end menu-bootstrap menu-mobile-etsa" tabindex="-1" id="menuPrincipal"
+  aria-labelledby="menuPrincipalLabel">
+  <div class="offcanvas-header">
+    <a class="menu-mobile__brand" href="{{ROOT}}index.html" aria-label="Ir al inicio"><span class="menu-mobile__dismiss" data-bs-dismiss="offcanvas"><img src="{{ROOT}}img/marca/logo.png" alt="Logo ETSA Sol Amazonense"></span></a>
+    <h2 class="visually-hidden" id="menuPrincipalLabel">Menu principal ETSA</h2>
+    <button type="button" class="btn-close menu-mobile__cerrar" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
+  </div>
+
+  <div class="offcanvas-body">
+    <a href="{{ROOT}}reserva.html" class="btn-reserva menu-mobile__reserva" data-nav-id="reserva">
+      <span class="menu-mobile__dismiss" data-bs-dismiss="offcanvas">
+        <i class="bi bi-ticket-perforated" aria-hidden="true"></i>
+        <span>RESERVA TU PASAJE</span>
+        <i class="bi bi-arrow-right" aria-hidden="true"></i>
+      </span>
+    </a>
+
+    <nav class="panel-lateral__nav" aria-label="Menu lateral">
+      <ul class="navbar-nav flex-column">
+        <li class="nav-item"><a class="nav-link menu-mobile__link" href="{{ROOT}}index.html" data-nav-id="index"><span class="menu-mobile__dismiss" data-bs-dismiss="offcanvas"><i class="bi bi-house-door" aria-hidden="true"></i><span>Inicio</span></span></a></li>
+        <li class="nav-item"><a class="nav-link menu-mobile__link" href="{{ROOT}}nosotros.html" data-nav-id="nosotros"><span class="menu-mobile__dismiss" data-bs-dismiss="offcanvas"><i class="bi bi-people" aria-hidden="true"></i><span>Nosotros</span></span></a></li>
+        <li class="nav-item"><a class="nav-link menu-mobile__link" href="{{ROOT}}servicios.html" data-nav-id="servicios"><span class="menu-mobile__dismiss" data-bs-dismiss="offcanvas"><i class="bi bi-bus-front" aria-hidden="true"></i><span>Nuestros servicios</span></span></a></li>
+        <li class="nav-item"><a class="nav-link menu-mobile__link" href="{{ROOT}}rutas.html" data-nav-id="rutas"><span class="menu-mobile__dismiss" data-bs-dismiss="offcanvas"><i class="bi bi-geo-alt" aria-hidden="true"></i><span>Rutas</span></span></a></li>
+        <li class="nav-item"><a class="nav-link menu-mobile__link" href="{{ROOT}}encomiendas.html" data-nav-id="encomiendas"><span class="menu-mobile__dismiss" data-bs-dismiss="offcanvas"><i class="bi bi-box-seam" aria-hidden="true"></i><span>Encomiendas</span></span></a></li>
+        <li class="nav-item"><a class="nav-link menu-mobile__link" href="{{ROOT}}promociones.html" data-nav-id="promociones"><span class="menu-mobile__dismiss" data-bs-dismiss="offcanvas"><i class="bi bi-tag" aria-hidden="true"></i><span>Promociones</span></span></a></li>
+        <li class="nav-item"><a class="nav-link menu-mobile__link" href="{{ROOT}}reserva.html" data-nav-id="reserva"><span class="menu-mobile__dismiss" data-bs-dismiss="offcanvas"><i class="bi bi-ticket-perforated" aria-hidden="true"></i><span>Reserva</span></span></a></li>
+        <li class="nav-item"><a class="nav-link menu-mobile__link" href="{{ROOT}}testimonios.html" data-nav-id="testimonios"><span class="menu-mobile__dismiss" data-bs-dismiss="offcanvas"><i class="bi bi-chat-square-star" aria-hidden="true"></i><span>Testimonios</span></span></a></li>
+        <li class="nav-item"><a class="nav-link menu-mobile__link" href="{{ROOT}}preguntas-frecuentes.html" data-nav-id="preguntas-frecuentes"><span class="menu-mobile__dismiss" data-bs-dismiss="offcanvas"><i class="bi bi-question-circle" aria-hidden="true"></i><span>Preguntas frecuentes</span></span></a></li>
+        <li class="nav-item"><a class="nav-link menu-mobile__link" href="{{ROOT}}info-viaje.html" data-nav-id="info-viaje"><span class="menu-mobile__dismiss" data-bs-dismiss="offcanvas"><i class="bi bi-suitcase" aria-hidden="true"></i><span>Info para tu viaje</span></span></a></li>
+        <li class="nav-item"><a class="nav-link menu-mobile__link" href="{{ROOT}}contacto.html" data-nav-id="contacto"><span class="menu-mobile__dismiss" data-bs-dismiss="offcanvas"><i class="bi bi-envelope" aria-hidden="true"></i><span>Contacto</span></span></a></li>
+        <li class="nav-item"><a class="nav-link menu-mobile__link" href="{{ROOT}}libro_reclamos.html" data-nav-id="libro_reclamos"><span class="menu-mobile__dismiss" data-bs-dismiss="offcanvas"><i class="bi bi-journal-text" aria-hidden="true"></i><span>Libro de reclamaciones</span></span></a></li>
+        <li class="nav-item"><a class="nav-link menu-mobile__link" href="{{ROOT}}terminos-viaje.html" data-nav-id="terminos-viaje"><span class="menu-mobile__dismiss" data-bs-dismiss="offcanvas"><i class="bi bi-file-earmark-text" aria-hidden="true"></i><span>T&eacute;rminos de viaje</span></span></a></li>
+        <li class="nav-item"><a class="nav-link menu-mobile__link" href="{{ROOT}}terminos-encomiendas.html" data-nav-id="terminos-encomiendas"><span class="menu-mobile__dismiss" data-bs-dismiss="offcanvas"><i class="bi bi-file-earmark-text" aria-hidden="true"></i><span>T&eacute;rminos de encomiendas</span></span></a></li>
+      </ul>
+    </nav>
+  </div>
+</aside>

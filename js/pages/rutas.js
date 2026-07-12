@@ -1,5 +1,17 @@
 
+
 (() => {
+  const HERO_CAROUSEL_IMAGES = [
+    "img/rutas/chachapoyas.png",
+    "img/rutas/kuelap.png",
+    "img/banners/Pedro_Ruiz.png",
+    "img/rutas/Luya.png",
+    "img/rutas/Pomacochas.png",
+    "img/rutas/bagua.png",
+  ];
+
+  const HERO_FALLBACK_IMAGE = "img/rutas/chachapoyas.png";
+  const HERO_CAROUSEL_INTERVAL = 3000;
   const ROUTES = [
     {
       id: "ruta-chachapoyas",
@@ -87,6 +99,8 @@
   };
 
   document.addEventListener("DOMContentLoaded", () => {
+    initHeroCarousel();
+
     const section = document.querySelector(".rutas-seccion");
     const header = document.querySelector(".rutas-header");
     const viewport = document.querySelector(".rutas-slider-viewport");
@@ -364,6 +378,147 @@
     controls.clear.disabled = true;
     applyFilters();
   });
+
+  function initHeroCarousel() {
+    const hero = document.querySelector(".rutas-hero");
+    const track = hero?.querySelector(".rutas-hero__track");
+    const dotsContainer = hero?.querySelector(".rutas-hero__dots");
+
+    if (!hero || !track || !dotsContainer) {
+      return;
+    }
+
+    const imageList = Array.from(new Set(
+      HERO_CAROUSEL_IMAGES.filter((image) => typeof image === "string" && image.trim())
+    ));
+    const fallbackImage = imageList.includes(HERO_FALLBACK_IMAGE)
+      ? HERO_FALLBACK_IMAGE
+      : imageList[0] || HERO_FALLBACK_IMAGE;
+
+    let activeIndex = 0;
+    let carouselTimer = null;
+
+    const setSlideImage = (slide, image) => {
+      slide.style.backgroundImage = `url("${image}")`;
+      slide.dataset.heroImage = image;
+    };
+
+    const preloadImage = (image) =>
+      new Promise((resolve) => {
+        const preload = new Image();
+        preload.decoding = "async";
+        preload.onload = () => resolve({ image, loaded: true });
+        preload.onerror = () => resolve({ image, loaded: false });
+        preload.src = image;
+      });
+
+    const getSlides = () => Array.from(track.querySelectorAll(".rutas-hero__slide"));
+    const getDots = () => Array.from(dotsContainer.querySelectorAll(".rutas-hero__dot"));
+
+    const stopCarousel = () => {
+      if (carouselTimer) {
+        window.clearInterval(carouselTimer);
+        carouselTimer = null;
+      }
+    };
+
+    const updateActiveState = (slides, dots) => {
+      slides.forEach((slide, slideIndex) => {
+        slide.classList.toggle("is-active", slideIndex === activeIndex);
+      });
+
+      dots.forEach((dot, dotIndex) => {
+        const isActive = dotIndex === activeIndex;
+        dot.classList.toggle("is-active", isActive);
+        if (isActive) {
+          dot.setAttribute("aria-current", "true");
+        } else {
+          dot.removeAttribute("aria-current");
+        }
+      });
+    };
+
+    const setActiveSlide = (index) => {
+      const slides = getSlides();
+      const dots = getDots();
+
+      if (!slides.length) {
+        return;
+      }
+
+      activeIndex = (index + slides.length) % slides.length;
+      updateActiveState(slides, dots);
+
+      const nextSlide = slides[(activeIndex + 1) % slides.length];
+      if (nextSlide?.dataset.heroImage) {
+        preloadImage(nextSlide.dataset.heroImage);
+      }
+    };
+
+    const startCarousel = () => {
+      const slides = getSlides();
+
+      stopCarousel();
+      if (slides.length < 2) {
+        return;
+      }
+
+      carouselTimer = window.setInterval(() => {
+        setActiveSlide(activeIndex + 1);
+      }, HERO_CAROUSEL_INTERVAL);
+    };
+
+    const renderCarousel = (images) => {
+      stopCarousel();
+      track.innerHTML = "";
+      dotsContainer.innerHTML = "";
+
+      images.forEach((image, index) => {
+        const slide = createElement("div", `rutas-hero__slide${index === 0 ? " is-active" : ""}`);
+        setSlideImage(slide, image);
+        track.appendChild(slide);
+      });
+
+      images.forEach((image, index) => {
+        const dot = createElement("button", `rutas-hero__dot${index === 0 ? " is-active" : ""}`);
+        dot.type = "button";
+        dot.setAttribute("aria-label", `Ver imagen ${index + 1} del banner`);
+        if (index === 0) {
+          dot.setAttribute("aria-current", "true");
+        }
+        dot.addEventListener("click", () => {
+          setActiveSlide(index);
+          startCarousel();
+        });
+        dotsContainer.appendChild(dot);
+      });
+
+      activeIndex = 0;
+      setActiveSlide(0);
+      hero.dataset.carouselReady = "true";
+      startCarousel();
+    };
+
+    renderCarousel([fallbackImage]);
+
+    Promise.all(imageList.map(preloadImage)).then((results) => {
+      const availableImages = results
+        .filter((result) => result.loaded)
+        .map((result) => result.image);
+
+      if (!availableImages.includes(fallbackImage)) {
+        availableImages.unshift(fallbackImage);
+      }
+
+      if (!availableImages.length) {
+        return;
+      }
+
+      renderCarousel(availableImages);
+    });
+
+    window.addEventListener("pagehide", stopCarousel, { once: true });
+  }
 
   function createControls(totalRoutes) {
     const wrapper = createElement("section", "rutas-controles-js");

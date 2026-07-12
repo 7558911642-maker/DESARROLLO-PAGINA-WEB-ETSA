@@ -9,7 +9,8 @@
 .pagina-contacto .contacto-hero {
   position: relative;
   width: 100%;
-  min-height: clamp(330px, 38vw, 510px);
+  min-height: calc(100vh - var(--site-header-height, 84px));
+  min-height: calc(100svh - var(--site-header-height, 84px));
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -554,7 +555,6 @@
 
 @media (max-width: 991px) {
   .pagina-contacto .contacto-hero {
-    min-height: 350px;
     padding: 104px clamp(32px, 7vw, 64px) 72px !important;
   }
 
@@ -655,7 +655,6 @@
 
 @media (max-width: 640px) {
   .pagina-contacto .contacto-hero {
-    min-height: 320px;
     padding: 96px 28px 62px !important;
   }
 

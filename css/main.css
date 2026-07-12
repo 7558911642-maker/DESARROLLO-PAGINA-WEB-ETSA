@@ -35,11 +35,150 @@
   --site-header-height: 6.75rem;
 }
 
+.etsa-banner-carousel-ready {
+  position: relative;
+  overflow: hidden;
+  background-color: #0f172a;
+}
+
+.etsa-banner-carousel-ready > .etsa-banner-carousel {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.etsa-banner-carousel__track {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.etsa-banner-carousel__slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: opacity 650ms ease-in-out;
+  will-change: opacity;
+}
+
+.etsa-banner-carousel__slide.is-active {
+  opacity: 1;
+}
+
+.etsa-banner-carousel-ready > .etsa-banner-carousel__shade {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    rgba(15, 23, 42, 0.82) 0%,
+    rgba(15, 23, 42, 0.50) 48%,
+    rgba(15, 23, 42, 0.18) 100%
+  );
+}
+
+.etsa-banner-carousel-ready > :not(.etsa-banner-carousel):not(.etsa-banner-carousel__shade):not(.etsa-banner-carousel__dots) {
+  position: relative;
+  z-index: 2;
+}
+
+body.pagina-index > main > .hero.etsa-banner-carousel-ready > .hero-img {
+  display: none;
+}
+
+body.pagina-index > main > .hero.etsa-banner-carousel-ready > .container-fluid {
+  z-index: 3;
+}
+
+.etsa-banner-carousel-ready > .etsa-banner-carousel__dots {
+  position: absolute;
+  left: 50%;
+  bottom: clamp(22px, 4.8vh, 44px);
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transform: translateX(-50%);
+}
+
+.etsa-banner-carousel__dot {
+  width: 11px;
+  height: 11px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background-color: rgba(203, 213, 225, 0.78);
+  box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.16);
+  cursor: pointer;
+  transition: width 0.25s ease, background-color 0.25s ease, transform 0.25s ease;
+}
+
+.etsa-banner-carousel__dot.is-active {
+  width: 30px;
+  background-color: #64748b;
+}
+
+.etsa-banner-carousel__dot:focus-visible {
+  outline: 3px solid rgba(255, 255, 255, 0.55);
+  outline-offset: 4px;
+}
+
+.servicios-hero.etsa-banner-carousel-ready > .etsa-banner-carousel__shade,
+.hero-viaje.etsa-banner-carousel-ready > .etsa-banner-carousel__shade {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.92) 0%,
+    rgba(255, 255, 255, 0.70) 40%,
+    rgba(15, 23, 42, 0.22) 100%
+  );
+}
+
+.detalle-destino-hero.etsa-banner-carousel-ready::after {
+  z-index: 2;
+}
+
+body.pagina-index > main > .hero.hero-banner,
+.contacto-hero:not(.contacto-hero--index),
+.encomiendas-hero,
+.hero-viaje,
+.libro-reclamos-hero,
+.nosotros-hero,
+.faq-hero,
+.promociones-hero,
+.rutas-hero,
+.servicios-hero,
+.terminos-encomiendas-hero,
+.terminos-viaje-hero,
+.testimonios-hero,
+.detalle-destino-hero {
+  height: calc(100vh - var(--site-header-height, 84px)) !important;
+  height: calc(100svh - var(--site-header-height, 84px)) !important;
+  min-height: calc(100vh - var(--site-header-height, 84px)) !important;
+  min-height: calc(100svh - var(--site-header-height, 84px)) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .etsa-banner-carousel__slide,
+  .etsa-banner-carousel__dot {
+    transition: none;
+  }
+}
+
 body.pagina-contacto,
 body.pagina-encomiendas,
+body.pagina-info-viaje,
+body.pagina-libro-reclamos,
 body.pagina-nosotros,
 body.pagina-preguntas-frecuentes,
 body.pagina-promociones,
+body.pagina-reserva,
 body.pagina-rutas,
 body.pagina-servicios,
 body.pagina-terminos-encomiendas,
@@ -56,9 +195,12 @@ body.pagina-terminos-viaje {
 
 body.pagina-contacto main,
 body.pagina-encomiendas main.pagina-encomiendas,
+body.pagina-info-viaje main,
+body.pagina-libro-reclamos main,
 body.pagina-nosotros main,
 body.pagina-preguntas-frecuentes main.pagina-preguntas-frecuentes__main,
 body.pagina-promociones main,
+body.pagina-reserva main,
 body.pagina-rutas main.pagina-rutas__main,
 body.pagina-servicios main.pagina-servicios,
 body.pagina-terminos-encomiendas main.terminos-encomiendas-page,
@@ -72,9 +214,12 @@ body.pagina-detalle-ruta main.pagina-detalle-ruta__main {
 
 body.pagina-contacto .breadcrumb-etsa,
 body.pagina-encomiendas .breadcrumb-encomiendas,
+body.pagina-info-viaje .breadcrumb-info-viaje,
+body.pagina-libro-reclamos .breadcrumb-libro-reclamos,
 body.pagina-nosotros .breadcrumb-rutas,
 body.pagina-preguntas-frecuentes .breadcrumb-rutas,
 body.pagina-promociones .breadcrumb-rutas,
+body.pagina-reserva .breadcrumb-reserva,
 body.pagina-rutas .breadcrumb-rutas,
 body.pagina-servicios .breadcrumb-rutas,
 body.pagina-terminos-encomiendas .breadcrumb-terminos-encomiendas,
@@ -96,10 +241,13 @@ body.pagina-detalle-ruta .breadcrumb-rutas {
 
 body.pagina-contacto .breadcrumb-etsa .breadcrumb-container,
 body.pagina-encomiendas .breadcrumb-encomiendas > .container,
+body.pagina-info-viaje .breadcrumb-info-viaje > .container,
+body.pagina-libro-reclamos .breadcrumb-libro-reclamos > .container,
 body.pagina-nosotros .breadcrumb-rutas > .container,
 body.pagina-preguntas-frecuentes .breadcrumb-rutas > .container,
 body.pagina-promociones .breadcrumb-rutas > .container,
 body.pagina-promociones .breadcrumb-rutas > .container-fluid,
+body.pagina-reserva .breadcrumb-reserva > .container,
 body.pagina-rutas .breadcrumb-rutas > .container,
 body.pagina-servicios .breadcrumb-rutas > .container,
 body.pagina-terminos-encomiendas .breadcrumb-terminos-encomiendas > .container,
@@ -116,9 +264,12 @@ body.pagina-detalle-ruta .breadcrumb-rutas > .container {
 
 body.pagina-contacto .breadcrumb-etsa .breadcrumb,
 body.pagina-encomiendas .breadcrumb-encomiendas ol,
+body.pagina-info-viaje .breadcrumb-info-viaje ol,
+body.pagina-libro-reclamos .breadcrumb-libro-reclamos ol,
 body.pagina-nosotros .breadcrumb-rutas ol,
 body.pagina-preguntas-frecuentes .breadcrumb-rutas ol,
 body.pagina-promociones .breadcrumb-rutas ol,
+body.pagina-reserva .breadcrumb-reserva ol,
 body.pagina-rutas .breadcrumb-rutas ol,
 body.pagina-servicios .breadcrumb-rutas ol,
 body.pagina-terminos-encomiendas .breadcrumb-terminos-encomiendas ol,
@@ -135,9 +286,12 @@ body.pagina-detalle-ruta .breadcrumb-rutas ol {
 
 body.pagina-contacto .breadcrumb-etsa .breadcrumb::-webkit-scrollbar,
 body.pagina-encomiendas .breadcrumb-encomiendas ol::-webkit-scrollbar,
+body.pagina-info-viaje .breadcrumb-info-viaje ol::-webkit-scrollbar,
+body.pagina-libro-reclamos .breadcrumb-libro-reclamos ol::-webkit-scrollbar,
 body.pagina-nosotros .breadcrumb-rutas ol::-webkit-scrollbar,
 body.pagina-preguntas-frecuentes .breadcrumb-rutas ol::-webkit-scrollbar,
 body.pagina-promociones .breadcrumb-rutas ol::-webkit-scrollbar,
+body.pagina-reserva .breadcrumb-reserva ol::-webkit-scrollbar,
 body.pagina-rutas .breadcrumb-rutas ol::-webkit-scrollbar,
 body.pagina-servicios .breadcrumb-rutas ol::-webkit-scrollbar,
 body.pagina-terminos-encomiendas .breadcrumb-terminos-encomiendas ol::-webkit-scrollbar,
@@ -147,12 +301,99 @@ body.pagina-detalle-ruta .breadcrumb-rutas ol::-webkit-scrollbar {
   display: none;
 }
 
+body.menu-mobile-abierto .breadcrumb-etsa,
+body.menu-mobile-abierto .breadcrumb-encomiendas,
+body.menu-mobile-abierto .breadcrumb-rutas,
+body.menu-mobile-abierto .breadcrumb-info-viaje,
+body.menu-mobile-abierto .breadcrumb-libro-reclamos,
+body.menu-mobile-abierto .breadcrumb-reserva,
+body.menu-mobile-abierto .breadcrumb-terminos-encomiendas,
+body.menu-mobile-abierto .breadcrumb-terminos-viaje {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+body:has(.menu-mobile-etsa.show) .breadcrumb-etsa,
+body:has(.menu-mobile-etsa.show) .breadcrumb-encomiendas,
+body:has(.menu-mobile-etsa.show) .breadcrumb-rutas,
+body:has(.menu-mobile-etsa.show) .breadcrumb-info-viaje,
+body:has(.menu-mobile-etsa.show) .breadcrumb-libro-reclamos,
+body:has(.menu-mobile-etsa.show) .breadcrumb-reserva,
+body:has(.menu-mobile-etsa.show) .breadcrumb-terminos-encomiendas,
+body:has(.menu-mobile-etsa.show) .breadcrumb-terminos-viaje {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+body.pagina-contacto .breadcrumb-etsa.breadcrumb-pegado,
+body.pagina-encomiendas .breadcrumb-encomiendas.breadcrumb-pegado,
+body.pagina-info-viaje .breadcrumb-info-viaje.breadcrumb-pegado,
+body.pagina-libro-reclamos .breadcrumb-libro-reclamos.breadcrumb-pegado,
+body.pagina-nosotros .breadcrumb-rutas.breadcrumb-pegado,
+body.pagina-preguntas-frecuentes .breadcrumb-rutas.breadcrumb-pegado,
+body.pagina-promociones .breadcrumb-rutas.breadcrumb-pegado,
+body.pagina-reserva .breadcrumb-reserva.breadcrumb-pegado,
+body.pagina-rutas .breadcrumb-rutas.breadcrumb-pegado,
+body.pagina-servicios .breadcrumb-rutas.breadcrumb-pegado,
+body.pagina-terminos-encomiendas .breadcrumb-terminos-encomiendas.breadcrumb-pegado,
+body.pagina-terminos-viaje .breadcrumb-terminos-viaje.breadcrumb-pegado,
+body.pagina-testimonios .breadcrumb-rutas.breadcrumb-pegado,
+body.pagina-detalle-ruta .breadcrumb-rutas.breadcrumb-pegado {
+  top: var(--site-header-height, 84px) !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin-left: 0 !important;
+  padding: 0.55rem 7% !important;
+  background: rgba(255, 255, 255, 0.96) !important;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08) !important;
+  backdrop-filter: blur(10px);
+}
+
+body.pagina-contacto .breadcrumb-etsa.breadcrumb-pegado .breadcrumb-container,
+body.pagina-encomiendas .breadcrumb-encomiendas.breadcrumb-pegado > .container,
+body.pagina-info-viaje .breadcrumb-info-viaje.breadcrumb-pegado > .container,
+body.pagina-libro-reclamos .breadcrumb-libro-reclamos.breadcrumb-pegado > .container,
+body.pagina-nosotros .breadcrumb-rutas.breadcrumb-pegado > .container,
+body.pagina-preguntas-frecuentes .breadcrumb-rutas.breadcrumb-pegado > .container,
+body.pagina-promociones .breadcrumb-rutas.breadcrumb-pegado > .container,
+body.pagina-promociones .breadcrumb-rutas.breadcrumb-pegado > .container-fluid,
+body.pagina-reserva .breadcrumb-reserva.breadcrumb-pegado > .container,
+body.pagina-rutas .breadcrumb-rutas.breadcrumb-pegado > .container,
+body.pagina-servicios .breadcrumb-rutas.breadcrumb-pegado > .container,
+body.pagina-terminos-encomiendas .breadcrumb-terminos-encomiendas.breadcrumb-pegado > .container,
+body.pagina-terminos-viaje .breadcrumb-terminos-viaje.breadcrumb-pegado > .container,
+body.pagina-testimonios .breadcrumb-rutas.breadcrumb-pegado > .container,
+body.pagina-detalle-ruta .breadcrumb-rutas.breadcrumb-pegado > .container {
+  width: 100% !important;
+}
+
+body.menu-mobile-abierto main {
+  pointer-events: none;
+}
+
+.offcanvas-backdrop {
+  z-index: 1980 !important;
+}
+
+.offcanvas-backdrop.show {
+  opacity: 1;
+}
+
+.menu-bootstrap.menu-mobile-etsa {
+  z-index: 1990 !important;
+}
+
 @media (max-width: 575.98px) {
   body.pagina-contacto .breadcrumb-etsa,
   body.pagina-encomiendas .breadcrumb-encomiendas,
+  body.pagina-info-viaje .breadcrumb-info-viaje,
+  body.pagina-libro-reclamos .breadcrumb-libro-reclamos,
   body.pagina-nosotros .breadcrumb-rutas,
   body.pagina-preguntas-frecuentes .breadcrumb-rutas,
   body.pagina-promociones .breadcrumb-rutas,
+  body.pagina-reserva .breadcrumb-reserva,
   body.pagina-rutas .breadcrumb-rutas,
   body.pagina-servicios .breadcrumb-rutas,
   body.pagina-terminos-encomiendas .breadcrumb-terminos-encomiendas,
@@ -167,10 +408,13 @@ body.pagina-detalle-ruta .breadcrumb-rutas ol::-webkit-scrollbar {
 
   body.pagina-contacto .breadcrumb-etsa .breadcrumb-container,
   body.pagina-encomiendas .breadcrumb-encomiendas > .container,
+  body.pagina-info-viaje .breadcrumb-info-viaje > .container,
+  body.pagina-libro-reclamos .breadcrumb-libro-reclamos > .container,
   body.pagina-nosotros .breadcrumb-rutas > .container,
   body.pagina-preguntas-frecuentes .breadcrumb-rutas > .container,
   body.pagina-promociones .breadcrumb-rutas > .container,
   body.pagina-promociones .breadcrumb-rutas > .container-fluid,
+  body.pagina-reserva .breadcrumb-reserva > .container,
   body.pagina-rutas .breadcrumb-rutas > .container,
   body.pagina-servicios .breadcrumb-rutas > .container,
   body.pagina-terminos-encomiendas .breadcrumb-terminos-encomiendas > .container,
@@ -185,9 +429,12 @@ body.pagina-detalle-ruta .breadcrumb-rutas ol::-webkit-scrollbar {
 
   body.pagina-contacto .breadcrumb-etsa .breadcrumb,
   body.pagina-encomiendas .breadcrumb-encomiendas ol,
+  body.pagina-info-viaje .breadcrumb-info-viaje ol,
+  body.pagina-libro-reclamos .breadcrumb-libro-reclamos ol,
   body.pagina-nosotros .breadcrumb-rutas ol,
   body.pagina-preguntas-frecuentes .breadcrumb-rutas ol,
   body.pagina-promociones .breadcrumb-rutas ol,
+  body.pagina-reserva .breadcrumb-reserva ol,
   body.pagina-rutas .breadcrumb-rutas ol,
   body.pagina-servicios .breadcrumb-rutas ol,
   body.pagina-terminos-encomiendas .breadcrumb-terminos-encomiendas ol,
@@ -203,9 +450,12 @@ body.pagina-detalle-ruta .breadcrumb-rutas ol::-webkit-scrollbar {
 
   body.pagina-contacto .breadcrumb-etsa .breadcrumb-item,
   body.pagina-encomiendas .breadcrumb-encomiendas li,
+  body.pagina-info-viaje .breadcrumb-info-viaje li,
+  body.pagina-libro-reclamos .breadcrumb-libro-reclamos li,
   body.pagina-nosotros .breadcrumb-rutas li,
   body.pagina-preguntas-frecuentes .breadcrumb-rutas li,
   body.pagina-promociones .breadcrumb-rutas li,
+  body.pagina-reserva .breadcrumb-reserva li,
   body.pagina-rutas .breadcrumb-rutas li,
   body.pagina-servicios .breadcrumb-rutas li,
   body.pagina-terminos-encomiendas .breadcrumb-terminos-encomiendas li,
@@ -215,5 +465,199 @@ body.pagina-detalle-ruta .breadcrumb-rutas ol::-webkit-scrollbar {
     flex: 0 0 auto;
     font-size: clamp(0.78rem, 3.4vw, 0.9rem);
     white-space: nowrap;
+  }
+
+  body.pagina-contacto .breadcrumb-etsa.breadcrumb-pegado,
+  body.pagina-encomiendas .breadcrumb-encomiendas.breadcrumb-pegado,
+  body.pagina-info-viaje .breadcrumb-info-viaje.breadcrumb-pegado,
+  body.pagina-libro-reclamos .breadcrumb-libro-reclamos.breadcrumb-pegado,
+  body.pagina-nosotros .breadcrumb-rutas.breadcrumb-pegado,
+  body.pagina-preguntas-frecuentes .breadcrumb-rutas.breadcrumb-pegado,
+  body.pagina-promociones .breadcrumb-rutas.breadcrumb-pegado,
+  body.pagina-reserva .breadcrumb-reserva.breadcrumb-pegado,
+  body.pagina-rutas .breadcrumb-rutas.breadcrumb-pegado,
+  body.pagina-servicios .breadcrumb-rutas.breadcrumb-pegado,
+  body.pagina-terminos-encomiendas .breadcrumb-terminos-encomiendas.breadcrumb-pegado,
+  body.pagina-terminos-viaje .breadcrumb-terminos-viaje.breadcrumb-pegado,
+  body.pagina-testimonios .breadcrumb-rutas.breadcrumb-pegado,
+  body.pagina-detalle-ruta .breadcrumb-rutas.breadcrumb-pegado {
+    width: 100% !important;
+    margin-left: 0 !important;
+    padding: 0.5rem clamp(14px, 5vw, 22px) !important;
+  }
+}
+
+.detalle-datos-slider-dots {
+  display: none;
+}
+
+@media (max-width: 767.98px) {
+  body.pagina-detalle-ruta .detalle-destino-texto {
+    overflow: visible !important;
+  }
+
+  body.pagina-detalle-ruta .detalle-datos-slider {
+    --bs-gutter-x: 0;
+    --bs-gutter-y: 0;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    justify-content: flex-start !important;
+    align-items: stretch !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 24px 0 0 !important;
+    padding: 8px 0 12px !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  body.pagina-detalle-ruta .detalle-datos-slider::-webkit-scrollbar {
+    display: none;
+  }
+
+  body.pagina-detalle-ruta .detalle-datos-slider > .col-12 {
+    flex: 0 0 100% !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    display: block !important;
+    padding: 0 !important;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+
+  body.pagina-detalle-ruta .detalle-datos-slider .detalle-dato {
+    width: min(100%, 360px) !important;
+    min-height: 172px;
+    margin: 0 auto !important;
+    padding: 22px 20px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 12px !important;
+    text-align: center !important;
+  }
+
+  body.pagina-detalle-ruta .detalle-datos-slider .detalle-dato i {
+    margin: 0 auto !important;
+  }
+
+  body.pagina-detalle-ruta .detalle-datos-slider-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 9px;
+    margin-top: 8px;
+  }
+
+  body.pagina-detalle-ruta .detalle-datos-slider-dot {
+    width: 10px;
+    height: 10px;
+    padding: 0;
+    border: 0;
+    border-radius: 999px;
+    background-color: rgba(15, 23, 42, 0.22);
+    cursor: pointer;
+    transition: width 0.25s ease, background-color 0.25s ease;
+  }
+
+  body.pagina-detalle-ruta .detalle-datos-slider-dot.is-active {
+    width: 30px;
+    background-color: var(--naranja);
+  }
+
+  body.pagina-detalle-ruta .detalle-datos-slider-dot:focus-visible {
+    outline: 3px solid rgba(255, 106, 0, 0.28);
+    outline-offset: 4px;
+  }
+}
+
+.actividades-pares-dots {
+  display: none;
+}
+
+@media (max-width: 991.98px) {
+  body.pagina-detalle-ruta .actividades-destino .col-12.col-lg-7 {
+    overflow: hidden !important;
+  }
+
+  body.pagina-detalle-ruta .actividades-destino .col-12.col-lg-7 > .row.actividades-pares-slider {
+    --actividad-pair-slide: 0;
+    --bs-gutter-x: 18px;
+    --bs-gutter-y: 0;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    justify-content: flex-start !important;
+    align-items: stretch !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding: 8px 0 10px !important;
+    overflow: visible !important;
+    transform: translate3d(calc(var(--actividad-pair-slide) * -100%), 0, 0) !important;
+    transition: transform 0.42s cubic-bezier(0.22, 0.61, 0.36, 1);
+    touch-action: pan-y;
+    will-change: transform;
+  }
+
+  body.pagina-detalle-ruta .actividades-destino .col-12.col-lg-7 > .row.actividades-pares-slider > [class*="col-"] {
+    flex: 0 0 50% !important;
+    width: 50% !important;
+    max-width: 50% !important;
+    display: block !important;
+    padding-right: calc(var(--bs-gutter-x) * 0.5) !important;
+    padding-left: calc(var(--bs-gutter-x) * 0.5) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  body.pagina-detalle-ruta .actividades-destino .col-12.col-lg-7 > .row.actividades-pares-slider .actividad-item {
+    width: min(100%, 320px) !important;
+    min-height: 230px;
+    margin: 0 auto !important;
+    padding: 26px 18px !important;
+    display: flex !important;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  body.pagina-detalle-ruta .actividades-destino .col-12.col-lg-7 > .row.actividades-pares-slider + .detalle-slider-dots {
+    display: none !important;
+  }
+
+  body.pagina-detalle-ruta .actividades-pares-dots {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    gap: 9px;
+    margin-top: 16px;
+    position: relative;
+    z-index: 3;
+  }
+
+  body.pagina-detalle-ruta .actividades-pares-dot {
+    flex: 0 0 auto;
+    display: inline-block !important;
+    width: 10px;
+    height: 10px;
+    padding: 0;
+    border: 0;
+    border-radius: 999px;
+    background-color: rgba(15, 23, 42, 0.22);
+    cursor: pointer;
+    transition: width 0.25s ease, background-color 0.25s ease;
+  }
+
+  body.pagina-detalle-ruta .actividades-pares-dot.is-active {
+    width: 30px;
+    background-color: var(--naranja);
+  }
+
+  body.pagina-detalle-ruta .actividades-pares-dot:focus-visible {
+    outline: 3px solid rgba(255, 255, 255, 0.45);
+    outline-offset: 4px;
   }
 }

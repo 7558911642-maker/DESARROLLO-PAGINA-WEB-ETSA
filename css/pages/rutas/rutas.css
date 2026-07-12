@@ -154,7 +154,7 @@ body.pagina-rutas > .site-header.fixed-top ~ main.pagina-rutas__main {
   list-style: none;
   white-space: nowrap;
   scrollbar-width: none;
-  -webkit-overflow-scrolling: touch;
+  -webk it-overflow-scrolling: touch;
 }
 
 .breadcrumb-rutas--rutas ol::-webkit-scrollbar {

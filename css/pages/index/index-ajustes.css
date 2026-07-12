@@ -392,8 +392,8 @@ body.pagina-index > [data-layout="header"] + main {
   isolation: isolate;
   width: 100%;
   max-width: none;
-  min-height: max(600px, calc(100svh - var(--index-hero-header-offset)));
-  margin: 0 0 3rem;
+  min-height: calc(88svh - var(--index-hero-header-offset));
+  margin: 0 0 2.25rem;
   padding: 2.25rem;
   display: flex;
   align-items: center;
@@ -549,7 +549,7 @@ body.pagina-index main > .hero.hero-banner.etsa-banner-carousel-ready > .etsa-ba
 
 @media (min-width: 768px) {
   .pagina-index .hero.hero-banner {
-    min-height: max(600px, calc(100svh - var(--index-hero-header-offset)));
+    min-height: calc(88svh - var(--index-hero-header-offset));
     padding: 2.5rem 3rem;
   }
 
@@ -582,7 +582,7 @@ body.pagina-index main > .hero.hero-banner.etsa-banner-carousel-ready > .etsa-ba
 
 @media (min-width: 992px) {
   .pagina-index .hero.hero-banner {
-    min-height: max(600px, calc(100svh - var(--index-hero-header-offset)));
+    min-height: calc(87svh - var(--index-hero-header-offset));
     padding: 2rem 2.5rem;
   }
 
@@ -593,7 +593,7 @@ body.pagina-index main > .hero.hero-banner.etsa-banner-carousel-ready > .etsa-ba
 
 @media (min-width: 1200px) {
   .pagina-index .hero.hero-banner {
-    min-height: max(600px, calc(100svh - var(--index-hero-header-offset)));
+    min-height: calc(87svh - var(--index-hero-header-offset));
     padding: 2.8rem 3.2rem;
   }
 
@@ -604,7 +604,7 @@ body.pagina-index main > .hero.hero-banner.etsa-banner-carousel-ready > .etsa-ba
 
 @media (min-width: 1400px) {
   .pagina-index .hero.hero-banner {
-    min-height: max(640px, calc(100svh - var(--index-hero-header-offset)));
+    min-height: calc(86svh - var(--index-hero-header-offset));
   }
 
   .pagina-index .hero-title {
@@ -618,7 +618,7 @@ body.pagina-index main > .hero.hero-banner.etsa-banner-carousel-ready > .etsa-ba
   }
 
   .pagina-index .hero.hero-banner {
-    min-height: max(560px, calc(100svh - var(--index-hero-header-offset)));
+    min-height: calc(88svh - var(--index-hero-header-offset));
     padding: 1.35rem;
     align-items: flex-start;
     background-image:
@@ -653,21 +653,23 @@ body.pagina-index main > .hero.hero-banner.etsa-banner-carousel-ready > .etsa-ba
 /* Botones de promociones del index */
 body.pagina-index main .promociones-index :is(.promo-index-card__boton, .promo-slide-card__boton),
 body.pagina-index main .promociones-index .promociones-index__carrusel-tablet .promo-slide-card__boton {
-  width: auto !important;
+  position: static !important;
+  inset: auto !important;
+  width: min(100%, 11.4rem) !important;
   min-width: 0 !important;
   max-width: calc(100% - 1.5rem) !important;
-  min-height: 2.55rem !important;
+  min-height: 2.35rem !important;
   margin-right: auto !important;
   margin-left: auto !important;
-  padding: 0.72rem 1.3rem !important;
+  padding: 0.64rem 0.95rem !important;
   border-radius: 999px !important;
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
-  gap: 0.45rem !important;
+  gap: 0.36rem !important;
   background-color: var(--naranja) !important;
   color: #ffffff !important;
-  font-size: 0.9rem !important;
+  font-size: 0.84rem !important;
   font-weight: 800 !important;
   line-height: 1.1 !important;
   letter-spacing: 0 !important;
@@ -675,13 +677,17 @@ body.pagina-index main .promociones-index .promociones-index__carrusel-tablet .p
   text-decoration: none !important;
   text-transform: uppercase !important;
   white-space: nowrap !important;
-  box-shadow: 0 0.55rem 1.25rem rgba(249, 115, 22, 0.2) !important;
+  box-shadow: 0 0.45rem 1rem rgba(249, 115, 22, 0.18) !important;
+  align-self: center !important;
+  flex: 0 0 auto !important;
 }
 
 body.pagina-index main .promociones-index :is(.promo-index-card__boton, .promo-slide-card__boton) i,
 body.pagina-index main .promociones-index .promociones-index__carrusel-tablet .promo-slide-card__boton i {
-  font-size: 0.9rem !important;
+  font-size: 0.84rem !important;
   line-height: 1 !important;
+  display: inline-flex !important;
+  align-items: center !important;
 }
 
 body.pagina-index main .promociones-index :is(.promo-index-card__boton, .promo-slide-card__boton):hover,
@@ -690,14 +696,23 @@ body.pagina-index main .promociones-index .promociones-index__carrusel-tablet .p
 body.pagina-index main .promociones-index .promociones-index__carrusel-tablet .promo-slide-card__boton:focus-visible {
   color: #ffffff !important;
   background-color: var(--naranja-oscuro) !important;
-  box-shadow: 0 0.7rem 1.45rem rgba(234, 88, 12, 0.24) !important;
+  box-shadow: 0 0.55rem 1.15rem rgba(234, 88, 12, 0.22) !important;
 }
 
 @media (max-width: 575.98px) {
   body.pagina-index main .promociones-index :is(.promo-index-card__boton, .promo-slide-card__boton) {
+    width: min(100%, 10.9rem) !important;
+    min-height: 2.3rem !important;
+    padding: 0.6rem 0.85rem !important;
+    font-size: 0.8rem !important;
+  }
+}
+
+@media (min-width: 1400px) {
+  body.pagina-index main .promociones-index :is(.promo-index-card__boton, .promo-slide-card__boton) {
+    width: min(100%, 11.75rem) !important;
     min-height: 2.45rem !important;
-    padding: 0.68rem 1.15rem !important;
-    font-size: 0.9rem !important;
+    font-size: 0.86rem !important;
   }
 }
 

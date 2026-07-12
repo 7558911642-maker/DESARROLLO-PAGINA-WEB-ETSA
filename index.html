@@ -36,54 +36,72 @@
   <main>
 
     <!-- HERO PRINCIPAL -->
-    <section class="hero" aria-labelledby="titulo-principal">
-      <div class="container-fluid px-3 px-sm-4 px-lg-5 position-relative z-3">
-        <div class="row align-items-center justify-content-center justify-content-lg-start">
-          <div class="col-12 col-md-11 col-lg-8 col-xl-7 col-xxl-6">
+    <section class="hero hero-banner" aria-labelledby="titulo-principal">
+      <div class="hero-content">
+        <h1 id="titulo-principal" class="hero-title">Viaja seguro</h1>
+        <p class="hero-subtitle">Reserva fácil y rápido</p>
 
-            <article class="hero-text text-center text-lg-start">
-              <p class="badge">
-                <i class="bi bi-shield-check me-2" aria-hidden="true"></i>
-                EMPRESA DE TRANSPORTES
-              </p>
-
-              <h1 id="titulo-principal" class="seguridad">
-                <span class="hero-title-line">VIAJA CON</span>
-                <span class="hero-title-line accent">SEGURIDAD</span>
-                <span class="hero-title-line">GARANTIZADA</span>
-              </h1>
-
-              <p class="hero-descripcion">
-                ETSA Sol Amazonense conecta los principales destinos
-                de la región Amazonas, ofreciendo
-                <span>comodidad, puntualidad y confianza</span> en cada viaje.
-              </p>
-
-              <div class="botones justify-content-center justify-content-lg-start" role="group" aria-label="Acciones principales del sitio">
-                <a href="rutas.html" class="btn-primary">
-                  <i class="bi bi-geo-alt-fill me-2" aria-hidden="true"></i>
-                  VER RUTAS
-                </a>
-
-                <a href="contacto.html" class="btn-dark">
-                  <i class="bi bi-telephone-fill me-2" aria-hidden="true"></i>
-                  CONTÁCTANOS
-                </a>
-              </div>
-            </article>
-          </div>
+        <div class="hero-actions" role="group" aria-label="Acciones principales del sitio">
+          <a class="hero-btn hero-btn--primary" href="reserva.html">Reserva tu pasaje</a>
+          <a class="hero-btn hero-btn--secondary" href="rutas.html">Ver rutas</a>
+          <a class="hero-btn hero-btn--secondary" href="contacto.html">Contáctanos</a>
         </div>
       </div>
-
-      <figure class="hero-img m-0">
-        <img src="img/rutas/chachapoyas.png" alt="Paisaje turístico de Chachapoyas, Amazonas">
-      </figure>
     </section>
 
     
 
     <!-- RESUMEN PROMOCIONES -->
     <section class="promociones-index index-promociones" aria-labelledby="titulo-index-promociones">
+      <style>
+        @media (min-width: 1024px) and (max-width: 1440px) {
+          body.pagina-index main .promociones-index #promocionesIndexFila .promo-index-card {
+            height: 360px !important;
+            min-height: 360px !important;
+          }
+
+          body.pagina-index main .promociones-index #promocionesIndexFila .promo-index-card > img {
+            height: 100% !important;
+            min-height: 360px !important;
+          }
+
+          body.pagina-index main .promociones-index #promocionesIndexFila .promo-index-card__contenido {
+            position: absolute !important;
+            inset: 0 !important;
+            z-index: 2 !important;
+            width: 100% !important;
+            height: 100% !important;
+            padding: 1.25rem !important;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            justify-content: flex-end !important;
+            text-align: center !important;
+            pointer-events: none;
+          }
+
+          body.pagina-index main .promociones-index #promocionesIndexFila .promo-index-card__contenido > :not(.promo-index-card__boton) {
+            display: none !important;
+          }
+
+          body.pagina-index main .promociones-index #promocionesIndexFila .promo-index-card__boton {
+            width: auto !important;
+            min-width: 0 !important;
+            max-width: calc(100% - 1.5rem) !important;
+            min-height: 2.55rem !important;
+            margin: 0 auto !important;
+            padding: 0.72rem 1.3rem !important;
+            font-size: 0.9rem !important;
+            font-weight: 800 !important;
+            line-height: 1.1 !important;
+            letter-spacing: 0 !important;
+            white-space: nowrap !important;
+            box-shadow: 0 0.55rem 1.25rem rgba(249, 115, 22, 0.2) !important;
+            pointer-events: auto;
+          }
+        }
+      </style>
+
       <div class="container-fluid promociones-index__container">
 
         <div class="index-promociones__header flex-column flex-md-row align-items-start align-items-md-center">
@@ -220,7 +238,7 @@
                       <p>Promoción ideal para viajar en grupo familiar hacia destinos turísticos de la región Amazonas.</p>
 
                       <a href="promociones.html#modal-promo3" class="promo-slide-card__boton">
-                        Ver más detalle
+                        Más información
                         <i class="bi bi-arrow-right" aria-hidden="true"></i>
                       </a>
                     </div>
@@ -239,7 +257,7 @@
                       <p>Envía paquetes o carga comercial de forma recurrente y accede a tarifas preferenciales.</p>
 
                       <a href="promociones.html#modal-promo2" class="promo-slide-card__boton">
-                        Ver más detalle
+                        Más información
                         <i class="bi bi-arrow-right" aria-hidden="true"></i>
                       </a>
                     </div>
@@ -262,7 +280,7 @@
                       <p>Envía paquetes o carga comercial de forma recurrente y accede a tarifas preferenciales.</p>
 
                       <a href="promociones.html#modal-promo2" class="promo-slide-card__boton">
-                        Ver más detalle
+                        Más información
                         <i class="bi bi-arrow-right" aria-hidden="true"></i>
                       </a>
                     </div>
@@ -281,7 +299,7 @@
                       <p>Viaja entre Chachapoyas, Bagua Grande y Pedro Ruiz con una tarifa especial para tu retorno.</p>
 
                       <a href="promociones.html#modal-promo1" class="promo-slide-card__boton">
-                        Ver más detalle
+                        Más información
                         <i class="bi bi-arrow-right" aria-hidden="true"></i>
                       </a>
                     </div>
@@ -304,7 +322,7 @@
                       <p>Viaja entre Chachapoyas, Bagua Grande y Pedro Ruiz con una tarifa especial para tu retorno.</p>
 
                       <a href="promociones.html#modal-promo1" class="promo-slide-card__boton">
-                        Ver más detalle
+                        Más información
                         <i class="bi bi-arrow-right" aria-hidden="true"></i>
                       </a>
                     </div>
@@ -323,7 +341,7 @@
                       <p>Promoción ideal para viajar en grupo familiar hacia destinos turísticos de la región Amazonas.</p>
 
                       <a href="promociones.html#modal-promo3" class="promo-slide-card__boton">
-                        Ver más detalle
+                        Más información
                         <i class="bi bi-arrow-right" aria-hidden="true"></i>
                       </a>
                     </div>

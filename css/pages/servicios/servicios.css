@@ -27,7 +27,7 @@ body > .site-header.fixed-top ~ main.pagina-servicios {
   border-bottom: 1px solid rgba(15, 23, 42, 0.08);
   background:
     linear-gradient(90deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.92) 35%, rgba(255, 255, 255, 0.18) 66%),
-    url("../../../img/banners/servicios-banner.png") right center / min(66vw, 900px) auto no-repeat,
+    url("../../../img/banners/nosotros-nuevo-banner.png") right center / min(66vw, 900px) auto no-repeat,
     #ffffff;
 }
 
@@ -440,7 +440,7 @@ body > .site-header.fixed-top ~ main.pagina-servicios {
   .pagina-servicios .servicios-hero {
     background:
       linear-gradient(90deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.86) 52%, rgba(255, 255, 255, 0.18) 100%),
-      url("../../../img/banners/servicios-banner.png") right center / cover no-repeat,
+      url("../../../img/banners/nosotros-nuevo-banner.png") right center / cover no-repeat,
       #ffffff !important;
     padding: 0 !important;
   }
@@ -483,7 +483,7 @@ body > .site-header.fixed-top ~ main.pagina-servicios {
   .pagina-servicios .servicios-hero {
     background:
       linear-gradient(90deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.9) 64%, rgba(255, 255, 255, 0.35) 100%),
-      url("../../../img/banners/servicios-banner.png") 68% center / cover no-repeat,
+      url("../../../img/banners/nosotros-nuevo-banner.png") 68% center / cover no-repeat,
       #ffffff !important;
     padding: 0 !important;
   }

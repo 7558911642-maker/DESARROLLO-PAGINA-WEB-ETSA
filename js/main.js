@@ -140,7 +140,6 @@
     [".faq-hero", "img/banners/preguntas-frecuentes-banner.png"],
     [".promociones-hero", "img/banners/Promociones-banner.png"],
     [".reserva-hero", "img/banners/watermarked_img_2461339827978530461.jpg"],
-    [".rutas-hero", "img/rutas/chachapoyas.png"],
     [".servicios-hero", "img/banners/servicios-banner.png"],
     [".terminos-encomiendas-hero", "img/banners/encomiendas-banner.png"],
     [".terminos-viaje-hero", "img/banners/terminos_condiciones_viaje_banner.png"],

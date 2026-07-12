@@ -100,6 +100,9 @@
   overflow: hidden;
   text-overflow: ellipsis;
   text-wrap: balance;
+  white-space: nowrap;
+  overflow-wrap: normal;
+  word-break: normal;
 }
 
 .promociones-seccion__texto > p:last-child {

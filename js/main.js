@@ -482,7 +482,104 @@
 })();
 
 (() => {
+  const detalleCardsQuery = window.matchMedia("(max-width: 991.98px)");
+
+  const initDetalleCardsSlider = (track) => {
+    if (track.dataset.detalleCardsSlider === "ready") {
+      return;
+    }
+
+    const slides = Array.from(track.children);
+    if (slides.length < 2) {
+      return;
+    }
+
+    let activeSlide = 0;
+    let startX = 0;
+    let startY = 0;
+
+    track.dataset.detalleCardsSlider = "ready";
+
+    let dots = track.nextElementSibling;
+    if (!dots?.classList.contains("detalle-slider-dots")) {
+      dots = document.createElement("div");
+      dots.className = "detalle-slider-dots";
+      dots.setAttribute("aria-label", "Selector de tarjetas");
+      track.insertAdjacentElement("afterend", dots);
+    }
+
+    dots.replaceChildren();
+
+    slides.forEach((_, index) => {
+      const dot = document.createElement("button");
+      dot.className = "detalle-slider-dot";
+      dot.type = "button";
+      dot.setAttribute("aria-label", `Ver tarjeta ${index + 1}`);
+      dot.addEventListener("click", () => setActiveSlide(index));
+      dots.appendChild(dot);
+    });
+
+    const dotButtons = Array.from(dots.children);
+
+    function setActiveSlide(index) {
+      activeSlide = Math.max(0, Math.min(slides.length - 1, index));
+      track.style.setProperty("--detalle-slide", activeSlide);
+
+      slides.forEach((slide, slideIndex) => {
+        slide.classList.toggle("is-active", slideIndex === activeSlide);
+      });
+
+      dotButtons.forEach((dot, dotIndex) => {
+        const isActive = dotIndex === activeSlide;
+        dot.classList.toggle("is-active", isActive);
+        if (isActive) {
+          dot.setAttribute("aria-current", "true");
+        } else {
+          dot.removeAttribute("aria-current");
+        }
+      });
+    }
+
+    const handleSwipe = (endX, endY) => {
+      if (!detalleCardsQuery.matches) {
+        return;
+      }
+
+      const distanceX = endX - startX;
+      const distanceY = endY - startY;
+
+      if (Math.abs(distanceX) < 45 || Math.abs(distanceX) < Math.abs(distanceY)) {
+        return;
+      }
+
+      setActiveSlide(activeSlide + (distanceX < 0 ? 1 : -1));
+    };
+
+    track.addEventListener("touchstart", (event) => {
+      const touch = event.touches[0];
+      startX = touch.clientX;
+      startY = touch.clientY;
+    }, { passive: true });
+
+    track.addEventListener("touchend", (event) => {
+      const touch = event.changedTouches[0];
+      handleSwipe(touch.clientX, touch.clientY);
+    });
+
+    window.addEventListener("resize", () => setActiveSlide(activeSlide));
+    setActiveSlide(0);
+  };
+
+  document.addEventListener("DOMContentLoaded", () => {
+    document
+      .querySelectorAll(".atractivos-ruta .container > .row")
+      .forEach(initDetalleCardsSlider);
+  });
+})();
+
+(() => {
   const pairQuery = window.matchMedia("(max-width: 991.98px)");
+  const phoneQuery = window.matchMedia("(max-width: 767.98px)");
 
   const initActividadesParesSlider = (track) => {
     if (track.dataset.actividadesParesSlider === "ready") {
@@ -490,14 +587,16 @@
     }
 
     const slides = Array.from(track.children);
-    const pageCount = Math.ceil(slides.length / 2);
-    if (pageCount < 2) {
+    if (slides.length < 2) {
       return;
     }
 
     let activePage = 0;
     let startX = 0;
     let startY = 0;
+    let itemsPerPage = phoneQuery.matches ? 1 : 2;
+    let pageCount = Math.ceil(slides.length / itemsPerPage);
+    let dotButtons = [];
 
     track.classList.add("actividades-pares-slider");
     track.dataset.actividadesParesSlider = "ready";
@@ -511,21 +610,54 @@
     dots.className = "actividades-pares-dots";
     dots.setAttribute("aria-label", "Selector de actividades recomendadas");
 
-    Array.from({ length: pageCount }).forEach((_, index) => {
-      const dot = document.createElement("button");
-      dot.className = "actividades-pares-dot";
-      dot.type = "button";
-      dot.setAttribute("aria-label", `Ver actividades ${index * 2 + 1} y ${Math.min(index * 2 + 2, slides.length)}`);
-      dot.addEventListener("click", () => setActivePage(index));
-      dots.appendChild(dot);
-    });
-
     track.insertAdjacentElement("afterend", dots);
-    const dotButtons = Array.from(dots.children);
+
+    const getItemsPerPage = () => (phoneQuery.matches ? 1 : 2);
+
+    const renderDots = () => {
+      dots.replaceChildren();
+
+      Array.from({ length: pageCount }).forEach((_, index) => {
+        const dot = document.createElement("button");
+        const firstActivity = index * itemsPerPage + 1;
+        const lastActivity = Math.min(firstActivity + itemsPerPage - 1, slides.length);
+
+        dot.className = "actividades-pares-dot";
+        dot.type = "button";
+        dot.setAttribute(
+          "aria-label",
+          itemsPerPage === 1
+            ? `Ver actividad ${firstActivity}`
+            : `Ver actividades ${firstActivity} y ${lastActivity}`
+        );
+        dot.addEventListener("click", () => setActivePage(index));
+        dots.appendChild(dot);
+      });
+
+      dotButtons = Array.from(dots.children);
+    };
 
     function setActivePage(index) {
-      activePage = Math.max(0, Math.min(pageCount - 1, index));
+      const activeSlide = activePage * itemsPerPage;
+      const nextItemsPerPage = getItemsPerPage();
+      const changedItemsPerPage = nextItemsPerPage !== itemsPerPage;
+
+      itemsPerPage = nextItemsPerPage;
+      pageCount = Math.ceil(slides.length / itemsPerPage);
+
+      const nextPage = changedItemsPerPage ? Math.floor(activeSlide / itemsPerPage) : index;
+      activePage = Math.max(0, Math.min(pageCount - 1, nextPage));
       track.style.setProperty("--actividad-pair-slide", activePage);
+
+      if (changedItemsPerPage || dotButtons.length !== pageCount) {
+        renderDots();
+      }
+
+      slides.forEach((slide, slideIndex) => {
+        const firstActiveSlide = activePage * itemsPerPage;
+        const lastActiveSlide = firstActiveSlide + itemsPerPage;
+        slide.classList.toggle("is-active", slideIndex >= firstActiveSlide && slideIndex < lastActiveSlide);
+      });
 
       dotButtons.forEach((dot, dotIndex) => {
         const isActive = dotIndex === activePage;
@@ -565,6 +697,7 @@
     });
 
     window.addEventListener("resize", () => setActivePage(activePage));
+    renderDots();
     setActivePage(0);
   };
 

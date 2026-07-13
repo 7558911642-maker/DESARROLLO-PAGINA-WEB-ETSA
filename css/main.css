@@ -880,6 +880,195 @@ body.menu-mobile-abierto main {
   }
 }
 
+@media (min-width: 768px) and (max-width: 991.98px) {
+  body.pagina-detalle-ruta .detalle-destino-info,
+  body.pagina-detalle-ruta .atractivos-ruta,
+  body.pagina-detalle-ruta .actividades-destino,
+  body.pagina-detalle-ruta .recomendaciones-detalle,
+  body.pagina-detalle-ruta .navegacion-detalle {
+    padding-left: clamp(44px, 7vw, 72px) !important;
+    padding-right: clamp(44px, 7vw, 72px) !important;
+  }
+
+  body.pagina-detalle-ruta .detalle-destino-info > .container,
+  body.pagina-detalle-ruta .atractivos-ruta > .container,
+  body.pagina-detalle-ruta .actividades-destino > .container,
+  body.pagina-detalle-ruta .recomendaciones-detalle > .container,
+  body.pagina-detalle-ruta .navegacion-detalle > .container {
+    width: min(100%, 680px) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  body.pagina-detalle-ruta .detalle-destino-texto,
+  body.pagina-detalle-ruta .actividades-destino__texto {
+    max-width: 580px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+  }
+
+  body.pagina-detalle-ruta .seccion-detalle-titulo,
+  body.pagina-detalle-ruta .actividades-destino__texto h2,
+  body.pagina-detalle-ruta .actividades-destino__texto p,
+  body.pagina-detalle-ruta .recomendaciones-detalle h2 {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+    justify-content: center !important;
+  }
+
+  body.pagina-detalle-ruta .atractivos-ruta .detalle-card,
+  body.pagina-detalle-ruta .recomendaciones-detalle .recomendacion-card {
+    width: min(100%, 420px) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  body.pagina-detalle-ruta .recomendaciones-detalle > .container {
+    width: min(100%, 860px) !important;
+  }
+
+  body.pagina-detalle-ruta .recomendaciones-detalle .container > .row {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    justify-content: center !important;
+    align-items: stretch !important;
+    gap: 14px !important;
+    width: 100% !important;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    transform: none !important;
+  }
+
+  body.pagina-detalle-ruta .recomendaciones-detalle .container > .row > [class*="col-"] {
+    flex: 0 1 calc((100% - 28px) / 3) !important;
+    width: calc((100% - 28px) / 3) !important;
+    max-width: calc((100% - 28px) / 3) !important;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  body.pagina-detalle-ruta .recomendaciones-detalle .recomendacion-card {
+    width: 100% !important;
+    min-height: 100% !important;
+    padding: 22px 14px !important;
+  }
+
+  body.pagina-detalle-ruta .recomendaciones-detalle .recomendacion-card i {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 14px;
+    font-size: 21px;
+  }
+
+  body.pagina-detalle-ruta .recomendaciones-detalle .recomendacion-card h3 {
+    margin-bottom: 8px;
+    font-size: 16px;
+    line-height: 1.2;
+  }
+
+  body.pagina-detalle-ruta .recomendaciones-detalle .recomendacion-card p {
+    font-size: 13.5px;
+    line-height: 1.48;
+  }
+
+  body.pagina-detalle-ruta .recomendaciones-detalle .detalle-slider-dots {
+    display: none !important;
+  }
+}
+
+@media (max-width: 767.98px) {
+  body.pagina-detalle-ruta .detalle-destino-info,
+  body.pagina-detalle-ruta .atractivos-ruta,
+  body.pagina-detalle-ruta .actividades-destino,
+  body.pagina-detalle-ruta .recomendaciones-detalle,
+  body.pagina-detalle-ruta .navegacion-detalle {
+    padding-left: clamp(28px, 7vw, 36px) !important;
+    padding-right: clamp(28px, 7vw, 36px) !important;
+  }
+
+  body.pagina-detalle-ruta .detalle-destino-info > .container,
+  body.pagina-detalle-ruta .atractivos-ruta > .container,
+  body.pagina-detalle-ruta .actividades-destino > .container,
+  body.pagina-detalle-ruta .recomendaciones-detalle > .container,
+  body.pagina-detalle-ruta .navegacion-detalle > .container {
+    width: min(100%, 390px) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  body.pagina-detalle-ruta .detalle-destino-texto,
+  body.pagina-detalle-ruta .actividades-destino__texto {
+    max-width: 340px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+  }
+
+  body.pagina-detalle-ruta .actividades-destino__texto h2,
+  body.pagina-detalle-ruta .actividades-destino__texto p,
+  body.pagina-detalle-ruta .seccion-detalle-titulo,
+  body.pagina-detalle-ruta .recomendaciones-detalle h2 {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+  }
+
+  body.pagina-detalle-ruta .atractivos-ruta .container,
+  body.pagina-detalle-ruta .recomendaciones-detalle .container,
+  body.pagina-detalle-ruta .actividades-destino .col-12.col-lg-7 {
+    overflow: hidden !important;
+  }
+
+  body.pagina-detalle-ruta .atractivos-ruta .container > .row,
+  body.pagina-detalle-ruta .recomendaciones-detalle .container > .row,
+  body.pagina-detalle-ruta .actividades-destino .col-12.col-lg-7 > .row,
+  body.pagina-detalle-ruta .actividades-destino .col-12.col-lg-7 > .row.actividades-pares-slider {
+    --bs-gutter-x: 0;
+    overflow: visible !important;
+  }
+
+  body.pagina-detalle-ruta .atractivos-ruta .container > .row > [class*="col-"]:first-child,
+  body.pagina-detalle-ruta .recomendaciones-detalle .container > .row > [class*="col-"]:first-child {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  body.pagina-detalle-ruta .atractivos-ruta .detalle-card,
+  body.pagina-detalle-ruta .recomendaciones-detalle .recomendacion-card {
+    width: min(100%, 330px) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  body.pagina-detalle-ruta .actividades-destino .col-12.col-lg-7 > .row.actividades-pares-slider > [class*="col-"] {
+    flex: 0 0 100% !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+  }
+
+  body.pagina-detalle-ruta .actividades-destino .col-12.col-lg-7 > .row.actividades-pares-slider > [class*="col-"].is-active {
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  body.pagina-detalle-ruta .actividades-destino .col-12.col-lg-7 > .row.actividades-pares-slider .actividad-item {
+    width: min(100%, 320px) !important;
+    min-height: 250px;
+    padding: 28px 22px !important;
+    justify-content: center;
+  }
+}
+
 /* Alíneación uniforme de títulos y contenido principal de los Sección principal. */
 body.pagina-index .hero.hero-banner,
 body.pagina-contacto .contacto-hero,
@@ -1087,4 +1276,104 @@ body.pagina-reserva .reserva-hero h1,
 body.pagina-terminos-encomiendas .terminos-encomiendas-hero h1,
 body.pagina-terminos-viaje .terminos-viaje-hero h1 {
   margin-bottom: 0 !important;
+}
+
+@media (max-width: 991.98px) {
+  body.pagina-detalle-ruta .detalle-destino-hero {
+    align-items: flex-end !important;
+    justify-content: center !important;
+    min-height: clamp(390px, 62vh, 560px) !important;
+    padding: clamp(92px, 13vw, 118px) clamp(34px, 8vw, 76px) clamp(86px, 11vw, 118px) !important;
+    text-align: center !important;
+  }
+
+  body.pagina-detalle-ruta .detalle-destino-hero.etsa-banner-carousel-ready > .etsa-banner-carousel__shade {
+    background: linear-gradient(
+      180deg,
+      rgba(15, 23, 42, 0.20) 0%,
+      rgba(15, 23, 42, 0.42) 42%,
+      rgba(15, 23, 42, 0.82) 100%
+    );
+  }
+
+  body.pagina-detalle-ruta .detalle-destino-hero__contenido {
+    width: min(100%, 620px) !important;
+    max-width: 620px !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  body.pagina-detalle-ruta .detalle-destino-hero__contenido p {
+    margin-right: auto !important;
+    margin-left: auto !important;
+    text-align: center !important;
+  }
+
+  body.pagina-detalle-ruta .detalle-destino-hero h1 {
+    max-width: min(100%, 620px) !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+    font-size: clamp(3rem, 11vw, 5.8rem) !important;
+    line-height: 0.95 !important;
+    text-align: center !important;
+  }
+
+  body.pagina-detalle-ruta .detalle-destino-hero::after {
+    left: 50% !important;
+    bottom: clamp(58px, 8vw, 78px) !important;
+    width: min(360px, 62vw) !important;
+    max-width: 62vw !important;
+    transform: translateX(-50%) !important;
+  }
+
+  body.pagina-detalle-ruta .detalle-destino-hero.etsa-banner-carousel-ready > .etsa-banner-carousel__dots {
+    bottom: clamp(26px, 4.6vw, 42px) !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+  body.pagina-detalle-ruta .detalle-destino-hero,
+  body.pagina-detalle-ruta .detalle-destino-hero.detalle-destino-hero--pedro-ruiz {
+    min-height: clamp(360px, 55vh, 430px) !important;
+    padding: 84px 30px 92px !important;
+  }
+
+  body.pagina-detalle-ruta .detalle-destino-hero__contenido {
+    width: min(100%, 330px) !important;
+    max-width: 330px !important;
+  }
+
+  body.pagina-detalle-ruta .detalle-destino-hero__contenido p {
+    margin-bottom: 10px !important;
+    font-size: 12px !important;
+    letter-spacing: 4px !important;
+  }
+
+  body.pagina-detalle-ruta .detalle-destino-hero h1 {
+    max-width: 330px !important;
+    font-size: clamp(2.65rem, 12.5vw, 3.9rem) !important;
+    line-height: 0.94 !important;
+  }
+
+  body.pagina-detalle-ruta .detalle-destino-hero::after {
+    bottom: 62px !important;
+    width: min(250px, 70vw) !important;
+    max-width: 70vw !important;
+  }
+
+  body.pagina-detalle-ruta .detalle-destino-hero.etsa-banner-carousel-ready > .etsa-banner-carousel__dots {
+    bottom: 30px !important;
+    gap: 8px;
+  }
+
+  body.pagina-detalle-ruta .detalle-destino-hero .etsa-banner-carousel__dot {
+    width: 10px;
+    height: 10px;
+  }
+
+  body.pagina-detalle-ruta .detalle-destino-hero .etsa-banner-carousel__dot.is-active {
+    width: 28px;
+  }
 }

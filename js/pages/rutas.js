@@ -2,15 +2,14 @@
 
 (() => {
   const HERO_CAROUSEL_IMAGES = [
-    "img/rutas/chachapoyas.png",
-    "img/rutas/kuelap.png",
-    "img/banners/Pedro_Ruiz.png",
-    "img/rutas/Luya.png",
-    "img/rutas/Pomacochas.png",
-    "img/rutas/bagua.png",
+    "img/banners/Nrutas_chacha_banner1.png",
+    "img/banners/Nrutas_bagua_banner2.png",
+    "img/banners/Nrutas_PedroRuiz_banner3.png",
+    "img/banners/Nrutas_Luya_banner4.png",
+    "img/banners/Nrutas_Pomacochas_banner5.png",
   ];
 
-  const HERO_FALLBACK_IMAGE = "img/rutas/chachapoyas.png";
+  const HERO_FALLBACK_IMAGE = "img/banners/Nrutas_chacha_banner1.png";
   const HERO_CAROUSEL_INTERVAL = 3000;
   const ROUTES = [
     {

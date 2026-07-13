@@ -46,24 +46,24 @@ body.pagina-detalle-ruta > .site-header.fixed-top ~ main.pagina-detalle-ruta__ma
 }
 
 .detalle-destino-hero--chachapoyas {
-  background-image: url("../../../img/rutas/chachapoyas.png");
+  background-image: url("../../../img/banners/rutasChacha_banner1.png");
 }
 
 .detalle-destino-hero--bagua {
-  background-image: url("../../../img/rutas/bagua.png");
+  background-image: url("../../../img/banners/rutasBagua_banner1.png");
 }
 
 .detalle-destino-hero.detalle-destino-hero--pedro-ruiz {
   padding: clamp(108px, 12vw, 152px) clamp(28px, 8vw, 120px) clamp(64px, 8vw, 96px);
-  background-image: url("../../../img/banners/Pedro_Ruiz.png");
+  background-image: url("../../../img/banners/rutasPedro-Ruiz_banner1.png");
 }
 
 .detalle-destino-hero--luya {
-  background-image: url("../../../img/rutas/Luya.png");
+  background-image: url("../../../img/banners/rutasLuya_banner1.png");
 }
 
 .detalle-destino-hero--pomacochas {
-  background-image: url("../../../img/rutas/Pomacochas.png");
+  background-image: url("../../../img/banners/rutasPomacochas_banner1.png");
 }
 
 .detalle-destino-hero__contenido {

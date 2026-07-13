@@ -173,11 +173,36 @@
       "img/banners/testimonios_banner3.png",
       "img/banners/testimonios_banner4.png",
     ]],
-    [".detalle-destino-hero--chachapoyas", ["img/rutas/chachapoyas.png"]],
-    [".detalle-destino-hero--bagua", ["img/rutas/bagua.png"]],
-    [".detalle-destino-hero--pedro-ruiz", ["img/banners/Pedro_Ruiz.png"]],
-    [".detalle-destino-hero--luya", ["img/rutas/Luya.png"]],
-    [".detalle-destino-hero--pomacochas", ["img/rutas/Pomacochas.png"]],
+    [".detalle-destino-hero--chachapoyas", [
+      "img/banners/rutasChacha_banner1.png",
+      "img/banners/rutasChacha_banner2.png",
+      "img/banners/rutasChacha_banner3.png",
+      "img/banners/rutasChacha_banner4.png",
+    ]],
+    [".detalle-destino-hero--bagua", [
+      "img/banners/rutasBagua_banner1.png",
+      "img/banners/rutasBagua_banner2.png",
+      "img/banners/rutasBagua_banner3.png",
+      "img/banners/rutasBagua_banner4.png",
+    ]],
+    [".detalle-destino-hero--pedro-ruiz", [
+      "img/banners/rutasPedro-Ruiz_banner1.png",
+      "img/banners/rutasPedro-Ruiz_banner2.png",
+      "img/banners/rutasPedro-Ruiz_banner3.png",
+      "img/banners/rutasPedro-Ruiz_banner4.png",
+    ]],
+    [".detalle-destino-hero--luya", [
+      "img/banners/rutasLuya_banner1.png",
+      "img/banners/rutasLuya_banner2.png",
+      "img/banners/rutasLuya_banner3.png",
+      "img/banners/rutasLuya_banner4.png",
+    ]],
+    [".detalle-destino-hero--pomacochas", [
+      "img/banners/rutasPomacochas_banner1.png",
+      "img/banners/rutasPomacochas_banner2.png",
+      "img/banners/rutasPomacochas_banner3.png",
+      "img/banners/rutasPomacochas_banner4.png",
+    ]],
   ];
 
   const BANNER_INTERVAL_MS = 3000;

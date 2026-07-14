@@ -16,7 +16,7 @@
   text-align: left !important;
   background:
     linear-gradient(90deg, rgba(15, 23, 42, .82) 0%, rgba(15, 23, 42, .52) 48%, rgba(15, 23, 42, .18) 100%),
-    url("../../../img/banners/testimonios-banner.png") center / cover no-repeat;
+    url("../../../img/banners/testimonios_banner1.png") center / cover no-repeat;
 }
 
 .testimonios-hero__contenido {
@@ -406,7 +406,7 @@
     text-align: left !important;
     background:
       linear-gradient(90deg, rgba(15, 23, 42, .78) 0%, rgba(15, 23, 42, .48) 100%),
-      url("../../../img/banners/testimonios-banner.png") center / cover no-repeat;
+      url("../../../img/banners/testimonios_banner1.png") center / cover no-repeat;
   }
 
   .testimonios__grid {

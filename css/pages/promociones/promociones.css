@@ -17,7 +17,7 @@
       rgba(6, 22, 45, 0.42),
       rgba(6, 22, 45, 0.52)
     ),
-    url("../../../img/banners/Promociones-banner.png");
+    url("../../../img/banners/Promociones_banner1.png");
 
   background-size: cover;
   background-position: center 58%;
@@ -33,22 +33,24 @@
 }
 
 .promociones-hero__subtitulo {
-  margin: 0 0 8px;
-  color: #ffffff;
-  font-size: clamp(1.15rem, 3vw, 2rem);
+  margin: 0 0 clamp(6px, 0.9vw, 10px);
+  color: var(--naranja, #ff5f00);
+  font-size: clamp(0.78rem, 1.35vw, 1rem);
   font-weight: 700;
-  letter-spacing: 2px;
+  line-height: 1.25;
+  letter-spacing: 0;
+  text-transform: uppercase;
 }
 
 .promociones-hero__titulo {
   margin: 0;
   color: #ffffff;
-  font-size: clamp(3.2rem, 9vw, 7.5rem);
-  line-height: 0.95;
-  font-weight: 900;
-  letter-spacing: 1px;
+  font-size: clamp(2.2rem, 6.6vw, 5.6rem);
+  line-height: 1.05;
+  font-weight: 800;
+  letter-spacing: 0;
   text-transform: uppercase;
-  text-shadow: 0 18px 38px rgba(0, 0, 0, 0.32);
+  text-shadow: 0 8px 22px rgba(0, 0, 0, 0.28);
 }
 
 .promociones-seccion {

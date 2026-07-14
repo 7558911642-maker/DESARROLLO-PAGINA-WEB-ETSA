@@ -453,21 +453,21 @@ body.pagina-index > main > .hero.hero-banner .etsa-banner-carousel__slide {
 .pagina-index .hero-title {
   margin: 0;
   color: #ffffff;
-  font-size: 2.55rem;
-  line-height: 1;
-  font-weight: 900;
+  font-size: clamp(2rem, 5vw, 3.35rem);
+  line-height: 1.06;
+  font-weight: 800;
   letter-spacing: 0;
-  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.34);
+  text-shadow: 0 8px 22px rgba(0, 0, 0, 0.28);
 }
 
 .pagina-index .hero-subtitle {
-  margin: 0.85rem 0 0;
+  margin: clamp(0.55rem, 1vw, 0.85rem) 0 0;
   color: #f8fafc;
-  font-size: 1.08rem;
-  line-height: 1.35;
-  font-weight: 700;
+  font-size: clamp(0.95rem, 1.5vw, 1.15rem);
+  line-height: 1.55;
+  font-weight: 600;
   letter-spacing: 0;
-  text-shadow: 0 3px 14px rgba(0, 0, 0, 0.34);
+  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.24);
 }
 
 .pagina-index .hero-subtitle::after {
@@ -552,11 +552,11 @@ body.pagina-index > main > .hero.hero-banner .etsa-banner-carousel__slide {
   }
 
   .pagina-index .hero-title {
-    font-size: 3.35rem;
+    font-size: clamp(2.35rem, 4.4vw, 3.4rem);
   }
 
   .pagina-index .hero-subtitle {
-    font-size: 1.35rem;
+    font-size: clamp(1rem, 1.7vw, 1.2rem);
   }
 
   .pagina-index .hero-actions {
@@ -581,7 +581,7 @@ body.pagina-index > main > .hero.hero-banner .etsa-banner-carousel__slide {
   }
 
   .pagina-index .hero-title {
-    font-size: 3.25rem;
+    font-size: clamp(2.55rem, 4.1vw, 3.45rem);
   }
 }
 
@@ -592,7 +592,7 @@ body.pagina-index > main > .hero.hero-banner .etsa-banner-carousel__slide {
   }
 
   .pagina-index .hero-title {
-    font-size: 3.65rem;
+    font-size: clamp(2.75rem, 3.8vw, 3.55rem);
   }
 }
 
@@ -602,7 +602,7 @@ body.pagina-index > main > .hero.hero-banner .etsa-banner-carousel__slide {
   }
 
   .pagina-index .hero-title {
-    font-size: 4rem;
+    font-size: clamp(2.9rem, 3.5vw, 3.65rem);
   }
 }
 
@@ -617,7 +617,7 @@ body.pagina-index > main > .hero.hero-banner .etsa-banner-carousel__slide {
     align-items: flex-start;
     background-image:
       linear-gradient(180deg, rgba(2, 6, 23, 0.88) 0%, rgba(2, 6, 23, 0.74) 46%, rgba(2, 6, 23, 0.48) 100%),
-      url("../../../img/banners/info-viaje-banner.png");
+      url("../../../img/banners/index_banner1.png");
   }
 
   .pagina-index .hero.hero-banner::after {
@@ -631,11 +631,11 @@ body.pagina-index > main > .hero.hero-banner .etsa-banner-carousel__slide {
   }
 
   .pagina-index .hero-title {
-    font-size: 2.15rem;
+    font-size: clamp(1.75rem, 9vw, 2.25rem);
   }
 
   .pagina-index .hero-subtitle {
-    font-size: 1rem;
+    font-size: clamp(0.88rem, 4vw, 1rem);
   }
 
   .pagina-index .hero-actions {

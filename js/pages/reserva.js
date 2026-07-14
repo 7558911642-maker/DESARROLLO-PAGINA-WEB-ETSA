@@ -16,6 +16,8 @@
     resumenDestino: "resumen-destino",
     resumenFecha: "resumen-fecha",
     resumenAsiento: "resumen-asiento",
+    resumenPrecio: "resumen-precio",
+    totalPrecio: "reserva-total",
     confirmacionModal: "reserva-confirmacion-modal",
     comprobanteCodigo: "comprobante-codigo",
     comprobanteNombre: "comprobante-nombre",
@@ -41,6 +43,46 @@
   ];
 
   const DESTINO_PLACEHOLDER = "Seleccione un destino";
+  const MENSAJE_EXITO_MS = 15000;
+  const RUTAS_PRECIO = [
+    {
+      origen: "Chachapoyas",
+      destinos: [
+        { ciudad: "Pedro Ruiz", precio: 10 },
+        { ciudad: "Bagua Grande", precio: 25 },
+        { ciudad: "Luya", precio: 10 },
+        { ciudad: "Pomacochas", precio: 20 },
+      ],
+    },
+    {
+      origen: "Pedro Ruiz",
+      destinos: [
+        { ciudad: "Chachapoyas", precio: 10 },
+        { ciudad: "Bagua Grande", precio: 15 },
+        { ciudad: "Pomacochas", precio: 15 },
+      ],
+    },
+    {
+      origen: "Bagua Grande",
+      destinos: [
+        { ciudad: "Chachapoyas", precio: 25 },
+        { ciudad: "Pedro Ruiz", precio: 15 },
+      ],
+    },
+    {
+      origen: "Luya",
+      destinos: [
+        { ciudad: "Chachapoyas", precio: 10 },
+      ],
+    },
+    {
+      origen: "Pomacochas",
+      destinos: [
+        { ciudad: "Pedro Ruiz", precio: 15 },
+        { ciudad: "Chachapoyas", precio: 20 },
+      ],
+    },
+  ];
 
   document.addEventListener("DOMContentLoaded", function () {
     const form = byId(SELECTORS.form);
@@ -57,10 +99,12 @@
     const validator = window.ReservasValidaciones;
 
     await storage.inicializar();
+    const configuracion = storage.obtenerConfiguracion();
 
     const estado = {
       reservas: storage.listar(),
       asientoOcupadosBase: storage.obtenerAsientosOcupados(),
+      rutas: obtenerRutasDisponibles(configuracion),
       destinosBase: [],
       ultimaReserva: null,
     };
@@ -79,7 +123,7 @@
     prepararFeedback(ui);
     enlazarEventos(form, ui, estado, storage, validator);
     sincronizarDisponibilidadAsientos(ui, estado);
-    actualizarResumen(ui);
+    actualizarResumen(ui, estado);
   }
 
   function obtenerElementos(form) {
@@ -103,7 +147,9 @@
         destino: byId(SELECTORS.resumenDestino),
         fecha: byId(SELECTORS.resumenFecha),
         asiento: byId(SELECTORS.resumenAsiento),
+        precio: byId(SELECTORS.resumenPrecio),
       },
+      totalPrecio: byId(SELECTORS.totalPrecio),
       confirmacion: {
         modal: byId(SELECTORS.confirmacionModal),
         codigo: byId(SELECTORS.comprobanteCodigo),
@@ -195,7 +241,7 @@
     const validarYActualizar = function (nombreCampo) {
       normalizarEntradaEnTiempoReal(ui, nombreCampo, validator);
       sincronizarDisponibilidadAsientos(ui, estado);
-      actualizarResumen(ui);
+      actualizarResumen(ui, estado);
       validarCampo(ui, estado, validator, nombreCampo);
     };
 
@@ -209,7 +255,7 @@
       campo.addEventListener("blur", function () {
         normalizarCampoAlPerderFoco(ui, nombreCampo, validator);
         sincronizarDisponibilidadAsientos(ui, estado);
-        actualizarResumen(ui);
+        actualizarResumen(ui, estado);
         validarCampo(ui, estado, validator, nombreCampo);
       });
     });
@@ -217,7 +263,7 @@
     ui.campos.origen.addEventListener("change", function () {
       reconstruirOpcionesDestino(ui, estado);
       sincronizarDisponibilidadAsientos(ui, estado);
-      actualizarResumen(ui);
+      actualizarResumen(ui, estado);
       validarCampo(ui, estado, validator, "origen");
       validarCampo(ui, estado, validator, "destino");
       validarCampo(ui, estado, validator, "asiento");
@@ -225,7 +271,7 @@
 
     ui.campos.destino.addEventListener("change", function () {
       sincronizarDisponibilidadAsientos(ui, estado);
-      actualizarResumen(ui);
+      actualizarResumen(ui, estado);
       validarCampo(ui, estado, validator, "origen");
       validarCampo(ui, estado, validator, "destino");
       validarCampo(ui, estado, validator, "asiento");
@@ -233,7 +279,7 @@
 
     ui.asientoInputs.forEach(function (input) {
       input.addEventListener("change", function () {
-        actualizarResumen(ui);
+        actualizarResumen(ui, estado);
         validarCampo(ui, estado, validator, "asiento");
       });
     });
@@ -313,22 +359,66 @@
     return Array.from(opcionesUnicas.values());
   }
 
+  function obtenerRutasDisponibles(configuracion) {
+    const rutasConfig = Array.isArray(configuracion?.rutas) ? configuracion.rutas : [];
+    const rutas = rutasConfig.length > 0 ? rutasConfig : RUTAS_PRECIO;
+
+    return rutas
+      .map(function (ruta) {
+        return {
+          origen: String(ruta?.origen || "").trim(),
+          destinos: normalizarDestinosRuta(ruta?.destinos),
+        };
+      })
+      .filter(function (ruta) {
+        return ruta.origen && ruta.destinos.length > 0;
+      });
+  }
+
+  function normalizarDestinosRuta(destinos) {
+    if (!Array.isArray(destinos)) {
+      return [];
+    }
+
+    return destinos
+      .map(function (destino) {
+        if (typeof destino === "string") {
+          return {
+            ciudad: destino.trim(),
+            precio: null,
+          };
+        }
+
+        const precio = Number(destino?.precio);
+
+        return {
+          ciudad: String(destino?.ciudad || destino?.destino || destino?.nombre || "").trim(),
+          precio: Number.isFinite(precio) ? precio : null,
+        };
+      })
+      .filter(function (destino) {
+        return destino.ciudad;
+      });
+  }
+
   function reconstruirOpcionesDestino(ui, estado, opciones) {
     const destino = ui.campos.destino;
     const origenSeleccionado = ui.campos.origen.value;
     const destinoActual = opciones?.valorSeleccionado ?? destino.value;
+    const destinosDirectos = obtenerDestinosDirectos(estado, origenSeleccionado);
     const fragment = document.createDocumentFragment();
     const placeholder = new Option(DESTINO_PLACEHOLDER, "", true, true);
 
     placeholder.disabled = true;
     fragment.appendChild(placeholder);
 
-    estado.destinosBase
-      .filter(function (option) {
-        return option.value !== origenSeleccionado;
-      })
-      .forEach(function (option) {
-        fragment.appendChild(new Option(option.text, option.value));
+    destinosDirectos
+      .forEach(function (destinoDirecto) {
+        const option = new Option(destinoDirecto.ciudad, destinoDirecto.ciudad);
+        if (Number.isFinite(Number(destinoDirecto.precio))) {
+          option.dataset.precio = String(destinoDirecto.precio);
+        }
+        fragment.appendChild(option);
       });
 
     destino.replaceChildren(fragment);
@@ -339,6 +429,31 @@
     }
 
     destino.value = "";
+  }
+
+  function obtenerDestinosDirectos(estado, origen) {
+    if (!origen) {
+      return [];
+    }
+
+    const ruta = estado.rutas.find(function (item) {
+      return item.origen === origen;
+    });
+
+    if (ruta?.destinos?.length) {
+      return ruta.destinos;
+    }
+
+    return estado.destinosBase
+      .filter(function (option) {
+        return option.value !== origen;
+      })
+      .map(function (option) {
+        return {
+          ciudad: option.value,
+          precio: 0,
+        };
+      });
   }
 
   function existeOpcion(select, value) {
@@ -396,7 +511,7 @@
     normalizarCampoAlPerderFoco(ui, "nombre", validator);
     normalizarCampoAlPerderFoco(ui, "observaciones", validator);
     sincronizarDisponibilidadAsientos(ui, estado);
-    actualizarResumen(ui);
+    actualizarResumen(ui, estado);
 
     const datos = obtenerDatosFormulario(ui);
     const resultado = validator.validarReserva(datos, {
@@ -424,7 +539,7 @@
     estado.ultimaReserva = reserva;
     sincronizarDisponibilidadAsientos(ui, estado);
     limpiarEstadoCampo(ui, "asiento");
-    actualizarResumen(ui);
+    actualizarResumen(ui, estado);
     mostrarMensaje(ui, `Reserva ${reserva.codigo} registrada correctamente.`, true);
     mostrarConfirmacionReserva(ui, reserva);
   }
@@ -437,6 +552,7 @@
       destino: ui.campos.destino.value,
       fecha: obtenerFechaVisual(ui),
       asiento: obtenerAsientoSeleccionado(ui),
+      precio: obtenerPrecioSeleccionado(ui, { rutas: RUTAS_PRECIO }) ?? 0,
       observaciones: ui.campos.observaciones.value,
     };
   }
@@ -584,8 +700,11 @@
       });
   }
 
-  function actualizarResumen(ui) {
+  function actualizarResumen(ui, estado) {
     const asiento = obtenerAsientoSeleccionado(ui);
+    const precio = obtenerPrecioSeleccionado(ui, estado);
+    const precioResumen = precio === null ? "Por seleccionar" : formatearMonto(precio);
+    const precioTotal = precio === null ? formatearMonto(0) : formatearMonto(precio);
 
     ui.asientoSeleccionado.textContent = asiento
       ? `Asiento seleccionado: ${asiento}`
@@ -594,6 +713,32 @@
     ui.resumen.destino.textContent = ui.campos.destino.value || "Por seleccionar";
     ui.resumen.fecha.textContent = obtenerFechaVisual(ui) || "Por seleccionar";
     ui.resumen.asiento.textContent = asiento || "Por seleccionar";
+    escribirTexto(ui.resumen.precio, precioResumen);
+    escribirTexto(ui.totalPrecio, precioTotal);
+  }
+
+  function obtenerPrecioSeleccionado(ui, estado) {
+    const origen = ui.campos.origen.value;
+    const destino = ui.campos.destino.value;
+    const precioOption = Number(ui.campos.destino.selectedOptions[0]?.dataset.precio);
+
+    if (!origen || !destino) {
+      return null;
+    }
+
+    if (Number.isFinite(precioOption)) {
+      return precioOption;
+    }
+
+    const ruta = estado?.rutas?.find(function (item) {
+      return item.origen === origen;
+    });
+    const conexion = ruta?.destinos?.find(function (item) {
+      return item.ciudad === destino;
+    });
+    const precioConexion = Number(conexion?.precio);
+
+    return Number.isFinite(precioConexion) ? precioConexion : null;
   }
 
   function limpiarFormulario(ui, estado, validator) {
@@ -610,7 +755,7 @@
 
     actualizarContador(ui, validator);
     sincronizarDisponibilidadAsientos(ui, estado);
-    actualizarResumen(ui);
+    actualizarResumen(ui, estado);
     limpiarMensajeGlobal(ui);
     ui.campos.nombre.focus();
   }
@@ -768,9 +913,15 @@
   }
 
   function formatearPrecio(reserva) {
-    const precio = Number(reserva.precio || 85);
+    const precio = Number(reserva.precio || 0);
 
-    return `S/ ${precio.toFixed(2)}`;
+    return formatearMonto(precio);
+  }
+
+  function formatearMonto(precio) {
+    const monto = Number.isFinite(Number(precio)) ? Number(precio) : 0;
+
+    return `S/ ${monto.toFixed(2)}`;
   }
 
   function formatearEstado(estado) {
@@ -805,13 +956,42 @@
   }
 
   function mostrarMensaje(ui, texto, ok) {
-    ui.mensaje.className = `reserva-mensaje ${ok ? "reserva-ok" : "reserva-error-dom"}`;
-    ui.mensaje.textContent = texto;
+    if (ui.mensaje.dataset.reservaMensajeTimer) {
+      window.clearTimeout(Number(ui.mensaje.dataset.reservaMensajeTimer));
+      delete ui.mensaje.dataset.reservaMensajeTimer;
+    }
+
+    ui.mensaje.setAttribute("role", "alert");
+    ui.mensaje.setAttribute("aria-live", ok ? "polite" : "assertive");
+    ui.mensaje.className = `reserva-mensaje alert ${ok ? "alert-success reserva-ok" : "alert-danger reserva-error-dom"} d-flex align-items-center justify-content-center gap-2 mb-0`;
+    escribirMensajeConIcono(ui.mensaje, texto, ok);
+    ui.mensaje.dataset.reservaMensajeTimer = String(window.setTimeout(function () {
+      limpiarMensajeGlobal(ui);
+    }, MENSAJE_EXITO_MS));
   }
 
   function limpiarMensajeGlobal(ui) {
+    if (ui.mensaje.dataset.reservaMensajeTimer) {
+      window.clearTimeout(Number(ui.mensaje.dataset.reservaMensajeTimer));
+      delete ui.mensaje.dataset.reservaMensajeTimer;
+    }
+
     ui.mensaje.textContent = "";
     ui.mensaje.className = "reserva-mensaje";
+    ui.mensaje.setAttribute("role", "status");
+    ui.mensaje.setAttribute("aria-live", "polite");
+  }
+
+  function escribirMensajeConIcono(contenedor, mensaje, ok) {
+    const icono = document.createElement("i");
+    icono.className = ok ? "bi bi-check-circle-fill" : "bi bi-exclamation-triangle-fill";
+    icono.setAttribute("aria-hidden", "true");
+
+    const texto = document.createElement("span");
+    texto.textContent = mensaje;
+
+    contenedor.textContent = "";
+    contenedor.append(icono, texto);
   }
 
   function escaparHtml(valor) {

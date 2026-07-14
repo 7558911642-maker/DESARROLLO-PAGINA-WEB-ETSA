@@ -26,7 +26,7 @@ body.pagina-terminos-viaje .terminos-viaje-hero {
   overflow: hidden;
   background:
     linear-gradient(90deg, rgba(15, 23, 42, 0.88) 0%, rgba(15, 23, 42, 0.68) 52%, rgba(15, 23, 42, 0.18) 100%),
-    url("../../../img/banners/terminos_condiciones_viaje_banner.png") center / cover no-repeat !important;
+    url("../../../img/banners/Términos_de_viaje_baner1.png") center / cover no-repeat !important;
   background-attachment: scroll !important;
 }
 

@@ -1,6 +1,8 @@
 "use strict";
 
 (function () {
+  const MENSAJE_ALERTA_MS = 15000;
+
   const columns = {
     reservas: [
       ["codigo", "Codigo"],
@@ -185,8 +187,28 @@
   }
 
   function setMessage(element, message) {
-    if (element) {
-      element.textContent = message;
+    if (!element) {
+      return;
+    }
+
+    if (element.dataset.adminMessageTimer) {
+      window.clearTimeout(Number(element.dataset.adminMessageTimer));
+      delete element.dataset.adminMessageTimer;
+    }
+
+    element.textContent = message;
+    element.classList.toggle("admin-message--alert", Boolean(message));
+    element.setAttribute("role", message ? "alert" : "status");
+    element.setAttribute("aria-live", message ? "assertive" : "polite");
+
+    if (message) {
+      element.dataset.adminMessageTimer = String(window.setTimeout(function () {
+        element.textContent = "";
+        element.classList.remove("admin-message--alert");
+        element.setAttribute("role", "status");
+        element.setAttribute("aria-live", "polite");
+        delete element.dataset.adminMessageTimer;
+      }, MENSAJE_ALERTA_MS));
     }
   }
 })();

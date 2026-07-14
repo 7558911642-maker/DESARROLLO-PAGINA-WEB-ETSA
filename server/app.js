@@ -46,6 +46,7 @@ const ADMIN_PAGES = new Set([
 ]);
 
 app.disable("x-powered-by");
+app.use(applyLocalCors);
 app.use(express.json({ limit: "30kb" }));
 app.use(express.urlencoded({ extended: false, limit: "30kb" }));
 app.use(applySecurityHeaders);
@@ -95,7 +96,9 @@ app.post("/api/reservas", asyncHandler(async (req, res) => {
   const registro = crearRegistro("reserva", resultado.datos, {
     estado: json.defaults?.estadoInicial || "pendiente",
     moneda: json.defaults?.moneda || "PEN",
-    precio: Number(json.defaults?.precioBase || 85)
+    precio: Number.isFinite(Number(resultado.datos.precio))
+      ? Number(resultado.datos.precio)
+      : Number(json.defaults?.precioBase || 0)
   });
 
   await store.appendToCollection("reservas", registro);
@@ -229,6 +232,40 @@ function applySecurityHeaders(_req, res, next) {
   res.setHeader("X-Content-Type-Options", "nosniff");
   res.setHeader("Referrer-Policy", "same-origin");
   next();
+}
+
+function applyLocalCors(req, res, next) {
+  const origin = req.headers.origin;
+
+  if (isAllowedLocalOrigin(origin)) {
+    res.setHeader("Access-Control-Allow-Origin", origin);
+    res.setHeader("Vary", "Origin");
+    res.setHeader("Access-Control-Allow-Methods", "GET,POST,OPTIONS");
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type, Accept");
+  }
+
+  if (req.method === "OPTIONS") {
+    return res.sendStatus(204);
+  }
+
+  next();
+}
+
+function isAllowedLocalOrigin(origin) {
+  if (!origin) {
+    return false;
+  }
+
+  if (origin === "null") {
+    return true;
+  }
+
+  try {
+    const url = new URL(origin);
+    return ["localhost", "127.0.0.1", "::1", "[::1]"].includes(url.hostname);
+  } catch (_error) {
+    return false;
+  }
 }
 
 function denyPrivateAccess(_req, res) {

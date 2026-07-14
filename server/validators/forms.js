@@ -35,9 +35,13 @@ function validarReserva(body, contexto) {
 
   const rutasPermitidas = contexto?.rutas || [];
   const ruta = rutasPermitidas.find((item) => item.origen === datos.origen);
+  const destinoPermitido = ruta ? obtenerDestinoPermitido(ruta, datos.destino) : null;
   if (datos.origen && !ruta) errores.origen = "Origen no disponible.";
-  if (ruta && datos.destino && !ruta.destinos.includes(datos.destino)) {
+  if (ruta && datos.destino && !destinoPermitido) {
     errores.destino = "Destino no disponible para el origen seleccionado.";
+  }
+  if (destinoPermitido && Number.isFinite(destinoPermitido.precio)) {
+    datos.precio = destinoPermitido.precio;
   }
 
   validarFechaReserva(datos.fecha, errores);
@@ -69,6 +73,28 @@ function validarReserva(body, contexto) {
   }
 
   return buildResult(datos, errores);
+}
+
+function obtenerDestinoPermitido(ruta, destino) {
+  const destinos = Array.isArray(ruta.destinos) ? ruta.destinos : [];
+
+  return destinos
+    .map(normalizarDestinoRuta)
+    .find((item) => item.ciudad === destino) || null;
+}
+
+function normalizarDestinoRuta(destino) {
+  if (typeof destino === "string") {
+    return {
+      ciudad: normalizeText(destino),
+      precio: NaN
+    };
+  }
+
+  return {
+    ciudad: normalizeText(destino?.ciudad || destino?.destino || destino?.nombre),
+    precio: Number(destino?.precio)
+  };
 }
 
 function validarReclamo(body) {

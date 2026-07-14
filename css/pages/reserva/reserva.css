@@ -17,7 +17,7 @@ body.pagina-reserva main section:first-child {
             rgba(5, 18, 35, 0.78),
             rgba(5, 18, 35, 0.78)
         ),
-        url("../../../img/banners/watermarked_img_2461339827978530461.jpg");
+        url("../../../img/banners/Reserva_banner1.png");
 
     background-size: cover;
     background-position: center;
@@ -269,7 +269,7 @@ body.pagina-reserva main section:first-child {
             rgba(3, 15, 32, .88),
             rgba(7, 30, 58, .78)
         ),
-        url("../../../img/banners/watermarked_img_2461339827978530461.jpg");
+        url("../../../img/banners/Reserva_banner1.png");
 
     background-size: cover;
     background-position: center;
@@ -426,7 +426,7 @@ body.pagina-reserva .reserva-hero {
   overflow: hidden;
   background:
     linear-gradient(90deg, rgba(15, 23, 42, 0.88) 0%, rgba(15, 23, 42, 0.68) 52%, rgba(15, 23, 42, 0.18) 100%),
-    url("../../../img/banners/watermarked_img_2461339827978530461.jpg") center / cover no-repeat !important;
+    url("../../../img/banners/Reserva_banner1.png") center / cover no-repeat !important;
   background-attachment: scroll !important;
 }
 

@@ -14,6 +14,7 @@
     dni: "\\d{8}",
     ruc: "\\d{11}"
   };
+  const MENSAJE_EXITO_MS = 15000;
 
   function crear(formulario, configuracion) {
     if (!formulario || !configuracion?.campos) return null;
@@ -45,6 +46,11 @@
     });
 
     formulario.addEventListener("submit", function (evento) {
+      const manejarEnvio = typeof configuracion.alEnviarValido === "function";
+      if (manejarEnvio) {
+        evento.preventDefault();
+      }
+
       const esValido = validarFormulario(campos, true);
 
       if (!esValido) {
@@ -53,7 +59,7 @@
         return;
       }
 
-      if (typeof configuracion.alEnviarValido === "function") {
+      if (manejarEnvio) {
         configuracion.alEnviarValido(evento, obtenerDatos(formulario));
       }
     });
@@ -249,30 +255,22 @@
     }
 
     try {
-      const respuesta = await fetch(endpoint, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Accept": "application/json"
-        },
-        body: JSON.stringify(datos)
-      });
-
-      const payload = await leerRespuestaJson(respuesta);
-
-      if (!respuesta.ok || payload.ok === false) {
-        throw new Error(obtenerMensajeApi(payload) || "No se pudo registrar la informacion.");
-      }
-
-      mostrarEstadoEnvio(estado, configuracion.mensajeExito || payload.mensaje || "Registro enviado correctamente.", true);
+      const payload = await enviarJsonConFallback(endpoint, datos);
+      const mensajeExito = configuracion.mensajeExito || payload.mensaje || "Registro enviado correctamente.";
 
       if (typeof configuracion.alExito === "function") {
         configuracion.alExito(payload);
       }
 
+      mostrarEstadoEnvio(estado, mensajeExito, true);
+
       return payload;
     } catch (error) {
-      mostrarEstadoEnvio(estado, error.message || "No se pudo conectar con el servidor.", false);
+      const mensaje = esErrorDeConexion(error)
+        ? "No se pudo confirmar el registro. Verifica que el servidor Express este activo en http://localhost:3000."
+        : error.message || "No se pudo conectar con el servidor.";
+
+      mostrarEstadoEnvio(estado, mensaje, false);
       return null;
     } finally {
       formulario.removeAttribute("aria-busy");
@@ -280,6 +278,118 @@
         boton.disabled = false;
       }
     }
+  }
+
+  async function enviarJsonConFallback(endpoint, datos) {
+    let ultimoError = null;
+
+    for (const url of obtenerEndpointsApi(endpoint)) {
+      try {
+        const respuesta = await fetch(url, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+          },
+          body: JSON.stringify(datos)
+        });
+
+        const payload = await leerRespuestaJson(respuesta);
+        const respuestaApi = esPayloadApi(payload);
+
+        if (!respuesta.ok || payload.ok === false) {
+          const mensaje = obtenerMensajeApi(payload) || "No se pudo registrar la informacion.";
+
+          if (respuestaApi) {
+            throw new Error(mensaje);
+          }
+
+          ultimoError = new Error(mensaje);
+          continue;
+        }
+
+        return payload;
+      } catch (error) {
+        ultimoError = error;
+
+        if (error?.message && !esErrorDeConexion(error)) {
+          throw error;
+        }
+      }
+    }
+
+    const payloadSinCors = await enviarUrlEncodedSinCors(endpoint, datos);
+    if (payloadSinCors) {
+      return payloadSinCors;
+    }
+
+    throw ultimoError || new Error("No se pudo conectar con el servidor.");
+  }
+
+  async function enviarUrlEncodedSinCors(endpoint, datos) {
+    const url = obtenerEndpointsApi(endpoint).find(esEndpointLocalAbsoluto);
+
+    if (!url) {
+      return null;
+    }
+
+    await fetch(url, {
+      method: "POST",
+      mode: "no-cors",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      body: new URLSearchParams(datos)
+    });
+
+    return {
+      ok: true,
+      mensaje: "Registro enviado correctamente."
+    };
+  }
+
+  function obtenerEndpointsApi(endpoint) {
+    const endpoints = [endpoint];
+
+    if (typeof endpoint === "string" && endpoint.startsWith("/api/")) {
+      const hostLocal = obtenerHostApiLocal(window.location.hostname);
+
+      endpoints.push(`http://${hostLocal}:3000${endpoint}`);
+      endpoints.push(`http://localhost:3000${endpoint}`);
+      endpoints.push(`http://127.0.0.1:3000${endpoint}`);
+    }
+
+    return Array.from(new Set(endpoints));
+  }
+
+  function obtenerHostApiLocal(hostname) {
+    const host = String(hostname || "localhost").replace(/^\[|\]$/g, "");
+
+    if (host === "::1") {
+      return "[::1]";
+    }
+
+    if (/^(localhost|127\.0\.0\.1)$/i.test(host)) {
+      return host;
+    }
+
+    return "localhost";
+  }
+
+  function esEndpointLocalAbsoluto(url) {
+    return /^https?:\/\/(?:localhost|127\.0\.0\.1|\[::1\]):3000\/api\//i.test(url);
+  }
+
+  function esPayloadApi(payload) {
+    return Boolean(payload && (
+      Object.prototype.hasOwnProperty.call(payload, "ok") ||
+      Object.prototype.hasOwnProperty.call(payload, "mensaje") ||
+      Object.prototype.hasOwnProperty.call(payload, "errores")
+    ));
+  }
+
+  function esErrorDeConexion(error) {
+    return error instanceof TypeError || /fetch|network|failed|conectar|Load failed/i.test(error?.message || "");
   }
 
   async function leerRespuestaJson(respuesta) {
@@ -320,8 +430,34 @@
   }
 
   function mostrarEstadoEnvio(estado, mensaje, ok) {
-    estado.textContent = mensaje;
-    estado.className = ok ? "valid-feedback d-block" : "invalid-feedback d-block";
+    if (estado.dataset.formStatusTimer) {
+      window.clearTimeout(Number(estado.dataset.formStatusTimer));
+      delete estado.dataset.formStatusTimer;
+    }
+
+    estado.setAttribute("role", "alert");
+    estado.setAttribute("aria-live", ok ? "polite" : "assertive");
+    estado.className = `alert ${ok ? "alert-success" : "alert-danger"} d-flex align-items-center justify-content-center gap-2 mt-3 mb-0`;
+    escribirMensajeConIcono(estado, mensaje, ok);
+    estado.dataset.formStatusTimer = String(window.setTimeout(function () {
+      estado.textContent = "";
+      estado.className = "";
+      estado.setAttribute("role", "status");
+      estado.setAttribute("aria-live", "polite");
+      delete estado.dataset.formStatusTimer;
+    }, MENSAJE_EXITO_MS));
+  }
+
+  function escribirMensajeConIcono(contenedor, mensaje, ok) {
+    const icono = document.createElement("i");
+    icono.className = ok ? "bi bi-check-circle-fill" : "bi bi-exclamation-triangle-fill";
+    icono.setAttribute("aria-hidden", "true");
+
+    const texto = document.createElement("span");
+    texto.textContent = mensaje;
+
+    contenedor.textContent = "";
+    contenedor.append(icono, texto);
   }
 
   function normalizarEntradaTexto(valor, maximo) {

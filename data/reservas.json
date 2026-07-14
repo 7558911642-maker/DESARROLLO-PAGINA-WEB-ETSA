@@ -8,131 +8,104 @@
   },
   "defaults": {
     "moneda": "PEN",
-    "precioBase": 85,
+    "precioBase": 0,
     "estadoInicial": "pendiente"
   },
   "rutas": [
     {
       "origen": "Chachapoyas",
       "destinos": [
-        "Chiclayo",
-        "Bagua Grande",
-        "Pedro Ruiz",
-        "Luya",
-        "Pomacochas"
-      ]
-    },
-    {
-      "origen": "Bagua Grande",
-      "destinos": [
-        "Chiclayo",
-        "Chachapoyas",
-        "Pedro Ruiz",
-        "Luya",
-        "Pomacochas"
+        {
+          "ciudad": "Pedro Ruiz",
+          "precio": 10
+        },
+        {
+          "ciudad": "Bagua Grande",
+          "precio": 25
+        },
+        {
+          "ciudad": "Luya",
+          "precio": 10
+        },
+        {
+          "ciudad": "Pomacochas",
+          "precio": 20
+        }
       ]
     },
     {
       "origen": "Pedro Ruiz",
       "destinos": [
-        "Chiclayo",
-        "Chachapoyas",
-        "Bagua Grande",
-        "Luya",
-        "Pomacochas"
+        {
+          "ciudad": "Chachapoyas",
+          "precio": 10
+        },
+        {
+          "ciudad": "Bagua Grande",
+          "precio": 15
+        },
+        {
+          "ciudad": "Pomacochas",
+          "precio": 15
+        }
+      ]
+    },
+    {
+      "origen": "Bagua Grande",
+      "destinos": [
+        {
+          "ciudad": "Chachapoyas",
+          "precio": 25
+        },
+        {
+          "ciudad": "Pedro Ruiz",
+          "precio": 15
+        }
       ]
     },
     {
       "origen": "Luya",
       "destinos": [
-        "Chiclayo",
-        "Chachapoyas",
-        "Bagua Grande",
-        "Pedro Ruiz",
-        "Pomacochas"
+        {
+          "ciudad": "Chachapoyas",
+          "precio": 10
+        }
       ]
     },
     {
       "origen": "Pomacochas",
       "destinos": [
-        "Chiclayo",
-        "Chachapoyas",
-        "Bagua Grande",
-        "Pedro Ruiz",
-        "Luya"
+        {
+          "ciudad": "Pedro Ruiz",
+          "precio": 15
+        },
+        {
+          "ciudad": "Chachapoyas",
+          "precio": 20
+        }
       ]
     }
   ],
   "asientos": {
     "capacidad": 15,
-    "ocupadosIniciales": [
-      2,
-      4,
-      6,
-      8,
-      10,
-      13
-    ],
+    "ocupadosIniciales": [],
     "disponibles": [
       1,
+      2,
       3,
+      4,
       5,
+      6,
       7,
+      8,
       9,
+      10,
       11,
       12,
+      13,
       14,
       15
     ]
   },
-  "reservas": [
-    {
-      "id": "e8f55349-d693-4b60-8dd6-2ed5c15dd4f8",
-      "codigo": "RES-20260712-0IWN",
-      "nombre": "Rolando Pajares Rojas",
-      "dni": "75589116",
-      "origen": "Bagua Grande",
-      "destino": "Chachapoyas",
-      "fecha": "2026-07-14",
-      "asiento": "11",
-      "observaciones": "",
-      "estado": "pendiente",
-      "moneda": "PEN",
-      "precio": 85,
-      "creadoEn": "2026-07-12T22:29:53.462Z",
-      "actualizadoEn": "2026-07-12T22:29:53.462Z"
-    },
-    {
-      "id": "fb742560-2ced-467a-893a-765ec2ae0fdf",
-      "codigo": "RES-20260712-PADQ",
-      "nombre": "Rolando Pajares Rojas",
-      "dni": "75589116",
-      "origen": "Chachapoyas",
-      "destino": "Pedro Ruiz",
-      "fecha": "2026-07-22",
-      "asiento": "7",
-      "observaciones": "llevo una maleta",
-      "estado": "pendiente",
-      "moneda": "PEN",
-      "precio": 85,
-      "creadoEn": "2026-07-12T22:21:19.867Z",
-      "actualizadoEn": "2026-07-12T22:21:19.867Z"
-    },
-    {
-      "id": "ecabbd8e-010d-489b-9234-42259e9c49f3",
-      "codigo": "RES-20260712-UR42",
-      "nombre": "DUVER ROLANDO PAJARES ROJAS",
-      "dni": "12345678",
-      "origen": "Chachapoyas",
-      "destino": "Bagua Grande",
-      "fecha": "2026-07-18",
-      "asiento": "1",
-      "observaciones": "llevo una maelta y un maletin",
-      "estado": "pendiente",
-      "moneda": "PEN",
-      "precio": 85,
-      "creadoEn": "2026-07-12T17:43:01.313Z",
-      "actualizadoEn": "2026-07-12T17:43:01.313Z"
-    }
-  ]
+  "reservas": []
 }

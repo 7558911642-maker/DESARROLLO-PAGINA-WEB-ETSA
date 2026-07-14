@@ -1377,3 +1377,118 @@ body.pagina-terminos-viaje .terminos-viaje-hero h1 {
     width: 28px;
   }
 }
+
+/* Ajuste tipografico de banners: solo textos principales. */
+body.pagina-contacto .contacto-hero__etiqueta,
+body.pagina-nosotros .nosotros-hero__etiqueta,
+body.pagina-preguntas-frecuentes .faq-hero__subtitulo,
+body.pagina-promociones .promociones-hero__subtitulo,
+body.pagina-servicios .servicios-hero__texto > span,
+body.pagina-terminos-encomiendas .terminos-encomiendas-hero__etiqueta,
+body.pagina-rutas .rutas-hero__contenido > p,
+body.pagina-detalle-ruta .detalle-destino-hero__contenido > p,
+body.pagina-libro-reclamos .libro-reclamos-hero .text-uppercase,
+body.pagina-reserva .reserva-hero .text-uppercase,
+body.pagina-terminos-viaje .terminos-viaje-hero .text-uppercase {
+  margin-bottom: clamp(0.35rem, 0.8vw, 0.65rem) !important;
+  font-family: "Inter", "Poppins", "Montserrat", Arial, sans-serif !important;
+  font-size: clamp(0.72rem, 1.05vw, 0.95rem) !important;
+  font-weight: 700 !important;
+  line-height: 1.25 !important;
+  letter-spacing: 0 !important;
+  text-transform: uppercase !important;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.2) !important;
+}
+
+body.pagina-promociones .promociones-hero__subtitulo,
+body.pagina-servicios .servicios-hero__texto > span,
+body.pagina-rutas .rutas-hero__contenido > p {
+  color: var(--naranja, #ff5f00) !important;
+}
+
+body.pagina-index .hero.hero-banner h1,
+body.pagina-contacto .contacto-hero h1,
+body.pagina-encomiendas .encomiendas-hero h1,
+body.pagina-info-viaje .hero-viaje h1,
+body.pagina-info-viaje .hero-viaje .hero-title-line,
+body.pagina-libro-reclamos .libro-reclamos-hero h1,
+body.pagina-nosotros .nosotros-hero h1,
+body.pagina-preguntas-frecuentes .faq-hero h1,
+body.pagina-promociones .promociones-hero h1,
+body.pagina-reserva .reserva-hero h1,
+body.pagina-rutas .rutas-hero h1,
+body.pagina-servicios .servicios-hero h1,
+body.pagina-terminos-encomiendas .terminos-encomiendas-hero h1,
+body.pagina-terminos-viaje .terminos-viaje-hero h1,
+body.pagina-testimonios .testimonios-hero h1,
+body.pagina-detalle-ruta .detalle-destino-hero h1 {
+  max-width: min(100%, 13.5ch) !important;
+  margin-bottom: clamp(0.45rem, 1vw, 0.85rem) !important;
+  font-family: "Inter", "Poppins", "Montserrat", Arial, sans-serif !important;
+  font-size: clamp(1.9rem, 5.6vw, 5.55rem) !important;
+  font-weight: 800 !important;
+  line-height: 1.06 !important;
+  letter-spacing: 0 !important;
+  text-shadow: 0 8px 22px rgba(0, 0, 0, 0.28) !important;
+  text-wrap: balance;
+}
+
+body.pagina-libro-reclamos .libro-reclamos-hero h1,
+body.pagina-terminos-encomiendas .terminos-encomiendas-hero h1,
+body.pagina-terminos-viaje .terminos-viaje-hero h1 {
+  max-width: min(100%, 17ch) !important;
+  font-size: clamp(1.45rem, 4.85vw, 4.85rem) !important;
+  line-height: 1.1 !important;
+}
+
+body.pagina-info-viaje .hero-viaje .hero-title-line {
+  max-width: min(100%, 13ch) !important;
+}
+
+body.pagina-index .hero-subtitle,
+body.pagina-contacto .contacto-hero__subtitulo,
+body.pagina-info-viaje .hero-viaje .hero-descripcion,
+body.pagina-libro-reclamos .libro-reclamos-hero .lead,
+body.pagina-nosotros .nosotros-hero__descripcion,
+body.pagina-preguntas-frecuentes .faq-hero p,
+body.pagina-reserva .reserva-hero .lead,
+body.pagina-terminos-encomiendas .terminos-encomiendas-hero p,
+body.pagina-terminos-viaje .terminos-viaje-hero .lead {
+  margin-top: clamp(0.35rem, 0.9vw, 0.7rem) !important;
+  font-family: "Inter", "Poppins", "Montserrat", Arial, sans-serif !important;
+  font-size: clamp(0.92rem, 1.15vw, 1.08rem) !important;
+  font-weight: 500 !important;
+  line-height: 1.62 !important;
+  letter-spacing: 0 !important;
+  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.22) !important;
+}
+
+@media (max-width: 575.98px) {
+  body.pagina-index .hero.hero-banner h1,
+  body.pagina-contacto .contacto-hero h1,
+  body.pagina-encomiendas .encomiendas-hero h1,
+  body.pagina-info-viaje .hero-viaje h1,
+  body.pagina-info-viaje .hero-viaje .hero-title-line,
+  body.pagina-libro-reclamos .libro-reclamos-hero h1,
+  body.pagina-nosotros .nosotros-hero h1,
+  body.pagina-preguntas-frecuentes .faq-hero h1,
+  body.pagina-promociones .promociones-hero h1,
+  body.pagina-reserva .reserva-hero h1,
+  body.pagina-rutas .rutas-hero h1,
+  body.pagina-servicios .servicios-hero h1,
+  body.pagina-terminos-encomiendas .terminos-encomiendas-hero h1,
+  body.pagina-terminos-viaje .terminos-viaje-hero h1,
+  body.pagina-testimonios .testimonios-hero h1,
+  body.pagina-detalle-ruta .detalle-destino-hero h1 {
+    max-width: min(100%, 12ch) !important;
+    font-size: clamp(1.65rem, 9.4vw, 3rem) !important;
+    line-height: 1.08 !important;
+  }
+
+  body.pagina-libro-reclamos .libro-reclamos-hero h1,
+  body.pagina-terminos-encomiendas .terminos-encomiendas-hero h1,
+  body.pagina-terminos-viaje .terminos-viaje-hero h1 {
+    max-width: min(100%, 16ch) !important;
+    font-size: clamp(1.28rem, 7.4vw, 2.35rem) !important;
+  }
+}

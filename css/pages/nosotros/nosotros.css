@@ -1,7 +1,4 @@
-/* ==================================================
-   PÁGINA NOSOTROS
-================================================== */
-
+/* PAGINA NOSOTROS */
 body.pagina-nosotros > .site-header.fixed-top ~ main {
   padding-top: 0;
 }
@@ -16,7 +13,7 @@ body.pagina-nosotros > .site-header.fixed-top ~ main {
   text-align: left !important;
   background:
     linear-gradient(90deg, rgba(15, 23, 42, .86) 0%, rgba(15, 23, 42, .58) 48%, rgba(15, 23, 42, .20) 100%),
-    url("../../../img/banners/nosotros-banner.png") center / cover no-repeat;
+    url("../../../img/banners/Nosotros_banner1.png") center / cover no-repeat;
 }
 
 .pagina-nosotros .nosotros-hero__contenido {
@@ -601,5 +598,54 @@ body.pagina-nosotros > .site-header.fixed-top ~ main {
 
   .pagina-nosotros .nosotros-slider-dot {
     transition: none;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 991.98px) {
+  .nosotros-section {
+    min-height: auto;
+    padding: 40px 0;
+  }
+
+  .nosotros-section .nosotros-card {
+    padding: 46px 34px;
+  }
+
+  .nosotros-section .nosotros-title {
+    font-size: clamp(2.25rem, 7vw, 3.4rem);
+  }
+
+  .nosotros-section .nosotros-image {
+    height: 440px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .nosotros-section {
+    padding: 32px 0;
+  }
+
+  .nosotros-section .nosotros-card {
+    padding: 34px 22px;
+    border-radius: 18px;
+  }
+
+  .nosotros-section .section-label {
+    font-size: 0.75rem;
+    letter-spacing: 4px;
+  }
+
+  .nosotros-section .nosotros-title {
+    font-size: 2.1rem;
   }
 }

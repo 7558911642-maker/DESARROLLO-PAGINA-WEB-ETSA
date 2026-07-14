@@ -124,7 +124,7 @@
     }
 
     if (esErrorDeConexion(ultimoError)) {
-      throw new Error("No se pudo confirmar la reserva. Verifica que el servidor Express este activo en http://localhost:3000.");
+      throw new Error(obtenerMensajeConexionApi());
     }
 
     throw ultimoError || new Error("No se pudo conectar con el servidor de reservas.");
@@ -133,7 +133,7 @@
   function obtenerEndpointsApi(endpoint) {
     const endpoints = [endpoint];
 
-    if (typeof endpoint === "string" && endpoint.startsWith("/api/")) {
+    if (typeof endpoint === "string" && endpoint.startsWith("/api/") && esEntornoLocal()) {
       const hostLocal = obtenerHostApiLocal(window.location.hostname);
 
       endpoints.push(`http://${hostLocal}:3000${endpoint}`);
@@ -142,6 +142,23 @@
     }
 
     return Array.from(new Set(endpoints));
+  }
+
+  function esEntornoLocal() {
+    const host = String(window.location.hostname || "").replace(/^\[|\]$/g, "");
+
+    return (
+      window.location.protocol === "file:" ||
+      /^(localhost|127\.0\.0\.1|::1)$/i.test(host)
+    );
+  }
+
+  function obtenerMensajeConexionApi() {
+    if (esEntornoLocal()) {
+      return "No se pudo confirmar la reserva. Verifica que el servidor Express este activo en http://localhost:3000.";
+    }
+
+    return "No se pudo confirmar la reserva porque la API de reservas no esta activa en este despliegue. Vuelve a desplegar el proyecto con la carpeta api incluida.";
   }
 
   function obtenerHostApiLocal(hostname) {

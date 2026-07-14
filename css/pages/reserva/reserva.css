@@ -2277,6 +2277,26 @@ body.pagina-reserva .reserva-comprobante .modal-header {
   padding: 1.35rem 1.5rem;
 }
 
+body.pagina-reserva .reserva-comprobante__cerrar {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  margin: -0.45rem -0.45rem 0 auto;
+  border-radius: 999px;
+  background-size: 0.82rem;
+  opacity: 0.9;
+  box-shadow: 0 0.5rem 1.25rem rgba(15, 23, 42, 0.08);
+  position: sticky;
+  top: 0.75rem;
+  z-index: 5;
+}
+
+body.pagina-reserva .reserva-comprobante__cerrar:hover,
+body.pagina-reserva .reserva-comprobante__cerrar:focus-visible {
+  opacity: 1;
+}
+
 body.pagina-reserva .reserva-comprobante .modal-title {
   margin: 0.35rem 0 0;
   color: var(--reserva-ink);

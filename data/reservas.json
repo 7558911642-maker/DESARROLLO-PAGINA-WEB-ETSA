@@ -109,6 +109,38 @@
   },
   "reservas": [
     {
+      "id": "4139558d-03d1-4cc2-b1da-0cefe1b4a992",
+      "codigo": "RES-20260714-J9CN",
+      "nombre": "Llerly Vilca",
+      "dni": "98765432",
+      "origen": "Chachapoyas",
+      "destino": "Luya",
+      "fecha": "2026-07-16",
+      "asiento": "2",
+      "precio": 10,
+      "observaciones": "",
+      "estado": "pendiente",
+      "moneda": "PEN",
+      "creadoEn": "2026-07-14T15:33:32.866Z",
+      "actualizadoEn": "2026-07-14T15:33:32.866Z"
+    },
+    {
+      "id": "872d78cf-498e-4cd6-8cc3-e51fefa1bde7",
+      "codigo": "RES-20260714-PDMI",
+      "nombre": "Aquiles Rojas",
+      "dni": "12345678",
+      "origen": "Chachapoyas",
+      "destino": "Pomacochas",
+      "fecha": "2026-07-15",
+      "asiento": "2",
+      "precio": 20,
+      "observaciones": "",
+      "estado": "pendiente",
+      "moneda": "PEN",
+      "creadoEn": "2026-07-14T15:22:14.964Z",
+      "actualizadoEn": "2026-07-14T15:22:14.964Z"
+    },
+    {
       "id": "85d34dd1-7636-4c23-8e56-b8187bc53820",
       "codigo": "RES-20260714-5X9F",
       "nombre": "DUVER ROLANDO PAJARES ROJAS",

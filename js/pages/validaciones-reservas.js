@@ -250,7 +250,7 @@
       }
 
       if (opciones.asientoDisponible === false) {
-        return crearResultado(false, "El asiento seleccionado ya esta ocupado para este viaje.");
+        return crearResultado(false, "El asiento seleccionado ya esta ocupado para esta fecha.");
       }
 
       return crearResultado(true, "", MENSAJES_OK.asiento);

@@ -29,6 +29,17 @@
     };
   }
 
+  async function actualizarOcupadas() {
+    const datosOcupados = await obtenerJson("/api/reservas/ocupadas");
+
+    if (!Array.isArray(datosOcupados?.data)) {
+      return listar();
+    }
+
+    reservasOcupadas = normalizarReservasOcupadas(datosOcupados.data);
+    return listar();
+  }
+
   function listar() {
     return [...reservasOcupadas];
   }
@@ -336,6 +347,7 @@
 
   global.ReservasJsonManager = {
     inicializar,
+    actualizarOcupadas,
     listar,
     guardar,
     obtenerAsientosOcupados,

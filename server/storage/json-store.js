@@ -12,6 +12,8 @@ const COLLECTIONS = {
   testimonios: { file: "testimonios.json", key: "testimonios" }
 };
 
+const collectionQueues = new Map();
+
 async function readCollection(nombre) {
   const config = getCollectionConfig(nombre);
   const json = await readJson(config.file);
@@ -21,15 +23,36 @@ async function readCollection(nombre) {
 }
 
 async function appendToCollection(nombre, item) {
-  const config = getCollectionConfig(nombre);
-  const json = await readJson(config.file);
-  const items = Array.isArray(json[config.key]) ? json[config.key] : [];
-  const siguiente = [item, ...items];
+  return updateCollection(nombre, ({ json, items, key }) => {
+    json[key] = [item, ...items];
+    return item;
+  });
+}
 
-  json[config.key] = siguiente;
-  await writeJson(config.file, json);
+async function updateCollection(nombre, updater) {
+  return enqueueCollection(nombre, async () => {
+    const config = getCollectionConfig(nombre);
+    const json = await readJson(config.file);
+    const items = Array.isArray(json[config.key]) ? json[config.key] : [];
+    const resultado = await updater({ json, items, key: config.key });
 
-  return item;
+    await writeJson(config.file, json);
+    return resultado;
+  });
+}
+
+function enqueueCollection(nombre, task) {
+  const previous = collectionQueues.get(nombre) || Promise.resolve();
+  const next = previous.catch(() => undefined).then(task);
+
+  collectionQueues.set(nombre, next);
+  next.finally(() => {
+    if (collectionQueues.get(nombre) === next) {
+      collectionQueues.delete(nombre);
+    }
+  }).catch(() => undefined);
+
+  return next;
 }
 
 async function readJson(fileName) {
@@ -62,5 +85,6 @@ module.exports = {
   COLLECTIONS,
   appendToCollection,
   readCollection,
-  readJson
+  readJson,
+  updateCollection
 };

@@ -104,13 +104,11 @@ function validarReserva(body, contexto) {
 
   const reservas = contexto?.reservas || [];
   const asientoOcupado = reservas.some((reserva) =>
-    reserva.origen === datos.origen &&
-    reserva.destino === datos.destino &&
     reserva.fecha === datos.fecha &&
     String(reserva.asiento) === datos.asiento
   );
   if (asientoOcupado) {
-    errores.asiento = "El asiento seleccionado ya esta reservado para este viaje.";
+    errores.asiento = "El asiento seleccionado ya esta reservado para esta fecha.";
   }
 
   if (datos.observaciones && /[<>]/.test(datos.observaciones)) {

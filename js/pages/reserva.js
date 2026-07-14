@@ -552,6 +552,7 @@
   async function registrarOActualizarReserva(ui, estado, storage, validator) {
     normalizarCampoAlPerderFoco(ui, "nombre", validator);
     normalizarCampoAlPerderFoco(ui, "observaciones", validator);
+    await refrescarReservasOcupadas(ui, estado, storage);
     sincronizarDisponibilidadAsientos(ui, estado);
     actualizarResumen(ui, estado);
 
@@ -586,6 +587,16 @@
     mostrarMensaje(ui, `Reserva ${reserva.codigo} registrada correctamente.`, true);
     mostrarConfirmacionReserva(ui, reserva);
     limpiarFormularioRegistrado(ui, estado, validator);
+  }
+
+  async function refrescarReservasOcupadas(ui, estado, storage) {
+    if (typeof storage.actualizarOcupadas !== "function") {
+      return;
+    }
+
+    estado.reservas = await storage.actualizarOcupadas();
+    sincronizarDisponibilidadAsientos(ui, estado);
+    actualizarResumen(ui, estado);
   }
 
   function obtenerDatosFormulario(ui) {
@@ -684,7 +695,7 @@
   }
 
   function asientoDisponibleParaReserva(datos, estado) {
-    if (!datos.asiento || !datos.origen || !datos.destino || !datos.fecha) {
+    if (!datos.asiento || !datos.fecha) {
       return true;
     }
 
@@ -695,8 +706,6 @@
     return !estado.reservas.some(function (reserva) {
       return (
         reserva.asiento === datos.asiento &&
-        reserva.origen === datos.origen &&
-        reserva.destino === datos.destino &&
         reserva.fecha === datos.fecha
       );
     });
@@ -728,17 +737,13 @@
   }
 
   function obtenerAsientosReservadosParaViaje(datos, estado) {
-    if (!datos.origen || !datos.destino || !datos.fecha) {
+    if (!datos.fecha) {
       return [];
     }
 
     return estado.reservas
       .filter(function (reserva) {
-        return (
-          reserva.origen === datos.origen &&
-          reserva.destino === datos.destino &&
-          reserva.fecha === datos.fecha
-        );
+        return reserva.fecha === datos.fecha;
       })
       .map(function (reserva) {
         return reserva.asiento;

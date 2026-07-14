@@ -10,7 +10,7 @@
   <!-- Iconos -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.12.1/font/bootstrap-icons.min.css">
   <!-- Estilos personalizados -->
-  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/main.css?v=20260714-asientos-dia">
 
   <!-- Tipografía -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -294,7 +294,9 @@
                   <span class="reserva-comprobante__etiqueta">Reserva registrada</span>
                   <h2 class="modal-title" id="titulo-confirmacion-reserva">Comprobante de reserva</h2>
                 </div>
-                <button type="button" class="btn-close reserva-comprobante__cerrar" data-bs-dismiss="modal" aria-label="Cerrar confirmación de reserva"></button>
+                <button type="button" class="btn-close reserva-comprobante__cerrar" data-bs-dismiss="modal" aria-label="Cerrar confirmación de reserva">
+                  <span aria-hidden="true">&times;</span>
+                </button>
               </div>
               <div class="modal-body">
                 <div class="reserva-comprobante__estado">
@@ -578,8 +580,8 @@
 
   <script src="bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/main.js"></script>
-  <script src="js/pages/validaciones-reservas.js?v=20260714-vercel-api"></script>
-  <script src="js/pages/reservas-json-manager.js?v=20260714-vercel-api"></script>
-  <script src="js/pages/reserva.js?v=20260714-vercel-api"></script>
+  <script src="js/pages/validaciones-reservas.js?v=20260714-asientos-dia"></script>
+  <script src="js/pages/reservas-json-manager.js?v=20260714-asientos-dia"></script>
+  <script src="js/pages/reserva.js?v=20260714-asientos-dia"></script>
 </body>
 </html>

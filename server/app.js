@@ -83,27 +83,43 @@ app.get("/api/reservas/ocupadas", asyncHandler(async (_req, res) => {
 }));
 
 app.post("/api/reservas", asyncHandler(async (req, res) => {
-  const { json, items } = await store.readCollection("reservas");
-  const resultado = validarReserva(req.body, {
-    rutas: json.rutas,
-    capacidad: json.asientos?.capacidad,
-    ocupadosIniciales: json.asientos?.ocupadosIniciales,
-    reservas: items
-  });
+  let registro;
 
-  if (!resultado.valido) {
-    return res.status(422).json({ ok: false, errores: resultado.errores });
+  try {
+    registro = await store.updateCollection("reservas", ({ json, items, key }) => {
+      const resultado = validarReserva(req.body, {
+        rutas: json.rutas,
+        capacidad: json.asientos?.capacidad,
+        ocupadosIniciales: json.asientos?.ocupadosIniciales,
+        reservas: items
+      });
+
+      if (!resultado.valido) {
+        const error = new Error("Reserva invalida.");
+        error.statusCode = 422;
+        error.errores = resultado.errores;
+        throw error;
+      }
+
+      const nuevoRegistro = crearRegistro("reserva", resultado.datos, {
+        estado: json.defaults?.estadoInicial || "pendiente",
+        moneda: json.defaults?.moneda || "PEN",
+        precio: Number.isFinite(Number(resultado.datos.precio))
+          ? Number(resultado.datos.precio)
+          : Number(json.defaults?.precioBase || 0)
+      });
+
+      json[key] = [nuevoRegistro, ...items];
+      return nuevoRegistro;
+    });
+  } catch (error) {
+    if (error.statusCode === 422) {
+      return res.status(422).json({ ok: false, errores: error.errores });
+    }
+
+    throw error;
   }
 
-  const registro = crearRegistro("reserva", resultado.datos, {
-    estado: json.defaults?.estadoInicial || "pendiente",
-    moneda: json.defaults?.moneda || "PEN",
-    precio: Number.isFinite(Number(resultado.datos.precio))
-      ? Number(resultado.datos.precio)
-      : Number(json.defaults?.precioBase || 0)
-  });
-
-  await store.appendToCollection("reservas", registro);
   res.status(201).json({ ok: true, mensaje: "Reserva registrada correctamente.", data: registro });
 }));
 

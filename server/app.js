@@ -56,6 +56,7 @@ app.use("/server", denyPrivateAccess);
 
 app.get("/api/reservas/config", asyncHandler(async (_req, res) => {
   const { json } = await store.readCollection("reservas");
+  res.set("Cache-Control", "no-store");
   res.json({
     ok: true,
     data: {
@@ -69,6 +70,7 @@ app.get("/api/reservas/config", asyncHandler(async (_req, res) => {
 
 app.get("/api/reservas/ocupadas", asyncHandler(async (_req, res) => {
   const { items } = await store.readCollection("reservas");
+  res.set("Cache-Control", "no-store");
   res.json({
     ok: true,
     data: items.map((reserva) => ({
@@ -180,6 +182,7 @@ app.get("/api/admin/:collection", requireAdminApi, asyncHandler(async (req, res)
   }
 
   const { items } = await store.readCollection(collection);
+  res.set("Cache-Control", "no-store");
   res.json({ ok: true, data: items });
 }));
 

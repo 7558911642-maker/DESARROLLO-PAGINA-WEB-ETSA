@@ -5,5 +5,18 @@
     "descripcion": "Registros recibidos desde el formulario de libro de reclamaciones.",
     "persistencia": "servidor-json"
   },
-  "reclamos": []
+  "reclamos": [
+    {
+      "id": "4713b43b-36c3-4698-96eb-65307b935754",
+      "codigo": "REC-20260714-386U",
+      "nombre": "DUVER ROLANDO PAJARES ROJAS",
+      "correo": "7558911642@untrm.edu.pe",
+      "telefono": "904278833",
+      "asunto": "viaje",
+      "mensaje": "mucho demora en salir y un trato desagradable al pasajero",
+      "estado": "pendiente",
+      "creadoEn": "2026-07-14T13:19:06.978Z",
+      "actualizadoEn": "2026-07-14T13:19:06.978Z"
+    }
+  ]
 }

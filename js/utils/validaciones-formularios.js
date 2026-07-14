@@ -318,34 +318,7 @@
       }
     }
 
-    const payloadSinCors = await enviarUrlEncodedSinCors(endpoint, datos);
-    if (payloadSinCors) {
-      return payloadSinCors;
-    }
-
     throw ultimoError || new Error("No se pudo conectar con el servidor.");
-  }
-
-  async function enviarUrlEncodedSinCors(endpoint, datos) {
-    const url = obtenerEndpointsApi(endpoint).find(esEndpointLocalAbsoluto);
-
-    if (!url) {
-      return null;
-    }
-
-    await fetch(url, {
-      method: "POST",
-      mode: "no-cors",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded"
-      },
-      body: new URLSearchParams(datos)
-    });
-
-    return {
-      ok: true,
-      mensaje: "Registro enviado correctamente."
-    };
   }
 
   function obtenerEndpointsApi(endpoint) {
@@ -374,10 +347,6 @@
     }
 
     return "localhost";
-  }
-
-  function esEndpointLocalAbsoluto(url) {
-    return /^https?:\/\/(?:localhost|127\.0\.0\.1|\[::1\]):3000\/api\//i.test(url);
   }
 
   function esPayloadApi(payload) {

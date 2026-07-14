@@ -361,12 +361,28 @@
 
   function obtenerRutasDisponibles(configuracion) {
     const rutasConfig = Array.isArray(configuracion?.rutas) ? configuracion.rutas : [];
-    const rutas = rutasConfig.length > 0 ? rutasConfig : RUTAS_PRECIO;
+    const rutas = new Map();
 
-    return rutas
+    normalizarRutas(RUTAS_PRECIO).forEach(function (ruta) {
+      rutas.set(normalizarClaveRuta(ruta.origen), ruta);
+    });
+
+    normalizarRutas(rutasConfig).forEach(function (ruta) {
+      const clave = normalizarClaveRuta(ruta.origen);
+
+      if (!rutas.has(clave)) {
+        rutas.set(clave, ruta);
+      }
+    });
+
+    return Array.from(rutas.values());
+  }
+
+  function normalizarRutas(rutas) {
+    return (Array.isArray(rutas) ? rutas : [])
       .map(function (ruta) {
         return {
-          origen: String(ruta?.origen || "").trim(),
+          origen: normalizarTextoRuta(ruta?.origen),
           destinos: normalizarDestinosRuta(ruta?.destinos),
         };
       })
@@ -384,7 +400,7 @@
       .map(function (destino) {
         if (typeof destino === "string") {
           return {
-            ciudad: destino.trim(),
+            ciudad: normalizarTextoRuta(destino),
             precio: null,
           };
         }
@@ -392,7 +408,7 @@
         const precio = Number(destino?.precio);
 
         return {
-          ciudad: String(destino?.ciudad || destino?.destino || destino?.nombre || "").trim(),
+          ciudad: normalizarTextoRuta(destino?.ciudad || destino?.destino || destino?.nombre),
           precio: Number.isFinite(precio) ? precio : null,
         };
       })
@@ -436,9 +452,7 @@
       return [];
     }
 
-    const ruta = estado.rutas.find(function (item) {
-      return item.origen === origen;
-    });
+    const ruta = buscarRuta(estado.rutas, origen);
 
     if (ruta?.destinos?.length) {
       return ruta.destinos;
@@ -460,6 +474,34 @@
     return Array.from(select.options).some(function (option) {
       return option.value === value;
     });
+  }
+
+  function buscarRuta(rutas, origen) {
+    const origenBuscado = normalizarClaveRuta(origen);
+
+    return (Array.isArray(rutas) ? rutas : []).find(function (ruta) {
+      return normalizarClaveRuta(ruta.origen) === origenBuscado;
+    }) || null;
+  }
+
+  function buscarConexion(rutas, origen, destino) {
+    const ruta = buscarRuta(rutas, origen);
+    const destinoBuscado = normalizarClaveRuta(destino);
+
+    return ruta?.destinos?.find(function (conexion) {
+      return normalizarClaveRuta(conexion.ciudad) === destinoBuscado;
+    }) || null;
+  }
+
+  function normalizarTextoRuta(valor) {
+    return String(valor || "").replace(/\s+/g, " ").trim();
+  }
+
+  function normalizarClaveRuta(valor) {
+    return normalizarTextoRuta(valor)
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .toLowerCase();
   }
 
   function configurarSelectorFecha(ui, validator) {
@@ -515,6 +557,7 @@
 
     const datos = obtenerDatosFormulario(ui);
     const resultado = validator.validarReserva(datos, {
+      rutas: estado.rutas,
       asientoDisponible: asientoDisponibleParaReserva(datos, estado),
     });
 
@@ -542,6 +585,7 @@
     actualizarResumen(ui, estado);
     mostrarMensaje(ui, `Reserva ${reserva.codigo} registrada correctamente.`, true);
     mostrarConfirmacionReserva(ui, reserva);
+    limpiarFormularioRegistrado(ui, estado, validator);
   }
 
   function obtenerDatosFormulario(ui) {
@@ -581,6 +625,7 @@
   function validarCampo(ui, estado, validator, nombreCampo) {
     const datos = obtenerDatosFormulario(ui);
     const resultadoCampo = validator.validarCampo(nombreCampo, datos, {
+      rutas: estado.rutas,
       asientoDisponible: asientoDisponibleParaReserva(datos, estado),
     });
 
@@ -730,18 +775,23 @@
       return precioOption;
     }
 
-    const ruta = estado?.rutas?.find(function (item) {
-      return item.origen === origen;
-    });
-    const conexion = ruta?.destinos?.find(function (item) {
-      return item.ciudad === destino;
-    });
+    const conexion = buscarConexion(estado?.rutas, origen, destino);
     const precioConexion = Number(conexion?.precio);
 
     return Number.isFinite(precioConexion) ? precioConexion : null;
   }
 
   function limpiarFormulario(ui, estado, validator) {
+    limpiarCamposFormulario(ui, estado, validator);
+    limpiarMensajeGlobal(ui);
+    ui.campos.nombre.focus();
+  }
+
+  function limpiarFormularioRegistrado(ui, estado, validator) {
+    limpiarCamposFormulario(ui, estado, validator);
+  }
+
+  function limpiarCamposFormulario(ui, estado, validator) {
     ui.form.reset();
     reconstruirOpcionesDestino(ui, estado);
     ui.asientoInputs.forEach(function (input) {
@@ -756,8 +806,6 @@
     actualizarContador(ui, validator);
     sincronizarDisponibilidadAsientos(ui, estado);
     actualizarResumen(ui, estado);
-    limpiarMensajeGlobal(ui);
-    ui.campos.nombre.focus();
   }
 
   function limpiarEstadoCampo(ui, nombreCampo) {

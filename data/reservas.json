@@ -107,5 +107,22 @@
       15
     ]
   },
-  "reservas": []
+  "reservas": [
+    {
+      "id": "85d34dd1-7636-4c23-8e56-b8187bc53820",
+      "codigo": "RES-20260714-5X9F",
+      "nombre": "DUVER ROLANDO PAJARES ROJAS",
+      "dni": "12345678",
+      "origen": "Chachapoyas",
+      "destino": "Pedro Ruiz",
+      "fecha": "2026-07-16",
+      "asiento": "12",
+      "precio": 10,
+      "observaciones": "",
+      "estado": "pendiente",
+      "moneda": "PEN",
+      "creadoEn": "2026-07-14T13:39:04.642Z",
+      "actualizadoEn": "2026-07-14T13:39:04.642Z"
+    }
+  ]
 }

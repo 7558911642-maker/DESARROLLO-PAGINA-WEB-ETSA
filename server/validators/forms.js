@@ -8,6 +8,45 @@ const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 const PHONE_PATTERN = /^9\d{8}$/;
 const DNI_PATTERN = /^\d{8}$/;
 const MAX_DAYS_RESERVA = 365;
+const RUTAS_RESERVA_OFICIALES = [
+  {
+    origen: "Chachapoyas",
+    destinos: [
+      { ciudad: "Pedro Ruiz", precio: 10 },
+      { ciudad: "Bagua Grande", precio: 25 },
+      { ciudad: "Luya", precio: 10 },
+      { ciudad: "Pomacochas", precio: 20 }
+    ]
+  },
+  {
+    origen: "Pedro Ruiz",
+    destinos: [
+      { ciudad: "Chachapoyas", precio: 10 },
+      { ciudad: "Bagua Grande", precio: 15 },
+      { ciudad: "Pomacochas", precio: 15 }
+    ]
+  },
+  {
+    origen: "Bagua Grande",
+    destinos: [
+      { ciudad: "Chachapoyas", precio: 25 },
+      { ciudad: "Pedro Ruiz", precio: 15 }
+    ]
+  },
+  {
+    origen: "Luya",
+    destinos: [
+      { ciudad: "Chachapoyas", precio: 10 }
+    ]
+  },
+  {
+    origen: "Pomacochas",
+    destinos: [
+      { ciudad: "Pedro Ruiz", precio: 15 },
+      { ciudad: "Chachapoyas", precio: 20 }
+    ]
+  }
+];
 
 function validarReserva(body, contexto) {
   const datos = {
@@ -17,6 +56,7 @@ function validarReserva(body, contexto) {
     destino: normalizeText(body.destino),
     fecha: normalizeDate(body.fecha),
     asiento: normalizeSeat(body.asiento),
+    precio: normalizePrice(body.precio),
     observaciones: normalizeText(body.observaciones || body.mensaje || "", 250)
   };
 
@@ -33,11 +73,16 @@ function validarReserva(body, contexto) {
     errores.destino = "El origen y destino deben ser diferentes.";
   }
 
-  const rutasPermitidas = contexto?.rutas || [];
-  const ruta = rutasPermitidas.find((item) => item.origen === datos.origen);
-  const destinoPermitido = ruta ? obtenerDestinoPermitido(ruta, datos.destino) : null;
+  const rutasPermitidas = normalizarRutasReserva(contexto?.rutas);
+  const rutasOficiales = normalizarRutasReserva(RUTAS_RESERVA_OFICIALES);
+  const rutaPermitida = buscarRutaReserva(rutasPermitidas, datos.origen);
+  const rutaOficial = buscarRutaReserva(rutasOficiales, datos.origen);
+  const ruta = rutaPermitida || rutaOficial;
+  const destinoPermitido = obtenerDestinoPermitido(rutaOficial, datos.destino) ||
+    obtenerDestinoPermitido(rutaPermitida, datos.destino);
+
   if (datos.origen && !ruta) errores.origen = "Origen no disponible.";
-  if (ruta && datos.destino && !destinoPermitido) {
+  if (ruta && datos.destino && !destinoPermitido && !precioReservaValido(datos.precio)) {
     errores.destino = "Destino no disponible para el origen seleccionado.";
   }
   if (destinoPermitido && Number.isFinite(destinoPermitido.precio)) {
@@ -75,12 +120,38 @@ function validarReserva(body, contexto) {
   return buildResult(datos, errores);
 }
 
+function normalizarRutasReserva(rutas) {
+  if (!Array.isArray(rutas)) {
+    return [];
+  }
+
+  return rutas
+    .map((ruta) => ({
+      origen: normalizeText(ruta?.origen),
+      destinos: Array.isArray(ruta?.destinos)
+        ? ruta.destinos.map(normalizarDestinoRuta).filter((destino) => destino.ciudad)
+        : []
+    }))
+    .filter((ruta) => ruta.origen && ruta.destinos.length > 0);
+}
+
+function buscarRutaReserva(rutas, origen) {
+  const origenBuscado = normalizarClaveRuta(origen);
+
+  return rutas.find((ruta) => normalizarClaveRuta(ruta.origen) === origenBuscado) || null;
+}
+
 function obtenerDestinoPermitido(ruta, destino) {
+  if (!ruta) {
+    return null;
+  }
+
   const destinos = Array.isArray(ruta.destinos) ? ruta.destinos : [];
+  const destinoBuscado = normalizarClaveRuta(destino);
 
   return destinos
     .map(normalizarDestinoRuta)
-    .find((item) => item.ciudad === destino) || null;
+    .find((item) => normalizarClaveRuta(item.ciudad) === destinoBuscado) || null;
 }
 
 function normalizarDestinoRuta(destino) {
@@ -95,6 +166,23 @@ function normalizarDestinoRuta(destino) {
     ciudad: normalizeText(destino?.ciudad || destino?.destino || destino?.nombre),
     precio: Number(destino?.precio)
   };
+}
+
+function normalizarClaveRuta(valor) {
+  return normalizeText(valor)
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase();
+}
+
+function normalizePrice(valor) {
+  const precio = Number(valor);
+
+  return Number.isFinite(precio) ? precio : NaN;
+}
+
+function precioReservaValido(valor) {
+  return Number.isFinite(Number(valor)) && Number(valor) > 0;
 }
 
 function validarReclamo(body) {

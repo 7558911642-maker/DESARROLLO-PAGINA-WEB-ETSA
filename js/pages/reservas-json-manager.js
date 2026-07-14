@@ -123,43 +123,11 @@
       }
     }
 
-    try {
-      const payloadSinCors = await enviarUrlEncodedSinCors(endpoint, datos);
-      if (payloadSinCors) {
-        return payloadSinCors;
-      }
-    } catch (error) {
-      ultimoError = error;
-    }
-
     if (esErrorDeConexion(ultimoError)) {
       throw new Error("No se pudo confirmar la reserva. Verifica que el servidor Express este activo en http://localhost:3000.");
     }
 
     throw ultimoError || new Error("No se pudo conectar con el servidor de reservas.");
-  }
-
-  async function enviarUrlEncodedSinCors(endpoint, datos) {
-    const url = obtenerEndpointsApi(endpoint).find(esEndpointLocalAbsoluto);
-
-    if (!url) {
-      return null;
-    }
-
-    await fetch(url, {
-      method: "POST",
-      mode: "no-cors",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded"
-      },
-      body: new URLSearchParams(datos)
-    });
-
-    return {
-      ok: true,
-      mensaje: "Reserva registrada correctamente.",
-      data: crearReservaTemporal(datos)
-    };
   }
 
   function obtenerEndpointsApi(endpoint) {
@@ -188,43 +156,6 @@
     }
 
     return "localhost";
-  }
-
-  function esEndpointLocalAbsoluto(url) {
-    return /^https?:\/\/(?:localhost|127\.0\.0\.1|\[::1\]):3000\/api\//i.test(url);
-  }
-
-  function crearReservaTemporal(datos) {
-    const ahora = new Date().toISOString();
-
-    return {
-      id: `reserva-local-${Date.now()}`,
-      codigo: crearCodigoReservaTemporal(),
-      ...datos,
-      observaciones: datos.observaciones || datos.mensaje || "",
-      estado: configuracion.estadoInicial || CONFIG_DEFAULT.estadoInicial,
-      moneda: configuracion.moneda || CONFIG_DEFAULT.moneda,
-      precio: obtenerPrecioDatos(datos),
-      creadoEn: ahora,
-      actualizadoEn: ahora
-    };
-  }
-
-  function obtenerPrecioDatos(datos) {
-    const precioDatos = Number(datos?.precio);
-
-    if (Number.isFinite(precioDatos) && precioDatos > 0) {
-      return precioDatos;
-    }
-
-    return obtenerPrecioRuta(datos.origen, datos.destino);
-  }
-
-  function crearCodigoReservaTemporal() {
-    const fecha = new Date().toISOString().slice(0, 10).replace(/-/g, "");
-    const sufijo = Math.random().toString(36).slice(2, 6).toUpperCase();
-
-    return `RES-${fecha}-${sufijo}`;
   }
 
   function esPayloadApi(payload) {

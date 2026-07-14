@@ -2,6 +2,8 @@
 
 (function () {
   const MENSAJE_ALERTA_MS = 15000;
+  const ADMIN_REFRESH_MS = 800;
+  let adminRefreshTimer = null;
 
   const columns = {
     reservas: [
@@ -90,11 +92,31 @@
 
     try {
       await requestJson("/api/admin/session");
-      const payload = await requestJson(`/api/admin/${collection}`);
-      renderTable(collection, payload.data || []);
+      await cargarColeccion(collection);
+      iniciarActualizacionAdmin(collection);
     } catch (error) {
       window.location.href = "/admin/login.html";
     }
+  }
+
+  async function cargarColeccion(collection) {
+    const payload = await requestJson(`/api/admin/${collection}`);
+    renderTable(collection, payload.data || []);
+  }
+
+  function iniciarActualizacionAdmin(collection) {
+    if (adminRefreshTimer) {
+      window.clearInterval(adminRefreshTimer);
+    }
+
+    adminRefreshTimer = window.setInterval(async function () {
+      try {
+        await cargarColeccion(collection);
+      } catch (error) {
+        window.clearInterval(adminRefreshTimer);
+        window.location.href = "/admin/login.html";
+      }
+    }, ADMIN_REFRESH_MS);
   }
 
   function initLogout() {
@@ -157,6 +179,7 @@
   async function requestJson(url, options) {
     const response = await fetch(url, {
       method: options?.method || "GET",
+      cache: "no-store",
       headers: {
         "Content-Type": "application/json",
         "Accept": "application/json"

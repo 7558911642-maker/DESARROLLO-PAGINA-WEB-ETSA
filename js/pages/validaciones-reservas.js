@@ -18,6 +18,45 @@
     asiento: "Asiento disponible.",
     observaciones: "Observaciones dentro del limite permitido.",
   };
+  const RUTAS_RESERVA_OFICIALES = [
+    {
+      origen: "Chachapoyas",
+      destinos: [
+        { ciudad: "Pedro Ruiz", precio: 10 },
+        { ciudad: "Bagua Grande", precio: 25 },
+        { ciudad: "Luya", precio: 10 },
+        { ciudad: "Pomacochas", precio: 20 },
+      ],
+    },
+    {
+      origen: "Pedro Ruiz",
+      destinos: [
+        { ciudad: "Chachapoyas", precio: 10 },
+        { ciudad: "Bagua Grande", precio: 15 },
+        { ciudad: "Pomacochas", precio: 15 },
+      ],
+    },
+    {
+      origen: "Bagua Grande",
+      destinos: [
+        { ciudad: "Chachapoyas", precio: 25 },
+        { ciudad: "Pedro Ruiz", precio: 15 },
+      ],
+    },
+    {
+      origen: "Luya",
+      destinos: [
+        { ciudad: "Chachapoyas", precio: 10 },
+      ],
+    },
+    {
+      origen: "Pomacochas",
+      destinos: [
+        { ciudad: "Pedro Ruiz", precio: 15 },
+        { ciudad: "Chachapoyas", precio: 20 },
+      ],
+    },
+  ];
 
   function aplicarRestriccionesNativas(campos) {
     configurarCampo(campos.nombre, {
@@ -147,9 +186,13 @@
       return crearResultado(true, "", MENSAJES_OK.dni);
     },
 
-    origen: function (datos) {
+    origen: function (datos, opciones) {
       if (!datos.origen) {
         return crearResultado(false, "Seleccione una ciudad de origen.");
+      }
+
+      if (!buscarRutaReserva(obtenerRutasReserva(opciones), datos.origen)) {
+        return crearResultado(false, "Origen no disponible.");
       }
 
       if (datos.destino && datos.origen === datos.destino) {
@@ -159,13 +202,21 @@
       return crearResultado(true, "", MENSAJES_OK.origen);
     },
 
-    destino: function (datos) {
+    destino: function (datos, opciones) {
       if (!datos.destino) {
         return crearResultado(false, "Seleccione una ciudad de destino.");
       }
 
       if (datos.origen && datos.origen === datos.destino) {
         return crearResultado(false, "El destino debe ser diferente al origen.");
+      }
+
+      if (
+        datos.origen &&
+        !buscarDestinoReserva(obtenerRutasReserva(opciones), datos.origen, datos.destino) &&
+        !precioReservaValido(datos.precio)
+      ) {
+        return crearResultado(false, "Destino no disponible para el origen seleccionado.");
       }
 
       return crearResultado(true, "", MENSAJES_OK.destino);
@@ -228,6 +279,87 @@
     };
   }
 
+  function obtenerRutasReserva(opciones) {
+    const rutas = new Map();
+
+    normalizarRutasReserva(RUTAS_RESERVA_OFICIALES).forEach(function (ruta) {
+      rutas.set(normalizarClaveRuta(ruta.origen), ruta);
+    });
+
+    normalizarRutasReserva(opciones?.rutas).forEach(function (ruta) {
+      const clave = normalizarClaveRuta(ruta.origen);
+
+      if (!rutas.has(clave)) {
+        rutas.set(clave, ruta);
+      }
+    });
+
+    return Array.from(rutas.values());
+  }
+
+  function normalizarRutasReserva(rutas) {
+    if (!Array.isArray(rutas)) {
+      return [];
+    }
+
+    return rutas
+      .map(function (ruta) {
+        return {
+          origen: normalizarEspacios(ruta?.origen),
+          destinos: normalizarDestinosReserva(ruta?.destinos),
+        };
+      })
+      .filter(function (ruta) {
+        return ruta.origen && ruta.destinos.length > 0;
+      });
+  }
+
+  function normalizarDestinosReserva(destinos) {
+    if (!Array.isArray(destinos)) {
+      return [];
+    }
+
+    return destinos
+      .map(function (destino) {
+        if (typeof destino === "string") {
+          return { ciudad: normalizarEspacios(destino), precio: null };
+        }
+
+        const precio = Number(destino?.precio);
+
+        return {
+          ciudad: normalizarEspacios(destino?.ciudad || destino?.destino || destino?.nombre),
+          precio: Number.isFinite(precio) ? precio : null,
+        };
+      })
+      .filter(function (destino) {
+        return destino.ciudad;
+      });
+  }
+
+  function buscarRutaReserva(rutas, origen) {
+    const origenBuscado = normalizarClaveRuta(origen);
+
+    return rutas.find(function (ruta) {
+      return normalizarClaveRuta(ruta.origen) === origenBuscado;
+    }) || null;
+  }
+
+  function buscarDestinoReserva(rutas, origen, destino) {
+    const ruta = buscarRutaReserva(rutas, origen);
+    const destinoBuscado = normalizarClaveRuta(destino);
+
+    return ruta?.destinos.find(function (item) {
+      return normalizarClaveRuta(item.ciudad) === destinoBuscado;
+    }) || null;
+  }
+
+  function precioReservaValido(valor) {
+    const precio = Number(valor);
+
+    return Number.isFinite(precio) && precio > 0;
+  }
+
   function normalizarNombre(valor) {
     return normalizarEspacios(valor).replace(/\s{2,}/g, " ");
   }
@@ -238,6 +370,13 @@
 
   function normalizarEspacios(valor) {
     return String(valor || "").trim();
+  }
+
+  function normalizarClaveRuta(valor) {
+    return normalizarEspacios(valor)
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .toLowerCase();
   }
 
   function limitarTexto(valor, limite) {

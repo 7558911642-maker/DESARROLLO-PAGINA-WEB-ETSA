@@ -2311,6 +2311,13 @@ body.pagina-reserva .reserva-comprobante__cerrar:focus-visible {
   opacity: 1;
 }
 
+@media (max-width: 767.98px) {
+  body.pagina-reserva .reserva-comprobante__cerrar {
+    top: 6.5rem;
+    transform: translateY(3.25rem);
+  }
+}
+
 body.pagina-reserva .reserva-comprobante .modal-title {
   margin: 0.35rem 0 0;
   color: var(--reserva-ink);

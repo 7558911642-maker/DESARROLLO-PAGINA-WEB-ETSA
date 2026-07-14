@@ -27,7 +27,7 @@
 
 /* Espacios por página para nuevos estilos sin tocar módulos compartidos. */
 @import url("./pages/libro_reclamos/libro_reclamos.css");
-@import url("./pages/reserva/reserva.css?v=20260714-asientos-dia");
+@import url("./pages/reserva/reserva.css?v=20260714-x-baja");
 @import url("./pages/terminos-encomiendas/terminos-encomiendas.css");
 @import url("./pages/terminos-viaje/terminos-viaje.css");
 
